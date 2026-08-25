@@ -1,0 +1,35 @@
+name: Daily Football Scraper + Parquet Update
+
+on:
+  schedule:
+    - cron: "0 18 * * *"
+  workflow_dispatch:
+
+jobs:
+  scrape-and-update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install dependencies
+        run: pip install requests pandas numpy pyarrow
+      - name: Scrape latest results
+        run: python scraper.py
+        env:
+          FOOTBALL_SEASON: "2627"
+      - name: Update master parquet
+        run: python daily_update_parquet.py
+        env:
+          FOOTBALL_SEASON: "2627"
+          FOOTBALL_SEASON_LABEL: "2026/2027"
+      - name: Commit CSV + parquet
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add daily_football_data/ master_football_data.parquet
+          git diff --staged --quiet || git commit -m "Daily update: $(date -u +%Y-%m-%d)"
+          git push
