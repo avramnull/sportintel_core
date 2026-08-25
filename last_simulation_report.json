@@ -1,0 +1,263 @@
+{
+  "match": {
+    "league": "La Liga",
+    "home_team": "Valencia",
+    "away_team": "Betis",
+    "odds_home": 2.87,
+    "odds_draw": 3.39,
+    "odds_away": 2.66,
+    "n_simulations": 8000,
+    "seed": 42,
+    "odds_blend": 0.35
+  },
+  "resolved": {
+    "league": "La Liga",
+    "div": "SP1",
+    "home": "Valencia",
+    "away": "Real Betis",
+    "models": "Valencia (home) + Real Betis (away)"
+  },
+  "report": {
+    "n_simulations": 8000,
+    "ft_probs_model": {
+      "H": 0.3363020847153307,
+      "D": 0.31795092914444417,
+      "A": 0.3457469861402252
+    },
+    "ft_probs_simulated": {
+      "H": 0.343875,
+      "D": 0.318125,
+      "A": 0.338
+    },
+    "ht_probs_model": {
+      "H": 0.3333333333333333,
+      "D": 0.3333333333333333,
+      "A": 0.3333333333333333
+    },
+    "ht_probs_simulated": {
+      "H": 0.334875,
+      "D": 0.33375,
+      "A": 0.331375
+    },
+    "over25_model": 0.5,
+    "over25_simulated": 0.590875,
+    "btts_model": 0.5,
+    "btts_simulated": 0.493625,
+    "double_chance": {
+      "1X": 0.5459196805264415,
+      "X2": 0.555364581951336,
+      "12": 0.5737157375222225
+    },
+    "top_scorelines": [
+      [
+        "0-0",
+        1284
+      ],
+      [
+        "2-1",
+        795
+      ],
+      [
+        "1-2",
+        775
+      ],
+      [
+        "1-1",
+        615
+      ],
+      [
+        "2-0",
+        362
+      ],
+      [
+        "0-2",
+        340
+      ],
+      [
+        "0-1",
+        339
+      ],
+      [
+        "1-0",
+        333
+      ],
+      [
+        "3-3",
+        332
+      ],
+      [
+        "2-2",
+        314
+      ]
+    ],
+    "top_ht_scorelines": [
+      [
+        "1-0",
+        1887
+      ],
+      [
+        "0-1",
+        1864
+      ],
+      [
+        "0-0",
+        1651
+      ],
+      [
+        "1-1",
+        1019
+      ],
+      [
+        "1-2",
+        404
+      ]
+    ],
+    "expected_goals": {
+      "home": 1.40975,
+      "away": 1.39775,
+      "total": 2.8075
+    },
+    "score_stats": {
+      "home_clean_sheet": 0.334375,
+      "away_clean_sheet": 0.3325,
+      "home_win_to_nil": 0.173875,
+      "away_win_to_nil": 0.172,
+      "over_1_5": 0.7555,
+      "over_3_5": 0.3375,
+      "under_2_5": 0.409125
+    }
+  },
+  "judgement_table": [
+    {
+      "Market": "FT 1X2",
+      "Selection": "Valencia Win",
+      "Model%": 33.6,
+      "Market%": 34.2,
+      "Edge_pp": -0.6,
+      "Odds": 2.87,
+      "Stars": "-",
+      "Verdict": "NEUTRAL"
+    },
+    {
+      "Market": "FT 1X2",
+      "Selection": "Draw",
+      "Model%": 31.8,
+      "Market%": 28.9,
+      "Edge_pp": 2.9,
+      "Odds": 3.39,
+      "Stars": "*",
+      "Verdict": "VALUE"
+    },
+    {
+      "Market": "FT 1X2",
+      "Selection": "Real Betis Win",
+      "Model%": 34.6,
+      "Market%": 36.9,
+      "Edge_pp": -2.3,
+      "Odds": 2.66,
+      "Stars": "*",
+      "Verdict": "NEUTRAL"
+    },
+    {
+      "Market": "Double Chance",
+      "Selection": "1X (Home/Draw)",
+      "Model%": 54.6,
+      "Market%": 63.1,
+      "Edge_pp": -8.5,
+      "Odds": null,
+      "Stars": "****",
+      "Verdict": "FADE"
+    },
+    {
+      "Market": "Double Chance",
+      "Selection": "X2 (Draw/Away)",
+      "Model%": 55.5,
+      "Market%": 65.8,
+      "Edge_pp": -10.3,
+      "Odds": null,
+      "Stars": "****",
+      "Verdict": "FADE"
+    },
+    {
+      "Market": "Double Chance",
+      "Selection": "12 (Home/Away)",
+      "Model%": 57.4,
+      "Market%": 71.1,
+      "Edge_pp": -13.7,
+      "Odds": null,
+      "Stars": "*****",
+      "Verdict": "FADE"
+    },
+    {
+      "Market": "Goals",
+      "Selection": "Over 2.5",
+      "Model%": 50.0,
+      "Market%": 50.0,
+      "Edge_pp": 0.0,
+      "Odds": null,
+      "Stars": "-",
+      "Verdict": "NEUTRAL"
+    },
+    {
+      "Market": "Goals",
+      "Selection": "Under 2.5",
+      "Model%": 50.0,
+      "Market%": 50.0,
+      "Edge_pp": 0.0,
+      "Odds": null,
+      "Stars": "-",
+      "Verdict": "NEUTRAL"
+    },
+    {
+      "Market": "Goals",
+      "Selection": "BTTS Yes",
+      "Model%": 50.0,
+      "Market%": 50.0,
+      "Edge_pp": 0.0,
+      "Odds": null,
+      "Stars": "-",
+      "Verdict": "NEUTRAL"
+    },
+    {
+      "Market": "Goals",
+      "Selection": "BTTS No",
+      "Model%": 50.0,
+      "Market%": 50.0,
+      "Edge_pp": 0.0,
+      "Odds": null,
+      "Stars": "-",
+      "Verdict": "NEUTRAL"
+    },
+    {
+      "Market": "HT Result",
+      "Selection": "Valencia HT",
+      "Model%": 33.3,
+      "Market%": 33.0,
+      "Edge_pp": 0.3,
+      "Odds": null,
+      "Stars": "-",
+      "Verdict": "NEUTRAL"
+    },
+    {
+      "Market": "HT Result",
+      "Selection": "HT Draw",
+      "Model%": 33.3,
+      "Market%": 34.0,
+      "Edge_pp": -0.7,
+      "Odds": null,
+      "Stars": "-",
+      "Verdict": "NEUTRAL"
+    },
+    {
+      "Market": "HT Result",
+      "Selection": "Real Betis HT",
+      "Model%": 33.3,
+      "Market%": 33.0,
+      "Edge_pp": 0.3,
+      "Odds": null,
+      "Stars": "-",
+      "Verdict": "NEUTRAL"
+    }
+  ],
+  "generated_at": "2026-08-25T02:39:00.833424Z"
+}
