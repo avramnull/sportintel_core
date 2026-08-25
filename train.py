@@ -1,48 +1,37 @@
 #!/usr/bin/env python3
 """
-================================================================================
-FOOTBALL DEEP TRAINING — SUPERIOR / EDGE-CONTROL BUILD
-================================================================================
-For GitHub Codespace / local / Colab. Edit CONFIG only. No CLI.
-
-  • High-capacity XGBoost, LightGBM, CatBoost, AdaBoost
-  • Edge controller: overfit gap → stop growth; underfit → deepen
-  • Rich features: form 5/10/20, GD, H2H, odds margin/edge
-  • Per-team folders when focus_teams set; else global/
-  • Writes football_models/ ready for live_match_simulator.py
-
-Run:
-  python train_football_deep_models.py
-================================================================================
+FOOTBALL DEEP TRAINING — MAX POWER
+XGBoost + LightGBM + CatBoost + AdaBoost + RandomForest + PyTorch + TensorFlow
+Edge-controlled capacity, rich features, per-team or global runs.
 """
-
 from __future__ import annotations
 
-import os, sys, json, pickle, traceback, warnings
+import os, sys, json, pickle, traceback, warnings, gc
 from pathlib import Path
 from datetime import datetime
-from typing import Dict, List, Any, Optional
+from typing import Dict, List, Any, Optional, Tuple
 from collections import defaultdict, deque
 
 import numpy as np
 import pandas as pd
 from sklearn.preprocessing import LabelEncoder, StandardScaler
 from sklearn.metrics import log_loss
-from sklearn.ensemble import AdaBoostClassifier
+from sklearn.ensemble import AdaBoostClassifier, RandomForestClassifier
 from sklearn.tree import DecisionTreeClassifier
 
 warnings.filterwarnings("ignore")
+os.environ.setdefault("TF_CPP_MIN_LOG_LEVEL", "2")
 
 # =============================================================================
-# CONFIG — EDIT THIS ONLY
+# CONFIG
 # =============================================================================
-ROOT = "/workspaces/sportintel_core/"
+_SCRIPT_DIR = Path(__file__).resolve().parent
+ROOT = _SCRIPT_DIR if (_SCRIPT_DIR / "master_football_data.parquet").exists() else Path.cwd()
 
 CONFIG = {
-    "parquet_path": "/workspaces/sportintel_core/master_football_data.parquet",
-    "out_dir": "/workspaces/sportintel_core/",
+    "parquet_path": str(ROOT / "master_football_data.parquet"),
+    "out_dir": str(ROOT / "football_models"),
 
-    # Div codes to include ([] = all)
     "train_leagues": [
         "E0", "E1", "E2", "E3", "EC",
         "SP1", "SP2", "I1", "I2", "D1", "D2",
@@ -50,13 +39,10 @@ CONFIG = {
         "SC0", "SC1", "SC2", "SC3",
     ],
 
-    # [] = one GLOBAL model on all teams
-    # non-empty = powerful separate model set per team
+    # [] = GLOBAL only; non-empty = per-team models
     "focus_teams": [
-         "Valencia",
-         "Betis",
-        # "Manchester United",
-        # "Arsenal",
+        "Valencia",
+        "Betis",
     ],
 
     "min_team_matches": 40,
@@ -64,16 +50,24 @@ CONFIG = {
     "seed": 42,
     "n_jobs": max(1, (os.cpu_count() or 2) - 1),
 
-    # Edge / capacity
-    "max_boost_rounds": 2500,
-    "patience_overfit": 60,
-    "overfit_gap_warn": 0.15,      # val - train; above this → stop growth
-    "capacity_growth_steps": 3,    # deepen this many times if underfit
+    "max_boost_rounds": 2000,
+    "patience_overfit": 50,
+    "overfit_gap_warn": 0.15,
+    "capacity_growth_steps": 2,
 
     "use_xgboost": True,
     "use_lightgbm": True,
     "use_catboost": True,
     "use_adaboost": True,
+    "use_random_forest": True,
+    "use_pytorch": True,
+    "use_tensorflow": True,
+
+    # Neural net defaults
+    "nn_epochs": 80,
+    "nn_batch": 256,
+    "nn_patience": 12,
+    "nn_hidden": [128, 64, 32],
 }
 
 LEAGUE_MAP = {
@@ -92,26 +86,22 @@ LEAGUE_MAP = {
 TEAM_ALIASES = {
     "man united": "Manchester United", "manchester utd": "Manchester United",
     "man utd": "Manchester United", "man city": "Manchester City",
-    "manchester city": "Manchester City", "spurs": "Tottenham",
-    "tottenham hotspur": "Tottenham", "nottm forest": "Nottingham Forest",
-    "nottingham forest": "Nottingham Forest", "wolves": "Wolverhampton",
+    "spurs": "Tottenham", "tottenham hotspur": "Tottenham",
+    "nottm forest": "Nottingham Forest", "wolves": "Wolverhampton",
     "wolverhampton wanderers": "Wolverhampton", "west brom": "West Bromwich Albion",
     "sheffield utd": "Sheffield United", "sheff utd": "Sheffield United",
-    "sheffield wednesday": "Sheffield Wednesday", "sheff wed": "Sheffield Wednesday",
     "qpr": "Queens Park Rangers", "ath madrid": "Atletico Madrid",
     "atletico madrid": "Atletico Madrid", "ath bilbao": "Athletic Bilbao",
-    "athletic bilbao": "Athletic Bilbao", "espanyol": "Espanol",
     "celta": "Celta Vigo", "sociedad": "Real Sociedad", "betis": "Real Betis",
-    "bayern munich": "Bayern Munich", "bayern": "Bayern Munich",
+    "real betis": "Real Betis", "bayern munich": "Bayern Munich", "bayern": "Bayern Munich",
     "borussia dortmund": "Dortmund", "bvb": "Dortmund",
     "inter": "Inter", "internazionale": "Inter", "ac milan": "Milan",
     "as roma": "Roma", "paris sg": "Paris SG", "psg": "Paris SG",
-    "psv": "PSV Eindhoven", "sp lisbon": "Sporting Lisbon", "fc porto": "Porto",
-    "brighton and hove albion": "Brighton", "newcastle united": "Newcastle",
-    "west ham united": "West Ham", "leicester city": "Leicester",
-    "leeds united": "Leeds", "ipswich town": "Ipswich", "hull city": "Hull",
-    "coventry city": "Coventry", "norwich city": "Norwich",
-    "crystal palace": "Crystal Palace",
+    "psv": "PSV Eindhoven", "brighton and hove albion": "Brighton",
+    "newcastle united": "Newcastle", "west ham united": "West Ham",
+    "leicester city": "Leicester", "leeds united": "Leeds",
+    "crystal palace": "Crystal Palace", "valencia": "Valencia",
+    "valencia cf": "Valencia",
 }
 
 TARGETS = {
@@ -122,6 +112,7 @@ TARGETS = {
     "dc_1x":     {"col": "DC_1X", "type": "binary"},
     "dc_x2":     {"col": "DC_X2", "type": "binary"},
     "dc_12":     {"col": "DC_12", "type": "binary"},
+    "ht_over15": {"col": "HT_Over1_5", "type": "binary"},
 }
 
 FEATURE_NUM = [
@@ -142,7 +133,7 @@ def log(msg: str) -> None:
     line = f"{datetime.now().strftime('%H:%M:%S')} | {msg}"
     print(line, flush=True)
     try:
-        with open(ROOT / "train_football_deep.log", "a", encoding="utf-8") as f:
+        with open(Path(CONFIG["out_dir"]) / "train.log", "a", encoding="utf-8") as f:
             f.write(line + "\n")
     except Exception:
         pass
@@ -168,6 +159,8 @@ def capacity_params(level: int, base: dict) -> dict:
         p["iterations"] = min(base["iterations"] + level * 400, CONFIG["max_boost_rounds"])
     if "depth" in p:
         p["depth"] = min(base["depth"] + level, 10)
+    if "n_estimators" in p:
+        p["n_estimators"] = min(base["n_estimators"] + level * 100, 800)
     return p
 
 
@@ -192,6 +185,8 @@ def engineer(df: pd.DataFrame) -> pd.DataFrame:
     df["DC_1X"] = df["FTR"].isin(["H", "D"]).astype(float)
     df["DC_X2"] = df["FTR"].isin(["D", "A"]).astype(float)
     df["DC_12"] = df["FTR"].isin(["H", "A"]).astype(float)
+    ht_goals = pd.to_numeric(df.get("HTHG"), errors="coerce").fillna(0) + pd.to_numeric(df.get("HTAG"), errors="coerce").fillna(0)
+    df["HT_Over1_5"] = (ht_goals > 1.5).astype(float)
     df["HomePoints"] = df["FTR"].map({"H": 3, "D": 1, "A": 0})
     df["AwayPoints"] = df["FTR"].map({"H": 0, "D": 1, "A": 3})
 
@@ -295,6 +290,7 @@ def _safe_ll(y, p):
     return float(log_loss(y, p))
 
 
+# ---- Boosting backends (same edge-control pattern) ----
 def train_xgboost(Xtr, ytr, Xva, yva, task, n_classes, out_path):
     import xgboost as xgb
     base = dict(
@@ -306,7 +302,6 @@ def train_xgboost(Xtr, ytr, Xva, yva, task, n_classes, out_path):
         base.update(objective="multi:softprob", num_class=n_classes, eval_metric="mlogloss")
     else:
         base.update(objective="binary:logistic", eval_metric="logloss")
-
     best_model, best_val = None, float("inf")
     for level in range(CONFIG["capacity_growth_steps"] + 1):
         params = capacity_params(level, base)
@@ -319,14 +314,12 @@ def train_xgboost(Xtr, ytr, Xva, yva, task, n_classes, out_path):
         )
         tr_ll, va_ll = _safe_ll(ytr, model.predict(dtr)), _safe_ll(yva, model.predict(dva))
         gap = va_ll - tr_ll
-        log(f"      XGB L{level}  tr={tr_ll:.4f} va={va_ll:.4f} gap={gap:.4f} rounds={model.best_iteration}")
+        log(f"      XGB L{level}  tr={tr_ll:.4f} va={va_ll:.4f} gap={gap:.4f}")
         if va_ll < best_val:
             best_val, best_model = va_ll, model
         if gap > CONFIG["overfit_gap_warn"]:
-            log("      XGB edge: overfit — stop growth")
             break
         if level < CONFIG["capacity_growth_steps"] and gap < 0.06 and tr_ll > 0.50:
-            log("      XGB edge: underfit — grow")
             continue
         break
     best_model.save_model(str(out_path))
@@ -347,31 +340,24 @@ def train_lightgbm(Xtr, ytr, Xva, yva, task, n_classes, out_path):
         base.update(objective="multiclass", num_class=int(n_classes), metric="multi_logloss")
     else:
         base.update(objective="binary", metric="binary_logloss")
-
     best_model, best_val = None, float("inf")
     for level in range(CONFIG["capacity_growth_steps"] + 1):
         params = capacity_params(level, base)
-        params["reg_lambda"] = base["reg_lambda"] + level * 0.4
         dtr = lgb.Dataset(Xtr, label=ytr, free_raw_data=False)
         dva = lgb.Dataset(Xva, label=yva, reference=dtr, free_raw_data=False)
         model = lgb.train(
             params, dtr, num_boost_round=CONFIG["max_boost_rounds"],
             valid_sets=[dtr, dva], valid_names=["train", "val"],
-            callbacks=[
-                lgb.early_stopping(CONFIG["patience_overfit"], verbose=False),
-                lgb.log_evaluation(0),
-            ],
+            callbacks=[lgb.early_stopping(CONFIG["patience_overfit"], verbose=False), lgb.log_evaluation(0)],
         )
         tr_ll, va_ll = _safe_ll(ytr, model.predict(Xtr)), _safe_ll(yva, model.predict(Xva))
         gap = va_ll - tr_ll
-        log(f"      LGBM L{level} tr={tr_ll:.4f} va={va_ll:.4f} gap={gap:.4f} rounds={model.best_iteration}")
+        log(f"      LGBM L{level} tr={tr_ll:.4f} va={va_ll:.4f} gap={gap:.4f}")
         if va_ll < best_val:
             best_val, best_model = va_ll, model
         if gap > CONFIG["overfit_gap_warn"]:
-            log("      LGBM edge: overfit — stop")
             break
         if level < CONFIG["capacity_growth_steps"] and gap < 0.06 and tr_ll > 0.50:
-            log("      LGBM edge: underfit — grow")
             continue
         break
     best_model.save_model(str(out_path))
@@ -381,7 +367,7 @@ def train_lightgbm(Xtr, ytr, Xva, yva, task, n_classes, out_path):
 def train_catboost(Xtr, ytr, Xva, yva, task, n_classes, out_path):
     from catboost import CatBoostClassifier, Pool
     base = dict(
-        depth=8, learning_rate=0.03, iterations=2000, l2_leaf_reg=4.0,
+        depth=8, learning_rate=0.03, iterations=1800, l2_leaf_reg=4.0,
         random_seed=CONFIG["seed"], od_type="Iter", od_wait=CONFIG["patience_overfit"],
         verbose=False, thread_count=CONFIG["n_jobs"], allow_writing_files=False,
         loss_function="MultiClass" if task == "multiclass" else "Logloss",
@@ -389,7 +375,6 @@ def train_catboost(Xtr, ytr, Xva, yva, task, n_classes, out_path):
     best_model, best_val = None, float("inf")
     for level in range(CONFIG["capacity_growth_steps"] + 1):
         params = capacity_params(level, base)
-        params["l2_leaf_reg"] = base["l2_leaf_reg"] + level * 1.0
         keys = ("depth", "learning_rate", "iterations", "l2_leaf_reg", "random_seed",
                 "od_type", "od_wait", "verbose", "thread_count", "allow_writing_files", "loss_function")
         model = CatBoostClassifier(**{k: params[k] for k in keys if k in params})
@@ -401,10 +386,8 @@ def train_catboost(Xtr, ytr, Xva, yva, task, n_classes, out_path):
         if va_ll < best_val:
             best_val, best_model = va_ll, model
         if gap > CONFIG["overfit_gap_warn"]:
-            log("      CAT edge: overfit — stop")
             break
         if level < CONFIG["capacity_growth_steps"] and gap < 0.06 and tr_ll > 0.50:
-            log("      CAT edge: underfit — grow")
             continue
         break
     best_model.save_model(str(out_path))
@@ -412,8 +395,8 @@ def train_catboost(Xtr, ytr, Xva, yva, task, n_classes, out_path):
 
 
 def train_adaboost(Xtr, ytr, Xva, yva, task, out_path):
-    Xtr = np.nan_to_num(np.asarray(Xtr, dtype=np.float64), nan=0.0, posinf=0.0, neginf=0.0)
-    Xva = np.nan_to_num(np.asarray(Xva, dtype=np.float64), nan=0.0, posinf=0.0, neginf=0.0)
+    Xtr = np.nan_to_num(np.asarray(Xtr, dtype=np.float64), nan=0.0)
+    Xva = np.nan_to_num(np.asarray(Xva, dtype=np.float64), nan=0.0)
     ytr, yva = np.asarray(ytr).astype(int), np.asarray(yva).astype(int)
     best_model, best_val = None, float("inf")
     for level in range(CONFIG["capacity_growth_steps"] + 1):
@@ -421,19 +404,14 @@ def train_adaboost(Xtr, ytr, Xva, yva, task, out_path):
         n_est = min(150 + level * 50, 350)
         tree = DecisionTreeClassifier(max_depth=depth, min_samples_leaf=15 + level * 5, random_state=CONFIG["seed"])
         try:
-            model = AdaBoostClassifier(
-                estimator=tree, n_estimators=n_est, learning_rate=0.4,
-                algorithm="SAMME", random_state=CONFIG["seed"],
-            )
+            model = AdaBoostClassifier(estimator=tree, n_estimators=n_est, learning_rate=0.4,
+                                       algorithm="SAMME", random_state=CONFIG["seed"])
         except TypeError:
-            model = AdaBoostClassifier(
-                base_estimator=tree, n_estimators=n_est, learning_rate=0.4,
-                algorithm="SAMME", random_state=CONFIG["seed"],
-            )
+            model = AdaBoostClassifier(base_estimator=tree, n_estimators=n_est, learning_rate=0.4,
+                                       algorithm="SAMME", random_state=CONFIG["seed"])
         model.fit(Xtr, ytr)
         tr_p, va_p = model.predict_proba(Xtr), model.predict_proba(Xva)
         if not (np.isfinite(tr_p).all() and np.isfinite(va_p).all()):
-            log("      ADA NaN — skip")
             break
         tr_ll, va_ll = _safe_ll(ytr, tr_p), _safe_ll(yva, va_p)
         gap = va_ll - tr_ll
@@ -452,6 +430,167 @@ def train_adaboost(Xtr, ytr, Xva, yva, task, out_path):
     return True
 
 
+def train_random_forest(Xtr, ytr, Xva, yva, task, out_path):
+    Xtr = np.nan_to_num(np.asarray(Xtr, dtype=np.float64), nan=0.0)
+    Xva = np.nan_to_num(np.asarray(Xva, dtype=np.float64), nan=0.0)
+    ytr, yva = np.asarray(ytr).astype(int), np.asarray(yva).astype(int)
+    best_model, best_val = None, float("inf")
+    for level in range(CONFIG["capacity_growth_steps"] + 1):
+        n_est = min(200 + level * 150, 700)
+        depth = min(12 + level * 2, 20)
+        model = RandomForestClassifier(
+            n_estimators=n_est, max_depth=depth, min_samples_leaf=4,
+            max_features="sqrt", n_jobs=CONFIG["n_jobs"],
+            random_state=CONFIG["seed"] + level, class_weight="balanced_subsample",
+        )
+        model.fit(Xtr, ytr)
+        tr_ll = _safe_ll(ytr, model.predict_proba(Xtr))
+        va_ll = _safe_ll(yva, model.predict_proba(Xva))
+        gap = va_ll - tr_ll
+        log(f"      RF  L{level}  tr={tr_ll:.4f} va={va_ll:.4f} gap={gap:.4f} trees={n_est}")
+        if va_ll < best_val:
+            best_val, best_model = va_ll, model
+        if gap > CONFIG["overfit_gap_warn"] + 0.08:
+            break
+        if level < CONFIG["capacity_growth_steps"] and gap < 0.05 and tr_ll > 0.45:
+            continue
+        break
+    with open(out_path, "wb") as f:
+        pickle.dump(best_model, f)
+    return True
+
+
+def train_pytorch(Xtr, ytr, Xva, yva, task, n_classes, out_path):
+    import torch
+    import torch.nn as nn
+    from torch.utils.data import TensorDataset, DataLoader
+
+    torch.manual_seed(CONFIG["seed"])
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    Xtr_t = torch.tensor(Xtr, dtype=torch.float32)
+    Xva_t = torch.tensor(Xva, dtype=torch.float32)
+    if task == "multiclass":
+        ytr_t = torch.tensor(ytr, dtype=torch.long)
+        yva_t = torch.tensor(yva, dtype=torch.long)
+        out_dim = n_classes
+    else:
+        ytr_t = torch.tensor(ytr, dtype=torch.float32).unsqueeze(1)
+        yva_t = torch.tensor(yva, dtype=torch.float32).unsqueeze(1)
+        out_dim = 1
+
+    in_dim = Xtr.shape[1]
+    hidden = CONFIG["nn_hidden"]
+
+    class MLP(nn.Module):
+        def __init__(self):
+            super().__init__()
+            layers = []
+            prev = in_dim
+            for h in hidden:
+                layers += [nn.Linear(prev, h), nn.BatchNorm1d(h), nn.ReLU(), nn.Dropout(0.25)]
+                prev = h
+            layers.append(nn.Linear(prev, out_dim))
+            self.net = nn.Sequential(*layers)
+
+        def forward(self, x):
+            return self.net(x)
+
+    model = MLP().to(device)
+    opt = torch.optim.AdamW(model.parameters(), lr=1e-3, weight_decay=1e-4)
+    sched = torch.optim.lr_scheduler.ReduceLROnPlateau(opt, patience=4, factor=0.5)
+    crit = nn.CrossEntropyLoss() if task == "multiclass" else nn.BCEWithLogitsLoss()
+
+    loader = DataLoader(TensorDataset(Xtr_t, ytr_t), batch_size=CONFIG["nn_batch"], shuffle=True)
+    best_state, best_val, patience = None, float("inf"), 0
+
+    for epoch in range(CONFIG["nn_epochs"]):
+        model.train()
+        for xb, yb in loader:
+            xb, yb = xb.to(device), yb.to(device)
+            opt.zero_grad()
+            logits = model(xb)
+            loss = crit(logits, yb)
+            loss.backward()
+            opt.step()
+        model.eval()
+        with torch.no_grad():
+            v_logits = model(Xva_t.to(device))
+            if task == "multiclass":
+                v_prob = torch.softmax(v_logits, dim=1).cpu().numpy()
+                va_ll = _safe_ll(yva, v_prob)
+            else:
+                v_prob = torch.sigmoid(v_logits).cpu().numpy().ravel()
+                va_ll = _safe_ll(yva, v_prob)
+        sched.step(va_ll)
+        if va_ll < best_val - 1e-4:
+            best_val = va_ll
+            best_state = {k: v.cpu().clone() for k, v in model.state_dict().items()}
+            patience = 0
+        else:
+            patience += 1
+            if patience >= CONFIG["nn_patience"]:
+                break
+
+    if best_state:
+        model.load_state_dict(best_state)
+    log(f"      TORCH    va={best_val:.4f} epochs~{epoch+1}")
+    # save full checkpoint for inference
+    torch.save({
+        "state_dict": model.state_dict(),
+        "in_dim": in_dim,
+        "hidden": hidden,
+        "out_dim": out_dim,
+        "task": task,
+        "n_classes": n_classes if task == "multiclass" else 2,
+    }, out_path)
+    return True
+
+
+def train_tensorflow(Xtr, ytr, Xva, yva, task, n_classes, out_path):
+    import tensorflow as tf
+    from tensorflow import keras
+    from tensorflow.keras import layers
+
+    tf.random.set_seed(CONFIG["seed"])
+    in_dim = Xtr.shape[1]
+    hidden = CONFIG["nn_hidden"]
+
+    inputs = keras.Input(shape=(in_dim,))
+    x = inputs
+    for h in hidden:
+        x = layers.Dense(h, activation="relu")(x)
+        x = layers.BatchNormalization()(x)
+        x = layers.Dropout(0.25)(x)
+    if task == "multiclass":
+        outputs = layers.Dense(n_classes, activation="softmax")(x)
+        loss = "sparse_categorical_crossentropy"
+    else:
+        outputs = layers.Dense(1, activation="sigmoid")(x)
+        loss = "binary_crossentropy"
+        ytr = ytr.astype(np.float32)
+        yva = yva.astype(np.float32)
+
+    model = keras.Model(inputs, outputs)
+    model.compile(optimizer=keras.optimizers.Adam(1e-3), loss=loss)
+    cb = [
+        keras.callbacks.EarlyStopping(monitor="val_loss", patience=CONFIG["nn_patience"], restore_best_weights=True),
+        keras.callbacks.ReduceLROnPlateau(monitor="val_loss", patience=4, factor=0.5),
+    ]
+    hist = model.fit(
+        Xtr, ytr, validation_data=(Xva, yva),
+        epochs=CONFIG["nn_epochs"], batch_size=CONFIG["nn_batch"],
+        verbose=0, callbacks=cb,
+    )
+    va_loss = min(hist.history["val_loss"])
+    log(f"      TF       va_loss={va_loss:.4f}")
+    model.save(str(out_path))
+    # meta alongside
+    meta = {"task": task, "n_classes": int(n_classes) if task == "multiclass" else 2, "in_dim": in_dim}
+    with open(str(out_path) + ".meta.json", "w") as f:
+        json.dump(meta, f)
+    return True
+
+
 def train_one_target(train_df, val_df, target_key, models_dir, preproc_dir):
     cfg = TARGETS[target_key]
     task = cfg["type"]
@@ -460,15 +599,14 @@ def train_one_target(train_df, val_df, target_key, models_dir, preproc_dir):
     Xtr, ytr, feat_names, le_y, le_div = prepare_xy(train_df, target_key)
     if task == "multiclass" and le_y is not None:
         val_sub = val_df[val_df[cfg["col"]].astype(str).isin(set(le_y.classes_))].copy()
-    else:
-        val_sub = val_df
-    Xva, yva, _, _, _ = prepare_xy(val_sub, target_key)
-    if task == "multiclass" and le_y is not None:
-        yva = le_y.transform(
-            val_sub.dropna(subset=[cfg["col"]])[cfg["col"]].astype(str).values[: len(Xva)]
-        )
+        Xva, yva_raw, _, _, _ = prepare_xy(val_sub, target_key)
+        y_series = val_sub.dropna(subset=[cfg["col"]])[cfg["col"]].astype(str)
+        y_series = y_series[y_series.isin(le_y.classes_)]
+        yva = le_y.transform(y_series.values)
         m = min(len(Xva), len(yva))
         Xva, yva = Xva[:m], yva[:m]
+    else:
+        Xva, yva, _, _, _ = prepare_xy(val_df, target_key)
 
     n_classes = int(len(np.unique(ytr))) if task == "multiclass" else 2
     log(f"    {target_key}: n_train={len(ytr)} n_val={len(yva)} classes={n_classes} feats={Xtr.shape[1]}")
@@ -492,44 +630,39 @@ def train_one_target(train_df, val_df, target_key, models_dir, preproc_dir):
     with open(preproc_dir / f"features_{target_key}.json", "w") as f:
         json.dump(feat_names, f)
 
-    for flag, name, fn, ext in [
-        ("use_xgboost", "xgboost", train_xgboost, f"xgb_{target_key}.json"),
-        ("use_lightgbm", "lightgbm", train_lightgbm, f"lgbm_{target_key}.txt"),
-        ("use_catboost", "catboost", train_catboost, f"cat_{target_key}.cbm"),
-    ]:
-        if CONFIG[flag]:
-            try:
-                p = models_dir / ext
-                if name == "xgboost":
-                    fn(Xtr_s, ytr, Xva_s, yva, task, n_classes, p)
-                elif name == "lightgbm":
-                    fn(Xtr_s, ytr, Xva_s, yva, task, n_classes, p)
-                else:
-                    fn(Xtr_s, ytr, Xva_s, yva, task, n_classes, p)
-                saved[name] = str(p)
-            except Exception as e:
-                log(f"      {name.upper()} FAILED: {e}")
-                traceback.print_exc()
-
-    if CONFIG["use_adaboost"]:
+    backends = [
+        ("use_xgboost", "xgboost", lambda p: train_xgboost(Xtr_s, ytr, Xva_s, yva, task, n_classes, p), f"xgb_{target_key}.json"),
+        ("use_lightgbm", "lightgbm", lambda p: train_lightgbm(Xtr_s, ytr, Xva_s, yva, task, n_classes, p), f"lgbm_{target_key}.txt"),
+        ("use_catboost", "catboost", lambda p: train_catboost(Xtr_s, ytr, Xva_s, yva, task, n_classes, p), f"cat_{target_key}.cbm"),
+        ("use_adaboost", "adaboost", lambda p: train_adaboost(Xtr_s, ytr, Xva_s, yva, task, p), f"ada_{target_key}.pkl"),
+        ("use_random_forest", "random_forest", lambda p: train_random_forest(Xtr_s, ytr, Xva_s, yva, task, p), f"rf_{target_key}.pkl"),
+        ("use_pytorch", "pytorch", lambda p: train_pytorch(Xtr_s, ytr, Xva_s, yva, task, n_classes, p), f"torch_{target_key}.pt"),
+        ("use_tensorflow", "tensorflow", lambda p: train_tensorflow(Xtr_s, ytr, Xva_s, yva, task, n_classes, p), f"tf_{target_key}.keras"),
+    ]
+    for flag, name, fn, fname in backends:
+        if not CONFIG.get(flag):
+            continue
         try:
-            p = models_dir / f"ada_{target_key}.pkl"
-            train_adaboost(Xtr_s, ytr, Xva_s, yva, task, p)
-            saved["adaboost"] = str(p)
+            p = models_dir / fname
+            fn(p)
+            saved[name] = str(p)
         except Exception as e:
-            log(f"      ADA FAILED: {e}")
+            log(f"      {name.upper()} FAILED: {e}")
+            traceback.print_exc()
 
     return saved
 
 
 def main():
+    out_root = Path(CONFIG["out_dir"])
+    out_root.mkdir(parents=True, exist_ok=True)
     try:
-        open(ROOT / "train_football_deep.log", "w").close()
+        open(out_root / "train.log", "w").close()
     except Exception:
         pass
 
     log("=" * 64)
-    log("FOOTBALL TRAINING — SUPERIOR / EDGE CONTROL")
+    log("FOOTBALL TRAINING — MAX POWER (RF + Torch + TF + Boosters)")
     log("=" * 64)
 
     pq_path = Path(CONFIG["parquet_path"])
@@ -537,8 +670,6 @@ def main():
         log(f"ERROR: parquet not found: {pq_path}")
         sys.exit(1)
 
-    out_root = Path(CONFIG["out_dir"])
-    out_root.mkdir(parents=True, exist_ok=True)
     map_dir = out_root / "mappings"
     map_dir.mkdir(parents=True, exist_ok=True)
 
@@ -591,10 +722,7 @@ def main():
         "parquet": str(pq_path),
         "n_teams_total": len(team2id),
         "leagues": LEAGUE_MAP,
-        "config": {k: CONFIG[k] for k in (
-            "focus_teams", "train_leagues", "val_fraction",
-            "max_boost_rounds", "patience_overfit", "overfit_gap_warn", "capacity_growth_steps",
-        )},
+        "backends": [k.replace("use_", "") for k, v in CONFIG.items() if k.startswith("use_") and v],
         "runs": {},
     }
 
@@ -642,13 +770,14 @@ def main():
         }
         with open(run_dir / "registry.json", "w") as f:
             json.dump(registry["runs"][run_name], f, indent=2)
+        gc.collect()
 
     with open(out_root / "model_registry.json", "w") as f:
         json.dump(registry, f, indent=2)
 
     log("=" * 64)
     log(f"DONE -> {out_root / 'model_registry.json'}")
-    log("Layout: football_models/mappings/  global/  teams/<slug>/")
+    log("Backends: " + ", ".join(registry["backends"]))
     log("=" * 64)
 
 
