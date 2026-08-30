@@ -82,21 +82,27 @@ if os.environ.get("MIN_TEAM_MATCHES"):
 if os.environ.get("MAX_BOOST_ROUNDS"):
     CONFIG["max_boost_rounds"] = int(os.environ["MAX_BOOST_ROUNDS"])
 if os.environ.get("DAILY_LIGHT", "").strip() in ("1", "true", "yes"):
-    # Powerfully fast daily: keep torch+tf, slash capacity
-    CONFIG["capacity_growth_steps"] = 0          # single capacity pass
-    CONFIG["max_boost_rounds"] = min(int(os.environ.get("MAX_BOOST_ROUNDS", "400")), 500)
-    CONFIG["patience_overfit"] = 25
-    CONFIG["nn_epochs"] = int(os.environ.get("NN_EPOCHS", "18"))
-    CONFIG["nn_patience"] = 6
+    # Lightning daily: deep nets kept, capacity cut, parallel teams
+    CONFIG["capacity_growth_steps"] = 0
+    CONFIG["max_boost_rounds"] = min(int(os.environ.get("MAX_BOOST_ROUNDS", "350")), 400)
+    CONFIG["patience_overfit"] = 20
+    CONFIG["nn_epochs"] = int(os.environ.get("NN_EPOCHS", "15"))
+    CONFIG["nn_patience"] = 5
     CONFIG["nn_batch"] = 512
-    CONFIG["nn_hidden"] = [64, 32]               # smaller MLP
-    # skip slow ensembles on daily unless forced
+    CONFIG["nn_hidden"] = [64, 32]
+    CONFIG["n_jobs"] = max(1, min(2, (os.cpu_count() or 2)))  # leave cores for workers
+    # AdaBoost off (slow + sklearn churn); RF on but light
     if os.environ.get("USE_ADABOOST", "").strip() not in ("1", "true", "yes"):
         CONFIG["use_adaboost"] = False
-    if os.environ.get("USE_RANDOM_FOREST", "").strip() not in ("1", "true", "yes"):
+    if os.environ.get("USE_RANDOM_FOREST", "").strip() in ("0", "false", "no"):
         CONFIG["use_random_forest"] = False
-    print("[train] DAILY_LIGHT FAST: boost<=500, nn_epochs=%s, hidden=%s, ada/rf off unless forced"
-          % (CONFIG["nn_epochs"], CONFIG["nn_hidden"]))
+    else:
+        CONFIG["use_random_forest"] = True  # keep RF for ensemble power
+    print("[train] DAILY_LIGHT LIGHTNING: boost<=%s nn_epochs=%s hidden=%s workers parallel"
+          % (CONFIG["max_boost_rounds"], CONFIG["nn_epochs"], CONFIG["nn_hidden"]))
+
+# Parallel team workers (ProcessPool). 1 = sequential.
+CONFIG["train_workers"] = int(os.environ.get("TRAIN_WORKERS", "1"))
 
 # Explicit backend overrides (env wins)
 for flag, key in (
@@ -472,6 +478,10 @@ def train_random_forest(Xtr, ytr, Xva, yva, task, out_path):
     for level in range(CONFIG["capacity_growth_steps"] + 1):
         n_est = min(200 + level * 150, 700)
         depth = min(12 + level * 2, 20)
+        # Daily lightning: fewer trees still strong
+        if CONFIG.get("capacity_growth_steps", 2) == 0:
+            n_est = min(n_est, 120)
+            depth = min(depth, 12)
         model = RandomForestClassifier(
             n_estimators=n_est, max_depth=depth, min_samples_leaf=4,
             max_features="sqrt", n_jobs=CONFIG["n_jobs"],
@@ -687,8 +697,63 @@ def train_one_target(train_df, val_df, target_key, models_dir, preproc_dir):
     return saved
 
 
+
+def _train_team_job(args):
+    """Worker for parallel daily team training (picklable)."""
+    focus, run_df_dict, team2id_focus_tid, out_root_str, min_matches = args
+    import shutil
+    out_root = Path(out_root_str)
+    run_name = slug(focus)
+    run_dir = out_root / "teams" / run_name
+    run_df = pd.DataFrame(run_df_dict)
+    if "Date" in run_df.columns:
+        run_df["Date"] = pd.to_datetime(run_df["Date"], errors="coerce")
+    log(f"--- Team: {focus}  matches={len(run_df)}  -> {run_dir}")
+    if len(run_df) < min_matches:
+        log(f"    SKIP (< {min_matches})")
+        return run_name, {"team": focus, "skipped": True, "n": len(run_df)}
+
+    models_dir = run_dir / "models"
+    preproc_dir = run_dir / "preprocessors"
+    if models_dir.exists():
+        shutil.rmtree(models_dir)
+    if preproc_dir.exists():
+        shutil.rmtree(preproc_dir)
+    models_dir.mkdir(parents=True, exist_ok=True)
+    preproc_dir.mkdir(parents=True, exist_ok=True)
+
+    split = int(len(run_df) * (1 - CONFIG["val_fraction"]))
+    split = max(30, min(split, len(run_df) - 20))
+    train_df, val_df = run_df.iloc[:split], run_df.iloc[split:]
+    log(f"    split train={len(train_df)} val={len(val_df)}")
+
+    run_targets = {}
+    for tkey in TARGETS:
+        try:
+            saved = train_one_target(train_df, val_df, tkey, models_dir, preproc_dir)
+            run_targets[tkey] = saved
+            log(f"    {tkey} OK -> {list(saved.keys())}")
+        except Exception as e:
+            log(f"    {tkey} FAILED: {e}")
+            traceback.print_exc()
+            run_targets[tkey] = {"error": str(e)}
+
+    entry = {
+        "team": focus,
+        "n_train": len(train_df),
+        "n_val": len(val_df),
+        "dir": str(run_dir),
+        "targets": run_targets,
+    }
+    with open(run_dir / "registry.json", "w") as f:
+        json.dump(entry, f, indent=2)
+    gc.collect()
+    return run_name, entry
+
+
 def main():
     out_root = Path(CONFIG["out_dir"])
+
     out_root.mkdir(parents=True, exist_ok=True)
     try:
         open(out_root / "train.log", "w").close()
@@ -764,59 +829,100 @@ def main():
         "runs": {},
     }
 
+    workers = max(1, int(CONFIG.get("train_workers", 1)))
+    # Global always sequential
+    team_jobs = []
     for focus in focus_list:
         if focus is None:
             run_name, run_df = "global", labeled
             run_dir = out_root / "global"
-        else:
-            run_name = slug(focus)
-            tid = team2id[focus]
-            run_df = labeled[(labeled["HomeTeamId"] == tid) | (labeled["AwayTeamId"] == tid)].copy()
-            run_dir = out_root / "teams" / run_name
-            log(f"--- Team: {focus}  matches={len(run_df)}  -> {run_dir}")
-            if len(run_df) < CONFIG["min_team_matches"]:
-                log(f"    SKIP (< {CONFIG['min_team_matches']})")
-                continue
+            models_dir = run_dir / "models"
+            preproc_dir = run_dir / "preprocessors"
+            import shutil
+            if models_dir.exists():
+                shutil.rmtree(models_dir)
+            if preproc_dir.exists():
+                shutil.rmtree(preproc_dir)
+            models_dir.mkdir(parents=True, exist_ok=True)
+            preproc_dir.mkdir(parents=True, exist_ok=True)
+            split = int(len(run_df) * (1 - CONFIG["val_fraction"]))
+            split = max(30, min(split, len(run_df) - 20))
+            train_df, val_df = run_df.iloc[:split], run_df.iloc[split:]
+            log(f"--- GLOBAL  matches={len(run_df)} train={len(train_df)} val={len(val_df)}")
+            run_targets = {}
+            for tkey in TARGETS:
+                try:
+                    saved = train_one_target(train_df, val_df, tkey, models_dir, preproc_dir)
+                    run_targets[tkey] = saved
+                    log(f"    {tkey} OK -> {list(saved.keys())}")
+                except Exception as e:
+                    log(f"    {tkey} FAILED: {e}")
+                    traceback.print_exc()
+                    run_targets[tkey] = {"error": str(e)}
+            registry["runs"]["global"] = {
+                "team": None, "n_train": len(train_df), "n_val": len(val_df),
+                "dir": str(run_dir), "targets": run_targets,
+            }
+            with open(run_dir / "registry.json", "w") as f:
+                json.dump(registry["runs"]["global"], f, indent=2)
+            gc.collect()
+            continue
 
-        models_dir = run_dir / "models"
-        preproc_dir = run_dir / "preprocessors"
-        # Fresh models: delete any previous weights for this team
-        import shutil
-        if models_dir.exists():
-            shutil.rmtree(models_dir)
-            log(f"    cleared old models: {models_dir}")
-        if preproc_dir.exists():
-            shutil.rmtree(preproc_dir)
-            log(f"    cleared old preprocessors: {preproc_dir}")
-        models_dir.mkdir(parents=True, exist_ok=True)
-        preproc_dir.mkdir(parents=True, exist_ok=True)
-
-        split = int(len(run_df) * (1 - CONFIG["val_fraction"]))
-        split = max(30, min(split, len(run_df) - 20))
-        train_df, val_df = run_df.iloc[:split], run_df.iloc[split:]
-        log(f"    split train={len(train_df)} val={len(val_df)}")
-
-        run_targets = {}
-        for tkey in TARGETS:
-            try:
-                saved = train_one_target(train_df, val_df, tkey, models_dir, preproc_dir)
-                run_targets[tkey] = saved
-                log(f"    {tkey} OK -> {list(saved.keys())}")
-            except Exception as e:
-                log(f"    {tkey} FAILED: {e}")
-                traceback.print_exc()
-                run_targets[tkey] = {"error": str(e)}
-
-        registry["runs"][run_name] = {
-            "team": focus,
-            "n_train": len(train_df),
-            "n_val": len(val_df),
-            "dir": str(run_dir),
-            "targets": run_targets,
+        tid = team2id[focus]
+        run_df = labeled[(labeled["HomeTeamId"] == tid) | (labeled["AwayTeamId"] == tid)].copy()
+        # serialize for workers (avoid huge pickle of full frame)
+        keep = set(FEATURE_NUM) | {
+            "Div", "Date", "HomeTeam", "AwayTeam", "HomeTeamId", "AwayTeamId",
+            "FTR", "HTR", "FTHG", "FTAG", "Over2_5", "BTTS", "DC_1X", "DC_X2", "DC_12",
+            "HT_Over1_5", "HomeTeamCanon", "AwayTeamCanon",
+            "Year", "Month", "DayOfWeek", "IsWeekend",
+            "AvgH", "AvgD", "AvgA", "B365H", "B365D", "B365A",
+            "HomeOddsEdge", "AwayOddsEdge", "LogOddsH", "LogOddsD", "LogOddsA",
+            "ImpH", "ImpD", "ImpA", "OddsMargin",
         }
-        with open(run_dir / "registry.json", "w") as f:
-            json.dump(registry["runs"][run_name], f, indent=2)
-        gc.collect()
+        cols = [
+            c for c in run_df.columns
+            if c in keep
+            or str(c).startswith(("HomeForm", "AwayForm", "H2H", "LogOdds", "Imp", "Odds"))
+        ]
+        # fallback: all columns if filter empty
+        if len(cols) < 10:
+            cols = list(run_df.columns)
+        slim = run_df[cols].copy()
+        team_jobs.append((focus, slim.to_dict(orient="list"), tid, str(out_root), CONFIG["min_team_matches"]))
+
+    if not team_jobs:
+        pass
+    elif workers <= 1 or len(team_jobs) == 1:
+        log(f"Training {len(team_jobs)} teams sequential")
+        for job in team_jobs:
+            name, entry = _train_team_job(job)
+            if not entry.get("skipped"):
+                registry["runs"][name] = entry
+            gc.collect()
+    else:
+        from concurrent.futures import ProcessPoolExecutor, as_completed
+        # Cap workers to avoid RAM blow-up on Actions
+        w = min(workers, len(team_jobs), 4)
+        log(f"Training {len(team_jobs)} teams in parallel workers={w}")
+        # Limit BLAS/OMP threads inside each worker
+        os.environ.setdefault("OMP_NUM_THREADS", "1")
+        os.environ.setdefault("MKL_NUM_THREADS", "1")
+        os.environ.setdefault("OPENBLAS_NUM_THREADS", "1")
+        os.environ.setdefault("TF_NUM_INTRAOP_THREADS", "1")
+        os.environ.setdefault("TF_NUM_INTEROP_THREADS", "1")
+        with ProcessPoolExecutor(max_workers=w) as pool:
+            futs = {pool.submit(_train_team_job, job): job[0] for job in team_jobs}
+            for fut in as_completed(futs):
+                team = futs[fut]
+                try:
+                    name, entry = fut.result()
+                    if not entry.get("skipped"):
+                        registry["runs"][name] = entry
+                    log(f"  [done] {team}")
+                except Exception as e:
+                    log(f"  [FAIL] {team}: {e}")
+                    traceback.print_exc()
 
     with open(out_root / "model_registry.json", "w") as f:
         json.dump(registry, f, indent=2)
