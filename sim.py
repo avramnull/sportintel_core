@@ -647,10 +647,8 @@ def run_one_match(match_cfg: dict, quiet: bool = False, allow_market_only: bool 
     log(f"Resolved: {league_name} ({div_code}) | {home_canon} vs {away_canon}")
 
     run_dirs = collect_run_dirs(home_canon, away_canon, strict=False)
-    model_source = " + ".join(l for _, l in run_dirs) if run_dirs else "market-only"
-    log(f"Using models: {model_source}")
-
     runs_loaded = []
+    skipped = []
     for run_dir, label in run_dirs:
         try:
             targets = load_run_targets(run_dir)
@@ -658,7 +656,16 @@ def run_one_match(match_cfg: dict, quiet: bool = False, allow_market_only: bool 
             runs_loaded.append((run_dir, label, targets, scaler, le_div, feature_names))
             log(f"  loaded {label}")
         except Exception as e:
+            skipped.append(f"{label}: {e}")
             log(f"  SKIP {label}: {e}")
+
+    if runs_loaded:
+        model_source = " + ".join(l for _, l, *_ in runs_loaded)
+    elif run_dirs:
+        model_source = "market-only (models found but failed to load)"
+    else:
+        model_source = f"market-only (no models for {home_canon} / {away_canon})"
+    log(f"Using models: {model_source}")
 
     if not runs_loaded and not allow_market_only:
         raise RuntimeError("No usable model runs")

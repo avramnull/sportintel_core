@@ -31,7 +31,7 @@ jobs:
         env:
           FOOTBALL_SEASON: "2627"
           FOOTBALL_SEASON_LABEL: "2026/2027"
-          MAX_TRAIN_TEAMS: "8"
+          MAX_TRAIN_TEAMS: "28"
           MIN_TEAM_MATCHES: "40"
           DAILY_LIGHT: "1"
           MAX_BOOST_ROUNDS: "800"

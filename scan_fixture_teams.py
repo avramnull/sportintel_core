@@ -36,7 +36,7 @@ PRIORITY_DIVS = {
     "SC0": 50, "E2": 30, "E3": 20, "EC": 15,
 }
 
-MAX_TRAIN = int(os.environ.get("MAX_TRAIN_TEAMS", "12"))
+MAX_TRAIN = int(os.environ.get("MAX_TRAIN_TEAMS", "28"))
 MIN_MATCHES = int(os.environ.get("MIN_TEAM_MATCHES", "40"))
 
 
