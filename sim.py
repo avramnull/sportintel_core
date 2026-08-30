@@ -19,9 +19,10 @@ import pandas as pd
 
 warnings.filterwarnings("ignore")
 # Force CPU — GitHub Actions has no GPU; avoids CUDA hang/spam
-os.environ.setdefault("CUDA_VISIBLE_DEVICES", "")
+os.environ["CUDA_VISIBLE_DEVICES"] = ""
 os.environ.setdefault("TF_CPP_MIN_LOG_LEVEL", "3")
 os.environ.setdefault("TF_ENABLE_ONEDNN_OPTS", "0")
+os.environ.setdefault("CATBOOST_FORCE_CPU", "1")
 
 # =============================================================================
 # MATCH CONFIG — EDIT ONLY THIS
@@ -216,6 +217,7 @@ _XGB_CACHE: Dict[str, Any] = {}
 _LGBM_CACHE: Dict[str, Any] = {}
 _CAT_CACHE: Dict[str, Any] = {}
 _SK_CACHE: Dict[str, Any] = {}
+_HIST_CACHE: Dict[str, Any] = {}  # parquet history loaded once per process
 
 
 def _predict_torch(path, X):
@@ -722,14 +724,30 @@ def run_one_match(match_cfg: dict, quiet: bool = False, allow_market_only: bool 
     hist_df = None
     if PARQUET_PATH.exists() and runs_loaded:
         try:
-            hist_df = pd.read_parquet(PARQUET_PATH, columns=["Date", "HomeTeam", "AwayTeam", "FTHG", "FTAG", "FTR", "Div"])
-            hist_df["Date"] = pd.to_datetime(hist_df["Date"], errors="coerce")
-            hist_df["HomeTeamCanon"] = hist_df["HomeTeam"].map(lambda x: normalize_team(x, aliases))
-            hist_df["AwayTeamCanon"] = hist_df["AwayTeam"].map(lambda x: normalize_team(x, aliases))
-            hist_df["HomeTeamId"] = hist_df["HomeTeamCanon"].map(team2id)
-            hist_df["AwayTeamId"] = hist_df["AwayTeamCanon"].map(team2id)
-            hist_df["HomePoints"] = hist_df["FTR"].map({"H": 3, "D": 1, "A": 0})
-            hist_df["AwayPoints"] = hist_df["FTR"].map({"H": 0, "D": 1, "A": 3})
+            cache_key = str(PARQUET_PATH.resolve())
+            hist_df = _HIST_CACHE.get(cache_key)
+            if hist_df is None:
+                log("Loading history parquet once…")
+                hist_df = pd.read_parquet(
+                    PARQUET_PATH,
+                    columns=["Date", "HomeTeam", "AwayTeam", "FTHG", "FTAG", "FTR", "Div"],
+                )
+                hist_df["Date"] = pd.to_datetime(hist_df["Date"], errors="coerce")
+                # vectorized-ish: map via team_mapping once
+                tmap = {}
+                def _canon(x):
+                    s = str(x) if x is not None else ""
+                    if s not in tmap:
+                        tmap[s] = normalize_team(s, aliases)
+                    return tmap[s]
+                hist_df["HomeTeamCanon"] = hist_df["HomeTeam"].map(_canon)
+                hist_df["AwayTeamCanon"] = hist_df["AwayTeam"].map(_canon)
+                hist_df["HomeTeamId"] = hist_df["HomeTeamCanon"].map(team2id)
+                hist_df["AwayTeamId"] = hist_df["AwayTeamCanon"].map(team2id)
+                hist_df["HomePoints"] = hist_df["FTR"].map({"H": 3, "D": 1, "A": 0})
+                hist_df["AwayPoints"] = hist_df["FTR"].map({"H": 0, "D": 1, "A": 3})
+                _HIST_CACHE[cache_key] = hist_df
+                log(f"History cached: {len(hist_df):,} rows")
         except Exception as e:
             log(f"History warning: {e}")
 

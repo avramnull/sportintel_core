@@ -57,7 +57,7 @@ jobs:
           TRAIN_WORKERS: "3"
           # empty TRAIN_DIVS = all leagues with fixtures today; set e.g. E0,SP1,D1,I1,F1 for top-only
           TRAIN_DIVS: ""
-          N_SIMULATIONS: "5000"
+          N_SIMULATIONS: "3000"
           ODDS_BLEND: "0.30"
           SPORTINTEL_PUSH: "1"
           GITHUB_TOKEN: ${{ secrets.SPORTINTEL_PUSH_TOKEN || secrets.GITHUB_TOKEN }}

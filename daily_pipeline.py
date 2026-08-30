@@ -120,7 +120,7 @@ def main():
         print("SKIP_SIM set — skipping simulations")
     else:
         run([sys.executable, "run_fixture_sims.py"], env={
-            "N_SIMULATIONS": os.environ.get("N_SIMULATIONS", "8000"),
+            "N_SIMULATIONS": os.environ.get("N_SIMULATIONS", "3000"),
             "ODDS_BLEND": os.environ.get("ODDS_BLEND", "0.30"),
         })
 

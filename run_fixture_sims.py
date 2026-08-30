@@ -104,12 +104,15 @@ def main():
             "seed": SEED + int(i),
             "odds_blend": ODDS_BLEND,
         }
+        t0 = _time.time()
+        print(f"  [{ok+fail+1}/{len(df)}] {home} vs {away} …", flush=True)
         try:
             payload = sim_mod.run_one_match(match_cfg, quiet=True, allow_market_only=True)
         except Exception as e:
-            print(f"  FAIL {home} vs {away}: {e}")
+            print(f"  FAIL {home} vs {away}: {e}", flush=True)
             fail += 1
             continue
+        print(f"      ok in {_time.time()-t0:.1f}s", flush=True)
 
         key = slug_key(home, away, date_str)
         out_path = SIMS_DIR / f"{key}.json"
@@ -177,7 +180,7 @@ def main():
         "n_teams": len(teams_seen),
     }, indent=2), encoding="utf-8")
 
-    print(f"Done: {ok} ok, {fail} fail → {SIMS_DIR}/index.json")
+    print(f"Done: {ok} ok, {fail} fail in {_time.time()-t0_all:.0f}s → {SIMS_DIR}/index.json")
     secured = [s for s in index if s.get("locked_status") == "SECURED LOCK"]
     print(f"SECURED LOCKs: {len(secured)}")
     for s in secured[:10]:
