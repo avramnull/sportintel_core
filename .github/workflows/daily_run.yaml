@@ -16,6 +16,17 @@ jobs:
         with:
           lfs: true
 
+      - name: Ensure Git LFS files
+        run: |
+          git lfs install
+          git lfs pull
+          ls -lh master_football_data.parquet
+          # fail fast if still a pointer
+          if head -1 master_football_data.parquet | grep -q "git-lfs"; then
+            echo "ERROR: parquet still LFS pointer"
+            exit 1
+          fi
+
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
@@ -31,8 +42,8 @@ jobs:
         env:
           FOOTBALL_SEASON: "2627"
           FOOTBALL_SEASON_LABEL: "2026/2027"
-          MAX_TRAIN_TEAMS: "28"
-          MIN_TEAM_MATCHES: "40"
+          MAX_TRAIN_TEAMS: "0"  # 0 = all unique fixture teams
+          MIN_TEAM_MATCHES: "25"
           DAILY_LIGHT: "1"
           MAX_BOOST_ROUNDS: "800"
           N_SIMULATIONS: "8000"

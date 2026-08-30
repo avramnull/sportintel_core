@@ -42,7 +42,22 @@ def run(cmd, env=None, check=True):
     return r.returncode
 
 
+def ensure_parquet():
+    pq = ROOT / "master_football_data.parquet"
+    if not pq.exists():
+        raise SystemExit(f"Missing {pq}")
+    head = pq.read_bytes()[:64]
+    if head.startswith(b"version https://git-lfs") or pq.stat().st_size < 2000:
+        raise SystemExit(
+            "master_football_data.parquet is a Git LFS pointer — run: git lfs pull\n"
+            "Training/sim cannot run without the real historical parquet."
+        )
+    print(f"Parquet OK: {pq.stat().st_size/1e6:.1f} MB")
+
+
 def main():
+    ensure_parquet()
+
     started = datetime.now(timezone.utc).isoformat()
     print("=" * 64)
     print("DAILY PIPELINE", started)

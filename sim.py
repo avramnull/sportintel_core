@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import json, pickle, warnings, os
 from pathlib import Path
+import team_mapping
 from datetime import datetime
 from typing import Dict, Any, Optional, List, Tuple
 from collections import Counter
@@ -63,27 +64,23 @@ def load_json(p):
         return json.load(f)
 
 
-def normalize_team(name, aliases):
-    s = " ".join(str(name).strip().split())
-    return aliases.get(s.lower(), s.title() if (s.islower() or s.isupper()) else s)
+def normalize_team(name, aliases=None):
+    """Accurate FDC mapping — returns canonical string (status discarded)."""
+    known = None
+    try:
+        known = team_mapping.load_team2id()
+    except Exception:
+        known = None
+    canon, _status = team_mapping.normalize_team(name, aliases, known)
+    return canon
 
 
 def slug(name):
-    return "".join(c if c.isalnum() else "_" for c in name).strip("_").lower()
+    return team_mapping.slug(name)
 
 
-def resolve_league(league_input, league_map):
-    inv = {v.lower(): k for k, v in league_map.items()}
-    s = str(league_input).strip()
-    if s in league_map:
-        return s, league_map[s]
-    if s.lower() in inv:
-        code = inv[s.lower()]
-        return code, league_map[code]
-    for code, name in league_map.items():
-        if s.lower() in name.lower() or name.lower() in s.lower():
-            return code, name
-    raise ValueError(f"Unknown league '{league_input}'")
+def resolve_league(league_input, league_map=None):
+    return team_mapping.resolve_league(league_input)
 
 
 def implied(odds):
@@ -622,22 +619,21 @@ def run_one_match(match_cfg: dict, quiet: bool = False, allow_market_only: bool 
     if not MAP_DIR.exists():
         raise FileNotFoundError(f"Mappings not found: {MAP_DIR}")
 
-    team2id = load_json(MAP_DIR / "team2id.json")
-    league_map = load_json(MAP_DIR / "league_map.json")
-    aliases = load_json(MAP_DIR / "team_aliases.json")
+    team2id = team_mapping.load_team2id()
+    if not team2id and (MAP_DIR / "team2id.json").exists():
+        team2id = load_json(MAP_DIR / "team2id.json")
+    aliases = team_mapping.load_aliases()
 
     # Accept Div code or league name
     league_in = match_cfg.get("league") or match_cfg.get("div") or "E0"
-    try:
-        div_code, league_name = resolve_league(league_in, league_map)
-    except ValueError:
-        div_code = str(league_in).strip()
-        league_name = league_map.get(div_code, div_code)
+    div_code, league_name = resolve_league(league_in)
 
     home_canon = normalize_team(match_cfg["home_team"], aliases)
     away_canon = normalize_team(match_cfg["away_team"], aliases)
-    home_id = team2id.get(home_canon)
-    away_id = team2id.get(away_canon)
+    # case-insensitive id lookup
+    t2_ci = {k.lower(): v for k, v in team2id.items()}
+    home_id = team2id.get(home_canon, t2_ci.get(home_canon.lower()))
+    away_id = team2id.get(away_canon, t2_ci.get(away_canon.lower()))
     if home_id is None or away_id is None:
         if not allow_market_only:
             raise KeyError(f"Team not in map: home={home_canon} away={away_canon}")

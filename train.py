@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import os, sys, json, pickle, traceback, warnings, gc
 from pathlib import Path
+import team_mapping
 from datetime import datetime
 from typing import Dict, List, Any, Optional, Tuple
 from collections import defaultdict, deque
@@ -89,39 +90,9 @@ if os.environ.get("DAILY_LIGHT", "").strip() in ("1", "true", "yes"):
     CONFIG["patience_overfit"] = 40
     print("[train] DAILY_LIGHT mode: xgb/lgbm/cat/ada/rf only, reduced rounds")
 
-LEAGUE_MAP = {
-    "E0": "Premier League", "E1": "Championship", "E2": "League One",
-    "E3": "League Two", "EC": "National League",
-    "SC0": "Scottish Premiership", "SC1": "Scottish Championship",
-    "SC2": "Scottish League One", "SC3": "Scottish League Two",
-    "D1": "Bundesliga", "D2": "2. Bundesliga",
-    "I1": "Serie A", "I2": "Serie B",
-    "SP1": "La Liga", "SP2": "La Liga 2",
-    "F1": "Ligue 1", "F2": "Ligue 2",
-    "N1": "Eredivisie", "B1": "Belgian Pro League",
-    "P1": "Primeira Liga", "T1": "Süper Lig", "G1": "Super League Greece",
-}
+LEAGUE_MAP = dict(team_mapping.LEAGUE_MAP)
 
-TEAM_ALIASES = {
-    "man united": "Manchester United", "manchester utd": "Manchester United",
-    "man utd": "Manchester United", "man city": "Manchester City",
-    "spurs": "Tottenham", "tottenham hotspur": "Tottenham",
-    "nottm forest": "Nottingham Forest", "wolves": "Wolverhampton",
-    "wolverhampton wanderers": "Wolverhampton", "west brom": "West Bromwich Albion",
-    "sheffield utd": "Sheffield United", "sheff utd": "Sheffield United",
-    "qpr": "Queens Park Rangers", "ath madrid": "Atletico Madrid",
-    "atletico madrid": "Atletico Madrid", "ath bilbao": "Athletic Bilbao",
-    "celta": "Celta Vigo", "sociedad": "Real Sociedad", "betis": "Real Betis",
-    "real betis": "Real Betis", "bayern munich": "Bayern Munich", "bayern": "Bayern Munich",
-    "borussia dortmund": "Dortmund", "bvb": "Dortmund",
-    "inter": "Inter", "internazionale": "Inter", "ac milan": "Milan",
-    "as roma": "Roma", "paris sg": "Paris SG", "psg": "Paris SG",
-    "psv": "PSV Eindhoven", "brighton and hove albion": "Brighton",
-    "newcastle united": "Newcastle", "west ham united": "West Ham",
-    "leicester city": "Leicester", "leeds united": "Leeds",
-    "crystal palace": "Crystal Palace", "valencia": "Valencia",
-    "valencia cf": "Valencia",
-}
+TEAM_ALIASES = dict(team_mapping.TEAM_ALIASES)
 
 TARGETS = {
     "ft_result": {"col": "FTR", "type": "multiclass", "classes": ["H", "D", "A"]},
@@ -159,14 +130,19 @@ def log(msg: str) -> None:
 
 
 def normalize_team(name: Any) -> str:
-    if pd.isna(name):
+    if name is None or (isinstance(name, float) and str(name) == "nan"):
         return "UNKNOWN"
-    s = " ".join(str(name).strip().split())
-    return TEAM_ALIASES.get(s.lower(), s.title() if (s.islower() or s.isupper()) else s)
-
+    try:
+        import pandas as _pd
+        if _pd.isna(name):
+            return "UNKNOWN"
+    except Exception:
+        pass
+    canon, _ = team_mapping.normalize_team(str(name), TEAM_ALIASES, None)
+    return canon or "UNKNOWN"
 
 def slug(name: str) -> str:
-    return "".join(c if c.isalnum() else "_" for c in name).strip("_").lower()
+    return team_mapping.slug(name)
 
 
 def capacity_params(level: int, base: dict) -> dict:
@@ -717,6 +693,10 @@ def main():
         json.dump(LEAGUE_MAP, f, indent=2, ensure_ascii=False)
     with open(map_dir / "team_aliases.json", "w", encoding="utf-8") as f:
         json.dump(TEAM_ALIASES, f, indent=2, ensure_ascii=False)
+    try:
+        team_mapping.write_maps(team2id)
+    except Exception as e:
+        log(f"team_mapping.write_maps warn: {e}")
     log(f"Teams mapped: {len(team2id)}")
 
     df = engineer(df)
