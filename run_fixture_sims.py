@@ -110,6 +110,11 @@ def main():
         out_path = SIMS_DIR / f"{key}.json"
         out_path.write_text(json.dumps(payload, indent=2), encoding="utf-8")
         tip = payload.get("locked_tip") or {}
+        rep = payload.get("report") or {}
+        ft = rep.get("ft_sim") or rep.get("ft_model") or {}
+        top_ft = rep.get("top_ft") or []
+        cs1 = f"{top_ft[0][0]} ({top_ft[0][1]})" if top_ft else ""
+        cs2 = f"{top_ft[1][0]} ({top_ft[1][1]})" if len(top_ft) > 1 else ""
         index.append({
             "id": key,
             "file": f"{key}.json",
@@ -120,7 +125,24 @@ def main():
             "away": payload["resolved"]["away"],
             "fixture": f"{payload['resolved']['home']} vs {payload['resolved']['away']}",
             "odds": f"{match_cfg['odds_home']:.2f} / {match_cfg['odds_draw']:.2f} / {match_cfg['odds_away']:.2f}",
+            "odds_h": match_cfg["odds_home"],
+            "odds_d": match_cfg["odds_draw"],
+            "odds_a": match_cfg["odds_away"],
             "models": payload["resolved"]["models"],
+            # rich summary for Sim Lab list
+            "ft_h": round(float(ft.get("H", 0)) * 100, 1) if ft.get("H", 0) <= 1 else round(float(ft.get("H", 0)), 1),
+            "ft_d": round(float(ft.get("D", 0)) * 100, 1) if ft.get("D", 0) <= 1 else round(float(ft.get("D", 0)), 1),
+            "ft_a": round(float(ft.get("A", 0)) * 100, 1) if ft.get("A", 0) <= 1 else round(float(ft.get("A", 0)), 1),
+            "over25": round(float(rep.get("over25_sim") or rep.get("over25_model") or 0) * 100, 1)
+                      if float(rep.get("over25_sim") or rep.get("over25_model") or 0) <= 1
+                      else round(float(rep.get("over25_sim") or rep.get("over25_model") or 0), 1),
+            "btts": round(float(rep.get("btts_sim") or rep.get("btts_model") or 0) * 100, 1)
+                    if float(rep.get("btts_sim") or rep.get("btts_model") or 0) <= 1
+                    else round(float(rep.get("btts_sim") or rep.get("btts_model") or 0), 1),
+            "cs_top": cs1,
+            "cs_second": cs2,
+            "xg_h": (rep.get("xg") or {}).get("home"),
+            "xg_a": (rep.get("xg") or {}).get("away"),
             "locked_status": tip.get("status"),
             "locked_section": tip.get("section"),
             "locked_selection": tip.get("selection"),

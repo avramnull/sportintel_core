@@ -23,7 +23,16 @@
       "locked_model": 85.0,
       "locked_sim": 85.3,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:05:55.214302Z"
+      "generated_at": "2026-08-30T09:05:55.214302Z",
+      "ft_h": 63.9,
+      "ft_d": 21.4,
+      "ft_a": 14.7,
+      "over25": 60.2,
+      "btts": 44.1,
+      "cs_top": "2-1 (1294)",
+      "cs_second": "0-0 (977)",
+      "xg_h": 1.937625,
+      "xg_a": 0.891875
     },
     {
       "id": "raal_la_louviere__mechelen__2026-08-29",
@@ -42,7 +51,16 @@
       "locked_model": 71.4,
       "locked_sim": 71.6,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:05:55.424459Z"
+      "generated_at": "2026-08-30T09:05:55.424459Z",
+      "ft_h": 39.8,
+      "ft_d": 28.4,
+      "ft_a": 31.8,
+      "over25": 56.3,
+      "btts": 44.5,
+      "cs_top": "0-0 (1254)",
+      "cs_second": "2-1 (850)",
+      "xg_h": 1.4315,
+      "xg_a": 1.25925
     },
     {
       "id": "kortrijk__charleroi__2026-08-29",
@@ -61,7 +79,16 @@
       "locked_model": 75.2,
       "locked_sim": 75.0,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:05:55.634440Z"
+      "generated_at": "2026-08-30T09:05:55.634440Z",
+      "ft_h": 25.0,
+      "ft_d": 26.5,
+      "ft_a": 48.5,
+      "over25": 57.5,
+      "btts": 45.4,
+      "cs_top": "0-0 (1126)",
+      "cs_second": "1-2 (1030)",
+      "xg_h": 1.12925,
+      "xg_a": 1.634375
     },
     {
       "id": "cercle_brugge__lommel_sk__2026-08-29",
@@ -80,7 +107,16 @@
       "locked_model": 82.5,
       "locked_sim": 82.6,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:05:55.853955Z"
+      "generated_at": "2026-08-30T09:05:55.853955Z",
+      "ft_h": 60.9,
+      "ft_d": 21.7,
+      "ft_a": 17.4,
+      "over25": 60.5,
+      "btts": 44.9,
+      "cs_top": "2-1 (1333)",
+      "cs_second": "0-0 (950)",
+      "xg_h": 1.86275,
+      "xg_a": 0.9645
     },
     {
       "id": "oud-heverlee_leuven__standard__2026-08-29",
@@ -99,7 +135,16 @@
       "locked_model": 71.8,
       "locked_sim": 72.1,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:05:56.063548Z"
+      "generated_at": "2026-08-30T09:05:56.063548Z",
+      "ft_h": 33.2,
+      "ft_d": 27.9,
+      "ft_a": 38.9,
+      "over25": 57.2,
+      "btts": 44.9,
+      "cs_top": "0-0 (1271)",
+      "cs_second": "1-2 (868)",
+      "xg_h": 1.288375,
+      "xg_a": 1.406625
     },
     {
       "id": "gent__club_brugge__2026-08-30",
@@ -118,7 +163,16 @@
       "locked_model": 77.7,
       "locked_sim": 79.1,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:05:56.276104Z"
+      "generated_at": "2026-08-30T09:05:56.276104Z",
+      "ft_h": 20.9,
+      "ft_d": 24.1,
+      "ft_a": 55.0,
+      "over25": 60.0,
+      "btts": 45.7,
+      "cs_top": "1-2 (1263)",
+      "cs_second": "0-0 (1052)",
+      "xg_h": 1.044875,
+      "xg_a": 1.75875
     },
     {
       "id": "antwerp__st_truiden__2026-08-30",
@@ -137,7 +191,16 @@
       "locked_model": 72.6,
       "locked_sim": 72.3,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:05:56.483424Z"
+      "generated_at": "2026-08-30T09:05:56.483424Z",
+      "ft_h": 37.5,
+      "ft_d": 27.7,
+      "ft_a": 34.8,
+      "over25": 56.5,
+      "btts": 44.1,
+      "cs_top": "0-0 (1212)",
+      "cs_second": "2-1 (835)",
+      "xg_h": 1.37825,
+      "xg_a": 1.319625
     },
     {
       "id": "st._gilloise__anderlecht__2026-08-30",
@@ -156,7 +219,16 @@
       "locked_model": 80.5,
       "locked_sim": 80.5,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:05:56.697757Z"
+      "generated_at": "2026-08-30T09:05:56.697757Z",
+      "ft_h": 55.9,
+      "ft_d": 24.6,
+      "ft_a": 19.5,
+      "over25": 58.2,
+      "btts": 45.1,
+      "cs_top": "2-1 (1256)",
+      "cs_second": "0-0 (1090)",
+      "xg_h": 1.744,
+      "xg_a": 1.006
     },
     {
       "id": "westerlo__waregem__2026-08-30",
@@ -175,7 +247,16 @@
       "locked_model": 74.5,
       "locked_sim": 74.1,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:05:56.910059Z"
+      "generated_at": "2026-08-30T09:05:56.910059Z",
+      "ft_h": 32.2,
+      "ft_d": 25.9,
+      "ft_a": 41.9,
+      "over25": 57.7,
+      "btts": 44.5,
+      "cs_top": "0-0 (1128)",
+      "cs_second": "1-2 (892)",
+      "xg_h": 1.277875,
+      "xg_a": 1.48175
     },
     {
       "id": "bayern_munich__stuttgart__2026-08-28",
@@ -194,7 +275,16 @@
       "locked_model": 90.6,
       "locked_sim": 90.3,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:05:57.129977Z"
+      "generated_at": "2026-08-30T09:05:57.129977Z",
+      "ft_h": 76.7,
+      "ft_d": 13.6,
+      "ft_a": 9.7,
+      "over25": 65.3,
+      "btts": 45.2,
+      "cs_top": "2-1 (1654)",
+      "cs_second": "2-0 (874)",
+      "xg_h": 2.2025,
+      "xg_a": 0.784625
     },
     {
       "id": "elversberg__leverkusen__2026-08-29",
@@ -213,7 +303,16 @@
       "locked_model": 81.1,
       "locked_sim": 81.6,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:05:57.346497Z"
+      "generated_at": "2026-08-30T09:05:57.346497Z",
+      "ft_h": 18.4,
+      "ft_d": 21.6,
+      "ft_a": 60.0,
+      "over25": 60.3,
+      "btts": 45.7,
+      "cs_top": "1-2 (1323)",
+      "cs_second": "0-0 (939)",
+      "xg_h": 0.99075,
+      "xg_a": 1.848
     },
     {
       "id": "fc_koln__hoffenheim__2026-08-29",
@@ -232,7 +331,16 @@
       "locked_model": 74.8,
       "locked_sim": 75.2,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:05:57.558687Z"
+      "generated_at": "2026-08-30T09:05:57.558687Z",
+      "ft_h": 33.6,
+      "ft_d": 24.8,
+      "ft_a": 41.6,
+      "over25": 59.0,
+      "btts": 44.6,
+      "cs_top": "0-0 (1087)",
+      "cs_second": "1-2 (916)",
+      "xg_h": 1.30825,
+      "xg_a": 1.468
     },
     {
       "id": "mainz__paderborn__2026-08-29",
@@ -251,7 +359,16 @@
       "locked_model": 81.1,
       "locked_sim": 81.1,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:05:57.783872Z"
+      "generated_at": "2026-08-30T09:05:57.783872Z",
+      "ft_h": 58.2,
+      "ft_d": 23.0,
+      "ft_a": 18.9,
+      "over25": 59.0,
+      "btts": 44.9,
+      "cs_top": "2-1 (1308)",
+      "cs_second": "0-0 (1052)",
+      "xg_h": 1.774125,
+      "xg_a": 0.98125
     },
     {
       "id": "rb_leipzig__m_gladbach__2026-08-29",
@@ -270,7 +387,16 @@
       "locked_model": 81.9,
       "locked_sim": 81.9,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:05:57.999006Z"
+      "generated_at": "2026-08-30T09:05:57.999006Z",
+      "ft_h": 60.6,
+      "ft_d": 21.3,
+      "ft_a": 18.1,
+      "over25": 60.6,
+      "btts": 44.5,
+      "cs_top": "2-1 (1318)",
+      "cs_second": "0-0 (955)",
+      "xg_h": 1.848375,
+      "xg_a": 0.977
     },
     {
       "id": "union_berlin__ein_frankfurt__2026-08-29",
@@ -289,7 +415,16 @@
       "locked_model": 73.5,
       "locked_sim": 72.6,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:05:58.209564Z"
+      "generated_at": "2026-08-30T09:05:58.209564Z",
+      "ft_h": 36.2,
+      "ft_d": 27.4,
+      "ft_a": 36.4,
+      "over25": 57.9,
+      "btts": 46.0,
+      "cs_top": "0-0 (1177)",
+      "cs_second": "1-2 (844)",
+      "xg_h": 1.3765,
+      "xg_a": 1.37575
     },
     {
       "id": "dortmund__hamburg__2026-08-29",
@@ -308,7 +443,16 @@
       "locked_model": 89.5,
       "locked_sim": 89.3,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:05:58.426960Z"
+      "generated_at": "2026-08-30T09:05:58.426960Z",
+      "ft_h": 72.5,
+      "ft_d": 16.8,
+      "ft_a": 10.7,
+      "over25": 62.8,
+      "btts": 44.9,
+      "cs_top": "2-1 (1554)",
+      "cs_second": "2-0 (868)",
+      "xg_h": 2.113125,
+      "xg_a": 0.81325
     },
     {
       "id": "freiburg__werder_bremen__2026-08-30",
@@ -327,7 +471,16 @@
       "locked_model": 76.2,
       "locked_sim": 76.8,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:05:58.638151Z"
+      "generated_at": "2026-08-30T09:05:58.638151Z",
+      "ft_h": 49.7,
+      "ft_d": 27.0,
+      "ft_a": 23.2,
+      "over25": 57.5,
+      "btts": 44.9,
+      "cs_top": "0-0 (1182)",
+      "cs_second": "2-1 (1114)",
+      "xg_h": 1.6275,
+      "xg_a": 1.102375
     },
     {
       "id": "augsburg__schalke_04__2026-08-30",
@@ -346,7 +499,16 @@
       "locked_model": 74.5,
       "locked_sim": 74.8,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:05:58.853401Z"
+      "generated_at": "2026-08-30T09:05:58.853401Z",
+      "ft_h": 43.0,
+      "ft_d": 25.2,
+      "ft_a": 31.8,
+      "over25": 58.9,
+      "btts": 45.4,
+      "cs_top": "0-0 (1120)",
+      "cs_second": "2-1 (936)",
+      "xg_h": 1.508875,
+      "xg_a": 1.269375
     },
     {
       "id": "bochum__osnabruck__2026-08-28",
@@ -365,7 +527,16 @@
       "locked_model": 79.2,
       "locked_sim": 78.9,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:05:59.066696Z"
+      "generated_at": "2026-08-30T09:05:59.066696Z",
+      "ft_h": 54.8,
+      "ft_d": 24.1,
+      "ft_a": 21.1,
+      "over25": 58.6,
+      "btts": 44.6,
+      "cs_top": "2-1 (1177)",
+      "cs_second": "0-0 (1059)",
+      "xg_h": 1.736125,
+      "xg_a": 1.046125
     },
     {
       "id": "braunschweig__hertha__2026-08-28",
@@ -384,7 +555,16 @@
       "locked_model": 72.4,
       "locked_sim": 72.8,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:05:59.276034Z"
+      "generated_at": "2026-08-30T09:05:59.276034Z",
+      "ft_h": 32.3,
+      "ft_d": 27.3,
+      "ft_a": 40.5,
+      "over25": 57.3,
+      "btts": 45.5,
+      "cs_top": "0-0 (1182)",
+      "cs_second": "1-2 (913)",
+      "xg_h": 1.269375,
+      "xg_a": 1.45475
     },
     {
       "id": "cottbus__greuther_furth__2026-08-29",
@@ -403,7 +583,16 @@
       "locked_model": 75.2,
       "locked_sim": 74.6,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:05:59.488654Z"
+      "generated_at": "2026-08-30T09:05:59.488654Z",
+      "ft_h": 36.9,
+      "ft_d": 25.4,
+      "ft_a": 37.7,
+      "over25": 57.6,
+      "btts": 44.5,
+      "cs_top": "0-0 (1133)",
+      "cs_second": "1-2 (865)",
+      "xg_h": 1.368875,
+      "xg_a": 1.37175
     },
     {
       "id": "heidenheim__dresden__2026-08-29",
@@ -422,7 +611,16 @@
       "locked_model": 72.9,
       "locked_sim": 72.3,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:05:59.699014Z"
+      "generated_at": "2026-08-30T09:05:59.699014Z",
+      "ft_h": 37.1,
+      "ft_d": 27.7,
+      "ft_a": 35.2,
+      "over25": 56.9,
+      "btts": 45.6,
+      "cs_top": "0-0 (1233)",
+      "cs_second": "2-1 (850)",
+      "xg_h": 1.364375,
+      "xg_a": 1.33225
     },
     {
       "id": "karlsruhe__wolfsburg__2026-08-29",
@@ -441,7 +639,16 @@
       "locked_model": 74.5,
       "locked_sim": 75.2,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:05:59.911685Z"
+      "generated_at": "2026-08-30T09:05:59.911685Z",
+      "ft_h": 30.4,
+      "ft_d": 24.8,
+      "ft_a": 44.8,
+      "over25": 58.0,
+      "btts": 45.1,
+      "cs_top": "0-0 (1094)",
+      "cs_second": "1-2 (999)",
+      "xg_h": 1.229375,
+      "xg_a": 1.514
     },
     {
       "id": "nurnberg__bielefeld__2026-08-29",
@@ -460,7 +667,16 @@
       "locked_model": 73.9,
       "locked_sim": 74.6,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:00.125028Z"
+      "generated_at": "2026-08-30T09:06:00.125028Z",
+      "ft_h": 43.6,
+      "ft_d": 25.4,
+      "ft_a": 30.9,
+      "over25": 58.3,
+      "btts": 45.4,
+      "cs_top": "0-0 (1101)",
+      "cs_second": "2-1 (948)",
+      "xg_h": 1.5235,
+      "xg_a": 1.253625
     },
     {
       "id": "darmstadt__hannover__2026-08-30",
@@ -479,7 +695,16 @@
       "locked_model": 74.1,
       "locked_sim": 74.5,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:00.335942Z"
+      "generated_at": "2026-08-30T09:06:00.335942Z",
+      "ft_h": 28.5,
+      "ft_d": 25.5,
+      "ft_a": 46.0,
+      "over25": 57.6,
+      "btts": 45.2,
+      "cs_top": "0-0 (1142)",
+      "cs_second": "1-2 (1039)",
+      "xg_h": 1.188,
+      "xg_a": 1.542125
     },
     {
       "id": "magdeburg__holstein_kiel__2026-08-30",
@@ -498,7 +723,16 @@
       "locked_model": 73.9,
       "locked_sim": 74.8,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:00.549665Z"
+      "generated_at": "2026-08-30T09:06:00.549665Z",
+      "ft_h": 44.4,
+      "ft_d": 25.2,
+      "ft_a": 30.5,
+      "over25": 58.4,
+      "btts": 44.6,
+      "cs_top": "0-0 (1128)",
+      "cs_second": "2-1 (996)",
+      "xg_h": 1.506625,
+      "xg_a": 1.23875
     },
     {
       "id": "st_pauli__kaiserslautern__2026-08-30",
@@ -517,7 +751,16 @@
       "locked_model": 75.9,
       "locked_sim": 75.6,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:00.761483Z"
+      "generated_at": "2026-08-30T09:06:00.761483Z",
+      "ft_h": 51.2,
+      "ft_d": 24.5,
+      "ft_a": 24.4,
+      "over25": 58.1,
+      "btts": 44.5,
+      "cs_top": "0-0 (1115)",
+      "cs_second": "2-1 (1113)",
+      "xg_h": 1.641,
+      "xg_a": 1.111375
     },
     {
       "id": "crystal_palace__man_city__2026-08-28",
@@ -536,7 +779,16 @@
       "locked_model": 77.8,
       "locked_sim": 77.9,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:03.065587Z"
+      "generated_at": "2026-08-30T09:06:03.065587Z",
+      "ft_h": 51.8,
+      "ft_d": 22.2,
+      "ft_a": 26.0,
+      "over25": 61.4,
+      "btts": 49.4,
+      "cs_top": "2-1 (1254)",
+      "cs_second": "0-0 (893)",
+      "xg_h": 1.68975,
+      "xg_a": 1.165875
     },
     {
       "id": "liverpool__nott_m_forest__2026-08-29",
@@ -555,7 +807,16 @@
       "locked_model": 79.8,
       "locked_sim": 79.9,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:04.405895Z"
+      "generated_at": "2026-08-30T09:06:04.405895Z",
+      "ft_h": 29.4,
+      "ft_d": 25.1,
+      "ft_a": 45.4,
+      "over25": 65.5,
+      "btts": 53.0,
+      "cs_top": "1-2 (1077)",
+      "cs_second": "0-0 (916)",
+      "xg_h": 1.340875,
+      "xg_a": 1.678125
     },
     {
       "id": "bournemouth__everton__2026-08-29",
@@ -574,7 +835,16 @@
       "locked_model": 74.5,
       "locked_sim": 74.8,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:05.742878Z"
+      "generated_at": "2026-08-30T09:06:05.742878Z",
+      "ft_h": 37.7,
+      "ft_d": 27.1,
+      "ft_a": 35.2,
+      "over25": 66.3,
+      "btts": 54.8,
+      "cs_top": "0-0 (970)",
+      "cs_second": "2-1 (898)",
+      "xg_h": 1.552875,
+      "xg_a": 1.499
     },
     {
       "id": "coventry__hull__2026-08-29",
@@ -593,7 +863,16 @@
       "locked_model": 77.6,
       "locked_sim": 78.2,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:07.104058Z"
+      "generated_at": "2026-08-30T09:06:07.104058Z",
+      "ft_h": 36.3,
+      "ft_d": 29.6,
+      "ft_a": 34.1,
+      "over25": 57.0,
+      "btts": 47.7,
+      "cs_top": "0-0 (1245)",
+      "cs_second": "2-1 (837)",
+      "xg_h": 1.378,
+      "xg_a": 1.337875
     },
     {
       "id": "tottenham__newcastle__2026-08-29",
@@ -612,7 +891,16 @@
       "locked_model": 74.7,
       "locked_sim": 74.6,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:07.320993Z"
+      "generated_at": "2026-08-30T09:06:07.320993Z",
+      "ft_h": 42.0,
+      "ft_d": 25.4,
+      "ft_a": 32.6,
+      "over25": 58.7,
+      "btts": 46.8,
+      "cs_top": "0-0 (1110)",
+      "cs_second": "2-1 (956)",
+      "xg_h": 1.477625,
+      "xg_a": 1.287
     },
     {
       "id": "chelsea__brighton__2026-08-30",
@@ -631,7 +919,16 @@
       "locked_model": 76.1,
       "locked_sim": 76.3,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:07.548434Z"
+      "generated_at": "2026-08-30T09:06:07.548434Z",
+      "ft_h": 52.0,
+      "ft_d": 24.3,
+      "ft_a": 23.7,
+      "over25": 58.6,
+      "btts": 44.8,
+      "cs_top": "2-1 (1149)",
+      "cs_second": "0-0 (1057)",
+      "xg_h": 1.67275,
+      "xg_a": 1.087
     },
     {
       "id": "leeds__brentford__2026-08-30",
@@ -650,7 +947,16 @@
       "locked_model": 71.4,
       "locked_sim": 71.9,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:07.778016Z"
+      "generated_at": "2026-08-30T09:06:07.778016Z",
+      "ft_h": 36.7,
+      "ft_d": 28.1,
+      "ft_a": 35.2,
+      "over25": 57.0,
+      "btts": 45.9,
+      "cs_top": "0-0 (1212)",
+      "cs_second": "2-1 (847)",
+      "xg_h": 1.3765,
+      "xg_a": 1.341875
     },
     {
       "id": "sunderland__fulham__2026-08-30",
@@ -669,7 +975,16 @@
       "locked_model": 70.3,
       "locked_sim": 70.1,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:07.987057Z"
+      "generated_at": "2026-08-30T09:06:07.987057Z",
+      "ft_h": 39.5,
+      "ft_d": 29.9,
+      "ft_a": 30.5,
+      "over25": 55.2,
+      "btts": 44.6,
+      "cs_top": "0-0 (1318)",
+      "cs_second": "2-1 (901)",
+      "xg_h": 1.420375,
+      "xg_a": 1.228625
     },
     {
       "id": "man_united__ipswich__2026-08-30",
@@ -688,7 +1003,16 @@
       "locked_model": 86.4,
       "locked_sim": 86.2,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:08.204486Z"
+      "generated_at": "2026-08-30T09:06:08.204486Z",
+      "ft_h": 67.2,
+      "ft_d": 19.0,
+      "ft_a": 13.8,
+      "over25": 62.0,
+      "btts": 45.7,
+      "cs_top": "2-1 (1460)",
+      "cs_second": "0-0 (831)",
+      "xg_h": 1.9945,
+      "xg_a": 0.884625
     },
     {
       "id": "aston_villa__arsenal__2026-08-31",
@@ -707,7 +1031,16 @@
       "locked_model": 84.3,
       "locked_sim": 84.1,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:08.420024Z"
+      "generated_at": "2026-08-30T09:06:08.420024Z",
+      "ft_h": 15.9,
+      "ft_d": 22.3,
+      "ft_a": 61.9,
+      "over25": 59.2,
+      "btts": 44.0,
+      "cs_top": "1-2 (1347)",
+      "cs_second": "0-0 (1007)",
+      "xg_h": 0.9135,
+      "xg_a": 1.87325
     },
     {
       "id": "wrexham__birmingham__2026-08-28",
@@ -726,7 +1059,16 @@
       "locked_model": 72.3,
       "locked_sim": 72.4,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:08.630236Z"
+      "generated_at": "2026-08-30T09:06:08.630236Z",
+      "ft_h": 43.7,
+      "ft_d": 27.6,
+      "ft_a": 28.7,
+      "over25": 56.7,
+      "btts": 44.2,
+      "cs_top": "0-0 (1217)",
+      "cs_second": "2-1 (938)",
+      "xg_h": 1.51525,
+      "xg_a": 1.20225
     },
     {
       "id": "derby__swansea__2026-08-29",
@@ -745,7 +1087,16 @@
       "locked_model": 71.4,
       "locked_sim": 71.9,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:08.844038Z"
+      "generated_at": "2026-08-30T09:06:08.844038Z",
+      "ft_h": 42.9,
+      "ft_d": 28.1,
+      "ft_a": 29.0,
+      "over25": 55.8,
+      "btts": 44.4,
+      "cs_top": "0-0 (1254)",
+      "cs_second": "2-1 (945)",
+      "xg_h": 1.482125,
+      "xg_a": 1.20525
     },
     {
       "id": "middlesbrough__west_brom__2026-08-29",
@@ -764,7 +1115,16 @@
       "locked_model": 79.2,
       "locked_sim": 79.3,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:09.056725Z"
+      "generated_at": "2026-08-30T09:06:09.056725Z",
+      "ft_h": 55.9,
+      "ft_d": 23.4,
+      "ft_a": 20.7,
+      "over25": 58.7,
+      "btts": 43.8,
+      "cs_top": "2-1 (1231)",
+      "cs_second": "0-0 (1055)",
+      "xg_h": 1.747375,
+      "xg_a": 1.02175
     },
     {
       "id": "wolves__stoke__2026-08-29",
@@ -783,7 +1143,16 @@
       "locked_model": 85.7,
       "locked_sim": 85.0,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:09.270470Z"
+      "generated_at": "2026-08-30T09:06:09.270470Z",
+      "ft_h": 63.5,
+      "ft_d": 21.5,
+      "ft_a": 15.0,
+      "over25": 59.8,
+      "btts": 44.5,
+      "cs_top": "2-1 (1367)",
+      "cs_second": "0-0 (944)",
+      "xg_h": 1.900375,
+      "xg_a": 0.913875
     },
     {
       "id": "blackburn__qpr__2026-08-29",
@@ -802,7 +1171,16 @@
       "locked_model": 72.0,
       "locked_sim": 72.0,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:09.478352Z"
+      "generated_at": "2026-08-30T09:06:09.478352Z",
+      "ft_h": 36.7,
+      "ft_d": 28.0,
+      "ft_a": 35.3,
+      "over25": 56.6,
+      "btts": 45.1,
+      "cs_top": "0-0 (1240)",
+      "cs_second": "2-1 (811)",
+      "xg_h": 1.36675,
+      "xg_a": 1.33275
     },
     {
       "id": "bolton__lincoln__2026-08-29",
@@ -821,7 +1199,16 @@
       "locked_model": 71.5,
       "locked_sim": 71.8,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:09.684114Z"
+      "generated_at": "2026-08-30T09:06:09.684114Z",
+      "ft_h": 37.8,
+      "ft_d": 28.2,
+      "ft_a": 34.0,
+      "over25": 56.3,
+      "btts": 45.1,
+      "cs_top": "0-0 (1278)",
+      "cs_second": "2-1 (861)",
+      "xg_h": 1.373125,
+      "xg_a": 1.311375
     },
     {
       "id": "bristol_city__portsmouth__2026-08-29",
@@ -840,7 +1227,16 @@
       "locked_model": 72.6,
       "locked_sim": 72.9,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:09.890022Z"
+      "generated_at": "2026-08-30T09:06:09.890022Z",
+      "ft_h": 43.9,
+      "ft_d": 27.1,
+      "ft_a": 29.0,
+      "over25": 56.9,
+      "btts": 45.7,
+      "cs_top": "0-0 (1138)",
+      "cs_second": "2-1 (950)",
+      "xg_h": 1.5165,
+      "xg_a": 1.218125
     },
     {
       "id": "cardiff__sheffield_united__2026-08-29",
@@ -859,7 +1255,16 @@
       "locked_model": 73.5,
       "locked_sim": 73.5,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:10.096140Z"
+      "generated_at": "2026-08-30T09:06:10.096140Z",
+      "ft_h": 36.1,
+      "ft_d": 26.5,
+      "ft_a": 37.4,
+      "over25": 57.3,
+      "btts": 45.2,
+      "cs_top": "0-0 (1182)",
+      "cs_second": "2-1 (817)",
+      "xg_h": 1.34175,
+      "xg_a": 1.39375
     },
     {
       "id": "charlton__preston__2026-08-29",
@@ -878,7 +1283,16 @@
       "locked_model": 74.0,
       "locked_sim": 73.5,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:10.301183Z"
+      "generated_at": "2026-08-30T09:06:10.301183Z",
+      "ft_h": 45.9,
+      "ft_d": 27.6,
+      "ft_a": 26.5,
+      "over25": 56.6,
+      "btts": 45.0,
+      "cs_top": "0-0 (1192)",
+      "cs_second": "2-1 (975)",
+      "xg_h": 1.553,
+      "xg_a": 1.161875
     },
     {
       "id": "norwich__burnley__2026-08-29",
@@ -897,7 +1311,16 @@
       "locked_model": 73.9,
       "locked_sim": 73.5,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:10.508778Z"
+      "generated_at": "2026-08-30T09:06:10.508778Z",
+      "ft_h": 41.9,
+      "ft_d": 26.5,
+      "ft_a": 31.6,
+      "over25": 57.7,
+      "btts": 45.5,
+      "cs_top": "0-0 (1163)",
+      "cs_second": "2-1 (937)",
+      "xg_h": 1.47825,
+      "xg_a": 1.253125
     },
     {
       "id": "southampton__millwall__2026-08-29",
@@ -916,7 +1339,16 @@
       "locked_model": 74.3,
       "locked_sim": 74.2,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:10.716950Z"
+      "generated_at": "2026-08-30T09:06:10.716950Z",
+      "ft_h": 47.9,
+      "ft_d": 25.8,
+      "ft_a": 26.4,
+      "over25": 58.3,
+      "btts": 45.1,
+      "cs_top": "0-0 (1133)",
+      "cs_second": "2-1 (1067)",
+      "xg_h": 1.593625,
+      "xg_a": 1.15125
     },
     {
       "id": "watford__west_ham__2026-08-29",
@@ -935,7 +1367,16 @@
       "locked_model": 76.2,
       "locked_sim": 75.8,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:10.928525Z"
+      "generated_at": "2026-08-30T09:06:10.928525Z",
+      "ft_h": 24.2,
+      "ft_d": 23.7,
+      "ft_a": 52.0,
+      "over25": 59.5,
+      "btts": 44.8,
+      "cs_top": "1-2 (1187)",
+      "cs_second": "0-0 (1068)",
+      "xg_h": 1.098375,
+      "xg_a": 1.683375
     },
     {
       "id": "blackpool__peterboro__2026-08-29",
@@ -954,7 +1395,16 @@
       "locked_model": 78.1,
       "locked_sim": 79.1,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:11.142146Z"
+      "generated_at": "2026-08-30T09:06:11.142146Z",
+      "ft_h": 54.8,
+      "ft_d": 24.3,
+      "ft_a": 20.9,
+      "over25": 58.3,
+      "btts": 44.4,
+      "cs_top": "2-1 (1158)",
+      "cs_second": "0-0 (1059)",
+      "xg_h": 1.746125,
+      "xg_a": 1.03475
     },
     {
       "id": "milton_keynes_dons__leicester__2026-08-29",
@@ -973,7 +1423,16 @@
       "locked_model": 73.0,
       "locked_sim": 73.3,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:11.355025Z"
+      "generated_at": "2026-08-30T09:06:11.355025Z",
+      "ft_h": 34.0,
+      "ft_d": 26.7,
+      "ft_a": 39.3,
+      "over25": 58.0,
+      "btts": 45.8,
+      "cs_top": "0-0 (1154)",
+      "cs_second": "1-2 (849)",
+      "xg_h": 1.320875,
+      "xg_a": 1.450875
     },
     {
       "id": "cambridge__huddersfield__2026-08-29",
@@ -992,7 +1451,16 @@
       "locked_model": 71.7,
       "locked_sim": 70.6,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:11.566757Z"
+      "generated_at": "2026-08-30T09:06:11.566757Z",
+      "ft_h": 30.7,
+      "ft_d": 29.4,
+      "ft_a": 39.9,
+      "over25": 55.9,
+      "btts": 44.5,
+      "cs_top": "0-0 (1307)",
+      "cs_second": "1-2 (873)",
+      "xg_h": 1.2435,
+      "xg_a": 1.44025
     },
     {
       "id": "leyton_orient__barnsley__2026-08-29",
@@ -1011,7 +1479,16 @@
       "locked_model": 73.1,
       "locked_sim": 72.6,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:11.774335Z"
+      "generated_at": "2026-08-30T09:06:11.774335Z",
+      "ft_h": 41.7,
+      "ft_d": 27.4,
+      "ft_a": 30.9,
+      "over25": 57.2,
+      "btts": 44.6,
+      "cs_top": "0-0 (1192)",
+      "cs_second": "2-1 (919)",
+      "xg_h": 1.464875,
+      "xg_a": 1.26325
     },
     {
       "id": "notts_county__burton__2026-08-29",
@@ -1030,7 +1507,16 @@
       "locked_model": 72.8,
       "locked_sim": 72.8,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:11.979282Z"
+      "generated_at": "2026-08-30T09:06:11.979282Z",
+      "ft_h": 41.9,
+      "ft_d": 27.3,
+      "ft_a": 30.9,
+      "over25": 56.9,
+      "btts": 45.1,
+      "cs_top": "0-0 (1192)",
+      "cs_second": "2-1 (930)",
+      "xg_h": 1.47175,
+      "xg_a": 1.25475
     },
     {
       "id": "plymouth__bradford__2026-08-29",
@@ -1049,7 +1535,16 @@
       "locked_model": 72.0,
       "locked_sim": 71.8,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:12.186758Z"
+      "generated_at": "2026-08-30T09:06:12.186758Z",
+      "ft_h": 42.5,
+      "ft_d": 28.2,
+      "ft_a": 29.3,
+      "over25": 57.0,
+      "btts": 45.6,
+      "cs_top": "0-0 (1254)",
+      "cs_second": "2-1 (962)",
+      "xg_h": 1.49325,
+      "xg_a": 1.216
     },
     {
       "id": "sheffield_weds__bromley__2026-08-29",
@@ -1068,7 +1563,16 @@
       "locked_model": 77.4,
       "locked_sim": 77.1,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:12.393838Z"
+      "generated_at": "2026-08-30T09:06:12.393838Z",
+      "ft_h": 51.5,
+      "ft_d": 25.6,
+      "ft_a": 22.9,
+      "over25": 58.6,
+      "btts": 45.8,
+      "cs_top": "2-1 (1168)",
+      "cs_second": "0-0 (1120)",
+      "xg_h": 1.67875,
+      "xg_a": 1.095
     },
     {
       "id": "stevenage__doncaster__2026-08-29",
@@ -1087,7 +1591,16 @@
       "locked_model": 72.0,
       "locked_sim": 72.2,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:12.603742Z"
+      "generated_at": "2026-08-30T09:06:12.603742Z",
+      "ft_h": 42.3,
+      "ft_d": 30.0,
+      "ft_a": 27.8,
+      "over25": 56.1,
+      "btts": 45.1,
+      "cs_top": "0-0 (1310)",
+      "cs_second": "2-1 (917)",
+      "xg_h": 1.5055,
+      "xg_a": 1.1945
     },
     {
       "id": "stockport__wycombe__2026-08-29",
@@ -1106,7 +1619,16 @@
       "locked_model": 76.3,
       "locked_sim": 76.2,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:12.813883Z"
+      "generated_at": "2026-08-30T09:06:12.813883Z",
+      "ft_h": 49.2,
+      "ft_d": 27.0,
+      "ft_a": 23.8,
+      "over25": 56.8,
+      "btts": 44.6,
+      "cs_top": "0-0 (1213)",
+      "cs_second": "2-1 (1088)",
+      "xg_h": 1.6125,
+      "xg_a": 1.0915
     },
     {
       "id": "afc_wimbledon__wigan__2026-08-30",
@@ -1125,7 +1647,16 @@
       "locked_model": 71.1,
       "locked_sim": 71.4,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:13.020828Z"
+      "generated_at": "2026-08-30T09:06:13.020828Z",
+      "ft_h": 28.6,
+      "ft_d": 29.2,
+      "ft_a": 42.2,
+      "over25": 56.3,
+      "btts": 44.8,
+      "cs_top": "0-0 (1283)",
+      "cs_second": "1-2 (946)",
+      "xg_h": 1.197,
+      "xg_a": 1.479
     },
     {
       "id": "mansfield__luton__2026-08-30",
@@ -1144,7 +1675,16 @@
       "locked_model": 73.0,
       "locked_sim": 73.5,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:13.234187Z"
+      "generated_at": "2026-08-30T09:06:13.234187Z",
+      "ft_h": 32.1,
+      "ft_d": 26.5,
+      "ft_a": 41.4,
+      "over25": 57.2,
+      "btts": 44.1,
+      "cs_top": "0-0 (1145)",
+      "cs_second": "1-2 (893)",
+      "xg_h": 1.282875,
+      "xg_a": 1.46925
     },
     {
       "id": "barnet__cheltenham__2026-08-29",
@@ -1163,7 +1703,16 @@
       "locked_model": 82.5,
       "locked_sim": 82.4,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:13.442665Z"
+      "generated_at": "2026-08-30T09:06:13.442665Z",
+      "ft_h": 57.6,
+      "ft_d": 24.8,
+      "ft_a": 17.6,
+      "over25": 58.6,
+      "btts": 45.1,
+      "cs_top": "2-1 (1256)",
+      "cs_second": "0-0 (1053)",
+      "xg_h": 1.801,
+      "xg_a": 0.974
     },
     {
       "id": "port_vale__crewe__2026-08-29",
@@ -1182,7 +1731,16 @@
       "locked_model": 72.0,
       "locked_sim": 71.8,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:13.648035Z"
+      "generated_at": "2026-08-30T09:06:13.648035Z",
+      "ft_h": 42.8,
+      "ft_d": 28.2,
+      "ft_a": 29.1,
+      "over25": 56.2,
+      "btts": 44.1,
+      "cs_top": "0-0 (1268)",
+      "cs_second": "2-1 (902)",
+      "xg_h": 1.467625,
+      "xg_a": 1.211875
     },
     {
       "id": "rotherham__chesterfield__2026-08-29",
@@ -1201,7 +1759,16 @@
       "locked_model": 72.0,
       "locked_sim": 72.5,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:13.856834Z"
+      "generated_at": "2026-08-30T09:06:13.856834Z",
+      "ft_h": 31.1,
+      "ft_d": 27.5,
+      "ft_a": 41.4,
+      "over25": 56.4,
+      "btts": 44.8,
+      "cs_top": "0-0 (1191)",
+      "cs_second": "1-2 (910)",
+      "xg_h": 1.263,
+      "xg_a": 1.46275
     },
     {
       "id": "colchester__rochdale__2026-08-29",
@@ -1220,7 +1787,16 @@
       "locked_model": 72.2,
       "locked_sim": 71.9,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:14.062161Z"
+      "generated_at": "2026-08-30T09:06:14.062161Z",
+      "ft_h": 41.0,
+      "ft_d": 28.1,
+      "ft_a": 30.9,
+      "over25": 57.0,
+      "btts": 44.7,
+      "cs_top": "0-0 (1231)",
+      "cs_second": "2-1 (858)",
+      "xg_h": 1.471,
+      "xg_a": 1.24775
     },
     {
       "id": "crawley_town__bristol_rvs__2026-08-29",
@@ -1239,7 +1815,16 @@
       "locked_model": 73.0,
       "locked_sim": 72.9,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:14.267547Z"
+      "generated_at": "2026-08-30T09:06:14.267547Z",
+      "ft_h": 27.1,
+      "ft_d": 27.8,
+      "ft_a": 45.1,
+      "over25": 56.6,
+      "btts": 45.1,
+      "cs_top": "0-0 (1218)",
+      "cs_second": "1-2 (994)",
+      "xg_h": 1.176875,
+      "xg_a": 1.53925
     },
     {
       "id": "gillingham__northampton__2026-08-29",
@@ -1258,7 +1843,16 @@
       "locked_model": 72.2,
       "locked_sim": 72.3,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:14.474716Z"
+      "generated_at": "2026-08-30T09:06:14.474716Z",
+      "ft_h": 37.1,
+      "ft_d": 27.7,
+      "ft_a": 35.2,
+      "over25": 57.4,
+      "btts": 45.6,
+      "cs_top": "0-0 (1209)",
+      "cs_second": "2-1 (812)",
+      "xg_h": 1.38125,
+      "xg_a": 1.345125
     },
     {
       "id": "grimsby__fleetwood_town__2026-08-29",
@@ -1277,7 +1871,16 @@
       "locked_model": 77.5,
       "locked_sim": 77.0,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:14.682681Z"
+      "generated_at": "2026-08-30T09:06:14.682681Z",
+      "ft_h": 50.7,
+      "ft_d": 26.3,
+      "ft_a": 23.0,
+      "over25": 58.4,
+      "btts": 45.3,
+      "cs_top": "0-0 (1196)",
+      "cs_second": "2-1 (1123)",
+      "xg_h": 1.6665,
+      "xg_a": 1.091625
     },
     {
       "id": "newport_county__tranmere__2026-08-29",
@@ -1296,7 +1899,16 @@
       "locked_model": 71.3,
       "locked_sim": 71.7,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:14.888983Z"
+      "generated_at": "2026-08-30T09:06:14.888983Z",
+      "ft_h": 36.7,
+      "ft_d": 28.3,
+      "ft_a": 35.0,
+      "over25": 56.6,
+      "btts": 45.1,
+      "cs_top": "0-0 (1227)",
+      "cs_second": "2-1 (810)",
+      "xg_h": 1.370125,
+      "xg_a": 1.335875
     },
     {
       "id": "oldham__swindon__2026-08-29",
@@ -1315,7 +1927,16 @@
       "locked_model": 74.4,
       "locked_sim": 74.1,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:15.096396Z"
+      "generated_at": "2026-08-30T09:06:15.096396Z",
+      "ft_h": 48.5,
+      "ft_d": 25.6,
+      "ft_a": 25.9,
+      "over25": 57.8,
+      "btts": 44.5,
+      "cs_top": "0-0 (1131)",
+      "cs_second": "2-1 (1074)",
+      "xg_h": 1.59925,
+      "xg_a": 1.132125
     },
     {
       "id": "shrewsbury__salford__2026-08-29",
@@ -1334,7 +1955,16 @@
       "locked_model": 75.8,
       "locked_sim": 76.7,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:15.303982Z"
+      "generated_at": "2026-08-30T09:06:15.303982Z",
+      "ft_h": 23.3,
+      "ft_d": 26.9,
+      "ft_a": 49.8,
+      "over25": 58.6,
+      "btts": 45.7,
+      "cs_top": "0-0 (1183)",
+      "cs_second": "1-2 (1098)",
+      "xg_h": 1.100875,
+      "xg_a": 1.66025
     },
     {
       "id": "walsall__accrington__2026-08-29",
@@ -1353,7 +1983,16 @@
       "locked_model": 77.6,
       "locked_sim": 77.4,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:15.516351Z"
+      "generated_at": "2026-08-30T09:06:15.516351Z",
+      "ft_h": 50.6,
+      "ft_d": 26.7,
+      "ft_a": 22.6,
+      "over25": 58.7,
+      "btts": 45.7,
+      "cs_top": "0-0 (1145)",
+      "cs_second": "2-1 (1140)",
+      "xg_h": 1.687625,
+      "xg_a": 1.0975
     },
     {
       "id": "york__exeter__2026-08-29",
@@ -1372,7 +2011,16 @@
       "locked_model": 80.8,
       "locked_sim": 80.8,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:15.725283Z"
+      "generated_at": "2026-08-30T09:06:15.725283Z",
+      "ft_h": 56.5,
+      "ft_d": 24.3,
+      "ft_a": 19.2,
+      "over25": 59.6,
+      "btts": 45.2,
+      "cs_top": "2-1 (1203)",
+      "cs_second": "0-0 (1048)",
+      "xg_h": 1.799,
+      "xg_a": 1.004625
     },
     {
       "id": "aldershot__harrogate__2026-08-28",
@@ -1391,7 +2039,16 @@
       "locked_model": 76.0,
       "locked_sim": 76.6,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:15.934244Z"
+      "generated_at": "2026-08-30T09:06:15.934244Z",
+      "ft_h": 33.4,
+      "ft_d": 23.4,
+      "ft_a": 43.2,
+      "over25": 59.6,
+      "btts": 45.2,
+      "cs_top": "0-0 (1048)",
+      "cs_second": "1-2 (1007)",
+      "xg_h": 1.29225,
+      "xg_a": 1.48775
     },
     {
       "id": "altrincham__halifax__2026-08-28",
@@ -1410,7 +2067,16 @@
       "locked_model": 73.8,
       "locked_sim": 73.5,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:16.139308Z"
+      "generated_at": "2026-08-30T09:06:16.139308Z",
+      "ft_h": 40.0,
+      "ft_d": 26.5,
+      "ft_a": 33.5,
+      "over25": 57.8,
+      "btts": 45.0,
+      "cs_top": "0-0 (1150)",
+      "cs_second": "2-1 (886)",
+      "xg_h": 1.45125,
+      "xg_a": 1.300125
     },
     {
       "id": "barrow__yeovil__2026-08-28",
@@ -1429,7 +2095,16 @@
       "locked_model": 73.0,
       "locked_sim": 72.4,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:16.348052Z"
+      "generated_at": "2026-08-30T09:06:16.348052Z",
+      "ft_h": 44.4,
+      "ft_d": 27.6,
+      "ft_a": 28.0,
+      "over25": 56.9,
+      "btts": 44.6,
+      "cs_top": "0-0 (1195)",
+      "cs_second": "2-1 (965)",
+      "xg_h": 1.5215,
+      "xg_a": 1.18125
     },
     {
       "id": "fylde__forest_green__2026-08-28",
@@ -1448,7 +2123,16 @@
       "locked_model": 75.3,
       "locked_sim": 75.5,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:16.557384Z"
+      "generated_at": "2026-08-30T09:06:16.557384Z",
+      "ft_h": 34.7,
+      "ft_d": 24.5,
+      "ft_a": 40.8,
+      "over25": 58.9,
+      "btts": 44.3,
+      "cs_top": "0-0 (1091)",
+      "cs_second": "1-2 (861)",
+      "xg_h": 1.318375,
+      "xg_a": 1.457875
     },
     {
       "id": "gateshead__sutton__2026-08-28",
@@ -1467,7 +2151,16 @@
       "locked_model": 73.9,
       "locked_sim": 73.6,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:16.763819Z"
+      "generated_at": "2026-08-30T09:06:16.763819Z",
+      "ft_h": 34.8,
+      "ft_d": 26.4,
+      "ft_a": 38.8,
+      "over25": 57.4,
+      "btts": 44.4,
+      "cs_top": "0-0 (1179)",
+      "cs_second": "1-2 (877)",
+      "xg_h": 1.32475,
+      "xg_a": 1.404375
     },
     {
       "id": "hartlepool__eastleigh__2026-08-28",
@@ -1486,7 +2179,16 @@
       "locked_model": 78.3,
       "locked_sim": 78.2,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:16.971926Z"
+      "generated_at": "2026-08-30T09:06:16.971926Z",
+      "ft_h": 53.7,
+      "ft_d": 24.5,
+      "ft_a": 21.8,
+      "over25": 58.1,
+      "btts": 44.8,
+      "cs_top": "2-1 (1190)",
+      "cs_second": "0-0 (1080)",
+      "xg_h": 1.6935,
+      "xg_a": 1.059125
     },
     {
       "id": "hornchurch__woking__2026-08-28",
@@ -1505,7 +2207,16 @@
       "locked_model": 73.2,
       "locked_sim": 73.5,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:17.211941Z"
+      "generated_at": "2026-08-30T09:06:17.211941Z",
+      "ft_h": 40.1,
+      "ft_d": 26.5,
+      "ft_a": 33.4,
+      "over25": 57.0,
+      "btts": 45.0,
+      "cs_top": "0-0 (1143)",
+      "cs_second": "2-1 (901)",
+      "xg_h": 1.419375,
+      "xg_a": 1.2985
     },
     {
       "id": "scunthorpe__solihull__2026-08-28",
@@ -1524,7 +2235,16 @@
       "locked_model": 76.9,
       "locked_sim": 76.7,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:17.422070Z"
+      "generated_at": "2026-08-30T09:06:17.422070Z",
+      "ft_h": 53.9,
+      "ft_d": 22.8,
+      "ft_a": 23.3,
+      "over25": 60.0,
+      "btts": 44.8,
+      "cs_top": "2-1 (1165)",
+      "cs_second": "0-0 (1024)",
+      "xg_h": 1.719875,
+      "xg_a": 1.0945
     },
     {
       "id": "southend__kidderminster__2026-08-28",
@@ -1543,7 +2263,16 @@
       "locked_model": 84.0,
       "locked_sim": 83.8,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:17.633350Z"
+      "generated_at": "2026-08-30T09:06:17.633350Z",
+      "ft_h": 61.8,
+      "ft_d": 22.0,
+      "ft_a": 16.2,
+      "over25": 60.1,
+      "btts": 44.8,
+      "cs_top": "2-1 (1369)",
+      "cs_second": "0-0 (966)",
+      "xg_h": 1.872,
+      "xg_a": 0.929375
     },
     {
       "id": "tamworth__worthing__2026-08-28",
@@ -1562,7 +2291,16 @@
       "locked_model": 73.9,
       "locked_sim": 72.7,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:17.843276Z"
+      "generated_at": "2026-08-30T09:06:17.843276Z",
+      "ft_h": 42.7,
+      "ft_d": 27.3,
+      "ft_a": 30.0,
+      "over25": 57.5,
+      "btts": 45.6,
+      "cs_top": "0-0 (1183)",
+      "cs_second": "2-1 (926)",
+      "xg_h": 1.500125,
+      "xg_a": 1.234875
     },
     {
       "id": "wealdstone__carlisle__2026-08-28",
@@ -1581,7 +2319,16 @@
       "locked_model": 75.3,
       "locked_sim": 75.3,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:18.051575Z"
+      "generated_at": "2026-08-30T09:06:18.051575Z",
+      "ft_h": 24.7,
+      "ft_d": 25.7,
+      "ft_a": 49.6,
+      "over25": 57.5,
+      "btts": 44.9,
+      "cs_top": "0-0 (1122)",
+      "cs_second": "1-2 (1040)",
+      "xg_h": 1.11675,
+      "xg_a": 1.626
     },
     {
       "id": "lille__paris_sg__2026-08-28",
@@ -1600,7 +2347,16 @@
       "locked_model": 81.0,
       "locked_sim": 80.3,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:18.259814Z"
+      "generated_at": "2026-08-30T09:06:18.259814Z",
+      "ft_h": 19.7,
+      "ft_d": 25.4,
+      "ft_a": 54.9,
+      "over25": 58.2,
+      "btts": 45.5,
+      "cs_top": "1-2 (1265)",
+      "cs_second": "0-0 (1088)",
+      "xg_h": 1.02875,
+      "xg_a": 1.722375
     },
     {
       "id": "strasbourg__lens__2026-08-29",
@@ -1619,7 +2375,16 @@
       "locked_model": 73.6,
       "locked_sim": 72.9,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:18.469509Z"
+      "generated_at": "2026-08-30T09:06:18.469509Z",
+      "ft_h": 27.7,
+      "ft_d": 27.1,
+      "ft_a": 45.2,
+      "over25": 56.6,
+      "btts": 45.1,
+      "cs_top": "0-0 (1169)",
+      "cs_second": "1-2 (1029)",
+      "xg_h": 1.18,
+      "xg_a": 1.526
     },
     {
       "id": "auxerre__angers__2026-08-29",
@@ -1638,7 +2403,16 @@
       "locked_model": 76.6,
       "locked_sim": 76.2,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:18.676646Z"
+      "generated_at": "2026-08-30T09:06:18.676646Z",
+      "ft_h": 49.3,
+      "ft_d": 26.9,
+      "ft_a": 23.8,
+      "over25": 57.3,
+      "btts": 44.6,
+      "cs_top": "0-0 (1173)",
+      "cs_second": "2-1 (1110)",
+      "xg_h": 1.627375,
+      "xg_a": 1.097625
     },
     {
       "id": "brest__toulouse__2026-08-29",
@@ -1657,7 +2431,16 @@
       "locked_model": 72.1,
       "locked_sim": 71.8,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:18.883534Z"
+      "generated_at": "2026-08-30T09:06:18.883534Z",
+      "ft_h": 36.5,
+      "ft_d": 28.2,
+      "ft_a": 35.4,
+      "over25": 56.9,
+      "btts": 45.1,
+      "cs_top": "0-0 (1243)",
+      "cs_second": "2-1 (798)",
+      "xg_h": 1.360375,
+      "xg_a": 1.344125
     },
     {
       "id": "lorient__troyes__2026-08-29",
@@ -1676,7 +2459,16 @@
       "locked_model": 78.9,
       "locked_sim": 79.0,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:19.090880Z"
+      "generated_at": "2026-08-30T09:06:19.090880Z",
+      "ft_h": 52.3,
+      "ft_d": 26.7,
+      "ft_a": 21.0,
+      "over25": 57.9,
+      "btts": 45.5,
+      "cs_top": "2-1 (1172)",
+      "cs_second": "0-0 (1164)",
+      "xg_h": 1.7035,
+      "xg_a": 1.037875
     },
     {
       "id": "lyon__le_havre__2026-08-29",
@@ -1695,7 +2487,16 @@
       "locked_model": 86.5,
       "locked_sim": 87.1,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:19.301692Z"
+      "generated_at": "2026-08-30T09:06:19.301692Z",
+      "ft_h": 66.0,
+      "ft_d": 21.1,
+      "ft_a": 12.9,
+      "over25": 60.4,
+      "btts": 44.7,
+      "cs_top": "2-1 (1374)",
+      "cs_second": "0-0 (931)",
+      "xg_h": 1.972375,
+      "xg_a": 0.8605
     },
     {
       "id": "paris_fc__nice__2026-08-30",
@@ -1714,7 +2515,16 @@
       "locked_model": 75.0,
       "locked_sim": 74.6,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:19.509574Z"
+      "generated_at": "2026-08-30T09:06:19.509574Z",
+      "ft_h": 46.5,
+      "ft_d": 28.1,
+      "ft_a": 25.4,
+      "over25": 56.6,
+      "btts": 44.7,
+      "cs_top": "0-0 (1254)",
+      "cs_second": "2-1 (1023)",
+      "xg_h": 1.57025,
+      "xg_a": 1.145875
     },
     {
       "id": "rennes__le_mans__2026-08-30",
@@ -1733,7 +2543,16 @@
       "locked_model": 85.3,
       "locked_sim": 85.0,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:19.723334Z"
+      "generated_at": "2026-08-30T09:06:19.723334Z",
+      "ft_h": 66.4,
+      "ft_d": 18.6,
+      "ft_a": 15.0,
+      "over25": 62.5,
+      "btts": 45.1,
+      "cs_top": "2-1 (1445)",
+      "cs_second": "0-0 (794)",
+      "xg_h": 1.98275,
+      "xg_a": 0.90825
     },
     {
       "id": "monaco__marseille__2026-08-30",
@@ -1752,7 +2571,16 @@
       "locked_model": 74.3,
       "locked_sim": 74.0,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:19.935055Z"
+      "generated_at": "2026-08-30T09:06:19.935055Z",
+      "ft_h": 39.7,
+      "ft_d": 25.9,
+      "ft_a": 34.4,
+      "over25": 57.5,
+      "btts": 44.8,
+      "cs_top": "0-0 (1162)",
+      "cs_second": "2-1 (871)",
+      "xg_h": 1.410875,
+      "xg_a": 1.31725
     },
     {
       "id": "clermont__sochaux__2026-08-28",
@@ -1771,7 +2599,16 @@
       "locked_model": 70.5,
       "locked_sim": 70.5,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:20.140349Z"
+      "generated_at": "2026-08-30T09:06:20.140349Z",
+      "ft_h": 37.0,
+      "ft_d": 29.4,
+      "ft_a": 33.5,
+      "over25": 56.3,
+      "btts": 45.2,
+      "cs_top": "0-0 (1291)",
+      "cs_second": "2-1 (883)",
+      "xg_h": 1.377125,
+      "xg_a": 1.306625
     },
     {
       "id": "laval__grenoble__2026-08-28",
@@ -1790,7 +2627,16 @@
       "locked_model": 74.5,
       "locked_sim": 74.5,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:20.347303Z"
+      "generated_at": "2026-08-30T09:06:20.347303Z",
+      "ft_h": 44.3,
+      "ft_d": 30.2,
+      "ft_a": 25.5,
+      "over25": 56.5,
+      "btts": 44.9,
+      "cs_top": "0-0 (1331)",
+      "cs_second": "2-1 (983)",
+      "xg_h": 1.53575,
+      "xg_a": 1.157625
     },
     {
       "id": "montpellier__boulogne__2026-08-28",
@@ -1809,7 +2655,16 @@
       "locked_model": 82.3,
       "locked_sim": 82.4,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:20.555511Z"
+      "generated_at": "2026-08-30T09:06:20.555511Z",
+      "ft_h": 55.2,
+      "ft_d": 27.2,
+      "ft_a": 17.6,
+      "over25": 56.7,
+      "btts": 45.1,
+      "cs_top": "2-1 (1251)",
+      "cs_second": "0-0 (1203)",
+      "xg_h": 1.739875,
+      "xg_a": 0.965
     },
     {
       "id": "nancy__dunkerque__2026-08-28",
@@ -1828,7 +2683,16 @@
       "locked_model": 71.3,
       "locked_sim": 71.4,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:20.763171Z"
+      "generated_at": "2026-08-30T09:06:20.763171Z",
+      "ft_h": 37.3,
+      "ft_d": 28.6,
+      "ft_a": 34.1,
+      "over25": 57.6,
+      "btts": 45.0,
+      "cs_top": "0-0 (1221)",
+      "cs_second": "2-1 (832)",
+      "xg_h": 1.398125,
+      "xg_a": 1.34025
     },
     {
       "id": "rodez__pau_fc__2026-08-28",
@@ -1847,7 +2711,16 @@
       "locked_model": 79.5,
       "locked_sim": 79.9,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:20.974974Z"
+      "generated_at": "2026-08-30T09:06:20.974974Z",
+      "ft_h": 55.6,
+      "ft_d": 24.3,
+      "ft_a": 20.1,
+      "over25": 58.7,
+      "btts": 45.1,
+      "cs_top": "2-1 (1220)",
+      "cs_second": "0-0 (1051)",
+      "xg_h": 1.756875,
+      "xg_a": 1.029
     },
     {
       "id": "annecy__metz__2026-08-29",
@@ -1866,7 +2739,16 @@
       "locked_model": 70.2,
       "locked_sim": 69.7,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:21.178746Z"
+      "generated_at": "2026-08-30T09:06:21.178746Z",
+      "ft_h": 35.7,
+      "ft_d": 30.3,
+      "ft_a": 34.0,
+      "over25": 55.7,
+      "btts": 45.1,
+      "cs_top": "0-0 (1317)",
+      "cs_second": "2-1 (775)",
+      "xg_h": 1.363125,
+      "xg_a": 1.31675
     },
     {
       "id": "red_star__reims__2026-08-29",
@@ -1885,7 +2767,16 @@
       "locked_model": 70.2,
       "locked_sim": 70.2,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:21.385309Z"
+      "generated_at": "2026-08-30T09:06:21.385309Z",
+      "ft_h": 34.2,
+      "ft_d": 29.8,
+      "ft_a": 36.0,
+      "over25": 56.4,
+      "btts": 45.0,
+      "cs_top": "0-0 (1312)",
+      "cs_second": "1-2 (812)",
+      "xg_h": 1.331125,
+      "xg_a": 1.361375
     },
     {
       "id": "guingamp__nantes__2026-08-29",
@@ -1904,7 +2795,16 @@
       "locked_model": 71.0,
       "locked_sim": 70.4,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:21.591083Z"
+      "generated_at": "2026-08-30T09:06:21.591083Z",
+      "ft_h": 29.6,
+      "ft_d": 29.6,
+      "ft_a": 40.8,
+      "over25": 55.7,
+      "btts": 43.9,
+      "cs_top": "0-0 (1355)",
+      "cs_second": "1-2 (911)",
+      "xg_h": 1.19875,
+      "xg_a": 1.448125
     },
     {
       "id": "dijon__st_etienne__2026-08-31",
@@ -1923,7 +2823,16 @@
       "locked_model": 77.2,
       "locked_sim": 77.0,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:21.798994Z"
+      "generated_at": "2026-08-30T09:06:21.798994Z",
+      "ft_h": 23.1,
+      "ft_d": 27.1,
+      "ft_a": 49.8,
+      "over25": 57.3,
+      "btts": 45.0,
+      "cs_top": "0-0 (1209)",
+      "cs_second": "1-2 (1078)",
+      "xg_h": 1.093625,
+      "xg_a": 1.640375
     },
     {
       "id": "volos_nfc__iraklis__2026-08-29",
@@ -1942,7 +2851,16 @@
       "locked_model": 77.1,
       "locked_sim": 77.5,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:22.005000Z"
+      "generated_at": "2026-08-30T09:06:22.005000Z",
+      "ft_h": 50.4,
+      "ft_d": 27.1,
+      "ft_a": 22.5,
+      "over25": 57.2,
+      "btts": 44.7,
+      "cs_top": "0-0 (1174)",
+      "cs_second": "2-1 (1064)",
+      "xg_h": 1.668,
+      "xg_a": 1.068875
     },
     {
       "id": "panetolikos__kalamata__2026-08-29",
@@ -1961,7 +2879,16 @@
       "locked_model": 72.5,
       "locked_sim": 72.4,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:22.209611Z"
+      "generated_at": "2026-08-30T09:06:22.209611Z",
+      "ft_h": 41.5,
+      "ft_d": 30.9,
+      "ft_a": 27.7,
+      "over25": 54.6,
+      "btts": 44.8,
+      "cs_top": "0-0 (1375)",
+      "cs_second": "2-1 (893)",
+      "xg_h": 1.46,
+      "xg_a": 1.1745
     },
     {
       "id": "aris__ofi_crete__2026-08-30",
@@ -1980,7 +2907,16 @@
       "locked_model": 82.4,
       "locked_sim": 82.4,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:22.418690Z"
+      "generated_at": "2026-08-30T09:06:22.418690Z",
+      "ft_h": 57.6,
+      "ft_d": 24.7,
+      "ft_a": 17.6,
+      "over25": 59.4,
+      "btts": 46.0,
+      "cs_top": "2-1 (1292)",
+      "cs_second": "0-0 (1094)",
+      "xg_h": 1.81325,
+      "xg_a": 0.97225
     },
     {
       "id": "atromitos__paok__2026-08-30",
@@ -1999,7 +2935,16 @@
       "locked_model": 81.5,
       "locked_sim": 81.6,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:22.626086Z"
+      "generated_at": "2026-08-30T09:06:22.626086Z",
+      "ft_h": 18.4,
+      "ft_d": 25.9,
+      "ft_a": 55.6,
+      "over25": 57.5,
+      "btts": 44.4,
+      "cs_top": "1-2 (1161)",
+      "cs_second": "0-0 (1152)",
+      "xg_h": 0.994875,
+      "xg_a": 1.75725
     },
     {
       "id": "asteras_tripolis__olympiakos__2026-08-30",
@@ -2018,7 +2963,16 @@
       "locked_model": 91.6,
       "locked_sim": 91.3,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:22.838850Z"
+      "generated_at": "2026-08-30T09:06:22.838850Z",
+      "ft_h": 8.7,
+      "ft_d": 20.3,
+      "ft_a": 71.0,
+      "over25": 61.5,
+      "btts": 45.2,
+      "cs_top": "1-2 (1557)",
+      "cs_second": "0-0 (892)",
+      "xg_h": 0.78375,
+      "xg_a": 2.08925
     },
     {
       "id": "kifisia__aek__2026-08-30",
@@ -2037,7 +2991,16 @@
       "locked_model": 89.8,
       "locked_sim": 89.7,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:23.052470Z"
+      "generated_at": "2026-08-30T09:06:23.052470Z",
+      "ft_h": 10.3,
+      "ft_d": 19.5,
+      "ft_a": 70.2,
+      "over25": 62.2,
+      "btts": 44.9,
+      "cs_top": "1-2 (1501)",
+      "cs_second": "0-0 (869)",
+      "xg_h": 0.809375,
+      "xg_a": 2.067375
     },
     {
       "id": "levadeiakos__panathinaikos__2026-08-31",
@@ -2056,7 +3019,16 @@
       "locked_model": 85.2,
       "locked_sim": 84.9,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:23.267377Z"
+      "generated_at": "2026-08-30T09:06:23.267377Z",
+      "ft_h": 15.1,
+      "ft_d": 25.8,
+      "ft_a": 59.1,
+      "over25": 58.2,
+      "btts": 44.4,
+      "cs_top": "1-2 (1257)",
+      "cs_second": "0-0 (1125)",
+      "xg_h": 0.913875,
+      "xg_a": 1.843375
     },
     {
       "id": "milan__venezia__2026-08-28",
@@ -2075,7 +3047,16 @@
       "locked_model": 86.5,
       "locked_sim": 87.4,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:23.477922Z"
+      "generated_at": "2026-08-30T09:06:23.477922Z",
+      "ft_h": 65.5,
+      "ft_d": 21.8,
+      "ft_a": 12.6,
+      "over25": 60.2,
+      "btts": 45.1,
+      "cs_top": "2-1 (1475)",
+      "cs_second": "0-0 (971)",
+      "xg_h": 1.95025,
+      "xg_a": 0.873
     },
     {
       "id": "fiorentina__frosinone__2026-08-29",
@@ -2094,7 +3075,16 @@
       "locked_model": 81.9,
       "locked_sim": 81.4,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:23.687535Z"
+      "generated_at": "2026-08-30T09:06:23.687535Z",
+      "ft_h": 58.2,
+      "ft_d": 23.2,
+      "ft_a": 18.6,
+      "over25": 58.8,
+      "btts": 43.9,
+      "cs_top": "2-1 (1193)",
+      "cs_second": "0-0 (1015)",
+      "xg_h": 1.82025,
+      "xg_a": 0.988875
     },
     {
       "id": "monza__udinese__2026-08-29",
@@ -2113,7 +3103,16 @@
       "locked_model": 70.3,
       "locked_sim": 69.7,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:23.892905Z"
+      "generated_at": "2026-08-30T09:06:23.892905Z",
+      "ft_h": 29.8,
+      "ft_d": 30.3,
+      "ft_a": 39.9,
+      "over25": 54.4,
+      "btts": 44.6,
+      "cs_top": "0-0 (1338)",
+      "cs_second": "1-2 (841)",
+      "xg_h": 1.2225,
+      "xg_a": 1.42425
     },
     {
       "id": "sassuolo__torino__2026-08-29",
@@ -2132,7 +3131,16 @@
       "locked_model": 71.3,
       "locked_sim": 71.4,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:24.099467Z"
+      "generated_at": "2026-08-30T09:06:24.099467Z",
+      "ft_h": 42.4,
+      "ft_d": 29.0,
+      "ft_a": 28.6,
+      "over25": 55.6,
+      "btts": 44.9,
+      "cs_top": "0-0 (1298)",
+      "cs_second": "2-1 (952)",
+      "xg_h": 1.460875,
+      "xg_a": 1.199
     },
     {
       "id": "juventus__parma__2026-08-29",
@@ -2151,7 +3159,16 @@
       "locked_model": 91.5,
       "locked_sim": 91.5,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:24.314429Z"
+      "generated_at": "2026-08-30T09:06:24.314429Z",
+      "ft_h": 76.7,
+      "ft_d": 14.8,
+      "ft_a": 8.5,
+      "over25": 64.2,
+      "btts": 44.8,
+      "cs_top": "2-1 (1653)",
+      "cs_second": "1-0 (895)",
+      "xg_h": 2.191125,
+      "xg_a": 0.752125
     },
     {
       "id": "napoli__como__2026-08-30",
@@ -2170,7 +3187,16 @@
       "locked_model": 70.0,
       "locked_sim": 69.6,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:24.518025Z"
+      "generated_at": "2026-08-30T09:06:24.518025Z",
+      "ft_h": 37.9,
+      "ft_d": 30.9,
+      "ft_a": 31.2,
+      "over25": 54.8,
+      "btts": 44.5,
+      "cs_top": "0-0 (1368)",
+      "cs_second": "2-1 (847)",
+      "xg_h": 1.385625,
+      "xg_a": 1.26475
     },
     {
       "id": "cagliari__inter__2026-08-30",
@@ -2189,7 +3215,16 @@
       "locked_model": 86.5,
       "locked_sim": 86.5,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:24.729070Z"
+      "generated_at": "2026-08-30T09:06:24.729070Z",
+      "ft_h": 13.5,
+      "ft_d": 20.8,
+      "ft_a": 65.7,
+      "over25": 60.7,
+      "btts": 45.2,
+      "cs_top": "1-2 (1431)",
+      "cs_second": "0-0 (912)",
+      "xg_h": 0.882625,
+      "xg_a": 1.948625
     },
     {
       "id": "lazio__genoa__2026-08-30",
@@ -2208,7 +3243,16 @@
       "locked_model": 78.1,
       "locked_sim": 78.5,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:24.932852Z"
+      "generated_at": "2026-08-30T09:06:24.932852Z",
+      "ft_h": 47.8,
+      "ft_d": 30.7,
+      "ft_a": 21.5,
+      "over25": 55.0,
+      "btts": 44.5,
+      "cs_top": "0-0 (1376)",
+      "cs_second": "2-1 (1056)",
+      "xg_h": 1.6035,
+      "xg_a": 1.053375
     },
     {
       "id": "lecce__roma__2026-08-31",
@@ -2227,7 +3271,16 @@
       "locked_model": 88.1,
       "locked_sim": 88.0,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:25.141700Z"
+      "generated_at": "2026-08-30T09:06:25.141700Z",
+      "ft_h": 12.0,
+      "ft_d": 24.4,
+      "ft_a": 63.5,
+      "over25": 59.1,
+      "btts": 45.3,
+      "cs_top": "1-2 (1385)",
+      "cs_second": "0-0 (1060)",
+      "xg_h": 0.860625,
+      "xg_a": 1.92975
     },
     {
       "id": "atalanta__bologna__2026-08-31",
@@ -2246,7 +3299,16 @@
       "locked_model": 76.4,
       "locked_sim": 76.5,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:25.350362Z"
+      "generated_at": "2026-08-30T09:06:25.350362Z",
+      "ft_h": 51.2,
+      "ft_d": 25.3,
+      "ft_a": 23.5,
+      "over25": 58.8,
+      "btts": 45.5,
+      "cs_top": "2-1 (1121)",
+      "cs_second": "0-0 (1069)",
+      "xg_h": 1.67225,
+      "xg_a": 1.114625
     },
     {
       "id": "cremonese__modena__2026-08-28",
@@ -2265,7 +3327,16 @@
       "locked_model": 72.5,
       "locked_sim": 73.2,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:25.556338Z"
+      "generated_at": "2026-08-30T09:06:25.556338Z",
+      "ft_h": 42.8,
+      "ft_d": 30.4,
+      "ft_a": 26.8,
+      "over25": 55.4,
+      "btts": 44.9,
+      "cs_top": "0-0 (1359)",
+      "cs_second": "2-1 (939)",
+      "xg_h": 1.490125,
+      "xg_a": 1.161875
     },
     {
       "id": "sampdoria__juve_stabia__2026-08-29",
@@ -2284,7 +3355,16 @@
       "locked_model": 79.1,
       "locked_sim": 78.3,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:25.762187Z"
+      "generated_at": "2026-08-30T09:06:25.762187Z",
+      "ft_h": 49.5,
+      "ft_d": 28.8,
+      "ft_a": 21.7,
+      "over25": 56.8,
+      "btts": 45.7,
+      "cs_top": "0-0 (1229)",
+      "cs_second": "2-1 (1102)",
+      "xg_h": 1.635875,
+      "xg_a": 1.069875
     },
     {
       "id": "virtus_entella__cesena__2026-08-29",
@@ -2303,7 +3383,16 @@
       "locked_model": 72.2,
       "locked_sim": 72.6,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:25.971199Z"
+      "generated_at": "2026-08-30T09:06:25.971199Z",
+      "ft_h": 43.5,
+      "ft_d": 29.1,
+      "ft_a": 27.4,
+      "over25": 55.9,
+      "btts": 45.1,
+      "cs_top": "0-0 (1244)",
+      "cs_second": "2-1 (933)",
+      "xg_h": 1.508625,
+      "xg_a": 1.18775
     },
     {
       "id": "ascoli__carrarese__2026-08-29",
@@ -2322,7 +3411,16 @@
       "locked_model": 77.7,
       "locked_sim": 77.8,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:26.177280Z"
+      "generated_at": "2026-08-30T09:06:26.177280Z",
+      "ft_h": 49.5,
+      "ft_d": 28.3,
+      "ft_a": 22.2,
+      "over25": 57.0,
+      "btts": 45.5,
+      "cs_top": "0-0 (1230)",
+      "cs_second": "2-1 (1085)",
+      "xg_h": 1.642875,
+      "xg_a": 1.073625
     },
     {
       "id": "avellino__vicenza__2026-08-29",
@@ -2341,7 +3439,16 @@
       "locked_model": 71.0,
       "locked_sim": 71.2,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:26.383730Z"
+      "generated_at": "2026-08-30T09:06:26.383730Z",
+      "ft_h": 38.4,
+      "ft_d": 28.8,
+      "ft_a": 32.7,
+      "over25": 56.2,
+      "btts": 45.1,
+      "cs_top": "0-0 (1257)",
+      "cs_second": "2-1 (846)",
+      "xg_h": 1.403875,
+      "xg_a": 1.288
     },
     {
       "id": "padova__verona__2026-08-29",
@@ -2360,7 +3467,16 @@
       "locked_model": 70.0,
       "locked_sim": 69.8,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:26.589234Z"
+      "generated_at": "2026-08-30T09:06:26.589234Z",
+      "ft_h": 31.1,
+      "ft_d": 31.0,
+      "ft_a": 37.9,
+      "over25": 55.1,
+      "btts": 45.4,
+      "cs_top": "0-0 (1330)",
+      "cs_second": "1-2 (850)",
+      "xg_h": 1.27,
+      "xg_a": 1.388125
     },
     {
       "id": "arezzo__palermo__2026-08-30",
@@ -2379,7 +3495,16 @@
       "locked_model": 73.7,
       "locked_sim": 72.8,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:26.795109Z"
+      "generated_at": "2026-08-30T09:06:26.795109Z",
+      "ft_h": 27.2,
+      "ft_d": 28.0,
+      "ft_a": 44.9,
+      "over25": 57.3,
+      "btts": 45.5,
+      "cs_top": "0-0 (1237)",
+      "cs_second": "1-2 (987)",
+      "xg_h": 1.172,
+      "xg_a": 1.55675
     },
     {
       "id": "mantova__empoli__2026-08-30",
@@ -2398,7 +3523,16 @@
       "locked_model": 73.9,
       "locked_sim": 74.0,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:27.000844Z"
+      "generated_at": "2026-08-30T09:06:27.000844Z",
+      "ft_h": 45.2,
+      "ft_d": 28.7,
+      "ft_a": 26.0,
+      "over25": 56.5,
+      "btts": 44.8,
+      "cs_top": "0-0 (1250)",
+      "cs_second": "2-1 (963)",
+      "xg_h": 1.553,
+      "xg_a": 1.1625
     },
     {
       "id": "benevento__sudtirol__2026-08-30",
@@ -2417,7 +3551,16 @@
       "locked_model": 74.5,
       "locked_sim": 73.9,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:27.206227Z"
+      "generated_at": "2026-08-30T09:06:27.206227Z",
+      "ft_h": 44.2,
+      "ft_d": 29.7,
+      "ft_a": 26.1,
+      "over25": 56.0,
+      "btts": 45.2,
+      "cs_top": "0-0 (1280)",
+      "cs_second": "2-1 (949)",
+      "xg_h": 1.5365,
+      "xg_a": 1.157375
     },
     {
       "id": "pisa__catanzaro__2026-08-30",
@@ -2436,7 +3579,16 @@
       "locked_model": 79.9,
       "locked_sim": 79.7,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:27.412277Z"
+      "generated_at": "2026-08-30T09:06:27.412277Z",
+      "ft_h": 50.2,
+      "ft_d": 29.5,
+      "ft_a": 20.3,
+      "over25": 56.1,
+      "btts": 44.7,
+      "cs_top": "0-0 (1319)",
+      "cs_second": "2-1 (1075)",
+      "xg_h": 1.657875,
+      "xg_a": 1.030625
     },
     {
       "id": "groningen__for_sittard__2026-08-28",
@@ -2455,7 +3607,16 @@
       "locked_model": 84.9,
       "locked_sim": 84.9,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:27.624116Z"
+      "generated_at": "2026-08-30T09:06:27.624116Z",
+      "ft_h": 64.3,
+      "ft_d": 20.6,
+      "ft_a": 15.1,
+      "over25": 61.4,
+      "btts": 44.9,
+      "cs_top": "2-1 (1321)",
+      "cs_second": "0-0 (908)",
+      "xg_h": 1.95225,
+      "xg_a": 0.912625
     },
     {
       "id": "excelsior__sparta_rotterdam__2026-08-29",
@@ -2474,7 +3635,16 @@
       "locked_model": 75.2,
       "locked_sim": 75.5,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:27.832813Z"
+      "generated_at": "2026-08-30T09:06:27.832813Z",
+      "ft_h": 39.2,
+      "ft_d": 24.5,
+      "ft_a": 36.2,
+      "over25": 59.0,
+      "btts": 45.2,
+      "cs_top": "0-0 (1086)",
+      "cs_second": "2-1 (866)",
+      "xg_h": 1.418125,
+      "xg_a": 1.3495
     },
     {
       "id": "az_alkmaar__go_ahead_eagles__2026-08-29",
@@ -2493,7 +3663,16 @@
       "locked_model": 87.3,
       "locked_sim": 87.1,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:28.043181Z"
+      "generated_at": "2026-08-30T09:06:28.043181Z",
+      "ft_h": 66.8,
+      "ft_d": 20.4,
+      "ft_a": 12.9,
+      "over25": 60.4,
+      "btts": 43.4,
+      "cs_top": "2-1 (1422)",
+      "cs_second": "0-0 (945)",
+      "xg_h": 1.976375,
+      "xg_a": 0.8525
     },
     {
       "id": "zwolle__nijmegen__2026-08-29",
@@ -2512,7 +3691,16 @@
       "locked_model": 78.9,
       "locked_sim": 78.7,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:28.254840Z"
+      "generated_at": "2026-08-30T09:06:28.254840Z",
+      "ft_h": 21.3,
+      "ft_d": 21.7,
+      "ft_a": 57.0,
+      "over25": 60.8,
+      "btts": 46.4,
+      "cs_top": "1-2 (1280)",
+      "cs_second": "0-0 (932)",
+      "xg_h": 1.060125,
+      "xg_a": 1.7945
     },
     {
       "id": "utrecht__psv_eindhoven__2026-08-30",
@@ -2531,7 +3719,16 @@
       "locked_model": 78.9,
       "locked_sim": 79.2,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:28.466927Z"
+      "generated_at": "2026-08-30T09:06:28.466927Z",
+      "ft_h": 20.8,
+      "ft_d": 21.4,
+      "ft_a": 57.7,
+      "over25": 60.0,
+      "btts": 45.1,
+      "cs_top": "1-2 (1251)",
+      "cs_second": "0-0 (943)",
+      "xg_h": 1.0365,
+      "xg_a": 1.794125
     },
     {
       "id": "feyenoord__den_haag__2026-08-30",
@@ -2550,7 +3747,16 @@
       "locked_model": 93.6,
       "locked_sim": 93.5,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:28.685452Z"
+      "generated_at": "2026-08-30T09:06:28.685452Z",
+      "ft_h": 82.0,
+      "ft_d": 11.5,
+      "ft_a": 6.5,
+      "over25": 66.0,
+      "btts": 45.1,
+      "cs_top": "2-1 (1771)",
+      "cs_second": "2-0 (966)",
+      "xg_h": 2.293,
+      "xg_a": 0.724
     },
     {
       "id": "willem_ii__heerenveen__2026-08-30",
@@ -2569,7 +3775,16 @@
       "locked_model": 78.1,
       "locked_sim": 77.5,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:28.896298Z"
+      "generated_at": "2026-08-30T09:06:28.896298Z",
+      "ft_h": 23.8,
+      "ft_d": 22.5,
+      "ft_a": 53.7,
+      "over25": 59.6,
+      "btts": 44.6,
+      "cs_top": "1-2 (1153)",
+      "cs_second": "0-0 (988)",
+      "xg_h": 1.08825,
+      "xg_a": 1.717625
     },
     {
       "id": "telstar__ajax__2026-08-30",
@@ -2588,7 +3803,16 @@
       "locked_model": 81.1,
       "locked_sim": 81.2,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:29.107105Z"
+      "generated_at": "2026-08-30T09:06:29.107105Z",
+      "ft_h": 18.8,
+      "ft_d": 21.1,
+      "ft_a": 60.1,
+      "over25": 60.7,
+      "btts": 45.6,
+      "cs_top": "1-2 (1324)",
+      "cs_second": "0-0 (935)",
+      "xg_h": 0.99375,
+      "xg_a": 1.8385
     },
     {
       "id": "cambuur__twente__2026-08-30",
@@ -2607,7 +3831,16 @@
       "locked_model": 87.4,
       "locked_sim": 87.1,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:29.320587Z"
+      "generated_at": "2026-08-30T09:06:29.320587Z",
+      "ft_h": 13.0,
+      "ft_d": 16.5,
+      "ft_a": 70.5,
+      "over25": 63.0,
+      "btts": 45.5,
+      "cs_top": "1-2 (1509)",
+      "cs_second": "0-1 (837)",
+      "xg_h": 0.87125,
+      "xg_a": 2.066875
     },
     {
       "id": "rio_ave__sp_lisbon__2026-08-28",
@@ -2626,7 +3859,16 @@
       "locked_model": 89.2,
       "locked_sim": 88.5,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:29.533936Z"
+      "generated_at": "2026-08-30T09:06:29.533936Z",
+      "ft_h": 11.5,
+      "ft_d": 17.1,
+      "ft_a": 71.4,
+      "over25": 63.1,
+      "btts": 45.2,
+      "cs_top": "1-2 (1568)",
+      "cs_second": "0-1 (816)",
+      "xg_h": 0.840125,
+      "xg_a": 2.079625
     },
     {
       "id": "alverca__santa_clara__2026-08-29",
@@ -2645,7 +3887,16 @@
       "locked_model": 70.4,
       "locked_sim": 70.0,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:29.738880Z"
+      "generated_at": "2026-08-30T09:06:29.738880Z",
+      "ft_h": 34.9,
+      "ft_d": 30.0,
+      "ft_a": 35.1,
+      "over25": 56.3,
+      "btts": 45.3,
+      "cs_top": "0-0 (1289)",
+      "cs_second": "2-1 (779)",
+      "xg_h": 1.346375,
+      "xg_a": 1.346875
     },
     {
       "id": "arouca__maritimo__2026-08-29",
@@ -2664,7 +3915,16 @@
       "locked_model": 72.7,
       "locked_sim": 72.3,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:29.944980Z"
+      "generated_at": "2026-08-30T09:06:29.944980Z",
+      "ft_h": 43.8,
+      "ft_d": 28.5,
+      "ft_a": 27.7,
+      "over25": 57.9,
+      "btts": 45.9,
+      "cs_top": "0-0 (1221)",
+      "cs_second": "2-1 (997)",
+      "xg_h": 1.523375,
+      "xg_a": 1.22575
     },
     {
       "id": "academico_viseu__porto__2026-08-29",
@@ -2683,7 +3943,16 @@
       "locked_model": 89.8,
       "locked_sim": 89.7,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:30.158436Z"
+      "generated_at": "2026-08-30T09:06:30.158436Z",
+      "ft_h": 10.3,
+      "ft_d": 19.4,
+      "ft_a": 70.3,
+      "over25": 62.4,
+      "btts": 44.6,
+      "cs_top": "1-2 (1526)",
+      "cs_second": "0-0 (868)",
+      "xg_h": 0.81825,
+      "xg_a": 2.070875
     },
     {
       "id": "nacional__estrela__2026-08-30",
@@ -2702,7 +3971,16 @@
       "locked_model": 71.4,
       "locked_sim": 70.1,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:30.365081Z"
+      "generated_at": "2026-08-30T09:06:30.365081Z",
+      "ft_h": 39.8,
+      "ft_d": 29.9,
+      "ft_a": 30.2,
+      "over25": 55.8,
+      "btts": 45.4,
+      "cs_top": "0-0 (1336)",
+      "cs_second": "2-1 (867)",
+      "xg_h": 1.431,
+      "xg_a": 1.241625
     },
     {
       "id": "casa_pia__moreirense__2026-08-30",
@@ -2721,7 +3999,16 @@
       "locked_model": 70.0,
       "locked_sim": 69.9,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:30.569195Z"
+      "generated_at": "2026-08-30T09:06:30.569195Z",
+      "ft_h": 39.7,
+      "ft_d": 30.3,
+      "ft_a": 30.0,
+      "over25": 54.8,
+      "btts": 44.6,
+      "cs_top": "0-0 (1356)",
+      "cs_second": "2-1 (883)",
+      "xg_h": 1.4135,
+      "xg_a": 1.219625
     },
     {
       "id": "famalicao__gil_vicente__2026-08-30",
@@ -2740,7 +4027,16 @@
       "locked_model": 71.8,
       "locked_sim": 71.2,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:30.775403Z"
+      "generated_at": "2026-08-30T09:06:30.775403Z",
+      "ft_h": 43.4,
+      "ft_d": 27.8,
+      "ft_a": 28.8,
+      "over25": 56.7,
+      "btts": 44.9,
+      "cs_top": "0-0 (1234)",
+      "cs_second": "2-1 (970)",
+      "xg_h": 1.511,
+      "xg_a": 1.196875
     },
     {
       "id": "benfica__estoril__2026-08-31",
@@ -2759,7 +4055,16 @@
       "locked_model": 92.3,
       "locked_sim": 92.5,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:30.992994Z"
+      "generated_at": "2026-08-30T09:06:30.992994Z",
+      "ft_h": 79.9,
+      "ft_d": 12.5,
+      "ft_a": 7.5,
+      "over25": 66.4,
+      "btts": 45.1,
+      "cs_top": "2-1 (1649)",
+      "cs_second": "1-0 (881)",
+      "xg_h": 2.294,
+      "xg_a": 0.75125
     },
     {
       "id": "sp_braga__guimaraes__2026-08-31",
@@ -2778,7 +4083,16 @@
       "locked_model": 81.4,
       "locked_sim": 81.0,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:31.200858Z"
+      "generated_at": "2026-08-30T09:06:31.200858Z",
+      "ft_h": 55.4,
+      "ft_d": 25.6,
+      "ft_a": 19.0,
+      "over25": 59.0,
+      "btts": 45.2,
+      "cs_top": "2-1 (1228)",
+      "cs_second": "0-0 (1143)",
+      "xg_h": 1.766,
+      "xg_a": 1.00425
     },
     {
       "id": "celtic__falkirk__2026-08-29",
@@ -2797,7 +4111,16 @@
       "locked_model": 91.6,
       "locked_sim": 91.2,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:31.420770Z"
+      "generated_at": "2026-08-30T09:06:31.420770Z",
+      "ft_h": 76.7,
+      "ft_d": 14.5,
+      "ft_a": 8.8,
+      "over25": 65.1,
+      "btts": 45.3,
+      "cs_top": "2-1 (1623)",
+      "cs_second": "2-0 (872)",
+      "xg_h": 2.20625,
+      "xg_a": 0.78975
     },
     {
       "id": "hearts__st_johnstone__2026-08-29",
@@ -2816,7 +4139,16 @@
       "locked_model": 79.5,
       "locked_sim": 79.4,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:31.630770Z"
+      "generated_at": "2026-08-30T09:06:31.630770Z",
+      "ft_h": 55.4,
+      "ft_d": 24.0,
+      "ft_a": 20.6,
+      "over25": 58.5,
+      "btts": 43.9,
+      "cs_top": "2-1 (1162)",
+      "cs_second": "0-0 (1105)",
+      "xg_h": 1.736375,
+      "xg_a": 1.027125
     },
     {
       "id": "kilmarnock__dundee_united__2026-08-29",
@@ -2835,7 +4167,16 @@
       "locked_model": 73.0,
       "locked_sim": 73.6,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:31.843214Z"
+      "generated_at": "2026-08-30T09:06:31.843214Z",
+      "ft_h": 39.4,
+      "ft_d": 26.5,
+      "ft_a": 34.2,
+      "over25": 57.3,
+      "btts": 45.0,
+      "cs_top": "0-0 (1185)",
+      "cs_second": "2-1 (887)",
+      "xg_h": 1.41125,
+      "xg_a": 1.299375
     },
     {
       "id": "aberdeen__rangers__2026-08-30",
@@ -2854,7 +4195,16 @@
       "locked_model": 78.3,
       "locked_sim": 78.3,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:32.051442Z"
+      "generated_at": "2026-08-30T09:06:32.051442Z",
+      "ft_h": 21.7,
+      "ft_d": 25.6,
+      "ft_a": 52.7,
+      "over25": 58.8,
+      "btts": 45.9,
+      "cs_top": "1-2 (1119)",
+      "cs_second": "0-0 (1089)",
+      "xg_h": 1.078125,
+      "xg_a": 1.722875
     },
     {
       "id": "dundee__hibernian__2026-08-30",
@@ -2873,7 +4223,16 @@
       "locked_model": 72.3,
       "locked_sim": 73.2,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:32.257863Z"
+      "generated_at": "2026-08-30T09:06:32.257863Z",
+      "ft_h": 30.0,
+      "ft_d": 26.8,
+      "ft_a": 43.2,
+      "over25": 56.9,
+      "btts": 44.6,
+      "cs_top": "0-0 (1166)",
+      "cs_second": "1-2 (934)",
+      "xg_h": 1.227625,
+      "xg_a": 1.49075
     },
     {
       "id": "st_mirren__motherwell__2026-08-30",
@@ -2892,7 +4251,16 @@
       "locked_model": 72.0,
       "locked_sim": 71.7,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:32.464529Z"
+      "generated_at": "2026-08-30T09:06:32.464529Z",
+      "ft_h": 36.8,
+      "ft_d": 28.3,
+      "ft_a": 34.9,
+      "over25": 56.9,
+      "btts": 45.5,
+      "cs_top": "0-0 (1261)",
+      "cs_second": "2-1 (809)",
+      "xg_h": 1.379125,
+      "xg_a": 1.325375
     },
     {
       "id": "dunfermline__raith_rvs__2026-08-28",
@@ -2911,7 +4279,16 @@
       "locked_model": 72.1,
       "locked_sim": 72.3,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:32.673475Z"
+      "generated_at": "2026-08-30T09:06:32.673475Z",
+      "ft_h": 36.8,
+      "ft_d": 27.7,
+      "ft_a": 35.5,
+      "over25": 56.9,
+      "btts": 45.2,
+      "cs_top": "0-0 (1239)",
+      "cs_second": "2-1 (786)",
+      "xg_h": 1.373875,
+      "xg_a": 1.3445
     },
     {
       "id": "arbroath__livingston__2026-08-29",
@@ -2930,7 +4307,16 @@
       "locked_model": 71.9,
       "locked_sim": 71.1,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:32.879521Z"
+      "generated_at": "2026-08-30T09:06:32.879521Z",
+      "ft_h": 28.5,
+      "ft_d": 28.9,
+      "ft_a": 42.6,
+      "over25": 56.5,
+      "btts": 45.6,
+      "cs_top": "0-0 (1290)",
+      "cs_second": "1-2 (958)",
+      "xg_h": 1.208875,
+      "xg_a": 1.497375
     },
     {
       "id": "ayr__morton__2026-08-29",
@@ -2949,7 +4335,16 @@
       "locked_model": 80.8,
       "locked_sim": 80.0,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:33.088324Z"
+      "generated_at": "2026-08-30T09:06:33.088324Z",
+      "ft_h": 55.1,
+      "ft_d": 24.9,
+      "ft_a": 20.0,
+      "over25": 59.3,
+      "btts": 44.5,
+      "cs_top": "2-1 (1194)",
+      "cs_second": "0-0 (1135)",
+      "xg_h": 1.754625,
+      "xg_a": 1.02075
     },
     {
       "id": "partick__queens_park__2026-08-29",
@@ -2968,7 +4363,16 @@
       "locked_model": 88.9,
       "locked_sim": 89.0,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:33.306415Z"
+      "generated_at": "2026-08-30T09:06:33.306415Z",
+      "ft_h": 68.5,
+      "ft_d": 20.5,
+      "ft_a": 11.0,
+      "over25": 61.1,
+      "btts": 45.6,
+      "cs_top": "2-1 (1444)",
+      "cs_second": "0-0 (883)",
+      "xg_h": 2.03275,
+      "xg_a": 0.837625
     },
     {
       "id": "stenhousemuir__inverness_c__2026-08-29",
@@ -2987,7 +4391,16 @@
       "locked_model": 72.8,
       "locked_sim": 72.9,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:33.514334Z"
+      "generated_at": "2026-08-30T09:06:33.514334Z",
+      "ft_h": 27.3,
+      "ft_d": 27.1,
+      "ft_a": 45.6,
+      "over25": 57.8,
+      "btts": 45.1,
+      "cs_top": "0-0 (1161)",
+      "cs_second": "1-2 (1019)",
+      "xg_h": 1.18275,
+      "xg_a": 1.553
     },
     {
       "id": "airdrie_utd__east_fife__2026-08-29",
@@ -3006,7 +4419,16 @@
       "locked_model": 75.7,
       "locked_sim": 75.0,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:33.723657Z"
+      "generated_at": "2026-08-30T09:06:33.723657Z",
+      "ft_h": 49.8,
+      "ft_d": 25.2,
+      "ft_a": 25.1,
+      "over25": 58.8,
+      "btts": 44.9,
+      "cs_top": "0-0 (1111)",
+      "cs_second": "2-1 (1111)",
+      "xg_h": 1.64775,
+      "xg_a": 1.129875
     },
     {
       "id": "alloa__peterhead__2026-08-29",
@@ -3025,7 +4447,16 @@
       "locked_model": 72.5,
       "locked_sim": 72.1,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:33.931025Z"
+      "generated_at": "2026-08-30T09:06:33.931025Z",
+      "ft_h": 43.8,
+      "ft_d": 27.9,
+      "ft_a": 28.4,
+      "over25": 57.2,
+      "btts": 45.2,
+      "cs_top": "0-0 (1237)",
+      "cs_second": "2-1 (944)",
+      "xg_h": 1.52,
+      "xg_a": 1.19825
     },
     {
       "id": "hamilton__cove_rangers__2026-08-29",
@@ -3044,7 +4475,16 @@
       "locked_model": 82.9,
       "locked_sim": 83.1,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:34.141176Z"
+      "generated_at": "2026-08-30T09:06:34.141176Z",
+      "ft_h": 60.4,
+      "ft_d": 22.7,
+      "ft_a": 16.9,
+      "over25": 59.9,
+      "btts": 44.9,
+      "cs_top": "2-1 (1316)",
+      "cs_second": "0-0 (1012)",
+      "xg_h": 1.8385,
+      "xg_a": 0.9675
     },
     {
       "id": "montrose__queen_of_sth__2026-08-29",
@@ -3063,7 +4503,16 @@
       "locked_model": 74.5,
       "locked_sim": 74.0,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:34.349200Z"
+      "generated_at": "2026-08-30T09:06:34.349200Z",
+      "ft_h": 43.9,
+      "ft_d": 26.0,
+      "ft_a": 30.1,
+      "over25": 57.6,
+      "btts": 44.9,
+      "cs_top": "0-0 (1113)",
+      "cs_second": "2-1 (949)",
+      "xg_h": 1.518875,
+      "xg_a": 1.2315
     },
     {
       "id": "ross_county__east_kilbride__2026-08-29",
@@ -3082,7 +4531,16 @@
       "locked_model": 80.1,
       "locked_sim": 80.4,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:34.559819Z"
+      "generated_at": "2026-08-30T09:06:34.559819Z",
+      "ft_h": 57.2,
+      "ft_d": 23.2,
+      "ft_a": 19.6,
+      "over25": 59.2,
+      "btts": 44.6,
+      "cs_top": "2-1 (1205)",
+      "cs_second": "0-0 (994)",
+      "xg_h": 1.803875,
+      "xg_a": 1.006
     },
     {
       "id": "edinburgh_city__forfar__2026-08-28",
@@ -3101,7 +4559,16 @@
       "locked_model": 81.0,
       "locked_sim": 80.3,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:34.770443Z"
+      "generated_at": "2026-08-30T09:06:34.770443Z",
+      "ft_h": 56.0,
+      "ft_d": 24.4,
+      "ft_a": 19.7,
+      "over25": 59.8,
+      "btts": 45.9,
+      "cs_top": "2-1 (1195)",
+      "cs_second": "0-0 (1060)",
+      "xg_h": 1.78525,
+      "xg_a": 1.022875
     },
     {
       "id": "annan_athletic__dumbarton__2026-08-29",
@@ -3120,7 +4587,16 @@
       "locked_model": 75.0,
       "locked_sim": 75.8,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:34.980242Z"
+      "generated_at": "2026-08-30T09:06:34.980242Z",
+      "ft_h": 49.3,
+      "ft_d": 24.2,
+      "ft_a": 26.5,
+      "over25": 59.6,
+      "btts": 45.5,
+      "cs_top": "0-0 (1095)",
+      "cs_second": "2-1 (1072)",
+      "xg_h": 1.6275,
+      "xg_a": 1.166125
     },
     {
       "id": "elgin__stirling__2026-08-29",
@@ -3139,7 +4615,16 @@
       "locked_model": 75.7,
       "locked_sim": 75.6,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:35.187691Z"
+      "generated_at": "2026-08-30T09:06:35.187691Z",
+      "ft_h": 49.8,
+      "ft_d": 25.8,
+      "ft_a": 24.4,
+      "over25": 58.2,
+      "btts": 45.1,
+      "cs_top": "0-0 (1161)",
+      "cs_second": "2-1 (1070)",
+      "xg_h": 1.63725,
+      "xg_a": 1.116875
     },
     {
       "id": "spartans__clyde__2026-08-29",
@@ -3158,7 +4643,16 @@
       "locked_model": 74.5,
       "locked_sim": 73.6,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:35.396493Z"
+      "generated_at": "2026-08-30T09:06:35.396493Z",
+      "ft_h": 42.0,
+      "ft_d": 26.4,
+      "ft_a": 31.5,
+      "over25": 58.4,
+      "btts": 45.5,
+      "cs_top": "0-0 (1110)",
+      "cs_second": "2-1 (870)",
+      "xg_h": 1.507,
+      "xg_a": 1.278875
     },
     {
       "id": "stranraer__kelty_hearts__2026-08-29",
@@ -3177,7 +4671,16 @@
       "locked_model": 73.6,
       "locked_sim": 73.9,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:35.604793Z"
+      "generated_at": "2026-08-30T09:06:35.604793Z",
+      "ft_h": 43.9,
+      "ft_d": 26.1,
+      "ft_a": 30.0,
+      "over25": 58.4,
+      "btts": 45.5,
+      "cs_top": "0-0 (1157)",
+      "cs_second": "2-1 (1000)",
+      "xg_h": 1.50275,
+      "xg_a": 1.242875
     },
     {
       "id": "santander__elche__2026-08-28",
@@ -3196,7 +4699,16 @@
       "locked_model": 73.7,
       "locked_sim": 73.6,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:35.813348Z"
+      "generated_at": "2026-08-30T09:06:35.813348Z",
+      "ft_h": 46.5,
+      "ft_d": 27.0,
+      "ft_a": 26.4,
+      "over25": 56.4,
+      "btts": 44.6,
+      "cs_top": "0-0 (1187)",
+      "cs_second": "2-1 (1008)",
+      "xg_h": 1.565125,
+      "xg_a": 1.13425
     },
     {
       "id": "alaves__villarreal__2026-08-28",
@@ -3215,7 +4727,16 @@
       "locked_model": 72.9,
       "locked_sim": 72.6,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:36.020268Z"
+      "generated_at": "2026-08-30T09:06:36.020268Z",
+      "ft_h": 29.2,
+      "ft_d": 27.4,
+      "ft_a": 43.5,
+      "over25": 57.0,
+      "btts": 45.2,
+      "cs_top": "0-0 (1236)",
+      "cs_second": "1-2 (996)",
+      "xg_h": 1.205,
+      "xg_a": 1.50075
     },
     {
       "id": "levante__betis__2026-08-29",
@@ -3234,7 +4755,16 @@
       "locked_model": 75.0,
       "locked_sim": 74.9,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:36.978012Z"
+      "generated_at": "2026-08-30T09:06:36.978012Z",
+      "ft_h": 39.3,
+      "ft_d": 30.0,
+      "ft_a": 30.8,
+      "over25": 66.1,
+      "btts": 65.3,
+      "cs_top": "2-1 (1238)",
+      "cs_second": "1-2 (1028)",
+      "xg_h": 1.601,
+      "xg_a": 1.4275
     },
     {
       "id": "sociedad__espanol__2026-08-29",
@@ -3253,7 +4783,16 @@
       "locked_model": 76.2,
       "locked_sim": 76.3,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:37.187550Z"
+      "generated_at": "2026-08-30T09:06:37.187550Z",
+      "ft_h": 50.0,
+      "ft_d": 26.3,
+      "ft_a": 23.7,
+      "over25": 56.7,
+      "btts": 44.6,
+      "cs_top": "0-0 (1153)",
+      "cs_second": "2-1 (1089)",
+      "xg_h": 1.614875,
+      "xg_a": 1.087875
     },
     {
       "id": "sevilla__ath_madrid__2026-08-29",
@@ -3272,7 +4811,16 @@
       "locked_model": 73.7,
       "locked_sim": 74.0,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:37.393065Z"
+      "generated_at": "2026-08-30T09:06:37.393065Z",
+      "ft_h": 26.0,
+      "ft_d": 28.8,
+      "ft_a": 45.1,
+      "over25": 56.0,
+      "btts": 45.0,
+      "cs_top": "0-0 (1284)",
+      "cs_second": "1-2 (1004)",
+      "xg_h": 1.145125,
+      "xg_a": 1.53325
     },
     {
       "id": "real_madrid__malaga__2026-08-30",
@@ -3291,7 +4839,16 @@
       "locked_model": 95.5,
       "locked_sim": 95.5,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:37.609382Z"
+      "generated_at": "2026-08-30T09:06:37.609382Z",
+      "ft_h": 84.8,
+      "ft_d": 10.7,
+      "ft_a": 4.5,
+      "over25": 67.2,
+      "btts": 45.1,
+      "cs_top": "2-1 (1803)",
+      "cs_second": "1-0 (932)",
+      "xg_h": 2.372375,
+      "xg_a": 0.682
     },
     {
       "id": "la_coruna__valencia__2026-08-30",
@@ -3310,7 +4867,16 @@
       "locked_model": 76.5,
       "locked_sim": 76.5,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:38.555244Z"
+      "generated_at": "2026-08-30T09:06:38.555244Z",
+      "ft_h": 28.8,
+      "ft_d": 34.4,
+      "ft_a": 36.8,
+      "over25": 52.2,
+      "btts": 52.7,
+      "cs_top": "0-0 (1305)",
+      "cs_second": "1-2 (1128)",
+      "xg_h": 1.19225,
+      "xg_a": 1.339875
     },
     {
       "id": "celta__ath_bilbao__2026-08-30",
@@ -3329,7 +4895,16 @@
       "locked_model": 70.4,
       "locked_sim": 70.5,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:38.765183Z"
+      "generated_at": "2026-08-30T09:06:38.765183Z",
+      "ft_h": 39.5,
+      "ft_d": 29.5,
+      "ft_a": 31.0,
+      "over25": 55.8,
+      "btts": 44.5,
+      "cs_top": "0-0 (1335)",
+      "cs_second": "2-1 (883)",
+      "xg_h": 1.419125,
+      "xg_a": 1.256375
     },
     {
       "id": "osasuna__getafe__2026-08-31",
@@ -3348,7 +4923,16 @@
       "locked_model": 74.7,
       "locked_sim": 74.9,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:38.968417Z"
+      "generated_at": "2026-08-30T09:06:38.968417Z",
+      "ft_h": 43.1,
+      "ft_d": 31.8,
+      "ft_a": 25.1,
+      "over25": 54.3,
+      "btts": 45.4,
+      "cs_top": "0-0 (1390)",
+      "cs_second": "2-1 (971)",
+      "xg_h": 1.493125,
+      "xg_a": 1.133375
     },
     {
       "id": "barcelona__vallecano__2026-08-31",
@@ -3367,7 +4951,16 @@
       "locked_model": 92.7,
       "locked_sim": 92.9,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:39.184583Z"
+      "generated_at": "2026-08-30T09:06:39.184583Z",
+      "ft_h": 81.7,
+      "ft_d": 11.1,
+      "ft_a": 7.1,
+      "over25": 66.7,
+      "btts": 44.5,
+      "cs_top": "2-1 (1722)",
+      "cs_second": "2-0 (919)",
+      "xg_h": 2.30775,
+      "xg_a": 0.728
     },
     {
       "id": "tenerife__sp_gijon__2026-08-28",
@@ -3386,7 +4979,16 @@
       "locked_model": 71.7,
       "locked_sim": 71.9,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:39.389954Z"
+      "generated_at": "2026-08-30T09:06:39.389954Z",
+      "ft_h": 44.1,
+      "ft_d": 27.8,
+      "ft_a": 28.1,
+      "over25": 56.8,
+      "btts": 44.7,
+      "cs_top": "0-0 (1221)",
+      "cs_second": "2-1 (963)",
+      "xg_h": 1.5235,
+      "xg_a": 1.18875
     },
     {
       "id": "sabadell__almeria__2026-08-29",
@@ -3405,7 +5007,16 @@
       "locked_model": 71.1,
       "locked_sim": 70.8,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:39.593709Z"
+      "generated_at": "2026-08-30T09:06:39.593709Z",
+      "ft_h": 34.5,
+      "ft_d": 29.2,
+      "ft_a": 36.2,
+      "over25": 56.0,
+      "btts": 45.1,
+      "cs_top": "0-0 (1293)",
+      "cs_second": "2-1 (796)",
+      "xg_h": 1.31775,
+      "xg_a": 1.36075
     },
     {
       "id": "albacete__oviedo__2026-08-29",
@@ -3424,7 +5035,16 @@
       "locked_model": 70.8,
       "locked_sim": 70.8,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:39.799329Z"
+      "generated_at": "2026-08-30T09:06:39.799329Z",
+      "ft_h": 38.2,
+      "ft_d": 29.2,
+      "ft_a": 32.6,
+      "over25": 56.0,
+      "btts": 45.2,
+      "cs_top": "0-0 (1307)",
+      "cs_second": "2-1 (831)",
+      "xg_h": 1.406875,
+      "xg_a": 1.269625
     },
     {
       "id": "leganes__eldense__2026-08-29",
@@ -3443,7 +5063,16 @@
       "locked_model": 75.5,
       "locked_sim": 76.3,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:40.005712Z"
+      "generated_at": "2026-08-30T09:06:40.005712Z",
+      "ft_h": 50.3,
+      "ft_d": 25.9,
+      "ft_a": 23.7,
+      "over25": 57.5,
+      "btts": 45.3,
+      "cs_top": "0-0 (1139)",
+      "cs_second": "2-1 (1138)",
+      "xg_h": 1.6395,
+      "xg_a": 1.1055
     },
     {
       "id": "girona__las_palmas__2026-08-29",
@@ -3462,7 +5091,16 @@
       "locked_model": 81.5,
       "locked_sim": 82.5,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:40.212784Z"
+      "generated_at": "2026-08-30T09:06:40.212784Z",
+      "ft_h": 55.5,
+      "ft_d": 27.1,
+      "ft_a": 17.5,
+      "over25": 56.9,
+      "btts": 43.8,
+      "cs_top": "0-0 (1189)",
+      "cs_second": "2-1 (1159)",
+      "xg_h": 1.769125,
+      "xg_a": 0.95725
     },
     {
       "id": "andorra__eibar__2026-08-30",
@@ -3481,7 +5119,16 @@
       "locked_model": 74.5,
       "locked_sim": 74.0,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:40.417539Z"
+      "generated_at": "2026-08-30T09:06:40.417539Z",
+      "ft_h": 44.2,
+      "ft_d": 29.7,
+      "ft_a": 26.1,
+      "over25": 56.0,
+      "btts": 45.3,
+      "cs_top": "0-0 (1263)",
+      "cs_second": "2-1 (960)",
+      "xg_h": 1.537875,
+      "xg_a": 1.16525
     },
     {
       "id": "cadiz__valladolid__2026-08-30",
@@ -3500,7 +5147,16 @@
       "locked_model": 70.0,
       "locked_sim": 70.1,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:40.621587Z"
+      "generated_at": "2026-08-30T09:06:40.621587Z",
+      "ft_h": 37.1,
+      "ft_d": 31.9,
+      "ft_a": 31.0,
+      "over25": 55.0,
+      "btts": 45.9,
+      "cs_top": "0-0 (1376)",
+      "cs_second": "2-1 (859)",
+      "xg_h": 1.385375,
+      "xg_a": 1.26025
     },
     {
       "id": "mallorca__ceuta__2026-08-30",
@@ -3519,7 +5175,16 @@
       "locked_model": 88.5,
       "locked_sim": 88.1,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:40.833743Z"
+      "generated_at": "2026-08-30T09:06:40.833743Z",
+      "ft_h": 66.4,
+      "ft_d": 21.6,
+      "ft_a": 11.9,
+      "over25": 60.0,
+      "btts": 44.9,
+      "cs_top": "2-1 (1380)",
+      "cs_second": "0-0 (924)",
+      "xg_h": 1.979625,
+      "xg_a": 0.854125
     },
     {
       "id": "cordoba__granada__2026-08-30",
@@ -3538,7 +5203,16 @@
       "locked_model": 78.6,
       "locked_sim": 78.7,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:41.040526Z"
+      "generated_at": "2026-08-30T09:06:41.040526Z",
+      "ft_h": 53.7,
+      "ft_d": 25.0,
+      "ft_a": 21.3,
+      "over25": 57.7,
+      "btts": 44.1,
+      "cs_top": "2-1 (1160)",
+      "cs_second": "0-0 (1137)",
+      "xg_h": 1.71,
+      "xg_a": 1.030875
     },
     {
       "id": "burgos__sociedad_b__2026-08-31",
@@ -3557,7 +5231,16 @@
       "locked_model": 80.4,
       "locked_sim": 80.1,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:41.244746Z"
+      "generated_at": "2026-08-30T09:06:41.244746Z",
+      "ft_h": 52.7,
+      "ft_d": 27.5,
+      "ft_a": 19.9,
+      "over25": 56.2,
+      "btts": 44.6,
+      "cs_top": "0-0 (1215)",
+      "cs_second": "2-1 (1164)",
+      "xg_h": 1.676625,
+      "xg_a": 1.0015
     },
     {
       "id": "celta_b__castellon__2026-08-31",
@@ -3576,7 +5259,16 @@
       "locked_model": 77.9,
       "locked_sim": 77.0,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:41.453461Z"
+      "generated_at": "2026-08-30T09:06:41.453461Z",
+      "ft_h": 23.0,
+      "ft_d": 24.5,
+      "ft_a": 52.5,
+      "over25": 57.9,
+      "btts": 44.3,
+      "cs_top": "1-2 (1176)",
+      "cs_second": "0-0 (1099)",
+      "xg_h": 1.0725,
+      "xg_a": 1.6685
     },
     {
       "id": "genclerbirligi__erzurumspor__2026-08-28",
@@ -3595,7 +5287,16 @@
       "locked_model": 76.1,
       "locked_sim": 75.9,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:41.658823Z"
+      "generated_at": "2026-08-30T09:06:41.658823Z",
+      "ft_h": 47.6,
+      "ft_d": 28.2,
+      "ft_a": 24.1,
+      "over25": 56.2,
+      "btts": 45.1,
+      "cs_top": "0-0 (1233)",
+      "cs_second": "2-1 (1014)",
+      "xg_h": 1.5995,
+      "xg_a": 1.10225
     },
     {
       "id": "konyaspor__kocaelispor__2026-08-29",
@@ -3614,7 +5315,16 @@
       "locked_model": 75.7,
       "locked_sim": 76.4,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:41.865762Z"
+      "generated_at": "2026-08-30T09:06:41.865762Z",
+      "ft_h": 49.4,
+      "ft_d": 27.0,
+      "ft_a": 23.6,
+      "over25": 56.9,
+      "btts": 44.6,
+      "cs_top": "0-0 (1189)",
+      "cs_second": "2-1 (1084)",
+      "xg_h": 1.61925,
+      "xg_a": 1.10625
     },
     {
       "id": "galatasaray__goztep__2026-08-29",
@@ -3633,7 +5343,16 @@
       "locked_model": 88.5,
       "locked_sim": 88.9,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:42.076026Z"
+      "generated_at": "2026-08-30T09:06:42.076026Z",
+      "ft_h": 69.6,
+      "ft_d": 19.3,
+      "ft_a": 11.1,
+      "over25": 61.7,
+      "btts": 44.2,
+      "cs_top": "2-1 (1494)",
+      "cs_second": "0-0 (859)",
+      "xg_h": 2.054125,
+      "xg_a": 0.82225
     },
     {
       "id": "gaziantep__rizespor__2026-08-29",
@@ -3652,7 +5371,16 @@
       "locked_model": 73.6,
       "locked_sim": 74.1,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:42.284113Z"
+      "generated_at": "2026-08-30T09:06:42.284113Z",
+      "ft_h": 38.8,
+      "ft_d": 25.9,
+      "ft_a": 35.3,
+      "over25": 58.6,
+      "btts": 45.4,
+      "cs_top": "0-0 (1113)",
+      "cs_second": "2-1 (832)",
+      "xg_h": 1.4265,
+      "xg_a": 1.356375
     },
     {
       "id": "eyupspor__alanyaspor__2026-08-30",
@@ -3671,7 +5399,16 @@
       "locked_model": 71.7,
       "locked_sim": 71.3,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:42.489987Z"
+      "generated_at": "2026-08-30T09:06:42.489987Z",
+      "ft_h": 29.4,
+      "ft_d": 28.7,
+      "ft_a": 41.9,
+      "over25": 56.6,
+      "btts": 44.7,
+      "cs_top": "0-0 (1236)",
+      "cs_second": "1-2 (892)",
+      "xg_h": 1.238875,
+      "xg_a": 1.492375
     },
     {
       "id": "buyuksehyr__kasimpasa__2026-08-30",
@@ -3690,7 +5427,16 @@
       "locked_model": 82.3,
       "locked_sim": 83.0,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:42.698350Z"
+      "generated_at": "2026-08-30T09:06:42.698350Z",
+      "ft_h": 57.9,
+      "ft_d": 25.1,
+      "ft_a": 17.0,
+      "over25": 59.5,
+      "btts": 45.9,
+      "cs_top": "2-1 (1328)",
+      "cs_second": "0-0 (1094)",
+      "xg_h": 1.81025,
+      "xg_a": 0.976625
     },
     {
       "id": "samsunspor__fenerbahce__2026-08-30",
@@ -3709,7 +5455,16 @@
       "locked_model": 81.5,
       "locked_sim": 81.7,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:42.907057Z"
+      "generated_at": "2026-08-30T09:06:42.907057Z",
+      "ft_h": 18.3,
+      "ft_d": 21.8,
+      "ft_a": 59.9,
+      "over25": 60.5,
+      "btts": 45.5,
+      "cs_top": "1-2 (1344)",
+      "cs_second": "0-0 (963)",
+      "xg_h": 0.978625,
+      "xg_a": 1.838375
     },
     {
       "id": "amedspor__trabzonspor__2026-08-31",
@@ -3728,7 +5483,16 @@
       "locked_model": 75.6,
       "locked_sim": 75.7,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:43.115104Z"
+      "generated_at": "2026-08-30T09:06:43.115104Z",
+      "ft_h": 25.5,
+      "ft_d": 24.3,
+      "ft_a": 50.2,
+      "over25": 59.2,
+      "btts": 45.4,
+      "cs_top": "1-2 (1081)",
+      "cs_second": "0-0 (1025)",
+      "xg_h": 1.138125,
+      "xg_a": 1.6585
     },
     {
       "id": "besiktas__corum__2026-08-31",
@@ -3747,7 +5511,16 @@
       "locked_model": 86.7,
       "locked_sim": 86.3,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T09:06:43.333437Z"
+      "generated_at": "2026-08-30T09:06:43.333437Z",
+      "ft_h": 67.5,
+      "ft_d": 18.8,
+      "ft_a": 13.7,
+      "over25": 62.8,
+      "btts": 44.8,
+      "cs_top": "2-1 (1415)",
+      "cs_second": "0-0 (822)",
+      "xg_h": 2.01975,
+      "xg_a": 0.890875
     }
   ]
 }
