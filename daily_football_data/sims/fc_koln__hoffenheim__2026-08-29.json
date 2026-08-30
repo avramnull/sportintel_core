@@ -16,284 +16,299 @@
     "div": "D1",
     "home": "FC Koln",
     "away": "Hoffenheim",
-    "models": "market-only",
+    "models": "FC Koln (home) + Hoffenheim (away)",
     "match_date": "2026-08-29 14:30"
   },
   "report": {
     "n": 8000,
     "ft_model": {
-      "H": 0.32808398950131235,
-      "D": 0.25196850393700787,
-      "A": 0.4199475065616798
+      "H": 0.3462204973182841,
+      "D": 0.32372450472512654,
+      "A": 0.3300549979565893
     },
     "ft_sim": {
-      "H": 0.33625,
-      "D": 0.247625,
-      "A": 0.416125
+      "H": 0.352375,
+      "D": 0.321375,
+      "A": 0.32625
     },
     "ht_model": {
-      "H": 0.3,
-      "D": 0.4,
-      "A": 0.3
+      "H": 0.4405423144254306,
+      "D": 0.3100753937524813,
+      "A": 0.24938229182208804
     },
     "ht_sim": {
-      "H": 0.294875,
-      "D": 0.401125,
-      "A": 0.304
+      "H": 0.4325,
+      "D": 0.319125,
+      "A": 0.248375
     },
-    "over25_model": 0.46875,
-    "over25_sim": 0.589875,
-    "btts_model": 0.45,
-    "btts_sim": 0.44575,
-    "ht_over15_model": 0.35,
-    "ht_over15_sim": 0.343,
+    "over25_model": 0.6184254664280252,
+    "over25_sim": 0.746125,
+    "btts_model": 0.6927935088177775,
+    "btts_sim": 0.705,
+    "ht_over15_model": 0.42042744054766484,
+    "ht_over15_sim": 0.3295,
     "dc_ft": {
-      "1X": 0.5800524934383202,
-      "X2": 0.6719160104986877,
-      "12": 0.7480314960629921
+      "1X": 0.6699450020434106,
+      "X2": 0.6537795026817159,
+      "12": 0.6762754952748734
     },
     "dc_ht": {
-      "1X": 0.7,
-      "X2": 0.7,
-      "12": 0.6
+      "1X": 0.750617708177912,
+      "X2": 0.5594576855745693,
+      "12": 0.6899246062475186
     },
     "top_ft": [
       [
-        "0-0",
-        1087
+        "2-1",
+        928
       ],
       [
         "1-2",
-        916
+        898
       ],
       [
-        "2-1",
-        708
-      ],
-      [
-        "0-2",
-        499
-      ],
-      [
-        "0-1",
-        475
+        "0-0",
+        760
       ],
       [
         "1-1",
-        456
+        661
       ],
       [
-        "2-0",
-        390
+        "2-2",
+        580
       ],
       [
-        "1-0",
-        374
+        "3-3",
+        570
+      ],
+      [
+        "3-2",
+        397
+      ],
+      [
+        "2-3",
+        383
       ]
     ],
     "top_ht": [
       [
+        "1-0",
+        2462
+      ],
+      [
         "0-0",
-        1899
+        1504
       ],
       [
         "0-1",
-        1709
-      ],
-      [
-        "1-0",
-        1648
+        1398
       ],
       [
         "1-1",
-        1310
+        1049
       ],
       [
-        "0-2",
-        380
+        "2-0",
+        519
       ]
     ],
     "xg": {
-      "home": 1.30825,
-      "away": 1.468,
-      "total": 2.77625
+      "home": 1.747,
+      "away": 1.6745,
+      "total": 3.4215
     },
     "goal_rates": {
-      "home": 1.30825,
-      "away": 1.468
+      "home": 1.747,
+      "away": 1.6745
     }
   },
   "table": [
     {
       "Section": "HT Winner",
       "Selection": "FC Koln",
-      "Model%": 30.0,
-      "Sim%": 29.5,
-      "Agree": "1 eng",
+      "Model%": 44.1,
+      "Sim%": 43.2,
+      "Agree": "4 eng",
       "Verdict": "NO"
     },
     {
       "Section": "HT Winner",
       "Selection": "Draw",
-      "Model%": 40.0,
-      "Sim%": 40.1,
-      "Agree": "1 eng",
+      "Model%": 31.0,
+      "Sim%": 31.9,
+      "Agree": "4 eng",
       "Verdict": "NO"
     },
     {
       "Section": "HT Winner",
       "Selection": "Hoffenheim",
-      "Model%": 30.0,
-      "Sim%": 30.4,
-      "Agree": "1 eng",
+      "Model%": 24.9,
+      "Sim%": 24.8,
+      "Agree": "4 eng",
       "Verdict": "NO"
     },
     {
       "Section": "HT DC",
       "Selection": "1X",
-      "Model%": 70.0,
-      "Sim%": 69.6,
-      "Agree": "1 eng",
+      "Model%": 75.1,
+      "Sim%": 75.2,
+      "Agree": "4 eng",
       "Verdict": "YES"
     },
     {
       "Section": "HT DC",
       "Selection": "X2",
-      "Model%": 70.0,
-      "Sim%": 70.5,
-      "Agree": "1 eng",
+      "Model%": 55.9,
+      "Sim%": 56.8,
+      "Agree": "4 eng",
       "Verdict": "YES"
     },
     {
       "Section": "HT DC",
       "Selection": "12",
-      "Model%": 60.0,
-      "Sim%": 59.9,
-      "Agree": "1 eng",
+      "Model%": 69.0,
+      "Sim%": 68.1,
+      "Agree": "4 eng",
       "Verdict": "YES"
     },
     {
       "Section": "HT O/U",
       "Selection": "Over 1.5",
-      "Model%": 35.0,
-      "Sim%": 34.3,
-      "Agree": "1 eng",
+      "Model%": 42.0,
+      "Sim%": 33.0,
+      "Agree": "4 eng",
       "Verdict": "NO"
     },
     {
       "Section": "HT O/U",
       "Selection": "Under 1.5",
-      "Model%": 65.0,
-      "Sim%": 65.7,
-      "Agree": "1 eng",
+      "Model%": 58.0,
+      "Sim%": 67.0,
+      "Agree": "4 eng",
       "Verdict": "YES"
     },
     {
       "Section": "FT Winner",
       "Selection": "FC Koln",
-      "Model%": 32.8,
-      "Sim%": 33.6,
-      "Agree": "1 eng",
+      "Model%": 34.6,
+      "Sim%": 35.2,
+      "Agree": "4 eng",
       "Verdict": "NO"
     },
     {
       "Section": "FT Winner",
       "Selection": "Draw",
-      "Model%": 25.2,
-      "Sim%": 24.8,
-      "Agree": "1 eng",
+      "Model%": 32.4,
+      "Sim%": 32.1,
+      "Agree": "4 eng",
       "Verdict": "NO"
     },
     {
       "Section": "FT Winner",
       "Selection": "Hoffenheim",
-      "Model%": 42.0,
-      "Sim%": 41.6,
-      "Agree": "1 eng",
+      "Model%": 33.0,
+      "Sim%": 32.6,
+      "Agree": "4 eng",
       "Verdict": "NO"
     },
     {
       "Section": "FT DC",
       "Selection": "1X",
-      "Model%": 58.0,
-      "Sim%": 58.4,
-      "Agree": "1 eng",
+      "Model%": 67.0,
+      "Sim%": 67.4,
+      "Agree": "4 eng",
       "Verdict": "YES"
     },
     {
       "Section": "FT DC",
       "Selection": "X2",
-      "Model%": 67.2,
-      "Sim%": 66.4,
-      "Agree": "1 eng",
+      "Model%": 65.4,
+      "Sim%": 64.8,
+      "Agree": "4 eng",
       "Verdict": "YES"
     },
     {
       "Section": "FT DC",
       "Selection": "12",
-      "Model%": 74.8,
-      "Sim%": 75.2,
-      "Agree": "1 eng",
+      "Model%": 67.6,
+      "Sim%": 67.9,
+      "Agree": "4 eng",
       "Verdict": "YES"
     },
     {
       "Section": "FT O/U",
       "Selection": "Over 2.5",
-      "Model%": 46.9,
-      "Sim%": 59.0,
-      "Agree": "1 eng",
-      "Verdict": "NO"
+      "Model%": 61.8,
+      "Sim%": 74.6,
+      "Agree": "4 eng",
+      "Verdict": "YES"
     },
     {
       "Section": "FT O/U",
       "Selection": "Under 2.5",
-      "Model%": 53.1,
-      "Sim%": 41.0,
-      "Agree": "1 eng",
-      "Verdict": "YES"
-    },
-    {
-      "Section": "BTTS",
-      "Selection": "Yes",
-      "Model%": 45.0,
-      "Sim%": 44.6,
-      "Agree": "1 eng",
+      "Model%": 38.2,
+      "Sim%": 25.4,
+      "Agree": "4 eng",
       "Verdict": "NO"
     },
     {
       "Section": "BTTS",
-      "Selection": "No",
-      "Model%": 55.0,
-      "Sim%": 55.4,
-      "Agree": "1 eng",
+      "Selection": "Yes",
+      "Model%": 69.3,
+      "Sim%": 70.5,
+      "Agree": "4 eng",
       "Verdict": "YES"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 30.7,
+      "Sim%": 29.5,
+      "Agree": "4 eng",
+      "Verdict": "NO"
     }
   ],
   "locked_tip": {
     "status": "SECURED LOCK",
-    "section": "FT DC",
-    "selection": "12",
-    "model": 74.8,
+    "section": "HT DC",
+    "selection": "1X",
+    "model": 75.1,
     "sim": 75.2,
-    "agree": "1 eng",
+    "agree": "4 eng",
     "verdict": "HARD YES"
   },
   "backends": {
     "ft_result": [
-      "market"
+      "cat",
+      "lgbm",
+      "rf",
+      "xgb"
     ],
     "ht_result": [
-      "market"
+      "cat",
+      "lgbm",
+      "rf",
+      "xgb"
     ],
     "over25": [
-      "market"
+      "cat",
+      "lgbm",
+      "rf",
+      "xgb"
     ],
     "btts": [
-      "market"
+      "cat",
+      "lgbm",
+      "rf",
+      "xgb"
     ],
     "ht_over15": [
-      "market"
+      "cat",
+      "lgbm",
+      "rf",
+      "xgb"
     ]
   },
-  "generated_at": "2026-08-30T09:05:57.558687Z"
+  "generated_at": "2026-08-30T11:30:27.162822Z"
 }

@@ -16,7 +16,7 @@
     "div": "D2",
     "home": "St Pauli",
     "away": "Kaiserslautern",
-    "models": "market-only",
+    "models": "market-only (no models for St Pauli / Kaiserslautern)",
     "match_date": "2026-08-30 12:30"
   },
   "report": {
@@ -295,5 +295,5 @@
       "market"
     ]
   },
-  "generated_at": "2026-08-30T09:06:00.761483Z"
+  "generated_at": "2026-08-30T11:30:36.889751Z"
 }

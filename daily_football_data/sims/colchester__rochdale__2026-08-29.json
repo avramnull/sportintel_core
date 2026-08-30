@@ -16,7 +16,7 @@
     "div": "E3",
     "home": "Colchester",
     "away": "Rochdale",
-    "models": "market-only",
+    "models": "market-only (no models for Colchester / Rochdale)",
     "match_date": "2026-08-29 15:00"
   },
   "report": {
@@ -295,5 +295,5 @@
       "market"
     ]
   },
-  "generated_at": "2026-08-30T09:06:14.062161Z"
+  "generated_at": "2026-08-30T11:30:55.454421Z"
 }

@@ -16,7 +16,7 @@
     "div": "P1",
     "home": "Famalicao",
     "away": "Gil Vicente",
-    "models": "market-only",
+    "models": "market-only (no models for Famalicao / Gil Vicente)",
     "match_date": "2026-08-30 20:30"
   },
   "report": {
@@ -295,5 +295,5 @@
       "market"
     ]
   },
-  "generated_at": "2026-08-30T09:06:30.775403Z"
+  "generated_at": "2026-08-30T11:31:11.820680Z"
 }

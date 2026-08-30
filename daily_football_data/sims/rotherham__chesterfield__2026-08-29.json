@@ -16,7 +16,7 @@
     "div": "E3",
     "home": "Rotherham",
     "away": "Chesterfield",
-    "models": "market-only",
+    "models": "market-only (no models for Rotherham / Chesterfield)",
     "match_date": "2026-08-29 13:00"
   },
   "report": {
@@ -295,5 +295,5 @@
       "market"
     ]
   },
-  "generated_at": "2026-08-30T09:06:13.856834Z"
+  "generated_at": "2026-08-30T11:30:55.250730Z"
 }

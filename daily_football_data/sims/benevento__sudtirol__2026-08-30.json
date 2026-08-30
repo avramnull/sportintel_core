@@ -16,7 +16,7 @@
     "div": "I2",
     "home": "Benevento",
     "away": "Sudtirol",
-    "models": "market-only",
+    "models": "market-only (no models for Benevento / Sudtirol)",
     "match_date": "2026-08-30 20:00"
   },
   "report": {
@@ -295,5 +295,5 @@
       "market"
     ]
   },
-  "generated_at": "2026-08-30T09:06:27.206227Z"
+  "generated_at": "2026-08-30T11:31:08.313634Z"
 }

@@ -16,7 +16,7 @@
     "div": "P1",
     "home": "Benfica",
     "away": "Estoril",
-    "models": "market-only",
+    "models": "market-only (no models for Benfica / Estoril)",
     "match_date": "2026-08-31 20:15"
   },
   "report": {
@@ -295,5 +295,5 @@
       "market"
     ]
   },
-  "generated_at": "2026-08-30T09:06:30.992994Z"
+  "generated_at": "2026-08-30T11:31:12.034126Z"
 }

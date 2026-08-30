@@ -16,7 +16,7 @@
     "div": "B1",
     "home": "Cercle Brugge",
     "away": "Lommel SK",
-    "models": "market-only",
+    "models": "market-only (no models for Cercle Brugge / Lommel SK)",
     "match_date": "2026-08-29 19:45"
   },
   "report": {
@@ -295,5 +295,5 @@
       "market"
     ]
   },
-  "generated_at": "2026-08-30T09:05:55.853955Z"
+  "generated_at": "2026-08-30T11:30:21.106983Z"
 }

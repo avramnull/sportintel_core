@@ -16,7 +16,7 @@
     "div": "F2",
     "home": "Guingamp",
     "away": "Nantes",
-    "models": "market-only",
+    "models": "market-only (no models for Guingamp / Nantes)",
     "match_date": "2026-08-29 19:00"
   },
   "report": {
@@ -295,5 +295,5 @@
       "market"
     ]
   },
-  "generated_at": "2026-08-30T09:06:21.591083Z"
+  "generated_at": "2026-08-30T11:31:02.806019Z"
 }

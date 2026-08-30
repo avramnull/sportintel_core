@@ -16,7 +16,7 @@
     "div": "N1",
     "home": "Groningen",
     "away": "For Sittard",
-    "models": "market-only",
+    "models": "market-only (no models for Groningen / For Sittard)",
     "match_date": "2026-08-28 19:00"
   },
   "report": {
@@ -295,5 +295,5 @@
       "market"
     ]
   },
-  "generated_at": "2026-08-30T09:06:27.624116Z"
+  "generated_at": "2026-08-30T11:31:08.724494Z"
 }

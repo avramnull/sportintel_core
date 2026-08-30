@@ -16,7 +16,7 @@
     "div": "D2",
     "home": "Cottbus",
     "away": "Greuther Furth",
-    "models": "market-only",
+    "models": "market-only (no models for Cottbus / Greuther Furth)",
     "match_date": "2026-08-29 12:00"
   },
   "report": {
@@ -295,5 +295,5 @@
       "market"
     ]
   },
-  "generated_at": "2026-08-30T09:05:59.488654Z"
+  "generated_at": "2026-08-30T11:30:35.653169Z"
 }

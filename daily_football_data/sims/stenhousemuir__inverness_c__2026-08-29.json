@@ -16,7 +16,7 @@
     "div": "SC1",
     "home": "Stenhousemuir",
     "away": "Inverness C",
-    "models": "market-only",
+    "models": "market-only (no models for Stenhousemuir / Inverness C)",
     "match_date": "2026-08-29 15:00"
   },
   "report": {
@@ -295,5 +295,5 @@
       "market"
     ]
   },
-  "generated_at": "2026-08-30T09:06:33.514334Z"
+  "generated_at": "2026-08-30T11:31:14.552582Z"
 }

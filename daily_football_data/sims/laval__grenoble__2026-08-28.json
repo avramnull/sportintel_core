@@ -16,7 +16,7 @@
     "div": "F2",
     "home": "Laval",
     "away": "Grenoble",
-    "models": "market-only",
+    "models": "market-only (no models for Laval / Grenoble)",
     "match_date": "2026-08-28 19:00"
   },
   "report": {
@@ -295,5 +295,5 @@
       "market"
     ]
   },
-  "generated_at": "2026-08-30T09:06:20.347303Z"
+  "generated_at": "2026-08-30T11:31:01.588661Z"
 }

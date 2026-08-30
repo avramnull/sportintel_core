@@ -16,284 +16,299 @@
     "div": "D1",
     "home": "Bayern Munich",
     "away": "Stuttgart",
-    "models": "market-only",
+    "models": "Bayern Munich (home) + Stuttgart (away)",
     "match_date": "2026-08-28 19:30"
   },
   "report": {
     "n": 8000,
     "ft_model": {
-      "H": 0.7714348688560723,
-      "D": 0.13445007714348686,
-      "A": 0.09411505400044082
+      "H": 0.34436668887893196,
+      "D": 0.16013060633697743,
+      "A": 0.4955027047840907
     },
     "ft_sim": {
-      "H": 0.767125,
-      "D": 0.136125,
-      "A": 0.09675
+      "H": 0.348,
+      "D": 0.15475,
+      "A": 0.49725
     },
     "ht_model": {
-      "H": 0.3,
-      "D": 0.4,
-      "A": 0.3
+      "H": 0.18071200597697687,
+      "D": 0.3115969643221112,
+      "A": 0.507691029700912
     },
     "ht_sim": {
-      "H": 0.299,
-      "D": 0.403,
-      "A": 0.298
+      "H": 0.182,
+      "D": 0.3045,
+      "A": 0.5135
     },
-    "over25_model": 0.4879508196721311,
-    "over25_sim": 0.652625,
-    "btts_model": 0.45,
-    "btts_sim": 0.452375,
-    "ht_over15_model": 0.35,
-    "ht_over15_sim": 0.334375,
+    "over25_model": 0.769765302169372,
+    "over25_sim": 0.836625,
+    "btts_model": 0.5863798994478763,
+    "btts_sim": 0.5855,
+    "ht_over15_model": 0.5977706923434927,
+    "ht_over15_sim": 0.331375,
     "dc_ft": {
-      "1X": 0.9058849459995592,
-      "X2": 0.22856513114392768,
-      "12": 0.8655499228565131
+      "1X": 0.5044972952159094,
+      "X2": 0.6556333111210682,
+      "12": 0.8398693936630226
     },
     "dc_ht": {
-      "1X": 0.7,
-      "X2": 0.7,
-      "12": 0.6
+      "1X": 0.49230897029908804,
+      "X2": 0.8192879940230231,
+      "12": 0.6884030356778889
     },
     "top_ft": [
       [
-        "2-1",
-        1654
-      ],
-      [
-        "2-0",
-        874
-      ],
-      [
-        "1-0",
+        "1-2",
         829
       ],
       [
+        "2-3",
+        616
+      ],
+      [
+        "2-1",
+        565
+      ],
+      [
         "0-0",
-        614
+        547
       ],
       [
-        "5-0",
-        577
+        "0-3",
+        430
       ],
       [
-        "4-0",
-        540
+        "0-5",
+        421
       ],
       [
-        "3-0",
-        532
+        "0-4",
+        417
       ],
       [
         "3-2",
-        467
+        409
       ]
     ],
     "top_ht": [
       [
-        "0-0",
-        1929
+        "0-1",
+        2859
       ],
       [
-        "0-1",
-        1701
+        "0-0",
+        1464
       ],
       [
         "1-0",
-        1695
+        1026
       ],
       [
         "1-1",
-        1295
+        972
       ],
       [
         "1-2",
-        358
+        636
       ]
     ],
     "xg": {
-      "home": 2.2025,
-      "away": 0.784625,
-      "total": 2.987125
+      "home": 1.684375,
+      "away": 2.023375,
+      "total": 3.70775
     },
     "goal_rates": {
-      "home": 2.2025,
-      "away": 0.784625
+      "home": 1.684375,
+      "away": 2.023375
     }
   },
   "table": [
     {
       "Section": "HT Winner",
       "Selection": "Bayern Munich",
-      "Model%": 30.0,
-      "Sim%": 29.9,
-      "Agree": "1 eng",
+      "Model%": 18.1,
+      "Sim%": 18.2,
+      "Agree": "4 eng",
       "Verdict": "NO"
     },
     {
       "Section": "HT Winner",
       "Selection": "Draw",
-      "Model%": 40.0,
-      "Sim%": 40.3,
-      "Agree": "1 eng",
+      "Model%": 31.2,
+      "Sim%": 30.4,
+      "Agree": "4 eng",
       "Verdict": "NO"
     },
     {
       "Section": "HT Winner",
       "Selection": "Stuttgart",
-      "Model%": 30.0,
-      "Sim%": 29.8,
-      "Agree": "1 eng",
+      "Model%": 50.8,
+      "Sim%": 51.3,
+      "Agree": "4 eng",
       "Verdict": "NO"
     },
     {
       "Section": "HT DC",
       "Selection": "1X",
-      "Model%": 70.0,
-      "Sim%": 70.2,
-      "Agree": "1 eng",
-      "Verdict": "YES"
+      "Model%": 49.2,
+      "Sim%": 48.6,
+      "Agree": "4 eng",
+      "Verdict": "NO"
     },
     {
       "Section": "HT DC",
       "Selection": "X2",
-      "Model%": 70.0,
-      "Sim%": 70.1,
-      "Agree": "1 eng",
+      "Model%": 81.9,
+      "Sim%": 81.8,
+      "Agree": "4 eng",
       "Verdict": "YES"
     },
     {
       "Section": "HT DC",
       "Selection": "12",
-      "Model%": 60.0,
-      "Sim%": 59.7,
-      "Agree": "1 eng",
+      "Model%": 68.8,
+      "Sim%": 69.5,
+      "Agree": "4 eng",
       "Verdict": "YES"
     },
     {
       "Section": "HT O/U",
       "Selection": "Over 1.5",
-      "Model%": 35.0,
-      "Sim%": 33.4,
-      "Agree": "1 eng",
-      "Verdict": "NO"
+      "Model%": 59.8,
+      "Sim%": 33.1,
+      "Agree": "4 eng",
+      "Verdict": "YES"
     },
     {
       "Section": "HT O/U",
       "Selection": "Under 1.5",
-      "Model%": 65.0,
-      "Sim%": 66.6,
-      "Agree": "1 eng",
-      "Verdict": "YES"
+      "Model%": 40.2,
+      "Sim%": 66.9,
+      "Agree": "4 eng",
+      "Verdict": "NO"
     },
     {
       "Section": "FT Winner",
       "Selection": "Bayern Munich",
-      "Model%": 77.1,
-      "Sim%": 76.7,
-      "Agree": "1 eng",
-      "Verdict": "YES"
+      "Model%": 34.4,
+      "Sim%": 34.8,
+      "Agree": "4 eng",
+      "Verdict": "NO"
     },
     {
       "Section": "FT Winner",
       "Selection": "Draw",
-      "Model%": 13.4,
-      "Sim%": 13.6,
-      "Agree": "1 eng",
+      "Model%": 16.0,
+      "Sim%": 15.5,
+      "Agree": "4 eng",
       "Verdict": "NO"
     },
     {
       "Section": "FT Winner",
       "Selection": "Stuttgart",
-      "Model%": 9.4,
-      "Sim%": 9.7,
-      "Agree": "1 eng",
+      "Model%": 49.6,
+      "Sim%": 49.7,
+      "Agree": "4 eng",
       "Verdict": "NO"
     },
     {
       "Section": "FT DC",
       "Selection": "1X",
-      "Model%": 90.6,
-      "Sim%": 90.3,
-      "Agree": "1 eng",
-      "Verdict": "YES"
-    },
-    {
-      "Section": "FT DC",
-      "Selection": "X2",
-      "Model%": 22.9,
-      "Sim%": 23.3,
-      "Agree": "1 eng",
+      "Model%": 50.4,
+      "Sim%": 50.3,
+      "Agree": "4 eng",
       "Verdict": "NO"
     },
     {
       "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 65.6,
+      "Sim%": 65.2,
+      "Agree": "4 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
       "Selection": "12",
-      "Model%": 86.6,
-      "Sim%": 86.4,
-      "Agree": "1 eng",
+      "Model%": 84.0,
+      "Sim%": 84.5,
+      "Agree": "4 eng",
       "Verdict": "YES"
     },
     {
       "Section": "FT O/U",
       "Selection": "Over 2.5",
-      "Model%": 48.8,
-      "Sim%": 65.3,
-      "Agree": "1 eng",
-      "Verdict": "NO"
+      "Model%": 77.0,
+      "Sim%": 83.7,
+      "Agree": "4 eng",
+      "Verdict": "YES"
     },
     {
       "Section": "FT O/U",
       "Selection": "Under 2.5",
-      "Model%": 51.2,
-      "Sim%": 34.7,
-      "Agree": "1 eng",
+      "Model%": 23.0,
+      "Sim%": 16.3,
+      "Agree": "4 eng",
       "Verdict": "NO"
     },
     {
       "Section": "BTTS",
       "Selection": "Yes",
-      "Model%": 45.0,
-      "Sim%": 45.2,
-      "Agree": "1 eng",
-      "Verdict": "NO"
+      "Model%": 58.6,
+      "Sim%": 58.6,
+      "Agree": "4 eng",
+      "Verdict": "YES"
     },
     {
       "Section": "BTTS",
       "Selection": "No",
-      "Model%": 55.0,
-      "Sim%": 54.8,
-      "Agree": "1 eng",
-      "Verdict": "YES"
+      "Model%": 41.4,
+      "Sim%": 41.4,
+      "Agree": "4 eng",
+      "Verdict": "NO"
     }
   ],
   "locked_tip": {
     "status": "SECURED LOCK",
     "section": "FT DC",
-    "selection": "1X",
-    "model": 90.6,
-    "sim": 90.3,
-    "agree": "1 eng",
+    "selection": "12",
+    "model": 84.0,
+    "sim": 84.5,
+    "agree": "4 eng",
     "verdict": "HARD YES"
   },
   "backends": {
     "ft_result": [
-      "market"
+      "cat",
+      "lgbm",
+      "rf",
+      "xgb"
     ],
     "ht_result": [
-      "market"
+      "cat",
+      "lgbm",
+      "rf",
+      "xgb"
     ],
     "over25": [
-      "market"
+      "cat",
+      "lgbm",
+      "rf",
+      "xgb"
     ],
     "btts": [
-      "market"
+      "cat",
+      "lgbm",
+      "rf",
+      "xgb"
     ],
     "ht_over15": [
-      "market"
+      "cat",
+      "lgbm",
+      "rf",
+      "xgb"
     ]
   },
-  "generated_at": "2026-08-30T09:05:57.129977Z"
+  "generated_at": "2026-08-30T11:30:24.755781Z"
 }

@@ -16,7 +16,7 @@
     "div": "SP1",
     "home": "Alaves",
     "away": "Villarreal",
-    "models": "market-only",
+    "models": "market-only (no models for Alaves / Villarreal)",
     "match_date": "2026-08-28 20:30"
   },
   "report": {
@@ -295,5 +295,5 @@
       "market"
     ]
   },
-  "generated_at": "2026-08-30T09:06:36.020268Z"
+  "generated_at": "2026-08-30T11:31:17.016536Z"
 }

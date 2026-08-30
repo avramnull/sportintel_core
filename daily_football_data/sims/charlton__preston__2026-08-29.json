@@ -16,7 +16,7 @@
     "div": "E1",
     "home": "Charlton",
     "away": "Preston",
-    "models": "market-only",
+    "models": "market-only (no models for Charlton / Preston)",
     "match_date": "2026-08-29 15:00"
   },
   "report": {
@@ -295,5 +295,5 @@
       "market"
     ]
   },
-  "generated_at": "2026-08-30T09:06:10.301183Z"
+  "generated_at": "2026-08-30T11:30:51.782361Z"
 }

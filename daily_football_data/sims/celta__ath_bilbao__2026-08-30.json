@@ -16,7 +16,7 @@
     "div": "SP1",
     "home": "Celta Vigo",
     "away": "Athletic Bilbao",
-    "models": "market-only",
+    "models": "market-only (no models for Celta Vigo / Athletic Bilbao)",
     "match_date": "2026-08-30 20:30"
   },
   "report": {
@@ -295,5 +295,5 @@
       "market"
     ]
   },
-  "generated_at": "2026-08-30T09:06:38.765183Z"
+  "generated_at": "2026-08-30T11:31:19.806503Z"
 }

@@ -16,7 +16,7 @@
     "div": "T1",
     "home": "Amedspor",
     "away": "Trabzonspor",
-    "models": "market-only",
+    "models": "market-only (no models for Amedspor / Trabzonspor)",
     "match_date": "2026-08-31 19:30"
   },
   "report": {
@@ -295,5 +295,5 @@
       "market"
     ]
   },
-  "generated_at": "2026-08-30T09:06:43.115104Z"
+  "generated_at": "2026-08-30T11:31:24.109287Z"
 }

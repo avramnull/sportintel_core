@@ -16,284 +16,299 @@
     "div": "D1",
     "home": "Mainz",
     "away": "Paderborn",
-    "models": "market-only",
+    "models": "Mainz (home) + Paderborn (away)",
     "match_date": "2026-08-29 14:30"
   },
   "report": {
     "n": 8000,
     "ft_model": {
-      "H": 0.5738880918220947,
-      "D": 0.23672883787661403,
-      "A": 0.18938307030129126
+      "H": 0.35732417296692665,
+      "D": 0.23400905396692975,
+      "A": 0.4086667730661437
     },
     "ft_sim": {
-      "H": 0.581625,
-      "D": 0.229625,
-      "A": 0.18875
+      "H": 0.363375,
+      "D": 0.238375,
+      "A": 0.39825
     },
     "ht_model": {
-      "H": 0.3,
-      "D": 0.4,
-      "A": 0.3
+      "H": 0.19079182837802278,
+      "D": 0.32387778283196644,
+      "A": 0.4853303887900108
     },
     "ht_sim": {
-      "H": 0.309,
-      "D": 0.39475,
-      "A": 0.29625
+      "H": 0.2025,
+      "D": 0.326,
+      "A": 0.4715
     },
-    "over25_model": 0.4709090909090909,
-    "over25_sim": 0.58975,
-    "btts_model": 0.45,
-    "btts_sim": 0.448625,
-    "ht_over15_model": 0.35,
-    "ht_over15_sim": 0.344,
+    "over25_model": 0.5769882815150216,
+    "over25_sim": 0.647125,
+    "btts_model": 0.4399749390951371,
+    "btts_sim": 0.4525,
+    "ht_over15_model": 0.3398620653529837,
+    "ht_over15_sim": 0.335375,
     "dc_ft": {
-      "1X": 0.8106169296987087,
-      "X2": 0.4261119081779053,
-      "12": 0.7632711621233859
+      "1X": 0.5913332269338564,
+      "X2": 0.6426758270330735,
+      "12": 0.7659909460330703
     },
     "dc_ht": {
-      "1X": 0.7,
-      "X2": 0.7,
-      "12": 0.6
+      "1X": 0.5146696112099892,
+      "X2": 0.8092081716219772,
+      "12": 0.6761222171680336
     },
     "top_ft": [
       [
-        "2-1",
-        1308
-      ],
-      [
         "0-0",
-        1052
-      ],
-      [
-        "1-0",
-        695
-      ],
-      [
-        "2-0",
-        673
+        1032
       ],
       [
         "1-2",
-        444
+        751
+      ],
+      [
+        "2-1",
+        683
+      ],
+      [
+        "0-2",
+        377
       ],
       [
         "1-1",
-        435
+        369
       ],
       [
-        "5-0",
-        392
+        "0-1",
+        366
       ],
       [
-        "4-0",
-        388
+        "2-0",
+        355
+      ],
+      [
+        "0-5",
+        331
       ]
     ],
     "top_ht": [
       [
+        "0-1",
+        2664
+      ],
+      [
         "0-0",
-        1824
+        1540
       ],
       [
         "1-0",
-        1742
-      ],
-      [
-        "0-1",
-        1682
+        1113
       ],
       [
         "1-1",
-        1334
+        1068
       ],
       [
-        "2-1",
-        382
+        "0-2",
+        560
       ]
     ],
     "xg": {
-      "home": 1.774125,
-      "away": 0.98125,
-      "total": 2.755375
+      "home": 1.471375,
+      "away": 1.52975,
+      "total": 3.001125
     },
     "goal_rates": {
-      "home": 1.774125,
-      "away": 0.98125
+      "home": 1.471375,
+      "away": 1.52975
     }
   },
   "table": [
     {
       "Section": "HT Winner",
       "Selection": "Mainz",
-      "Model%": 30.0,
-      "Sim%": 30.9,
-      "Agree": "1 eng",
+      "Model%": 19.1,
+      "Sim%": 20.2,
+      "Agree": "4 eng",
       "Verdict": "NO"
     },
     {
       "Section": "HT Winner",
       "Selection": "Draw",
-      "Model%": 40.0,
-      "Sim%": 39.5,
-      "Agree": "1 eng",
+      "Model%": 32.4,
+      "Sim%": 32.6,
+      "Agree": "4 eng",
       "Verdict": "NO"
     },
     {
       "Section": "HT Winner",
       "Selection": "Paderborn",
-      "Model%": 30.0,
-      "Sim%": 29.6,
-      "Agree": "1 eng",
+      "Model%": 48.5,
+      "Sim%": 47.1,
+      "Agree": "4 eng",
       "Verdict": "NO"
     },
     {
       "Section": "HT DC",
       "Selection": "1X",
-      "Model%": 70.0,
-      "Sim%": 70.4,
-      "Agree": "1 eng",
-      "Verdict": "YES"
+      "Model%": 51.5,
+      "Sim%": 52.8,
+      "Agree": "4 eng",
+      "Verdict": "NO"
     },
     {
       "Section": "HT DC",
       "Selection": "X2",
-      "Model%": 70.0,
-      "Sim%": 69.1,
-      "Agree": "1 eng",
+      "Model%": 80.9,
+      "Sim%": 79.8,
+      "Agree": "4 eng",
       "Verdict": "YES"
     },
     {
       "Section": "HT DC",
       "Selection": "12",
-      "Model%": 60.0,
-      "Sim%": 60.5,
-      "Agree": "1 eng",
+      "Model%": 67.6,
+      "Sim%": 67.4,
+      "Agree": "4 eng",
       "Verdict": "YES"
     },
     {
       "Section": "HT O/U",
       "Selection": "Over 1.5",
-      "Model%": 35.0,
-      "Sim%": 34.4,
-      "Agree": "1 eng",
+      "Model%": 34.0,
+      "Sim%": 33.5,
+      "Agree": "4 eng",
       "Verdict": "NO"
     },
     {
       "Section": "HT O/U",
       "Selection": "Under 1.5",
-      "Model%": 65.0,
-      "Sim%": 65.6,
-      "Agree": "1 eng",
+      "Model%": 66.0,
+      "Sim%": 66.5,
+      "Agree": "4 eng",
       "Verdict": "YES"
     },
     {
       "Section": "FT Winner",
       "Selection": "Mainz",
-      "Model%": 57.4,
-      "Sim%": 58.2,
-      "Agree": "1 eng",
-      "Verdict": "YES"
+      "Model%": 35.7,
+      "Sim%": 36.3,
+      "Agree": "4 eng",
+      "Verdict": "NO"
     },
     {
       "Section": "FT Winner",
       "Selection": "Draw",
-      "Model%": 23.7,
-      "Sim%": 23.0,
-      "Agree": "1 eng",
+      "Model%": 23.4,
+      "Sim%": 23.8,
+      "Agree": "4 eng",
       "Verdict": "NO"
     },
     {
       "Section": "FT Winner",
       "Selection": "Paderborn",
-      "Model%": 18.9,
-      "Sim%": 18.9,
-      "Agree": "1 eng",
+      "Model%": 40.9,
+      "Sim%": 39.8,
+      "Agree": "4 eng",
       "Verdict": "NO"
     },
     {
       "Section": "FT DC",
       "Selection": "1X",
-      "Model%": 81.1,
-      "Sim%": 81.1,
-      "Agree": "1 eng",
+      "Model%": 59.1,
+      "Sim%": 60.2,
+      "Agree": "4 eng",
       "Verdict": "YES"
     },
     {
       "Section": "FT DC",
       "Selection": "X2",
-      "Model%": 42.6,
-      "Sim%": 41.8,
-      "Agree": "1 eng",
-      "Verdict": "NO"
+      "Model%": 64.3,
+      "Sim%": 63.7,
+      "Agree": "4 eng",
+      "Verdict": "YES"
     },
     {
       "Section": "FT DC",
       "Selection": "12",
-      "Model%": 76.3,
-      "Sim%": 77.0,
-      "Agree": "1 eng",
+      "Model%": 76.6,
+      "Sim%": 76.2,
+      "Agree": "4 eng",
       "Verdict": "YES"
     },
     {
       "Section": "FT O/U",
       "Selection": "Over 2.5",
-      "Model%": 47.1,
-      "Sim%": 59.0,
-      "Agree": "1 eng",
-      "Verdict": "NO"
+      "Model%": 57.7,
+      "Sim%": 64.7,
+      "Agree": "4 eng",
+      "Verdict": "YES"
     },
     {
       "Section": "FT O/U",
       "Selection": "Under 2.5",
-      "Model%": 52.9,
-      "Sim%": 41.0,
-      "Agree": "1 eng",
-      "Verdict": "YES"
+      "Model%": 42.3,
+      "Sim%": 35.3,
+      "Agree": "4 eng",
+      "Verdict": "NO"
     },
     {
       "Section": "BTTS",
       "Selection": "Yes",
-      "Model%": 45.0,
-      "Sim%": 44.9,
-      "Agree": "1 eng",
+      "Model%": 44.0,
+      "Sim%": 45.2,
+      "Agree": "4 eng",
       "Verdict": "NO"
     },
     {
       "Section": "BTTS",
       "Selection": "No",
-      "Model%": 55.0,
-      "Sim%": 55.1,
-      "Agree": "1 eng",
+      "Model%": 56.0,
+      "Sim%": 54.8,
+      "Agree": "4 eng",
       "Verdict": "YES"
     }
   ],
   "locked_tip": {
     "status": "SECURED LOCK",
-    "section": "FT DC",
-    "selection": "1X",
-    "model": 81.1,
-    "sim": 81.1,
-    "agree": "1 eng",
+    "section": "HT DC",
+    "selection": "X2",
+    "model": 80.9,
+    "sim": 79.8,
+    "agree": "4 eng",
     "verdict": "HARD YES"
   },
   "backends": {
     "ft_result": [
-      "market"
+      "cat",
+      "lgbm",
+      "rf",
+      "xgb"
     ],
     "ht_result": [
-      "market"
+      "cat",
+      "lgbm",
+      "rf",
+      "xgb"
     ],
     "over25": [
-      "market"
+      "cat",
+      "lgbm",
+      "rf",
+      "xgb"
     ],
     "btts": [
-      "market"
+      "cat",
+      "lgbm",
+      "rf",
+      "xgb"
     ],
     "ht_over15": [
-      "market"
+      "cat",
+      "lgbm",
+      "rf",
+      "xgb"
     ]
   },
-  "generated_at": "2026-08-30T09:05:57.783872Z"
+  "generated_at": "2026-08-30T11:30:28.447820Z"
 }

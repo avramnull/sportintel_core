@@ -16,7 +16,7 @@
     "div": "I1",
     "home": "Atalanta",
     "away": "Bologna",
-    "models": "market-only",
+    "models": "market-only (no models for Atalanta / Bologna)",
     "match_date": "2026-08-31 19:45"
   },
   "report": {
@@ -295,5 +295,5 @@
       "market"
     ]
   },
-  "generated_at": "2026-08-30T09:06:25.350362Z"
+  "generated_at": "2026-08-30T11:31:06.491569Z"
 }

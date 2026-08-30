@@ -16,7 +16,7 @@
     "div": "SP1",
     "home": "Real Madrid",
     "away": "Malaga",
-    "models": "market-only",
+    "models": "market-only (no models for Real Madrid / Malaga)",
     "match_date": "2026-08-30 16:00"
   },
   "report": {
@@ -295,5 +295,5 @@
       "market"
     ]
   },
-  "generated_at": "2026-08-30T09:06:37.609382Z"
+  "generated_at": "2026-08-30T11:31:18.608218Z"
 }

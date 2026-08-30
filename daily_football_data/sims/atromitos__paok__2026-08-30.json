@@ -16,7 +16,7 @@
     "div": "G1",
     "home": "Atromitos",
     "away": "Paok",
-    "models": "market-only",
+    "models": "market-only (no models for Atromitos / Paok)",
     "match_date": "2026-08-30 18:15"
   },
   "report": {
@@ -295,5 +295,5 @@
       "market"
     ]
   },
-  "generated_at": "2026-08-30T09:06:22.626086Z"
+  "generated_at": "2026-08-30T11:31:03.823656Z"
 }

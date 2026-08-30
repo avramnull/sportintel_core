@@ -16,7 +16,7 @@
     "div": "E2",
     "home": "AFC Wimbledon",
     "away": "Wigan",
-    "models": "market-only",
+    "models": "market-only (no models for AFC Wimbledon / Wigan)",
     "match_date": "2026-08-30 14:00"
   },
   "report": {
@@ -295,5 +295,5 @@
       "market"
     ]
   },
-  "generated_at": "2026-08-30T09:06:13.020828Z"
+  "generated_at": "2026-08-30T11:30:54.430505Z"
 }

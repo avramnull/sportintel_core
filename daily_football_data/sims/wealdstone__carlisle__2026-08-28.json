@@ -16,7 +16,7 @@
     "div": "EC",
     "home": "Wealdstone",
     "away": "Carlisle",
-    "models": "market-only",
+    "models": "market-only (no models for Wealdstone / Carlisle)",
     "match_date": "2026-08-28 19:45"
   },
   "report": {
@@ -295,5 +295,5 @@
       "market"
     ]
   },
-  "generated_at": "2026-08-30T09:06:18.051575Z"
+  "generated_at": "2026-08-30T11:30:59.347450Z"
 }

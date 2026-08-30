@@ -16,7 +16,7 @@
     "div": "B1",
     "home": "Antwerp",
     "away": "St Truiden",
-    "models": "market-only",
+    "models": "market-only (no models for Antwerp / St Truiden)",
     "match_date": "2026-08-30 15:00"
   },
   "report": {
@@ -295,5 +295,5 @@
       "market"
     ]
   },
-  "generated_at": "2026-08-30T09:05:56.483424Z"
+  "generated_at": "2026-08-30T11:30:21.717280Z"
 }

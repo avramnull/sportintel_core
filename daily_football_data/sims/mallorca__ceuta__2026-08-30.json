@@ -16,7 +16,7 @@
     "div": "SP2",
     "home": "Mallorca",
     "away": "Ceuta",
-    "models": "market-only",
+    "models": "market-only (no models for Mallorca / Ceuta)",
     "match_date": "2026-08-30 18:00"
   },
   "report": {
@@ -295,5 +295,5 @@
       "market"
     ]
   },
-  "generated_at": "2026-08-30T09:06:40.833743Z"
+  "generated_at": "2026-08-30T11:31:21.852598Z"
 }

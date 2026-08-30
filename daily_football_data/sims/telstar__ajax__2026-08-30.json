@@ -16,7 +16,7 @@
     "div": "N1",
     "home": "Telstar",
     "away": "Ajax",
-    "models": "market-only",
+    "models": "market-only (no models for Telstar / Ajax)",
     "match_date": "2026-08-30 15:45"
   },
   "report": {
@@ -295,5 +295,5 @@
       "market"
     ]
   },
-  "generated_at": "2026-08-30T09:06:29.107105Z"
+  "generated_at": "2026-08-30T11:31:10.178870Z"
 }

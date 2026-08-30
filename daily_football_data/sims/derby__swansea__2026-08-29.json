@@ -16,7 +16,7 @@
     "div": "E1",
     "home": "Derby",
     "away": "Swansea",
-    "models": "market-only",
+    "models": "market-only (no models for Derby / Swansea)",
     "match_date": "2026-08-29 12:30"
   },
   "report": {
@@ -295,5 +295,5 @@
       "market"
     ]
   },
-  "generated_at": "2026-08-30T09:06:08.844038Z"
+  "generated_at": "2026-08-30T11:30:50.357563Z"
 }

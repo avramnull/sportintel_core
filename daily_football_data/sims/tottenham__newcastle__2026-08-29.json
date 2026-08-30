@@ -16,284 +16,299 @@
     "div": "E0",
     "home": "Tottenham",
     "away": "Newcastle",
-    "models": "market-only",
+    "models": "Tottenham (home) + Newcastle (away)",
     "match_date": "2026-08-29 17:30"
   },
   "report": {
     "n": 8000,
     "ft_model": {
-      "H": 0.420899854862119,
-      "D": 0.2525399129172714,
-      "A": 0.3265602322206096
+      "H": 0.3401747571821756,
+      "D": 0.29809618545041205,
+      "A": 0.3617290573674123
     },
     "ft_sim": {
-      "H": 0.42,
-      "D": 0.254125,
-      "A": 0.325875
+      "H": 0.338625,
+      "D": 0.301,
+      "A": 0.360375
     },
     "ht_model": {
-      "H": 0.3,
-      "D": 0.4,
-      "A": 0.3
+      "H": 0.29151830961614006,
+      "D": 0.3837018024724064,
+      "A": 0.32477988791145357
     },
     "ht_sim": {
-      "H": 0.30025,
-      "D": 0.401,
-      "A": 0.29875
+      "H": 0.293375,
+      "D": 0.382,
+      "A": 0.324625
     },
-    "over25_model": 0.4683908045977011,
-    "over25_sim": 0.58725,
-    "btts_model": 0.45,
-    "btts_sim": 0.467875,
-    "ht_over15_model": 0.35,
-    "ht_over15_sim": 0.341625,
+    "over25_model": 0.5058635485898337,
+    "over25_sim": 0.617,
+    "btts_model": 0.5294304705591493,
+    "btts_sim": 0.529875,
+    "ht_over15_model": 0.31075473810481363,
+    "ht_over15_sim": 0.338875,
     "dc_ft": {
-      "1X": 0.6734397677793904,
-      "X2": 0.579100145137881,
-      "12": 0.7474600870827286
+      "1X": 0.6382709426325877,
+      "X2": 0.6598252428178244,
+      "12": 0.701903814549588
     },
     "dc_ht": {
-      "1X": 0.7,
-      "X2": 0.7,
-      "12": 0.6
+      "1X": 0.6752201120885464,
+      "X2": 0.70848169038386,
+      "12": 0.6162981975275936
     },
     "top_ft": [
       [
         "0-0",
-        1110
-      ],
-      [
-        "2-1",
-        956
+        1149
       ],
       [
         "1-2",
-        748
+        865
+      ],
+      [
+        "2-1",
+        819
       ],
       [
         "1-1",
-        495
-      ],
-      [
-        "1-0",
-        494
-      ],
-      [
-        "2-0",
-        465
+        605
       ],
       [
         "0-1",
-        391
+        362
+      ],
+      [
+        "2-2",
+        331
       ],
       [
         "0-2",
-        347
+        326
+      ],
+      [
+        "1-0",
+        324
       ]
     ],
     "top_ht": [
       [
         "0-0",
-        1928
-      ],
-      [
-        "1-0",
-        1687
+        1835
       ],
       [
         "0-1",
-        1652
+        1797
+      ],
+      [
+        "1-0",
+        1657
       ],
       [
         "1-1",
-        1280
+        1221
       ],
       [
-        "2-1",
-        383
+        "1-2",
+        413
       ]
     ],
     "xg": {
-      "home": 1.477625,
-      "away": 1.287,
-      "total": 2.764625
+      "home": 1.42325,
+      "away": 1.462125,
+      "total": 2.885375
     },
     "goal_rates": {
-      "home": 1.477625,
-      "away": 1.287
+      "home": 1.42325,
+      "away": 1.462125
     }
   },
   "table": [
     {
       "Section": "HT Winner",
       "Selection": "Tottenham",
-      "Model%": 30.0,
-      "Sim%": 30.0,
-      "Agree": "1 eng",
+      "Model%": 29.2,
+      "Sim%": 29.3,
+      "Agree": "4 eng",
       "Verdict": "NO"
     },
     {
       "Section": "HT Winner",
       "Selection": "Draw",
-      "Model%": 40.0,
-      "Sim%": 40.1,
-      "Agree": "1 eng",
+      "Model%": 38.4,
+      "Sim%": 38.2,
+      "Agree": "4 eng",
       "Verdict": "NO"
     },
     {
       "Section": "HT Winner",
       "Selection": "Newcastle",
-      "Model%": 30.0,
-      "Sim%": 29.9,
-      "Agree": "1 eng",
+      "Model%": 32.5,
+      "Sim%": 32.5,
+      "Agree": "4 eng",
       "Verdict": "NO"
     },
     {
       "Section": "HT DC",
       "Selection": "1X",
-      "Model%": 70.0,
-      "Sim%": 70.1,
-      "Agree": "1 eng",
+      "Model%": 67.5,
+      "Sim%": 67.5,
+      "Agree": "4 eng",
       "Verdict": "YES"
     },
     {
       "Section": "HT DC",
       "Selection": "X2",
-      "Model%": 70.0,
-      "Sim%": 70.0,
-      "Agree": "1 eng",
+      "Model%": 70.8,
+      "Sim%": 70.7,
+      "Agree": "4 eng",
       "Verdict": "YES"
     },
     {
       "Section": "HT DC",
       "Selection": "12",
-      "Model%": 60.0,
-      "Sim%": 59.9,
-      "Agree": "1 eng",
+      "Model%": 61.6,
+      "Sim%": 61.8,
+      "Agree": "4 eng",
       "Verdict": "YES"
     },
     {
       "Section": "HT O/U",
       "Selection": "Over 1.5",
-      "Model%": 35.0,
-      "Sim%": 34.2,
-      "Agree": "1 eng",
+      "Model%": 31.1,
+      "Sim%": 33.9,
+      "Agree": "4 eng",
       "Verdict": "NO"
     },
     {
       "Section": "HT O/U",
       "Selection": "Under 1.5",
-      "Model%": 65.0,
-      "Sim%": 65.8,
-      "Agree": "1 eng",
+      "Model%": 68.9,
+      "Sim%": 66.1,
+      "Agree": "4 eng",
       "Verdict": "YES"
     },
     {
       "Section": "FT Winner",
       "Selection": "Tottenham",
-      "Model%": 42.1,
-      "Sim%": 42.0,
-      "Agree": "1 eng",
+      "Model%": 34.0,
+      "Sim%": 33.9,
+      "Agree": "4 eng",
       "Verdict": "NO"
     },
     {
       "Section": "FT Winner",
       "Selection": "Draw",
-      "Model%": 25.3,
-      "Sim%": 25.4,
-      "Agree": "1 eng",
+      "Model%": 29.8,
+      "Sim%": 30.1,
+      "Agree": "4 eng",
       "Verdict": "NO"
     },
     {
       "Section": "FT Winner",
       "Selection": "Newcastle",
-      "Model%": 32.7,
-      "Sim%": 32.6,
-      "Agree": "1 eng",
+      "Model%": 36.2,
+      "Sim%": 36.0,
+      "Agree": "4 eng",
       "Verdict": "NO"
     },
     {
       "Section": "FT DC",
       "Selection": "1X",
-      "Model%": 67.3,
-      "Sim%": 67.4,
-      "Agree": "1 eng",
+      "Model%": 63.8,
+      "Sim%": 64.0,
+      "Agree": "4 eng",
       "Verdict": "YES"
     },
     {
       "Section": "FT DC",
       "Selection": "X2",
-      "Model%": 57.9,
-      "Sim%": 58.0,
-      "Agree": "1 eng",
+      "Model%": 66.0,
+      "Sim%": 66.1,
+      "Agree": "4 eng",
       "Verdict": "YES"
     },
     {
       "Section": "FT DC",
       "Selection": "12",
-      "Model%": 74.7,
-      "Sim%": 74.6,
-      "Agree": "1 eng",
+      "Model%": 70.2,
+      "Sim%": 69.9,
+      "Agree": "4 eng",
       "Verdict": "YES"
     },
     {
       "Section": "FT O/U",
       "Selection": "Over 2.5",
-      "Model%": 46.8,
-      "Sim%": 58.7,
-      "Agree": "1 eng",
+      "Model%": 50.6,
+      "Sim%": 61.7,
+      "Agree": "4 eng",
       "Verdict": "NO"
     },
     {
       "Section": "FT O/U",
       "Selection": "Under 2.5",
-      "Model%": 53.2,
-      "Sim%": 41.3,
-      "Agree": "1 eng",
-      "Verdict": "YES"
-    },
-    {
-      "Section": "BTTS",
-      "Selection": "Yes",
-      "Model%": 45.0,
-      "Sim%": 46.8,
-      "Agree": "1 eng",
+      "Model%": 49.4,
+      "Sim%": 38.3,
+      "Agree": "4 eng",
       "Verdict": "NO"
     },
     {
       "Section": "BTTS",
-      "Selection": "No",
-      "Model%": 55.0,
-      "Sim%": 53.2,
-      "Agree": "1 eng",
+      "Selection": "Yes",
+      "Model%": 52.9,
+      "Sim%": 53.0,
+      "Agree": "4 eng",
       "Verdict": "YES"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 47.1,
+      "Sim%": 47.0,
+      "Agree": "4 eng",
+      "Verdict": "NO"
     }
   ],
   "locked_tip": {
     "status": "SECURED LOCK",
-    "section": "FT DC",
-    "selection": "12",
-    "model": 74.7,
-    "sim": 74.6,
-    "agree": "1 eng",
+    "section": "HT DC",
+    "selection": "X2",
+    "model": 70.8,
+    "sim": 70.7,
+    "agree": "4 eng",
     "verdict": "HARD YES"
   },
   "backends": {
     "ft_result": [
-      "market"
+      "cat",
+      "lgbm",
+      "rf",
+      "xgb"
     ],
     "ht_result": [
-      "market"
+      "cat",
+      "lgbm",
+      "rf",
+      "xgb"
     ],
     "over25": [
-      "market"
+      "cat",
+      "lgbm",
+      "rf",
+      "xgb"
     ],
     "btts": [
-      "market"
+      "cat",
+      "lgbm",
+      "rf",
+      "xgb"
     ],
     "ht_over15": [
-      "market"
+      "cat",
+      "lgbm",
+      "rf",
+      "xgb"
     ]
   },
-  "generated_at": "2026-08-30T09:06:07.320993Z"
+  "generated_at": "2026-08-30T11:30:43.532706Z"
 }

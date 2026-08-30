@@ -16,7 +16,7 @@
     "div": "E3",
     "home": "Newport County",
     "away": "Tranmere",
-    "models": "market-only",
+    "models": "market-only (no models for Newport County / Tranmere)",
     "match_date": "2026-08-29 15:00"
   },
   "report": {
@@ -295,5 +295,5 @@
       "market"
     ]
   },
-  "generated_at": "2026-08-30T09:06:14.888983Z"
+  "generated_at": "2026-08-30T11:30:56.270719Z"
 }

@@ -16,7 +16,7 @@
     "div": "SP2",
     "home": "Celta B",
     "away": "Castellon",
-    "models": "market-only",
+    "models": "market-only (no models for Celta B / Castellon)",
     "match_date": "2026-08-31 20:30"
   },
   "report": {
@@ -295,5 +295,5 @@
       "market"
     ]
   },
-  "generated_at": "2026-08-30T09:06:41.453461Z"
+  "generated_at": "2026-08-30T11:31:22.468319Z"
 }

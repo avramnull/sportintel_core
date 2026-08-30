@@ -16,7 +16,7 @@
     "div": "E1",
     "home": "Southampton",
     "away": "Millwall",
-    "models": "market-only",
+    "models": "market-only (no models for Southampton / Millwall)",
     "match_date": "2026-08-29 15:00"
   },
   "report": {
@@ -295,5 +295,5 @@
       "market"
     ]
   },
-  "generated_at": "2026-08-30T09:06:10.716950Z"
+  "generated_at": "2026-08-30T11:30:52.194788Z"
 }

@@ -16,7 +16,7 @@
     "div": "N1",
     "home": "Utrecht",
     "away": "PSV Eindhoven",
-    "models": "market-only",
+    "models": "market-only (no models for Utrecht / PSV Eindhoven)",
     "match_date": "2026-08-30 11:15"
   },
   "report": {
@@ -295,5 +295,5 @@
       "market"
     ]
   },
-  "generated_at": "2026-08-30T09:06:28.466927Z"
+  "generated_at": "2026-08-30T11:31:09.552885Z"
 }

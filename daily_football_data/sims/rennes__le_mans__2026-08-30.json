@@ -16,7 +16,7 @@
     "div": "F1",
     "home": "Rennes",
     "away": "Le Mans",
-    "models": "market-only",
+    "models": "market-only (no models for Rennes / Le Mans)",
     "match_date": "2026-08-30 16:15"
   },
   "report": {
@@ -295,5 +295,5 @@
       "market"
     ]
   },
-  "generated_at": "2026-08-30T09:06:19.723334Z"
+  "generated_at": "2026-08-30T11:31:00.981172Z"
 }

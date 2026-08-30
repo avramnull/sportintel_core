@@ -16,7 +16,7 @@
     "div": "E3",
     "home": "Walsall",
     "away": "Accrington",
-    "models": "market-only",
+    "models": "market-only (no models for Walsall / Accrington)",
     "match_date": "2026-08-29 15:00"
   },
   "report": {
@@ -295,5 +295,5 @@
       "market"
     ]
   },
-  "generated_at": "2026-08-30T09:06:15.516351Z"
+  "generated_at": "2026-08-30T11:30:56.881643Z"
 }

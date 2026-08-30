@@ -16,111 +16,111 @@
     "div": "D1",
     "home": "Union Berlin",
     "away": "Ein Frankfurt",
-    "models": "market-only",
+    "models": "Union Berlin (home) + Ein Frankfurt (away)",
     "match_date": "2026-08-29 14:30"
   },
   "report": {
     "n": 8000,
     "ft_model": {
-      "H": 0.3673469387755102,
-      "D": 0.26530612244897966,
-      "A": 0.3673469387755102
+      "H": 0.3389057908130964,
+      "D": 0.2879571410482572,
+      "A": 0.37313706813864633
     },
     "ft_sim": {
-      "H": 0.361625,
-      "D": 0.274,
-      "A": 0.364375
+      "H": 0.334125,
+      "D": 0.296625,
+      "A": 0.36925
     },
     "ht_model": {
-      "H": 0.3,
-      "D": 0.4,
-      "A": 0.3
+      "H": 0.3004633364139728,
+      "D": 0.3668816029632515,
+      "A": 0.3326550606227758
     },
     "ht_sim": {
-      "H": 0.301125,
-      "D": 0.399875,
-      "A": 0.299
+      "H": 0.3015,
+      "D": 0.36575,
+      "A": 0.33275
     },
-    "over25_model": 0.46538461538461534,
-    "over25_sim": 0.57875,
-    "btts_model": 0.45,
-    "btts_sim": 0.45975,
-    "ht_over15_model": 0.35,
-    "ht_over15_sim": 0.33475,
+    "over25_model": 0.5483423683970733,
+    "over25_sim": 0.69125,
+    "btts_model": 0.6303877273400658,
+    "btts_sim": 0.63025,
+    "ht_over15_model": 0.3783281459931399,
+    "ht_over15_sim": 0.33025,
     "dc_ft": {
-      "1X": 0.6326530612244898,
-      "X2": 0.6326530612244898,
-      "12": 0.7346938775510204
+      "1X": 0.6268629318613537,
+      "X2": 0.6610942091869035,
+      "12": 0.7120428589517427
     },
     "dc_ht": {
-      "1X": 0.7,
-      "X2": 0.7,
-      "12": 0.6
+      "1X": 0.6673449393772244,
+      "X2": 0.6995366635860273,
+      "12": 0.6331183970367487
     },
     "top_ft": [
       [
-        "0-0",
-        1177
-      ],
-      [
         "1-2",
-        844
+        1008
       ],
       [
         "2-1",
-        808
+        918
+      ],
+      [
+        "0-0",
+        849
       ],
       [
         "1-1",
-        514
+        657
       ],
       [
-        "0-2",
-        457
+        "3-3",
+        446
       ],
       [
-        "2-0",
-        418
+        "2-2",
+        421
       ],
       [
-        "1-0",
-        415
+        "2-3",
+        347
       ],
       [
-        "0-1",
-        389
+        "3-2",
+        316
       ]
     ],
     "top_ht": [
       [
-        "0-0",
-        1943
+        "0-1",
+        1902
       ],
       [
-        "0-1",
-        1698
+        "0-0",
+        1782
       ],
       [
         "1-0",
-        1681
+        1674
       ],
       [
         "1-1",
-        1256
+        1144
       ],
       [
-        "2-0",
-        372
+        "1-2",
+        385
       ]
     ],
     "xg": {
-      "home": 1.3765,
-      "away": 1.37575,
-      "total": 2.75225
+      "home": 1.5535,
+      "away": 1.624875,
+      "total": 3.178375
     },
     "goal_rates": {
-      "home": 1.3765,
-      "away": 1.37575
+      "home": 1.5535,
+      "away": 1.624875
     }
   },
   "table": [
@@ -129,171 +129,186 @@
       "Selection": "Union Berlin",
       "Model%": 30.0,
       "Sim%": 30.1,
-      "Agree": "1 eng",
+      "Agree": "4 eng",
       "Verdict": "NO"
     },
     {
       "Section": "HT Winner",
       "Selection": "Draw",
-      "Model%": 40.0,
-      "Sim%": 40.0,
-      "Agree": "1 eng",
+      "Model%": 36.7,
+      "Sim%": 36.6,
+      "Agree": "4 eng",
       "Verdict": "NO"
     },
     {
       "Section": "HT Winner",
       "Selection": "Ein Frankfurt",
-      "Model%": 30.0,
-      "Sim%": 29.9,
-      "Agree": "1 eng",
+      "Model%": 33.3,
+      "Sim%": 33.3,
+      "Agree": "4 eng",
       "Verdict": "NO"
     },
     {
       "Section": "HT DC",
       "Selection": "1X",
-      "Model%": 70.0,
-      "Sim%": 70.1,
-      "Agree": "1 eng",
+      "Model%": 66.7,
+      "Sim%": 66.7,
+      "Agree": "4 eng",
       "Verdict": "YES"
     },
     {
       "Section": "HT DC",
       "Selection": "X2",
       "Model%": 70.0,
-      "Sim%": 69.9,
-      "Agree": "1 eng",
+      "Sim%": 69.8,
+      "Agree": "4 eng",
       "Verdict": "YES"
     },
     {
       "Section": "HT DC",
       "Selection": "12",
-      "Model%": 60.0,
-      "Sim%": 60.0,
-      "Agree": "1 eng",
+      "Model%": 63.3,
+      "Sim%": 63.4,
+      "Agree": "4 eng",
       "Verdict": "YES"
     },
     {
       "Section": "HT O/U",
       "Selection": "Over 1.5",
-      "Model%": 35.0,
-      "Sim%": 33.5,
-      "Agree": "1 eng",
+      "Model%": 37.8,
+      "Sim%": 33.0,
+      "Agree": "4 eng",
       "Verdict": "NO"
     },
     {
       "Section": "HT O/U",
       "Selection": "Under 1.5",
-      "Model%": 65.0,
-      "Sim%": 66.5,
-      "Agree": "1 eng",
+      "Model%": 62.2,
+      "Sim%": 67.0,
+      "Agree": "4 eng",
       "Verdict": "YES"
     },
     {
       "Section": "FT Winner",
       "Selection": "Union Berlin",
-      "Model%": 36.7,
-      "Sim%": 36.2,
-      "Agree": "1 eng",
+      "Model%": 33.9,
+      "Sim%": 33.4,
+      "Agree": "4 eng",
       "Verdict": "NO"
     },
     {
       "Section": "FT Winner",
       "Selection": "Draw",
-      "Model%": 26.5,
-      "Sim%": 27.4,
-      "Agree": "1 eng",
+      "Model%": 28.8,
+      "Sim%": 29.7,
+      "Agree": "4 eng",
       "Verdict": "NO"
     },
     {
       "Section": "FT Winner",
       "Selection": "Ein Frankfurt",
-      "Model%": 36.7,
-      "Sim%": 36.4,
-      "Agree": "1 eng",
+      "Model%": 37.3,
+      "Sim%": 36.9,
+      "Agree": "4 eng",
       "Verdict": "NO"
     },
     {
       "Section": "FT DC",
       "Selection": "1X",
-      "Model%": 63.3,
-      "Sim%": 63.6,
-      "Agree": "1 eng",
+      "Model%": 62.7,
+      "Sim%": 63.1,
+      "Agree": "4 eng",
       "Verdict": "YES"
     },
     {
       "Section": "FT DC",
       "Selection": "X2",
-      "Model%": 63.3,
-      "Sim%": 63.8,
-      "Agree": "1 eng",
+      "Model%": 66.1,
+      "Sim%": 66.6,
+      "Agree": "4 eng",
       "Verdict": "YES"
     },
     {
       "Section": "FT DC",
       "Selection": "12",
-      "Model%": 73.5,
-      "Sim%": 72.6,
-      "Agree": "1 eng",
+      "Model%": 71.2,
+      "Sim%": 70.3,
+      "Agree": "4 eng",
       "Verdict": "YES"
     },
     {
       "Section": "FT O/U",
       "Selection": "Over 2.5",
-      "Model%": 46.5,
-      "Sim%": 57.9,
-      "Agree": "1 eng",
-      "Verdict": "NO"
+      "Model%": 54.8,
+      "Sim%": 69.1,
+      "Agree": "4 eng",
+      "Verdict": "YES"
     },
     {
       "Section": "FT O/U",
       "Selection": "Under 2.5",
-      "Model%": 53.5,
-      "Sim%": 42.1,
-      "Agree": "1 eng",
-      "Verdict": "YES"
-    },
-    {
-      "Section": "BTTS",
-      "Selection": "Yes",
-      "Model%": 45.0,
-      "Sim%": 46.0,
-      "Agree": "1 eng",
+      "Model%": 45.2,
+      "Sim%": 30.9,
+      "Agree": "4 eng",
       "Verdict": "NO"
     },
     {
       "Section": "BTTS",
-      "Selection": "No",
-      "Model%": 55.0,
-      "Sim%": 54.0,
-      "Agree": "1 eng",
+      "Selection": "Yes",
+      "Model%": 63.0,
+      "Sim%": 63.0,
+      "Agree": "4 eng",
       "Verdict": "YES"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 37.0,
+      "Sim%": 37.0,
+      "Agree": "4 eng",
+      "Verdict": "NO"
     }
   ],
   "locked_tip": {
     "status": "SECURED LOCK",
     "section": "FT DC",
     "selection": "12",
-    "model": 73.5,
-    "sim": 72.6,
-    "agree": "1 eng",
+    "model": 71.2,
+    "sim": 70.3,
+    "agree": "4 eng",
     "verdict": "HARD YES"
   },
   "backends": {
     "ft_result": [
-      "market"
+      "cat",
+      "lgbm",
+      "rf",
+      "xgb"
     ],
     "ht_result": [
-      "market"
+      "cat",
+      "lgbm",
+      "rf",
+      "xgb"
     ],
     "over25": [
-      "market"
+      "cat",
+      "lgbm",
+      "rf",
+      "xgb"
     ],
     "btts": [
-      "market"
+      "cat",
+      "lgbm",
+      "rf",
+      "xgb"
     ],
     "ht_over15": [
-      "market"
+      "cat",
+      "lgbm",
+      "rf",
+      "xgb"
     ]
   },
-  "generated_at": "2026-08-30T09:05:58.209564Z"
+  "generated_at": "2026-08-30T11:30:31.002287Z"
 }

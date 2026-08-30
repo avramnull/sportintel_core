@@ -16,7 +16,7 @@
     "div": "I1",
     "home": "Lazio",
     "away": "Genoa",
-    "models": "market-only",
+    "models": "market-only (no models for Lazio / Genoa)",
     "match_date": "2026-08-30 19:45"
   },
   "report": {
@@ -295,5 +295,5 @@
       "market"
     ]
   },
-  "generated_at": "2026-08-30T09:06:24.932852Z"
+  "generated_at": "2026-08-30T11:31:06.082644Z"
 }

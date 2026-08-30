@@ -16,7 +16,7 @@
     "div": "B1",
     "home": "St. Gilloise",
     "away": "Anderlecht",
-    "models": "market-only",
+    "models": "market-only (no models for St. Gilloise / Anderlecht)",
     "match_date": "2026-08-30 17:30"
   },
   "report": {
@@ -295,5 +295,5 @@
       "market"
     ]
   },
-  "generated_at": "2026-08-30T09:05:56.697757Z"
+  "generated_at": "2026-08-30T11:30:21.921800Z"
 }

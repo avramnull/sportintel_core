@@ -16,7 +16,7 @@
     "div": "G1",
     "home": "Kifisia",
     "away": "Aek",
-    "models": "market-only",
+    "models": "market-only (no models for Kifisia / Aek)",
     "match_date": "2026-08-30 19:00"
   },
   "report": {
@@ -295,5 +295,5 @@
       "market"
     ]
   },
-  "generated_at": "2026-08-30T09:06:23.052470Z"
+  "generated_at": "2026-08-30T11:31:04.242053Z"
 }

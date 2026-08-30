@@ -16,7 +16,7 @@
     "div": "T1",
     "home": "Galatasaray",
     "away": "Goztep",
-    "models": "market-only",
+    "models": "market-only (no models for Galatasaray / Goztep)",
     "match_date": "2026-08-29 19:30"
   },
   "report": {
@@ -295,5 +295,5 @@
       "market"
     ]
   },
-  "generated_at": "2026-08-30T09:06:42.076026Z"
+  "generated_at": "2026-08-30T11:31:23.084979Z"
 }

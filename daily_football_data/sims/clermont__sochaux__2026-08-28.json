@@ -16,7 +16,7 @@
     "div": "F2",
     "home": "Clermont",
     "away": "Sochaux",
-    "models": "market-only",
+    "models": "market-only (no models for Clermont / Sochaux)",
     "match_date": "2026-08-28 19:00"
   },
   "report": {
@@ -295,5 +295,5 @@
       "market"
     ]
   },
-  "generated_at": "2026-08-30T09:06:20.140349Z"
+  "generated_at": "2026-08-30T11:31:01.388119Z"
 }

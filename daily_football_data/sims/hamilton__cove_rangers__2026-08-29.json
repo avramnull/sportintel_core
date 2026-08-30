@@ -16,7 +16,7 @@
     "div": "SC2",
     "home": "Hamilton",
     "away": "Cove Rangers",
-    "models": "market-only",
+    "models": "market-only (no models for Hamilton / Cove Rangers)",
     "match_date": "2026-08-29 15:00"
   },
   "report": {
@@ -295,5 +295,5 @@
       "market"
     ]
   },
-  "generated_at": "2026-08-30T09:06:34.141176Z"
+  "generated_at": "2026-08-30T11:31:15.169306Z"
 }

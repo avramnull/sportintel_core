@@ -16,7 +16,7 @@
     "div": "I2",
     "home": "Sampdoria",
     "away": "Juve Stabia",
-    "models": "market-only",
+    "models": "market-only (no models for Sampdoria / Juve Stabia)",
     "match_date": "2026-08-29 18:00"
   },
   "report": {
@@ -295,5 +295,5 @@
       "market"
     ]
   },
-  "generated_at": "2026-08-30T09:06:25.762187Z"
+  "generated_at": "2026-08-30T11:31:06.895160Z"
 }

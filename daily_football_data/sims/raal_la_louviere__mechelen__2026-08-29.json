@@ -16,7 +16,7 @@
     "div": "B1",
     "home": "RAAL La Louviere",
     "away": "Mechelen",
-    "models": "market-only",
+    "models": "market-only (no models for RAAL La Louviere / Mechelen)",
     "match_date": "2026-08-29 15:00"
   },
   "report": {
@@ -295,5 +295,5 @@
       "market"
     ]
   },
-  "generated_at": "2026-08-30T09:05:55.424459Z"
+  "generated_at": "2026-08-30T11:30:20.699294Z"
 }

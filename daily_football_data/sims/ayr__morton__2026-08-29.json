@@ -16,7 +16,7 @@
     "div": "SC1",
     "home": "Ayr",
     "away": "Morton",
-    "models": "market-only",
+    "models": "market-only (no models for Ayr / Morton)",
     "match_date": "2026-08-29 15:00"
   },
   "report": {
@@ -295,5 +295,5 @@
       "market"
     ]
   },
-  "generated_at": "2026-08-30T09:06:33.088324Z"
+  "generated_at": "2026-08-30T11:31:14.089126Z"
 }

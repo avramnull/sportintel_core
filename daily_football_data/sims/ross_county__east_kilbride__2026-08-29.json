@@ -16,7 +16,7 @@
     "div": "SC2",
     "home": "Ross County",
     "away": "East Kilbride",
-    "models": "market-only",
+    "models": "market-only (no models for Ross County / East Kilbride)",
     "match_date": "2026-08-29 17:30"
   },
   "report": {
@@ -295,5 +295,5 @@
       "market"
     ]
   },
-  "generated_at": "2026-08-30T09:06:34.559819Z"
+  "generated_at": "2026-08-30T11:31:15.582305Z"
 }

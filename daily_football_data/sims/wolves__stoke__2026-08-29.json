@@ -16,7 +16,7 @@
     "div": "E1",
     "home": "Wolverhampton",
     "away": "Stoke",
-    "models": "market-only",
+    "models": "market-only (no models for Wolverhampton / Stoke)",
     "match_date": "2026-08-29 12:30"
   },
   "report": {
@@ -295,5 +295,5 @@
       "market"
     ]
   },
-  "generated_at": "2026-08-30T09:06:09.270470Z"
+  "generated_at": "2026-08-30T11:30:50.768803Z"
 }

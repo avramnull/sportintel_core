@@ -16,7 +16,7 @@
     "div": "N1",
     "home": "Feyenoord",
     "away": "Den Haag",
-    "models": "market-only",
+    "models": "market-only (no models for Feyenoord / Den Haag)",
     "match_date": "2026-08-30 13:30"
   },
   "report": {
@@ -295,5 +295,5 @@
       "market"
     ]
   },
-  "generated_at": "2026-08-30T09:06:28.685452Z"
+  "generated_at": "2026-08-30T11:31:09.765927Z"
 }

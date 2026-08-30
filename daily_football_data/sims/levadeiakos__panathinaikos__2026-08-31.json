@@ -16,7 +16,7 @@
     "div": "G1",
     "home": "Levadeiakos",
     "away": "Panathinaikos",
-    "models": "market-only",
+    "models": "market-only (no models for Levadeiakos / Panathinaikos)",
     "match_date": "2026-08-31 17:30"
   },
   "report": {
@@ -295,5 +295,5 @@
       "market"
     ]
   },
-  "generated_at": "2026-08-30T09:06:23.267377Z"
+  "generated_at": "2026-08-30T11:31:04.446844Z"
 }

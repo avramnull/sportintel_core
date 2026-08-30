@@ -16,7 +16,7 @@
     "div": "E3",
     "home": "Oldham",
     "away": "Swindon",
-    "models": "market-only",
+    "models": "market-only (no models for Oldham / Swindon)",
     "match_date": "2026-08-29 15:00"
   },
   "report": {
@@ -295,5 +295,5 @@
       "market"
     ]
   },
-  "generated_at": "2026-08-30T09:06:15.096396Z"
+  "generated_at": "2026-08-30T11:30:56.475179Z"
 }

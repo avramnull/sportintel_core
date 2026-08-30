@@ -16,7 +16,7 @@
     "div": "F2",
     "home": "Montpellier",
     "away": "Boulogne",
-    "models": "market-only",
+    "models": "market-only (no models for Montpellier / Boulogne)",
     "match_date": "2026-08-28 19:00"
   },
   "report": {
@@ -295,5 +295,5 @@
       "market"
     ]
   },
-  "generated_at": "2026-08-30T09:06:20.555511Z"
+  "generated_at": "2026-08-30T11:31:01.791406Z"
 }

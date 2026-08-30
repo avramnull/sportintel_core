@@ -16,7 +16,7 @@
     "div": "SC2",
     "home": "Alloa",
     "away": "Peterhead",
-    "models": "market-only",
+    "models": "market-only (no models for Alloa / Peterhead)",
     "match_date": "2026-08-29 15:00"
   },
   "report": {
@@ -295,5 +295,5 @@
       "market"
     ]
   },
-  "generated_at": "2026-08-30T09:06:33.931025Z"
+  "generated_at": "2026-08-30T11:31:14.962010Z"
 }

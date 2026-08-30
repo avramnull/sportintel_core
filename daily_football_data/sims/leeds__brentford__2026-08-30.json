@@ -16,284 +16,299 @@
     "div": "E0",
     "home": "Leeds",
     "away": "Brentford",
-    "models": "market-only",
+    "models": "Leeds (home) + Brentford (away)",
     "match_date": "2026-08-30 14:00"
   },
   "report": {
     "n": 8000,
     "ft_model": {
-      "H": 0.36352509179926557,
-      "D": 0.2864137086903305,
-      "A": 0.3500611995104039
+      "H": 0.38686543341727064,
+      "D": 0.24713193627440697,
+      "A": 0.36600263030832236
     },
     "ft_sim": {
-      "H": 0.36725,
-      "D": 0.280875,
-      "A": 0.351875
+      "H": 0.388375,
+      "D": 0.24325,
+      "A": 0.368375
     },
     "ht_model": {
-      "H": 0.3,
-      "D": 0.4,
-      "A": 0.3
+      "H": 0.28242120803405074,
+      "D": 0.4044332630161711,
+      "A": 0.31314552894977815
     },
     "ht_sim": {
-      "H": 0.298375,
-      "D": 0.405375,
-      "A": 0.29625
+      "H": 0.28075,
+      "D": 0.412,
+      "A": 0.30725
     },
-    "over25_model": 0.4632478632478632,
-    "over25_sim": 0.569875,
-    "btts_model": 0.45,
-    "btts_sim": 0.45875,
-    "ht_over15_model": 0.35,
-    "ht_over15_sim": 0.345625,
+    "over25_model": 0.5242155641685925,
+    "over25_sim": 0.660875,
+    "btts_model": 0.546557989200175,
+    "btts_sim": 0.5505,
+    "ht_over15_model": 0.39507859178610727,
+    "ht_over15_sim": 0.34625,
     "dc_ft": {
-      "1X": 0.6499388004895961,
-      "X2": 0.6364749082007344,
-      "12": 0.7135862913096694
+      "1X": 0.6339973696916776,
+      "X2": 0.6131345665827294,
+      "12": 0.752868063725593
     },
     "dc_ht": {
-      "1X": 0.7,
-      "X2": 0.7,
-      "12": 0.6
+      "1X": 0.6868544710502218,
+      "X2": 0.7175787919659493,
+      "12": 0.5955667369838289
     },
     "top_ft": [
       [
-        "0-0",
-        1212
+        "2-1",
+        918
       ],
       [
-        "2-1",
-        847
+        "0-0",
+        894
       ],
       [
         "1-2",
-        770
+        882
       ],
       [
         "1-1",
-        551
+        510
       ],
       [
         "0-1",
-        434
-      ],
-      [
-        "0-2",
-        432
+        338
       ],
       [
         "2-0",
-        408
+        336
       ],
       [
         "1-0",
-        404
+        327
+      ],
+      [
+        "0-2",
+        308
       ]
     ],
     "top_ht": [
       [
         "0-0",
-        1899
-      ],
-      [
-        "1-0",
-        1688
+        1953
       ],
       [
         "0-1",
-        1648
+        1703
+      ],
+      [
+        "1-0",
+        1574
       ],
       [
         "1-1",
-        1344
+        1343
       ],
       [
         "1-2",
-        365
+        382
       ]
     ],
     "xg": {
-      "home": 1.3765,
-      "away": 1.341875,
-      "total": 2.718375
+      "home": 1.549125,
+      "away": 1.501625,
+      "total": 3.05075
     },
     "goal_rates": {
-      "home": 1.3765,
-      "away": 1.341875
+      "home": 1.549125,
+      "away": 1.501625
     }
   },
   "table": [
     {
       "Section": "HT Winner",
       "Selection": "Leeds",
-      "Model%": 30.0,
-      "Sim%": 29.8,
-      "Agree": "1 eng",
+      "Model%": 28.2,
+      "Sim%": 28.1,
+      "Agree": "4 eng",
       "Verdict": "NO"
     },
     {
       "Section": "HT Winner",
       "Selection": "Draw",
-      "Model%": 40.0,
-      "Sim%": 40.5,
-      "Agree": "1 eng",
+      "Model%": 40.4,
+      "Sim%": 41.2,
+      "Agree": "4 eng",
       "Verdict": "NO"
     },
     {
       "Section": "HT Winner",
       "Selection": "Brentford",
-      "Model%": 30.0,
-      "Sim%": 29.6,
-      "Agree": "1 eng",
+      "Model%": 31.3,
+      "Sim%": 30.7,
+      "Agree": "4 eng",
       "Verdict": "NO"
     },
     {
       "Section": "HT DC",
       "Selection": "1X",
-      "Model%": 70.0,
-      "Sim%": 70.4,
-      "Agree": "1 eng",
+      "Model%": 68.7,
+      "Sim%": 69.3,
+      "Agree": "4 eng",
       "Verdict": "YES"
     },
     {
       "Section": "HT DC",
       "Selection": "X2",
-      "Model%": 70.0,
-      "Sim%": 70.2,
-      "Agree": "1 eng",
+      "Model%": 71.8,
+      "Sim%": 71.9,
+      "Agree": "4 eng",
       "Verdict": "YES"
     },
     {
       "Section": "HT DC",
       "Selection": "12",
-      "Model%": 60.0,
-      "Sim%": 59.5,
-      "Agree": "1 eng",
+      "Model%": 59.6,
+      "Sim%": 58.8,
+      "Agree": "4 eng",
       "Verdict": "YES"
     },
     {
       "Section": "HT O/U",
       "Selection": "Over 1.5",
-      "Model%": 35.0,
+      "Model%": 39.5,
       "Sim%": 34.6,
-      "Agree": "1 eng",
+      "Agree": "4 eng",
       "Verdict": "NO"
     },
     {
       "Section": "HT O/U",
       "Selection": "Under 1.5",
-      "Model%": 65.0,
+      "Model%": 60.5,
       "Sim%": 65.4,
-      "Agree": "1 eng",
+      "Agree": "4 eng",
       "Verdict": "YES"
     },
     {
       "Section": "FT Winner",
       "Selection": "Leeds",
-      "Model%": 36.4,
-      "Sim%": 36.7,
-      "Agree": "1 eng",
+      "Model%": 38.7,
+      "Sim%": 38.8,
+      "Agree": "4 eng",
       "Verdict": "NO"
     },
     {
       "Section": "FT Winner",
       "Selection": "Draw",
-      "Model%": 28.6,
-      "Sim%": 28.1,
-      "Agree": "1 eng",
+      "Model%": 24.7,
+      "Sim%": 24.3,
+      "Agree": "4 eng",
       "Verdict": "NO"
     },
     {
       "Section": "FT Winner",
       "Selection": "Brentford",
-      "Model%": 35.0,
-      "Sim%": 35.2,
-      "Agree": "1 eng",
+      "Model%": 36.6,
+      "Sim%": 36.8,
+      "Agree": "4 eng",
       "Verdict": "NO"
     },
     {
       "Section": "FT DC",
       "Selection": "1X",
-      "Model%": 65.0,
-      "Sim%": 64.8,
-      "Agree": "1 eng",
+      "Model%": 63.4,
+      "Sim%": 63.2,
+      "Agree": "4 eng",
       "Verdict": "YES"
     },
     {
       "Section": "FT DC",
       "Selection": "X2",
-      "Model%": 63.6,
-      "Sim%": 63.3,
-      "Agree": "1 eng",
+      "Model%": 61.3,
+      "Sim%": 61.2,
+      "Agree": "4 eng",
       "Verdict": "YES"
     },
     {
       "Section": "FT DC",
       "Selection": "12",
-      "Model%": 71.4,
-      "Sim%": 71.9,
-      "Agree": "1 eng",
+      "Model%": 75.3,
+      "Sim%": 75.7,
+      "Agree": "4 eng",
       "Verdict": "YES"
     },
     {
       "Section": "FT O/U",
       "Selection": "Over 2.5",
-      "Model%": 46.3,
-      "Sim%": 57.0,
-      "Agree": "1 eng",
-      "Verdict": "NO"
+      "Model%": 52.4,
+      "Sim%": 66.1,
+      "Agree": "4 eng",
+      "Verdict": "YES"
     },
     {
       "Section": "FT O/U",
       "Selection": "Under 2.5",
-      "Model%": 53.7,
-      "Sim%": 43.0,
-      "Agree": "1 eng",
-      "Verdict": "YES"
-    },
-    {
-      "Section": "BTTS",
-      "Selection": "Yes",
-      "Model%": 45.0,
-      "Sim%": 45.9,
-      "Agree": "1 eng",
+      "Model%": 47.6,
+      "Sim%": 33.9,
+      "Agree": "4 eng",
       "Verdict": "NO"
     },
     {
       "Section": "BTTS",
-      "Selection": "No",
-      "Model%": 55.0,
-      "Sim%": 54.1,
-      "Agree": "1 eng",
+      "Selection": "Yes",
+      "Model%": 54.7,
+      "Sim%": 55.0,
+      "Agree": "4 eng",
       "Verdict": "YES"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 45.3,
+      "Sim%": 45.0,
+      "Agree": "4 eng",
+      "Verdict": "NO"
     }
   ],
   "locked_tip": {
     "status": "SECURED LOCK",
     "section": "FT DC",
     "selection": "12",
-    "model": 71.4,
-    "sim": 71.9,
-    "agree": "1 eng",
+    "model": 75.3,
+    "sim": 75.7,
+    "agree": "4 eng",
     "verdict": "HARD YES"
   },
   "backends": {
     "ft_result": [
-      "market"
+      "cat",
+      "lgbm",
+      "rf",
+      "xgb"
     ],
     "ht_result": [
-      "market"
+      "cat",
+      "lgbm",
+      "rf",
+      "xgb"
     ],
     "over25": [
-      "market"
+      "cat",
+      "lgbm",
+      "rf",
+      "xgb"
     ],
     "btts": [
-      "market"
+      "cat",
+      "lgbm",
+      "rf",
+      "xgb"
     ],
     "ht_over15": [
-      "market"
+      "cat",
+      "lgbm",
+      "rf",
+      "xgb"
     ]
   },
-  "generated_at": "2026-08-30T09:06:07.778016Z"
+  "generated_at": "2026-08-30T11:30:46.231351Z"
 }

@@ -16,7 +16,7 @@
     "div": "B1",
     "home": "Kortrijk",
     "away": "Charleroi",
-    "models": "market-only",
+    "models": "market-only (no models for Kortrijk / Charleroi)",
     "match_date": "2026-08-29 17:15"
   },
   "report": {
@@ -295,5 +295,5 @@
       "market"
     ]
   },
-  "generated_at": "2026-08-30T09:05:55.634440Z"
+  "generated_at": "2026-08-30T11:30:20.902248Z"
 }

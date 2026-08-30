@@ -16,7 +16,7 @@
     "div": "E2",
     "home": "Notts County",
     "away": "Burton",
-    "models": "market-only",
+    "models": "market-only (no models for Notts County / Burton)",
     "match_date": "2026-08-29 15:00"
   },
   "report": {
@@ -295,5 +295,5 @@
       "market"
     ]
   },
-  "generated_at": "2026-08-30T09:06:11.979282Z"
+  "generated_at": "2026-08-30T11:30:53.419306Z"
 }

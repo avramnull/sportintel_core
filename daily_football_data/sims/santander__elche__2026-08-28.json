@@ -16,7 +16,7 @@
     "div": "SP1",
     "home": "Santander",
     "away": "Elche",
-    "models": "market-only",
+    "models": "market-only (no models for Santander / Elche)",
     "match_date": "2026-08-28 18:00"
   },
   "report": {
@@ -295,5 +295,5 @@
       "market"
     ]
   },
-  "generated_at": "2026-08-30T09:06:35.813348Z"
+  "generated_at": "2026-08-30T11:31:16.812092Z"
 }

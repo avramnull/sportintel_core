@@ -16,7 +16,7 @@
     "div": "T1",
     "home": "Eyupspor",
     "away": "Alanyaspor",
-    "models": "market-only",
+    "models": "market-only (no models for Eyupspor / Alanyaspor)",
     "match_date": "2026-08-30 17:00"
   },
   "report": {
@@ -295,5 +295,5 @@
       "market"
     ]
   },
-  "generated_at": "2026-08-30T09:06:42.489987Z"
+  "generated_at": "2026-08-30T11:31:23.492637Z"
 }

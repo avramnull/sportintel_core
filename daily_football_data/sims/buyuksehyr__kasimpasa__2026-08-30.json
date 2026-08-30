@@ -16,7 +16,7 @@
     "div": "T1",
     "home": "Buyuksehyr",
     "away": "Kasimpasa",
-    "models": "market-only",
+    "models": "market-only (no models for Buyuksehyr / Kasimpasa)",
     "match_date": "2026-08-30 19:30"
   },
   "report": {
@@ -295,5 +295,5 @@
       "market"
     ]
   },
-  "generated_at": "2026-08-30T09:06:42.698350Z"
+  "generated_at": "2026-08-30T11:31:23.697565Z"
 }

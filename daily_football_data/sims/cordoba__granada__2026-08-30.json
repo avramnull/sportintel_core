@@ -16,7 +16,7 @@
     "div": "SP2",
     "home": "Cordoba",
     "away": "Granada",
-    "models": "market-only",
+    "models": "market-only (no models for Cordoba / Granada)",
     "match_date": "2026-08-30 20:30"
   },
   "report": {
@@ -295,5 +295,5 @@
       "market"
     ]
   },
-  "generated_at": "2026-08-30T09:06:41.040526Z"
+  "generated_at": "2026-08-30T11:31:22.058802Z"
 }

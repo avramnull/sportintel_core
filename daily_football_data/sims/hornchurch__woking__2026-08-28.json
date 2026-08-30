@@ -16,7 +16,7 @@
     "div": "EC",
     "home": "Hornchurch",
     "away": "Woking",
-    "models": "market-only",
+    "models": "market-only (no models for Hornchurch / Woking)",
     "match_date": "2026-08-28 19:45"
   },
   "report": {
@@ -295,5 +295,5 @@
       "market"
     ]
   },
-  "generated_at": "2026-08-30T09:06:17.211941Z"
+  "generated_at": "2026-08-30T11:30:58.516255Z"
 }

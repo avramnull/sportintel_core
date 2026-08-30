@@ -16,7 +16,7 @@
     "div": "B1",
     "home": "Westerlo",
     "away": "Waregem",
-    "models": "market-only",
+    "models": "market-only (no models for Westerlo / Waregem)",
     "match_date": "2026-08-30 18:15"
   },
   "report": {
@@ -295,5 +295,5 @@
       "market"
     ]
   },
-  "generated_at": "2026-08-30T09:05:56.910059Z"
+  "generated_at": "2026-08-30T11:30:22.127021Z"
 }

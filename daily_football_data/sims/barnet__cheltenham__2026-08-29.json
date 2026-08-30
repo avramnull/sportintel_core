@@ -16,7 +16,7 @@
     "div": "E3",
     "home": "Barnet",
     "away": "Cheltenham",
-    "models": "market-only",
+    "models": "market-only (no models for Barnet / Cheltenham)",
     "match_date": "2026-08-29 12:30"
   },
   "report": {
@@ -295,5 +295,5 @@
       "market"
     ]
   },
-  "generated_at": "2026-08-30T09:06:13.442665Z"
+  "generated_at": "2026-08-30T11:30:54.839757Z"
 }

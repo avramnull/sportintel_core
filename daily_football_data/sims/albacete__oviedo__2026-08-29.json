@@ -16,7 +16,7 @@
     "div": "SP2",
     "home": "Albacete",
     "away": "Oviedo",
-    "models": "market-only",
+    "models": "market-only (no models for Albacete / Oviedo)",
     "match_date": "2026-08-29 18:00"
   },
   "report": {
@@ -295,5 +295,5 @@
       "market"
     ]
   },
-  "generated_at": "2026-08-30T09:06:39.799329Z"
+  "generated_at": "2026-08-30T11:31:20.831001Z"
 }

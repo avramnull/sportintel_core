@@ -16,7 +16,7 @@
     "div": "P1",
     "home": "Sp Braga",
     "away": "Guimaraes",
-    "models": "market-only",
+    "models": "market-only (no models for Sp Braga / Guimaraes)",
     "match_date": "2026-08-31 20:15"
   },
   "report": {
@@ -295,5 +295,5 @@
       "market"
     ]
   },
-  "generated_at": "2026-08-30T09:06:31.200858Z"
+  "generated_at": "2026-08-30T11:31:12.240532Z"
 }

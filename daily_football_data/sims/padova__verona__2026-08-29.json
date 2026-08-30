@@ -16,7 +16,7 @@
     "div": "I2",
     "home": "Padova",
     "away": "Verona",
-    "models": "market-only",
+    "models": "market-only (no models for Padova / Verona)",
     "match_date": "2026-08-29 20:00"
   },
   "report": {
@@ -295,5 +295,5 @@
       "market"
     ]
   },
-  "generated_at": "2026-08-30T09:06:26.589234Z"
+  "generated_at": "2026-08-30T11:31:07.703428Z"
 }

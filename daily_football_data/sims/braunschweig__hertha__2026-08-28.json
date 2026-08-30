@@ -16,7 +16,7 @@
     "div": "D2",
     "home": "Braunschweig",
     "away": "Hertha",
-    "models": "market-only",
+    "models": "market-only (no models for Braunschweig / Hertha)",
     "match_date": "2026-08-28 17:30"
   },
   "report": {
@@ -295,5 +295,5 @@
       "market"
     ]
   },
-  "generated_at": "2026-08-30T09:05:59.276034Z"
+  "generated_at": "2026-08-30T11:30:35.447293Z"
 }

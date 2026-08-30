@@ -1,5 +1,5 @@
 {
-  "created_at": "2026-08-30T09:03:20.482211Z",
+  "created_at": "2026-08-30T11:20:58.882185Z",
   "parquet": "/home/runner/work/sportintel_core/sportintel_core/master_football_data.parquet",
   "n_teams_total": 821,
   "leagues": {
@@ -34,451 +34,1571 @@
     "random_forest"
   ],
   "runs": {
-    "crystal_palace": {
-      "team": "Crystal Palace",
-      "n_train": 1176,
-      "n_val": 161,
-      "dir": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/crystal_palace",
-      "targets": {
-        "ft_result": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/crystal_palace/models/xgb_ft_result.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/crystal_palace/models/lgbm_ft_result.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/crystal_palace/models/cat_ft_result.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/crystal_palace/models/rf_ft_result.pkl"
-        },
-        "ht_result": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/crystal_palace/models/xgb_ht_result.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/crystal_palace/models/lgbm_ht_result.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/crystal_palace/models/cat_ht_result.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/crystal_palace/models/rf_ht_result.pkl"
-        },
-        "over25": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/crystal_palace/models/xgb_over25.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/crystal_palace/models/lgbm_over25.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/crystal_palace/models/cat_over25.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/crystal_palace/models/rf_over25.pkl"
-        },
-        "btts": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/crystal_palace/models/xgb_btts.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/crystal_palace/models/lgbm_btts.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/crystal_palace/models/cat_btts.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/crystal_palace/models/rf_btts.pkl"
-        },
-        "dc_1x": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/crystal_palace/models/xgb_dc_1x.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/crystal_palace/models/lgbm_dc_1x.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/crystal_palace/models/cat_dc_1x.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/crystal_palace/models/rf_dc_1x.pkl"
-        },
-        "dc_x2": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/crystal_palace/models/xgb_dc_x2.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/crystal_palace/models/lgbm_dc_x2.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/crystal_palace/models/cat_dc_x2.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/crystal_palace/models/rf_dc_x2.pkl"
-        },
-        "dc_12": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/crystal_palace/models/xgb_dc_12.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/crystal_palace/models/lgbm_dc_12.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/crystal_palace/models/cat_dc_12.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/crystal_palace/models/rf_dc_12.pkl"
-        },
-        "ht_over15": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/crystal_palace/models/xgb_ht_over15.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/crystal_palace/models/lgbm_ht_over15.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/crystal_palace/models/cat_ht_over15.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/crystal_palace/models/rf_ht_over15.pkl"
-        }
-      }
-    },
-    "chester": {
-      "team": "Chester",
-      "n_train": 675,
-      "n_val": 93,
-      "dir": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/chester",
-      "targets": {
-        "ft_result": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/chester/models/xgb_ft_result.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/chester/models/lgbm_ft_result.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/chester/models/cat_ft_result.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/chester/models/rf_ft_result.pkl"
-        },
-        "ht_result": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/chester/models/xgb_ht_result.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/chester/models/lgbm_ht_result.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/chester/models/cat_ht_result.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/chester/models/rf_ht_result.pkl"
-        },
-        "over25": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/chester/models/xgb_over25.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/chester/models/lgbm_over25.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/chester/models/cat_over25.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/chester/models/rf_over25.pkl"
-        },
-        "btts": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/chester/models/xgb_btts.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/chester/models/lgbm_btts.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/chester/models/cat_btts.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/chester/models/rf_btts.pkl"
-        },
-        "dc_1x": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/chester/models/xgb_dc_1x.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/chester/models/lgbm_dc_1x.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/chester/models/cat_dc_1x.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/chester/models/rf_dc_1x.pkl"
-        },
-        "dc_x2": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/chester/models/xgb_dc_x2.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/chester/models/lgbm_dc_x2.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/chester/models/cat_dc_x2.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/chester/models/rf_dc_x2.pkl"
-        },
-        "dc_12": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/chester/models/xgb_dc_12.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/chester/models/lgbm_dc_12.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/chester/models/cat_dc_12.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/chester/models/rf_dc_12.pkl"
-        },
-        "ht_over15": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/chester/models/xgb_ht_over15.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/chester/models/lgbm_ht_over15.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/chester/models/cat_ht_over15.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/chester/models/rf_ht_over15.pkl"
-        }
-      }
-    },
-    "liverpool": {
-      "team": "Liverpool",
+    "tottenham": {
+      "team": "Tottenham",
       "n_train": 1070,
       "n_val": 146,
-      "dir": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/liverpool",
+      "dir": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/tottenham",
       "targets": {
         "ft_result": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/liverpool/models/xgb_ft_result.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/liverpool/models/lgbm_ft_result.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/liverpool/models/cat_ft_result.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/liverpool/models/rf_ft_result.pkl"
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/tottenham/models/xgb_ft_result.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/tottenham/models/lgbm_ft_result.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/tottenham/models/cat_ft_result.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/tottenham/models/rf_ft_result.pkl"
         },
         "ht_result": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/liverpool/models/xgb_ht_result.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/liverpool/models/lgbm_ht_result.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/liverpool/models/cat_ht_result.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/liverpool/models/rf_ht_result.pkl"
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/tottenham/models/xgb_ht_result.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/tottenham/models/lgbm_ht_result.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/tottenham/models/cat_ht_result.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/tottenham/models/rf_ht_result.pkl"
         },
         "over25": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/liverpool/models/xgb_over25.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/liverpool/models/lgbm_over25.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/liverpool/models/cat_over25.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/liverpool/models/rf_over25.pkl"
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/tottenham/models/xgb_over25.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/tottenham/models/lgbm_over25.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/tottenham/models/cat_over25.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/tottenham/models/rf_over25.pkl"
         },
         "btts": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/liverpool/models/xgb_btts.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/liverpool/models/lgbm_btts.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/liverpool/models/cat_btts.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/liverpool/models/rf_btts.pkl"
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/tottenham/models/xgb_btts.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/tottenham/models/lgbm_btts.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/tottenham/models/cat_btts.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/tottenham/models/rf_btts.pkl"
         },
         "dc_1x": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/liverpool/models/xgb_dc_1x.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/liverpool/models/lgbm_dc_1x.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/liverpool/models/cat_dc_1x.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/liverpool/models/rf_dc_1x.pkl"
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/tottenham/models/xgb_dc_1x.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/tottenham/models/lgbm_dc_1x.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/tottenham/models/cat_dc_1x.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/tottenham/models/rf_dc_1x.pkl"
         },
         "dc_x2": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/liverpool/models/xgb_dc_x2.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/liverpool/models/lgbm_dc_x2.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/liverpool/models/cat_dc_x2.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/liverpool/models/rf_dc_x2.pkl"
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/tottenham/models/xgb_dc_x2.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/tottenham/models/lgbm_dc_x2.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/tottenham/models/cat_dc_x2.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/tottenham/models/rf_dc_x2.pkl"
         },
         "dc_12": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/liverpool/models/xgb_dc_12.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/liverpool/models/lgbm_dc_12.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/liverpool/models/cat_dc_12.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/liverpool/models/rf_dc_12.pkl"
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/tottenham/models/xgb_dc_12.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/tottenham/models/lgbm_dc_12.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/tottenham/models/cat_dc_12.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/tottenham/models/rf_dc_12.pkl"
         },
         "ht_over15": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/liverpool/models/xgb_ht_over15.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/liverpool/models/lgbm_ht_over15.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/liverpool/models/cat_ht_over15.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/liverpool/models/rf_ht_over15.pkl"
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/tottenham/models/xgb_ht_over15.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/tottenham/models/lgbm_ht_over15.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/tottenham/models/cat_ht_over15.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/tottenham/models/rf_ht_over15.pkl"
         }
       }
     },
-    "nott_m_forest": {
-      "team": "Nott'm Forest",
-      "n_train": 1261,
-      "n_val": 172,
-      "dir": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/nott_m_forest",
+    "newcastle": {
+      "team": "Newcastle",
+      "n_train": 1083,
+      "n_val": 148,
+      "dir": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/newcastle",
       "targets": {
         "ft_result": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/nott_m_forest/models/xgb_ft_result.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/nott_m_forest/models/lgbm_ft_result.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/nott_m_forest/models/cat_ft_result.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/nott_m_forest/models/rf_ft_result.pkl"
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/newcastle/models/xgb_ft_result.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/newcastle/models/lgbm_ft_result.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/newcastle/models/cat_ft_result.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/newcastle/models/rf_ft_result.pkl"
         },
         "ht_result": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/nott_m_forest/models/xgb_ht_result.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/nott_m_forest/models/lgbm_ht_result.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/nott_m_forest/models/cat_ht_result.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/nott_m_forest/models/rf_ht_result.pkl"
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/newcastle/models/xgb_ht_result.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/newcastle/models/lgbm_ht_result.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/newcastle/models/cat_ht_result.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/newcastle/models/rf_ht_result.pkl"
         },
         "over25": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/nott_m_forest/models/xgb_over25.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/nott_m_forest/models/lgbm_over25.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/nott_m_forest/models/cat_over25.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/nott_m_forest/models/rf_over25.pkl"
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/newcastle/models/xgb_over25.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/newcastle/models/lgbm_over25.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/newcastle/models/cat_over25.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/newcastle/models/rf_over25.pkl"
         },
         "btts": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/nott_m_forest/models/xgb_btts.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/nott_m_forest/models/lgbm_btts.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/nott_m_forest/models/cat_btts.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/nott_m_forest/models/rf_btts.pkl"
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/newcastle/models/xgb_btts.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/newcastle/models/lgbm_btts.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/newcastle/models/cat_btts.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/newcastle/models/rf_btts.pkl"
         },
         "dc_1x": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/nott_m_forest/models/xgb_dc_1x.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/nott_m_forest/models/lgbm_dc_1x.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/nott_m_forest/models/cat_dc_1x.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/nott_m_forest/models/rf_dc_1x.pkl"
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/newcastle/models/xgb_dc_1x.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/newcastle/models/lgbm_dc_1x.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/newcastle/models/cat_dc_1x.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/newcastle/models/rf_dc_1x.pkl"
         },
         "dc_x2": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/nott_m_forest/models/xgb_dc_x2.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/nott_m_forest/models/lgbm_dc_x2.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/nott_m_forest/models/cat_dc_x2.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/nott_m_forest/models/rf_dc_x2.pkl"
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/newcastle/models/xgb_dc_x2.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/newcastle/models/lgbm_dc_x2.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/newcastle/models/cat_dc_x2.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/newcastle/models/rf_dc_x2.pkl"
         },
         "dc_12": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/nott_m_forest/models/xgb_dc_12.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/nott_m_forest/models/lgbm_dc_12.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/nott_m_forest/models/cat_dc_12.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/nott_m_forest/models/rf_dc_12.pkl"
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/newcastle/models/xgb_dc_12.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/newcastle/models/lgbm_dc_12.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/newcastle/models/cat_dc_12.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/newcastle/models/rf_dc_12.pkl"
         },
         "ht_over15": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/nott_m_forest/models/xgb_ht_over15.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/nott_m_forest/models/lgbm_ht_over15.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/nott_m_forest/models/cat_ht_over15.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/nott_m_forest/models/rf_ht_over15.pkl"
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/newcastle/models/xgb_ht_over15.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/newcastle/models/lgbm_ht_over15.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/newcastle/models/cat_ht_over15.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/newcastle/models/rf_ht_over15.pkl"
         }
       }
     },
-    "bournemouth": {
-      "team": "Bournemouth",
-      "n_train": 1238,
+    "chelsea": {
+      "team": "Chelsea",
+      "n_train": 1069,
+      "n_val": 146,
+      "dir": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/chelsea",
+      "targets": {
+        "ft_result": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/chelsea/models/xgb_ft_result.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/chelsea/models/lgbm_ft_result.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/chelsea/models/cat_ft_result.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/chelsea/models/rf_ft_result.pkl"
+        },
+        "ht_result": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/chelsea/models/xgb_ht_result.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/chelsea/models/lgbm_ht_result.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/chelsea/models/cat_ht_result.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/chelsea/models/rf_ht_result.pkl"
+        },
+        "over25": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/chelsea/models/xgb_over25.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/chelsea/models/lgbm_over25.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/chelsea/models/cat_over25.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/chelsea/models/rf_over25.pkl"
+        },
+        "btts": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/chelsea/models/xgb_btts.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/chelsea/models/lgbm_btts.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/chelsea/models/cat_btts.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/chelsea/models/rf_btts.pkl"
+        },
+        "dc_1x": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/chelsea/models/xgb_dc_1x.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/chelsea/models/lgbm_dc_1x.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/chelsea/models/cat_dc_1x.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/chelsea/models/rf_dc_1x.pkl"
+        },
+        "dc_x2": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/chelsea/models/xgb_dc_x2.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/chelsea/models/lgbm_dc_x2.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/chelsea/models/cat_dc_x2.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/chelsea/models/rf_dc_x2.pkl"
+        },
+        "dc_12": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/chelsea/models/xgb_dc_12.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/chelsea/models/lgbm_dc_12.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/chelsea/models/cat_dc_12.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/chelsea/models/rf_dc_12.pkl"
+        },
+        "ht_over15": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/chelsea/models/xgb_ht_over15.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/chelsea/models/lgbm_ht_over15.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/chelsea/models/cat_ht_over15.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/chelsea/models/rf_ht_over15.pkl"
+        }
+      }
+    },
+    "brighton": {
+      "team": "Brighton",
+      "n_train": 1221,
+      "n_val": 167,
+      "dir": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/brighton",
+      "targets": {
+        "ft_result": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/brighton/models/xgb_ft_result.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/brighton/models/lgbm_ft_result.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/brighton/models/cat_ft_result.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/brighton/models/rf_ft_result.pkl"
+        },
+        "ht_result": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/brighton/models/xgb_ht_result.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/brighton/models/lgbm_ht_result.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/brighton/models/cat_ht_result.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/brighton/models/rf_ht_result.pkl"
+        },
+        "over25": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/brighton/models/xgb_over25.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/brighton/models/lgbm_over25.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/brighton/models/cat_over25.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/brighton/models/rf_over25.pkl"
+        },
+        "btts": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/brighton/models/xgb_btts.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/brighton/models/lgbm_btts.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/brighton/models/cat_btts.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/brighton/models/rf_btts.pkl"
+        },
+        "dc_1x": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/brighton/models/xgb_dc_1x.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/brighton/models/lgbm_dc_1x.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/brighton/models/cat_dc_1x.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/brighton/models/rf_dc_1x.pkl"
+        },
+        "dc_x2": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/brighton/models/xgb_dc_x2.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/brighton/models/lgbm_dc_x2.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/brighton/models/cat_dc_x2.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/brighton/models/rf_dc_x2.pkl"
+        },
+        "dc_12": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/brighton/models/xgb_dc_12.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/brighton/models/lgbm_dc_12.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/brighton/models/cat_dc_12.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/brighton/models/rf_dc_12.pkl"
+        },
+        "ht_over15": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/brighton/models/xgb_ht_over15.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/brighton/models/lgbm_ht_over15.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/brighton/models/cat_ht_over15.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/brighton/models/rf_ht_over15.pkl"
+        }
+      }
+    },
+    "leeds": {
+      "team": "Leeds",
+      "n_train": 1188,
+      "n_val": 163,
+      "dir": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/leeds",
+      "targets": {
+        "ft_result": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/leeds/models/xgb_ft_result.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/leeds/models/lgbm_ft_result.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/leeds/models/cat_ft_result.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/leeds/models/rf_ft_result.pkl"
+        },
+        "ht_result": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/leeds/models/xgb_ht_result.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/leeds/models/lgbm_ht_result.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/leeds/models/cat_ht_result.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/leeds/models/rf_ht_result.pkl"
+        },
+        "over25": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/leeds/models/xgb_over25.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/leeds/models/lgbm_over25.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/leeds/models/cat_over25.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/leeds/models/rf_over25.pkl"
+        },
+        "btts": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/leeds/models/xgb_btts.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/leeds/models/lgbm_btts.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/leeds/models/cat_btts.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/leeds/models/rf_btts.pkl"
+        },
+        "dc_1x": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/leeds/models/xgb_dc_1x.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/leeds/models/lgbm_dc_1x.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/leeds/models/cat_dc_1x.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/leeds/models/rf_dc_1x.pkl"
+        },
+        "dc_x2": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/leeds/models/xgb_dc_x2.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/leeds/models/lgbm_dc_x2.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/leeds/models/cat_dc_x2.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/leeds/models/rf_dc_x2.pkl"
+        },
+        "dc_12": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/leeds/models/xgb_dc_12.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/leeds/models/lgbm_dc_12.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/leeds/models/cat_dc_12.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/leeds/models/rf_dc_12.pkl"
+        },
+        "ht_over15": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/leeds/models/xgb_ht_over15.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/leeds/models/lgbm_ht_over15.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/leeds/models/cat_ht_over15.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/leeds/models/rf_ht_over15.pkl"
+        }
+      }
+    },
+    "brentford": {
+      "team": "Brentford",
+      "n_train": 1234,
       "n_val": 169,
-      "dir": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/bournemouth",
+      "dir": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/brentford",
       "targets": {
         "ft_result": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/bournemouth/models/xgb_ft_result.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/bournemouth/models/lgbm_ft_result.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/bournemouth/models/cat_ft_result.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/bournemouth/models/rf_ft_result.pkl"
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/brentford/models/xgb_ft_result.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/brentford/models/lgbm_ft_result.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/brentford/models/cat_ft_result.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/brentford/models/rf_ft_result.pkl"
         },
         "ht_result": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/bournemouth/models/xgb_ht_result.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/bournemouth/models/lgbm_ht_result.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/bournemouth/models/cat_ht_result.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/bournemouth/models/rf_ht_result.pkl"
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/brentford/models/xgb_ht_result.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/brentford/models/lgbm_ht_result.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/brentford/models/cat_ht_result.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/brentford/models/rf_ht_result.pkl"
         },
         "over25": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/bournemouth/models/xgb_over25.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/bournemouth/models/lgbm_over25.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/bournemouth/models/cat_over25.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/bournemouth/models/rf_over25.pkl"
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/brentford/models/xgb_over25.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/brentford/models/lgbm_over25.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/brentford/models/cat_over25.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/brentford/models/rf_over25.pkl"
         },
         "btts": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/bournemouth/models/xgb_btts.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/bournemouth/models/lgbm_btts.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/bournemouth/models/cat_btts.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/bournemouth/models/rf_btts.pkl"
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/brentford/models/xgb_btts.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/brentford/models/lgbm_btts.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/brentford/models/cat_btts.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/brentford/models/rf_btts.pkl"
         },
         "dc_1x": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/bournemouth/models/xgb_dc_1x.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/bournemouth/models/lgbm_dc_1x.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/bournemouth/models/cat_dc_1x.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/bournemouth/models/rf_dc_1x.pkl"
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/brentford/models/xgb_dc_1x.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/brentford/models/lgbm_dc_1x.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/brentford/models/cat_dc_1x.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/brentford/models/rf_dc_1x.pkl"
         },
         "dc_x2": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/bournemouth/models/xgb_dc_x2.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/bournemouth/models/lgbm_dc_x2.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/bournemouth/models/cat_dc_x2.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/bournemouth/models/rf_dc_x2.pkl"
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/brentford/models/xgb_dc_x2.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/brentford/models/lgbm_dc_x2.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/brentford/models/cat_dc_x2.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/brentford/models/rf_dc_x2.pkl"
         },
         "dc_12": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/bournemouth/models/xgb_dc_12.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/bournemouth/models/lgbm_dc_12.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/bournemouth/models/cat_dc_12.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/bournemouth/models/rf_dc_12.pkl"
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/brentford/models/xgb_dc_12.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/brentford/models/lgbm_dc_12.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/brentford/models/cat_dc_12.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/brentford/models/rf_dc_12.pkl"
         },
         "ht_over15": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/bournemouth/models/xgb_ht_over15.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/bournemouth/models/lgbm_ht_over15.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/bournemouth/models/cat_ht_over15.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/bournemouth/models/rf_ht_over15.pkl"
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/brentford/models/xgb_ht_over15.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/brentford/models/lgbm_ht_over15.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/brentford/models/cat_ht_over15.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/brentford/models/rf_ht_over15.pkl"
         }
       }
     },
-    "everton": {
-      "team": "Everton",
-      "n_train": 1070,
-      "n_val": 146,
-      "dir": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/everton",
+    "sunderland": {
+      "team": "Sunderland",
+      "n_train": 1188,
+      "n_val": 163,
+      "dir": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/sunderland",
       "targets": {
         "ft_result": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/everton/models/xgb_ft_result.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/everton/models/lgbm_ft_result.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/everton/models/cat_ft_result.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/everton/models/rf_ft_result.pkl"
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/sunderland/models/xgb_ft_result.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/sunderland/models/lgbm_ft_result.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/sunderland/models/cat_ft_result.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/sunderland/models/rf_ft_result.pkl"
         },
         "ht_result": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/everton/models/xgb_ht_result.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/everton/models/lgbm_ht_result.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/everton/models/cat_ht_result.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/everton/models/rf_ht_result.pkl"
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/sunderland/models/xgb_ht_result.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/sunderland/models/lgbm_ht_result.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/sunderland/models/cat_ht_result.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/sunderland/models/rf_ht_result.pkl"
         },
         "over25": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/everton/models/xgb_over25.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/everton/models/lgbm_over25.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/everton/models/cat_over25.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/everton/models/rf_over25.pkl"
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/sunderland/models/xgb_over25.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/sunderland/models/lgbm_over25.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/sunderland/models/cat_over25.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/sunderland/models/rf_over25.pkl"
         },
         "btts": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/everton/models/xgb_btts.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/everton/models/lgbm_btts.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/everton/models/cat_btts.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/everton/models/rf_btts.pkl"
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/sunderland/models/xgb_btts.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/sunderland/models/lgbm_btts.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/sunderland/models/cat_btts.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/sunderland/models/rf_btts.pkl"
         },
         "dc_1x": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/everton/models/xgb_dc_1x.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/everton/models/lgbm_dc_1x.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/everton/models/cat_dc_1x.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/everton/models/rf_dc_1x.pkl"
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/sunderland/models/xgb_dc_1x.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/sunderland/models/lgbm_dc_1x.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/sunderland/models/cat_dc_1x.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/sunderland/models/rf_dc_1x.pkl"
         },
         "dc_x2": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/everton/models/xgb_dc_x2.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/everton/models/lgbm_dc_x2.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/everton/models/cat_dc_x2.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/everton/models/rf_dc_x2.pkl"
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/sunderland/models/xgb_dc_x2.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/sunderland/models/lgbm_dc_x2.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/sunderland/models/cat_dc_x2.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/sunderland/models/rf_dc_x2.pkl"
         },
         "dc_12": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/everton/models/xgb_dc_12.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/everton/models/lgbm_dc_12.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/everton/models/cat_dc_12.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/everton/models/rf_dc_12.pkl"
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/sunderland/models/xgb_dc_12.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/sunderland/models/lgbm_dc_12.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/sunderland/models/cat_dc_12.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/sunderland/models/rf_dc_12.pkl"
         },
         "ht_over15": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/everton/models/xgb_ht_over15.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/everton/models/lgbm_ht_over15.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/everton/models/cat_ht_over15.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/everton/models/rf_ht_over15.pkl"
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/sunderland/models/xgb_ht_over15.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/sunderland/models/lgbm_ht_over15.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/sunderland/models/cat_ht_over15.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/sunderland/models/rf_ht_over15.pkl"
         }
       }
     },
-    "coventry": {
-      "team": "Coventry",
-      "n_train": 1263,
-      "n_val": 173,
-      "dir": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/coventry",
+    "fulham": {
+      "team": "Fulham",
+      "n_train": 1188,
+      "n_val": 162,
+      "dir": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/fulham",
       "targets": {
         "ft_result": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/coventry/models/xgb_ft_result.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/coventry/models/lgbm_ft_result.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/coventry/models/cat_ft_result.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/coventry/models/rf_ft_result.pkl"
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/fulham/models/xgb_ft_result.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/fulham/models/lgbm_ft_result.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/fulham/models/cat_ft_result.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/fulham/models/rf_ft_result.pkl"
         },
         "ht_result": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/coventry/models/xgb_ht_result.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/coventry/models/lgbm_ht_result.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/coventry/models/cat_ht_result.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/coventry/models/rf_ht_result.pkl"
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/fulham/models/xgb_ht_result.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/fulham/models/lgbm_ht_result.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/fulham/models/cat_ht_result.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/fulham/models/rf_ht_result.pkl"
         },
         "over25": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/coventry/models/xgb_over25.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/coventry/models/lgbm_over25.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/coventry/models/cat_over25.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/coventry/models/rf_over25.pkl"
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/fulham/models/xgb_over25.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/fulham/models/lgbm_over25.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/fulham/models/cat_over25.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/fulham/models/rf_over25.pkl"
         },
         "btts": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/coventry/models/xgb_btts.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/coventry/models/lgbm_btts.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/coventry/models/cat_btts.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/coventry/models/rf_btts.pkl"
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/fulham/models/xgb_btts.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/fulham/models/lgbm_btts.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/fulham/models/cat_btts.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/fulham/models/rf_btts.pkl"
         },
         "dc_1x": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/coventry/models/xgb_dc_1x.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/coventry/models/lgbm_dc_1x.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/coventry/models/cat_dc_1x.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/coventry/models/rf_dc_1x.pkl"
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/fulham/models/xgb_dc_1x.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/fulham/models/lgbm_dc_1x.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/fulham/models/cat_dc_1x.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/fulham/models/rf_dc_1x.pkl"
         },
         "dc_x2": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/coventry/models/xgb_dc_x2.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/coventry/models/lgbm_dc_x2.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/coventry/models/cat_dc_x2.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/coventry/models/rf_dc_x2.pkl"
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/fulham/models/xgb_dc_x2.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/fulham/models/lgbm_dc_x2.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/fulham/models/cat_dc_x2.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/fulham/models/rf_dc_x2.pkl"
         },
         "dc_12": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/coventry/models/xgb_dc_12.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/coventry/models/lgbm_dc_12.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/coventry/models/cat_dc_12.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/coventry/models/rf_dc_12.pkl"
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/fulham/models/xgb_dc_12.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/fulham/models/lgbm_dc_12.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/fulham/models/cat_dc_12.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/fulham/models/rf_dc_12.pkl"
         },
         "ht_over15": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/coventry/models/xgb_ht_over15.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/coventry/models/lgbm_ht_over15.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/coventry/models/cat_ht_over15.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/coventry/models/rf_ht_over15.pkl"
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/fulham/models/xgb_ht_over15.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/fulham/models/lgbm_ht_over15.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/fulham/models/cat_ht_over15.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/fulham/models/rf_ht_over15.pkl"
         }
       }
     },
-    "hull": {
-      "team": "Hull",
-      "n_train": 1268,
+    "ipswich": {
+      "team": "Ipswich",
+      "n_train": 1271,
       "n_val": 174,
-      "dir": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/hull",
+      "dir": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/ipswich",
       "targets": {
         "ft_result": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/hull/models/xgb_ft_result.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/hull/models/lgbm_ft_result.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/hull/models/cat_ft_result.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/hull/models/rf_ft_result.pkl"
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/ipswich/models/xgb_ft_result.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/ipswich/models/lgbm_ft_result.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/ipswich/models/cat_ft_result.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/ipswich/models/rf_ft_result.pkl"
         },
         "ht_result": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/hull/models/xgb_ht_result.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/hull/models/lgbm_ht_result.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/hull/models/cat_ht_result.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/hull/models/rf_ht_result.pkl"
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/ipswich/models/xgb_ht_result.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/ipswich/models/lgbm_ht_result.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/ipswich/models/cat_ht_result.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/ipswich/models/rf_ht_result.pkl"
         },
         "over25": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/hull/models/xgb_over25.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/hull/models/lgbm_over25.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/hull/models/cat_over25.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/hull/models/rf_over25.pkl"
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/ipswich/models/xgb_over25.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/ipswich/models/lgbm_over25.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/ipswich/models/cat_over25.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/ipswich/models/rf_over25.pkl"
         },
         "btts": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/hull/models/xgb_btts.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/hull/models/lgbm_btts.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/hull/models/cat_btts.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/hull/models/rf_btts.pkl"
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/ipswich/models/xgb_btts.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/ipswich/models/lgbm_btts.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/ipswich/models/cat_btts.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/ipswich/models/rf_btts.pkl"
         },
         "dc_1x": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/hull/models/xgb_dc_1x.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/hull/models/lgbm_dc_1x.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/hull/models/cat_dc_1x.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/hull/models/rf_dc_1x.pkl"
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/ipswich/models/xgb_dc_1x.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/ipswich/models/lgbm_dc_1x.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/ipswich/models/cat_dc_1x.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/ipswich/models/rf_dc_1x.pkl"
         },
         "dc_x2": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/hull/models/xgb_dc_x2.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/hull/models/lgbm_dc_x2.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/hull/models/cat_dc_x2.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/hull/models/rf_dc_x2.pkl"
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/ipswich/models/xgb_dc_x2.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/ipswich/models/lgbm_dc_x2.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/ipswich/models/cat_dc_x2.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/ipswich/models/rf_dc_x2.pkl"
         },
         "dc_12": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/hull/models/xgb_dc_12.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/hull/models/lgbm_dc_12.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/hull/models/cat_dc_12.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/hull/models/rf_dc_12.pkl"
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/ipswich/models/xgb_dc_12.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/ipswich/models/lgbm_dc_12.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/ipswich/models/cat_dc_12.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/ipswich/models/rf_dc_12.pkl"
         },
         "ht_over15": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/hull/models/xgb_ht_over15.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/hull/models/lgbm_ht_over15.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/hull/models/cat_ht_over15.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/hull/models/rf_ht_over15.pkl"
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/ipswich/models/xgb_ht_over15.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/ipswich/models/lgbm_ht_over15.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/ipswich/models/cat_ht_over15.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/ipswich/models/rf_ht_over15.pkl"
+        }
+      }
+    },
+    "aston_villa": {
+      "team": "Aston Villa",
+      "n_train": 1092,
+      "n_val": 149,
+      "dir": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/aston_villa",
+      "targets": {
+        "ft_result": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/aston_villa/models/xgb_ft_result.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/aston_villa/models/lgbm_ft_result.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/aston_villa/models/cat_ft_result.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/aston_villa/models/rf_ft_result.pkl"
+        },
+        "ht_result": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/aston_villa/models/xgb_ht_result.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/aston_villa/models/lgbm_ht_result.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/aston_villa/models/cat_ht_result.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/aston_villa/models/rf_ht_result.pkl"
+        },
+        "over25": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/aston_villa/models/xgb_over25.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/aston_villa/models/lgbm_over25.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/aston_villa/models/cat_over25.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/aston_villa/models/rf_over25.pkl"
+        },
+        "btts": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/aston_villa/models/xgb_btts.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/aston_villa/models/lgbm_btts.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/aston_villa/models/cat_btts.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/aston_villa/models/rf_btts.pkl"
+        },
+        "dc_1x": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/aston_villa/models/xgb_dc_1x.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/aston_villa/models/lgbm_dc_1x.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/aston_villa/models/cat_dc_1x.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/aston_villa/models/rf_dc_1x.pkl"
+        },
+        "dc_x2": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/aston_villa/models/xgb_dc_x2.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/aston_villa/models/lgbm_dc_x2.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/aston_villa/models/cat_dc_x2.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/aston_villa/models/rf_dc_x2.pkl"
+        },
+        "dc_12": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/aston_villa/models/xgb_dc_12.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/aston_villa/models/lgbm_dc_12.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/aston_villa/models/cat_dc_12.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/aston_villa/models/rf_dc_12.pkl"
+        },
+        "ht_over15": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/aston_villa/models/xgb_ht_over15.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/aston_villa/models/lgbm_ht_over15.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/aston_villa/models/cat_ht_over15.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/aston_villa/models/rf_ht_over15.pkl"
+        }
+      }
+    },
+    "arsenal": {
+      "team": "Arsenal",
+      "n_train": 1069,
+      "n_val": 146,
+      "dir": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/arsenal",
+      "targets": {
+        "ft_result": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/arsenal/models/xgb_ft_result.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/arsenal/models/lgbm_ft_result.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/arsenal/models/cat_ft_result.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/arsenal/models/rf_ft_result.pkl"
+        },
+        "ht_result": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/arsenal/models/xgb_ht_result.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/arsenal/models/lgbm_ht_result.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/arsenal/models/cat_ht_result.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/arsenal/models/rf_ht_result.pkl"
+        },
+        "over25": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/arsenal/models/xgb_over25.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/arsenal/models/lgbm_over25.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/arsenal/models/cat_over25.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/arsenal/models/rf_over25.pkl"
+        },
+        "btts": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/arsenal/models/xgb_btts.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/arsenal/models/lgbm_btts.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/arsenal/models/cat_btts.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/arsenal/models/rf_btts.pkl"
+        },
+        "dc_1x": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/arsenal/models/xgb_dc_1x.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/arsenal/models/lgbm_dc_1x.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/arsenal/models/cat_dc_1x.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/arsenal/models/rf_dc_1x.pkl"
+        },
+        "dc_x2": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/arsenal/models/xgb_dc_x2.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/arsenal/models/lgbm_dc_x2.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/arsenal/models/cat_dc_x2.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/arsenal/models/rf_dc_x2.pkl"
+        },
+        "dc_12": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/arsenal/models/xgb_dc_12.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/arsenal/models/lgbm_dc_12.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/arsenal/models/cat_dc_12.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/arsenal/models/rf_dc_12.pkl"
+        },
+        "ht_over15": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/arsenal/models/xgb_ht_over15.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/arsenal/models/lgbm_ht_over15.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/arsenal/models/cat_ht_over15.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/arsenal/models/rf_ht_over15.pkl"
+        }
+      }
+    },
+    "bayern_munich": {
+      "team": "Bayern Munich",
+      "n_train": 973,
+      "n_val": 133,
+      "dir": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/bayern_munich",
+      "targets": {
+        "ft_result": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/bayern_munich/models/xgb_ft_result.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/bayern_munich/models/lgbm_ft_result.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/bayern_munich/models/cat_ft_result.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/bayern_munich/models/rf_ft_result.pkl"
+        },
+        "ht_result": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/bayern_munich/models/xgb_ht_result.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/bayern_munich/models/lgbm_ht_result.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/bayern_munich/models/cat_ht_result.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/bayern_munich/models/rf_ht_result.pkl"
+        },
+        "over25": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/bayern_munich/models/xgb_over25.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/bayern_munich/models/lgbm_over25.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/bayern_munich/models/cat_over25.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/bayern_munich/models/rf_over25.pkl"
+        },
+        "btts": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/bayern_munich/models/xgb_btts.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/bayern_munich/models/lgbm_btts.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/bayern_munich/models/cat_btts.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/bayern_munich/models/rf_btts.pkl"
+        },
+        "dc_1x": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/bayern_munich/models/xgb_dc_1x.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/bayern_munich/models/lgbm_dc_1x.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/bayern_munich/models/cat_dc_1x.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/bayern_munich/models/rf_dc_1x.pkl"
+        },
+        "dc_x2": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/bayern_munich/models/xgb_dc_x2.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/bayern_munich/models/lgbm_dc_x2.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/bayern_munich/models/cat_dc_x2.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/bayern_munich/models/rf_dc_x2.pkl"
+        },
+        "dc_12": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/bayern_munich/models/xgb_dc_12.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/bayern_munich/models/lgbm_dc_12.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/bayern_munich/models/cat_dc_12.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/bayern_munich/models/rf_dc_12.pkl"
+        },
+        "ht_over15": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/bayern_munich/models/xgb_ht_over15.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/bayern_munich/models/lgbm_ht_over15.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/bayern_munich/models/cat_ht_over15.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/bayern_munich/models/rf_ht_over15.pkl"
+        }
+      }
+    },
+    "stuttgart": {
+      "team": "Stuttgart",
+      "n_train": 975,
+      "n_val": 133,
+      "dir": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/stuttgart",
+      "targets": {
+        "ft_result": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/stuttgart/models/xgb_ft_result.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/stuttgart/models/lgbm_ft_result.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/stuttgart/models/cat_ft_result.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/stuttgart/models/rf_ft_result.pkl"
+        },
+        "ht_result": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/stuttgart/models/xgb_ht_result.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/stuttgart/models/lgbm_ht_result.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/stuttgart/models/cat_ht_result.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/stuttgart/models/rf_ht_result.pkl"
+        },
+        "over25": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/stuttgart/models/xgb_over25.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/stuttgart/models/lgbm_over25.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/stuttgart/models/cat_over25.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/stuttgart/models/rf_over25.pkl"
+        },
+        "btts": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/stuttgart/models/xgb_btts.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/stuttgart/models/lgbm_btts.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/stuttgart/models/cat_btts.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/stuttgart/models/rf_btts.pkl"
+        },
+        "dc_1x": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/stuttgart/models/xgb_dc_1x.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/stuttgart/models/lgbm_dc_1x.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/stuttgart/models/cat_dc_1x.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/stuttgart/models/rf_dc_1x.pkl"
+        },
+        "dc_x2": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/stuttgart/models/xgb_dc_x2.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/stuttgart/models/lgbm_dc_x2.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/stuttgart/models/cat_dc_x2.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/stuttgart/models/rf_dc_x2.pkl"
+        },
+        "dc_12": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/stuttgart/models/xgb_dc_12.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/stuttgart/models/lgbm_dc_12.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/stuttgart/models/cat_dc_12.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/stuttgart/models/rf_dc_12.pkl"
+        },
+        "ht_over15": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/stuttgart/models/xgb_ht_over15.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/stuttgart/models/lgbm_ht_over15.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/stuttgart/models/cat_ht_over15.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/stuttgart/models/rf_ht_over15.pkl"
+        }
+      }
+    },
+    "leverkusen": {
+      "team": "Leverkusen",
+      "n_train": 973,
+      "n_val": 133,
+      "dir": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/leverkusen",
+      "targets": {
+        "ft_result": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/leverkusen/models/xgb_ft_result.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/leverkusen/models/lgbm_ft_result.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/leverkusen/models/cat_ft_result.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/leverkusen/models/rf_ft_result.pkl"
+        },
+        "ht_result": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/leverkusen/models/xgb_ht_result.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/leverkusen/models/lgbm_ht_result.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/leverkusen/models/cat_ht_result.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/leverkusen/models/rf_ht_result.pkl"
+        },
+        "over25": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/leverkusen/models/xgb_over25.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/leverkusen/models/lgbm_over25.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/leverkusen/models/cat_over25.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/leverkusen/models/rf_over25.pkl"
+        },
+        "btts": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/leverkusen/models/xgb_btts.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/leverkusen/models/lgbm_btts.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/leverkusen/models/cat_btts.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/leverkusen/models/rf_btts.pkl"
+        },
+        "dc_1x": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/leverkusen/models/xgb_dc_1x.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/leverkusen/models/lgbm_dc_1x.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/leverkusen/models/cat_dc_1x.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/leverkusen/models/rf_dc_1x.pkl"
+        },
+        "dc_x2": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/leverkusen/models/xgb_dc_x2.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/leverkusen/models/lgbm_dc_x2.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/leverkusen/models/cat_dc_x2.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/leverkusen/models/rf_dc_x2.pkl"
+        },
+        "dc_12": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/leverkusen/models/xgb_dc_12.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/leverkusen/models/lgbm_dc_12.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/leverkusen/models/cat_dc_12.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/leverkusen/models/rf_dc_12.pkl"
+        },
+        "ht_over15": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/leverkusen/models/xgb_ht_over15.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/leverkusen/models/lgbm_ht_over15.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/leverkusen/models/cat_ht_over15.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/leverkusen/models/rf_ht_over15.pkl"
+        }
+      }
+    },
+    "fc_koln": {
+      "team": "FC Koln",
+      "n_train": 958,
+      "n_val": 131,
+      "dir": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/fc_koln",
+      "targets": {
+        "ft_result": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/fc_koln/models/xgb_ft_result.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/fc_koln/models/lgbm_ft_result.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/fc_koln/models/cat_ft_result.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/fc_koln/models/rf_ft_result.pkl"
+        },
+        "ht_result": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/fc_koln/models/xgb_ht_result.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/fc_koln/models/lgbm_ht_result.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/fc_koln/models/cat_ht_result.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/fc_koln/models/rf_ht_result.pkl"
+        },
+        "over25": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/fc_koln/models/xgb_over25.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/fc_koln/models/lgbm_over25.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/fc_koln/models/cat_over25.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/fc_koln/models/rf_over25.pkl"
+        },
+        "btts": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/fc_koln/models/xgb_btts.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/fc_koln/models/lgbm_btts.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/fc_koln/models/cat_btts.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/fc_koln/models/rf_btts.pkl"
+        },
+        "dc_1x": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/fc_koln/models/xgb_dc_1x.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/fc_koln/models/lgbm_dc_1x.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/fc_koln/models/cat_dc_1x.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/fc_koln/models/rf_dc_1x.pkl"
+        },
+        "dc_x2": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/fc_koln/models/xgb_dc_x2.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/fc_koln/models/lgbm_dc_x2.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/fc_koln/models/cat_dc_x2.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/fc_koln/models/rf_dc_x2.pkl"
+        },
+        "dc_12": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/fc_koln/models/xgb_dc_12.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/fc_koln/models/lgbm_dc_12.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/fc_koln/models/cat_dc_12.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/fc_koln/models/rf_dc_12.pkl"
+        },
+        "ht_over15": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/fc_koln/models/xgb_ht_over15.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/fc_koln/models/lgbm_ht_over15.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/fc_koln/models/cat_ht_over15.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/fc_koln/models/rf_ht_over15.pkl"
+        }
+      }
+    },
+    "hoffenheim": {
+      "team": "Hoffenheim",
+      "n_train": 568,
+      "n_val": 78,
+      "dir": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/hoffenheim",
+      "targets": {
+        "ft_result": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/hoffenheim/models/xgb_ft_result.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/hoffenheim/models/lgbm_ft_result.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/hoffenheim/models/cat_ft_result.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/hoffenheim/models/rf_ft_result.pkl"
+        },
+        "ht_result": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/hoffenheim/models/xgb_ht_result.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/hoffenheim/models/lgbm_ht_result.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/hoffenheim/models/cat_ht_result.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/hoffenheim/models/rf_ht_result.pkl"
+        },
+        "over25": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/hoffenheim/models/xgb_over25.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/hoffenheim/models/lgbm_over25.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/hoffenheim/models/cat_over25.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/hoffenheim/models/rf_over25.pkl"
+        },
+        "btts": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/hoffenheim/models/xgb_btts.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/hoffenheim/models/lgbm_btts.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/hoffenheim/models/cat_btts.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/hoffenheim/models/rf_btts.pkl"
+        },
+        "dc_1x": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/hoffenheim/models/xgb_dc_1x.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/hoffenheim/models/lgbm_dc_1x.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/hoffenheim/models/cat_dc_1x.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/hoffenheim/models/rf_dc_1x.pkl"
+        },
+        "dc_x2": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/hoffenheim/models/xgb_dc_x2.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/hoffenheim/models/lgbm_dc_x2.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/hoffenheim/models/cat_dc_x2.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/hoffenheim/models/rf_dc_x2.pkl"
+        },
+        "dc_12": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/hoffenheim/models/xgb_dc_12.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/hoffenheim/models/lgbm_dc_12.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/hoffenheim/models/cat_dc_12.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/hoffenheim/models/rf_dc_12.pkl"
+        },
+        "ht_over15": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/hoffenheim/models/xgb_ht_over15.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/hoffenheim/models/lgbm_ht_over15.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/hoffenheim/models/cat_ht_over15.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/hoffenheim/models/rf_ht_over15.pkl"
+        }
+      }
+    },
+    "mainz": {
+      "team": "Mainz",
+      "n_train": 946,
+      "n_val": 129,
+      "dir": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/mainz",
+      "targets": {
+        "ft_result": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/mainz/models/xgb_ft_result.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/mainz/models/lgbm_ft_result.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/mainz/models/cat_ft_result.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/mainz/models/rf_ft_result.pkl"
+        },
+        "ht_result": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/mainz/models/xgb_ht_result.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/mainz/models/lgbm_ht_result.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/mainz/models/cat_ht_result.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/mainz/models/rf_ht_result.pkl"
+        },
+        "over25": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/mainz/models/xgb_over25.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/mainz/models/lgbm_over25.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/mainz/models/cat_over25.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/mainz/models/rf_over25.pkl"
+        },
+        "btts": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/mainz/models/xgb_btts.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/mainz/models/lgbm_btts.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/mainz/models/cat_btts.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/mainz/models/rf_btts.pkl"
+        },
+        "dc_1x": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/mainz/models/xgb_dc_1x.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/mainz/models/lgbm_dc_1x.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/mainz/models/cat_dc_1x.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/mainz/models/rf_dc_1x.pkl"
+        },
+        "dc_x2": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/mainz/models/xgb_dc_x2.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/mainz/models/lgbm_dc_x2.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/mainz/models/cat_dc_x2.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/mainz/models/rf_dc_x2.pkl"
+        },
+        "dc_12": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/mainz/models/xgb_dc_12.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/mainz/models/lgbm_dc_12.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/mainz/models/cat_dc_12.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/mainz/models/rf_dc_12.pkl"
+        },
+        "ht_over15": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/mainz/models/xgb_ht_over15.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/mainz/models/lgbm_ht_over15.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/mainz/models/cat_ht_over15.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/mainz/models/rf_ht_over15.pkl"
+        }
+      }
+    },
+    "paderborn": {
+      "team": "Paderborn",
+      "n_train": 538,
+      "n_val": 74,
+      "dir": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/paderborn",
+      "targets": {
+        "ft_result": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/paderborn/models/xgb_ft_result.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/paderborn/models/lgbm_ft_result.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/paderborn/models/cat_ft_result.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/paderborn/models/rf_ft_result.pkl"
+        },
+        "ht_result": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/paderborn/models/xgb_ht_result.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/paderborn/models/lgbm_ht_result.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/paderborn/models/cat_ht_result.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/paderborn/models/rf_ht_result.pkl"
+        },
+        "over25": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/paderborn/models/xgb_over25.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/paderborn/models/lgbm_over25.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/paderborn/models/cat_over25.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/paderborn/models/rf_over25.pkl"
+        },
+        "btts": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/paderborn/models/xgb_btts.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/paderborn/models/lgbm_btts.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/paderborn/models/cat_btts.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/paderborn/models/rf_btts.pkl"
+        },
+        "dc_1x": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/paderborn/models/xgb_dc_1x.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/paderborn/models/lgbm_dc_1x.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/paderborn/models/cat_dc_1x.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/paderborn/models/rf_dc_1x.pkl"
+        },
+        "dc_x2": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/paderborn/models/xgb_dc_x2.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/paderborn/models/lgbm_dc_x2.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/paderborn/models/cat_dc_x2.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/paderborn/models/rf_dc_x2.pkl"
+        },
+        "dc_12": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/paderborn/models/xgb_dc_12.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/paderborn/models/lgbm_dc_12.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/paderborn/models/cat_dc_12.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/paderborn/models/rf_dc_12.pkl"
+        },
+        "ht_over15": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/paderborn/models/xgb_ht_over15.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/paderborn/models/lgbm_ht_over15.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/paderborn/models/cat_ht_over15.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/paderborn/models/rf_ht_over15.pkl"
+        }
+      }
+    },
+    "rb_leipzig": {
+      "team": "RB Leipzig",
+      "n_train": 359,
+      "n_val": 49,
+      "dir": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/rb_leipzig",
+      "targets": {
+        "ft_result": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/rb_leipzig/models/xgb_ft_result.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/rb_leipzig/models/lgbm_ft_result.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/rb_leipzig/models/cat_ft_result.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/rb_leipzig/models/rf_ft_result.pkl"
+        },
+        "ht_result": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/rb_leipzig/models/xgb_ht_result.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/rb_leipzig/models/lgbm_ht_result.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/rb_leipzig/models/cat_ht_result.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/rb_leipzig/models/rf_ht_result.pkl"
+        },
+        "over25": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/rb_leipzig/models/xgb_over25.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/rb_leipzig/models/lgbm_over25.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/rb_leipzig/models/cat_over25.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/rb_leipzig/models/rf_over25.pkl"
+        },
+        "btts": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/rb_leipzig/models/xgb_btts.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/rb_leipzig/models/lgbm_btts.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/rb_leipzig/models/cat_btts.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/rb_leipzig/models/rf_btts.pkl"
+        },
+        "dc_1x": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/rb_leipzig/models/xgb_dc_1x.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/rb_leipzig/models/lgbm_dc_1x.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/rb_leipzig/models/cat_dc_1x.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/rb_leipzig/models/rf_dc_1x.pkl"
+        },
+        "dc_x2": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/rb_leipzig/models/xgb_dc_x2.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/rb_leipzig/models/lgbm_dc_x2.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/rb_leipzig/models/cat_dc_x2.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/rb_leipzig/models/rf_dc_x2.pkl"
+        },
+        "dc_12": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/rb_leipzig/models/xgb_dc_12.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/rb_leipzig/models/lgbm_dc_12.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/rb_leipzig/models/cat_dc_12.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/rb_leipzig/models/rf_dc_12.pkl"
+        },
+        "ht_over15": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/rb_leipzig/models/xgb_ht_over15.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/rb_leipzig/models/lgbm_ht_over15.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/rb_leipzig/models/cat_ht_over15.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/rb_leipzig/models/rf_ht_over15.pkl"
+        }
+      }
+    },
+    "m_gladbach": {
+      "team": "M'gladbach",
+      "n_train": 945,
+      "n_val": 129,
+      "dir": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/m_gladbach",
+      "targets": {
+        "ft_result": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/m_gladbach/models/xgb_ft_result.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/m_gladbach/models/lgbm_ft_result.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/m_gladbach/models/cat_ft_result.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/m_gladbach/models/rf_ft_result.pkl"
+        },
+        "ht_result": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/m_gladbach/models/xgb_ht_result.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/m_gladbach/models/lgbm_ht_result.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/m_gladbach/models/cat_ht_result.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/m_gladbach/models/rf_ht_result.pkl"
+        },
+        "over25": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/m_gladbach/models/xgb_over25.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/m_gladbach/models/lgbm_over25.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/m_gladbach/models/cat_over25.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/m_gladbach/models/rf_over25.pkl"
+        },
+        "btts": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/m_gladbach/models/xgb_btts.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/m_gladbach/models/lgbm_btts.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/m_gladbach/models/cat_btts.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/m_gladbach/models/rf_btts.pkl"
+        },
+        "dc_1x": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/m_gladbach/models/xgb_dc_1x.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/m_gladbach/models/lgbm_dc_1x.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/m_gladbach/models/cat_dc_1x.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/m_gladbach/models/rf_dc_1x.pkl"
+        },
+        "dc_x2": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/m_gladbach/models/xgb_dc_x2.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/m_gladbach/models/lgbm_dc_x2.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/m_gladbach/models/cat_dc_x2.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/m_gladbach/models/rf_dc_x2.pkl"
+        },
+        "dc_12": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/m_gladbach/models/xgb_dc_12.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/m_gladbach/models/lgbm_dc_12.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/m_gladbach/models/cat_dc_12.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/m_gladbach/models/rf_dc_12.pkl"
+        },
+        "ht_over15": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/m_gladbach/models/xgb_ht_over15.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/m_gladbach/models/lgbm_ht_over15.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/m_gladbach/models/cat_ht_over15.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/m_gladbach/models/rf_ht_over15.pkl"
+        }
+      }
+    },
+    "union_berlin": {
+      "team": "Union Berlin",
+      "n_train": 553,
+      "n_val": 76,
+      "dir": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/union_berlin",
+      "targets": {
+        "ft_result": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/union_berlin/models/xgb_ft_result.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/union_berlin/models/lgbm_ft_result.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/union_berlin/models/cat_ft_result.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/union_berlin/models/rf_ft_result.pkl"
+        },
+        "ht_result": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/union_berlin/models/xgb_ht_result.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/union_berlin/models/lgbm_ht_result.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/union_berlin/models/cat_ht_result.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/union_berlin/models/rf_ht_result.pkl"
+        },
+        "over25": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/union_berlin/models/xgb_over25.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/union_berlin/models/lgbm_over25.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/union_berlin/models/cat_over25.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/union_berlin/models/rf_over25.pkl"
+        },
+        "btts": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/union_berlin/models/xgb_btts.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/union_berlin/models/lgbm_btts.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/union_berlin/models/cat_btts.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/union_berlin/models/rf_btts.pkl"
+        },
+        "dc_1x": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/union_berlin/models/xgb_dc_1x.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/union_berlin/models/lgbm_dc_1x.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/union_berlin/models/cat_dc_1x.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/union_berlin/models/rf_dc_1x.pkl"
+        },
+        "dc_x2": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/union_berlin/models/xgb_dc_x2.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/union_berlin/models/lgbm_dc_x2.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/union_berlin/models/cat_dc_x2.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/union_berlin/models/rf_dc_x2.pkl"
+        },
+        "dc_12": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/union_berlin/models/xgb_dc_12.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/union_berlin/models/lgbm_dc_12.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/union_berlin/models/cat_dc_12.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/union_berlin/models/rf_dc_12.pkl"
+        },
+        "ht_over15": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/union_berlin/models/xgb_ht_over15.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/union_berlin/models/lgbm_ht_over15.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/union_berlin/models/cat_ht_over15.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/union_berlin/models/rf_ht_over15.pkl"
+        }
+      }
+    },
+    "ein_frankfurt": {
+      "team": "Ein Frankfurt",
+      "n_train": 958,
+      "n_val": 131,
+      "dir": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/ein_frankfurt",
+      "targets": {
+        "ft_result": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/ein_frankfurt/models/xgb_ft_result.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/ein_frankfurt/models/lgbm_ft_result.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/ein_frankfurt/models/cat_ft_result.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/ein_frankfurt/models/rf_ft_result.pkl"
+        },
+        "ht_result": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/ein_frankfurt/models/xgb_ht_result.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/ein_frankfurt/models/lgbm_ht_result.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/ein_frankfurt/models/cat_ht_result.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/ein_frankfurt/models/rf_ht_result.pkl"
+        },
+        "over25": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/ein_frankfurt/models/xgb_over25.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/ein_frankfurt/models/lgbm_over25.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/ein_frankfurt/models/cat_over25.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/ein_frankfurt/models/rf_over25.pkl"
+        },
+        "btts": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/ein_frankfurt/models/xgb_btts.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/ein_frankfurt/models/lgbm_btts.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/ein_frankfurt/models/cat_btts.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/ein_frankfurt/models/rf_btts.pkl"
+        },
+        "dc_1x": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/ein_frankfurt/models/xgb_dc_1x.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/ein_frankfurt/models/lgbm_dc_1x.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/ein_frankfurt/models/cat_dc_1x.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/ein_frankfurt/models/rf_dc_1x.pkl"
+        },
+        "dc_x2": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/ein_frankfurt/models/xgb_dc_x2.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/ein_frankfurt/models/lgbm_dc_x2.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/ein_frankfurt/models/cat_dc_x2.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/ein_frankfurt/models/rf_dc_x2.pkl"
+        },
+        "dc_12": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/ein_frankfurt/models/xgb_dc_12.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/ein_frankfurt/models/lgbm_dc_12.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/ein_frankfurt/models/cat_dc_12.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/ein_frankfurt/models/rf_dc_12.pkl"
+        },
+        "ht_over15": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/ein_frankfurt/models/xgb_ht_over15.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/ein_frankfurt/models/lgbm_ht_over15.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/ein_frankfurt/models/cat_ht_over15.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/ein_frankfurt/models/rf_ht_over15.pkl"
+        }
+      }
+    },
+    "dortmund": {
+      "team": "Dortmund",
+      "n_train": 974,
+      "n_val": 133,
+      "dir": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/dortmund",
+      "targets": {
+        "ft_result": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/dortmund/models/xgb_ft_result.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/dortmund/models/lgbm_ft_result.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/dortmund/models/cat_ft_result.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/dortmund/models/rf_ft_result.pkl"
+        },
+        "ht_result": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/dortmund/models/xgb_ht_result.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/dortmund/models/lgbm_ht_result.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/dortmund/models/cat_ht_result.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/dortmund/models/rf_ht_result.pkl"
+        },
+        "over25": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/dortmund/models/xgb_over25.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/dortmund/models/lgbm_over25.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/dortmund/models/cat_over25.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/dortmund/models/rf_over25.pkl"
+        },
+        "btts": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/dortmund/models/xgb_btts.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/dortmund/models/lgbm_btts.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/dortmund/models/cat_btts.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/dortmund/models/rf_btts.pkl"
+        },
+        "dc_1x": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/dortmund/models/xgb_dc_1x.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/dortmund/models/lgbm_dc_1x.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/dortmund/models/cat_dc_1x.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/dortmund/models/rf_dc_1x.pkl"
+        },
+        "dc_x2": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/dortmund/models/xgb_dc_x2.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/dortmund/models/lgbm_dc_x2.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/dortmund/models/cat_dc_x2.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/dortmund/models/rf_dc_x2.pkl"
+        },
+        "dc_12": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/dortmund/models/xgb_dc_12.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/dortmund/models/lgbm_dc_12.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/dortmund/models/cat_dc_12.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/dortmund/models/rf_dc_12.pkl"
+        },
+        "ht_over15": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/dortmund/models/xgb_ht_over15.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/dortmund/models/lgbm_ht_over15.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/dortmund/models/cat_ht_over15.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/dortmund/models/rf_ht_over15.pkl"
+        }
+      }
+    },
+    "hamburg": {
+      "team": "Hamburg",
+      "n_train": 974,
+      "n_val": 133,
+      "dir": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/hamburg",
+      "targets": {
+        "ft_result": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/hamburg/models/xgb_ft_result.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/hamburg/models/lgbm_ft_result.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/hamburg/models/cat_ft_result.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/hamburg/models/rf_ft_result.pkl"
+        },
+        "ht_result": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/hamburg/models/xgb_ht_result.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/hamburg/models/lgbm_ht_result.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/hamburg/models/cat_ht_result.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/hamburg/models/rf_ht_result.pkl"
+        },
+        "over25": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/hamburg/models/xgb_over25.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/hamburg/models/lgbm_over25.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/hamburg/models/cat_over25.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/hamburg/models/rf_over25.pkl"
+        },
+        "btts": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/hamburg/models/xgb_btts.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/hamburg/models/lgbm_btts.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/hamburg/models/cat_btts.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/hamburg/models/rf_btts.pkl"
+        },
+        "dc_1x": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/hamburg/models/xgb_dc_1x.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/hamburg/models/lgbm_dc_1x.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/hamburg/models/cat_dc_1x.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/hamburg/models/rf_dc_1x.pkl"
+        },
+        "dc_x2": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/hamburg/models/xgb_dc_x2.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/hamburg/models/lgbm_dc_x2.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/hamburg/models/cat_dc_x2.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/hamburg/models/rf_dc_x2.pkl"
+        },
+        "dc_12": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/hamburg/models/xgb_dc_12.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/hamburg/models/lgbm_dc_12.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/hamburg/models/cat_dc_12.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/hamburg/models/rf_dc_12.pkl"
+        },
+        "ht_over15": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/hamburg/models/xgb_ht_over15.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/hamburg/models/lgbm_ht_over15.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/hamburg/models/cat_ht_over15.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/hamburg/models/rf_ht_over15.pkl"
+        }
+      }
+    },
+    "freiburg": {
+      "team": "Freiburg",
+      "n_train": 961,
+      "n_val": 132,
+      "dir": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/freiburg",
+      "targets": {
+        "ft_result": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/freiburg/models/xgb_ft_result.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/freiburg/models/lgbm_ft_result.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/freiburg/models/cat_ft_result.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/freiburg/models/rf_ft_result.pkl"
+        },
+        "ht_result": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/freiburg/models/xgb_ht_result.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/freiburg/models/lgbm_ht_result.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/freiburg/models/cat_ht_result.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/freiburg/models/rf_ht_result.pkl"
+        },
+        "over25": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/freiburg/models/xgb_over25.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/freiburg/models/lgbm_over25.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/freiburg/models/cat_over25.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/freiburg/models/rf_over25.pkl"
+        },
+        "btts": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/freiburg/models/xgb_btts.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/freiburg/models/lgbm_btts.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/freiburg/models/cat_btts.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/freiburg/models/rf_btts.pkl"
+        },
+        "dc_1x": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/freiburg/models/xgb_dc_1x.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/freiburg/models/lgbm_dc_1x.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/freiburg/models/cat_dc_1x.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/freiburg/models/rf_dc_1x.pkl"
+        },
+        "dc_x2": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/freiburg/models/xgb_dc_x2.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/freiburg/models/lgbm_dc_x2.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/freiburg/models/cat_dc_x2.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/freiburg/models/rf_dc_x2.pkl"
+        },
+        "dc_12": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/freiburg/models/xgb_dc_12.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/freiburg/models/lgbm_dc_12.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/freiburg/models/cat_dc_12.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/freiburg/models/rf_dc_12.pkl"
+        },
+        "ht_over15": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/freiburg/models/xgb_ht_over15.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/freiburg/models/lgbm_ht_over15.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/freiburg/models/cat_ht_over15.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/freiburg/models/rf_ht_over15.pkl"
+        }
+      }
+    },
+    "werder_bremen": {
+      "team": "Werder Bremen",
+      "n_train": 973,
+      "n_val": 133,
+      "dir": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/werder_bremen",
+      "targets": {
+        "ft_result": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/werder_bremen/models/xgb_ft_result.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/werder_bremen/models/lgbm_ft_result.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/werder_bremen/models/cat_ft_result.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/werder_bremen/models/rf_ft_result.pkl"
+        },
+        "ht_result": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/werder_bremen/models/xgb_ht_result.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/werder_bremen/models/lgbm_ht_result.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/werder_bremen/models/cat_ht_result.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/werder_bremen/models/rf_ht_result.pkl"
+        },
+        "over25": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/werder_bremen/models/xgb_over25.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/werder_bremen/models/lgbm_over25.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/werder_bremen/models/cat_over25.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/werder_bremen/models/rf_over25.pkl"
+        },
+        "btts": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/werder_bremen/models/xgb_btts.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/werder_bremen/models/lgbm_btts.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/werder_bremen/models/cat_btts.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/werder_bremen/models/rf_btts.pkl"
+        },
+        "dc_1x": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/werder_bremen/models/xgb_dc_1x.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/werder_bremen/models/lgbm_dc_1x.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/werder_bremen/models/cat_dc_1x.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/werder_bremen/models/rf_dc_1x.pkl"
+        },
+        "dc_x2": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/werder_bremen/models/xgb_dc_x2.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/werder_bremen/models/lgbm_dc_x2.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/werder_bremen/models/cat_dc_x2.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/werder_bremen/models/rf_dc_x2.pkl"
+        },
+        "dc_12": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/werder_bremen/models/xgb_dc_12.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/werder_bremen/models/lgbm_dc_12.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/werder_bremen/models/cat_dc_12.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/werder_bremen/models/rf_dc_12.pkl"
+        },
+        "ht_over15": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/werder_bremen/models/xgb_ht_over15.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/werder_bremen/models/lgbm_ht_over15.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/werder_bremen/models/cat_ht_over15.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/werder_bremen/models/rf_ht_over15.pkl"
+        }
+      }
+    },
+    "augsburg": {
+      "team": "Augsburg",
+      "n_train": 598,
+      "n_val": 82,
+      "dir": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/augsburg",
+      "targets": {
+        "ft_result": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/augsburg/models/xgb_ft_result.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/augsburg/models/lgbm_ft_result.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/augsburg/models/cat_ft_result.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/augsburg/models/rf_ft_result.pkl"
+        },
+        "ht_result": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/augsburg/models/xgb_ht_result.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/augsburg/models/lgbm_ht_result.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/augsburg/models/cat_ht_result.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/augsburg/models/rf_ht_result.pkl"
+        },
+        "over25": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/augsburg/models/xgb_over25.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/augsburg/models/lgbm_over25.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/augsburg/models/cat_over25.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/augsburg/models/rf_over25.pkl"
+        },
+        "btts": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/augsburg/models/xgb_btts.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/augsburg/models/lgbm_btts.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/augsburg/models/cat_btts.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/augsburg/models/rf_btts.pkl"
+        },
+        "dc_1x": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/augsburg/models/xgb_dc_1x.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/augsburg/models/lgbm_dc_1x.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/augsburg/models/cat_dc_1x.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/augsburg/models/rf_dc_1x.pkl"
+        },
+        "dc_x2": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/augsburg/models/xgb_dc_x2.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/augsburg/models/lgbm_dc_x2.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/augsburg/models/cat_dc_x2.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/augsburg/models/rf_dc_x2.pkl"
+        },
+        "dc_12": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/augsburg/models/xgb_dc_12.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/augsburg/models/lgbm_dc_12.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/augsburg/models/cat_dc_12.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/augsburg/models/rf_dc_12.pkl"
+        },
+        "ht_over15": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/augsburg/models/xgb_ht_over15.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/augsburg/models/lgbm_ht_over15.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/augsburg/models/cat_ht_over15.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/augsburg/models/rf_ht_over15.pkl"
+        }
+      }
+    },
+    "schalke_04": {
+      "team": "Schalke 04",
+      "n_train": 977,
+      "n_val": 134,
+      "dir": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/schalke_04",
+      "targets": {
+        "ft_result": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/schalke_04/models/xgb_ft_result.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/schalke_04/models/lgbm_ft_result.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/schalke_04/models/cat_ft_result.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/schalke_04/models/rf_ft_result.pkl"
+        },
+        "ht_result": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/schalke_04/models/xgb_ht_result.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/schalke_04/models/lgbm_ht_result.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/schalke_04/models/cat_ht_result.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/schalke_04/models/rf_ht_result.pkl"
+        },
+        "over25": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/schalke_04/models/xgb_over25.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/schalke_04/models/lgbm_over25.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/schalke_04/models/cat_over25.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/schalke_04/models/rf_over25.pkl"
+        },
+        "btts": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/schalke_04/models/xgb_btts.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/schalke_04/models/lgbm_btts.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/schalke_04/models/cat_btts.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/schalke_04/models/rf_btts.pkl"
+        },
+        "dc_1x": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/schalke_04/models/xgb_dc_1x.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/schalke_04/models/lgbm_dc_1x.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/schalke_04/models/cat_dc_1x.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/schalke_04/models/rf_dc_1x.pkl"
+        },
+        "dc_x2": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/schalke_04/models/xgb_dc_x2.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/schalke_04/models/lgbm_dc_x2.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/schalke_04/models/cat_dc_x2.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/schalke_04/models/rf_dc_x2.pkl"
+        },
+        "dc_12": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/schalke_04/models/xgb_dc_12.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/schalke_04/models/lgbm_dc_12.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/schalke_04/models/cat_dc_12.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/schalke_04/models/rf_dc_12.pkl"
+        },
+        "ht_over15": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/schalke_04/models/xgb_ht_over15.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/schalke_04/models/lgbm_ht_over15.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/schalke_04/models/cat_ht_over15.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/schalke_04/models/rf_ht_over15.pkl"
         }
       }
     }

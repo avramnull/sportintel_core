@@ -16,7 +16,7 @@
     "div": "D2",
     "home": "Karlsruhe",
     "away": "Wolfsburg",
-    "models": "market-only",
+    "models": "market-only (no models for Karlsruhe / Wolfsburg)",
     "match_date": "2026-08-29 12:00"
   },
   "report": {
@@ -295,5 +295,5 @@
       "market"
     ]
   },
-  "generated_at": "2026-08-30T09:05:59.911685Z"
+  "generated_at": "2026-08-30T11:30:36.064109Z"
 }

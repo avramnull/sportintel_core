@@ -16,7 +16,7 @@
     "div": "I2",
     "home": "Arezzo",
     "away": "Palermo",
-    "models": "market-only",
+    "models": "market-only (no models for Arezzo / Palermo)",
     "match_date": "2026-08-30 18:00"
   },
   "report": {
@@ -295,5 +295,5 @@
       "market"
     ]
   },
-  "generated_at": "2026-08-30T09:06:26.795109Z"
+  "generated_at": "2026-08-30T11:31:07.908983Z"
 }

@@ -16,7 +16,7 @@
     "div": "I1",
     "home": "Fiorentina",
     "away": "Frosinone",
-    "models": "market-only",
+    "models": "market-only (no models for Fiorentina / Frosinone)",
     "match_date": "2026-08-29 17:30"
   },
   "report": {
@@ -295,5 +295,5 @@
       "market"
     ]
   },
-  "generated_at": "2026-08-30T09:06:23.687535Z"
+  "generated_at": "2026-08-30T11:31:04.860343Z"
 }

@@ -16,7 +16,7 @@
     "div": "E1",
     "home": "Wrexham",
     "away": "Birmingham",
-    "models": "market-only",
+    "models": "market-only (no models for Wrexham / Birmingham)",
     "match_date": "2026-08-28 20:00"
   },
   "report": {
@@ -295,5 +295,5 @@
       "market"
     ]
   },
-  "generated_at": "2026-08-30T09:06:08.630236Z"
+  "generated_at": "2026-08-30T11:30:50.153978Z"
 }

@@ -16,284 +16,299 @@
     "div": "D1",
     "home": "RB Leipzig",
     "away": "M'gladbach",
-    "models": "market-only",
+    "models": "RB Leipzig (home) + M'gladbach (away)",
     "match_date": "2026-08-29 14:30"
   },
   "report": {
     "n": 8000,
     "ft_model": {
-      "H": 0.6068194952802929,
-      "D": 0.21171257946445773,
-      "A": 0.1814679252552495
+      "H": 0.30521499001427277,
+      "D": 0.22330043489832965,
+      "A": 0.4714845750873976
     },
     "ft_sim": {
-      "H": 0.606,
-      "D": 0.212875,
-      "A": 0.181125
+      "H": 0.30525,
+      "D": 0.219125,
+      "A": 0.475625
     },
     "ht_model": {
-      "H": 0.3,
-      "D": 0.4,
-      "A": 0.3
+      "H": 0.18851305883459354,
+      "D": 0.3108535715450571,
+      "A": 0.5006333696203494
     },
     "ht_sim": {
-      "H": 0.297,
-      "D": 0.406125,
-      "A": 0.296875
+      "H": 0.189375,
+      "D": 0.30875,
+      "A": 0.501875
     },
-    "over25_model": 0.4741128298453139,
-    "over25_sim": 0.606375,
-    "btts_model": 0.45,
-    "btts_sim": 0.445125,
-    "ht_over15_model": 0.35,
-    "ht_over15_sim": 0.334375,
+    "over25_model": 0.6212450712870756,
+    "over25_sim": 0.73775,
+    "btts_model": 0.5897459206496027,
+    "btts_sim": 0.59425,
+    "ht_over15_model": 0.4917128812745971,
+    "ht_over15_sim": 0.323875,
     "dc_ft": {
-      "1X": 0.8185320747447506,
-      "X2": 0.3931805047197072,
-      "12": 0.7882874205355423
+      "1X": 0.5285154249126024,
+      "X2": 0.6947850099857272,
+      "12": 0.7766995651016704
     },
     "dc_ht": {
-      "1X": 0.7,
-      "X2": 0.7,
-      "12": 0.6
+      "1X": 0.4993666303796507,
+      "X2": 0.8114869411654065,
+      "12": 0.689146428454943
     },
     "top_ft": [
       [
-        "2-1",
-        1318
+        "1-2",
+        1075
       ],
       [
         "0-0",
-        955
+        730
       ],
       [
-        "1-0",
-        715
+        "2-1",
+        714
       ],
       [
-        "2-0",
-        664
+        "2-3",
+        475
       ],
       [
-        "3-0",
-        446
-      ],
-      [
-        "4-0",
-        432
-      ],
-      [
-        "5-0",
-        408
-      ],
-      [
-        "1-2",
+        "1-1",
         404
+      ],
+      [
+        "0-5",
+        328
+      ],
+      [
+        "2-2",
+        319
+      ],
+      [
+        "0-3",
+        310
       ]
     ],
     "top_ht": [
       [
-        "0-0",
-        1996
+        "0-1",
+        2845
       ],
       [
-        "0-1",
-        1665
+        "0-0",
+        1508
       ],
       [
         "1-0",
-        1664
+        1056
       ],
       [
         "1-1",
-        1253
+        962
       ],
       [
-        "2-0",
-        375
+        "1-2",
+        601
       ]
     ],
     "xg": {
-      "home": 1.848375,
-      "away": 0.977,
-      "total": 2.825375
+      "home": 1.481625,
+      "away": 1.848375,
+      "total": 3.33
     },
     "goal_rates": {
-      "home": 1.848375,
-      "away": 0.977
+      "home": 1.481625,
+      "away": 1.848375
     }
   },
   "table": [
     {
       "Section": "HT Winner",
       "Selection": "RB Leipzig",
-      "Model%": 30.0,
-      "Sim%": 29.7,
-      "Agree": "1 eng",
+      "Model%": 18.9,
+      "Sim%": 18.9,
+      "Agree": "4 eng",
       "Verdict": "NO"
     },
     {
       "Section": "HT Winner",
       "Selection": "Draw",
-      "Model%": 40.0,
-      "Sim%": 40.6,
-      "Agree": "1 eng",
+      "Model%": 31.1,
+      "Sim%": 30.9,
+      "Agree": "4 eng",
       "Verdict": "NO"
     },
     {
       "Section": "HT Winner",
       "Selection": "M'gladbach",
-      "Model%": 30.0,
-      "Sim%": 29.7,
-      "Agree": "1 eng",
+      "Model%": 50.1,
+      "Sim%": 50.2,
+      "Agree": "4 eng",
       "Verdict": "NO"
     },
     {
       "Section": "HT DC",
       "Selection": "1X",
-      "Model%": 70.0,
-      "Sim%": 70.3,
-      "Agree": "1 eng",
-      "Verdict": "YES"
+      "Model%": 49.9,
+      "Sim%": 49.8,
+      "Agree": "4 eng",
+      "Verdict": "NO"
     },
     {
       "Section": "HT DC",
       "Selection": "X2",
-      "Model%": 70.0,
-      "Sim%": 70.3,
-      "Agree": "1 eng",
+      "Model%": 81.1,
+      "Sim%": 81.1,
+      "Agree": "4 eng",
       "Verdict": "YES"
     },
     {
       "Section": "HT DC",
       "Selection": "12",
-      "Model%": 60.0,
-      "Sim%": 59.4,
-      "Agree": "1 eng",
+      "Model%": 68.9,
+      "Sim%": 69.1,
+      "Agree": "4 eng",
       "Verdict": "YES"
     },
     {
       "Section": "HT O/U",
       "Selection": "Over 1.5",
-      "Model%": 35.0,
-      "Sim%": 33.4,
-      "Agree": "1 eng",
+      "Model%": 49.2,
+      "Sim%": 32.4,
+      "Agree": "4 eng",
       "Verdict": "NO"
     },
     {
       "Section": "HT O/U",
       "Selection": "Under 1.5",
-      "Model%": 65.0,
-      "Sim%": 66.6,
-      "Agree": "1 eng",
-      "Verdict": "YES"
+      "Model%": 50.8,
+      "Sim%": 67.6,
+      "Agree": "4 eng",
+      "Verdict": "NO"
     },
     {
       "Section": "FT Winner",
       "Selection": "RB Leipzig",
-      "Model%": 60.7,
-      "Sim%": 60.6,
-      "Agree": "1 eng",
-      "Verdict": "YES"
+      "Model%": 30.5,
+      "Sim%": 30.5,
+      "Agree": "4 eng",
+      "Verdict": "NO"
     },
     {
       "Section": "FT Winner",
       "Selection": "Draw",
-      "Model%": 21.2,
-      "Sim%": 21.3,
-      "Agree": "1 eng",
+      "Model%": 22.3,
+      "Sim%": 21.9,
+      "Agree": "4 eng",
       "Verdict": "NO"
     },
     {
       "Section": "FT Winner",
       "Selection": "M'gladbach",
-      "Model%": 18.1,
-      "Sim%": 18.1,
-      "Agree": "1 eng",
+      "Model%": 47.1,
+      "Sim%": 47.6,
+      "Agree": "4 eng",
       "Verdict": "NO"
     },
     {
       "Section": "FT DC",
       "Selection": "1X",
-      "Model%": 81.9,
-      "Sim%": 81.9,
-      "Agree": "1 eng",
-      "Verdict": "YES"
-    },
-    {
-      "Section": "FT DC",
-      "Selection": "X2",
-      "Model%": 39.3,
-      "Sim%": 39.4,
-      "Agree": "1 eng",
+      "Model%": 52.9,
+      "Sim%": 52.4,
+      "Agree": "4 eng",
       "Verdict": "NO"
     },
     {
       "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 69.5,
+      "Sim%": 69.5,
+      "Agree": "4 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
       "Selection": "12",
-      "Model%": 78.8,
-      "Sim%": 78.7,
-      "Agree": "1 eng",
+      "Model%": 77.7,
+      "Sim%": 78.1,
+      "Agree": "4 eng",
       "Verdict": "YES"
     },
     {
       "Section": "FT O/U",
       "Selection": "Over 2.5",
-      "Model%": 47.4,
-      "Sim%": 60.6,
-      "Agree": "1 eng",
-      "Verdict": "NO"
+      "Model%": 62.1,
+      "Sim%": 73.8,
+      "Agree": "4 eng",
+      "Verdict": "YES"
     },
     {
       "Section": "FT O/U",
       "Selection": "Under 2.5",
-      "Model%": 52.6,
-      "Sim%": 39.4,
-      "Agree": "1 eng",
-      "Verdict": "YES"
-    },
-    {
-      "Section": "BTTS",
-      "Selection": "Yes",
-      "Model%": 45.0,
-      "Sim%": 44.5,
-      "Agree": "1 eng",
+      "Model%": 37.9,
+      "Sim%": 26.2,
+      "Agree": "4 eng",
       "Verdict": "NO"
     },
     {
       "Section": "BTTS",
-      "Selection": "No",
-      "Model%": 55.0,
-      "Sim%": 55.5,
-      "Agree": "1 eng",
+      "Selection": "Yes",
+      "Model%": 59.0,
+      "Sim%": 59.4,
+      "Agree": "4 eng",
       "Verdict": "YES"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 41.0,
+      "Sim%": 40.6,
+      "Agree": "4 eng",
+      "Verdict": "NO"
     }
   ],
   "locked_tip": {
     "status": "SECURED LOCK",
-    "section": "FT DC",
-    "selection": "1X",
-    "model": 81.9,
-    "sim": 81.9,
-    "agree": "1 eng",
+    "section": "HT DC",
+    "selection": "X2",
+    "model": 81.1,
+    "sim": 81.1,
+    "agree": "4 eng",
     "verdict": "HARD YES"
   },
   "backends": {
     "ft_result": [
-      "market"
+      "cat",
+      "lgbm",
+      "rf",
+      "xgb"
     ],
     "ht_result": [
-      "market"
+      "cat",
+      "lgbm",
+      "rf",
+      "xgb"
     ],
     "over25": [
-      "market"
+      "cat",
+      "lgbm",
+      "rf",
+      "xgb"
     ],
     "btts": [
-      "market"
+      "cat",
+      "lgbm",
+      "rf",
+      "xgb"
     ],
     "ht_over15": [
-      "market"
+      "cat",
+      "lgbm",
+      "rf",
+      "xgb"
     ]
   },
-  "generated_at": "2026-08-30T09:05:57.999006Z"
+  "generated_at": "2026-08-30T11:30:29.717282Z"
 }

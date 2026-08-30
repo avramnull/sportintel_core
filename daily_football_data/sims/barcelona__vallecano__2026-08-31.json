@@ -16,7 +16,7 @@
     "div": "SP1",
     "home": "Barcelona",
     "away": "Vallecano",
-    "models": "market-only",
+    "models": "market-only (no models for Barcelona / Vallecano)",
     "match_date": "2026-08-31 20:30"
   },
   "report": {
@@ -295,5 +295,5 @@
       "market"
     ]
   },
-  "generated_at": "2026-08-30T09:06:39.184583Z"
+  "generated_at": "2026-08-30T11:31:20.223428Z"
 }

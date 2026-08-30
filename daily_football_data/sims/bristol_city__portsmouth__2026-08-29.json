@@ -16,7 +16,7 @@
     "div": "E1",
     "home": "Bristol City",
     "away": "Portsmouth",
-    "models": "market-only",
+    "models": "market-only (no models for Bristol City / Portsmouth)",
     "match_date": "2026-08-29 15:00"
   },
   "report": {
@@ -295,5 +295,5 @@
       "market"
     ]
   },
-  "generated_at": "2026-08-30T09:06:09.890022Z"
+  "generated_at": "2026-08-30T11:30:51.375964Z"
 }

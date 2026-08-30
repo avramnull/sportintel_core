@@ -16,7 +16,7 @@
     "div": "P1",
     "home": "Casa Pia",
     "away": "Moreirense",
-    "models": "market-only",
+    "models": "market-only (no models for Casa Pia / Moreirense)",
     "match_date": "2026-08-30 18:00"
   },
   "report": {
@@ -295,5 +295,5 @@
       "market"
     ]
   },
-  "generated_at": "2026-08-30T09:06:30.569195Z"
+  "generated_at": "2026-08-30T11:31:11.617725Z"
 }

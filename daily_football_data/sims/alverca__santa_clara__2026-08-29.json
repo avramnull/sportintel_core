@@ -16,7 +16,7 @@
     "div": "P1",
     "home": "Alverca",
     "away": "Santa Clara",
-    "models": "market-only",
+    "models": "market-only (no models for Alverca / Santa Clara)",
     "match_date": "2026-08-29 15:30"
   },
   "report": {
@@ -295,5 +295,5 @@
       "market"
     ]
   },
-  "generated_at": "2026-08-30T09:06:29.738880Z"
+  "generated_at": "2026-08-30T11:31:10.801978Z"
 }

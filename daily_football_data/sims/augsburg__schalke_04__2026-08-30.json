@@ -16,284 +16,299 @@
     "div": "D1",
     "home": "Augsburg",
     "away": "Schalke 04",
-    "models": "market-only",
+    "models": "Augsburg (home) + Schalke 04 (away)",
     "match_date": "2026-08-30 16:30"
   },
   "report": {
     "n": 8000,
     "ft_model": {
-      "H": 0.43963204292832503,
-      "D": 0.2554618627826753,
-      "A": 0.3049060942889996
+      "H": 0.3235145877257182,
+      "D": 0.29770750436215027,
+      "A": 0.37877790791213145
     },
     "ft_sim": {
-      "H": 0.43025,
-      "D": 0.25175,
-      "A": 0.318
+      "H": 0.314,
+      "D": 0.294625,
+      "A": 0.391375
     },
     "ht_model": {
-      "H": 0.3,
-      "D": 0.4,
-      "A": 0.3
+      "H": 0.22549236695570446,
+      "D": 0.4202242073253084,
+      "A": 0.3542834257189871
     },
     "ht_sim": {
-      "H": 0.305,
-      "D": 0.398625,
-      "A": 0.296375
+      "H": 0.22475,
+      "D": 0.419625,
+      "A": 0.355625
     },
-    "over25_model": 0.4681545386346586,
-    "over25_sim": 0.5885,
-    "btts_model": 0.45,
-    "btts_sim": 0.45375,
-    "ht_over15_model": 0.35,
-    "ht_over15_sim": 0.341875,
+    "over25_model": 0.5454358880251612,
+    "over25_sim": 0.684375,
+    "btts_model": 0.6239203865554573,
+    "btts_sim": 0.628,
+    "ht_over15_model": 0.4104005927083213,
+    "ht_over15_sim": 0.342375,
     "dc_ft": {
-      "1X": 0.6950939057110004,
-      "X2": 0.5603679570716749,
-      "12": 0.7445381372173246
+      "1X": 0.6212220920878684,
+      "X2": 0.6764854122742817,
+      "12": 0.7022924956378496
     },
     "dc_ht": {
-      "1X": 0.7,
-      "X2": 0.7,
-      "12": 0.6
+      "1X": 0.6457165742810129,
+      "X2": 0.7745076330442955,
+      "12": 0.5797757926746916
     },
     "top_ft": [
       [
+        "1-2",
+        1060
+      ],
+      [
         "0-0",
-        1120
+        899
       ],
       [
         "2-1",
-        936
-      ],
-      [
-        "1-2",
-        700
-      ],
-      [
-        "1-0",
-        514
+        886
       ],
       [
         "1-1",
-        474
+        670
       ],
       [
-        "2-0",
-        457
+        "2-2",
+        416
       ],
       [
-        "0-2",
-        371
+        "3-3",
+        372
       ],
       [
-        "0-1",
+        "2-3",
         356
+      ],
+      [
+        "3-2",
+        279
       ]
     ],
     "top_ht": [
       [
-        "0-0",
-        1917
-      ],
-      [
         "0-1",
-        1686
+        2009
       ],
       [
-        "1-0",
-        1662
+        "0-0",
+        2006
       ],
       [
         "1-1",
-        1272
+        1351
       ],
       [
-        "2-1",
-        399
+        "1-0",
+        1246
+      ],
+      [
+        "1-2",
+        449
       ]
     ],
     "xg": {
-      "home": 1.508875,
-      "away": 1.269375,
-      "total": 2.77825
+      "home": 1.49025,
+      "away": 1.647875,
+      "total": 3.138125
     },
     "goal_rates": {
-      "home": 1.508875,
-      "away": 1.269375
+      "home": 1.49025,
+      "away": 1.647875
     }
   },
   "table": [
     {
       "Section": "HT Winner",
       "Selection": "Augsburg",
-      "Model%": 30.0,
-      "Sim%": 30.5,
-      "Agree": "1 eng",
+      "Model%": 22.5,
+      "Sim%": 22.5,
+      "Agree": "4 eng",
       "Verdict": "NO"
     },
     {
       "Section": "HT Winner",
       "Selection": "Draw",
-      "Model%": 40.0,
-      "Sim%": 39.9,
-      "Agree": "1 eng",
+      "Model%": 42.0,
+      "Sim%": 42.0,
+      "Agree": "4 eng",
       "Verdict": "NO"
     },
     {
       "Section": "HT Winner",
       "Selection": "Schalke 04",
-      "Model%": 30.0,
-      "Sim%": 29.6,
-      "Agree": "1 eng",
+      "Model%": 35.4,
+      "Sim%": 35.6,
+      "Agree": "4 eng",
       "Verdict": "NO"
     },
     {
       "Section": "HT DC",
       "Selection": "1X",
-      "Model%": 70.0,
-      "Sim%": 70.4,
-      "Agree": "1 eng",
+      "Model%": 64.6,
+      "Sim%": 64.4,
+      "Agree": "4 eng",
       "Verdict": "YES"
     },
     {
       "Section": "HT DC",
       "Selection": "X2",
-      "Model%": 70.0,
-      "Sim%": 69.5,
-      "Agree": "1 eng",
+      "Model%": 77.5,
+      "Sim%": 77.5,
+      "Agree": "4 eng",
       "Verdict": "YES"
     },
     {
       "Section": "HT DC",
       "Selection": "12",
-      "Model%": 60.0,
-      "Sim%": 60.1,
-      "Agree": "1 eng",
+      "Model%": 58.0,
+      "Sim%": 58.0,
+      "Agree": "4 eng",
       "Verdict": "YES"
     },
     {
       "Section": "HT O/U",
       "Selection": "Over 1.5",
-      "Model%": 35.0,
+      "Model%": 41.0,
       "Sim%": 34.2,
-      "Agree": "1 eng",
+      "Agree": "4 eng",
       "Verdict": "NO"
     },
     {
       "Section": "HT O/U",
       "Selection": "Under 1.5",
-      "Model%": 65.0,
+      "Model%": 59.0,
       "Sim%": 65.8,
-      "Agree": "1 eng",
+      "Agree": "4 eng",
       "Verdict": "YES"
     },
     {
       "Section": "FT Winner",
       "Selection": "Augsburg",
-      "Model%": 44.0,
-      "Sim%": 43.0,
-      "Agree": "1 eng",
+      "Model%": 32.4,
+      "Sim%": 31.4,
+      "Agree": "4 eng",
       "Verdict": "NO"
     },
     {
       "Section": "FT Winner",
       "Selection": "Draw",
-      "Model%": 25.5,
-      "Sim%": 25.2,
-      "Agree": "1 eng",
+      "Model%": 29.8,
+      "Sim%": 29.5,
+      "Agree": "4 eng",
       "Verdict": "NO"
     },
     {
       "Section": "FT Winner",
       "Selection": "Schalke 04",
-      "Model%": 30.5,
-      "Sim%": 31.8,
-      "Agree": "1 eng",
+      "Model%": 37.9,
+      "Sim%": 39.1,
+      "Agree": "4 eng",
       "Verdict": "NO"
     },
     {
       "Section": "FT DC",
       "Selection": "1X",
-      "Model%": 69.5,
-      "Sim%": 68.2,
-      "Agree": "1 eng",
+      "Model%": 62.1,
+      "Sim%": 60.9,
+      "Agree": "4 eng",
       "Verdict": "YES"
     },
     {
       "Section": "FT DC",
       "Selection": "X2",
-      "Model%": 56.0,
-      "Sim%": 57.0,
-      "Agree": "1 eng",
+      "Model%": 67.6,
+      "Sim%": 68.6,
+      "Agree": "4 eng",
       "Verdict": "YES"
     },
     {
       "Section": "FT DC",
       "Selection": "12",
-      "Model%": 74.5,
-      "Sim%": 74.8,
-      "Agree": "1 eng",
+      "Model%": 70.2,
+      "Sim%": 70.5,
+      "Agree": "4 eng",
       "Verdict": "YES"
     },
     {
       "Section": "FT O/U",
       "Selection": "Over 2.5",
-      "Model%": 46.8,
-      "Sim%": 58.9,
-      "Agree": "1 eng",
-      "Verdict": "NO"
+      "Model%": 54.5,
+      "Sim%": 68.4,
+      "Agree": "4 eng",
+      "Verdict": "YES"
     },
     {
       "Section": "FT O/U",
       "Selection": "Under 2.5",
-      "Model%": 53.2,
-      "Sim%": 41.1,
-      "Agree": "1 eng",
-      "Verdict": "YES"
-    },
-    {
-      "Section": "BTTS",
-      "Selection": "Yes",
-      "Model%": 45.0,
-      "Sim%": 45.4,
-      "Agree": "1 eng",
+      "Model%": 45.5,
+      "Sim%": 31.6,
+      "Agree": "4 eng",
       "Verdict": "NO"
     },
     {
       "Section": "BTTS",
-      "Selection": "No",
-      "Model%": 55.0,
-      "Sim%": 54.6,
-      "Agree": "1 eng",
+      "Selection": "Yes",
+      "Model%": 62.4,
+      "Sim%": 62.8,
+      "Agree": "4 eng",
       "Verdict": "YES"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 37.6,
+      "Sim%": 37.2,
+      "Agree": "4 eng",
+      "Verdict": "NO"
     }
   ],
   "locked_tip": {
     "status": "SECURED LOCK",
-    "section": "FT DC",
-    "selection": "12",
-    "model": 74.5,
-    "sim": 74.8,
-    "agree": "1 eng",
+    "section": "HT DC",
+    "selection": "X2",
+    "model": 77.5,
+    "sim": 77.5,
+    "agree": "4 eng",
     "verdict": "HARD YES"
   },
   "backends": {
     "ft_result": [
-      "market"
+      "cat",
+      "lgbm",
+      "rf",
+      "xgb"
     ],
     "ht_result": [
-      "market"
+      "cat",
+      "lgbm",
+      "rf",
+      "xgb"
     ],
     "over25": [
-      "market"
+      "cat",
+      "lgbm",
+      "rf",
+      "xgb"
     ],
     "btts": [
-      "market"
+      "cat",
+      "lgbm",
+      "rf",
+      "xgb"
     ],
     "ht_over15": [
-      "market"
+      "cat",
+      "lgbm",
+      "rf",
+      "xgb"
     ]
   },
-  "generated_at": "2026-08-30T09:05:58.853401Z"
+  "generated_at": "2026-08-30T11:30:35.031843Z"
 }

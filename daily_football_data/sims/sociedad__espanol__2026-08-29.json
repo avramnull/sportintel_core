@@ -16,7 +16,7 @@
     "div": "SP1",
     "home": "Real Sociedad",
     "away": "Espanol",
-    "models": "market-only",
+    "models": "market-only (no models for Real Sociedad / Espanol)",
     "match_date": "2026-08-29 18:00"
   },
   "report": {
@@ -295,5 +295,5 @@
       "market"
     ]
   },
-  "generated_at": "2026-08-30T09:06:37.187550Z"
+  "generated_at": "2026-08-30T11:31:18.189351Z"
 }

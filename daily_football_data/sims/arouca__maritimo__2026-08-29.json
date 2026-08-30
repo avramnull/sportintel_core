@@ -16,7 +16,7 @@
     "div": "P1",
     "home": "Arouca",
     "away": "Maritimo",
-    "models": "market-only",
+    "models": "market-only (no models for Arouca / Maritimo)",
     "match_date": "2026-08-29 15:30"
   },
   "report": {
@@ -295,5 +295,5 @@
       "market"
     ]
   },
-  "generated_at": "2026-08-30T09:06:29.944980Z"
+  "generated_at": "2026-08-30T11:31:11.005293Z"
 }

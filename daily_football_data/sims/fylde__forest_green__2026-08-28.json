@@ -16,7 +16,7 @@
     "div": "EC",
     "home": "Fylde",
     "away": "Forest Green",
-    "models": "market-only",
+    "models": "market-only (no models for Fylde / Forest Green)",
     "match_date": "2026-08-28 19:45"
   },
   "report": {
@@ -295,5 +295,5 @@
       "market"
     ]
   },
-  "generated_at": "2026-08-30T09:06:16.557384Z"
+  "generated_at": "2026-08-30T11:30:57.902655Z"
 }

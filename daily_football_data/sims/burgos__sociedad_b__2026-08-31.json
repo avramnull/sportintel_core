@@ -16,7 +16,7 @@
     "div": "SP2",
     "home": "Burgos",
     "away": "Sociedad B",
-    "models": "market-only",
+    "models": "market-only (no models for Burgos / Sociedad B)",
     "match_date": "2026-08-31 18:00"
   },
   "report": {
@@ -295,5 +295,5 @@
       "market"
     ]
   },
-  "generated_at": "2026-08-30T09:06:41.244746Z"
+  "generated_at": "2026-08-30T11:31:22.263288Z"
 }

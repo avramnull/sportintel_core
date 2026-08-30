@@ -16,7 +16,7 @@
     "div": "F2",
     "home": "Red Star",
     "away": "Reims",
-    "models": "market-only",
+    "models": "market-only (no models for Red Star / Reims)",
     "match_date": "2026-08-29 13:00"
   },
   "report": {
@@ -295,5 +295,5 @@
       "market"
     ]
   },
-  "generated_at": "2026-08-30T09:06:21.385309Z"
+  "generated_at": "2026-08-30T11:31:02.604694Z"
 }

@@ -16,7 +16,7 @@
     "div": "EC",
     "home": "Aldershot",
     "away": "Harrogate",
-    "models": "market-only",
+    "models": "market-only (no models for Aldershot / Harrogate)",
     "match_date": "2026-08-28 19:45"
   },
   "report": {
@@ -295,5 +295,5 @@
       "market"
     ]
   },
-  "generated_at": "2026-08-30T09:06:15.934244Z"
+  "generated_at": "2026-08-30T11:30:57.291773Z"
 }

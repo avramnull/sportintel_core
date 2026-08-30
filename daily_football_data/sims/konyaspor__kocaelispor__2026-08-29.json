@@ -16,7 +16,7 @@
     "div": "T1",
     "home": "Konyaspor",
     "away": "Kocaelispor",
-    "models": "market-only",
+    "models": "market-only (no models for Konyaspor / Kocaelispor)",
     "match_date": "2026-08-29 17:00"
   },
   "report": {
@@ -295,5 +295,5 @@
       "market"
     ]
   },
-  "generated_at": "2026-08-30T09:06:41.865762Z"
+  "generated_at": "2026-08-30T11:31:22.875519Z"
 }
