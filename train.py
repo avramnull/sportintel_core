@@ -82,12 +82,21 @@ if os.environ.get("MIN_TEAM_MATCHES"):
 if os.environ.get("MAX_BOOST_ROUNDS"):
     CONFIG["max_boost_rounds"] = int(os.environ["MAX_BOOST_ROUNDS"])
 if os.environ.get("DAILY_LIGHT", "").strip() in ("1", "true", "yes"):
-    # Faster capacity for daily, but KEEP neural nets unless explicitly disabled
-    CONFIG["capacity_growth_steps"] = 1
-    CONFIG["max_boost_rounds"] = min(CONFIG["max_boost_rounds"], 1200)
-    CONFIG["patience_overfit"] = 40
-    CONFIG["nn_epochs"] = min(CONFIG.get("nn_epochs", 80), 40)
-    print("[train] DAILY_LIGHT mode: reduced rounds; torch/tf still ON unless USE_PYTORCH/USE_TENSORFLOW=0")
+    # Powerfully fast daily: keep torch+tf, slash capacity
+    CONFIG["capacity_growth_steps"] = 0          # single capacity pass
+    CONFIG["max_boost_rounds"] = min(int(os.environ.get("MAX_BOOST_ROUNDS", "400")), 500)
+    CONFIG["patience_overfit"] = 25
+    CONFIG["nn_epochs"] = int(os.environ.get("NN_EPOCHS", "18"))
+    CONFIG["nn_patience"] = 6
+    CONFIG["nn_batch"] = 512
+    CONFIG["nn_hidden"] = [64, 32]               # smaller MLP
+    # skip slow ensembles on daily unless forced
+    if os.environ.get("USE_ADABOOST", "").strip() not in ("1", "true", "yes"):
+        CONFIG["use_adaboost"] = False
+    if os.environ.get("USE_RANDOM_FOREST", "").strip() not in ("1", "true", "yes"):
+        CONFIG["use_random_forest"] = False
+    print("[train] DAILY_LIGHT FAST: boost<=500, nn_epochs=%s, hidden=%s, ada/rf off unless forced"
+          % (CONFIG["nn_epochs"], CONFIG["nn_hidden"]))
 
 # Explicit backend overrides (env wins)
 for flag, key in (
@@ -119,6 +128,12 @@ TARGETS = {
     "dc_12":     {"col": "DC_12", "type": "binary"},
     "ht_over15": {"col": "HT_Over1_5", "type": "binary"},
 }
+# Daily can train only core markets for speed: DAILY_TARGETS=ft_result,over25,btts,ht_result
+_dt = os.environ.get("DAILY_TARGETS", "").strip()
+if _dt:
+    keep = {x.strip() for x in _dt.split(",") if x.strip()}
+    TARGETS = {k: v for k, v in TARGETS.items() if k in keep}
+    print(f"[train] DAILY_TARGETS restricted to: {list(TARGETS.keys())}")
 
 FEATURE_NUM = [
     "AvgH", "AvgD", "AvgA", "B365H", "B365D", "B365A",

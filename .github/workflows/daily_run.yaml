@@ -8,7 +8,7 @@ on:
 jobs:
   daily:
     runs-on: ubuntu-latest
-    timeout-minutes: 350
+    timeout-minutes: 360
     permissions:
       contents: write
     steps:
@@ -43,14 +43,20 @@ jobs:
         env:
           FOOTBALL_SEASON: "2627"
           FOOTBALL_SEASON_LABEL: "2026/2027"
-          MAX_TRAIN_TEAMS: "0"   # 0 = all teams that have a fixture TODAY
+          MAX_TRAIN_TEAMS: "0"
           MIN_TEAM_MATCHES: "25"
-          TODAY_ONLY: "1"        # strict: only current-day fixtures
-          DAILY_LIGHT: "1"       # reduced capacity but torch+tf still ON
+          TODAY_ONLY: "1"
+          DAILY_LIGHT: "1"
           USE_PYTORCH: "1"
           USE_TENSORFLOW: "1"
-          MAX_BOOST_ROUNDS: "800"
-          N_SIMULATIONS: "8000"
+          USE_ADABOOST: "0"
+          USE_RANDOM_FOREST: "0"
+          MAX_BOOST_ROUNDS: "400"
+          NN_EPOCHS: "18"
+          DAILY_TARGETS: "ft_result,over25,btts,ht_result"
+          # empty TRAIN_DIVS = all leagues with fixtures today; set e.g. E0,SP1,D1,I1,F1 for top-only
+          TRAIN_DIVS: ""
+          N_SIMULATIONS: "5000"
           ODDS_BLEND: "0.30"
           SPORTINTEL_PUSH: "1"
           GITHUB_TOKEN: ${{ secrets.SPORTINTEL_PUSH_TOKEN || secrets.GITHUB_TOKEN }}

@@ -101,6 +101,13 @@ def main():
     else:
         print("[scan] WARNING: no Date column — cannot filter to today")
 
+    # Optional: only teams in selected divisions (comma list e.g. E0,SP1,D1,I1,F1,SC0)
+    train_divs = [x.strip().upper() for x in os.environ.get("TRAIN_DIVS", "").split(",") if x.strip()]
+    if train_divs and "Div" in df.columns:
+        before = len(df)
+        df = df[df["Div"].astype(str).str.strip().str.upper().isin(train_divs)].copy()
+        print(f"[scan] TRAIN_DIVS={train_divs}: {before} -> {len(df)} fixtures")
+
     aliases = load_aliases()
     team2id = load_team2id()
     counts = parquet_team_counts()

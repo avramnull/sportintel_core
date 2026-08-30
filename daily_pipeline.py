@@ -83,6 +83,7 @@ def main():
         "TODAY_ONLY": os.environ.get("TODAY_ONLY", "1"),
         "MAX_TRAIN_TEAMS": os.environ.get("MAX_TRAIN_TEAMS", "0"),
         "MIN_TEAM_MATCHES": os.environ.get("MIN_TEAM_MATCHES", "25"),
+        "TRAIN_DIVS": os.environ.get("TRAIN_DIVS", ""),  # empty = all today's divs
     })
 
     focus_path = SAVE / "train_focus_teams.json"
@@ -100,11 +101,18 @@ def main():
         run([sys.executable, "train.py"], env={
             "FOCUS_TEAMS": ",".join(focus),
             "DAILY_LIGHT": os.environ.get("DAILY_LIGHT", "1"),
-            "MIN_TEAM_MATCHES": os.environ.get("MIN_TEAM_MATCHES", "40"),
-            "MAX_BOOST_ROUNDS": os.environ.get("MAX_BOOST_ROUNDS", "1000"),
-            # Force neural nets on for daily focus teams
+            "MIN_TEAM_MATCHES": os.environ.get("MIN_TEAM_MATCHES", "25"),
+            "MAX_BOOST_ROUNDS": os.environ.get("MAX_BOOST_ROUNDS", "400"),
+            "NN_EPOCHS": os.environ.get("NN_EPOCHS", "18"),
+            # Core markets only — fast + what sim needs most
+            "DAILY_TARGETS": os.environ.get(
+                "DAILY_TARGETS", "ft_result,over25,btts,ht_result"
+            ),
             "USE_PYTORCH": os.environ.get("USE_PYTORCH", "1"),
             "USE_TENSORFLOW": os.environ.get("USE_TENSORFLOW", "1"),
+            # ada/rf off by default in DAILY_LIGHT for speed
+            "USE_ADABOOST": os.environ.get("USE_ADABOOST", "0"),
+            "USE_RANDOM_FOREST": os.environ.get("USE_RANDOM_FOREST", "0"),
         })
 
     # 6. Live batch sim (sim.py engine)
