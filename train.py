@@ -398,12 +398,21 @@ def train_adaboost(Xtr, ytr, Xva, yva, task, out_path):
         depth = min(3 + level, 6)
         n_est = min(150 + level * 50, 350)
         tree = DecisionTreeClassifier(max_depth=depth, min_samples_leaf=15 + level * 5, random_state=CONFIG["seed"])
-        try:
-            model = AdaBoostClassifier(estimator=tree, n_estimators=n_est, learning_rate=0.4,
-                                       algorithm="SAMME", random_state=CONFIG["seed"])
-        except TypeError:
-            model = AdaBoostClassifier(base_estimator=tree, n_estimators=n_est, learning_rate=0.4,
-                                       algorithm="SAMME", random_state=CONFIG["seed"])
+        # sklearn API: estimator (1.2+), base_estimator (older); algorithm removed in 1.6+
+        model = None
+        for kwargs in (
+            dict(estimator=tree, n_estimators=n_est, learning_rate=0.4, random_state=CONFIG["seed"]),
+            dict(estimator=tree, n_estimators=n_est, learning_rate=0.4, algorithm="SAMME", random_state=CONFIG["seed"]),
+            dict(base_estimator=tree, n_estimators=n_est, learning_rate=0.4, algorithm="SAMME", random_state=CONFIG["seed"]),
+            dict(base_estimator=tree, n_estimators=n_est, learning_rate=0.4, random_state=CONFIG["seed"]),
+        ):
+            try:
+                model = AdaBoostClassifier(**kwargs)
+                break
+            except TypeError:
+                continue
+        if model is None:
+            raise TypeError("AdaBoostClassifier: no compatible kwargs for this sklearn version")
         model.fit(Xtr, ytr)
         tr_p, va_p = model.predict_proba(Xtr), model.predict_proba(Xva)
         if not (np.isfinite(tr_p).all() and np.isfinite(va_p).all()):
