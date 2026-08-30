@@ -449,8 +449,22 @@ def blend_with_odds(p_model, p_market, alpha):
     n = max(len(p_model), len(p_market))
     a = np.pad(p_model, (0, max(0, n - len(p_model))))[:n]
     b = np.pad(p_market, (0, max(0, n - len(p_market))))[:n]
+    a = np.clip(a, 1e-9, None); b = np.clip(b, 1e-9, None)
     a, b = a / a.sum(), b / b.sum()
-    out = (1 - alpha) * a + alpha * b
+    # If model is near-uniform or fights a strong market favourite, trust market more
+    ent = float(-np.sum(a * np.log(a + 1e-12)))
+    max_ent = float(np.log(n))
+    flatness = ent / max_ent if max_ent > 0 else 1.0  # 1 = fully flat
+    # strong market fav: max market prob
+    m_max = float(b.max())
+    alpha_eff = float(alpha)
+    if flatness > 0.95:
+        alpha_eff = max(alpha_eff, 0.55)  # model almost prior → lean market
+    if m_max >= 0.45 and a[int(np.argmax(b))] < 0.30:
+        # model disagrees with clear favourite
+        alpha_eff = max(alpha_eff, 0.50)
+    alpha_eff = min(0.75, alpha_eff)
+    out = (1 - alpha_eff) * a + alpha_eff * b
     return out / out.sum()
 
 
@@ -805,10 +819,20 @@ def run_one_match(match_cfg: dict, quiet: bool = False, allow_market_only: bool 
         raw_hto, b = predict_across_runs("ht_over15", runs_loaded, home_id, away_id, div_code, oh, od, oa, hist_df)
         backends_map["ht_over15"] = b
         p_ft = blend_with_odds(multi_prob(raw_ft, 3), p_market, alpha)
-        p_ht = multi_prob(raw_ht, 3)
+        # HT: blend model with softened FT market (HT is flatter)
+        p_ht_m = multi_prob(raw_ht, 3)
+        p_ht_mkt = np.array([
+            0.5 * p_market[0] + 0.25,
+            0.35,
+            0.5 * p_market[2] + 0.25,
+        ], dtype=float)
+        p_ht_mkt = p_ht_mkt / p_ht_mkt.sum()
+        p_ht = blend_with_odds(p_ht_m, p_ht_mkt, min(0.45, alpha + 0.10))
         p_over = bin_prob(raw_over)
         p_btts = bin_prob(raw_btts)
-        p_hto = bin_prob(raw_hto)
+        p_hto = bin_prob(raw_hto) if raw_hto is not None else 0.35
+        if raw_hto is None:
+            p_hto = float(0.25 + 0.25 * p_over)  # sane default tied to O2.5
     else:
         # Pure market path — same schema
         p_ft = p_market

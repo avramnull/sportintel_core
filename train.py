@@ -242,21 +242,71 @@ def engineer(df: pd.DataFrame) -> pd.DataFrame:
     df["DayOfWeek"] = df["Date"].dt.dayofweek
     df["IsWeekend"] = df["DayOfWeek"].isin([5, 6]).astype(int)
 
-    def add_roll(frame, w):
-        g = frame.groupby("HomeTeamId", group_keys=False)
-        frame[f"HomeFormPts_{w}"] = g["HomePoints"].transform(lambda s: s.shift(1).rolling(w, min_periods=1).mean())
-        frame[f"HomeFormGF_{w}"] = g["FTHG"].transform(lambda s: s.shift(1).rolling(w, min_periods=1).mean())
-        frame[f"HomeFormGA_{w}"] = g["FTAG"].transform(lambda s: s.shift(1).rolling(w, min_periods=1).mean())
-        frame[f"HomeFormGD_{w}"] = frame[f"HomeFormGF_{w}"] - frame[f"HomeFormGA_{w}"]
-        g2 = frame.groupby("AwayTeamId", group_keys=False)
-        frame[f"AwayFormPts_{w}"] = g2["AwayPoints"].transform(lambda s: s.shift(1).rolling(w, min_periods=1).mean())
-        frame[f"AwayFormGF_{w}"] = g2["FTAG"].transform(lambda s: s.shift(1).rolling(w, min_periods=1).mean())
-        frame[f"AwayFormGA_{w}"] = g2["FTHG"].transform(lambda s: s.shift(1).rolling(w, min_periods=1).mean())
-        frame[f"AwayFormGD_{w}"] = frame[f"AwayFormGF_{w}"] - frame[f"AwayFormGA_{w}"]
-        return frame
+    # Per-team chronological form using ALL matches (home+away), leak-free shift(1)
+    # Matches sim.build_live_features so train/serve stay aligned.
+    df = df.reset_index(drop=True)
+    df["_pts_as_home"] = df["FTR"].map({"H": 3, "D": 1, "A": 0}).astype(float)
+    df["_pts_as_away"] = df["FTR"].map({"H": 0, "D": 1, "A": 3}).astype(float)
+    for w in (5, 10, 20):
+        df[f"HomeFormPts_{w}"] = np.nan
+        df[f"HomeFormGF_{w}"] = np.nan
+        df[f"HomeFormGA_{w}"] = np.nan
+        df[f"HomeFormGD_{w}"] = np.nan
+        df[f"AwayFormPts_{w}"] = np.nan
+        df[f"AwayFormGF_{w}"] = np.nan
+        df[f"AwayFormGA_{w}"] = np.nan
+        df[f"AwayFormGD_{w}"] = np.nan
+
+    from collections import defaultdict, deque
+    hist_pts = defaultdict(lambda: deque(maxlen=25))
+    hist_gf = defaultdict(lambda: deque(maxlen=25))
+    hist_ga = defaultdict(lambda: deque(maxlen=25))
+
+    home_ids = df["HomeTeamId"].to_numpy()
+    away_ids = df["AwayTeamId"].to_numpy()
+    fthg = df["FTHG"].to_numpy(dtype=float) if "FTHG" in df.columns else np.zeros(len(df))
+    ftag = df["FTAG"].to_numpy(dtype=float) if "FTAG" in df.columns else np.zeros(len(df))
+    pts_h = df["_pts_as_home"].to_numpy(dtype=float)
+    pts_a = df["_pts_as_away"].to_numpy(dtype=float)
+
+    H_pts = {w: np.full(len(df), np.nan) for w in (5, 10, 20)}
+    H_gf = {w: np.full(len(df), np.nan) for w in (5, 10, 20)}
+    H_ga = {w: np.full(len(df), np.nan) for w in (5, 10, 20)}
+    A_pts = {w: np.full(len(df), np.nan) for w in (5, 10, 20)}
+    A_gf = {w: np.full(len(df), np.nan) for w in (5, 10, 20)}
+    A_ga = {w: np.full(len(df), np.nan) for w in (5, 10, 20)}
+
+    for i in range(len(df)):
+        hid, aid = int(home_ids[i]), int(away_ids[i])
+        for w in (5, 10, 20):
+            if len(hist_pts[hid]):
+                arr = np.asarray(hist_pts[hid])[-w:]
+                H_pts[w][i] = float(np.mean(arr))
+                H_gf[w][i] = float(np.mean(np.asarray(hist_gf[hid])[-w:]))
+                H_ga[w][i] = float(np.mean(np.asarray(hist_ga[hid])[-w:]))
+            if len(hist_pts[aid]):
+                arr = np.asarray(hist_pts[aid])[-w:]
+                A_pts[w][i] = float(np.mean(arr))
+                A_gf[w][i] = float(np.mean(np.asarray(hist_gf[aid])[-w:]))
+                A_ga[w][i] = float(np.mean(np.asarray(hist_ga[aid])[-w:]))
+        # update after features (no leak)
+        hist_pts[hid].append(pts_h[i])
+        hist_gf[hid].append(fthg[i])
+        hist_ga[hid].append(ftag[i])
+        hist_pts[aid].append(pts_a[i])
+        hist_gf[aid].append(ftag[i])
+        hist_ga[aid].append(fthg[i])
 
     for w in (5, 10, 20):
-        df = add_roll(df, w)
+        df[f"HomeFormPts_{w}"] = H_pts[w]
+        df[f"HomeFormGF_{w}"] = H_gf[w]
+        df[f"HomeFormGA_{w}"] = H_ga[w]
+        df[f"HomeFormGD_{w}"] = H_gf[w] - H_ga[w]
+        df[f"AwayFormPts_{w}"] = A_pts[w]
+        df[f"AwayFormGF_{w}"] = A_gf[w]
+        df[f"AwayFormGA_{w}"] = A_ga[w]
+        df[f"AwayFormGD_{w}"] = A_gf[w] - A_ga[w]
+    df.drop(columns=["_pts_as_home", "_pts_as_away"], inplace=True, errors="ignore")
 
     df["PairKey"] = df.apply(
         lambda r: tuple(sorted([int(r["HomeTeamId"]), int(r["AwayTeamId"])])), axis=1
@@ -785,7 +835,20 @@ def main():
     df["HomeTeamCanon"] = df["HomeTeam"].map(normalize_team)
     df["AwayTeamCanon"] = df["AwayTeam"].map(normalize_team)
     all_teams = sorted(set(df["HomeTeamCanon"].dropna()) | set(df["AwayTeamCanon"].dropna()))
-    team2id = {t: i for i, t in enumerate(all_teams)}
+    # Stable IDs: preserve prior mapping so models/sim stay aligned across days
+    team2id = {}
+    prev_path = map_dir / "team2id.json"
+    if prev_path.exists():
+        try:
+            prev = json.loads(prev_path.read_text(encoding="utf-8"))
+            team2id = {str(k): int(v) for k, v in prev.items()}
+        except Exception:
+            team2id = {}
+    next_id = (max(team2id.values()) + 1) if team2id else 0
+    for t in all_teams:
+        if t not in team2id:
+            team2id[t] = next_id
+            next_id += 1
     df["HomeTeamId"] = df["HomeTeamCanon"].map(team2id)
     df["AwayTeamId"] = df["AwayTeamCanon"].map(team2id)
 
