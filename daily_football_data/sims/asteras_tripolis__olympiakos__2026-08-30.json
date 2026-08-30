@@ -7,7 +7,7 @@
     "odds_home": 11.0,
     "odds_draw": 4.5,
     "odds_away": 1.3,
-    "n_simulations": 8000,
+    "n_simulations": 3000,
     "seed": 147,
     "odds_blend": 0.3
   },
@@ -16,284 +16,302 @@
     "div": "G1",
     "home": "Asteras Tripolis",
     "away": "Olympiakos",
-    "models": "market-only (no models for Asteras Tripolis / Olympiakos)",
+    "models": "Asteras Tripolis (home) + Olympiakos (away)",
     "match_date": "2026-08-30 19:00"
   },
   "report": {
-    "n": 8000,
+    "n": 3000,
     "ft_model": {
-      "H": 0.0839913854989232,
-      "D": 0.20531227566403445,
-      "A": 0.7106963388370423
+      "H": 0.36586729176709765,
+      "D": 0.26167172192417754,
+      "A": 0.3724609863087248
     },
     "ft_sim": {
-      "H": 0.086625,
-      "D": 0.2035,
-      "A": 0.709875
+      "H": 0.365,
+      "D": 0.254,
+      "A": 0.381
     },
     "ht_model": {
-      "H": 0.3,
-      "D": 0.4,
-      "A": 0.3
+      "H": 0.46086335127946726,
+      "D": 0.3222158588381288,
+      "A": 0.21692078988240396
     },
     "ht_sim": {
-      "H": 0.304875,
-      "D": 0.402,
-      "A": 0.293125
+      "H": 0.44966666666666666,
+      "D": 0.336,
+      "A": 0.21433333333333332
     },
-    "over25_model": 0.47902097902097895,
-    "over25_sim": 0.615,
-    "btts_model": 0.45,
-    "btts_sim": 0.45225,
-    "ht_over15_model": 0.35,
-    "ht_over15_sim": 0.333375,
+    "over25_model": 0.42487772866083345,
+    "over25_sim": 0.5646666666666667,
+    "btts_model": 0.457872906137181,
+    "btts_sim": 0.452,
+    "ht_over15_model": 0.5,
+    "ht_over15_sim": 0.3506666666666667,
     "dc_ft": {
-      "1X": 0.28930366116295764,
-      "X2": 0.9160086145010767,
-      "12": 0.7946877243359655
+      "1X": 0.6275390136912752,
+      "X2": 0.6341327082329024,
+      "12": 0.7383282780758225
     },
     "dc_ht": {
-      "1X": 0.7,
-      "X2": 0.7,
-      "12": 0.6
+      "1X": 0.7830792101175961,
+      "X2": 0.5391366487205328,
+      "12": 0.6777841411618712
     },
     "top_ft": [
       [
-        "1-2",
-        1557
-      ],
-      [
         "0-0",
-        892
+        414
       ],
       [
-        "0-2",
-        827
+        "1-2",
+        340
+      ],
+      [
+        "2-1",
+        321
+      ],
+      [
+        "1-1",
+        200
       ],
       [
         "0-1",
-        790
+        183
       ],
       [
-        "0-5",
-        528
+        "1-0",
+        177
       ],
       [
-        "0-4",
-        486
+        "0-2",
+        169
       ],
       [
-        "0-3",
-        477
-      ],
-      [
-        "2-3",
-        412
+        "2-0",
+        163
       ]
     ],
     "top_ht": [
       [
-        "0-0",
-        1990
+        "1-0",
+        911
       ],
       [
-        "1-0",
-        1693
+        "0-0",
+        587
       ],
       [
         "0-1",
-        1650
+        450
       ],
       [
         "1-1",
-        1226
+        421
       ],
       [
         "2-0",
-        377
+        222
       ]
     ],
     "xg": {
-      "home": 0.78375,
-      "away": 2.08925,
-      "total": 2.873
+      "home": 1.336,
+      "away": 1.356,
+      "total": 2.692
     },
     "goal_rates": {
-      "home": 0.78375,
-      "away": 2.08925
+      "home": 1.336,
+      "away": 1.356
     }
   },
   "table": [
     {
       "Section": "HT Winner",
       "Selection": "Asteras Tripolis",
-      "Model%": 30.0,
-      "Sim%": 30.5,
-      "Agree": "1 eng",
+      "Model%": 46.1,
+      "Sim%": 45.0,
+      "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "HT Winner",
       "Selection": "Draw",
-      "Model%": 40.0,
-      "Sim%": 40.2,
-      "Agree": "1 eng",
+      "Model%": 32.2,
+      "Sim%": 33.6,
+      "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "HT Winner",
       "Selection": "Olympiakos",
-      "Model%": 30.0,
-      "Sim%": 29.3,
-      "Agree": "1 eng",
+      "Model%": 21.7,
+      "Sim%": 21.4,
+      "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "HT DC",
       "Selection": "1X",
-      "Model%": 70.0,
-      "Sim%": 70.7,
-      "Agree": "1 eng",
+      "Model%": 78.3,
+      "Sim%": 78.6,
+      "Agree": "6 eng",
       "Verdict": "YES"
     },
     {
       "Section": "HT DC",
       "Selection": "X2",
-      "Model%": 70.0,
-      "Sim%": 69.5,
-      "Agree": "1 eng",
-      "Verdict": "YES"
+      "Model%": 53.9,
+      "Sim%": 55.0,
+      "Agree": "6 eng",
+      "Verdict": "NO"
     },
     {
       "Section": "HT DC",
       "Selection": "12",
-      "Model%": 60.0,
-      "Sim%": 59.8,
-      "Agree": "1 eng",
+      "Model%": 67.8,
+      "Sim%": 66.4,
+      "Agree": "6 eng",
       "Verdict": "YES"
     },
     {
       "Section": "HT O/U",
       "Selection": "Over 1.5",
-      "Model%": 35.0,
-      "Sim%": 33.3,
-      "Agree": "1 eng",
+      "Model%": 50.0,
+      "Sim%": 35.1,
+      "Agree": "-",
       "Verdict": "NO"
     },
     {
       "Section": "HT O/U",
       "Selection": "Under 1.5",
-      "Model%": 65.0,
-      "Sim%": 66.7,
-      "Agree": "1 eng",
-      "Verdict": "YES"
+      "Model%": 50.0,
+      "Sim%": 64.9,
+      "Agree": "-",
+      "Verdict": "NO"
     },
     {
       "Section": "FT Winner",
       "Selection": "Asteras Tripolis",
-      "Model%": 8.4,
-      "Sim%": 8.7,
-      "Agree": "1 eng",
+      "Model%": 36.6,
+      "Sim%": 36.5,
+      "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "FT Winner",
       "Selection": "Draw",
-      "Model%": 20.5,
-      "Sim%": 20.3,
-      "Agree": "1 eng",
+      "Model%": 26.2,
+      "Sim%": 25.4,
+      "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "FT Winner",
       "Selection": "Olympiakos",
-      "Model%": 71.1,
-      "Sim%": 71.0,
-      "Agree": "1 eng",
-      "Verdict": "YES"
-    },
-    {
-      "Section": "FT DC",
-      "Selection": "1X",
-      "Model%": 28.9,
-      "Sim%": 29.0,
-      "Agree": "1 eng",
+      "Model%": 37.2,
+      "Sim%": 38.1,
+      "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "FT DC",
+      "Selection": "1X",
+      "Model%": 62.8,
+      "Sim%": 61.9,
+      "Agree": "6 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
       "Selection": "X2",
-      "Model%": 91.6,
-      "Sim%": 91.3,
-      "Agree": "1 eng",
+      "Model%": 63.4,
+      "Sim%": 63.5,
+      "Agree": "6 eng",
       "Verdict": "YES"
     },
     {
       "Section": "FT DC",
       "Selection": "12",
-      "Model%": 79.5,
-      "Sim%": 79.7,
-      "Agree": "1 eng",
+      "Model%": 73.8,
+      "Sim%": 74.6,
+      "Agree": "6 eng",
       "Verdict": "YES"
     },
     {
       "Section": "FT O/U",
       "Selection": "Over 2.5",
-      "Model%": 47.9,
-      "Sim%": 61.5,
-      "Agree": "1 eng",
+      "Model%": 42.5,
+      "Sim%": 56.5,
+      "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "FT O/U",
       "Selection": "Under 2.5",
-      "Model%": 52.1,
-      "Sim%": 38.5,
-      "Agree": "1 eng",
+      "Model%": 57.5,
+      "Sim%": 43.5,
+      "Agree": "6 eng",
       "Verdict": "YES"
     },
     {
       "Section": "BTTS",
       "Selection": "Yes",
-      "Model%": 45.0,
+      "Model%": 45.8,
       "Sim%": 45.2,
-      "Agree": "1 eng",
+      "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "BTTS",
       "Selection": "No",
-      "Model%": 55.0,
+      "Model%": 54.2,
       "Sim%": 54.8,
-      "Agree": "1 eng",
+      "Agree": "6 eng",
       "Verdict": "YES"
     }
   ],
   "locked_tip": {
     "status": "SECURED LOCK",
-    "section": "FT DC",
-    "selection": "X2",
-    "model": 91.6,
-    "sim": 91.3,
-    "agree": "1 eng",
+    "section": "HT DC",
+    "selection": "1X",
+    "model": 78.3,
+    "sim": 78.6,
+    "agree": "6 eng",
     "verdict": "HARD YES"
   },
   "backends": {
     "ft_result": [
-      "market"
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
     ],
     "ht_result": [
-      "market"
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
     ],
     "over25": [
-      "market"
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
     ],
     "btts": [
-      "market"
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
     ],
-    "ht_over15": [
-      "market"
-    ]
+    "ht_over15": []
   },
-  "generated_at": "2026-08-30T11:31:04.032040Z"
+  "generated_at": "2026-08-30T20:17:55.849308Z"
 }

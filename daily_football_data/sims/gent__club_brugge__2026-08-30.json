@@ -7,7 +7,7 @@
     "odds_home": 4.1,
     "odds_draw": 3.8,
     "odds_away": 1.7,
-    "n_simulations": 8000,
+    "n_simulations": 3000,
     "seed": 47,
     "odds_blend": 0.3
   },
@@ -16,284 +16,302 @@
     "div": "B1",
     "home": "Gent",
     "away": "Club Brugge",
-    "models": "market-only (no models for Gent / Club Brugge)",
+    "models": "Gent (home) + Club Brugge (away)",
     "match_date": "2026-08-30 12:30"
   },
   "report": {
-    "n": 8000,
+    "n": 3000,
     "ft_model": {
-      "H": 0.22268183385039642,
-      "D": 0.24026197862805926,
-      "A": 0.5370561875215443
+      "H": 0.42508820156446336,
+      "D": 0.26882838622107574,
+      "A": 0.3060834122144608
     },
     "ft_sim": {
-      "H": 0.209125,
-      "D": 0.2405,
-      "A": 0.550375
+      "H": 0.3963333333333333,
+      "D": 0.27666666666666667,
+      "A": 0.327
     },
     "ht_model": {
-      "H": 0.3,
-      "D": 0.4,
-      "A": 0.3
+      "H": 0.38051930684444146,
+      "D": 0.3832119342098568,
+      "A": 0.2362687589457018
     },
     "ht_sim": {
-      "H": 0.296625,
-      "D": 0.411,
-      "A": 0.292375
+      "H": 0.383,
+      "D": 0.39066666666666666,
+      "A": 0.22633333333333333
     },
-    "over25_model": 0.47482065997130557,
-    "over25_sim": 0.600375,
-    "btts_model": 0.45,
-    "btts_sim": 0.457,
-    "ht_over15_model": 0.35,
-    "ht_over15_sim": 0.345875,
+    "over25_model": 0.55149677012706,
+    "over25_sim": 0.6733333333333333,
+    "btts_model": 0.5630567823137776,
+    "btts_sim": 0.567,
+    "ht_over15_model": 0.5,
+    "ht_over15_sim": 0.332,
     "dc_ft": {
-      "1X": 0.4629438124784557,
-      "X2": 0.7773181661496036,
-      "12": 0.7597380213719407
+      "1X": 0.6939165877855391,
+      "X2": 0.5749117984355365,
+      "12": 0.7311716137789241
     },
     "dc_ht": {
-      "1X": 0.7,
-      "X2": 0.7,
-      "12": 0.6
+      "1X": 0.7637312410542982,
+      "X2": 0.6194806931555585,
+      "12": 0.6167880657901432
     },
     "top_ft": [
       [
-        "1-2",
-        1263
-      ],
-      [
         "0-0",
-        1052
-      ],
-      [
-        "0-2",
-        619
-      ],
-      [
-        "0-1",
-        595
+        343
       ],
       [
         "2-1",
-        466
+        333
+      ],
+      [
+        "1-2",
+        320
       ],
       [
         "1-1",
-        450
+        212
       ],
       [
-        "0-4",
-        414
+        "3-3",
+        142
       ],
       [
-        "0-3",
-        378
+        "2-0",
+        134
+      ],
+      [
+        "2-2",
+        133
+      ],
+      [
+        "3-2",
+        114
       ]
     ],
     "top_ht": [
       [
-        "0-0",
-        1972
+        "1-0",
+        812
       ],
       [
-        "1-0",
-        1648
+        "0-0",
+        733
       ],
       [
         "0-1",
-        1613
+        459
       ],
       [
         "1-1",
-        1316
+        439
       ],
       [
         "2-0",
-        382
+        175
       ]
     ],
     "xg": {
-      "home": 1.044875,
-      "away": 1.75875,
-      "total": 2.803625
+      "home": 1.6566666666666667,
+      "away": 1.462,
+      "total": 3.1186666666666665
     },
     "goal_rates": {
-      "home": 1.044875,
-      "away": 1.75875
+      "home": 1.6566666666666667,
+      "away": 1.462
     }
   },
   "table": [
     {
       "Section": "HT Winner",
       "Selection": "Gent",
-      "Model%": 30.0,
-      "Sim%": 29.7,
-      "Agree": "1 eng",
+      "Model%": 38.1,
+      "Sim%": 38.3,
+      "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "HT Winner",
       "Selection": "Draw",
-      "Model%": 40.0,
-      "Sim%": 41.1,
-      "Agree": "1 eng",
+      "Model%": 38.3,
+      "Sim%": 39.1,
+      "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "HT Winner",
       "Selection": "Club Brugge",
-      "Model%": 30.0,
-      "Sim%": 29.2,
-      "Agree": "1 eng",
+      "Model%": 23.6,
+      "Sim%": 22.6,
+      "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "HT DC",
       "Selection": "1X",
-      "Model%": 70.0,
-      "Sim%": 70.8,
-      "Agree": "1 eng",
+      "Model%": 76.4,
+      "Sim%": 77.4,
+      "Agree": "6 eng",
       "Verdict": "YES"
     },
     {
       "Section": "HT DC",
       "Selection": "X2",
-      "Model%": 70.0,
-      "Sim%": 70.3,
-      "Agree": "1 eng",
+      "Model%": 61.9,
+      "Sim%": 61.7,
+      "Agree": "6 eng",
       "Verdict": "YES"
     },
     {
       "Section": "HT DC",
       "Selection": "12",
-      "Model%": 60.0,
-      "Sim%": 58.9,
-      "Agree": "1 eng",
+      "Model%": 61.7,
+      "Sim%": 60.9,
+      "Agree": "6 eng",
       "Verdict": "YES"
     },
     {
       "Section": "HT O/U",
       "Selection": "Over 1.5",
-      "Model%": 35.0,
-      "Sim%": 34.6,
-      "Agree": "1 eng",
+      "Model%": 50.0,
+      "Sim%": 33.2,
+      "Agree": "-",
       "Verdict": "NO"
     },
     {
       "Section": "HT O/U",
       "Selection": "Under 1.5",
-      "Model%": 65.0,
-      "Sim%": 65.4,
-      "Agree": "1 eng",
-      "Verdict": "YES"
+      "Model%": 50.0,
+      "Sim%": 66.8,
+      "Agree": "-",
+      "Verdict": "NO"
     },
     {
       "Section": "FT Winner",
       "Selection": "Gent",
-      "Model%": 22.3,
-      "Sim%": 20.9,
-      "Agree": "1 eng",
+      "Model%": 42.5,
+      "Sim%": 39.6,
+      "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "FT Winner",
       "Selection": "Draw",
-      "Model%": 24.0,
-      "Sim%": 24.1,
-      "Agree": "1 eng",
+      "Model%": 26.9,
+      "Sim%": 27.7,
+      "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "FT Winner",
       "Selection": "Club Brugge",
-      "Model%": 53.7,
-      "Sim%": 55.0,
-      "Agree": "1 eng",
-      "Verdict": "YES"
-    },
-    {
-      "Section": "FT DC",
-      "Selection": "1X",
-      "Model%": 46.3,
-      "Sim%": 45.0,
-      "Agree": "1 eng",
+      "Model%": 30.6,
+      "Sim%": 32.7,
+      "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "FT DC",
+      "Selection": "1X",
+      "Model%": 69.4,
+      "Sim%": 67.3,
+      "Agree": "6 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
       "Selection": "X2",
-      "Model%": 77.7,
-      "Sim%": 79.1,
-      "Agree": "1 eng",
+      "Model%": 57.5,
+      "Sim%": 60.4,
+      "Agree": "6 eng",
       "Verdict": "YES"
     },
     {
       "Section": "FT DC",
       "Selection": "12",
-      "Model%": 76.0,
-      "Sim%": 75.9,
-      "Agree": "1 eng",
+      "Model%": 73.1,
+      "Sim%": 72.3,
+      "Agree": "6 eng",
       "Verdict": "YES"
     },
     {
       "Section": "FT O/U",
       "Selection": "Over 2.5",
-      "Model%": 47.5,
-      "Sim%": 60.0,
-      "Agree": "1 eng",
-      "Verdict": "NO"
+      "Model%": 55.1,
+      "Sim%": 67.3,
+      "Agree": "6 eng",
+      "Verdict": "YES"
     },
     {
       "Section": "FT O/U",
       "Selection": "Under 2.5",
-      "Model%": 52.5,
-      "Sim%": 40.0,
-      "Agree": "1 eng",
-      "Verdict": "YES"
-    },
-    {
-      "Section": "BTTS",
-      "Selection": "Yes",
-      "Model%": 45.0,
-      "Sim%": 45.7,
-      "Agree": "1 eng",
+      "Model%": 44.9,
+      "Sim%": 32.7,
+      "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "BTTS",
-      "Selection": "No",
-      "Model%": 55.0,
-      "Sim%": 54.3,
-      "Agree": "1 eng",
+      "Selection": "Yes",
+      "Model%": 56.3,
+      "Sim%": 56.7,
+      "Agree": "6 eng",
       "Verdict": "YES"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 43.7,
+      "Sim%": 43.3,
+      "Agree": "6 eng",
+      "Verdict": "NO"
     }
   ],
   "locked_tip": {
     "status": "SECURED LOCK",
-    "section": "FT DC",
-    "selection": "X2",
-    "model": 77.7,
-    "sim": 79.1,
-    "agree": "1 eng",
+    "section": "HT DC",
+    "selection": "1X",
+    "model": 76.4,
+    "sim": 77.4,
+    "agree": "6 eng",
     "verdict": "HARD YES"
   },
   "backends": {
     "ft_result": [
-      "market"
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
     ],
     "ht_result": [
-      "market"
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
     ],
     "over25": [
-      "market"
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
     ],
     "btts": [
-      "market"
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
     ],
-    "ht_over15": [
-      "market"
-    ]
+    "ht_over15": []
   },
-  "generated_at": "2026-08-30T11:30:21.516297Z"
+  "generated_at": "2026-08-30T20:17:29.640552Z"
 }

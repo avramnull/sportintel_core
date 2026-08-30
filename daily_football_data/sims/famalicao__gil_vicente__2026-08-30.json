@@ -7,7 +7,7 @@
     "odds_home": 2.15,
     "odds_draw": 3.25,
     "odds_away": 3.3,
-    "n_simulations": 8000,
+    "n_simulations": 3000,
     "seed": 185,
     "odds_blend": 0.3
   },
@@ -16,284 +16,302 @@
     "div": "P1",
     "home": "Famalicao",
     "away": "Gil Vicente",
-    "models": "market-only (no models for Famalicao / Gil Vicente)",
+    "models": "Famalicao (home) + Gil Vicente (away)",
     "match_date": "2026-08-30 20:30"
   },
   "report": {
-    "n": 8000,
+    "n": 3000,
     "ft_model": {
-      "H": 0.4323289327824247,
-      "D": 0.2860022170714502,
-      "A": 0.2816688501461252
+      "H": 0.2971327065108046,
+      "D": 0.28250146164975454,
+      "A": 0.4203658318394409
     },
     "ft_sim": {
-      "H": 0.43425,
-      "D": 0.278125,
-      "A": 0.287625
+      "H": 0.29333333333333333,
+      "D": 0.2826666666666667,
+      "A": 0.424
     },
     "ht_model": {
-      "H": 0.3,
-      "D": 0.4,
-      "A": 0.3
+      "H": 0.23714763983370146,
+      "D": 0.413024557485459,
+      "A": 0.3498278026808395
     },
     "ht_sim": {
-      "H": 0.29825,
-      "D": 0.40225,
-      "A": 0.2995
+      "H": 0.231,
+      "D": 0.419,
+      "A": 0.35
     },
-    "over25_model": 0.4652219873150105,
-    "over25_sim": 0.567125,
-    "btts_model": 0.45,
-    "btts_sim": 0.449,
-    "ht_over15_model": 0.35,
-    "ht_over15_sim": 0.333125,
+    "over25_model": 0.40756683341890254,
+    "over25_sim": 0.5536666666666666,
+    "btts_model": 0.48336067917586795,
+    "btts_sim": 0.48,
+    "ht_over15_model": 0.5,
+    "ht_over15_sim": 0.3426666666666667,
     "dc_ft": {
-      "1X": 0.7183311498538749,
-      "X2": 0.5676710672175753,
-      "12": 0.7139977829285499
+      "1X": 0.5796341681605591,
+      "X2": 0.7028672934891954,
+      "12": 0.7174985383502455
     },
     "dc_ht": {
-      "1X": 0.7,
-      "X2": 0.7,
-      "12": 0.6
+      "1X": 0.6501721973191605,
+      "X2": 0.7628523601662985,
+      "12": 0.586975442514541
     },
     "top_ft": [
       [
         "0-0",
-        1234
-      ],
-      [
-        "2-1",
-        970
+        444
       ],
       [
         "1-2",
-        634
+        409
+      ],
+      [
+        "2-1",
+        275
       ],
       [
         "1-1",
-        543
-      ],
-      [
-        "2-0",
-        501
-      ],
-      [
-        "1-0",
-        500
+        241
       ],
       [
         "0-2",
-        350
+        206
       ],
       [
         "0-1",
-        335
+        186
+      ],
+      [
+        "1-0",
+        135
+      ],
+      [
+        "2-0",
+        127
       ]
     ],
     "top_ht": [
       [
         "0-0",
-        1959
+        775
       ],
       [
         "0-1",
-        1698
-      ],
-      [
-        "1-0",
-        1678
+        736
       ],
       [
         "1-1",
-        1259
+        482
       ],
       [
-        "2-1",
-        362
+        "1-0",
+        461
+      ],
+      [
+        "0-2",
+        158
       ]
     ],
     "xg": {
-      "home": 1.511,
-      "away": 1.196875,
-      "total": 2.707875
+      "home": 1.2013333333333334,
+      "away": 1.4483333333333333,
+      "total": 2.6496666666666666
     },
     "goal_rates": {
-      "home": 1.511,
-      "away": 1.196875
+      "home": 1.2013333333333334,
+      "away": 1.4483333333333333
     }
   },
   "table": [
     {
       "Section": "HT Winner",
       "Selection": "Famalicao",
-      "Model%": 30.0,
-      "Sim%": 29.8,
-      "Agree": "1 eng",
+      "Model%": 23.7,
+      "Sim%": 23.1,
+      "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "HT Winner",
       "Selection": "Draw",
-      "Model%": 40.0,
-      "Sim%": 40.2,
-      "Agree": "1 eng",
+      "Model%": 41.3,
+      "Sim%": 41.9,
+      "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "HT Winner",
       "Selection": "Gil Vicente",
-      "Model%": 30.0,
-      "Sim%": 29.9,
-      "Agree": "1 eng",
+      "Model%": 35.0,
+      "Sim%": 35.0,
+      "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "HT DC",
       "Selection": "1X",
-      "Model%": 70.0,
-      "Sim%": 70.0,
-      "Agree": "1 eng",
+      "Model%": 65.0,
+      "Sim%": 65.0,
+      "Agree": "6 eng",
       "Verdict": "YES"
     },
     {
       "Section": "HT DC",
       "Selection": "X2",
-      "Model%": 70.0,
-      "Sim%": 70.2,
-      "Agree": "1 eng",
+      "Model%": 76.3,
+      "Sim%": 76.9,
+      "Agree": "6 eng",
       "Verdict": "YES"
     },
     {
       "Section": "HT DC",
       "Selection": "12",
-      "Model%": 60.0,
-      "Sim%": 59.8,
-      "Agree": "1 eng",
+      "Model%": 58.7,
+      "Sim%": 58.1,
+      "Agree": "6 eng",
       "Verdict": "YES"
     },
     {
       "Section": "HT O/U",
       "Selection": "Over 1.5",
-      "Model%": 35.0,
-      "Sim%": 33.3,
-      "Agree": "1 eng",
+      "Model%": 50.0,
+      "Sim%": 34.3,
+      "Agree": "-",
       "Verdict": "NO"
     },
     {
       "Section": "HT O/U",
       "Selection": "Under 1.5",
-      "Model%": 65.0,
-      "Sim%": 66.7,
-      "Agree": "1 eng",
-      "Verdict": "YES"
+      "Model%": 50.0,
+      "Sim%": 65.7,
+      "Agree": "-",
+      "Verdict": "NO"
     },
     {
       "Section": "FT Winner",
       "Selection": "Famalicao",
-      "Model%": 43.2,
-      "Sim%": 43.4,
-      "Agree": "1 eng",
+      "Model%": 29.7,
+      "Sim%": 29.3,
+      "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "FT Winner",
       "Selection": "Draw",
-      "Model%": 28.6,
-      "Sim%": 27.8,
-      "Agree": "1 eng",
+      "Model%": 28.3,
+      "Sim%": 28.3,
+      "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "FT Winner",
       "Selection": "Gil Vicente",
-      "Model%": 28.2,
-      "Sim%": 28.8,
-      "Agree": "1 eng",
+      "Model%": 42.0,
+      "Sim%": 42.4,
+      "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "FT DC",
       "Selection": "1X",
-      "Model%": 71.8,
-      "Sim%": 71.2,
-      "Agree": "1 eng",
+      "Model%": 58.0,
+      "Sim%": 57.6,
+      "Agree": "6 eng",
       "Verdict": "YES"
     },
     {
       "Section": "FT DC",
       "Selection": "X2",
-      "Model%": 56.8,
-      "Sim%": 56.6,
-      "Agree": "1 eng",
+      "Model%": 70.3,
+      "Sim%": 70.7,
+      "Agree": "6 eng",
       "Verdict": "YES"
     },
     {
       "Section": "FT DC",
       "Selection": "12",
-      "Model%": 71.4,
-      "Sim%": 72.2,
-      "Agree": "1 eng",
+      "Model%": 71.7,
+      "Sim%": 71.7,
+      "Agree": "6 eng",
       "Verdict": "YES"
     },
     {
       "Section": "FT O/U",
       "Selection": "Over 2.5",
-      "Model%": 46.5,
-      "Sim%": 56.7,
-      "Agree": "1 eng",
+      "Model%": 40.8,
+      "Sim%": 55.4,
+      "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "FT O/U",
       "Selection": "Under 2.5",
-      "Model%": 53.5,
-      "Sim%": 43.3,
-      "Agree": "1 eng",
+      "Model%": 59.2,
+      "Sim%": 44.6,
+      "Agree": "6 eng",
       "Verdict": "YES"
     },
     {
       "Section": "BTTS",
       "Selection": "Yes",
-      "Model%": 45.0,
-      "Sim%": 44.9,
-      "Agree": "1 eng",
+      "Model%": 48.3,
+      "Sim%": 48.0,
+      "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "BTTS",
       "Selection": "No",
-      "Model%": 55.0,
-      "Sim%": 55.1,
-      "Agree": "1 eng",
-      "Verdict": "YES"
+      "Model%": 51.7,
+      "Sim%": 52.0,
+      "Agree": "6 eng",
+      "Verdict": "NO"
     }
   ],
   "locked_tip": {
     "status": "SECURED LOCK",
-    "section": "FT DC",
-    "selection": "1X",
-    "model": 71.8,
-    "sim": 71.2,
-    "agree": "1 eng",
+    "section": "HT DC",
+    "selection": "X2",
+    "model": 76.3,
+    "sim": 76.9,
+    "agree": "6 eng",
     "verdict": "HARD YES"
   },
   "backends": {
     "ft_result": [
-      "market"
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
     ],
     "ht_result": [
-      "market"
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
     ],
     "over25": [
-      "market"
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
     ],
     "btts": [
-      "market"
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
     ],
-    "ht_over15": [
-      "market"
-    ]
+    "ht_over15": []
   },
-  "generated_at": "2026-08-30T11:31:11.820680Z"
+  "generated_at": "2026-08-30T20:18:12.902950Z"
 }

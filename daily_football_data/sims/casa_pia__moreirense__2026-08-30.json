@@ -7,7 +7,7 @@
     "odds_home": 2.35,
     "odds_draw": 3.1,
     "odds_away": 3.1,
-    "n_simulations": 8000,
+    "n_simulations": 3000,
     "seed": 184,
     "odds_blend": 0.3
   },
@@ -16,284 +16,302 @@
     "div": "P1",
     "home": "Casa Pia",
     "away": "Moreirense",
-    "models": "market-only (no models for Casa Pia / Moreirense)",
+    "models": "Moreirense (away)",
     "match_date": "2026-08-30 18:00"
   },
   "report": {
-    "n": 8000,
+    "n": 3000,
     "ft_model": {
-      "H": 0.3974358974358974,
-      "D": 0.30128205128205127,
-      "A": 0.30128205128205127
+      "H": 0.4919394750784194,
+      "D": 0.2530048268630061,
+      "A": 0.2550556980585745
     },
     "ft_sim": {
-      "H": 0.39725,
-      "D": 0.30275,
-      "A": 0.3
+      "H": 0.502,
+      "D": 0.261,
+      "A": 0.237
     },
     "ht_model": {
-      "H": 0.3,
-      "D": 0.4,
-      "A": 0.3
+      "H": 0.3145668329134739,
+      "D": 0.3221768775006105,
+      "A": 0.3632562895859155
     },
     "ht_sim": {
-      "H": 0.293,
-      "D": 0.405625,
-      "A": 0.301375
+      "H": 0.314,
+      "D": 0.32566666666666666,
+      "A": 0.36033333333333334
     },
-    "over25_model": 0.4622168840082361,
-    "over25_sim": 0.548125,
-    "btts_model": 0.45,
-    "btts_sim": 0.445875,
-    "ht_over15_model": 0.35,
-    "ht_over15_sim": 0.33825,
+    "over25_model": 0.4346886029106701,
+    "over25_sim": 0.5503333333333333,
+    "btts_model": 0.4439954500233166,
+    "btts_sim": 0.43233333333333335,
+    "ht_over15_model": 0.5,
+    "ht_over15_sim": 0.33266666666666667,
     "dc_ft": {
-      "1X": 0.6987179487179487,
-      "X2": 0.6025641025641025,
-      "12": 0.6987179487179487
+      "1X": 0.7449443019414255,
+      "X2": 0.5080605249215806,
+      "12": 0.7469951731369939
     },
     "dc_ht": {
-      "1X": 0.7,
-      "X2": 0.7,
-      "12": 0.6
+      "1X": 0.6367437104140845,
+      "X2": 0.685433167086526,
+      "12": 0.6778231224993894
     },
     "top_ft": [
       [
         "0-0",
-        1356
+        434
       ],
       [
         "2-1",
-        883
-      ],
-      [
-        "1-2",
-        669
-      ],
-      [
-        "1-1",
-        563
-      ],
-      [
-        "1-0",
-        526
+        420
       ],
       [
         "2-0",
-        459
+        242
       ],
       [
-        "0-1",
-        375
+        "1-0",
+        240
       ],
       [
-        "0-2",
-        336
+        "1-1",
+        203
+      ],
+      [
+        "1-2",
+        203
+      ],
+      [
+        "3-0",
+        128
+      ],
+      [
+        "5-0",
+        123
       ]
     ],
     "top_ht": [
       [
-        "0-0",
-        1964
-      ],
-      [
         "0-1",
-        1678
+        754
       ],
       [
         "1-0",
-        1652
+        667
+      ],
+      [
+        "0-0",
+        581
       ],
       [
         "1-1",
-        1281
+        396
       ],
       [
         "1-2",
-        369
+        164
       ]
     ],
     "xg": {
-      "home": 1.4135,
-      "away": 1.219625,
-      "total": 2.633125
+      "home": 1.5853333333333333,
+      "away": 1.0466666666666666,
+      "total": 2.632
     },
     "goal_rates": {
-      "home": 1.4135,
-      "away": 1.219625
+      "home": 1.5853333333333333,
+      "away": 1.0466666666666666
     }
   },
   "table": [
     {
       "Section": "HT Winner",
       "Selection": "Casa Pia",
-      "Model%": 30.0,
-      "Sim%": 29.3,
-      "Agree": "1 eng",
+      "Model%": 31.5,
+      "Sim%": 31.4,
+      "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "HT Winner",
       "Selection": "Draw",
-      "Model%": 40.0,
-      "Sim%": 40.6,
-      "Agree": "1 eng",
+      "Model%": 32.2,
+      "Sim%": 32.6,
+      "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "HT Winner",
       "Selection": "Moreirense",
-      "Model%": 30.0,
-      "Sim%": 30.1,
-      "Agree": "1 eng",
+      "Model%": 36.3,
+      "Sim%": 36.0,
+      "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "HT DC",
       "Selection": "1X",
-      "Model%": 70.0,
-      "Sim%": 69.9,
-      "Agree": "1 eng",
+      "Model%": 63.7,
+      "Sim%": 64.0,
+      "Agree": "6 eng",
       "Verdict": "YES"
     },
     {
       "Section": "HT DC",
       "Selection": "X2",
-      "Model%": 70.0,
-      "Sim%": 70.7,
-      "Agree": "1 eng",
+      "Model%": 68.5,
+      "Sim%": 68.6,
+      "Agree": "6 eng",
       "Verdict": "YES"
     },
     {
       "Section": "HT DC",
       "Selection": "12",
-      "Model%": 60.0,
-      "Sim%": 59.4,
-      "Agree": "1 eng",
+      "Model%": 67.8,
+      "Sim%": 67.4,
+      "Agree": "6 eng",
       "Verdict": "YES"
     },
     {
       "Section": "HT O/U",
       "Selection": "Over 1.5",
-      "Model%": 35.0,
-      "Sim%": 33.8,
-      "Agree": "1 eng",
+      "Model%": 50.0,
+      "Sim%": 33.3,
+      "Agree": "-",
       "Verdict": "NO"
     },
     {
       "Section": "HT O/U",
       "Selection": "Under 1.5",
-      "Model%": 65.0,
-      "Sim%": 66.2,
-      "Agree": "1 eng",
-      "Verdict": "YES"
+      "Model%": 50.0,
+      "Sim%": 66.7,
+      "Agree": "-",
+      "Verdict": "NO"
     },
     {
       "Section": "FT Winner",
       "Selection": "Casa Pia",
-      "Model%": 39.7,
-      "Sim%": 39.7,
-      "Agree": "1 eng",
+      "Model%": 49.2,
+      "Sim%": 50.2,
+      "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "FT Winner",
       "Selection": "Draw",
-      "Model%": 30.1,
-      "Sim%": 30.3,
-      "Agree": "1 eng",
+      "Model%": 25.3,
+      "Sim%": 26.1,
+      "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "FT Winner",
       "Selection": "Moreirense",
-      "Model%": 30.1,
-      "Sim%": 30.0,
-      "Agree": "1 eng",
+      "Model%": 25.5,
+      "Sim%": 23.7,
+      "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "FT DC",
       "Selection": "1X",
-      "Model%": 69.9,
-      "Sim%": 70.0,
-      "Agree": "1 eng",
+      "Model%": 74.5,
+      "Sim%": 76.3,
+      "Agree": "6 eng",
       "Verdict": "YES"
     },
     {
       "Section": "FT DC",
       "Selection": "X2",
-      "Model%": 60.3,
-      "Sim%": 60.3,
-      "Agree": "1 eng",
-      "Verdict": "YES"
+      "Model%": 50.8,
+      "Sim%": 49.8,
+      "Agree": "6 eng",
+      "Verdict": "NO"
     },
     {
       "Section": "FT DC",
       "Selection": "12",
-      "Model%": 69.9,
-      "Sim%": 69.7,
-      "Agree": "1 eng",
+      "Model%": 74.7,
+      "Sim%": 73.9,
+      "Agree": "6 eng",
       "Verdict": "YES"
     },
     {
       "Section": "FT O/U",
       "Selection": "Over 2.5",
-      "Model%": 46.2,
-      "Sim%": 54.8,
-      "Agree": "1 eng",
+      "Model%": 43.5,
+      "Sim%": 55.0,
+      "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "FT O/U",
       "Selection": "Under 2.5",
-      "Model%": 53.8,
-      "Sim%": 45.2,
-      "Agree": "1 eng",
+      "Model%": 56.5,
+      "Sim%": 45.0,
+      "Agree": "6 eng",
       "Verdict": "YES"
     },
     {
       "Section": "BTTS",
       "Selection": "Yes",
-      "Model%": 45.0,
-      "Sim%": 44.6,
-      "Agree": "1 eng",
+      "Model%": 44.4,
+      "Sim%": 43.2,
+      "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "BTTS",
       "Selection": "No",
-      "Model%": 55.0,
-      "Sim%": 55.4,
-      "Agree": "1 eng",
+      "Model%": 55.6,
+      "Sim%": 56.8,
+      "Agree": "6 eng",
       "Verdict": "YES"
     }
   ],
   "locked_tip": {
     "status": "SECURED LOCK",
-    "section": "HT DC",
-    "selection": "1X",
-    "model": 70.0,
-    "sim": 69.9,
-    "agree": "1 eng",
+    "section": "FT DC",
+    "selection": "12",
+    "model": 74.7,
+    "sim": 73.9,
+    "agree": "6 eng",
     "verdict": "HARD YES"
   },
   "backends": {
     "ft_result": [
-      "market"
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
     ],
     "ht_result": [
-      "market"
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
     ],
     "over25": [
-      "market"
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
     ],
     "btts": [
-      "market"
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
     ],
-    "ht_over15": [
-      "market"
-    ]
+    "ht_over15": []
   },
-  "generated_at": "2026-08-30T11:31:11.617725Z"
+  "generated_at": "2026-08-30T20:18:11.596743Z"
 }

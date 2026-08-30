@@ -7,7 +7,7 @@
     "odds_home": 1.42,
     "odds_draw": 5.0,
     "odds_away": 7.0,
-    "n_simulations": 8000,
+    "n_simulations": 3000,
     "seed": 77,
     "odds_blend": 0.3
   },
@@ -16,256 +16,256 @@
     "div": "E0",
     "home": "Manchester United",
     "away": "Ipswich",
-    "models": "Ipswich (away)",
+    "models": "Manchester United (home) + Ipswich (away)",
     "match_date": "2026-08-30 16:30"
   },
   "report": {
-    "n": 8000,
+    "n": 3000,
     "ft_model": {
-      "H": 0.2793116317434292,
-      "D": 0.22921105484473536,
-      "A": 0.49147731341183537
+      "H": 0.33287958809713747,
+      "D": 0.2650950241114554,
+      "A": 0.40202538779140706
     },
     "ft_sim": {
-      "H": 0.28525,
-      "D": 0.234125,
-      "A": 0.480625
+      "H": 0.3433333333333333,
+      "D": 0.26566666666666666,
+      "A": 0.391
     },
     "ht_model": {
-      "H": 0.11191289362745536,
-      "D": 0.33939378513488083,
-      "A": 0.5486933212376638
+      "H": 0.1896624757851444,
+      "D": 0.3950561854154827,
+      "A": 0.415281338799373
     },
     "ht_sim": {
-      "H": 0.111375,
-      "D": 0.337875,
-      "A": 0.55075
+      "H": 0.18966666666666668,
+      "D": 0.3993333333333333,
+      "A": 0.411
     },
-    "over25_model": 0.4746095662617357,
-    "over25_sim": 0.595,
-    "btts_model": 0.4414484547121667,
-    "btts_sim": 0.437625,
-    "ht_over15_model": 0.44973984008144335,
-    "ht_over15_sim": 0.33775,
+    "over25_model": 0.5325635966123707,
+    "over25_sim": 0.6213333333333333,
+    "btts_model": 0.4794845798961444,
+    "btts_sim": 0.4826666666666667,
+    "ht_over15_model": 0.5,
+    "ht_over15_sim": 0.33866666666666667,
     "dc_ft": {
-      "1X": 0.5085226865881646,
-      "X2": 0.7206883682565708,
-      "12": 0.7707889451552645
+      "1X": 0.5979746122085929,
+      "X2": 0.6671204119028624,
+      "12": 0.7349049758885445
     },
     "dc_ht": {
-      "1X": 0.4513066787623362,
-      "X2": 0.8880871063725446,
-      "12": 0.6606062148651192
+      "1X": 0.5847186612006271,
+      "X2": 0.8103375242148557,
+      "12": 0.6049438145845174
     },
     "top_ft": [
       [
         "0-0",
-        1067
-      ],
-      [
-        "1-2",
-        1023
+        410
       ],
       [
         "2-1",
-        626
+        299
       ],
       [
-        "0-1",
-        558
-      ],
-      [
-        "0-2",
-        557
+        "1-2",
+        294
       ],
       [
         "1-1",
-        429
+        173
+      ],
+      [
+        "0-2",
+        166
+      ],
+      [
+        "0-1",
+        155
+      ],
+      [
+        "1-0",
+        120
       ],
       [
         "0-4",
-        366
-      ],
-      [
-        "0-5",
-        350
+        114
       ]
     ],
     "top_ht": [
       [
         "0-1",
-        3039
+        843
       ],
       [
         "0-0",
-        1630
+        724
       ],
       [
         "1-1",
-        1073
+        474
+      ],
+      [
+        "1-0",
+        417
       ],
       [
         "1-2",
-        711
-      ],
-      [
-        "0-2",
-        656
+        214
       ]
     ],
     "xg": {
-      "home": 1.1895,
-      "away": 1.600125,
-      "total": 2.789625
+      "home": 1.393,
+      "away": 1.51,
+      "total": 2.903
     },
     "goal_rates": {
-      "home": 1.1895,
-      "away": 1.600125
+      "home": 1.393,
+      "away": 1.51
     }
   },
   "table": [
     {
       "Section": "HT Winner",
       "Selection": "Manchester United",
-      "Model%": 11.2,
-      "Sim%": 11.1,
-      "Agree": "4 eng",
+      "Model%": 19.0,
+      "Sim%": 19.0,
+      "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "HT Winner",
       "Selection": "Draw",
-      "Model%": 33.9,
-      "Sim%": 33.8,
-      "Agree": "4 eng",
+      "Model%": 39.5,
+      "Sim%": 39.9,
+      "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "HT Winner",
       "Selection": "Ipswich",
-      "Model%": 54.9,
-      "Sim%": 55.1,
-      "Agree": "4 eng",
-      "Verdict": "YES"
-    },
-    {
-      "Section": "HT DC",
-      "Selection": "1X",
-      "Model%": 45.1,
-      "Sim%": 44.9,
-      "Agree": "4 eng",
+      "Model%": 41.5,
+      "Sim%": 41.1,
+      "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "HT DC",
+      "Selection": "1X",
+      "Model%": 58.5,
+      "Sim%": 58.9,
+      "Agree": "6 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
       "Selection": "X2",
-      "Model%": 88.8,
-      "Sim%": 88.9,
-      "Agree": "4 eng",
+      "Model%": 81.0,
+      "Sim%": 81.0,
+      "Agree": "6 eng",
       "Verdict": "YES"
     },
     {
       "Section": "HT DC",
       "Selection": "12",
-      "Model%": 66.1,
-      "Sim%": 66.2,
-      "Agree": "4 eng",
+      "Model%": 60.5,
+      "Sim%": 60.1,
+      "Agree": "6 eng",
       "Verdict": "YES"
     },
     {
       "Section": "HT O/U",
       "Selection": "Over 1.5",
-      "Model%": 45.0,
-      "Sim%": 33.8,
-      "Agree": "4 eng",
+      "Model%": 50.0,
+      "Sim%": 33.9,
+      "Agree": "-",
       "Verdict": "NO"
     },
     {
       "Section": "HT O/U",
       "Selection": "Under 1.5",
-      "Model%": 55.0,
-      "Sim%": 66.2,
-      "Agree": "4 eng",
-      "Verdict": "YES"
+      "Model%": 50.0,
+      "Sim%": 66.1,
+      "Agree": "-",
+      "Verdict": "NO"
     },
     {
       "Section": "FT Winner",
       "Selection": "Manchester United",
-      "Model%": 27.9,
-      "Sim%": 28.5,
-      "Agree": "4 eng",
+      "Model%": 33.3,
+      "Sim%": 34.3,
+      "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "FT Winner",
       "Selection": "Draw",
-      "Model%": 22.9,
-      "Sim%": 23.4,
-      "Agree": "4 eng",
+      "Model%": 26.5,
+      "Sim%": 26.6,
+      "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "FT Winner",
       "Selection": "Ipswich",
-      "Model%": 49.1,
-      "Sim%": 48.1,
-      "Agree": "4 eng",
+      "Model%": 40.2,
+      "Sim%": 39.1,
+      "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "FT DC",
       "Selection": "1X",
-      "Model%": 50.9,
-      "Sim%": 51.9,
-      "Agree": "4 eng",
-      "Verdict": "NO"
+      "Model%": 59.8,
+      "Sim%": 60.9,
+      "Agree": "6 eng",
+      "Verdict": "YES"
     },
     {
       "Section": "FT DC",
       "Selection": "X2",
-      "Model%": 72.1,
-      "Sim%": 71.5,
-      "Agree": "4 eng",
+      "Model%": 66.7,
+      "Sim%": 65.7,
+      "Agree": "6 eng",
       "Verdict": "YES"
     },
     {
       "Section": "FT DC",
       "Selection": "12",
-      "Model%": 77.1,
-      "Sim%": 76.6,
-      "Agree": "4 eng",
+      "Model%": 73.5,
+      "Sim%": 73.4,
+      "Agree": "6 eng",
       "Verdict": "YES"
     },
     {
       "Section": "FT O/U",
       "Selection": "Over 2.5",
-      "Model%": 47.5,
-      "Sim%": 59.5,
-      "Agree": "4 eng",
-      "Verdict": "NO"
+      "Model%": 53.3,
+      "Sim%": 62.1,
+      "Agree": "6 eng",
+      "Verdict": "YES"
     },
     {
       "Section": "FT O/U",
       "Selection": "Under 2.5",
-      "Model%": 52.5,
-      "Sim%": 40.5,
-      "Agree": "4 eng",
-      "Verdict": "YES"
+      "Model%": 46.7,
+      "Sim%": 37.9,
+      "Agree": "6 eng",
+      "Verdict": "NO"
     },
     {
       "Section": "BTTS",
       "Selection": "Yes",
-      "Model%": 44.1,
-      "Sim%": 43.8,
-      "Agree": "4 eng",
+      "Model%": 47.9,
+      "Sim%": 48.3,
+      "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "BTTS",
       "Selection": "No",
-      "Model%": 55.9,
-      "Sim%": 56.2,
-      "Agree": "4 eng",
+      "Model%": 52.1,
+      "Sim%": 51.7,
+      "Agree": "6 eng",
       "Verdict": "YES"
     }
   ],
@@ -273,9 +273,9 @@
     "status": "SECURED LOCK",
     "section": "HT DC",
     "selection": "X2",
-    "model": 88.8,
-    "sim": 88.9,
-    "agree": "4 eng",
+    "model": 81.0,
+    "sim": 81.0,
+    "agree": "6 eng",
     "verdict": "HARD YES"
   },
   "backends": {
@@ -283,32 +283,35 @@
       "cat",
       "lgbm",
       "rf",
+      "tf",
+      "torch",
       "xgb"
     ],
     "ht_result": [
       "cat",
       "lgbm",
       "rf",
+      "tf",
+      "torch",
       "xgb"
     ],
     "over25": [
       "cat",
       "lgbm",
       "rf",
+      "tf",
+      "torch",
       "xgb"
     ],
     "btts": [
       "cat",
       "lgbm",
       "rf",
+      "tf",
+      "torch",
       "xgb"
     ],
-    "ht_over15": [
-      "cat",
-      "lgbm",
-      "rf",
-      "xgb"
-    ]
+    "ht_over15": []
   },
-  "generated_at": "2026-08-30T11:30:48.595742Z"
+  "generated_at": "2026-08-30T20:17:45.288474Z"
 }

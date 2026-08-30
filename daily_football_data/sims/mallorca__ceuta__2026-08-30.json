@@ -7,7 +7,7 @@
     "odds_home": 1.39,
     "odds_draw": 4.2,
     "odds_away": 8.0,
-    "n_simulations": 8000,
+    "n_simulations": 3000,
     "seed": 226,
     "odds_blend": 0.3
   },
@@ -16,284 +16,302 @@
     "div": "SP2",
     "home": "Mallorca",
     "away": "Ceuta",
-    "models": "market-only (no models for Mallorca / Ceuta)",
+    "models": "Mallorca (home)",
     "match_date": "2026-08-30 18:00"
   },
   "report": {
-    "n": 8000,
+    "n": 3000,
     "ft_model": {
-      "H": 0.6645832509197358,
-      "D": 0.21994540923296016,
-      "A": 0.11547133984730408
+      "H": 0.33419761148241267,
+      "D": 0.1777668335396642,
+      "A": 0.4880355549779231
     },
     "ft_sim": {
-      "H": 0.664125,
-      "D": 0.2165,
-      "A": 0.119375
+      "H": 0.33666666666666667,
+      "D": 0.177,
+      "A": 0.48633333333333334
     },
     "ht_model": {
-      "H": 0.3,
-      "D": 0.4,
-      "A": 0.3
+      "H": 0.2575742288818516,
+      "D": 0.3315252631598562,
+      "A": 0.4109005079582923
     },
     "ht_sim": {
-      "H": 0.29825,
-      "D": 0.399125,
-      "A": 0.302625
+      "H": 0.268,
+      "D": 0.3263333333333333,
+      "A": 0.4056666666666667
     },
-    "over25_model": 0.4766636690647482,
-    "over25_sim": 0.6,
-    "btts_model": 0.45,
-    "btts_sim": 0.4485,
-    "ht_over15_model": 0.35,
-    "ht_over15_sim": 0.33475,
+    "over25_model": 0.5320282338848196,
+    "over25_sim": 0.689,
+    "btts_model": 0.5209854694494783,
+    "btts_sim": 0.5233333333333333,
+    "ht_over15_model": 0.5,
+    "ht_over15_sim": 0.339,
     "dc_ft": {
-      "1X": 0.8845286601526959,
-      "X2": 0.33541674908026425,
-      "12": 0.7800545907670399
+      "1X": 0.5119644450220768,
+      "X2": 0.6658023885175873,
+      "12": 0.8222331664603357
     },
     "dc_ht": {
-      "1X": 0.7,
-      "X2": 0.7,
-      "12": 0.6
+      "1X": 0.5890994920417079,
+      "X2": 0.7424257711181486,
+      "12": 0.6684747368401439
     },
     "top_ft": [
       [
+        "1-2",
+        430
+      ],
+      [
         "2-1",
-        1380
+        279
       ],
       [
         "0-0",
-        924
+        250
       ],
       [
-        "1-0",
-        813
+        "0-2",
+        170
       ],
       [
-        "2-0",
-        783
+        "0-1",
+        147
       ],
       [
-        "3-0",
-        479
+        "0-4",
+        138
       ],
       [
-        "5-0",
-        463
-      ],
-      [
-        "4-0",
-        428
+        "2-3",
+        133
       ],
       [
         "1-1",
-        403
+        127
       ]
     ],
     "top_ht": [
       [
-        "0-0",
-        1916
+        "0-1",
+        859
       ],
       [
-        "0-1",
-        1714
+        "0-0",
+        576
       ],
       [
         "1-0",
-        1692
+        548
       ],
       [
         "1-1",
-        1277
+        403
       ],
       [
         "1-2",
-        364
+        185
       ]
     ],
     "xg": {
-      "home": 1.979625,
-      "away": 0.854125,
-      "total": 2.83375
+      "home": 1.3976666666666666,
+      "away": 1.7276666666666667,
+      "total": 3.1253333333333333
     },
     "goal_rates": {
-      "home": 1.979625,
-      "away": 0.854125
+      "home": 1.3976666666666666,
+      "away": 1.7276666666666667
     }
   },
   "table": [
     {
       "Section": "HT Winner",
       "Selection": "Mallorca",
-      "Model%": 30.0,
-      "Sim%": 29.8,
-      "Agree": "1 eng",
+      "Model%": 25.8,
+      "Sim%": 26.8,
+      "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "HT Winner",
       "Selection": "Draw",
-      "Model%": 40.0,
-      "Sim%": 39.9,
-      "Agree": "1 eng",
+      "Model%": 33.2,
+      "Sim%": 32.6,
+      "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "HT Winner",
       "Selection": "Ceuta",
-      "Model%": 30.0,
-      "Sim%": 30.3,
-      "Agree": "1 eng",
+      "Model%": 41.1,
+      "Sim%": 40.6,
+      "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "HT DC",
       "Selection": "1X",
-      "Model%": 70.0,
-      "Sim%": 69.7,
-      "Agree": "1 eng",
+      "Model%": 58.9,
+      "Sim%": 59.4,
+      "Agree": "6 eng",
       "Verdict": "YES"
     },
     {
       "Section": "HT DC",
       "Selection": "X2",
-      "Model%": 70.0,
-      "Sim%": 70.2,
-      "Agree": "1 eng",
+      "Model%": 74.2,
+      "Sim%": 73.2,
+      "Agree": "6 eng",
       "Verdict": "YES"
     },
     {
       "Section": "HT DC",
       "Selection": "12",
-      "Model%": 60.0,
-      "Sim%": 60.1,
-      "Agree": "1 eng",
+      "Model%": 66.8,
+      "Sim%": 67.4,
+      "Agree": "6 eng",
       "Verdict": "YES"
     },
     {
       "Section": "HT O/U",
       "Selection": "Over 1.5",
-      "Model%": 35.0,
-      "Sim%": 33.5,
-      "Agree": "1 eng",
+      "Model%": 50.0,
+      "Sim%": 33.9,
+      "Agree": "-",
       "Verdict": "NO"
     },
     {
       "Section": "HT O/U",
       "Selection": "Under 1.5",
-      "Model%": 65.0,
-      "Sim%": 66.5,
-      "Agree": "1 eng",
-      "Verdict": "YES"
+      "Model%": 50.0,
+      "Sim%": 66.1,
+      "Agree": "-",
+      "Verdict": "NO"
     },
     {
       "Section": "FT Winner",
       "Selection": "Mallorca",
-      "Model%": 66.5,
-      "Sim%": 66.4,
-      "Agree": "1 eng",
-      "Verdict": "YES"
+      "Model%": 33.4,
+      "Sim%": 33.7,
+      "Agree": "6 eng",
+      "Verdict": "NO"
     },
     {
       "Section": "FT Winner",
       "Selection": "Draw",
-      "Model%": 22.0,
-      "Sim%": 21.6,
-      "Agree": "1 eng",
+      "Model%": 17.8,
+      "Sim%": 17.7,
+      "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "FT Winner",
       "Selection": "Ceuta",
-      "Model%": 11.5,
-      "Sim%": 11.9,
-      "Agree": "1 eng",
+      "Model%": 48.8,
+      "Sim%": 48.6,
+      "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "FT DC",
       "Selection": "1X",
-      "Model%": 88.5,
-      "Sim%": 88.1,
-      "Agree": "1 eng",
-      "Verdict": "YES"
-    },
-    {
-      "Section": "FT DC",
-      "Selection": "X2",
-      "Model%": 33.5,
-      "Sim%": 33.6,
-      "Agree": "1 eng",
+      "Model%": 51.2,
+      "Sim%": 51.4,
+      "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 66.6,
+      "Sim%": 66.3,
+      "Agree": "6 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
       "Selection": "12",
-      "Model%": 78.0,
-      "Sim%": 78.3,
-      "Agree": "1 eng",
+      "Model%": 82.2,
+      "Sim%": 82.3,
+      "Agree": "6 eng",
       "Verdict": "YES"
     },
     {
       "Section": "FT O/U",
       "Selection": "Over 2.5",
-      "Model%": 47.7,
-      "Sim%": 60.0,
-      "Agree": "1 eng",
-      "Verdict": "NO"
+      "Model%": 53.2,
+      "Sim%": 68.9,
+      "Agree": "6 eng",
+      "Verdict": "YES"
     },
     {
       "Section": "FT O/U",
       "Selection": "Under 2.5",
-      "Model%": 52.3,
-      "Sim%": 40.0,
-      "Agree": "1 eng",
-      "Verdict": "YES"
-    },
-    {
-      "Section": "BTTS",
-      "Selection": "Yes",
-      "Model%": 45.0,
-      "Sim%": 44.9,
-      "Agree": "1 eng",
+      "Model%": 46.8,
+      "Sim%": 31.1,
+      "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "BTTS",
-      "Selection": "No",
-      "Model%": 55.0,
-      "Sim%": 55.1,
-      "Agree": "1 eng",
+      "Selection": "Yes",
+      "Model%": 52.1,
+      "Sim%": 52.3,
+      "Agree": "6 eng",
       "Verdict": "YES"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 47.9,
+      "Sim%": 47.7,
+      "Agree": "6 eng",
+      "Verdict": "NO"
     }
   ],
   "locked_tip": {
     "status": "SECURED LOCK",
     "section": "FT DC",
-    "selection": "1X",
-    "model": 88.5,
-    "sim": 88.1,
-    "agree": "1 eng",
+    "selection": "12",
+    "model": 82.2,
+    "sim": 82.3,
+    "agree": "6 eng",
     "verdict": "HARD YES"
   },
   "backends": {
     "ft_result": [
-      "market"
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
     ],
     "ht_result": [
-      "market"
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
     ],
     "over25": [
-      "market"
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
     ],
     "btts": [
-      "market"
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
     ],
-    "ht_over15": [
-      "market"
-    ]
+    "ht_over15": []
   },
-  "generated_at": "2026-08-30T11:31:21.852598Z"
+  "generated_at": "2026-08-30T20:18:23.605056Z"
 }

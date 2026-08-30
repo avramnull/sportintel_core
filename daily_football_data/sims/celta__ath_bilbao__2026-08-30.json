@@ -7,7 +7,7 @@
     "odds_home": 2.38,
     "odds_draw": 3.2,
     "odds_away": 3.1,
-    "n_simulations": 8000,
+    "n_simulations": 3000,
     "seed": 216,
     "odds_blend": 0.3
   },
@@ -16,284 +16,302 @@
     "div": "SP1",
     "home": "Celta Vigo",
     "away": "Athletic Bilbao",
-    "models": "market-only (no models for Celta Vigo / Athletic Bilbao)",
+    "models": "Celta Vigo (home) + Athletic Bilbao (away)",
     "match_date": "2026-08-30 20:30"
   },
   "report": {
-    "n": 8000,
+    "n": 3000,
     "ft_model": {
-      "H": 0.3981697037810067,
-      "D": 0.2961387171871237,
-      "A": 0.3056915790318696
+      "H": 0.3693004961343257,
+      "D": 0.2945733919018533,
+      "A": 0.336126111963821
     },
     "ft_sim": {
-      "H": 0.394875,
-      "D": 0.295375,
-      "A": 0.30975
+      "H": 0.36333333333333334,
+      "D": 0.29133333333333333,
+      "A": 0.3453333333333333
     },
     "ht_model": {
-      "H": 0.3,
-      "D": 0.4,
-      "A": 0.3
+      "H": 0.32803908315463215,
+      "D": 0.4093208342596678,
+      "A": 0.2626400825857001
     },
     "ht_sim": {
-      "H": 0.297125,
-      "D": 0.3985,
-      "A": 0.304375
+      "H": 0.31933333333333336,
+      "D": 0.42333333333333334,
+      "A": 0.25733333333333336
     },
-    "over25_model": 0.46141230685822715,
-    "over25_sim": 0.558375,
-    "btts_model": 0.45,
-    "btts_sim": 0.44525,
-    "ht_over15_model": 0.35,
-    "ht_over15_sim": 0.3415,
+    "over25_model": 0.4565341294809562,
+    "over25_sim": 0.591,
+    "btts_model": 0.5210225423430448,
+    "btts_sim": 0.523,
+    "ht_over15_model": 0.5,
+    "ht_over15_sim": 0.33566666666666667,
     "dc_ft": {
-      "1X": 0.6943084209681304,
-      "X2": 0.6018302962189933,
-      "12": 0.7038612828128763
+      "1X": 0.663873888036179,
+      "X2": 0.6306995038656742,
+      "12": 0.7054266080981466
     },
     "dc_ht": {
-      "1X": 0.7,
-      "X2": 0.7,
-      "12": 0.6
+      "1X": 0.7373599174143,
+      "X2": 0.671960916845368,
+      "12": 0.5906791657403323
     },
     "top_ft": [
       [
         "0-0",
-        1335
+        426
       ],
       [
         "2-1",
-        883
+        378
       ],
       [
         "1-2",
-        666
+        333
       ],
       [
         "1-1",
-        540
-      ],
-      [
-        "2-0",
-        465
+        248
       ],
       [
         "1-0",
-        463
+        148
       ],
       [
-        "0-1",
-        370
+        "2-0",
+        140
       ],
       [
         "0-2",
-        360
+        136
+      ],
+      [
+        "0-1",
+        129
       ]
     ],
     "top_ht": [
       [
         "0-0",
-        1916
-      ],
-      [
-        "0-1",
-        1701
+        756
       ],
       [
         "1-0",
-        1651
+        700
+      ],
+      [
+        "0-1",
+        537
       ],
       [
         "1-1",
-        1272
+        514
       ],
       [
-        "1-2",
-        379
+        "2-0",
+        141
       ]
     ],
     "xg": {
-      "home": 1.419125,
-      "away": 1.256375,
-      "total": 2.6755
+      "home": 1.3866666666666667,
+      "away": 1.392,
+      "total": 2.7786666666666666
     },
     "goal_rates": {
-      "home": 1.419125,
-      "away": 1.256375
+      "home": 1.3866666666666667,
+      "away": 1.392
     }
   },
   "table": [
     {
       "Section": "HT Winner",
       "Selection": "Celta Vigo",
-      "Model%": 30.0,
-      "Sim%": 29.7,
-      "Agree": "1 eng",
+      "Model%": 32.8,
+      "Sim%": 31.9,
+      "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "HT Winner",
       "Selection": "Draw",
-      "Model%": 40.0,
-      "Sim%": 39.9,
-      "Agree": "1 eng",
+      "Model%": 40.9,
+      "Sim%": 42.3,
+      "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "HT Winner",
       "Selection": "Athletic Bilbao",
-      "Model%": 30.0,
-      "Sim%": 30.4,
-      "Agree": "1 eng",
+      "Model%": 26.3,
+      "Sim%": 25.7,
+      "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "HT DC",
       "Selection": "1X",
-      "Model%": 70.0,
-      "Sim%": 69.6,
-      "Agree": "1 eng",
+      "Model%": 73.7,
+      "Sim%": 74.3,
+      "Agree": "6 eng",
       "Verdict": "YES"
     },
     {
       "Section": "HT DC",
       "Selection": "X2",
-      "Model%": 70.0,
-      "Sim%": 70.3,
-      "Agree": "1 eng",
+      "Model%": 67.2,
+      "Sim%": 68.1,
+      "Agree": "6 eng",
       "Verdict": "YES"
     },
     {
       "Section": "HT DC",
       "Selection": "12",
-      "Model%": 60.0,
-      "Sim%": 60.1,
-      "Agree": "1 eng",
+      "Model%": 59.1,
+      "Sim%": 57.7,
+      "Agree": "6 eng",
       "Verdict": "YES"
     },
     {
       "Section": "HT O/U",
       "Selection": "Over 1.5",
-      "Model%": 35.0,
-      "Sim%": 34.2,
-      "Agree": "1 eng",
+      "Model%": 50.0,
+      "Sim%": 33.6,
+      "Agree": "-",
       "Verdict": "NO"
     },
     {
       "Section": "HT O/U",
       "Selection": "Under 1.5",
-      "Model%": 65.0,
-      "Sim%": 65.8,
-      "Agree": "1 eng",
-      "Verdict": "YES"
+      "Model%": 50.0,
+      "Sim%": 66.4,
+      "Agree": "-",
+      "Verdict": "NO"
     },
     {
       "Section": "FT Winner",
       "Selection": "Celta Vigo",
-      "Model%": 39.8,
-      "Sim%": 39.5,
-      "Agree": "1 eng",
+      "Model%": 36.9,
+      "Sim%": 36.3,
+      "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "FT Winner",
       "Selection": "Draw",
-      "Model%": 29.6,
-      "Sim%": 29.5,
-      "Agree": "1 eng",
+      "Model%": 29.5,
+      "Sim%": 29.1,
+      "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "FT Winner",
       "Selection": "Athletic Bilbao",
-      "Model%": 30.6,
-      "Sim%": 31.0,
-      "Agree": "1 eng",
+      "Model%": 33.6,
+      "Sim%": 34.5,
+      "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "FT DC",
       "Selection": "1X",
-      "Model%": 69.4,
-      "Sim%": 69.0,
-      "Agree": "1 eng",
+      "Model%": 66.4,
+      "Sim%": 65.5,
+      "Agree": "6 eng",
       "Verdict": "YES"
     },
     {
       "Section": "FT DC",
       "Selection": "X2",
-      "Model%": 60.2,
-      "Sim%": 60.5,
-      "Agree": "1 eng",
+      "Model%": 63.1,
+      "Sim%": 63.7,
+      "Agree": "6 eng",
       "Verdict": "YES"
     },
     {
       "Section": "FT DC",
       "Selection": "12",
-      "Model%": 70.4,
-      "Sim%": 70.5,
-      "Agree": "1 eng",
+      "Model%": 70.5,
+      "Sim%": 70.9,
+      "Agree": "6 eng",
       "Verdict": "YES"
     },
     {
       "Section": "FT O/U",
       "Selection": "Over 2.5",
-      "Model%": 46.1,
-      "Sim%": 55.8,
-      "Agree": "1 eng",
+      "Model%": 45.7,
+      "Sim%": 59.1,
+      "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "FT O/U",
       "Selection": "Under 2.5",
-      "Model%": 53.9,
-      "Sim%": 44.2,
-      "Agree": "1 eng",
+      "Model%": 54.3,
+      "Sim%": 40.9,
+      "Agree": "6 eng",
       "Verdict": "YES"
     },
     {
       "Section": "BTTS",
       "Selection": "Yes",
-      "Model%": 45.0,
-      "Sim%": 44.5,
-      "Agree": "1 eng",
-      "Verdict": "NO"
+      "Model%": 52.1,
+      "Sim%": 52.3,
+      "Agree": "6 eng",
+      "Verdict": "YES"
     },
     {
       "Section": "BTTS",
       "Selection": "No",
-      "Model%": 55.0,
-      "Sim%": 55.5,
-      "Agree": "1 eng",
-      "Verdict": "YES"
+      "Model%": 47.9,
+      "Sim%": 47.7,
+      "Agree": "6 eng",
+      "Verdict": "NO"
     }
   ],
   "locked_tip": {
     "status": "SECURED LOCK",
-    "section": "FT DC",
-    "selection": "12",
-    "model": 70.4,
-    "sim": 70.5,
-    "agree": "1 eng",
+    "section": "HT DC",
+    "selection": "1X",
+    "model": 73.7,
+    "sim": 74.3,
+    "agree": "6 eng",
     "verdict": "HARD YES"
   },
   "backends": {
     "ft_result": [
-      "market"
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
     ],
     "ht_result": [
-      "market"
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
     ],
     "over25": [
-      "market"
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
     ],
     "btts": [
-      "market"
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
     ],
-    "ht_over15": [
-      "market"
-    ]
+    "ht_over15": []
   },
-  "generated_at": "2026-08-30T11:31:19.806503Z"
+  "generated_at": "2026-08-30T20:18:20.973447Z"
 }

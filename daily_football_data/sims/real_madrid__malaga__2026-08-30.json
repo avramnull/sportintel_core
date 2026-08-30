@@ -7,7 +7,7 @@
     "odds_home": 1.11,
     "odds_draw": 9.0,
     "odds_away": 21.0,
-    "n_simulations": 8000,
+    "n_simulations": 3000,
     "seed": 214,
     "odds_blend": 0.3
   },
@@ -16,284 +16,302 @@
     "div": "SP1",
     "home": "Real Madrid",
     "away": "Malaga",
-    "models": "market-only (no models for Real Madrid / Malaga)",
+    "models": "Real Madrid (home) + Malaga (away)",
     "match_date": "2026-08-30 16:00"
   },
   "report": {
-    "n": 8000,
+    "n": 3000,
     "ft_model": {
-      "H": 0.8502024291497976,
-      "D": 0.1048582995951417,
-      "A": 0.04493927125506073
+      "H": 0.3738532567968802,
+      "D": 0.2217162998064778,
+      "A": 0.4044304433966421
     },
     "ft_sim": {
-      "H": 0.847875,
-      "D": 0.106625,
-      "A": 0.0455
+      "H": 0.37766666666666665,
+      "D": 0.22,
+      "A": 0.4023333333333333
     },
     "ht_model": {
-      "H": 0.3,
-      "D": 0.4,
-      "A": 0.3
+      "H": 0.1582918812441976,
+      "D": 0.39491632375113395,
+      "A": 0.44679179500466853
     },
     "ht_sim": {
-      "H": 0.292875,
-      "D": 0.402375,
-      "A": 0.30475
+      "H": 0.164,
+      "D": 0.3943333333333333,
+      "A": 0.44166666666666665
     },
-    "over25_model": 0.49227799227799224,
-    "over25_sim": 0.6725,
-    "btts_model": 0.45,
-    "btts_sim": 0.45075,
-    "ht_over15_model": 0.35,
-    "ht_over15_sim": 0.338625,
+    "over25_model": 0.6332167159423572,
+    "over25_sim": 0.707,
+    "btts_model": 0.5118057797617518,
+    "btts_sim": 0.5013333333333333,
+    "ht_over15_model": 0.5,
+    "ht_over15_sim": 0.3433333333333333,
     "dc_ft": {
-      "1X": 0.9550607287449393,
-      "X2": 0.14979757085020243,
-      "12": 0.8951417004048583
+      "1X": 0.595569556603358,
+      "X2": 0.6261467432031199,
+      "12": 0.7782837001935223
     },
     "dc_ht": {
-      "1X": 0.7,
-      "X2": 0.7,
-      "12": 0.6
+      "1X": 0.5532082049953315,
+      "X2": 0.8417081187558024,
+      "12": 0.6050836762488662
     },
     "top_ft": [
       [
+        "0-0",
+        353
+      ],
+      [
+        "1-2",
+        299
+      ],
+      [
         "2-1",
-        1803
-      ],
-      [
-        "1-0",
-        932
-      ],
-      [
-        "2-0",
-        911
-      ],
-      [
-        "3-0",
-        655
+        274
       ],
       [
         "5-0",
-        624
+        148
       ],
       [
-        "4-0",
-        615
+        "2-3",
+        129
       ],
       [
-        "3-2",
-        524
+        "0-4",
+        122
       ],
       [
-        "0-0",
-        441
+        "0-1",
+        120
+      ],
+      [
+        "0-3",
+        116
       ]
     ],
     "top_ht": [
       [
-        "0-0",
-        1917
-      ],
-      [
         "0-1",
-        1710
+        905
       ],
       [
-        "1-0",
-        1664
+        "0-0",
+        723
       ],
       [
         "1-1",
-        1302
+        460
       ],
       [
-        "0-2",
-        367
+        "1-0",
+        342
+      ],
+      [
+        "1-2",
+        223
       ]
     ],
     "xg": {
-      "home": 2.372375,
-      "away": 0.682,
-      "total": 3.054375
+      "home": 1.5956666666666666,
+      "away": 1.594,
+      "total": 3.1896666666666667
     },
     "goal_rates": {
-      "home": 2.372375,
-      "away": 0.682
+      "home": 1.5956666666666666,
+      "away": 1.594
     }
   },
   "table": [
     {
       "Section": "HT Winner",
       "Selection": "Real Madrid",
-      "Model%": 30.0,
-      "Sim%": 29.3,
-      "Agree": "1 eng",
+      "Model%": 15.8,
+      "Sim%": 16.4,
+      "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "HT Winner",
       "Selection": "Draw",
-      "Model%": 40.0,
-      "Sim%": 40.2,
-      "Agree": "1 eng",
+      "Model%": 39.5,
+      "Sim%": 39.4,
+      "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "HT Winner",
       "Selection": "Malaga",
-      "Model%": 30.0,
-      "Sim%": 30.5,
-      "Agree": "1 eng",
+      "Model%": 44.7,
+      "Sim%": 44.2,
+      "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "HT DC",
       "Selection": "1X",
-      "Model%": 70.0,
-      "Sim%": 69.5,
-      "Agree": "1 eng",
+      "Model%": 55.3,
+      "Sim%": 55.8,
+      "Agree": "6 eng",
       "Verdict": "YES"
     },
     {
       "Section": "HT DC",
       "Selection": "X2",
-      "Model%": 70.0,
-      "Sim%": 70.7,
-      "Agree": "1 eng",
+      "Model%": 84.2,
+      "Sim%": 83.6,
+      "Agree": "6 eng",
       "Verdict": "YES"
     },
     {
       "Section": "HT DC",
       "Selection": "12",
-      "Model%": 60.0,
-      "Sim%": 59.8,
-      "Agree": "1 eng",
+      "Model%": 60.5,
+      "Sim%": 60.6,
+      "Agree": "6 eng",
       "Verdict": "YES"
     },
     {
       "Section": "HT O/U",
       "Selection": "Over 1.5",
-      "Model%": 35.0,
-      "Sim%": 33.9,
-      "Agree": "1 eng",
+      "Model%": 50.0,
+      "Sim%": 34.3,
+      "Agree": "-",
       "Verdict": "NO"
     },
     {
       "Section": "HT O/U",
       "Selection": "Under 1.5",
-      "Model%": 65.0,
-      "Sim%": 66.1,
-      "Agree": "1 eng",
-      "Verdict": "YES"
+      "Model%": 50.0,
+      "Sim%": 65.7,
+      "Agree": "-",
+      "Verdict": "NO"
     },
     {
       "Section": "FT Winner",
       "Selection": "Real Madrid",
-      "Model%": 85.0,
-      "Sim%": 84.8,
-      "Agree": "1 eng",
-      "Verdict": "YES"
+      "Model%": 37.4,
+      "Sim%": 37.8,
+      "Agree": "6 eng",
+      "Verdict": "NO"
     },
     {
       "Section": "FT Winner",
       "Selection": "Draw",
-      "Model%": 10.5,
-      "Sim%": 10.7,
-      "Agree": "1 eng",
+      "Model%": 22.2,
+      "Sim%": 22.0,
+      "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "FT Winner",
       "Selection": "Malaga",
-      "Model%": 4.5,
-      "Sim%": 4.5,
-      "Agree": "1 eng",
+      "Model%": 40.4,
+      "Sim%": 40.2,
+      "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "FT DC",
       "Selection": "1X",
-      "Model%": 95.5,
-      "Sim%": 95.5,
-      "Agree": "1 eng",
+      "Model%": 59.6,
+      "Sim%": 59.8,
+      "Agree": "6 eng",
       "Verdict": "YES"
     },
     {
       "Section": "FT DC",
       "Selection": "X2",
-      "Model%": 15.0,
-      "Sim%": 15.2,
-      "Agree": "1 eng",
-      "Verdict": "NO"
+      "Model%": 62.6,
+      "Sim%": 62.2,
+      "Agree": "6 eng",
+      "Verdict": "YES"
     },
     {
       "Section": "FT DC",
       "Selection": "12",
-      "Model%": 89.5,
-      "Sim%": 89.3,
-      "Agree": "1 eng",
+      "Model%": 77.8,
+      "Sim%": 78.0,
+      "Agree": "6 eng",
       "Verdict": "YES"
     },
     {
       "Section": "FT O/U",
       "Selection": "Over 2.5",
-      "Model%": 49.2,
-      "Sim%": 67.2,
-      "Agree": "1 eng",
-      "Verdict": "NO"
+      "Model%": 63.3,
+      "Sim%": 70.7,
+      "Agree": "6 eng",
+      "Verdict": "YES"
     },
     {
       "Section": "FT O/U",
       "Selection": "Under 2.5",
-      "Model%": 50.8,
-      "Sim%": 32.8,
-      "Agree": "1 eng",
+      "Model%": 36.7,
+      "Sim%": 29.3,
+      "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "BTTS",
       "Selection": "Yes",
-      "Model%": 45.0,
-      "Sim%": 45.1,
-      "Agree": "1 eng",
+      "Model%": 51.2,
+      "Sim%": 50.1,
+      "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "BTTS",
       "Selection": "No",
-      "Model%": 55.0,
-      "Sim%": 54.9,
-      "Agree": "1 eng",
-      "Verdict": "YES"
+      "Model%": 48.8,
+      "Sim%": 49.9,
+      "Agree": "6 eng",
+      "Verdict": "NO"
     }
   ],
   "locked_tip": {
     "status": "SECURED LOCK",
-    "section": "FT DC",
-    "selection": "1X",
-    "model": 95.5,
-    "sim": 95.5,
-    "agree": "1 eng",
+    "section": "HT DC",
+    "selection": "X2",
+    "model": 84.2,
+    "sim": 83.6,
+    "agree": "6 eng",
     "verdict": "HARD YES"
   },
   "backends": {
     "ft_result": [
-      "market"
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
     ],
     "ht_result": [
-      "market"
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
     ],
     "over25": [
-      "market"
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
     ],
     "btts": [
-      "market"
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
     ],
-    "ht_over15": [
-      "market"
-    ]
+    "ht_over15": []
   },
-  "generated_at": "2026-08-30T11:31:18.608218Z"
+  "generated_at": "2026-08-30T20:18:18.280090Z"
 }

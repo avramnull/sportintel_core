@@ -7,7 +7,7 @@
     "odds_home": 2.45,
     "odds_draw": 3.3,
     "odds_away": 2.7,
-    "n_simulations": 8000,
+    "n_simulations": 3000,
     "seed": 193,
     "odds_blend": 0.3
   },
@@ -16,284 +16,302 @@
     "div": "SC0",
     "home": "St Mirren",
     "away": "Motherwell",
-    "models": "market-only (no models for St Mirren / Motherwell)",
+    "models": "St Mirren (home) + Motherwell (away)",
     "match_date": "2026-08-30 15:00"
   },
   "report": {
-    "n": 8000,
+    "n": 3000,
     "ft_model": {
-      "H": 0.37738246505717915,
-      "D": 0.2801778907242694,
-      "A": 0.3424396442185515
+      "H": 0.31828414195923577,
+      "D": 0.3529259751615398,
+      "A": 0.3287898828792245
     },
     "ft_sim": {
-      "H": 0.3675,
-      "D": 0.283,
-      "A": 0.3495
+      "H": 0.30866666666666664,
+      "D": 0.3526666666666667,
+      "A": 0.33866666666666667
     },
     "ht_model": {
-      "H": 0.3,
-      "D": 0.4,
-      "A": 0.3
+      "H": 0.3210665759067077,
+      "D": 0.41220233436192094,
+      "A": 0.26673108973137144
     },
     "ht_sim": {
-      "H": 0.2995,
-      "D": 0.403,
-      "A": 0.2975
+      "H": 0.312,
+      "D": 0.4066666666666667,
+      "A": 0.2813333333333333
     },
-    "over25_model": 0.4667800453514739,
-    "over25_sim": 0.5685,
-    "btts_model": 0.45,
-    "btts_sim": 0.455,
-    "ht_over15_model": 0.35,
-    "ht_over15_sim": 0.3365,
+    "over25_model": 0.3946406703009603,
+    "over25_sim": 0.5223333333333333,
+    "btts_model": 0.5074690311631929,
+    "btts_sim": 0.5016666666666667,
+    "ht_over15_model": 0.5,
+    "ht_over15_sim": 0.3476666666666667,
     "dc_ft": {
-      "1X": 0.6575603557814486,
-      "X2": 0.6226175349428209,
-      "12": 0.7198221092757306
+      "1X": 0.6712101171207756,
+      "X2": 0.6817158580407643,
+      "12": 0.6470740248384603
     },
     "dc_ht": {
-      "1X": 0.7,
-      "X2": 0.7,
-      "12": 0.6
+      "1X": 0.7332689102686286,
+      "X2": 0.6789334240932924,
+      "12": 0.5877976656380791
     },
     "top_ft": [
       [
         "0-0",
-        1261
-      ],
-      [
-        "2-1",
-        809
+        527
       ],
       [
         "1-2",
-        803
+        353
+      ],
+      [
+        "2-1",
+        317
       ],
       [
         "1-1",
-        533
-      ],
-      [
-        "2-0",
-        435
+        308
       ],
       [
         "0-2",
-        420
+        161
       ],
       [
         "1-0",
-        417
+        149
+      ],
+      [
+        "2-0",
+        147
       ],
       [
         "0-1",
-        386
+        141
       ]
     ],
     "top_ht": [
       [
         "0-0",
-        1948
+        729
       ],
       [
         "1-0",
-        1706
+        656
       ],
       [
         "0-1",
-        1654
+        572
       ],
       [
         "1-1",
-        1276
+        491
       ],
       [
-        "0-2",
-        381
+        "2-1",
+        152
       ]
     ],
     "xg": {
-      "home": 1.379125,
-      "away": 1.325375,
-      "total": 2.7045
+      "home": 1.248,
+      "away": 1.3103333333333333,
+      "total": 2.558333333333333
     },
     "goal_rates": {
-      "home": 1.379125,
-      "away": 1.325375
+      "home": 1.248,
+      "away": 1.3103333333333333
     }
   },
   "table": [
     {
       "Section": "HT Winner",
       "Selection": "St Mirren",
-      "Model%": 30.0,
-      "Sim%": 29.9,
-      "Agree": "1 eng",
+      "Model%": 32.1,
+      "Sim%": 31.2,
+      "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "HT Winner",
       "Selection": "Draw",
-      "Model%": 40.0,
-      "Sim%": 40.3,
-      "Agree": "1 eng",
+      "Model%": 41.2,
+      "Sim%": 40.7,
+      "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "HT Winner",
       "Selection": "Motherwell",
-      "Model%": 30.0,
-      "Sim%": 29.8,
-      "Agree": "1 eng",
+      "Model%": 26.7,
+      "Sim%": 28.1,
+      "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "HT DC",
       "Selection": "1X",
-      "Model%": 70.0,
-      "Sim%": 70.2,
-      "Agree": "1 eng",
+      "Model%": 73.3,
+      "Sim%": 71.9,
+      "Agree": "6 eng",
       "Verdict": "YES"
     },
     {
       "Section": "HT DC",
       "Selection": "X2",
-      "Model%": 70.0,
-      "Sim%": 70.0,
-      "Agree": "1 eng",
+      "Model%": 67.9,
+      "Sim%": 68.8,
+      "Agree": "6 eng",
       "Verdict": "YES"
     },
     {
       "Section": "HT DC",
       "Selection": "12",
-      "Model%": 60.0,
-      "Sim%": 59.7,
-      "Agree": "1 eng",
+      "Model%": 58.8,
+      "Sim%": 59.3,
+      "Agree": "6 eng",
       "Verdict": "YES"
     },
     {
       "Section": "HT O/U",
       "Selection": "Over 1.5",
-      "Model%": 35.0,
-      "Sim%": 33.7,
-      "Agree": "1 eng",
+      "Model%": 50.0,
+      "Sim%": 34.8,
+      "Agree": "-",
       "Verdict": "NO"
     },
     {
       "Section": "HT O/U",
       "Selection": "Under 1.5",
-      "Model%": 65.0,
-      "Sim%": 66.3,
-      "Agree": "1 eng",
-      "Verdict": "YES"
+      "Model%": 50.0,
+      "Sim%": 65.2,
+      "Agree": "-",
+      "Verdict": "NO"
     },
     {
       "Section": "FT Winner",
       "Selection": "St Mirren",
-      "Model%": 37.7,
-      "Sim%": 36.8,
-      "Agree": "1 eng",
+      "Model%": 31.8,
+      "Sim%": 30.9,
+      "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "FT Winner",
       "Selection": "Draw",
-      "Model%": 28.0,
-      "Sim%": 28.3,
-      "Agree": "1 eng",
+      "Model%": 35.3,
+      "Sim%": 35.3,
+      "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "FT Winner",
       "Selection": "Motherwell",
-      "Model%": 34.2,
-      "Sim%": 34.9,
-      "Agree": "1 eng",
+      "Model%": 32.9,
+      "Sim%": 33.9,
+      "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "FT DC",
       "Selection": "1X",
-      "Model%": 65.8,
-      "Sim%": 65.0,
-      "Agree": "1 eng",
+      "Model%": 67.1,
+      "Sim%": 66.1,
+      "Agree": "6 eng",
       "Verdict": "YES"
     },
     {
       "Section": "FT DC",
       "Selection": "X2",
-      "Model%": 62.3,
-      "Sim%": 63.2,
-      "Agree": "1 eng",
+      "Model%": 68.2,
+      "Sim%": 69.1,
+      "Agree": "6 eng",
       "Verdict": "YES"
     },
     {
       "Section": "FT DC",
       "Selection": "12",
-      "Model%": 72.0,
-      "Sim%": 71.7,
-      "Agree": "1 eng",
+      "Model%": 64.7,
+      "Sim%": 64.7,
+      "Agree": "6 eng",
       "Verdict": "YES"
     },
     {
       "Section": "FT O/U",
       "Selection": "Over 2.5",
-      "Model%": 46.7,
-      "Sim%": 56.9,
-      "Agree": "1 eng",
+      "Model%": 39.5,
+      "Sim%": 52.2,
+      "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "FT O/U",
       "Selection": "Under 2.5",
-      "Model%": 53.3,
-      "Sim%": 43.1,
-      "Agree": "1 eng",
+      "Model%": 60.5,
+      "Sim%": 47.8,
+      "Agree": "6 eng",
       "Verdict": "YES"
     },
     {
       "Section": "BTTS",
       "Selection": "Yes",
-      "Model%": 45.0,
-      "Sim%": 45.5,
-      "Agree": "1 eng",
+      "Model%": 50.7,
+      "Sim%": 50.2,
+      "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "BTTS",
       "Selection": "No",
-      "Model%": 55.0,
-      "Sim%": 54.5,
-      "Agree": "1 eng",
-      "Verdict": "YES"
+      "Model%": 49.3,
+      "Sim%": 49.8,
+      "Agree": "6 eng",
+      "Verdict": "NO"
     }
   ],
   "locked_tip": {
     "status": "SECURED LOCK",
-    "section": "FT DC",
-    "selection": "12",
-    "model": 72.0,
-    "sim": 71.7,
-    "agree": "1 eng",
+    "section": "HT DC",
+    "selection": "1X",
+    "model": 73.3,
+    "sim": 71.9,
+    "agree": "6 eng",
     "verdict": "HARD YES"
   },
   "backends": {
     "ft_result": [
-      "market"
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
     ],
     "ht_result": [
-      "market"
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
     ],
     "over25": [
-      "market"
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
     ],
     "btts": [
-      "market"
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
     ],
-    "ht_over15": [
-      "market"
-    ]
+    "ht_over15": []
   },
-  "generated_at": "2026-08-30T11:31:13.474093Z"
+  "generated_at": "2026-08-30T20:18:16.859353Z"
 }

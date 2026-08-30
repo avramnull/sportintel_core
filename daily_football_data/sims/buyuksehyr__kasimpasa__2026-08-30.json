@@ -7,7 +7,7 @@
     "odds_home": 1.61,
     "odds_draw": 3.8,
     "odds_away": 5.25,
-    "n_simulations": 8000,
+    "n_simulations": 3000,
     "seed": 235,
     "odds_blend": 0.3
   },
@@ -16,284 +16,302 @@
     "div": "T1",
     "home": "Buyuksehyr",
     "away": "Kasimpasa",
-    "models": "market-only (no models for Buyuksehyr / Kasimpasa)",
+    "models": "Buyuksehyr (home) + Kasimpasa (away)",
     "match_date": "2026-08-30 19:30"
   },
   "report": {
-    "n": 8000,
+    "n": 3000,
     "ft_model": {
-      "H": 0.5779174693298185,
-      "D": 0.24485450674237047,
-      "A": 0.177228023927811
+      "H": 0.30341700484411355,
+      "D": 0.24373448157023433,
+      "A": 0.4528485135856521
     },
     "ft_sim": {
-      "H": 0.57925,
-      "D": 0.251125,
-      "A": 0.169625
+      "H": 0.29133333333333333,
+      "D": 0.246,
+      "A": 0.46266666666666667
     },
     "ht_model": {
-      "H": 0.3,
-      "D": 0.4,
-      "A": 0.3
+      "H": 0.26247325912419767,
+      "D": 0.3955427711065106,
+      "A": 0.3419839697692918
     },
     "ht_sim": {
-      "H": 0.30425,
-      "D": 0.401875,
-      "A": 0.293875
+      "H": 0.25666666666666665,
+      "D": 0.403,
+      "A": 0.3403333333333333
     },
-    "over25_model": 0.47173913043478255,
-    "over25_sim": 0.595375,
-    "btts_model": 0.45,
-    "btts_sim": 0.459125,
-    "ht_over15_model": 0.35,
-    "ht_over15_sim": 0.3435,
+    "over25_model": 0.45558342893686143,
+    "over25_sim": 0.6443333333333333,
+    "btts_model": 0.5551370084869942,
+    "btts_sim": 0.5793333333333334,
+    "ht_over15_model": 0.5,
+    "ht_over15_sim": 0.3463333333333333,
     "dc_ft": {
-      "1X": 0.822771976072189,
-      "X2": 0.4220825306701815,
-      "12": 0.7551454932576295
+      "1X": 0.5471514864143479,
+      "X2": 0.6965829951558864,
+      "12": 0.7562655184297656
     },
     "dc_ht": {
-      "1X": 0.7,
-      "X2": 0.7,
-      "12": 0.6
+      "1X": 0.6580160302307083,
+      "X2": 0.7375267408758024,
+      "12": 0.6044572288934895
     },
     "top_ft": [
       [
-        "2-1",
-        1328
+        "1-2",
+        521
       ],
       [
         "0-0",
-        1094
+        308
       ],
       [
-        "1-0",
-        658
-      ],
-      [
-        "2-0",
-        622
+        "2-1",
+        304
       ],
       [
         "1-1",
-        494
+        242
       ],
       [
-        "5-0",
-        434
+        "0-1",
+        163
       ],
       [
-        "3-0",
-        418
+        "0-2",
+        150
       ],
       [
-        "1-2",
-        368
+        "2-3",
+        111
+      ],
+      [
+        "0-4",
+        108
       ]
     ],
     "top_ht": [
       [
+        "0-1",
+        725
+      ],
+      [
         "0-0",
-        1929
+        712
       ],
       [
         "1-0",
-        1679
-      ],
-      [
-        "0-1",
-        1644
+        524
       ],
       [
         "1-1",
-        1286
+        497
       ],
       [
-        "2-1",
-        397
+        "1-2",
+        153
       ]
     ],
     "xg": {
-      "home": 1.81025,
-      "away": 0.976625,
-      "total": 2.786875
+      "home": 1.31,
+      "away": 1.6233333333333333,
+      "total": 2.933333333333333
     },
     "goal_rates": {
-      "home": 1.81025,
-      "away": 0.976625
+      "home": 1.31,
+      "away": 1.6233333333333333
     }
   },
   "table": [
     {
       "Section": "HT Winner",
       "Selection": "Buyuksehyr",
-      "Model%": 30.0,
-      "Sim%": 30.4,
-      "Agree": "1 eng",
+      "Model%": 26.2,
+      "Sim%": 25.7,
+      "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "HT Winner",
       "Selection": "Draw",
-      "Model%": 40.0,
-      "Sim%": 40.2,
-      "Agree": "1 eng",
+      "Model%": 39.6,
+      "Sim%": 40.3,
+      "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "HT Winner",
       "Selection": "Kasimpasa",
-      "Model%": 30.0,
-      "Sim%": 29.4,
-      "Agree": "1 eng",
+      "Model%": 34.2,
+      "Sim%": 34.0,
+      "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "HT DC",
       "Selection": "1X",
-      "Model%": 70.0,
-      "Sim%": 70.6,
-      "Agree": "1 eng",
+      "Model%": 65.8,
+      "Sim%": 66.0,
+      "Agree": "6 eng",
       "Verdict": "YES"
     },
     {
       "Section": "HT DC",
       "Selection": "X2",
-      "Model%": 70.0,
-      "Sim%": 69.6,
-      "Agree": "1 eng",
+      "Model%": 73.8,
+      "Sim%": 74.3,
+      "Agree": "6 eng",
       "Verdict": "YES"
     },
     {
       "Section": "HT DC",
       "Selection": "12",
-      "Model%": 60.0,
-      "Sim%": 59.8,
-      "Agree": "1 eng",
+      "Model%": 60.4,
+      "Sim%": 59.7,
+      "Agree": "6 eng",
       "Verdict": "YES"
     },
     {
       "Section": "HT O/U",
       "Selection": "Over 1.5",
-      "Model%": 35.0,
-      "Sim%": 34.4,
-      "Agree": "1 eng",
+      "Model%": 50.0,
+      "Sim%": 34.6,
+      "Agree": "-",
       "Verdict": "NO"
     },
     {
       "Section": "HT O/U",
       "Selection": "Under 1.5",
-      "Model%": 65.0,
-      "Sim%": 65.6,
-      "Agree": "1 eng",
-      "Verdict": "YES"
+      "Model%": 50.0,
+      "Sim%": 65.4,
+      "Agree": "-",
+      "Verdict": "NO"
     },
     {
       "Section": "FT Winner",
       "Selection": "Buyuksehyr",
-      "Model%": 57.8,
-      "Sim%": 57.9,
-      "Agree": "1 eng",
-      "Verdict": "YES"
+      "Model%": 30.3,
+      "Sim%": 29.1,
+      "Agree": "6 eng",
+      "Verdict": "NO"
     },
     {
       "Section": "FT Winner",
       "Selection": "Draw",
-      "Model%": 24.5,
-      "Sim%": 25.1,
-      "Agree": "1 eng",
+      "Model%": 24.4,
+      "Sim%": 24.6,
+      "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "FT Winner",
       "Selection": "Kasimpasa",
-      "Model%": 17.7,
-      "Sim%": 17.0,
-      "Agree": "1 eng",
+      "Model%": 45.3,
+      "Sim%": 46.3,
+      "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "FT DC",
       "Selection": "1X",
-      "Model%": 82.3,
-      "Sim%": 83.0,
-      "Agree": "1 eng",
-      "Verdict": "YES"
-    },
-    {
-      "Section": "FT DC",
-      "Selection": "X2",
-      "Model%": 42.2,
-      "Sim%": 42.1,
-      "Agree": "1 eng",
+      "Model%": 54.7,
+      "Sim%": 53.7,
+      "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 69.7,
+      "Sim%": 70.9,
+      "Agree": "6 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
       "Selection": "12",
-      "Model%": 75.5,
-      "Sim%": 74.9,
-      "Agree": "1 eng",
+      "Model%": 75.6,
+      "Sim%": 75.4,
+      "Agree": "6 eng",
       "Verdict": "YES"
     },
     {
       "Section": "FT O/U",
       "Selection": "Over 2.5",
-      "Model%": 47.2,
-      "Sim%": 59.5,
-      "Agree": "1 eng",
+      "Model%": 45.6,
+      "Sim%": 64.4,
+      "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "FT O/U",
       "Selection": "Under 2.5",
-      "Model%": 52.8,
-      "Sim%": 40.5,
-      "Agree": "1 eng",
+      "Model%": 54.4,
+      "Sim%": 35.6,
+      "Agree": "6 eng",
       "Verdict": "YES"
     },
     {
       "Section": "BTTS",
       "Selection": "Yes",
-      "Model%": 45.0,
-      "Sim%": 45.9,
-      "Agree": "1 eng",
-      "Verdict": "NO"
+      "Model%": 55.5,
+      "Sim%": 57.9,
+      "Agree": "6 eng",
+      "Verdict": "YES"
     },
     {
       "Section": "BTTS",
       "Selection": "No",
-      "Model%": 55.0,
-      "Sim%": 54.1,
-      "Agree": "1 eng",
-      "Verdict": "YES"
+      "Model%": 44.5,
+      "Sim%": 42.1,
+      "Agree": "6 eng",
+      "Verdict": "NO"
     }
   ],
   "locked_tip": {
     "status": "SECURED LOCK",
     "section": "FT DC",
-    "selection": "1X",
-    "model": 82.3,
-    "sim": 83.0,
-    "agree": "1 eng",
+    "selection": "12",
+    "model": 75.6,
+    "sim": 75.4,
+    "agree": "6 eng",
     "verdict": "HARD YES"
   },
   "backends": {
     "ft_result": [
-      "market"
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
     ],
     "ht_result": [
-      "market"
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
     ],
     "over25": [
-      "market"
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
     ],
     "btts": [
-      "market"
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
     ],
-    "ht_over15": [
-      "market"
-    ]
+    "ht_over15": []
   },
-  "generated_at": "2026-08-30T11:31:23.697565Z"
+  "generated_at": "2026-08-30T20:18:27.601763Z"
 }

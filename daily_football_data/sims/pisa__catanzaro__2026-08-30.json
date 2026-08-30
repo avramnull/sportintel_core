@@ -7,7 +7,7 @@
     "odds_home": 1.79,
     "odds_draw": 3.1,
     "odds_away": 4.5,
-    "n_simulations": 8000,
+    "n_simulations": 3000,
     "seed": 169,
     "odds_blend": 0.3
   },
@@ -16,284 +16,302 @@
     "div": "I2",
     "home": "Pisa",
     "away": "Catanzaro",
-    "models": "market-only (no models for Pisa / Catanzaro)",
+    "models": "Pisa (home)",
     "match_date": "2026-08-30 20:00"
   },
   "report": {
-    "n": 8000,
+    "n": 3000,
     "ft_model": {
-      "H": 0.506278580242433,
-      "D": 0.29233505117224357,
-      "A": 0.20138636858532333
+      "H": 0.4317605514715148,
+      "D": 0.2891240898511384,
+      "A": 0.27911535867734666
     },
     "ft_sim": {
-      "H": 0.501875,
-      "D": 0.29525,
-      "A": 0.202875
+      "H": 0.421,
+      "D": 0.2806666666666667,
+      "A": 0.29833333333333334
     },
     "ht_model": {
-      "H": 0.3,
-      "D": 0.4,
-      "A": 0.3
+      "H": 0.3848704918341376,
+      "D": 0.3283046606962732,
+      "A": 0.2868248474695893
     },
     "ht_sim": {
-      "H": 0.29875,
-      "D": 0.39325,
-      "A": 0.308
+      "H": 0.3863333333333333,
+      "D": 0.3323333333333333,
+      "A": 0.2813333333333333
     },
-    "over25_model": 0.4671322160148975,
-    "over25_sim": 0.560625,
-    "btts_model": 0.45,
-    "btts_sim": 0.447125,
-    "ht_over15_model": 0.35,
-    "ht_over15_sim": 0.33375,
+    "over25_model": 0.5032118152916852,
+    "over25_sim": 0.683,
+    "btts_model": 0.6408756370827108,
+    "btts_sim": 0.6466666666666666,
+    "ht_over15_model": 0.5,
+    "ht_over15_sim": 0.335,
     "dc_ft": {
-      "1X": 0.7986136314146766,
-      "X2": 0.4937214197575669,
-      "12": 0.7076649488277563
+      "1X": 0.7208846413226533,
+      "X2": 0.5682394485284851,
+      "12": 0.7108759101488615
     },
     "dc_ht": {
-      "1X": 0.7,
-      "X2": 0.7,
-      "12": 0.6
+      "1X": 0.7131751525304107,
+      "X2": 0.6151295081658625,
+      "12": 0.6716953393037268
     },
     "top_ft": [
       [
-        "0-0",
-        1319
-      ],
-      [
         "2-1",
-        1075
-      ],
-      [
-        "1-0",
-        601
-      ],
-      [
-        "2-0",
-        559
-      ],
-      [
-        "1-1",
-        542
+        479
       ],
       [
         "1-2",
-        439
+        307
       ],
       [
-        "3-0",
-        352
+        "0-0",
+        297
       ],
       [
-        "5-0",
-        352
+        "1-1",
+        256
+      ],
+      [
+        "2-2",
+        148
+      ],
+      [
+        "3-2",
+        147
+      ],
+      [
+        "3-3",
+        141
+      ],
+      [
+        "1-0",
+        112
       ]
     ],
     "top_ht": [
       [
+        "1-0",
+        810
+      ],
+      [
         "0-0",
-        1898
+        610
       ],
       [
         "0-1",
-        1734
-      ],
-      [
-        "1-0",
-        1698
+        575
       ],
       [
         "1-1",
-        1248
+        387
       ],
       [
-        "1-2",
-        374
+        "2-1",
+        190
       ]
     ],
     "xg": {
-      "home": 1.657875,
-      "away": 1.030625,
-      "total": 2.6885
+      "home": 1.6526666666666667,
+      "away": 1.466,
+      "total": 3.1186666666666665
     },
     "goal_rates": {
-      "home": 1.657875,
-      "away": 1.030625
+      "home": 1.6526666666666667,
+      "away": 1.466
     }
   },
   "table": [
     {
       "Section": "HT Winner",
       "Selection": "Pisa",
-      "Model%": 30.0,
-      "Sim%": 29.9,
-      "Agree": "1 eng",
+      "Model%": 38.5,
+      "Sim%": 38.6,
+      "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "HT Winner",
       "Selection": "Draw",
-      "Model%": 40.0,
-      "Sim%": 39.3,
-      "Agree": "1 eng",
+      "Model%": 32.8,
+      "Sim%": 33.2,
+      "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "HT Winner",
       "Selection": "Catanzaro",
-      "Model%": 30.0,
-      "Sim%": 30.8,
-      "Agree": "1 eng",
+      "Model%": 28.7,
+      "Sim%": 28.1,
+      "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "HT DC",
       "Selection": "1X",
-      "Model%": 70.0,
-      "Sim%": 69.2,
-      "Agree": "1 eng",
+      "Model%": 71.3,
+      "Sim%": 71.9,
+      "Agree": "6 eng",
       "Verdict": "YES"
     },
     {
       "Section": "HT DC",
       "Selection": "X2",
-      "Model%": 70.0,
-      "Sim%": 70.1,
-      "Agree": "1 eng",
+      "Model%": 61.5,
+      "Sim%": 61.4,
+      "Agree": "6 eng",
       "Verdict": "YES"
     },
     {
       "Section": "HT DC",
       "Selection": "12",
-      "Model%": 60.0,
-      "Sim%": 60.7,
-      "Agree": "1 eng",
+      "Model%": 67.2,
+      "Sim%": 66.8,
+      "Agree": "6 eng",
       "Verdict": "YES"
     },
     {
       "Section": "HT O/U",
       "Selection": "Over 1.5",
-      "Model%": 35.0,
-      "Sim%": 33.4,
-      "Agree": "1 eng",
+      "Model%": 50.0,
+      "Sim%": 33.5,
+      "Agree": "-",
       "Verdict": "NO"
     },
     {
       "Section": "HT O/U",
       "Selection": "Under 1.5",
-      "Model%": 65.0,
-      "Sim%": 66.6,
-      "Agree": "1 eng",
-      "Verdict": "YES"
+      "Model%": 50.0,
+      "Sim%": 66.5,
+      "Agree": "-",
+      "Verdict": "NO"
     },
     {
       "Section": "FT Winner",
       "Selection": "Pisa",
-      "Model%": 50.6,
-      "Sim%": 50.2,
-      "Agree": "1 eng",
+      "Model%": 43.2,
+      "Sim%": 42.1,
+      "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "FT Winner",
       "Selection": "Draw",
-      "Model%": 29.2,
-      "Sim%": 29.5,
-      "Agree": "1 eng",
+      "Model%": 28.9,
+      "Sim%": 28.1,
+      "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "FT Winner",
       "Selection": "Catanzaro",
-      "Model%": 20.1,
-      "Sim%": 20.3,
-      "Agree": "1 eng",
+      "Model%": 27.9,
+      "Sim%": 29.8,
+      "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "FT DC",
       "Selection": "1X",
-      "Model%": 79.9,
-      "Sim%": 79.7,
-      "Agree": "1 eng",
+      "Model%": 72.1,
+      "Sim%": 70.2,
+      "Agree": "6 eng",
       "Verdict": "YES"
     },
     {
       "Section": "FT DC",
       "Selection": "X2",
-      "Model%": 49.4,
-      "Sim%": 49.8,
-      "Agree": "1 eng",
-      "Verdict": "NO"
+      "Model%": 56.8,
+      "Sim%": 57.9,
+      "Agree": "6 eng",
+      "Verdict": "YES"
     },
     {
       "Section": "FT DC",
       "Selection": "12",
-      "Model%": 70.8,
-      "Sim%": 70.5,
-      "Agree": "1 eng",
+      "Model%": 71.1,
+      "Sim%": 71.9,
+      "Agree": "6 eng",
       "Verdict": "YES"
     },
     {
       "Section": "FT O/U",
       "Selection": "Over 2.5",
-      "Model%": 46.7,
-      "Sim%": 56.1,
-      "Agree": "1 eng",
+      "Model%": 50.3,
+      "Sim%": 68.3,
+      "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "FT O/U",
       "Selection": "Under 2.5",
-      "Model%": 53.3,
-      "Sim%": 43.9,
-      "Agree": "1 eng",
-      "Verdict": "YES"
-    },
-    {
-      "Section": "BTTS",
-      "Selection": "Yes",
-      "Model%": 45.0,
-      "Sim%": 44.7,
-      "Agree": "1 eng",
+      "Model%": 49.7,
+      "Sim%": 31.7,
+      "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "BTTS",
-      "Selection": "No",
-      "Model%": 55.0,
-      "Sim%": 55.3,
-      "Agree": "1 eng",
+      "Selection": "Yes",
+      "Model%": 64.1,
+      "Sim%": 64.7,
+      "Agree": "6 eng",
       "Verdict": "YES"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 35.9,
+      "Sim%": 35.3,
+      "Agree": "6 eng",
+      "Verdict": "NO"
     }
   ],
   "locked_tip": {
     "status": "SECURED LOCK",
     "section": "FT DC",
     "selection": "1X",
-    "model": 79.9,
-    "sim": 79.7,
-    "agree": "1 eng",
+    "model": 72.1,
+    "sim": 70.2,
+    "agree": "6 eng",
     "verdict": "HARD YES"
   },
   "backends": {
     "ft_result": [
-      "market"
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
     ],
     "ht_result": [
-      "market"
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
     ],
     "over25": [
-      "market"
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
     ],
     "btts": [
-      "market"
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
     ],
-    "ht_over15": [
-      "market"
-    ]
+    "ht_over15": []
   },
-  "generated_at": "2026-08-30T11:31:08.517028Z"
+  "generated_at": "2026-08-30T20:18:03.839014Z"
 }

@@ -7,7 +7,7 @@
     "odds_home": 4.5,
     "odds_draw": 4.33,
     "odds_away": 1.67,
-    "n_simulations": 8000,
+    "n_simulations": 3000,
     "seed": 174,
     "odds_blend": 0.3
   },
@@ -16,284 +16,302 @@
     "div": "N1",
     "home": "Utrecht",
     "away": "PSV Eindhoven",
-    "models": "market-only (no models for Utrecht / PSV Eindhoven)",
+    "models": "Utrecht (home) + PSV Eindhoven (away)",
     "match_date": "2026-08-30 11:15"
   },
   "report": {
-    "n": 8000,
+    "n": 3000,
     "ft_model": {
-      "H": 0.21124357674746064,
-      "D": 0.21953720447195677,
-      "A": 0.5692192187805826
+      "H": 0.30149482693210194,
+      "D": 0.2770605179899893,
+      "A": 0.42144465507790874
     },
     "ft_sim": {
-      "H": 0.2085,
-      "D": 0.21425,
-      "A": 0.57725
+      "H": 0.298,
+      "D": 0.27266666666666667,
+      "A": 0.42933333333333334
     },
     "ht_model": {
-      "H": 0.3,
-      "D": 0.4,
-      "A": 0.3
+      "H": 0.33867486290813,
+      "D": 0.4139901788400364,
+      "A": 0.2473349582518336
     },
     "ht_sim": {
-      "H": 0.29675,
-      "D": 0.404875,
-      "A": 0.298375
+      "H": 0.3353333333333333,
+      "D": 0.42033333333333334,
+      "A": 0.24433333333333335
     },
-    "over25_model": 0.47315369261477047,
-    "over25_sim": 0.600125,
-    "btts_model": 0.45,
-    "btts_sim": 0.451125,
-    "ht_over15_model": 0.35,
-    "ht_over15_sim": 0.340875,
+    "over25_model": 0.6490192829761741,
+    "over25_sim": 0.6943333333333334,
+    "btts_model": 0.5103421411761538,
+    "btts_sim": 0.5043333333333333,
+    "ht_over15_model": 0.5,
+    "ht_over15_sim": 0.3546666666666667,
     "dc_ft": {
-      "1X": 0.43078078121941743,
-      "X2": 0.7887564232525394,
-      "12": 0.7804627955280432
+      "1X": 0.5785553449220913,
+      "X2": 0.698505173067898,
+      "12": 0.7229394820100107
     },
     "dc_ht": {
-      "1X": 0.7,
-      "X2": 0.7,
-      "12": 0.6
+      "1X": 0.7526650417481664,
+      "X2": 0.66132513709187,
+      "12": 0.5860098211599636
     },
     "top_ft": [
       [
-        "1-2",
-        1251
-      ],
-      [
         "0-0",
-        943
-      ],
-      [
-        "0-2",
-        710
-      ],
-      [
-        "0-1",
-        648
-      ],
-      [
-        "2-1",
-        444
-      ],
-      [
-        "0-4",
         422
       ],
       [
-        "1-1",
-        416
+        "1-2",
+        313
+      ],
+      [
+        "2-1",
+        202
       ],
       [
         "0-5",
-        384
+        151
+      ],
+      [
+        "1-1",
+        137
+      ],
+      [
+        "0-4",
+        137
+      ],
+      [
+        "3-3",
+        135
+      ],
+      [
+        "0-3",
+        129
       ]
     ],
     "top_ht": [
       [
         "0-0",
-        1952
-      ],
-      [
-        "0-1",
-        1672
+        740
       ],
       [
         "1-0",
-        1649
+        690
       ],
       [
         "1-1",
-        1287
+        521
       ],
       [
-        "1-2",
-        369
+        "0-1",
+        506
+      ],
+      [
+        "2-0",
+        163
       ]
     ],
     "xg": {
-      "home": 1.0365,
-      "away": 1.794125,
-      "total": 2.830625
+      "home": 1.4303333333333332,
+      "away": 1.7396666666666667,
+      "total": 3.17
     },
     "goal_rates": {
-      "home": 1.0365,
-      "away": 1.794125
+      "home": 1.4303333333333332,
+      "away": 1.7396666666666667
     }
   },
   "table": [
     {
       "Section": "HT Winner",
       "Selection": "Utrecht",
-      "Model%": 30.0,
-      "Sim%": 29.7,
-      "Agree": "1 eng",
+      "Model%": 33.9,
+      "Sim%": 33.5,
+      "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "HT Winner",
       "Selection": "Draw",
-      "Model%": 40.0,
-      "Sim%": 40.5,
-      "Agree": "1 eng",
+      "Model%": 41.4,
+      "Sim%": 42.0,
+      "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "HT Winner",
       "Selection": "PSV Eindhoven",
-      "Model%": 30.0,
-      "Sim%": 29.8,
-      "Agree": "1 eng",
+      "Model%": 24.7,
+      "Sim%": 24.4,
+      "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "HT DC",
       "Selection": "1X",
-      "Model%": 70.0,
-      "Sim%": 70.2,
-      "Agree": "1 eng",
+      "Model%": 75.3,
+      "Sim%": 75.6,
+      "Agree": "6 eng",
       "Verdict": "YES"
     },
     {
       "Section": "HT DC",
       "Selection": "X2",
-      "Model%": 70.0,
-      "Sim%": 70.3,
-      "Agree": "1 eng",
+      "Model%": 66.1,
+      "Sim%": 66.5,
+      "Agree": "6 eng",
       "Verdict": "YES"
     },
     {
       "Section": "HT DC",
       "Selection": "12",
-      "Model%": 60.0,
-      "Sim%": 59.5,
-      "Agree": "1 eng",
+      "Model%": 58.6,
+      "Sim%": 58.0,
+      "Agree": "6 eng",
       "Verdict": "YES"
     },
     {
       "Section": "HT O/U",
       "Selection": "Over 1.5",
-      "Model%": 35.0,
-      "Sim%": 34.1,
-      "Agree": "1 eng",
+      "Model%": 50.0,
+      "Sim%": 35.5,
+      "Agree": "-",
       "Verdict": "NO"
     },
     {
       "Section": "HT O/U",
       "Selection": "Under 1.5",
-      "Model%": 65.0,
-      "Sim%": 65.9,
-      "Agree": "1 eng",
-      "Verdict": "YES"
+      "Model%": 50.0,
+      "Sim%": 64.5,
+      "Agree": "-",
+      "Verdict": "NO"
     },
     {
       "Section": "FT Winner",
       "Selection": "Utrecht",
-      "Model%": 21.1,
-      "Sim%": 20.8,
-      "Agree": "1 eng",
+      "Model%": 30.1,
+      "Sim%": 29.8,
+      "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "FT Winner",
       "Selection": "Draw",
-      "Model%": 22.0,
-      "Sim%": 21.4,
-      "Agree": "1 eng",
+      "Model%": 27.7,
+      "Sim%": 27.3,
+      "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "FT Winner",
       "Selection": "PSV Eindhoven",
-      "Model%": 56.9,
-      "Sim%": 57.7,
-      "Agree": "1 eng",
-      "Verdict": "YES"
-    },
-    {
-      "Section": "FT DC",
-      "Selection": "1X",
-      "Model%": 43.1,
-      "Sim%": 42.3,
-      "Agree": "1 eng",
+      "Model%": 42.1,
+      "Sim%": 42.9,
+      "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "FT DC",
+      "Selection": "1X",
+      "Model%": 57.9,
+      "Sim%": 57.1,
+      "Agree": "6 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
       "Selection": "X2",
-      "Model%": 78.9,
-      "Sim%": 79.2,
-      "Agree": "1 eng",
+      "Model%": 69.9,
+      "Sim%": 70.2,
+      "Agree": "6 eng",
       "Verdict": "YES"
     },
     {
       "Section": "FT DC",
       "Selection": "12",
-      "Model%": 78.0,
-      "Sim%": 78.6,
-      "Agree": "1 eng",
+      "Model%": 72.3,
+      "Sim%": 72.7,
+      "Agree": "6 eng",
       "Verdict": "YES"
     },
     {
       "Section": "FT O/U",
       "Selection": "Over 2.5",
-      "Model%": 47.3,
-      "Sim%": 60.0,
-      "Agree": "1 eng",
-      "Verdict": "NO"
+      "Model%": 64.9,
+      "Sim%": 69.4,
+      "Agree": "6 eng",
+      "Verdict": "YES"
     },
     {
       "Section": "FT O/U",
       "Selection": "Under 2.5",
-      "Model%": 52.7,
-      "Sim%": 40.0,
-      "Agree": "1 eng",
-      "Verdict": "YES"
+      "Model%": 35.1,
+      "Sim%": 30.6,
+      "Agree": "6 eng",
+      "Verdict": "NO"
     },
     {
       "Section": "BTTS",
       "Selection": "Yes",
-      "Model%": 45.0,
-      "Sim%": 45.1,
-      "Agree": "1 eng",
+      "Model%": 51.0,
+      "Sim%": 50.4,
+      "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "BTTS",
       "Selection": "No",
-      "Model%": 55.0,
-      "Sim%": 54.9,
-      "Agree": "1 eng",
-      "Verdict": "YES"
+      "Model%": 49.0,
+      "Sim%": 49.6,
+      "Agree": "6 eng",
+      "Verdict": "NO"
     }
   ],
   "locked_tip": {
     "status": "SECURED LOCK",
-    "section": "FT DC",
-    "selection": "X2",
-    "model": 78.9,
-    "sim": 79.2,
-    "agree": "1 eng",
+    "section": "HT DC",
+    "selection": "1X",
+    "model": 75.3,
+    "sim": 75.6,
+    "agree": "6 eng",
     "verdict": "HARD YES"
   },
   "backends": {
     "ft_result": [
-      "market"
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
     ],
     "ht_result": [
-      "market"
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
     ],
     "over25": [
-      "market"
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
     ],
     "btts": [
-      "market"
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
     ],
-    "ht_over15": [
-      "market"
-    ]
+    "ht_over15": []
   },
-  "generated_at": "2026-08-30T11:31:09.552885Z"
+  "generated_at": "2026-08-30T20:18:05.252189Z"
 }

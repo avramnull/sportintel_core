@@ -7,7 +7,7 @@
     "odds_home": 4.0,
     "odds_draw": 4.33,
     "odds_away": 1.75,
-    "n_simulations": 8000,
+    "n_simulations": 3000,
     "seed": 176,
     "odds_blend": 0.3
   },
@@ -16,284 +16,302 @@
     "div": "N1",
     "home": "Willem II",
     "away": "Heerenveen",
-    "models": "market-only (no models for Willem II / Heerenveen)",
+    "models": "Willem II (home) + Heerenveen (away)",
     "match_date": "2026-08-30 13:30"
   },
   "report": {
-    "n": 8000,
+    "n": 3000,
     "ft_model": {
-      "H": 0.23755780233560622,
-      "D": 0.21945293518300807,
-      "A": 0.5429892624813857
+      "H": 0.3468577235542186,
+      "D": 0.2848324714921935,
+      "A": 0.36830980495358795
     },
     "ft_sim": {
-      "H": 0.238,
-      "D": 0.224875,
-      "A": 0.537125
+      "H": 0.349,
+      "D": 0.2816666666666667,
+      "A": 0.36933333333333335
     },
     "ht_model": {
-      "H": 0.3,
-      "D": 0.4,
-      "A": 0.3
+      "H": 0.3151101338163829,
+      "D": 0.4554892308998677,
+      "A": 0.22940063528374938
     },
     "ht_sim": {
-      "H": 0.29575,
-      "D": 0.40575,
-      "A": 0.2985
+      "H": 0.30433333333333334,
+      "D": 0.45766666666666667,
+      "A": 0.238
     },
-    "over25_model": 0.4732142857142857,
-    "over25_sim": 0.595625,
-    "btts_model": 0.45,
-    "btts_sim": 0.44625,
-    "ht_over15_model": 0.35,
-    "ht_over15_sim": 0.332375,
+    "over25_model": 0.5787584220780265,
+    "over25_sim": 0.7173333333333334,
+    "btts_model": 0.6468675004850188,
+    "btts_sim": 0.641,
+    "ht_over15_model": 0.5,
+    "ht_over15_sim": 0.3423333333333333,
     "dc_ft": {
-      "1X": 0.4570107375186143,
-      "X2": 0.7624421976643938,
-      "12": 0.7805470648169919
+      "1X": 0.6316901950464121,
+      "X2": 0.6531422764457815,
+      "12": 0.7151675285078065
     },
     "dc_ht": {
-      "1X": 0.7,
-      "X2": 0.7,
-      "12": 0.6
+      "1X": 0.7705993647162506,
+      "X2": 0.6848898661836171,
+      "12": 0.5445107691001323
     },
     "top_ft": [
       [
         "1-2",
-        1153
-      ],
-      [
-        "0-0",
-        988
-      ],
-      [
-        "0-1",
-        655
-      ],
-      [
-        "0-2",
-        612
+        378
       ],
       [
         "2-1",
-        513
+        347
+      ],
+      [
+        "0-0",
+        296
       ],
       [
         "1-1",
-        418
+        219
       ],
       [
-        "0-5",
-        405
+        "3-3",
+        168
       ],
       [
-        "0-4",
-        378
+        "2-2",
+        162
+      ],
+      [
+        "3-2",
+        126
+      ],
+      [
+        "2-3",
+        125
       ]
     ],
     "top_ht": [
       [
         "0-0",
-        1948
-      ],
-      [
-        "0-1",
-        1733
+        814
       ],
       [
         "1-0",
-        1660
+        650
       ],
       [
         "1-1",
-        1298
+        559
       ],
       [
-        "2-0",
-        353
+        "0-1",
+        509
+      ],
+      [
+        "2-1",
+        147
       ]
     ],
     "xg": {
-      "home": 1.08825,
-      "away": 1.717625,
-      "total": 2.805875
+      "home": 1.6206666666666667,
+      "away": 1.643,
+      "total": 3.2636666666666665
     },
     "goal_rates": {
-      "home": 1.08825,
-      "away": 1.717625
+      "home": 1.6206666666666667,
+      "away": 1.643
     }
   },
   "table": [
     {
       "Section": "HT Winner",
       "Selection": "Willem II",
-      "Model%": 30.0,
-      "Sim%": 29.6,
-      "Agree": "1 eng",
+      "Model%": 31.5,
+      "Sim%": 30.4,
+      "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "HT Winner",
       "Selection": "Draw",
-      "Model%": 40.0,
-      "Sim%": 40.6,
-      "Agree": "1 eng",
+      "Model%": 45.5,
+      "Sim%": 45.8,
+      "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "HT Winner",
       "Selection": "Heerenveen",
-      "Model%": 30.0,
-      "Sim%": 29.8,
-      "Agree": "1 eng",
+      "Model%": 22.9,
+      "Sim%": 23.8,
+      "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "HT DC",
       "Selection": "1X",
-      "Model%": 70.0,
-      "Sim%": 70.2,
-      "Agree": "1 eng",
+      "Model%": 77.1,
+      "Sim%": 76.2,
+      "Agree": "6 eng",
       "Verdict": "YES"
     },
     {
       "Section": "HT DC",
       "Selection": "X2",
-      "Model%": 70.0,
-      "Sim%": 70.4,
-      "Agree": "1 eng",
+      "Model%": 68.5,
+      "Sim%": 69.6,
+      "Agree": "6 eng",
       "Verdict": "YES"
     },
     {
       "Section": "HT DC",
       "Selection": "12",
-      "Model%": 60.0,
-      "Sim%": 59.4,
-      "Agree": "1 eng",
-      "Verdict": "YES"
+      "Model%": 54.5,
+      "Sim%": 54.2,
+      "Agree": "6 eng",
+      "Verdict": "NO"
     },
     {
       "Section": "HT O/U",
       "Selection": "Over 1.5",
-      "Model%": 35.0,
-      "Sim%": 33.2,
-      "Agree": "1 eng",
+      "Model%": 50.0,
+      "Sim%": 34.2,
+      "Agree": "-",
       "Verdict": "NO"
     },
     {
       "Section": "HT O/U",
       "Selection": "Under 1.5",
-      "Model%": 65.0,
-      "Sim%": 66.8,
-      "Agree": "1 eng",
-      "Verdict": "YES"
+      "Model%": 50.0,
+      "Sim%": 65.8,
+      "Agree": "-",
+      "Verdict": "NO"
     },
     {
       "Section": "FT Winner",
       "Selection": "Willem II",
-      "Model%": 23.8,
-      "Sim%": 23.8,
-      "Agree": "1 eng",
+      "Model%": 34.7,
+      "Sim%": 34.9,
+      "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "FT Winner",
       "Selection": "Draw",
-      "Model%": 21.9,
-      "Sim%": 22.5,
-      "Agree": "1 eng",
+      "Model%": 28.5,
+      "Sim%": 28.2,
+      "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "FT Winner",
       "Selection": "Heerenveen",
-      "Model%": 54.3,
-      "Sim%": 53.7,
-      "Agree": "1 eng",
-      "Verdict": "YES"
-    },
-    {
-      "Section": "FT DC",
-      "Selection": "1X",
-      "Model%": 45.7,
-      "Sim%": 46.3,
-      "Agree": "1 eng",
+      "Model%": 36.8,
+      "Sim%": 36.9,
+      "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "FT DC",
+      "Selection": "1X",
+      "Model%": 63.2,
+      "Sim%": 63.1,
+      "Agree": "6 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
       "Selection": "X2",
-      "Model%": 76.2,
-      "Sim%": 76.2,
-      "Agree": "1 eng",
+      "Model%": 65.3,
+      "Sim%": 65.1,
+      "Agree": "6 eng",
       "Verdict": "YES"
     },
     {
       "Section": "FT DC",
       "Selection": "12",
-      "Model%": 78.1,
-      "Sim%": 77.5,
-      "Agree": "1 eng",
+      "Model%": 71.5,
+      "Sim%": 71.8,
+      "Agree": "6 eng",
       "Verdict": "YES"
     },
     {
       "Section": "FT O/U",
       "Selection": "Over 2.5",
-      "Model%": 47.3,
-      "Sim%": 59.6,
-      "Agree": "1 eng",
-      "Verdict": "NO"
+      "Model%": 57.9,
+      "Sim%": 71.7,
+      "Agree": "6 eng",
+      "Verdict": "YES"
     },
     {
       "Section": "FT O/U",
       "Selection": "Under 2.5",
-      "Model%": 52.7,
-      "Sim%": 40.4,
-      "Agree": "1 eng",
-      "Verdict": "YES"
-    },
-    {
-      "Section": "BTTS",
-      "Selection": "Yes",
-      "Model%": 45.0,
-      "Sim%": 44.6,
-      "Agree": "1 eng",
+      "Model%": 42.1,
+      "Sim%": 28.3,
+      "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "BTTS",
-      "Selection": "No",
-      "Model%": 55.0,
-      "Sim%": 55.4,
-      "Agree": "1 eng",
+      "Selection": "Yes",
+      "Model%": 64.7,
+      "Sim%": 64.1,
+      "Agree": "6 eng",
       "Verdict": "YES"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 35.3,
+      "Sim%": 35.9,
+      "Agree": "6 eng",
+      "Verdict": "NO"
     }
   ],
   "locked_tip": {
     "status": "SECURED LOCK",
-    "section": "FT DC",
-    "selection": "12",
-    "model": 78.1,
-    "sim": 77.5,
-    "agree": "1 eng",
+    "section": "HT DC",
+    "selection": "1X",
+    "model": 77.1,
+    "sim": 76.2,
+    "agree": "6 eng",
     "verdict": "HARD YES"
   },
   "backends": {
     "ft_result": [
-      "market"
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
     ],
     "ht_result": [
-      "market"
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
     ],
     "over25": [
-      "market"
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
     ],
     "btts": [
-      "market"
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
     ],
-    "ht_over15": [
-      "market"
-    ]
+    "ht_over15": []
   },
-  "generated_at": "2026-08-30T11:31:09.971784Z"
+  "generated_at": "2026-08-30T20:18:08.250166Z"
 }

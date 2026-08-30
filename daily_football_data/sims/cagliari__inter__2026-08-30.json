@@ -7,7 +7,7 @@
     "odds_home": 7.0,
     "odds_draw": 4.5,
     "odds_away": 1.44,
-    "n_simulations": 8000,
+    "n_simulations": 3000,
     "seed": 156,
     "odds_blend": 0.3
   },
@@ -16,284 +16,302 @@
     "div": "I1",
     "home": "Cagliari",
     "away": "Inter",
-    "models": "market-only (no models for Cagliari / Inter)",
+    "models": "Cagliari (home) + Inter (away)",
     "match_date": "2026-08-30 19:45"
   },
   "report": {
-    "n": 8000,
+    "n": 3000,
     "ft_model": {
-      "H": 0.13483146067415733,
-      "D": 0.20973782771535582,
-      "A": 0.6554307116104869
+      "H": 0.48779230178860444,
+      "D": 0.1903759635608643,
+      "A": 0.3218317346505313
     },
     "ft_sim": {
-      "H": 0.1345,
-      "D": 0.20825,
-      "A": 0.65725
+      "H": 0.49566666666666664,
+      "D": 0.18666666666666668,
+      "A": 0.31766666666666665
     },
     "ht_model": {
-      "H": 0.3,
-      "D": 0.4,
-      "A": 0.3
+      "H": 0.38663755362954066,
+      "D": 0.3896507061469184,
+      "A": 0.22371174022354087
     },
     "ht_sim": {
-      "H": 0.303125,
-      "D": 0.398375,
-      "A": 0.2985
+      "H": 0.37666666666666665,
+      "D": 0.391,
+      "A": 0.23233333333333334
     },
-    "over25_model": 0.47559523809523807,
-    "over25_sim": 0.606875,
-    "btts_model": 0.45,
-    "btts_sim": 0.45175,
-    "ht_over15_model": 0.35,
-    "ht_over15_sim": 0.3385,
+    "over25_model": 0.5143155722383028,
+    "over25_sim": 0.6963333333333334,
+    "btts_model": 0.5691639567467461,
+    "btts_sim": 0.5756666666666667,
+    "ht_over15_model": 0.5,
+    "ht_over15_sim": 0.33566666666666667,
     "dc_ft": {
-      "1X": 0.3445692883895132,
-      "X2": 0.8651685393258428,
-      "12": 0.7902621722846442
+      "1X": 0.6781682653494687,
+      "X2": 0.5122076982113956,
+      "12": 0.8096240364391357
     },
     "dc_ht": {
-      "1X": 0.7,
-      "X2": 0.7,
-      "12": 0.6
+      "1X": 0.7762882597764591,
+      "X2": 0.6133624463704592,
+      "12": 0.6103492938530816
     },
     "top_ft": [
       [
+        "2-1",
+        458
+      ],
+      [
         "1-2",
-        1431
+        322
       ],
       [
         "0-0",
-        912
+        249
       ],
       [
-        "0-1",
-        799
+        "1-1",
+        164
       ],
       [
-        "0-2",
-        744
+        "3-2",
+        154
       ],
       [
-        "0-4",
-        462
+        "2-0",
+        151
       ],
       [
-        "0-3",
-        461
+        "1-0",
+        148
       ],
       [
-        "0-5",
-        419
-      ],
-      [
-        "2-3",
-        386
+        "5-0",
+        127
       ]
     ],
     "top_ht": [
       [
+        "1-0",
+        819
+      ],
+      [
         "0-0",
-        1904
+        680
       ],
       [
         "0-1",
-        1699
-      ],
-      [
-        "1-0",
-        1689
+        494
       ],
       [
         "1-1",
-        1283
+        493
       ],
       [
-        "2-1",
-        381
+        "2-0",
+        161
       ]
     ],
     "xg": {
-      "home": 0.882625,
-      "away": 1.948625,
-      "total": 2.83125
+      "home": 1.7666666666666666,
+      "away": 1.3863333333333334,
+      "total": 3.153
     },
     "goal_rates": {
-      "home": 0.882625,
-      "away": 1.948625
+      "home": 1.7666666666666666,
+      "away": 1.3863333333333334
     }
   },
   "table": [
     {
       "Section": "HT Winner",
       "Selection": "Cagliari",
-      "Model%": 30.0,
-      "Sim%": 30.3,
-      "Agree": "1 eng",
+      "Model%": 38.7,
+      "Sim%": 37.7,
+      "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "HT Winner",
       "Selection": "Draw",
-      "Model%": 40.0,
-      "Sim%": 39.8,
-      "Agree": "1 eng",
+      "Model%": 39.0,
+      "Sim%": 39.1,
+      "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "HT Winner",
       "Selection": "Inter",
-      "Model%": 30.0,
-      "Sim%": 29.8,
-      "Agree": "1 eng",
+      "Model%": 22.4,
+      "Sim%": 23.2,
+      "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "HT DC",
       "Selection": "1X",
-      "Model%": 70.0,
-      "Sim%": 70.2,
-      "Agree": "1 eng",
+      "Model%": 77.6,
+      "Sim%": 76.8,
+      "Agree": "6 eng",
       "Verdict": "YES"
     },
     {
       "Section": "HT DC",
       "Selection": "X2",
-      "Model%": 70.0,
-      "Sim%": 69.7,
-      "Agree": "1 eng",
+      "Model%": 61.3,
+      "Sim%": 62.3,
+      "Agree": "6 eng",
       "Verdict": "YES"
     },
     {
       "Section": "HT DC",
       "Selection": "12",
-      "Model%": 60.0,
-      "Sim%": 60.2,
-      "Agree": "1 eng",
+      "Model%": 61.0,
+      "Sim%": 60.9,
+      "Agree": "6 eng",
       "Verdict": "YES"
     },
     {
       "Section": "HT O/U",
       "Selection": "Over 1.5",
-      "Model%": 35.0,
-      "Sim%": 33.9,
-      "Agree": "1 eng",
+      "Model%": 50.0,
+      "Sim%": 33.6,
+      "Agree": "-",
       "Verdict": "NO"
     },
     {
       "Section": "HT O/U",
       "Selection": "Under 1.5",
-      "Model%": 65.0,
-      "Sim%": 66.1,
-      "Agree": "1 eng",
-      "Verdict": "YES"
+      "Model%": 50.0,
+      "Sim%": 66.4,
+      "Agree": "-",
+      "Verdict": "NO"
     },
     {
       "Section": "FT Winner",
       "Selection": "Cagliari",
-      "Model%": 13.5,
-      "Sim%": 13.5,
-      "Agree": "1 eng",
+      "Model%": 48.8,
+      "Sim%": 49.6,
+      "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "FT Winner",
       "Selection": "Draw",
-      "Model%": 21.0,
-      "Sim%": 20.8,
-      "Agree": "1 eng",
+      "Model%": 19.0,
+      "Sim%": 18.7,
+      "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "FT Winner",
       "Selection": "Inter",
-      "Model%": 65.5,
-      "Sim%": 65.7,
-      "Agree": "1 eng",
-      "Verdict": "YES"
-    },
-    {
-      "Section": "FT DC",
-      "Selection": "1X",
-      "Model%": 34.5,
-      "Sim%": 34.3,
-      "Agree": "1 eng",
+      "Model%": 32.2,
+      "Sim%": 31.8,
+      "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "FT DC",
-      "Selection": "X2",
-      "Model%": 86.5,
-      "Sim%": 86.5,
-      "Agree": "1 eng",
+      "Selection": "1X",
+      "Model%": 67.8,
+      "Sim%": 68.2,
+      "Agree": "6 eng",
       "Verdict": "YES"
     },
     {
       "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 51.2,
+      "Sim%": 50.4,
+      "Agree": "6 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
       "Selection": "12",
-      "Model%": 79.0,
-      "Sim%": 79.2,
-      "Agree": "1 eng",
+      "Model%": 81.0,
+      "Sim%": 81.3,
+      "Agree": "6 eng",
       "Verdict": "YES"
     },
     {
       "Section": "FT O/U",
       "Selection": "Over 2.5",
-      "Model%": 47.6,
-      "Sim%": 60.7,
-      "Agree": "1 eng",
+      "Model%": 51.4,
+      "Sim%": 69.6,
+      "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "FT O/U",
       "Selection": "Under 2.5",
-      "Model%": 52.4,
-      "Sim%": 39.3,
-      "Agree": "1 eng",
-      "Verdict": "YES"
-    },
-    {
-      "Section": "BTTS",
-      "Selection": "Yes",
-      "Model%": 45.0,
-      "Sim%": 45.2,
-      "Agree": "1 eng",
+      "Model%": 48.6,
+      "Sim%": 30.4,
+      "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "BTTS",
-      "Selection": "No",
-      "Model%": 55.0,
-      "Sim%": 54.8,
-      "Agree": "1 eng",
+      "Selection": "Yes",
+      "Model%": 56.9,
+      "Sim%": 57.6,
+      "Agree": "6 eng",
       "Verdict": "YES"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 43.1,
+      "Sim%": 42.4,
+      "Agree": "6 eng",
+      "Verdict": "NO"
     }
   ],
   "locked_tip": {
     "status": "SECURED LOCK",
     "section": "FT DC",
-    "selection": "X2",
-    "model": 86.5,
-    "sim": 86.5,
-    "agree": "1 eng",
+    "selection": "12",
+    "model": 81.0,
+    "sim": 81.3,
+    "agree": "6 eng",
     "verdict": "HARD YES"
   },
   "backends": {
     "ft_result": [
-      "market"
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
     ],
     "ht_result": [
-      "market"
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
     ],
     "over25": [
-      "market"
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
     ],
     "btts": [
-      "market"
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
     ],
-    "ht_over15": [
-      "market"
-    ]
+    "ht_over15": []
   },
-  "generated_at": "2026-08-30T11:31:05.882901Z"
+  "generated_at": "2026-08-30T20:17:59.304188Z"
 }

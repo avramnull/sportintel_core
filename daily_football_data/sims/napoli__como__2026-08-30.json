@@ -7,7 +7,7 @@
     "odds_home": 2.5,
     "odds_draw": 3.0,
     "odds_away": 3.1,
-    "n_simulations": 8000,
+    "n_simulations": 3000,
     "seed": 155,
     "odds_blend": 0.3
   },
@@ -16,284 +16,302 @@
     "div": "I1",
     "home": "Napoli",
     "away": "Como",
-    "models": "market-only (no models for Napoli / Como)",
+    "models": "Napoli (home) + Como (away)",
     "match_date": "2026-08-30 17:30"
   },
   "report": {
-    "n": 8000,
+    "n": 3000,
     "ft_model": {
-      "H": 0.3788187372708758,
-      "D": 0.3156822810590631,
-      "A": 0.3054989816700611
+      "H": 0.3582881424862835,
+      "D": 0.3230770077753326,
+      "A": 0.3186348497383839
     },
     "ft_sim": {
-      "H": 0.3785,
-      "D": 0.3095,
-      "A": 0.312
+      "H": 0.351,
+      "D": 0.3283333333333333,
+      "A": 0.32066666666666666
     },
     "ht_model": {
-      "H": 0.3,
-      "D": 0.4,
-      "A": 0.3
+      "H": 0.25719540753165376,
+      "D": 0.4025600950571323,
+      "A": 0.340244497411214
     },
     "ht_sim": {
-      "H": 0.29625,
-      "D": 0.399875,
-      "A": 0.303875
+      "H": 0.261,
+      "D": 0.4093333333333333,
+      "A": 0.32966666666666666
     },
-    "over25_model": 0.45838709677419354,
-    "over25_sim": 0.54775,
-    "btts_model": 0.45,
-    "btts_sim": 0.44525,
-    "ht_over15_model": 0.35,
-    "ht_over15_sim": 0.344375,
+    "over25_model": 0.416572086081949,
+    "over25_sim": 0.5476666666666666,
+    "btts_model": 0.5090717138262804,
+    "btts_sim": 0.5146666666666667,
+    "ht_over15_model": 0.5,
+    "ht_over15_sim": 0.3373333333333333,
     "dc_ft": {
-      "1X": 0.6945010183299389,
-      "X2": 0.6211812627291242,
-      "12": 0.6843177189409368
+      "1X": 0.681365150261616,
+      "X2": 0.6417118575137165,
+      "12": 0.6769229922246673
     },
     "dc_ht": {
-      "1X": 0.7,
-      "X2": 0.7,
-      "12": 0.6
+      "1X": 0.659755502588786,
+      "X2": 0.7428045924683463,
+      "12": 0.5974399049428678
     },
     "top_ft": [
       [
         "0-0",
-        1368
+        470
       ],
       [
         "2-1",
-        847
+        341
       ],
       [
         "1-2",
-        639
+        315
       ],
       [
         "1-1",
-        603
+        307
       ],
       [
         "2-0",
-        448
-      ],
-      [
-        "1-0",
-        432
-      ],
-      [
-        "0-2",
-        403
+        156
       ],
       [
         "0-1",
-        364
+        154
+      ],
+      [
+        "1-0",
+        142
+      ],
+      [
+        "0-2",
+        128
       ]
     ],
     "top_ht": [
       [
         "0-0",
-        1884
+        735
       ],
       [
         "0-1",
-        1728
+        714
       ],
       [
         "1-0",
-        1633
+        539
       ],
       [
         "1-1",
-        1315
+        493
       ],
       [
-        "2-0",
-        404
+        "1-2",
+        149
       ]
     ],
     "xg": {
-      "home": 1.385625,
-      "away": 1.26475,
-      "total": 2.650375
+      "home": 1.3653333333333333,
+      "away": 1.2913333333333334,
+      "total": 2.6566666666666667
     },
     "goal_rates": {
-      "home": 1.385625,
-      "away": 1.26475
+      "home": 1.3653333333333333,
+      "away": 1.2913333333333334
     }
   },
   "table": [
     {
       "Section": "HT Winner",
       "Selection": "Napoli",
-      "Model%": 30.0,
-      "Sim%": 29.6,
-      "Agree": "1 eng",
+      "Model%": 25.7,
+      "Sim%": 26.1,
+      "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "HT Winner",
       "Selection": "Draw",
-      "Model%": 40.0,
-      "Sim%": 40.0,
-      "Agree": "1 eng",
+      "Model%": 40.3,
+      "Sim%": 40.9,
+      "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "HT Winner",
       "Selection": "Como",
-      "Model%": 30.0,
-      "Sim%": 30.4,
-      "Agree": "1 eng",
+      "Model%": 34.0,
+      "Sim%": 33.0,
+      "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "HT DC",
       "Selection": "1X",
-      "Model%": 70.0,
-      "Sim%": 69.6,
-      "Agree": "1 eng",
+      "Model%": 66.0,
+      "Sim%": 67.0,
+      "Agree": "6 eng",
       "Verdict": "YES"
     },
     {
       "Section": "HT DC",
       "Selection": "X2",
-      "Model%": 70.0,
-      "Sim%": 70.4,
-      "Agree": "1 eng",
+      "Model%": 74.3,
+      "Sim%": 73.9,
+      "Agree": "6 eng",
       "Verdict": "YES"
     },
     {
       "Section": "HT DC",
       "Selection": "12",
-      "Model%": 60.0,
-      "Sim%": 60.0,
-      "Agree": "1 eng",
+      "Model%": 59.7,
+      "Sim%": 59.1,
+      "Agree": "6 eng",
       "Verdict": "YES"
     },
     {
       "Section": "HT O/U",
       "Selection": "Over 1.5",
-      "Model%": 35.0,
-      "Sim%": 34.4,
-      "Agree": "1 eng",
+      "Model%": 50.0,
+      "Sim%": 33.7,
+      "Agree": "-",
       "Verdict": "NO"
     },
     {
       "Section": "HT O/U",
       "Selection": "Under 1.5",
-      "Model%": 65.0,
-      "Sim%": 65.6,
-      "Agree": "1 eng",
-      "Verdict": "YES"
+      "Model%": 50.0,
+      "Sim%": 66.3,
+      "Agree": "-",
+      "Verdict": "NO"
     },
     {
       "Section": "FT Winner",
       "Selection": "Napoli",
-      "Model%": 37.9,
-      "Sim%": 37.9,
-      "Agree": "1 eng",
+      "Model%": 35.8,
+      "Sim%": 35.1,
+      "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "FT Winner",
       "Selection": "Draw",
-      "Model%": 31.6,
-      "Sim%": 30.9,
-      "Agree": "1 eng",
+      "Model%": 32.3,
+      "Sim%": 32.8,
+      "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "FT Winner",
       "Selection": "Como",
-      "Model%": 30.5,
-      "Sim%": 31.2,
-      "Agree": "1 eng",
+      "Model%": 31.9,
+      "Sim%": 32.1,
+      "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "FT DC",
       "Selection": "1X",
-      "Model%": 69.5,
-      "Sim%": 68.8,
-      "Agree": "1 eng",
+      "Model%": 68.1,
+      "Sim%": 67.9,
+      "Agree": "6 eng",
       "Verdict": "YES"
     },
     {
       "Section": "FT DC",
       "Selection": "X2",
-      "Model%": 62.1,
-      "Sim%": 62.1,
-      "Agree": "1 eng",
+      "Model%": 64.2,
+      "Sim%": 64.9,
+      "Agree": "6 eng",
       "Verdict": "YES"
     },
     {
       "Section": "FT DC",
       "Selection": "12",
-      "Model%": 68.4,
-      "Sim%": 69.0,
-      "Agree": "1 eng",
+      "Model%": 67.7,
+      "Sim%": 67.2,
+      "Agree": "6 eng",
       "Verdict": "YES"
     },
     {
       "Section": "FT O/U",
       "Selection": "Over 2.5",
-      "Model%": 45.8,
+      "Model%": 41.7,
       "Sim%": 54.8,
-      "Agree": "1 eng",
+      "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "FT O/U",
       "Selection": "Under 2.5",
-      "Model%": 54.2,
+      "Model%": 58.3,
       "Sim%": 45.2,
-      "Agree": "1 eng",
+      "Agree": "6 eng",
       "Verdict": "YES"
     },
     {
       "Section": "BTTS",
       "Selection": "Yes",
-      "Model%": 45.0,
-      "Sim%": 44.5,
-      "Agree": "1 eng",
+      "Model%": 50.9,
+      "Sim%": 51.5,
+      "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "BTTS",
       "Selection": "No",
-      "Model%": 55.0,
-      "Sim%": 55.5,
-      "Agree": "1 eng",
-      "Verdict": "YES"
+      "Model%": 49.1,
+      "Sim%": 48.5,
+      "Agree": "6 eng",
+      "Verdict": "NO"
     }
   ],
   "locked_tip": {
     "status": "SECURED LOCK",
     "section": "HT DC",
-    "selection": "1X",
-    "model": 70.0,
-    "sim": 69.6,
-    "agree": "1 eng",
+    "selection": "X2",
+    "model": 74.3,
+    "sim": 73.9,
+    "agree": "6 eng",
     "verdict": "HARD YES"
   },
   "backends": {
     "ft_result": [
-      "market"
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
     ],
     "ht_result": [
-      "market"
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
     ],
     "over25": [
-      "market"
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
     ],
     "btts": [
-      "market"
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
     ],
-    "ht_over15": [
-      "market"
-    ]
+    "ht_over15": []
   },
-  "generated_at": "2026-08-30T11:31:05.675693Z"
+  "generated_at": "2026-08-30T20:17:57.851135Z"
 }
