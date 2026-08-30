@@ -81,3 +81,23 @@ Environment:
    - Outputs `fixtures_teams.json` (teams seen — feed these into `train.py` focus_teams for targeted retrain)
 
 Large binaries (parquet, CatBoost `.cbm`, pickles) are tracked with **Git LFS**.
+
+## Daily pipeline (recommended)
+
+Orchestrator: `python daily_pipeline.py`
+
+| Step | Script | What it does |
+|------|--------|----------------|
+| 1 | `scraper.py` | Latest results CSV |
+| 2 | `daily_update_parquet.py` | Upsert into master parquet |
+| 3 | `scraper_fixtures.py` | Upcoming `fixtures.csv` (odds included) |
+| 4 | `scan_fixture_teams.py` | Map fixture team names → canonical; build `train_focus_teams.json` |
+| 5 | `train.py` | Batch train focus teams (`FOCUS_TEAMS`, `DAILY_LIGHT=1`) |
+| 6 | `run_fixture_sims.py` | **`sim.run_one_match`** for every fixture (odds + models) → `sims/*.json` |
+| 7 | `publish_sims_to_admin.py` | Push `data/sims/` to [sportintel](https://github.com/avramnull/sportintel) Sim Lab |
+
+GitHub Action: `.github/workflows/daily_run.yaml` (schedule + manual).
+
+**Secrets (admin push):** set repo secret `SPORTINTEL_PUSH_TOKEN` (PAT with `repo` on `avramnull/sportintel`). Falls back to `GITHUB_TOKEN` if it can write that repo.
+
+**Caps:** `MAX_TRAIN_TEAMS=8` (default in CI), priority leagues first, teams without models preferred.

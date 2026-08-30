@@ -1,13 +1,14 @@
-name: Daily Football Scraper + sim.py Fixtures + Parquet
+name: Daily pipeline — results → train → sim → Sim Lab
 
 on:
   schedule:
-    - cron: "0 18 * * *"
+    - cron: "0 18 * * *"   # ~19:00 WAT
   workflow_dispatch:
 
 jobs:
-  scrape-update-sim:
+  daily:
     runs-on: ubuntu-latest
+    timeout-minutes: 350
     permissions:
       contents: write
     steps:
@@ -23,31 +24,28 @@ jobs:
         run: |
           pip install requests pandas numpy pyarrow scikit-learn
           pip install xgboost lightgbm catboost || true
+          # optional; DAILY_LIGHT skips these but keep available
+          pip install torch --index-url https://download.pytorch.org/whl/cpu || true
 
-      - name: Scrape latest results
-        run: python scraper.py
-        env:
-          FOOTBALL_SEASON: "2627"
-
-      - name: Scrape upcoming fixtures
-        run: python scraper_fixtures.py
-
-      - name: Update master parquet
-        run: python daily_update_parquet.py
+      - name: Run full daily pipeline
         env:
           FOOTBALL_SEASON: "2627"
           FOOTBALL_SEASON_LABEL: "2026/2027"
-
-      - name: Run sim.py on all fixtures
-        run: python run_fixture_sims.py
-        env:
+          MAX_TRAIN_TEAMS: "8"
+          MIN_TEAM_MATCHES: "40"
+          DAILY_LIGHT: "1"
+          MAX_BOOST_ROUNDS: "800"
           N_SIMULATIONS: "8000"
           ODDS_BLEND: "0.30"
+          SPORTINTEL_PUSH: "1"
+          GITHUB_TOKEN: ${{ secrets.SPORTINTEL_PUSH_TOKEN || secrets.GITHUB_TOKEN }}
+          SPORTINTEL_REPO: avramnull/sportintel
+        run: python daily_pipeline.py
 
-      - name: Commit data + sim reports
+      - name: Commit core data + models
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add daily_football_data/ master_football_data.parquet .gitattributes
-          git diff --staged --quiet || git commit -m "Daily update + sim reports: $(date -u +%Y-%m-%d)"
+          git add daily_football_data/ master_football_data.parquet football_models/ .gitattributes || true
+          git diff --staged --quiet || git commit -m "Daily pipeline: $(date -u +%Y-%m-%d)"
           git push

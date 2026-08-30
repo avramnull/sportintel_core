@@ -70,6 +70,25 @@ CONFIG = {
     "nn_hidden": [128, 64, 32],
 }
 
+
+# --- env overrides (daily pipeline) ---
+# FOCUS_TEAMS="Arsenal,Liverpool"  MAX_BOOST_ROUNDS=800  DAILY_LIGHT=1
+_ft = os.environ.get("FOCUS_TEAMS", "").strip()
+if _ft:
+    CONFIG["focus_teams"] = [x.strip() for x in _ft.split(",") if x.strip()]
+if os.environ.get("MIN_TEAM_MATCHES"):
+    CONFIG["min_team_matches"] = int(os.environ["MIN_TEAM_MATCHES"])
+if os.environ.get("MAX_BOOST_ROUNDS"):
+    CONFIG["max_boost_rounds"] = int(os.environ["MAX_BOOST_ROUNDS"])
+if os.environ.get("DAILY_LIGHT", "").strip() in ("1", "true", "yes"):
+    # Faster daily train: skip neural nets, fewer growth steps
+    CONFIG["use_pytorch"] = False
+    CONFIG["use_tensorflow"] = False
+    CONFIG["capacity_growth_steps"] = 1
+    CONFIG["max_boost_rounds"] = min(CONFIG["max_boost_rounds"], 1200)
+    CONFIG["patience_overfit"] = 40
+    print("[train] DAILY_LIGHT mode: xgb/lgbm/cat/ada/rf only, reduced rounds")
+
 LEAGUE_MAP = {
     "E0": "Premier League", "E1": "Championship", "E2": "League One",
     "E3": "League Two", "EC": "National League",

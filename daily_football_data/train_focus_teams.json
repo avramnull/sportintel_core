@@ -1,0 +1,33 @@
+{
+  "generated_at": "2026-08-30T08:55:07.550580+00:00",
+  "max_train": 12,
+  "focus_teams": [
+    "Crystal Palace",
+    "Manchester City",
+    "Liverpool",
+    "Nott'm Forest",
+    "Bournemouth",
+    "Everton",
+    "Coventry",
+    "Hull",
+    "Tottenham",
+    "Newcastle",
+    "Chelsea",
+    "Brighton"
+  ],
+  "scores": {
+    "Crystal Palace": 127.0,
+    "Manchester City": 127.0,
+    "Liverpool": 127.0,
+    "Nott'm Forest": 127.0,
+    "Bournemouth": 127.0,
+    "Everton": 127.0,
+    "Coventry": 127.0,
+    "Hull": 127.0,
+    "Tottenham": 127.0,
+    "Newcastle": 127.0,
+    "Chelsea": 127.0,
+    "Brighton": 127.0
+  },
+  "note": "Pass to train.py via FOCUS_TEAMS env (comma-separated) or --focus"
+}
