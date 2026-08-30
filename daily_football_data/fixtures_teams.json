@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-30T08:03:46.793221+00:00",
+  "generated_at": "2026-08-30T08:42:36.870207+00:00",
   "teams": [
     "AEK",
     "AFC Wimbledon",
@@ -396,6 +396,5 @@
     "York",
     "Zwolle"
   ],
-  "n_teams": 394,
-  "hint": "Pass these team names to train.py focus_teams for targeted retraining."
+  "n_teams": 394
 }

@@ -1,0 +1,299 @@
+{
+  "match": {
+    "league": "I2",
+    "home_team": "Avellino",
+    "away_team": "Vicenza",
+    "match_date": "2026-08-29 20:00",
+    "odds_home": 2.35,
+    "odds_draw": 3.1,
+    "odds_away": 2.75,
+    "n_simulations": 2000,
+    "seed": 164,
+    "odds_blend": 0.3
+  },
+  "resolved": {
+    "league": "Serie B",
+    "div": "I2",
+    "home": "Avellino",
+    "away": "Vicenza",
+    "models": "market-only",
+    "match_date": "2026-08-29 20:00"
+  },
+  "report": {
+    "n": 2000,
+    "ft_model": {
+      "H": 0.382759007744977,
+      "D": 0.2901560220002245,
+      "A": 0.32708497025479855
+    },
+    "ft_sim": {
+      "H": 0.385,
+      "D": 0.287,
+      "A": 0.328
+    },
+    "ht_model": {
+      "H": 0.3,
+      "D": 0.4,
+      "A": 0.3
+    },
+    "ht_sim": {
+      "H": 0.28,
+      "D": 0.4115,
+      "A": 0.3085
+    },
+    "over25_model": 0.4683752417794971,
+    "over25_sim": 0.566,
+    "btts_model": 0.45,
+    "btts_sim": 0.4615,
+    "ht_over15_model": 0.35,
+    "ht_over15_sim": 0.34,
+    "dc_ft": {
+      "1X": 0.6729150297452016,
+      "X2": 0.617240992255023,
+      "12": 0.7098439779997756
+    },
+    "dc_ht": {
+      "1X": 0.7,
+      "X2": 0.7,
+      "12": 0.6
+    },
+    "top_ft": [
+      [
+        "0-0",
+        303
+      ],
+      [
+        "2-1",
+        228
+      ],
+      [
+        "1-2",
+        180
+      ],
+      [
+        "1-1",
+        149
+      ],
+      [
+        "1-0",
+        122
+      ],
+      [
+        "0-2",
+        106
+      ],
+      [
+        "0-1",
+        97
+      ],
+      [
+        "2-0",
+        91
+      ]
+    ],
+    "top_ht": [
+      [
+        "0-0",
+        492
+      ],
+      [
+        "0-1",
+        454
+      ],
+      [
+        "1-0",
+        374
+      ],
+      [
+        "1-1",
+        331
+      ],
+      [
+        "2-0",
+        105
+      ]
+    ],
+    "xg": {
+      "home": 1.4085,
+      "away": 1.304,
+      "total": 2.7125
+    },
+    "goal_rates": {
+      "home": 1.4085,
+      "away": 1.304
+    }
+  },
+  "table": [
+    {
+      "Section": "HT Winner",
+      "Selection": "Avellino",
+      "Model%": 30.0,
+      "Sim%": 28.0,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Draw",
+      "Model%": 40.0,
+      "Sim%": 41.1,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Vicenza",
+      "Model%": 30.0,
+      "Sim%": 30.9,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "1X",
+      "Model%": 70.0,
+      "Sim%": 69.2,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "X2",
+      "Model%": 70.0,
+      "Sim%": 72.0,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "12",
+      "Model%": 60.0,
+      "Sim%": 58.9,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Over 1.5",
+      "Model%": 35.0,
+      "Sim%": 34.0,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Under 1.5",
+      "Model%": 65.0,
+      "Sim%": 66.0,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Avellino",
+      "Model%": 38.3,
+      "Sim%": 38.5,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Draw",
+      "Model%": 29.0,
+      "Sim%": 28.7,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Vicenza",
+      "Model%": 32.7,
+      "Sim%": 32.8,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "1X",
+      "Model%": 67.3,
+      "Sim%": 67.2,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 61.7,
+      "Sim%": 61.5,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "12",
+      "Model%": 71.0,
+      "Sim%": 71.3,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Over 2.5",
+      "Model%": 46.8,
+      "Sim%": 56.6,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Under 2.5",
+      "Model%": 53.2,
+      "Sim%": 43.4,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "Yes",
+      "Model%": 45.0,
+      "Sim%": 46.2,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 55.0,
+      "Sim%": 53.8,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    }
+  ],
+  "locked_tip": {
+    "status": "SECURED LOCK",
+    "section": "FT DC",
+    "selection": "12",
+    "model": 71.0,
+    "sim": 71.3,
+    "agree": "1 eng",
+    "verdict": "HARD YES"
+  },
+  "backends": {
+    "ft_result": [
+      "market"
+    ],
+    "ht_result": [
+      "market"
+    ],
+    "over25": [
+      "market"
+    ],
+    "btts": [
+      "market"
+    ],
+    "ht_over15": [
+      "market"
+    ]
+  },
+  "generated_at": "2026-08-30T08:42:33.883645Z"
+}

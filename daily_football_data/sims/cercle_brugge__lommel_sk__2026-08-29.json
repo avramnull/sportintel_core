@@ -1,0 +1,299 @@
+{
+  "match": {
+    "league": "B1",
+    "home_team": "Cercle Brugge",
+    "away_team": "Lommel SK",
+    "match_date": "2026-08-29 19:45",
+    "odds_home": 1.5,
+    "odds_draw": 4.33,
+    "odds_away": 5.25,
+    "n_simulations": 2000,
+    "seed": 45,
+    "odds_blend": 0.3
+  },
+  "resolved": {
+    "league": "Belgian Pro League",
+    "div": "B1",
+    "home": "Cercle Brugge",
+    "away": "Lommel SK",
+    "models": "market-only",
+    "match_date": "2026-08-29 19:45"
+  },
+  "report": {
+    "n": 2000,
+    "ft_model": {
+      "H": 0.6126945623610269,
+      "D": 0.21224984839296543,
+      "A": 0.1750555892460077
+    },
+    "ft_sim": {
+      "H": 0.6145,
+      "D": 0.2215,
+      "A": 0.164
+    },
+    "ht_model": {
+      "H": 0.3,
+      "D": 0.4,
+      "A": 0.3
+    },
+    "ht_sim": {
+      "H": 0.306,
+      "D": 0.394,
+      "A": 0.3
+    },
+    "over25_model": 0.47857142857142854,
+    "over25_sim": 0.608,
+    "btts_model": 0.45,
+    "btts_sim": 0.465,
+    "ht_over15_model": 0.35,
+    "ht_over15_sim": 0.344,
+    "dc_ft": {
+      "1X": 0.8249444107539924,
+      "X2": 0.3873054376389731,
+      "12": 0.7877501516070347
+    },
+    "dc_ht": {
+      "1X": 0.7,
+      "X2": 0.7,
+      "12": 0.6
+    },
+    "top_ft": [
+      [
+        "2-1",
+        348
+      ],
+      [
+        "0-0",
+        245
+      ],
+      [
+        "2-0",
+        186
+      ],
+      [
+        "1-0",
+        160
+      ],
+      [
+        "4-0",
+        105
+      ],
+      [
+        "5-0",
+        99
+      ],
+      [
+        "1-1",
+        96
+      ],
+      [
+        "3-2",
+        94
+      ]
+    ],
+    "top_ht": [
+      [
+        "0-0",
+        456
+      ],
+      [
+        "1-0",
+        430
+      ],
+      [
+        "0-1",
+        426
+      ],
+      [
+        "1-1",
+        332
+      ],
+      [
+        "2-0",
+        99
+      ]
+    ],
+    "xg": {
+      "home": 1.88,
+      "away": 0.983,
+      "total": 2.863
+    },
+    "goal_rates": {
+      "home": 1.88,
+      "away": 0.983
+    }
+  },
+  "table": [
+    {
+      "Section": "HT Winner",
+      "Selection": "Cercle Brugge",
+      "Model%": 30.0,
+      "Sim%": 30.6,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Draw",
+      "Model%": 40.0,
+      "Sim%": 39.4,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Lommel SK",
+      "Model%": 30.0,
+      "Sim%": 30.0,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "1X",
+      "Model%": 70.0,
+      "Sim%": 70.0,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "X2",
+      "Model%": 70.0,
+      "Sim%": 69.4,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "12",
+      "Model%": 60.0,
+      "Sim%": 60.6,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Over 1.5",
+      "Model%": 35.0,
+      "Sim%": 34.4,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Under 1.5",
+      "Model%": 65.0,
+      "Sim%": 65.6,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Cercle Brugge",
+      "Model%": 61.3,
+      "Sim%": 61.5,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Draw",
+      "Model%": 21.2,
+      "Sim%": 22.1,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Lommel SK",
+      "Model%": 17.5,
+      "Sim%": 16.4,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "1X",
+      "Model%": 82.5,
+      "Sim%": 83.6,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 38.7,
+      "Sim%": 38.6,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "12",
+      "Model%": 78.8,
+      "Sim%": 77.9,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Over 2.5",
+      "Model%": 47.9,
+      "Sim%": 60.8,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Under 2.5",
+      "Model%": 52.1,
+      "Sim%": 39.2,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "Yes",
+      "Model%": 45.0,
+      "Sim%": 46.5,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 55.0,
+      "Sim%": 53.5,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    }
+  ],
+  "locked_tip": {
+    "status": "SECURED LOCK",
+    "section": "FT DC",
+    "selection": "1X",
+    "model": 82.5,
+    "sim": 83.6,
+    "agree": "1 eng",
+    "verdict": "HARD YES"
+  },
+  "backends": {
+    "ft_result": [
+      "market"
+    ],
+    "ht_result": [
+      "market"
+    ],
+    "over25": [
+      "market"
+    ],
+    "btts": [
+      "market"
+    ],
+    "ht_over15": [
+      "market"
+    ]
+  },
+  "generated_at": "2026-08-30T08:42:29.061926Z"
+}

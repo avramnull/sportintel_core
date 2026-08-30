@@ -1,0 +1,299 @@
+{
+  "match": {
+    "league": "I1",
+    "home_team": "Atalanta",
+    "away_team": "Bologna",
+    "match_date": "2026-08-31 19:45",
+    "odds_home": 1.85,
+    "odds_draw": 3.75,
+    "odds_away": 4.0,
+    "n_simulations": 2000,
+    "seed": 159,
+    "odds_blend": 0.3
+  },
+  "resolved": {
+    "league": "Serie A",
+    "div": "I1",
+    "home": "Atalanta",
+    "away": "Bologna",
+    "models": "market-only",
+    "match_date": "2026-08-31 19:45"
+  },
+  "report": {
+    "n": 2000,
+    "ft_model": {
+      "H": 0.5112910097997444,
+      "D": 0.2522368981678739,
+      "A": 0.2364720920323818
+    },
+    "ft_sim": {
+      "H": 0.5065,
+      "D": 0.2535,
+      "A": 0.24
+    },
+    "ht_model": {
+      "H": 0.3,
+      "D": 0.4,
+      "A": 0.3
+    },
+    "ht_sim": {
+      "H": 0.297,
+      "D": 0.399,
+      "A": 0.304
+    },
+    "over25_model": 0.46858108108108104,
+    "over25_sim": 0.5955,
+    "btts_model": 0.45,
+    "btts_sim": 0.45,
+    "ht_over15_model": 0.35,
+    "ht_over15_sim": 0.351,
+    "dc_ft": {
+      "1X": 0.7635279079676183,
+      "X2": 0.4887089902002557,
+      "12": 0.7477631018321262
+    },
+    "dc_ht": {
+      "1X": 0.7,
+      "X2": 0.7,
+      "12": 0.6
+    },
+    "top_ft": [
+      [
+        "0-0",
+        283
+      ],
+      [
+        "2-1",
+        270
+      ],
+      [
+        "2-0",
+        155
+      ],
+      [
+        "1-2",
+        141
+      ],
+      [
+        "1-0",
+        127
+      ],
+      [
+        "1-1",
+        102
+      ],
+      [
+        "3-0",
+        91
+      ],
+      [
+        "4-0",
+        90
+      ]
+    ],
+    "top_ht": [
+      [
+        "0-0",
+        460
+      ],
+      [
+        "0-1",
+        421
+      ],
+      [
+        "1-0",
+        417
+      ],
+      [
+        "1-1",
+        338
+      ],
+      [
+        "1-2",
+        98
+      ]
+    ],
+    "xg": {
+      "home": 1.6885,
+      "away": 1.1045,
+      "total": 2.793
+    },
+    "goal_rates": {
+      "home": 1.6885,
+      "away": 1.1045
+    }
+  },
+  "table": [
+    {
+      "Section": "HT Winner",
+      "Selection": "Atalanta",
+      "Model%": 30.0,
+      "Sim%": 29.7,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Draw",
+      "Model%": 40.0,
+      "Sim%": 39.9,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Bologna",
+      "Model%": 30.0,
+      "Sim%": 30.4,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "1X",
+      "Model%": 70.0,
+      "Sim%": 69.6,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "X2",
+      "Model%": 70.0,
+      "Sim%": 70.3,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "12",
+      "Model%": 60.0,
+      "Sim%": 60.1,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Over 1.5",
+      "Model%": 35.0,
+      "Sim%": 35.1,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Under 1.5",
+      "Model%": 65.0,
+      "Sim%": 64.9,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Atalanta",
+      "Model%": 51.1,
+      "Sim%": 50.6,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Draw",
+      "Model%": 25.2,
+      "Sim%": 25.4,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Bologna",
+      "Model%": 23.6,
+      "Sim%": 24.0,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "1X",
+      "Model%": 76.4,
+      "Sim%": 76.0,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 48.9,
+      "Sim%": 49.4,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "12",
+      "Model%": 74.8,
+      "Sim%": 74.6,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Over 2.5",
+      "Model%": 46.9,
+      "Sim%": 59.6,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Under 2.5",
+      "Model%": 53.1,
+      "Sim%": 40.4,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "Yes",
+      "Model%": 45.0,
+      "Sim%": 45.0,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 55.0,
+      "Sim%": 55.0,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    }
+  ],
+  "locked_tip": {
+    "status": "SECURED LOCK",
+    "section": "FT DC",
+    "selection": "1X",
+    "model": 76.4,
+    "sim": 76.0,
+    "agree": "1 eng",
+    "verdict": "HARD YES"
+  },
+  "backends": {
+    "ft_result": [
+      "market"
+    ],
+    "ht_result": [
+      "market"
+    ],
+    "over25": [
+      "market"
+    ],
+    "btts": [
+      "market"
+    ],
+    "ht_over15": [
+      "market"
+    ]
+  },
+  "generated_at": "2026-08-30T08:42:33.683114Z"
+}

@@ -1,0 +1,299 @@
+{
+  "match": {
+    "league": "T1",
+    "home_team": "Eyupspor",
+    "away_team": "Alanyaspor",
+    "match_date": "2026-08-30 17:00",
+    "odds_home": 3.2,
+    "odds_draw": 3.3,
+    "odds_away": 2.2,
+    "n_simulations": 2000,
+    "seed": 234,
+    "odds_blend": 0.3
+  },
+  "resolved": {
+    "league": "S\u00fcper Lig",
+    "div": "T1",
+    "home": "Eyupspor",
+    "away": "Alanyaspor",
+    "models": "market-only",
+    "match_date": "2026-08-30 17:00"
+  },
+  "report": {
+    "n": 2000,
+    "ft_model": {
+      "H": 0.2920353982300885,
+      "D": 0.2831858407079646,
+      "A": 0.4247787610619469
+    },
+    "ft_sim": {
+      "H": 0.3025,
+      "D": 0.2795,
+      "A": 0.418
+    },
+    "ht_model": {
+      "H": 0.3,
+      "D": 0.4,
+      "A": 0.3
+    },
+    "ht_sim": {
+      "H": 0.3135,
+      "D": 0.4005,
+      "A": 0.286
+    },
+    "over25_model": 0.46505681818181815,
+    "over25_sim": 0.573,
+    "btts_model": 0.45,
+    "btts_sim": 0.4345,
+    "ht_over15_model": 0.35,
+    "ht_over15_sim": 0.341,
+    "dc_ft": {
+      "1X": 0.5752212389380531,
+      "X2": 0.7079646017699115,
+      "12": 0.7168141592920354
+    },
+    "dc_ht": {
+      "1X": 0.7,
+      "X2": 0.7,
+      "12": 0.6
+    },
+    "top_ft": [
+      [
+        "0-0",
+        316
+      ],
+      [
+        "1-2",
+        234
+      ],
+      [
+        "2-1",
+        152
+      ],
+      [
+        "1-1",
+        128
+      ],
+      [
+        "0-1",
+        125
+      ],
+      [
+        "0-2",
+        120
+      ],
+      [
+        "1-0",
+        83
+      ],
+      [
+        "0-5",
+        83
+      ]
+    ],
+    "top_ht": [
+      [
+        "0-0",
+        474
+      ],
+      [
+        "1-0",
+        443
+      ],
+      [
+        "0-1",
+        401
+      ],
+      [
+        "1-1",
+        327
+      ],
+      [
+        "2-1",
+        99
+      ]
+    ],
+    "xg": {
+      "home": 1.246,
+      "away": 1.462,
+      "total": 2.708
+    },
+    "goal_rates": {
+      "home": 1.246,
+      "away": 1.462
+    }
+  },
+  "table": [
+    {
+      "Section": "HT Winner",
+      "Selection": "Eyupspor",
+      "Model%": 30.0,
+      "Sim%": 31.4,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Draw",
+      "Model%": 40.0,
+      "Sim%": 40.1,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Alanyaspor",
+      "Model%": 30.0,
+      "Sim%": 28.6,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "1X",
+      "Model%": 70.0,
+      "Sim%": 71.4,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "X2",
+      "Model%": 70.0,
+      "Sim%": 68.7,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "12",
+      "Model%": 60.0,
+      "Sim%": 59.9,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Over 1.5",
+      "Model%": 35.0,
+      "Sim%": 34.1,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Under 1.5",
+      "Model%": 65.0,
+      "Sim%": 65.9,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Eyupspor",
+      "Model%": 29.2,
+      "Sim%": 30.2,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Draw",
+      "Model%": 28.3,
+      "Sim%": 28.0,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Alanyaspor",
+      "Model%": 42.5,
+      "Sim%": 41.8,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "1X",
+      "Model%": 57.5,
+      "Sim%": 58.2,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 70.8,
+      "Sim%": 69.8,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "12",
+      "Model%": 71.7,
+      "Sim%": 72.0,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Over 2.5",
+      "Model%": 46.5,
+      "Sim%": 57.3,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Under 2.5",
+      "Model%": 53.5,
+      "Sim%": 42.7,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "Yes",
+      "Model%": 45.0,
+      "Sim%": 43.5,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 55.0,
+      "Sim%": 56.5,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    }
+  ],
+  "locked_tip": {
+    "status": "SECURED LOCK",
+    "section": "FT DC",
+    "selection": "12",
+    "model": 71.7,
+    "sim": 72.0,
+    "agree": "1 eng",
+    "verdict": "HARD YES"
+  },
+  "backends": {
+    "ft_result": [
+      "market"
+    ],
+    "ht_result": [
+      "market"
+    ],
+    "over25": [
+      "market"
+    ],
+    "btts": [
+      "market"
+    ],
+    "ht_over15": [
+      "market"
+    ]
+  },
+  "generated_at": "2026-08-30T08:42:36.708368Z"
+}

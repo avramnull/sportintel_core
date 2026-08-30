@@ -1,0 +1,299 @@
+{
+  "match": {
+    "league": "SP1",
+    "home_team": "Santander",
+    "away_team": "Elche",
+    "match_date": "2026-08-28 18:00",
+    "odds_home": 2.0,
+    "odds_draw": 3.6,
+    "odds_away": 3.6,
+    "n_simulations": 2000,
+    "seed": 209,
+    "odds_blend": 0.3
+  },
+  "resolved": {
+    "league": "La Liga",
+    "div": "SP1",
+    "home": "Santander",
+    "away": "Elche",
+    "models": "market-only",
+    "match_date": "2026-08-28 18:00"
+  },
+  "report": {
+    "n": 2000,
+    "ft_model": {
+      "H": 0.47368421052631576,
+      "D": 0.2631578947368421,
+      "A": 0.2631578947368421
+    },
+    "ft_sim": {
+      "H": 0.4655,
+      "D": 0.272,
+      "A": 0.2625
+    },
+    "ht_model": {
+      "H": 0.3,
+      "D": 0.4,
+      "A": 0.3
+    },
+    "ht_sim": {
+      "H": 0.319,
+      "D": 0.3825,
+      "A": 0.2985
+    },
+    "over25_model": 0.4666666666666667,
+    "over25_sim": 0.5605,
+    "btts_model": 0.45,
+    "btts_sim": 0.4285,
+    "ht_over15_model": 0.35,
+    "ht_over15_sim": 0.337,
+    "dc_ft": {
+      "1X": 0.7368421052631579,
+      "X2": 0.5263157894736842,
+      "12": 0.7368421052631579
+    },
+    "dc_ht": {
+      "1X": 0.7,
+      "X2": 0.7,
+      "12": 0.6
+    },
+    "top_ft": [
+      [
+        "0-0",
+        319
+      ],
+      [
+        "2-1",
+        233
+      ],
+      [
+        "1-2",
+        156
+      ],
+      [
+        "1-0",
+        144
+      ],
+      [
+        "2-0",
+        142
+      ],
+      [
+        "1-1",
+        120
+      ],
+      [
+        "4-0",
+        109
+      ],
+      [
+        "0-2",
+        81
+      ]
+    ],
+    "top_ht": [
+      [
+        "0-0",
+        474
+      ],
+      [
+        "1-0",
+        435
+      ],
+      [
+        "0-1",
+        417
+      ],
+      [
+        "1-1",
+        291
+      ],
+      [
+        "2-0",
+        113
+      ]
+    ],
+    "xg": {
+      "home": 1.5675,
+      "away": 1.097,
+      "total": 2.6645
+    },
+    "goal_rates": {
+      "home": 1.5675,
+      "away": 1.097
+    }
+  },
+  "table": [
+    {
+      "Section": "HT Winner",
+      "Selection": "Santander",
+      "Model%": 30.0,
+      "Sim%": 31.9,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Draw",
+      "Model%": 40.0,
+      "Sim%": 38.2,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Elche",
+      "Model%": 30.0,
+      "Sim%": 29.8,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "1X",
+      "Model%": 70.0,
+      "Sim%": 70.2,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "X2",
+      "Model%": 70.0,
+      "Sim%": 68.1,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "12",
+      "Model%": 60.0,
+      "Sim%": 61.7,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Over 1.5",
+      "Model%": 35.0,
+      "Sim%": 33.7,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Under 1.5",
+      "Model%": 65.0,
+      "Sim%": 66.3,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Santander",
+      "Model%": 47.4,
+      "Sim%": 46.6,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Draw",
+      "Model%": 26.3,
+      "Sim%": 27.2,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Elche",
+      "Model%": 26.3,
+      "Sim%": 26.2,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "1X",
+      "Model%": 73.7,
+      "Sim%": 73.8,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 52.6,
+      "Sim%": 53.4,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "12",
+      "Model%": 73.7,
+      "Sim%": 72.8,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Over 2.5",
+      "Model%": 46.7,
+      "Sim%": 56.0,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Under 2.5",
+      "Model%": 53.3,
+      "Sim%": 44.0,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "Yes",
+      "Model%": 45.0,
+      "Sim%": 42.9,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 55.0,
+      "Sim%": 57.1,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    }
+  ],
+  "locked_tip": {
+    "status": "SECURED LOCK",
+    "section": "FT DC",
+    "selection": "1X",
+    "model": 73.7,
+    "sim": 73.8,
+    "agree": "1 eng",
+    "verdict": "HARD YES"
+  },
+  "backends": {
+    "ft_result": [
+      "market"
+    ],
+    "ht_result": [
+      "market"
+    ],
+    "over25": [
+      "market"
+    ],
+    "btts": [
+      "market"
+    ],
+    "ht_over15": [
+      "market"
+    ]
+  },
+  "generated_at": "2026-08-30T08:42:35.700475Z"
+}

@@ -1,0 +1,299 @@
+{
+  "match": {
+    "league": "E1",
+    "home_team": "Middlesbrough",
+    "away_team": "West Brom",
+    "match_date": "2026-08-29 12:30",
+    "odds_home": 1.71,
+    "odds_draw": 3.8,
+    "odds_away": 4.5,
+    "n_simulations": 2000,
+    "seed": 81,
+    "odds_blend": 0.3
+  },
+  "resolved": {
+    "league": "Championship",
+    "div": "E1",
+    "home": "Middlesbrough",
+    "away": "West Bromwich Albion",
+    "models": "market-only",
+    "match_date": "2026-08-29 12:30"
+  },
+  "report": {
+    "n": 2000,
+    "ft_model": {
+      "H": 0.5464480874316939,
+      "D": 0.2459016393442623,
+      "A": 0.2076502732240437
+    },
+    "ft_sim": {
+      "H": 0.5605,
+      "D": 0.2405,
+      "A": 0.199
+    },
+    "ht_model": {
+      "H": 0.3,
+      "D": 0.4,
+      "A": 0.3
+    },
+    "ht_sim": {
+      "H": 0.29,
+      "D": 0.413,
+      "A": 0.297
+    },
+    "over25_model": 0.47105263157894733,
+    "over25_sim": 0.608,
+    "btts_model": 0.45,
+    "btts_sim": 0.4575,
+    "ht_over15_model": 0.35,
+    "ht_over15_sim": 0.331,
+    "dc_ft": {
+      "1X": 0.7923497267759563,
+      "X2": 0.45355191256830596,
+      "12": 0.7540983606557377
+    },
+    "dc_ht": {
+      "1X": 0.7,
+      "X2": 0.7,
+      "12": 0.6
+    },
+    "top_ft": [
+      [
+        "2-1",
+        296
+      ],
+      [
+        "0-0",
+        263
+      ],
+      [
+        "1-0",
+        154
+      ],
+      [
+        "2-0",
+        152
+      ],
+      [
+        "1-2",
+        110
+      ],
+      [
+        "4-0",
+        108
+      ],
+      [
+        "1-1",
+        105
+      ],
+      [
+        "5-0",
+        102
+      ]
+    ],
+    "top_ht": [
+      [
+        "0-0",
+        493
+      ],
+      [
+        "1-0",
+        436
+      ],
+      [
+        "0-1",
+        409
+      ],
+      [
+        "1-1",
+        333
+      ],
+      [
+        "0-2",
+        95
+      ]
+    ],
+    "xg": {
+      "home": 1.815,
+      "away": 1.0345,
+      "total": 2.8495
+    },
+    "goal_rates": {
+      "home": 1.815,
+      "away": 1.0345
+    }
+  },
+  "table": [
+    {
+      "Section": "HT Winner",
+      "Selection": "Middlesbrough",
+      "Model%": 30.0,
+      "Sim%": 29.0,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Draw",
+      "Model%": 40.0,
+      "Sim%": 41.3,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "West Bromwich Albion",
+      "Model%": 30.0,
+      "Sim%": 29.7,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "1X",
+      "Model%": 70.0,
+      "Sim%": 70.3,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "X2",
+      "Model%": 70.0,
+      "Sim%": 71.0,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "12",
+      "Model%": 60.0,
+      "Sim%": 58.7,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Over 1.5",
+      "Model%": 35.0,
+      "Sim%": 33.1,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Under 1.5",
+      "Model%": 65.0,
+      "Sim%": 66.9,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Middlesbrough",
+      "Model%": 54.6,
+      "Sim%": 56.0,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Draw",
+      "Model%": 24.6,
+      "Sim%": 24.1,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "West Bromwich Albion",
+      "Model%": 20.8,
+      "Sim%": 19.9,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "1X",
+      "Model%": 79.2,
+      "Sim%": 80.1,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 45.4,
+      "Sim%": 44.0,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "12",
+      "Model%": 75.4,
+      "Sim%": 76.0,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Over 2.5",
+      "Model%": 47.1,
+      "Sim%": 60.8,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Under 2.5",
+      "Model%": 52.9,
+      "Sim%": 39.2,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "Yes",
+      "Model%": 45.0,
+      "Sim%": 45.8,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 55.0,
+      "Sim%": 54.2,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    }
+  ],
+  "locked_tip": {
+    "status": "SECURED LOCK",
+    "section": "FT DC",
+    "selection": "1X",
+    "model": 79.2,
+    "sim": 80.1,
+    "agree": "1 eng",
+    "verdict": "HARD YES"
+  },
+  "backends": {
+    "ft_result": [
+      "market"
+    ],
+    "ht_result": [
+      "market"
+    ],
+    "over25": [
+      "market"
+    ],
+    "btts": [
+      "market"
+    ],
+    "ht_over15": [
+      "market"
+    ]
+  },
+  "generated_at": "2026-08-30T08:42:30.491145Z"
+}

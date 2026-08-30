@@ -1,0 +1,299 @@
+{
+  "match": {
+    "league": "F1",
+    "home_team": "Paris FC",
+    "away_team": "Nice",
+    "match_date": "2026-08-30 14:00",
+    "odds_home": 2.05,
+    "odds_draw": 3.3,
+    "odds_away": 3.8,
+    "n_simulations": 2000,
+    "seed": 131,
+    "odds_blend": 0.3
+  },
+  "resolved": {
+    "league": "Ligue 1",
+    "div": "F1",
+    "home": "Paris FC",
+    "away": "Nice",
+    "models": "market-only",
+    "match_date": "2026-08-30 14:00"
+  },
+  "report": {
+    "n": 2000,
+    "ft_model": {
+      "H": 0.4628160177154457,
+      "D": 0.2875069200959587,
+      "A": 0.24967706218859567
+    },
+    "ft_sim": {
+      "H": 0.469,
+      "D": 0.277,
+      "A": 0.254
+    },
+    "ht_model": {
+      "H": 0.3,
+      "D": 0.4,
+      "A": 0.3
+    },
+    "ht_sim": {
+      "H": 0.3035,
+      "D": 0.394,
+      "A": 0.3025
+    },
+    "over25_model": 0.46264441591784333,
+    "over25_sim": 0.568,
+    "btts_model": 0.45,
+    "btts_sim": 0.4485,
+    "ht_over15_model": 0.35,
+    "ht_over15_sim": 0.326,
+    "dc_ft": {
+      "1X": 0.7503229378114045,
+      "X2": 0.5371839822845543,
+      "12": 0.7124930799040414
+    },
+    "dc_ht": {
+      "1X": 0.7,
+      "X2": 0.7,
+      "12": 0.6
+    },
+    "top_ft": [
+      [
+        "0-0",
+        307
+      ],
+      [
+        "2-1",
+        255
+      ],
+      [
+        "1-0",
+        141
+      ],
+      [
+        "2-0",
+        137
+      ],
+      [
+        "1-2",
+        133
+      ],
+      [
+        "1-1",
+        133
+      ],
+      [
+        "3-0",
+        82
+      ],
+      [
+        "0-1",
+        77
+      ]
+    ],
+    "top_ht": [
+      [
+        "0-0",
+        481
+      ],
+      [
+        "0-1",
+        437
+      ],
+      [
+        "1-0",
+        430
+      ],
+      [
+        "1-1",
+        307
+      ],
+      [
+        "2-0",
+        94
+      ]
+    ],
+    "xg": {
+      "home": 1.565,
+      "away": 1.1475,
+      "total": 2.7125
+    },
+    "goal_rates": {
+      "home": 1.565,
+      "away": 1.1475
+    }
+  },
+  "table": [
+    {
+      "Section": "HT Winner",
+      "Selection": "Paris FC",
+      "Model%": 30.0,
+      "Sim%": 30.3,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Draw",
+      "Model%": 40.0,
+      "Sim%": 39.4,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Nice",
+      "Model%": 30.0,
+      "Sim%": 30.2,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "1X",
+      "Model%": 70.0,
+      "Sim%": 69.8,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "X2",
+      "Model%": 70.0,
+      "Sim%": 69.7,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "12",
+      "Model%": 60.0,
+      "Sim%": 60.6,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Over 1.5",
+      "Model%": 35.0,
+      "Sim%": 32.6,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Under 1.5",
+      "Model%": 65.0,
+      "Sim%": 67.4,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Paris FC",
+      "Model%": 46.3,
+      "Sim%": 46.9,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Draw",
+      "Model%": 28.8,
+      "Sim%": 27.7,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Nice",
+      "Model%": 25.0,
+      "Sim%": 25.4,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "1X",
+      "Model%": 75.0,
+      "Sim%": 74.6,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 53.7,
+      "Sim%": 53.1,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "12",
+      "Model%": 71.2,
+      "Sim%": 72.3,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Over 2.5",
+      "Model%": 46.3,
+      "Sim%": 56.8,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Under 2.5",
+      "Model%": 53.7,
+      "Sim%": 43.2,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "Yes",
+      "Model%": 45.0,
+      "Sim%": 44.9,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 55.0,
+      "Sim%": 55.1,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    }
+  ],
+  "locked_tip": {
+    "status": "SECURED LOCK",
+    "section": "FT DC",
+    "selection": "1X",
+    "model": 75.0,
+    "sim": 74.6,
+    "agree": "1 eng",
+    "verdict": "HARD YES"
+  },
+  "backends": {
+    "ft_result": [
+      "market"
+    ],
+    "ht_result": [
+      "market"
+    ],
+    "over25": [
+      "market"
+    ],
+    "btts": [
+      "market"
+    ],
+    "ht_over15": [
+      "market"
+    ]
+  },
+  "generated_at": "2026-08-30T08:42:32.533186Z"
+}

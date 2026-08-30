@@ -1,0 +1,299 @@
+{
+  "match": {
+    "league": "SP1",
+    "home_team": "La Coruna",
+    "away_team": "Valencia",
+    "match_date": "2026-08-30 18:30",
+    "odds_home": 2.55,
+    "odds_draw": 3.0,
+    "odds_away": 3.1,
+    "n_simulations": 2000,
+    "seed": 215,
+    "odds_blend": 0.3
+  },
+  "resolved": {
+    "league": "La Liga",
+    "div": "SP1",
+    "home": "La Coruna",
+    "away": "Valencia",
+    "models": "Valencia (away)",
+    "match_date": "2026-08-30 18:30"
+  },
+  "report": {
+    "n": 2000,
+    "ft_model": {
+      "H": 0.3741701870850936,
+      "D": 0.3180446590223295,
+      "A": 0.30778515389257693
+    },
+    "ft_sim": {
+      "H": 0.363,
+      "D": 0.3425,
+      "A": 0.2945
+    },
+    "ht_model": {
+      "H": 0.3,
+      "D": 0.4,
+      "A": 0.3
+    },
+    "ht_sim": {
+      "H": 0.3025,
+      "D": 0.401,
+      "A": 0.2965
+    },
+    "over25_model": 0.45721062618595826,
+    "over25_sim": 0.5415,
+    "btts_model": 0.45,
+    "btts_sim": 0.462,
+    "ht_over15_model": 0.35,
+    "ht_over15_sim": 0.3455,
+    "dc_ft": {
+      "1X": 0.6922148461074231,
+      "X2": 0.6258298129149065,
+      "12": 0.6819553409776705
+    },
+    "dc_ht": {
+      "1X": 0.7,
+      "X2": 0.7,
+      "12": 0.6
+    },
+    "top_ft": [
+      [
+        "0-0",
+        375
+      ],
+      [
+        "2-1",
+        211
+      ],
+      [
+        "1-1",
+        173
+      ],
+      [
+        "1-2",
+        166
+      ],
+      [
+        "2-0",
+        105
+      ],
+      [
+        "0-2",
+        90
+      ],
+      [
+        "1-0",
+        89
+      ],
+      [
+        "0-1",
+        85
+      ]
+    ],
+    "top_ht": [
+      [
+        "0-0",
+        485
+      ],
+      [
+        "1-0",
+        423
+      ],
+      [
+        "0-1",
+        401
+      ],
+      [
+        "1-1",
+        317
+      ],
+      [
+        "1-2",
+        98
+      ]
+    ],
+    "xg": {
+      "home": 1.369,
+      "away": 1.242,
+      "total": 2.611
+    },
+    "goal_rates": {
+      "home": 1.369,
+      "away": 1.242
+    }
+  },
+  "table": [
+    {
+      "Section": "HT Winner",
+      "Selection": "La Coruna",
+      "Model%": 30.0,
+      "Sim%": 30.2,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Draw",
+      "Model%": 40.0,
+      "Sim%": 40.1,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Valencia",
+      "Model%": 30.0,
+      "Sim%": 29.6,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "1X",
+      "Model%": 70.0,
+      "Sim%": 70.3,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "X2",
+      "Model%": 70.0,
+      "Sim%": 69.8,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "12",
+      "Model%": 60.0,
+      "Sim%": 59.9,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Over 1.5",
+      "Model%": 35.0,
+      "Sim%": 34.5,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Under 1.5",
+      "Model%": 65.0,
+      "Sim%": 65.5,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "La Coruna",
+      "Model%": 37.4,
+      "Sim%": 36.3,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Draw",
+      "Model%": 31.8,
+      "Sim%": 34.2,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Valencia",
+      "Model%": 30.8,
+      "Sim%": 29.4,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "1X",
+      "Model%": 69.2,
+      "Sim%": 70.5,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 62.6,
+      "Sim%": 63.7,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "12",
+      "Model%": 68.2,
+      "Sim%": 65.8,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Over 2.5",
+      "Model%": 45.7,
+      "Sim%": 54.1,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Under 2.5",
+      "Model%": 54.3,
+      "Sim%": 45.9,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "Yes",
+      "Model%": 45.0,
+      "Sim%": 46.2,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 55.0,
+      "Sim%": 53.8,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    }
+  ],
+  "locked_tip": {
+    "status": "SECURED LOCK",
+    "section": "HT DC",
+    "selection": "X2",
+    "model": 70.0,
+    "sim": 69.8,
+    "agree": "1 eng",
+    "verdict": "HARD YES"
+  },
+  "backends": {
+    "ft_result": [
+      "market"
+    ],
+    "ht_result": [
+      "market"
+    ],
+    "over25": [
+      "market"
+    ],
+    "btts": [
+      "market"
+    ],
+    "ht_over15": [
+      "market"
+    ]
+  },
+  "generated_at": "2026-08-30T08:42:35.954126Z"
+}

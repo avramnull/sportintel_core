@@ -1,0 +1,299 @@
+{
+  "match": {
+    "league": "SP2",
+    "home_team": "Cordoba",
+    "away_team": "Granada",
+    "match_date": "2026-08-30 20:30",
+    "odds_home": 1.76,
+    "odds_draw": 3.6,
+    "odds_away": 4.33,
+    "n_simulations": 2000,
+    "seed": 227,
+    "odds_blend": 0.3
+  },
+  "resolved": {
+    "league": "La Liga 2",
+    "div": "SP2",
+    "home": "Cordoba",
+    "away": "Granada",
+    "models": "market-only",
+    "match_date": "2026-08-30 20:30"
+  },
+  "report": {
+    "n": 2000,
+    "ft_model": {
+      "H": 0.5276055346456906,
+      "D": 0.25794048360455984,
+      "A": 0.2144539817497495
+    },
+    "ft_sim": {
+      "H": 0.533,
+      "D": 0.2535,
+      "A": 0.2135
+    },
+    "ht_model": {
+      "H": 0.3,
+      "D": 0.4,
+      "A": 0.3
+    },
+    "ht_sim": {
+      "H": 0.303,
+      "D": 0.3835,
+      "A": 0.3135
+    },
+    "over25_model": 0.4698693050598362,
+    "over25_sim": 0.592,
+    "btts_model": 0.45,
+    "btts_sim": 0.4625,
+    "ht_over15_model": 0.35,
+    "ht_over15_sim": 0.318,
+    "dc_ft": {
+      "1X": 0.7855460182502505,
+      "X2": 0.47239446535430935,
+      "12": 0.7420595163954401
+    },
+    "dc_ht": {
+      "1X": 0.7,
+      "X2": 0.7,
+      "12": 0.6
+    },
+    "top_ft": [
+      [
+        "2-1",
+        300
+      ],
+      [
+        "0-0",
+        276
+      ],
+      [
+        "2-0",
+        148
+      ],
+      [
+        "1-0",
+        145
+      ],
+      [
+        "1-1",
+        130
+      ],
+      [
+        "1-2",
+        111
+      ],
+      [
+        "3-0",
+        101
+      ],
+      [
+        "4-0",
+        96
+      ]
+    ],
+    "top_ht": [
+      [
+        "0-0",
+        475
+      ],
+      [
+        "0-1",
+        461
+      ],
+      [
+        "1-0",
+        428
+      ],
+      [
+        "1-1",
+        292
+      ],
+      [
+        "2-0",
+        92
+      ]
+    ],
+    "xg": {
+      "home": 1.6845,
+      "away": 1.085,
+      "total": 2.7695
+    },
+    "goal_rates": {
+      "home": 1.6845,
+      "away": 1.085
+    }
+  },
+  "table": [
+    {
+      "Section": "HT Winner",
+      "Selection": "Cordoba",
+      "Model%": 30.0,
+      "Sim%": 30.3,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Draw",
+      "Model%": 40.0,
+      "Sim%": 38.4,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Granada",
+      "Model%": 30.0,
+      "Sim%": 31.4,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "1X",
+      "Model%": 70.0,
+      "Sim%": 68.7,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "X2",
+      "Model%": 70.0,
+      "Sim%": 69.7,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "12",
+      "Model%": 60.0,
+      "Sim%": 61.7,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Over 1.5",
+      "Model%": 35.0,
+      "Sim%": 31.8,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Under 1.5",
+      "Model%": 65.0,
+      "Sim%": 68.2,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Cordoba",
+      "Model%": 52.8,
+      "Sim%": 53.3,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Draw",
+      "Model%": 25.8,
+      "Sim%": 25.4,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Granada",
+      "Model%": 21.4,
+      "Sim%": 21.3,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "1X",
+      "Model%": 78.6,
+      "Sim%": 78.6,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 47.2,
+      "Sim%": 46.7,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "12",
+      "Model%": 74.2,
+      "Sim%": 74.7,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Over 2.5",
+      "Model%": 47.0,
+      "Sim%": 59.2,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Under 2.5",
+      "Model%": 53.0,
+      "Sim%": 40.8,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "Yes",
+      "Model%": 45.0,
+      "Sim%": 46.2,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 55.0,
+      "Sim%": 53.8,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    }
+  ],
+  "locked_tip": {
+    "status": "SECURED LOCK",
+    "section": "FT DC",
+    "selection": "1X",
+    "model": 78.6,
+    "sim": 78.6,
+    "agree": "1 eng",
+    "verdict": "HARD YES"
+  },
+  "backends": {
+    "ft_result": [
+      "market"
+    ],
+    "ht_result": [
+      "market"
+    ],
+    "over25": [
+      "market"
+    ],
+    "btts": [
+      "market"
+    ],
+    "ht_over15": [
+      "market"
+    ]
+  },
+  "generated_at": "2026-08-30T08:42:36.429333Z"
+}

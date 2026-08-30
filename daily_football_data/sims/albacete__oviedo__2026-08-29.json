@@ -1,0 +1,299 @@
+{
+  "match": {
+    "league": "SP2",
+    "home_team": "Albacete",
+    "away_team": "Oviedo",
+    "match_date": "2026-08-29 18:00",
+    "odds_home": 2.45,
+    "odds_draw": 3.2,
+    "odds_away": 2.85,
+    "n_simulations": 2000,
+    "seed": 221,
+    "odds_blend": 0.3
+  },
+  "resolved": {
+    "league": "La Liga 2",
+    "div": "SP2",
+    "home": "Albacete",
+    "away": "Oviedo",
+    "models": "market-only",
+    "match_date": "2026-08-29 18:00"
+  },
+  "report": {
+    "n": 2000,
+    "ft_model": {
+      "H": 0.38091260311162156,
+      "D": 0.2916362117573353,
+      "A": 0.3274511851310431
+    },
+    "ft_sim": {
+      "H": 0.377,
+      "D": 0.2985,
+      "A": 0.3245
+    },
+    "ht_model": {
+      "H": 0.3,
+      "D": 0.4,
+      "A": 0.3
+    },
+    "ht_sim": {
+      "H": 0.2875,
+      "D": 0.397,
+      "A": 0.3155
+    },
+    "over25_model": 0.4638560687432868,
+    "over25_sim": 0.551,
+    "btts_model": 0.45,
+    "btts_sim": 0.443,
+    "ht_over15_model": 0.35,
+    "ht_over15_sim": 0.3385,
+    "dc_ft": {
+      "1X": 0.6725488148689569,
+      "X2": 0.6190873968883783,
+      "12": 0.7083637882426647
+    },
+    "dc_ht": {
+      "1X": 0.7,
+      "X2": 0.7,
+      "12": 0.6
+    },
+    "top_ft": [
+      [
+        "0-0",
+        330
+      ],
+      [
+        "2-1",
+        211
+      ],
+      [
+        "1-2",
+        177
+      ],
+      [
+        "1-1",
+        144
+      ],
+      [
+        "1-0",
+        125
+      ],
+      [
+        "2-0",
+        108
+      ],
+      [
+        "0-1",
+        106
+      ],
+      [
+        "0-2",
+        85
+      ]
+    ],
+    "top_ht": [
+      [
+        "0-0",
+        473
+      ],
+      [
+        "0-1",
+        450
+      ],
+      [
+        "1-0",
+        400
+      ],
+      [
+        "1-1",
+        321
+      ],
+      [
+        "2-0",
+        100
+      ]
+    ],
+    "xg": {
+      "home": 1.3725,
+      "away": 1.263,
+      "total": 2.6355
+    },
+    "goal_rates": {
+      "home": 1.3725,
+      "away": 1.263
+    }
+  },
+  "table": [
+    {
+      "Section": "HT Winner",
+      "Selection": "Albacete",
+      "Model%": 30.0,
+      "Sim%": 28.7,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Draw",
+      "Model%": 40.0,
+      "Sim%": 39.7,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Oviedo",
+      "Model%": 30.0,
+      "Sim%": 31.6,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "1X",
+      "Model%": 70.0,
+      "Sim%": 68.5,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "X2",
+      "Model%": 70.0,
+      "Sim%": 71.2,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "12",
+      "Model%": 60.0,
+      "Sim%": 60.3,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Over 1.5",
+      "Model%": 35.0,
+      "Sim%": 33.9,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Under 1.5",
+      "Model%": 65.0,
+      "Sim%": 66.1,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Albacete",
+      "Model%": 38.1,
+      "Sim%": 37.7,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Draw",
+      "Model%": 29.2,
+      "Sim%": 29.8,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Oviedo",
+      "Model%": 32.7,
+      "Sim%": 32.5,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "1X",
+      "Model%": 67.3,
+      "Sim%": 67.5,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 61.9,
+      "Sim%": 62.3,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "12",
+      "Model%": 70.8,
+      "Sim%": 70.2,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Over 2.5",
+      "Model%": 46.4,
+      "Sim%": 55.1,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Under 2.5",
+      "Model%": 53.6,
+      "Sim%": 44.9,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "Yes",
+      "Model%": 45.0,
+      "Sim%": 44.3,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 55.0,
+      "Sim%": 55.7,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    }
+  ],
+  "locked_tip": {
+    "status": "SECURED LOCK",
+    "section": "FT DC",
+    "selection": "12",
+    "model": 70.8,
+    "sim": 70.2,
+    "agree": "1 eng",
+    "verdict": "HARD YES"
+  },
+  "backends": {
+    "ft_result": [
+      "market"
+    ],
+    "ht_result": [
+      "market"
+    ],
+    "over25": [
+      "market"
+    ],
+    "btts": [
+      "market"
+    ],
+    "ht_over15": [
+      "market"
+    ]
+  },
+  "generated_at": "2026-08-30T08:42:36.191981Z"
+}

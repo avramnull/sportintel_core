@@ -1,0 +1,299 @@
+{
+  "match": {
+    "league": "N1",
+    "home_team": "Groningen",
+    "away_team": "For Sittard",
+    "match_date": "2026-08-28 19:00",
+    "odds_home": 1.45,
+    "odds_draw": 4.75,
+    "odds_away": 6.25,
+    "n_simulations": 2000,
+    "seed": 170,
+    "odds_blend": 0.3
+  },
+  "resolved": {
+    "league": "Eredivisie",
+    "div": "N1",
+    "home": "Groningen",
+    "away": "For Sittard",
+    "models": "market-only",
+    "match_date": "2026-08-28 19:00"
+  },
+  "report": {
+    "n": 2000,
+    "ft_model": {
+      "H": 0.6505067104902768,
+      "D": 0.1985757326759792,
+      "A": 0.1509175568337442
+    },
+    "ft_sim": {
+      "H": 0.6575,
+      "D": 0.2015,
+      "A": 0.141
+    },
+    "ht_model": {
+      "H": 0.3,
+      "D": 0.4,
+      "A": 0.3
+    },
+    "ht_sim": {
+      "H": 0.2935,
+      "D": 0.397,
+      "A": 0.3095
+    },
+    "over25_model": 0.47744827586206895,
+    "over25_sim": 0.5815,
+    "btts_model": 0.45,
+    "btts_sim": 0.4325,
+    "ht_over15_model": 0.35,
+    "ht_over15_sim": 0.3505,
+    "dc_ft": {
+      "1X": 0.8490824431662559,
+      "X2": 0.34949328950972336,
+      "12": 0.801424267324021
+    },
+    "dc_ht": {
+      "1X": 0.7,
+      "X2": 0.7,
+      "12": 0.6
+    },
+    "top_ft": [
+      [
+        "2-1",
+        343
+      ],
+      [
+        "0-0",
+        223
+      ],
+      [
+        "2-0",
+        221
+      ],
+      [
+        "1-0",
+        211
+      ],
+      [
+        "3-0",
+        113
+      ],
+      [
+        "5-0",
+        110
+      ],
+      [
+        "4-0",
+        103
+      ],
+      [
+        "3-2",
+        94
+      ]
+    ],
+    "top_ht": [
+      [
+        "0-0",
+        479
+      ],
+      [
+        "0-1",
+        417
+      ],
+      [
+        "1-0",
+        403
+      ],
+      [
+        "1-1",
+        315
+      ],
+      [
+        "1-2",
+        105
+      ]
+    ],
+    "xg": {
+      "home": 1.915,
+      "away": 0.8555,
+      "total": 2.7705
+    },
+    "goal_rates": {
+      "home": 1.915,
+      "away": 0.8555
+    }
+  },
+  "table": [
+    {
+      "Section": "HT Winner",
+      "Selection": "Groningen",
+      "Model%": 30.0,
+      "Sim%": 29.3,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Draw",
+      "Model%": 40.0,
+      "Sim%": 39.7,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "For Sittard",
+      "Model%": 30.0,
+      "Sim%": 30.9,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "1X",
+      "Model%": 70.0,
+      "Sim%": 69.0,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "X2",
+      "Model%": 70.0,
+      "Sim%": 70.7,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "12",
+      "Model%": 60.0,
+      "Sim%": 60.3,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Over 1.5",
+      "Model%": 35.0,
+      "Sim%": 35.0,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Under 1.5",
+      "Model%": 65.0,
+      "Sim%": 65.0,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Groningen",
+      "Model%": 65.1,
+      "Sim%": 65.8,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Draw",
+      "Model%": 19.9,
+      "Sim%": 20.2,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "For Sittard",
+      "Model%": 15.1,
+      "Sim%": 14.1,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "1X",
+      "Model%": 84.9,
+      "Sim%": 85.9,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 34.9,
+      "Sim%": 34.2,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "12",
+      "Model%": 80.1,
+      "Sim%": 79.8,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Over 2.5",
+      "Model%": 47.7,
+      "Sim%": 58.1,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Under 2.5",
+      "Model%": 52.3,
+      "Sim%": 41.9,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "Yes",
+      "Model%": 45.0,
+      "Sim%": 43.2,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 55.0,
+      "Sim%": 56.8,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    }
+  ],
+  "locked_tip": {
+    "status": "SECURED LOCK",
+    "section": "FT DC",
+    "selection": "1X",
+    "model": 84.9,
+    "sim": 85.9,
+    "agree": "1 eng",
+    "verdict": "HARD YES"
+  },
+  "backends": {
+    "ft_result": [
+      "market"
+    ],
+    "ht_result": [
+      "market"
+    ],
+    "over25": [
+      "market"
+    ],
+    "btts": [
+      "market"
+    ],
+    "ht_over15": [
+      "market"
+    ]
+  },
+  "generated_at": "2026-08-30T08:42:34.123360Z"
+}

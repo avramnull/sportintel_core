@@ -1,0 +1,299 @@
+{
+  "match": {
+    "league": "SC1",
+    "home_team": "Arbroath",
+    "away_team": "Livingston",
+    "match_date": "2026-08-29 15:00",
+    "odds_home": 3.1,
+    "odds_draw": 3.2,
+    "odds_away": 2.1,
+    "n_simulations": 2000,
+    "seed": 195,
+    "odds_blend": 0.3
+  },
+  "resolved": {
+    "league": "Scottish Championship",
+    "div": "SC1",
+    "home": "Arbroath",
+    "away": "Livingston",
+    "models": "market-only",
+    "match_date": "2026-08-29 15:00"
+  },
+  "report": {
+    "n": 2000,
+    "ft_model": {
+      "H": 0.29028077753779696,
+      "D": 0.2812095032397408,
+      "A": 0.42850971922246217
+    },
+    "ft_sim": {
+      "H": 0.29,
+      "D": 0.285,
+      "A": 0.425
+    },
+    "ht_model": {
+      "H": 0.3,
+      "D": 0.4,
+      "A": 0.3
+    },
+    "ht_sim": {
+      "H": 0.2975,
+      "D": 0.395,
+      "A": 0.3075
+    },
+    "over25_model": 0.46981566820276494,
+    "over25_sim": 0.548,
+    "btts_model": 0.45,
+    "btts_sim": 0.4465,
+    "ht_over15_model": 0.35,
+    "ht_over15_sim": 0.3445,
+    "dc_ft": {
+      "1X": 0.5714902807775377,
+      "X2": 0.709719222462203,
+      "12": 0.7187904967602592
+    },
+    "dc_ht": {
+      "1X": 0.7,
+      "X2": 0.7,
+      "12": 0.6
+    },
+    "top_ft": [
+      [
+        "0-0",
+        306
+      ],
+      [
+        "1-2",
+        224
+      ],
+      [
+        "0-1",
+        157
+      ],
+      [
+        "1-1",
+        145
+      ],
+      [
+        "2-1",
+        142
+      ],
+      [
+        "2-0",
+        102
+      ],
+      [
+        "0-2",
+        102
+      ],
+      [
+        "1-0",
+        92
+      ]
+    ],
+    "top_ht": [
+      [
+        "0-0",
+        464
+      ],
+      [
+        "1-0",
+        429
+      ],
+      [
+        "0-1",
+        418
+      ],
+      [
+        "1-1",
+        326
+      ],
+      [
+        "0-2",
+        115
+      ]
+    ],
+    "xg": {
+      "home": 1.2295,
+      "away": 1.456,
+      "total": 2.6855
+    },
+    "goal_rates": {
+      "home": 1.2295,
+      "away": 1.456
+    }
+  },
+  "table": [
+    {
+      "Section": "HT Winner",
+      "Selection": "Arbroath",
+      "Model%": 30.0,
+      "Sim%": 29.8,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Draw",
+      "Model%": 40.0,
+      "Sim%": 39.5,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Livingston",
+      "Model%": 30.0,
+      "Sim%": 30.8,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "1X",
+      "Model%": 70.0,
+      "Sim%": 69.2,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "X2",
+      "Model%": 70.0,
+      "Sim%": 70.2,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "12",
+      "Model%": 60.0,
+      "Sim%": 60.5,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Over 1.5",
+      "Model%": 35.0,
+      "Sim%": 34.4,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Under 1.5",
+      "Model%": 65.0,
+      "Sim%": 65.5,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Arbroath",
+      "Model%": 29.0,
+      "Sim%": 29.0,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Draw",
+      "Model%": 28.1,
+      "Sim%": 28.5,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Livingston",
+      "Model%": 42.9,
+      "Sim%": 42.5,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "1X",
+      "Model%": 57.1,
+      "Sim%": 57.5,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 71.0,
+      "Sim%": 71.0,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "12",
+      "Model%": 71.9,
+      "Sim%": 71.5,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Over 2.5",
+      "Model%": 47.0,
+      "Sim%": 54.8,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Under 2.5",
+      "Model%": 53.0,
+      "Sim%": 45.2,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "Yes",
+      "Model%": 45.0,
+      "Sim%": 44.6,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 55.0,
+      "Sim%": 55.4,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    }
+  ],
+  "locked_tip": {
+    "status": "SECURED LOCK",
+    "section": "FT DC",
+    "selection": "12",
+    "model": 71.9,
+    "sim": 71.5,
+    "agree": "1 eng",
+    "verdict": "HARD YES"
+  },
+  "backends": {
+    "ft_result": [
+      "market"
+    ],
+    "ht_result": [
+      "market"
+    ],
+    "over25": [
+      "market"
+    ],
+    "btts": [
+      "market"
+    ],
+    "ht_over15": [
+      "market"
+    ]
+  },
+  "generated_at": "2026-08-30T08:42:35.135842Z"
+}

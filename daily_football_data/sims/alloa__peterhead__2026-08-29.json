@@ -1,0 +1,299 @@
+{
+  "match": {
+    "league": "SC2",
+    "home_team": "Alloa",
+    "away_team": "Peterhead",
+    "match_date": "2026-08-29 15:00",
+    "odds_home": 2.05,
+    "odds_draw": 3.25,
+    "odds_away": 3.1,
+    "n_simulations": 2000,
+    "seed": 200,
+    "odds_blend": 0.3
+  },
+  "resolved": {
+    "league": "Scottish League One",
+    "div": "SC2",
+    "home": "Alloa",
+    "away": "Peterhead",
+    "models": "market-only",
+    "match_date": "2026-08-29 15:00"
+  },
+  "report": {
+    "n": 2000,
+    "ft_model": {
+      "H": 0.43628883836743537,
+      "D": 0.27519757497022845,
+      "A": 0.2885135866623363
+    },
+    "ft_sim": {
+      "H": 0.4325,
+      "D": 0.28,
+      "A": 0.2875
+    },
+    "ht_model": {
+      "H": 0.3,
+      "D": 0.4,
+      "A": 0.3
+    },
+    "ht_sim": {
+      "H": 0.302,
+      "D": 0.3985,
+      "A": 0.2995
+    },
+    "over25_model": 0.4715578284815106,
+    "over25_sim": 0.575,
+    "btts_model": 0.45,
+    "btts_sim": 0.4435,
+    "ht_over15_model": 0.35,
+    "ht_over15_sim": 0.3345,
+    "dc_ft": {
+      "1X": 0.7114864133376638,
+      "X2": 0.5637111616325647,
+      "12": 0.7248024250297717
+    },
+    "dc_ht": {
+      "1X": 0.7,
+      "X2": 0.7,
+      "12": 0.6
+    },
+    "top_ft": [
+      [
+        "0-0",
+        302
+      ],
+      [
+        "2-1",
+        230
+      ],
+      [
+        "1-2",
+        154
+      ],
+      [
+        "1-1",
+        134
+      ],
+      [
+        "2-0",
+        126
+      ],
+      [
+        "1-0",
+        122
+      ],
+      [
+        "5-0",
+        89
+      ],
+      [
+        "0-1",
+        87
+      ]
+    ],
+    "top_ht": [
+      [
+        "0-0",
+        505
+      ],
+      [
+        "1-0",
+        425
+      ],
+      [
+        "0-1",
+        401
+      ],
+      [
+        "1-1",
+        292
+      ],
+      [
+        "1-2",
+        112
+      ]
+    ],
+    "xg": {
+      "home": 1.5215,
+      "away": 1.2195,
+      "total": 2.741
+    },
+    "goal_rates": {
+      "home": 1.5215,
+      "away": 1.2195
+    }
+  },
+  "table": [
+    {
+      "Section": "HT Winner",
+      "Selection": "Alloa",
+      "Model%": 30.0,
+      "Sim%": 30.2,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Draw",
+      "Model%": 40.0,
+      "Sim%": 39.9,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Peterhead",
+      "Model%": 30.0,
+      "Sim%": 29.9,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "1X",
+      "Model%": 70.0,
+      "Sim%": 70.0,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "X2",
+      "Model%": 70.0,
+      "Sim%": 69.8,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "12",
+      "Model%": 60.0,
+      "Sim%": 60.1,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Over 1.5",
+      "Model%": 35.0,
+      "Sim%": 33.5,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Under 1.5",
+      "Model%": 65.0,
+      "Sim%": 66.5,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Alloa",
+      "Model%": 43.6,
+      "Sim%": 43.2,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Draw",
+      "Model%": 27.5,
+      "Sim%": 28.0,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Peterhead",
+      "Model%": 28.9,
+      "Sim%": 28.7,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "1X",
+      "Model%": 71.1,
+      "Sim%": 71.2,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 56.4,
+      "Sim%": 56.8,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "12",
+      "Model%": 72.5,
+      "Sim%": 72.0,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Over 2.5",
+      "Model%": 47.2,
+      "Sim%": 57.5,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Under 2.5",
+      "Model%": 52.8,
+      "Sim%": 42.5,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "Yes",
+      "Model%": 45.0,
+      "Sim%": 44.4,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 55.0,
+      "Sim%": 55.6,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    }
+  ],
+  "locked_tip": {
+    "status": "SECURED LOCK",
+    "section": "FT DC",
+    "selection": "12",
+    "model": 72.5,
+    "sim": 72.0,
+    "agree": "1 eng",
+    "verdict": "HARD YES"
+  },
+  "backends": {
+    "ft_result": [
+      "market"
+    ],
+    "ht_result": [
+      "market"
+    ],
+    "over25": [
+      "market"
+    ],
+    "btts": [
+      "market"
+    ],
+    "ht_over15": [
+      "market"
+    ]
+  },
+  "generated_at": "2026-08-30T08:42:35.333688Z"
+}

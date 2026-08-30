@@ -1,0 +1,299 @@
+{
+  "match": {
+    "league": "E3",
+    "home_team": "Barnet",
+    "away_team": "Cheltenham",
+    "match_date": "2026-08-29 12:30",
+    "odds_home": 1.57,
+    "odds_draw": 3.8,
+    "odds_away": 5.25,
+    "n_simulations": 2000,
+    "seed": 102,
+    "odds_blend": 0.3
+  },
+  "resolved": {
+    "league": "League Two",
+    "div": "E3",
+    "home": "Barnet",
+    "away": "Cheltenham",
+    "models": "market-only",
+    "match_date": "2026-08-29 12:30"
+  },
+  "report": {
+    "n": 2000,
+    "ft_model": {
+      "H": 0.5840420393167147,
+      "D": 0.2413015794019058,
+      "A": 0.17465638128137945
+    },
+    "ft_sim": {
+      "H": 0.569,
+      "D": 0.259,
+      "A": 0.172
+    },
+    "ht_model": {
+      "H": 0.3,
+      "D": 0.4,
+      "A": 0.3
+    },
+    "ht_sim": {
+      "H": 0.2945,
+      "D": 0.4195,
+      "A": 0.286
+    },
+    "over25_model": 0.4741128298453139,
+    "over25_sim": 0.587,
+    "btts_model": 0.45,
+    "btts_sim": 0.4465,
+    "ht_over15_model": 0.35,
+    "ht_over15_sim": 0.3485,
+    "dc_ft": {
+      "1X": 0.8253436187186205,
+      "X2": 0.4159579606832853,
+      "12": 0.7586984205980942
+    },
+    "dc_ht": {
+      "1X": 0.7,
+      "X2": 0.7,
+      "12": 0.6
+    },
+    "top_ft": [
+      [
+        "0-0",
+        277
+      ],
+      [
+        "2-1",
+        269
+      ],
+      [
+        "1-0",
+        179
+      ],
+      [
+        "2-0",
+        163
+      ],
+      [
+        "1-1",
+        111
+      ],
+      [
+        "3-0",
+        110
+      ],
+      [
+        "5-0",
+        104
+      ],
+      [
+        "1-2",
+        99
+      ]
+    ],
+    "top_ht": [
+      [
+        "0-0",
+        494
+      ],
+      [
+        "1-0",
+        416
+      ],
+      [
+        "0-1",
+        393
+      ],
+      [
+        "1-1",
+        345
+      ],
+      [
+        "0-2",
+        93
+      ]
+    ],
+    "xg": {
+      "home": 1.8255,
+      "away": 0.9765,
+      "total": 2.802
+    },
+    "goal_rates": {
+      "home": 1.8255,
+      "away": 0.9765
+    }
+  },
+  "table": [
+    {
+      "Section": "HT Winner",
+      "Selection": "Barnet",
+      "Model%": 30.0,
+      "Sim%": 29.4,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Draw",
+      "Model%": 40.0,
+      "Sim%": 41.9,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Cheltenham",
+      "Model%": 30.0,
+      "Sim%": 28.6,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "1X",
+      "Model%": 70.0,
+      "Sim%": 71.4,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "X2",
+      "Model%": 70.0,
+      "Sim%": 70.5,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "12",
+      "Model%": 60.0,
+      "Sim%": 58.1,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Over 1.5",
+      "Model%": 35.0,
+      "Sim%": 34.8,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Under 1.5",
+      "Model%": 65.0,
+      "Sim%": 65.1,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Barnet",
+      "Model%": 58.4,
+      "Sim%": 56.9,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Draw",
+      "Model%": 24.1,
+      "Sim%": 25.9,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Cheltenham",
+      "Model%": 17.5,
+      "Sim%": 17.2,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "1X",
+      "Model%": 82.5,
+      "Sim%": 82.8,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 41.6,
+      "Sim%": 43.1,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "12",
+      "Model%": 75.9,
+      "Sim%": 74.1,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Over 2.5",
+      "Model%": 47.4,
+      "Sim%": 58.7,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Under 2.5",
+      "Model%": 52.6,
+      "Sim%": 41.3,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "Yes",
+      "Model%": 45.0,
+      "Sim%": 44.6,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 55.0,
+      "Sim%": 55.4,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    }
+  ],
+  "locked_tip": {
+    "status": "SECURED LOCK",
+    "section": "FT DC",
+    "selection": "1X",
+    "model": 82.5,
+    "sim": 82.8,
+    "agree": "1 eng",
+    "verdict": "HARD YES"
+  },
+  "backends": {
+    "ft_result": [
+      "market"
+    ],
+    "ht_result": [
+      "market"
+    ],
+    "over25": [
+      "market"
+    ],
+    "btts": [
+      "market"
+    ],
+    "ht_over15": [
+      "market"
+    ]
+  },
+  "generated_at": "2026-08-30T08:42:31.339321Z"
+}

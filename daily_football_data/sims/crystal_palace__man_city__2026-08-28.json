@@ -1,0 +1,299 @@
+{
+  "match": {
+    "league": "E0",
+    "home_team": "Crystal Palace",
+    "away_team": "Man City",
+    "match_date": "2026-08-28 20:00",
+    "odds_home": 5.0,
+    "odds_draw": 3.9,
+    "odds_away": 1.67,
+    "n_simulations": 2000,
+    "seed": 69,
+    "odds_blend": 0.3
+  },
+  "resolved": {
+    "league": "Premier League",
+    "div": "E0",
+    "home": "Crystal Palace",
+    "away": "Manchester City",
+    "models": "market-only",
+    "match_date": "2026-08-28 20:00"
+  },
+  "report": {
+    "n": 2000,
+    "ft_model": {
+      "H": 0.18953525594389314,
+      "D": 0.24299391787678612,
+      "A": 0.5674708261793209
+    },
+    "ft_sim": {
+      "H": 0.1935,
+      "D": 0.228,
+      "A": 0.5785
+    },
+    "ht_model": {
+      "H": 0.3,
+      "D": 0.4,
+      "A": 0.3
+    },
+    "ht_sim": {
+      "H": 0.2965,
+      "D": 0.4075,
+      "A": 0.296
+    },
+    "over25_model": 0.4698203592814371,
+    "over25_sim": 0.599,
+    "btts_model": 0.45,
+    "btts_sim": 0.4585,
+    "ht_over15_model": 0.35,
+    "ht_over15_sim": 0.3495,
+    "dc_ft": {
+      "1X": 0.43252917382067924,
+      "X2": 0.810464744056107,
+      "12": 0.7570060821232141
+    },
+    "dc_ht": {
+      "1X": 0.7,
+      "X2": 0.7,
+      "12": 0.6
+    },
+    "top_ft": [
+      [
+        "1-2",
+        339
+      ],
+      [
+        "0-0",
+        253
+      ],
+      [
+        "0-2",
+        169
+      ],
+      [
+        "0-1",
+        156
+      ],
+      [
+        "2-1",
+        113
+      ],
+      [
+        "1-1",
+        107
+      ],
+      [
+        "0-3",
+        101
+      ],
+      [
+        "0-4",
+        96
+      ]
+    ],
+    "top_ht": [
+      [
+        "0-0",
+        502
+      ],
+      [
+        "1-0",
+        408
+      ],
+      [
+        "0-1",
+        391
+      ],
+      [
+        "1-1",
+        313
+      ],
+      [
+        "1-2",
+        105
+      ]
+    ],
+    "xg": {
+      "home": 1.008,
+      "away": 1.78,
+      "total": 2.788
+    },
+    "goal_rates": {
+      "home": 1.008,
+      "away": 1.78
+    }
+  },
+  "table": [
+    {
+      "Section": "HT Winner",
+      "Selection": "Crystal Palace",
+      "Model%": 30.0,
+      "Sim%": 29.6,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Draw",
+      "Model%": 40.0,
+      "Sim%": 40.8,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Manchester City",
+      "Model%": 30.0,
+      "Sim%": 29.6,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "1X",
+      "Model%": 70.0,
+      "Sim%": 70.4,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "X2",
+      "Model%": 70.0,
+      "Sim%": 70.3,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "12",
+      "Model%": 60.0,
+      "Sim%": 59.2,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Over 1.5",
+      "Model%": 35.0,
+      "Sim%": 34.9,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Under 1.5",
+      "Model%": 65.0,
+      "Sim%": 65.1,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Crystal Palace",
+      "Model%": 19.0,
+      "Sim%": 19.4,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Draw",
+      "Model%": 24.3,
+      "Sim%": 22.8,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Manchester City",
+      "Model%": 56.7,
+      "Sim%": 57.9,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "1X",
+      "Model%": 43.3,
+      "Sim%": 42.1,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 81.0,
+      "Sim%": 80.7,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "12",
+      "Model%": 75.7,
+      "Sim%": 77.2,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Over 2.5",
+      "Model%": 47.0,
+      "Sim%": 59.9,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Under 2.5",
+      "Model%": 53.0,
+      "Sim%": 40.1,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "Yes",
+      "Model%": 45.0,
+      "Sim%": 45.9,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 55.0,
+      "Sim%": 54.1,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    }
+  ],
+  "locked_tip": {
+    "status": "SECURED LOCK",
+    "section": "FT DC",
+    "selection": "X2",
+    "model": 81.0,
+    "sim": 80.7,
+    "agree": "1 eng",
+    "verdict": "HARD YES"
+  },
+  "backends": {
+    "ft_result": [
+      "market"
+    ],
+    "ht_result": [
+      "market"
+    ],
+    "over25": [
+      "market"
+    ],
+    "btts": [
+      "market"
+    ],
+    "ht_over15": [
+      "market"
+    ]
+  },
+  "generated_at": "2026-08-30T08:42:30.016314Z"
+}

@@ -1,0 +1,299 @@
+{
+  "match": {
+    "league": "EC",
+    "home_team": "Hartlepool",
+    "away_team": "Eastleigh",
+    "match_date": "2026-08-28 19:45",
+    "odds_home": 1.7,
+    "odds_draw": 3.7,
+    "odds_away": 4.2,
+    "n_simulations": 2000,
+    "seed": 119,
+    "odds_blend": 0.3
+  },
+  "resolved": {
+    "league": "National League",
+    "div": "EC",
+    "home": "Hartlepool",
+    "away": "Eastleigh",
+    "models": "market-only",
+    "match_date": "2026-08-28 19:45"
+  },
+  "report": {
+    "n": 2000,
+    "ft_model": {
+      "H": 0.5364169830859511,
+      "D": 0.246461857093545,
+      "A": 0.21712115982050398
+    },
+    "ft_sim": {
+      "H": 0.5495,
+      "D": 0.2315,
+      "A": 0.219
+    },
+    "ht_model": {
+      "H": 0.3,
+      "D": 0.4,
+      "A": 0.3
+    },
+    "ht_sim": {
+      "H": 0.2935,
+      "D": 0.404,
+      "A": 0.3025
+    },
+    "over25_model": 0.47394957983193275,
+    "over25_sim": 0.5765,
+    "btts_model": 0.45,
+    "btts_sim": 0.4525,
+    "ht_over15_model": 0.35,
+    "ht_over15_sim": 0.357,
+    "dc_ft": {
+      "1X": 0.7828788401794962,
+      "X2": 0.463583016914049,
+      "12": 0.753538142906455
+    },
+    "dc_ht": {
+      "1X": 0.7,
+      "X2": 0.7,
+      "12": 0.6
+    },
+    "top_ft": [
+      [
+        "2-1",
+        300
+      ],
+      [
+        "0-0",
+        255
+      ],
+      [
+        "2-0",
+        171
+      ],
+      [
+        "1-0",
+        169
+      ],
+      [
+        "1-2",
+        115
+      ],
+      [
+        "1-1",
+        112
+      ],
+      [
+        "5-0",
+        101
+      ],
+      [
+        "3-2",
+        87
+      ]
+    ],
+    "top_ht": [
+      [
+        "0-0",
+        469
+      ],
+      [
+        "0-1",
+        409
+      ],
+      [
+        "1-0",
+        408
+      ],
+      [
+        "1-1",
+        339
+      ],
+      [
+        "1-2",
+        106
+      ]
+    ],
+    "xg": {
+      "home": 1.7135,
+      "away": 1.0625,
+      "total": 2.776
+    },
+    "goal_rates": {
+      "home": 1.7135,
+      "away": 1.0625
+    }
+  },
+  "table": [
+    {
+      "Section": "HT Winner",
+      "Selection": "Hartlepool",
+      "Model%": 30.0,
+      "Sim%": 29.3,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Draw",
+      "Model%": 40.0,
+      "Sim%": 40.4,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Eastleigh",
+      "Model%": 30.0,
+      "Sim%": 30.2,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "1X",
+      "Model%": 70.0,
+      "Sim%": 69.8,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "X2",
+      "Model%": 70.0,
+      "Sim%": 70.7,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "12",
+      "Model%": 60.0,
+      "Sim%": 59.6,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Over 1.5",
+      "Model%": 35.0,
+      "Sim%": 35.7,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Under 1.5",
+      "Model%": 65.0,
+      "Sim%": 64.3,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Hartlepool",
+      "Model%": 53.6,
+      "Sim%": 54.9,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Draw",
+      "Model%": 24.6,
+      "Sim%": 23.2,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Eastleigh",
+      "Model%": 21.7,
+      "Sim%": 21.9,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "1X",
+      "Model%": 78.3,
+      "Sim%": 78.1,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 46.4,
+      "Sim%": 45.1,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "12",
+      "Model%": 75.4,
+      "Sim%": 76.8,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Over 2.5",
+      "Model%": 47.4,
+      "Sim%": 57.6,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Under 2.5",
+      "Model%": 52.6,
+      "Sim%": 42.4,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "Yes",
+      "Model%": 45.0,
+      "Sim%": 45.2,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 55.0,
+      "Sim%": 54.8,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    }
+  ],
+  "locked_tip": {
+    "status": "SECURED LOCK",
+    "section": "FT DC",
+    "selection": "1X",
+    "model": 78.3,
+    "sim": 78.1,
+    "agree": "1 eng",
+    "verdict": "HARD YES"
+  },
+  "backends": {
+    "ft_result": [
+      "market"
+    ],
+    "ht_result": [
+      "market"
+    ],
+    "over25": [
+      "market"
+    ],
+    "btts": [
+      "market"
+    ],
+    "ht_over15": [
+      "market"
+    ]
+  },
+  "generated_at": "2026-08-30T08:42:32.023519Z"
+}

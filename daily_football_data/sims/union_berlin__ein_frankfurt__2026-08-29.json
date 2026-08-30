@@ -1,0 +1,299 @@
+{
+  "match": {
+    "league": "D1",
+    "home_team": "Union Berlin",
+    "away_team": "Ein Frankfurt",
+    "match_date": "2026-08-29 14:30",
+    "odds_home": 2.6,
+    "odds_draw": 3.6,
+    "odds_away": 2.6,
+    "n_simulations": 2000,
+    "seed": 56,
+    "odds_blend": 0.3
+  },
+  "resolved": {
+    "league": "Bundesliga",
+    "div": "D1",
+    "home": "Union Berlin",
+    "away": "Ein Frankfurt",
+    "models": "market-only",
+    "match_date": "2026-08-29 14:30"
+  },
+  "report": {
+    "n": 2000,
+    "ft_model": {
+      "H": 0.3673469387755102,
+      "D": 0.26530612244897966,
+      "A": 0.3673469387755102
+    },
+    "ft_sim": {
+      "H": 0.3585,
+      "D": 0.273,
+      "A": 0.3685
+    },
+    "ht_model": {
+      "H": 0.3,
+      "D": 0.4,
+      "A": 0.3
+    },
+    "ht_sim": {
+      "H": 0.3105,
+      "D": 0.392,
+      "A": 0.2975
+    },
+    "over25_model": 0.46538461538461534,
+    "over25_sim": 0.57,
+    "btts_model": 0.45,
+    "btts_sim": 0.444,
+    "ht_over15_model": 0.35,
+    "ht_over15_sim": 0.341,
+    "dc_ft": {
+      "1X": 0.6326530612244898,
+      "X2": 0.6326530612244898,
+      "12": 0.7346938775510204
+    },
+    "dc_ht": {
+      "1X": 0.7,
+      "X2": 0.7,
+      "12": 0.6
+    },
+    "top_ft": [
+      [
+        "0-0",
+        318
+      ],
+      [
+        "1-2",
+        210
+      ],
+      [
+        "2-1",
+        193
+      ],
+      [
+        "1-1",
+        121
+      ],
+      [
+        "2-0",
+        119
+      ],
+      [
+        "0-2",
+        110
+      ],
+      [
+        "0-1",
+        97
+      ],
+      [
+        "1-0",
+        95
+      ]
+    ],
+    "top_ht": [
+      [
+        "0-0",
+        457
+      ],
+      [
+        "1-0",
+        446
+      ],
+      [
+        "0-1",
+        415
+      ],
+      [
+        "1-1",
+        327
+      ],
+      [
+        "0-2",
+        95
+      ]
+    ],
+    "xg": {
+      "home": 1.347,
+      "away": 1.3605,
+      "total": 2.7075
+    },
+    "goal_rates": {
+      "home": 1.347,
+      "away": 1.3605
+    }
+  },
+  "table": [
+    {
+      "Section": "HT Winner",
+      "Selection": "Union Berlin",
+      "Model%": 30.0,
+      "Sim%": 31.1,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Draw",
+      "Model%": 40.0,
+      "Sim%": 39.2,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Ein Frankfurt",
+      "Model%": 30.0,
+      "Sim%": 29.8,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "1X",
+      "Model%": 70.0,
+      "Sim%": 70.2,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "X2",
+      "Model%": 70.0,
+      "Sim%": 69.0,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "12",
+      "Model%": 60.0,
+      "Sim%": 60.8,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Over 1.5",
+      "Model%": 35.0,
+      "Sim%": 34.1,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Under 1.5",
+      "Model%": 65.0,
+      "Sim%": 65.9,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Union Berlin",
+      "Model%": 36.7,
+      "Sim%": 35.9,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Draw",
+      "Model%": 26.5,
+      "Sim%": 27.3,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Ein Frankfurt",
+      "Model%": 36.7,
+      "Sim%": 36.9,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "1X",
+      "Model%": 63.3,
+      "Sim%": 63.1,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 63.3,
+      "Sim%": 64.1,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "12",
+      "Model%": 73.5,
+      "Sim%": 72.7,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Over 2.5",
+      "Model%": 46.5,
+      "Sim%": 57.0,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Under 2.5",
+      "Model%": 53.5,
+      "Sim%": 43.0,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "Yes",
+      "Model%": 45.0,
+      "Sim%": 44.4,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 55.0,
+      "Sim%": 55.6,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    }
+  ],
+  "locked_tip": {
+    "status": "SECURED LOCK",
+    "section": "FT DC",
+    "selection": "12",
+    "model": 73.5,
+    "sim": 72.7,
+    "agree": "1 eng",
+    "verdict": "HARD YES"
+  },
+  "backends": {
+    "ft_result": [
+      "market"
+    ],
+    "ht_result": [
+      "market"
+    ],
+    "over25": [
+      "market"
+    ],
+    "btts": [
+      "market"
+    ],
+    "ht_over15": [
+      "market"
+    ]
+  },
+  "generated_at": "2026-08-30T08:42:29.499019Z"
+}

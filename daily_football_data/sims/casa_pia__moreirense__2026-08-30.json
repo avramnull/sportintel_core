@@ -1,0 +1,299 @@
+{
+  "match": {
+    "league": "P1",
+    "home_team": "Casa Pia",
+    "away_team": "Moreirense",
+    "match_date": "2026-08-30 18:00",
+    "odds_home": 2.35,
+    "odds_draw": 3.1,
+    "odds_away": 3.1,
+    "n_simulations": 2000,
+    "seed": 184,
+    "odds_blend": 0.3
+  },
+  "resolved": {
+    "league": "Primeira Liga",
+    "div": "P1",
+    "home": "Casa Pia",
+    "away": "Moreirense",
+    "models": "market-only",
+    "match_date": "2026-08-30 18:00"
+  },
+  "report": {
+    "n": 2000,
+    "ft_model": {
+      "H": 0.3974358974358974,
+      "D": 0.30128205128205127,
+      "A": 0.30128205128205127
+    },
+    "ft_sim": {
+      "H": 0.408,
+      "D": 0.306,
+      "A": 0.286
+    },
+    "ht_model": {
+      "H": 0.3,
+      "D": 0.4,
+      "A": 0.3
+    },
+    "ht_sim": {
+      "H": 0.3045,
+      "D": 0.3985,
+      "A": 0.297
+    },
+    "over25_model": 0.4622168840082361,
+    "over25_sim": 0.5485,
+    "btts_model": 0.45,
+    "btts_sim": 0.45,
+    "ht_over15_model": 0.35,
+    "ht_over15_sim": 0.343,
+    "dc_ft": {
+      "1X": 0.6987179487179487,
+      "X2": 0.6025641025641025,
+      "12": 0.6987179487179487
+    },
+    "dc_ht": {
+      "1X": 0.7,
+      "X2": 0.7,
+      "12": 0.6
+    },
+    "top_ft": [
+      [
+        "0-0",
+        340
+      ],
+      [
+        "2-1",
+        240
+      ],
+      [
+        "1-2",
+        170
+      ],
+      [
+        "1-1",
+        153
+      ],
+      [
+        "1-0",
+        125
+      ],
+      [
+        "2-0",
+        122
+      ],
+      [
+        "0-1",
+        86
+      ],
+      [
+        "4-0",
+        77
+      ]
+    ],
+    "top_ht": [
+      [
+        "0-0",
+        464
+      ],
+      [
+        "0-1",
+        434
+      ],
+      [
+        "1-0",
+        416
+      ],
+      [
+        "1-1",
+        333
+      ],
+      [
+        "2-0",
+        103
+      ]
+    ],
+    "xg": {
+      "home": 1.44,
+      "away": 1.186,
+      "total": 2.626
+    },
+    "goal_rates": {
+      "home": 1.44,
+      "away": 1.186
+    }
+  },
+  "table": [
+    {
+      "Section": "HT Winner",
+      "Selection": "Casa Pia",
+      "Model%": 30.0,
+      "Sim%": 30.4,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Draw",
+      "Model%": 40.0,
+      "Sim%": 39.9,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Moreirense",
+      "Model%": 30.0,
+      "Sim%": 29.7,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "1X",
+      "Model%": 70.0,
+      "Sim%": 70.3,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "X2",
+      "Model%": 70.0,
+      "Sim%": 69.5,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "12",
+      "Model%": 60.0,
+      "Sim%": 60.1,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Over 1.5",
+      "Model%": 35.0,
+      "Sim%": 34.3,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Under 1.5",
+      "Model%": 65.0,
+      "Sim%": 65.7,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Casa Pia",
+      "Model%": 39.7,
+      "Sim%": 40.8,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Draw",
+      "Model%": 30.1,
+      "Sim%": 30.6,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Moreirense",
+      "Model%": 30.1,
+      "Sim%": 28.6,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "1X",
+      "Model%": 69.9,
+      "Sim%": 71.4,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 60.3,
+      "Sim%": 59.2,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "12",
+      "Model%": 69.9,
+      "Sim%": 69.4,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Over 2.5",
+      "Model%": 46.2,
+      "Sim%": 54.9,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Under 2.5",
+      "Model%": 53.8,
+      "Sim%": 45.1,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "Yes",
+      "Model%": 45.0,
+      "Sim%": 45.0,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 55.0,
+      "Sim%": 55.0,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    }
+  ],
+  "locked_tip": {
+    "status": "SECURED LOCK",
+    "section": "HT DC",
+    "selection": "1X",
+    "model": 70.0,
+    "sim": 70.3,
+    "agree": "1 eng",
+    "verdict": "HARD YES"
+  },
+  "backends": {
+    "ft_result": [
+      "market"
+    ],
+    "ht_result": [
+      "market"
+    ],
+    "over25": [
+      "market"
+    ],
+    "btts": [
+      "market"
+    ],
+    "ht_over15": [
+      "market"
+    ]
+  },
+  "generated_at": "2026-08-30T08:42:34.699403Z"
+}

@@ -1,0 +1,299 @@
+{
+  "match": {
+    "league": "F1",
+    "home_team": "Lyon",
+    "away_team": "Le Havre",
+    "match_date": "2026-08-29 19:45",
+    "odds_home": 1.44,
+    "odds_draw": 4.5,
+    "odds_away": 7.0,
+    "n_simulations": 2000,
+    "seed": 130,
+    "odds_blend": 0.3
+  },
+  "resolved": {
+    "league": "Ligue 1",
+    "div": "F1",
+    "home": "Lyon",
+    "away": "Le Havre",
+    "models": "market-only",
+    "match_date": "2026-08-29 19:45"
+  },
+  "report": {
+    "n": 2000,
+    "ft_model": {
+      "H": 0.6554307116104869,
+      "D": 0.20973782771535582,
+      "A": 0.13483146067415733
+    },
+    "ft_sim": {
+      "H": 0.655,
+      "D": 0.216,
+      "A": 0.129
+    },
+    "ht_model": {
+      "H": 0.3,
+      "D": 0.4,
+      "A": 0.3
+    },
+    "ht_sim": {
+      "H": 0.2895,
+      "D": 0.4055,
+      "A": 0.305
+    },
+    "over25_model": 0.47559523809523807,
+    "over25_sim": 0.6,
+    "btts_model": 0.45,
+    "btts_sim": 0.4375,
+    "ht_over15_model": 0.35,
+    "ht_over15_sim": 0.3325,
+    "dc_ft": {
+      "1X": 0.8651685393258428,
+      "X2": 0.3445692883895132,
+      "12": 0.7902621722846442
+    },
+    "dc_ht": {
+      "1X": 0.7,
+      "X2": 0.7,
+      "12": 0.6
+    },
+    "top_ft": [
+      [
+        "2-1",
+        334
+      ],
+      [
+        "0-0",
+        233
+      ],
+      [
+        "1-0",
+        196
+      ],
+      [
+        "2-0",
+        184
+      ],
+      [
+        "3-0",
+        125
+      ],
+      [
+        "4-0",
+        124
+      ],
+      [
+        "5-0",
+        114
+      ],
+      [
+        "1-1",
+        104
+      ]
+    ],
+    "top_ht": [
+      [
+        "0-0",
+        499
+      ],
+      [
+        "0-1",
+        426
+      ],
+      [
+        "1-0",
+        410
+      ],
+      [
+        "1-1",
+        312
+      ],
+      [
+        "0-2",
+        105
+      ]
+    ],
+    "xg": {
+      "home": 1.97,
+      "away": 0.849,
+      "total": 2.819
+    },
+    "goal_rates": {
+      "home": 1.97,
+      "away": 0.849
+    }
+  },
+  "table": [
+    {
+      "Section": "HT Winner",
+      "Selection": "Lyon",
+      "Model%": 30.0,
+      "Sim%": 28.9,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Draw",
+      "Model%": 40.0,
+      "Sim%": 40.6,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Le Havre",
+      "Model%": 30.0,
+      "Sim%": 30.5,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "1X",
+      "Model%": 70.0,
+      "Sim%": 69.5,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "X2",
+      "Model%": 70.0,
+      "Sim%": 71.0,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "12",
+      "Model%": 60.0,
+      "Sim%": 59.5,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Over 1.5",
+      "Model%": 35.0,
+      "Sim%": 33.2,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Under 1.5",
+      "Model%": 65.0,
+      "Sim%": 66.8,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Lyon",
+      "Model%": 65.5,
+      "Sim%": 65.5,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Draw",
+      "Model%": 21.0,
+      "Sim%": 21.6,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Le Havre",
+      "Model%": 13.5,
+      "Sim%": 12.9,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "1X",
+      "Model%": 86.5,
+      "Sim%": 87.1,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 34.5,
+      "Sim%": 34.5,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "12",
+      "Model%": 79.0,
+      "Sim%": 78.4,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Over 2.5",
+      "Model%": 47.6,
+      "Sim%": 60.0,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Under 2.5",
+      "Model%": 52.4,
+      "Sim%": 40.0,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "Yes",
+      "Model%": 45.0,
+      "Sim%": 43.8,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 55.0,
+      "Sim%": 56.2,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    }
+  ],
+  "locked_tip": {
+    "status": "SECURED LOCK",
+    "section": "FT DC",
+    "selection": "1X",
+    "model": 86.5,
+    "sim": 87.1,
+    "agree": "1 eng",
+    "verdict": "HARD YES"
+  },
+  "backends": {
+    "ft_result": [
+      "market"
+    ],
+    "ht_result": [
+      "market"
+    ],
+    "over25": [
+      "market"
+    ],
+    "btts": [
+      "market"
+    ],
+    "ht_over15": [
+      "market"
+    ]
+  },
+  "generated_at": "2026-08-30T08:42:32.493355Z"
+}

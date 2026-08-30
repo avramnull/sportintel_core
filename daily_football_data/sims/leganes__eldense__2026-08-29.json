@@ -1,0 +1,299 @@
+{
+  "match": {
+    "league": "SP2",
+    "home_team": "Leganes",
+    "away_team": "Eldense",
+    "match_date": "2026-08-29 18:00",
+    "odds_home": 1.91,
+    "odds_draw": 3.5,
+    "odds_away": 3.8,
+    "n_simulations": 2000,
+    "seed": 222,
+    "odds_blend": 0.3
+  },
+  "resolved": {
+    "league": "La Liga 2",
+    "div": "SP2",
+    "home": "Leganes",
+    "away": "Eldense",
+    "models": "market-only",
+    "match_date": "2026-08-29 18:00"
+  },
+  "report": {
+    "n": 2000,
+    "ft_model": {
+      "H": 0.4881988033623316,
+      "D": 0.26641706126344383,
+      "A": 0.24538413537422457
+    },
+    "ft_sim": {
+      "H": 0.4965,
+      "D": 0.276,
+      "A": 0.2275
+    },
+    "ht_model": {
+      "H": 0.3,
+      "D": 0.4,
+      "A": 0.3
+    },
+    "ht_sim": {
+      "H": 0.312,
+      "D": 0.4105,
+      "A": 0.2775
+    },
+    "over25_model": 0.46800771562413884,
+    "over25_sim": 0.567,
+    "btts_model": 0.45,
+    "btts_sim": 0.4515,
+    "ht_over15_model": 0.35,
+    "ht_over15_sim": 0.3535,
+    "dc_ft": {
+      "1X": 0.7546158646257755,
+      "X2": 0.5118011966376684,
+      "12": 0.7335829387365562
+    },
+    "dc_ht": {
+      "1X": 0.7,
+      "X2": 0.7,
+      "12": 0.6
+    },
+    "top_ft": [
+      [
+        "0-0",
+        302
+      ],
+      [
+        "2-1",
+        258
+      ],
+      [
+        "1-0",
+        162
+      ],
+      [
+        "1-1",
+        134
+      ],
+      [
+        "2-0",
+        131
+      ],
+      [
+        "1-2",
+        120
+      ],
+      [
+        "3-0",
+        104
+      ],
+      [
+        "5-0",
+        83
+      ]
+    ],
+    "top_ht": [
+      [
+        "0-0",
+        477
+      ],
+      [
+        "1-0",
+        430
+      ],
+      [
+        "0-1",
+        386
+      ],
+      [
+        "1-1",
+        344
+      ],
+      [
+        "2-0",
+        99
+      ]
+    ],
+    "xg": {
+      "home": 1.6265,
+      "away": 1.068,
+      "total": 2.6945
+    },
+    "goal_rates": {
+      "home": 1.6265,
+      "away": 1.068
+    }
+  },
+  "table": [
+    {
+      "Section": "HT Winner",
+      "Selection": "Leganes",
+      "Model%": 30.0,
+      "Sim%": 31.2,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Draw",
+      "Model%": 40.0,
+      "Sim%": 41.0,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Eldense",
+      "Model%": 30.0,
+      "Sim%": 27.8,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "1X",
+      "Model%": 70.0,
+      "Sim%": 72.2,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "X2",
+      "Model%": 70.0,
+      "Sim%": 68.8,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "12",
+      "Model%": 60.0,
+      "Sim%": 59.0,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Over 1.5",
+      "Model%": 35.0,
+      "Sim%": 35.4,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Under 1.5",
+      "Model%": 65.0,
+      "Sim%": 64.7,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Leganes",
+      "Model%": 48.8,
+      "Sim%": 49.6,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Draw",
+      "Model%": 26.6,
+      "Sim%": 27.6,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Eldense",
+      "Model%": 24.5,
+      "Sim%": 22.8,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "1X",
+      "Model%": 75.5,
+      "Sim%": 77.2,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 51.2,
+      "Sim%": 50.4,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "12",
+      "Model%": 73.4,
+      "Sim%": 72.4,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Over 2.5",
+      "Model%": 46.8,
+      "Sim%": 56.7,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Under 2.5",
+      "Model%": 53.2,
+      "Sim%": 43.3,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "Yes",
+      "Model%": 45.0,
+      "Sim%": 45.1,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 55.0,
+      "Sim%": 54.9,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    }
+  ],
+  "locked_tip": {
+    "status": "SECURED LOCK",
+    "section": "FT DC",
+    "selection": "1X",
+    "model": 75.5,
+    "sim": 77.2,
+    "agree": "1 eng",
+    "verdict": "HARD YES"
+  },
+  "backends": {
+    "ft_result": [
+      "market"
+    ],
+    "ht_result": [
+      "market"
+    ],
+    "over25": [
+      "market"
+    ],
+    "btts": [
+      "market"
+    ],
+    "ht_over15": [
+      "market"
+    ]
+  },
+  "generated_at": "2026-08-30T08:42:36.231486Z"
+}

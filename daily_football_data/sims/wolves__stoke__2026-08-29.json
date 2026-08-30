@@ -1,0 +1,299 @@
+{
+  "match": {
+    "league": "E1",
+    "home_team": "Wolves",
+    "away_team": "Stoke",
+    "match_date": "2026-08-29 12:30",
+    "odds_home": 1.45,
+    "odds_draw": 4.33,
+    "odds_away": 6.5,
+    "n_simulations": 2000,
+    "seed": 82,
+    "odds_blend": 0.3
+  },
+  "resolved": {
+    "league": "Championship",
+    "div": "E1",
+    "home": "Wolverhampton",
+    "away": "Stoke",
+    "models": "market-only",
+    "match_date": "2026-08-29 12:30"
+  },
+  "report": {
+    "n": 2000,
+    "ft_model": {
+      "H": 0.6418691631412705,
+      "D": 0.2149446389272153,
+      "A": 0.1431861979315142
+    },
+    "ft_sim": {
+      "H": 0.6355,
+      "D": 0.2125,
+      "A": 0.152
+    },
+    "ht_model": {
+      "H": 0.3,
+      "D": 0.4,
+      "A": 0.3
+    },
+    "ht_sim": {
+      "H": 0.29,
+      "D": 0.4075,
+      "A": 0.3025
+    },
+    "over25_model": 0.47652519893899203,
+    "over25_sim": 0.61,
+    "btts_model": 0.45,
+    "btts_sim": 0.4535,
+    "ht_over15_model": 0.35,
+    "ht_over15_sim": 0.3355,
+    "dc_ft": {
+      "1X": 0.8568138020684858,
+      "X2": 0.3581308368587295,
+      "12": 0.7850553610727847
+    },
+    "dc_ht": {
+      "1X": 0.7,
+      "X2": 0.7,
+      "12": 0.6
+    },
+    "top_ft": [
+      [
+        "2-1",
+        370
+      ],
+      [
+        "0-0",
+        251
+      ],
+      [
+        "2-0",
+        181
+      ],
+      [
+        "1-0",
+        177
+      ],
+      [
+        "5-0",
+        118
+      ],
+      [
+        "3-2",
+        105
+      ],
+      [
+        "4-0",
+        103
+      ],
+      [
+        "3-0",
+        95
+      ]
+    ],
+    "top_ht": [
+      [
+        "0-0",
+        480
+      ],
+      [
+        "0-1",
+        444
+      ],
+      [
+        "1-0",
+        405
+      ],
+      [
+        "1-1",
+        335
+      ],
+      [
+        "2-0",
+        88
+      ]
+    ],
+    "xg": {
+      "home": 1.9015,
+      "away": 0.923,
+      "total": 2.8245
+    },
+    "goal_rates": {
+      "home": 1.9015,
+      "away": 0.923
+    }
+  },
+  "table": [
+    {
+      "Section": "HT Winner",
+      "Selection": "Wolverhampton",
+      "Model%": 30.0,
+      "Sim%": 29.0,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Draw",
+      "Model%": 40.0,
+      "Sim%": 40.8,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Stoke",
+      "Model%": 30.0,
+      "Sim%": 30.2,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "1X",
+      "Model%": 70.0,
+      "Sim%": 69.8,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "X2",
+      "Model%": 70.0,
+      "Sim%": 71.0,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "12",
+      "Model%": 60.0,
+      "Sim%": 59.2,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Over 1.5",
+      "Model%": 35.0,
+      "Sim%": 33.6,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Under 1.5",
+      "Model%": 65.0,
+      "Sim%": 66.5,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Wolverhampton",
+      "Model%": 64.2,
+      "Sim%": 63.5,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Draw",
+      "Model%": 21.5,
+      "Sim%": 21.2,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Stoke",
+      "Model%": 14.3,
+      "Sim%": 15.2,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "1X",
+      "Model%": 85.7,
+      "Sim%": 84.8,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 35.8,
+      "Sim%": 36.4,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "12",
+      "Model%": 78.5,
+      "Sim%": 78.8,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Over 2.5",
+      "Model%": 47.7,
+      "Sim%": 61.0,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Under 2.5",
+      "Model%": 52.3,
+      "Sim%": 39.0,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "Yes",
+      "Model%": 45.0,
+      "Sim%": 45.4,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 55.0,
+      "Sim%": 54.6,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    }
+  ],
+  "locked_tip": {
+    "status": "SECURED LOCK",
+    "section": "FT DC",
+    "selection": "1X",
+    "model": 85.7,
+    "sim": 84.8,
+    "agree": "1 eng",
+    "verdict": "HARD YES"
+  },
+  "backends": {
+    "ft_result": [
+      "market"
+    ],
+    "ht_result": [
+      "market"
+    ],
+    "over25": [
+      "market"
+    ],
+    "btts": [
+      "market"
+    ],
+    "ht_over15": [
+      "market"
+    ]
+  },
+  "generated_at": "2026-08-30T08:42:30.530929Z"
+}

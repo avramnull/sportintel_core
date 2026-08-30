@@ -1,0 +1,299 @@
+{
+  "match": {
+    "league": "E3",
+    "home_team": "Shrewsbury",
+    "away_team": "Salford",
+    "match_date": "2026-08-29 15:00",
+    "odds_home": 3.8,
+    "odds_draw": 3.5,
+    "odds_away": 1.86,
+    "n_simulations": 2000,
+    "seed": 111,
+    "odds_blend": 0.3
+  },
+  "resolved": {
+    "league": "League Two",
+    "div": "E3",
+    "home": "Shrewsbury",
+    "away": "Salford",
+    "models": "market-only",
+    "match_date": "2026-08-29 15:00"
+  },
+  "report": {
+    "n": 2000,
+    "ft_model": {
+      "H": 0.2422055212441402,
+      "D": 0.2629659944936379,
+      "A": 0.49482848426222187
+    },
+    "ft_sim": {
+      "H": 0.232,
+      "D": 0.2765,
+      "A": 0.4915
+    },
+    "ht_model": {
+      "H": 0.3,
+      "D": 0.4,
+      "A": 0.3
+    },
+    "ht_sim": {
+      "H": 0.304,
+      "D": 0.419,
+      "A": 0.277
+    },
+    "over25_model": 0.47011884550084887,
+    "over25_sim": 0.5615,
+    "btts_model": 0.45,
+    "btts_sim": 0.451,
+    "ht_over15_model": 0.35,
+    "ht_over15_sim": 0.341,
+    "dc_ft": {
+      "1X": 0.5051715157377781,
+      "X2": 0.7577944787558597,
+      "12": 0.737034005506362
+    },
+    "dc_ht": {
+      "1X": 0.7,
+      "X2": 0.7,
+      "12": 0.6
+    },
+    "top_ft": [
+      [
+        "0-0",
+        305
+      ],
+      [
+        "1-2",
+        263
+      ],
+      [
+        "0-2",
+        157
+      ],
+      [
+        "0-1",
+        140
+      ],
+      [
+        "1-1",
+        134
+      ],
+      [
+        "2-1",
+        116
+      ],
+      [
+        "0-3",
+        84
+      ],
+      [
+        "0-4",
+        80
+      ]
+    ],
+    "top_ht": [
+      [
+        "0-0",
+        494
+      ],
+      [
+        "1-0",
+        426
+      ],
+      [
+        "0-1",
+        398
+      ],
+      [
+        "1-1",
+        344
+      ],
+      [
+        "2-0",
+        94
+      ]
+    ],
+    "xg": {
+      "home": 1.0905,
+      "away": 1.599,
+      "total": 2.6895
+    },
+    "goal_rates": {
+      "home": 1.0905,
+      "away": 1.599
+    }
+  },
+  "table": [
+    {
+      "Section": "HT Winner",
+      "Selection": "Shrewsbury",
+      "Model%": 30.0,
+      "Sim%": 30.4,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Draw",
+      "Model%": 40.0,
+      "Sim%": 41.9,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Salford",
+      "Model%": 30.0,
+      "Sim%": 27.7,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "1X",
+      "Model%": 70.0,
+      "Sim%": 72.3,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "X2",
+      "Model%": 70.0,
+      "Sim%": 69.6,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "12",
+      "Model%": 60.0,
+      "Sim%": 58.1,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Over 1.5",
+      "Model%": 35.0,
+      "Sim%": 34.1,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Under 1.5",
+      "Model%": 65.0,
+      "Sim%": 65.9,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Shrewsbury",
+      "Model%": 24.2,
+      "Sim%": 23.2,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Draw",
+      "Model%": 26.3,
+      "Sim%": 27.7,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Salford",
+      "Model%": 49.5,
+      "Sim%": 49.1,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "1X",
+      "Model%": 50.5,
+      "Sim%": 50.9,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 75.8,
+      "Sim%": 76.8,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "12",
+      "Model%": 73.7,
+      "Sim%": 72.4,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Over 2.5",
+      "Model%": 47.0,
+      "Sim%": 56.1,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Under 2.5",
+      "Model%": 53.0,
+      "Sim%": 43.9,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "Yes",
+      "Model%": 45.0,
+      "Sim%": 45.1,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 55.0,
+      "Sim%": 54.9,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    }
+  ],
+  "locked_tip": {
+    "status": "SECURED LOCK",
+    "section": "FT DC",
+    "selection": "X2",
+    "model": 75.8,
+    "sim": 76.8,
+    "agree": "1 eng",
+    "verdict": "HARD YES"
+  },
+  "backends": {
+    "ft_result": [
+      "market"
+    ],
+    "ht_result": [
+      "market"
+    ],
+    "over25": [
+      "market"
+    ],
+    "btts": [
+      "market"
+    ],
+    "ht_over15": [
+      "market"
+    ]
+  },
+  "generated_at": "2026-08-30T08:42:31.693535Z"
+}

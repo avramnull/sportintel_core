@@ -1,0 +1,299 @@
+{
+  "match": {
+    "league": "T1",
+    "home_team": "Buyuksehyr",
+    "away_team": "Kasimpasa",
+    "match_date": "2026-08-30 19:30",
+    "odds_home": 1.61,
+    "odds_draw": 3.8,
+    "odds_away": 5.25,
+    "n_simulations": 2000,
+    "seed": 235,
+    "odds_blend": 0.3
+  },
+  "resolved": {
+    "league": "S\u00fcper Lig",
+    "div": "T1",
+    "home": "Buyuksehyr",
+    "away": "Kasimpasa",
+    "models": "market-only",
+    "match_date": "2026-08-30 19:30"
+  },
+  "report": {
+    "n": 2000,
+    "ft_model": {
+      "H": 0.5779174693298185,
+      "D": 0.24485450674237047,
+      "A": 0.177228023927811
+    },
+    "ft_sim": {
+      "H": 0.5745,
+      "D": 0.259,
+      "A": 0.1665
+    },
+    "ht_model": {
+      "H": 0.3,
+      "D": 0.4,
+      "A": 0.3
+    },
+    "ht_sim": {
+      "H": 0.308,
+      "D": 0.407,
+      "A": 0.285
+    },
+    "over25_model": 0.47173913043478255,
+    "over25_sim": 0.582,
+    "btts_model": 0.45,
+    "btts_sim": 0.443,
+    "ht_over15_model": 0.35,
+    "ht_over15_sim": 0.3495,
+    "dc_ft": {
+      "1X": 0.822771976072189,
+      "X2": 0.4220825306701815,
+      "12": 0.7551454932576295
+    },
+    "dc_ht": {
+      "1X": 0.7,
+      "X2": 0.7,
+      "12": 0.6
+    },
+    "top_ft": [
+      [
+        "2-1",
+        334
+      ],
+      [
+        "0-0",
+        296
+      ],
+      [
+        "2-0",
+        175
+      ],
+      [
+        "1-0",
+        162
+      ],
+      [
+        "1-1",
+        113
+      ],
+      [
+        "1-2",
+        105
+      ],
+      [
+        "5-0",
+        104
+      ],
+      [
+        "4-0",
+        102
+      ]
+    ],
+    "top_ht": [
+      [
+        "0-0",
+        491
+      ],
+      [
+        "1-0",
+        408
+      ],
+      [
+        "0-1",
+        402
+      ],
+      [
+        "1-1",
+        323
+      ],
+      [
+        "2-1",
+        112
+      ]
+    ],
+    "xg": {
+      "home": 1.78,
+      "away": 0.9265,
+      "total": 2.7065
+    },
+    "goal_rates": {
+      "home": 1.78,
+      "away": 0.9265
+    }
+  },
+  "table": [
+    {
+      "Section": "HT Winner",
+      "Selection": "Buyuksehyr",
+      "Model%": 30.0,
+      "Sim%": 30.8,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Draw",
+      "Model%": 40.0,
+      "Sim%": 40.7,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Kasimpasa",
+      "Model%": 30.0,
+      "Sim%": 28.5,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "1X",
+      "Model%": 70.0,
+      "Sim%": 71.5,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "X2",
+      "Model%": 70.0,
+      "Sim%": 69.2,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "12",
+      "Model%": 60.0,
+      "Sim%": 59.3,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Over 1.5",
+      "Model%": 35.0,
+      "Sim%": 34.9,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Under 1.5",
+      "Model%": 65.0,
+      "Sim%": 65.1,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Buyuksehyr",
+      "Model%": 57.8,
+      "Sim%": 57.5,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Draw",
+      "Model%": 24.5,
+      "Sim%": 25.9,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Kasimpasa",
+      "Model%": 17.7,
+      "Sim%": 16.7,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "1X",
+      "Model%": 82.3,
+      "Sim%": 83.4,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 42.2,
+      "Sim%": 42.5,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "12",
+      "Model%": 75.5,
+      "Sim%": 74.1,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Over 2.5",
+      "Model%": 47.2,
+      "Sim%": 58.2,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Under 2.5",
+      "Model%": 52.8,
+      "Sim%": 41.8,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "Yes",
+      "Model%": 45.0,
+      "Sim%": 44.3,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 55.0,
+      "Sim%": 55.7,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    }
+  ],
+  "locked_tip": {
+    "status": "SECURED LOCK",
+    "section": "FT DC",
+    "selection": "1X",
+    "model": 82.3,
+    "sim": 83.4,
+    "agree": "1 eng",
+    "verdict": "HARD YES"
+  },
+  "backends": {
+    "ft_result": [
+      "market"
+    ],
+    "ht_result": [
+      "market"
+    ],
+    "over25": [
+      "market"
+    ],
+    "btts": [
+      "market"
+    ],
+    "ht_over15": [
+      "market"
+    ]
+  },
+  "generated_at": "2026-08-30T08:42:36.748176Z"
+}

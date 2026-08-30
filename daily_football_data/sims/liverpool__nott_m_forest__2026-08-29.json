@@ -1,0 +1,299 @@
+{
+  "match": {
+    "league": "E0",
+    "home_team": "Liverpool",
+    "away_team": "Nott'm Forest",
+    "match_date": "2026-08-29 12:30",
+    "odds_home": 1.5,
+    "odds_draw": 4.5,
+    "odds_away": 5.75,
+    "n_simulations": 2000,
+    "seed": 70,
+    "odds_blend": 0.3
+  },
+  "resolved": {
+    "league": "Premier League",
+    "div": "E0",
+    "home": "Liverpool",
+    "away": "Nott'm Forest",
+    "models": "market-only",
+    "match_date": "2026-08-29 12:30"
+  },
+  "report": {
+    "n": 2000,
+    "ft_model": {
+      "H": 0.6272727272727273,
+      "D": 0.2090909090909091,
+      "A": 0.16363636363636366
+    },
+    "ft_sim": {
+      "H": 0.6405,
+      "D": 0.209,
+      "A": 0.1505
+    },
+    "ht_model": {
+      "H": 0.3,
+      "D": 0.4,
+      "A": 0.3
+    },
+    "ht_sim": {
+      "H": 0.2965,
+      "D": 0.385,
+      "A": 0.3185
+    },
+    "over25_model": 0.4760869565217391,
+    "over25_sim": 0.634,
+    "btts_model": 0.45,
+    "btts_sim": 0.468,
+    "ht_over15_model": 0.35,
+    "ht_over15_sim": 0.334,
+    "dc_ft": {
+      "1X": 0.8363636363636364,
+      "X2": 0.3727272727272728,
+      "12": 0.790909090909091
+    },
+    "dc_ht": {
+      "1X": 0.7,
+      "X2": 0.7,
+      "12": 0.6
+    },
+    "top_ft": [
+      [
+        "2-1",
+        367
+      ],
+      [
+        "0-0",
+        223
+      ],
+      [
+        "2-0",
+        172
+      ],
+      [
+        "1-0",
+        162
+      ],
+      [
+        "3-0",
+        127
+      ],
+      [
+        "4-0",
+        112
+      ],
+      [
+        "5-0",
+        108
+      ],
+      [
+        "1-1",
+        102
+      ]
+    ],
+    "top_ht": [
+      [
+        "0-0",
+        466
+      ],
+      [
+        "0-1",
+        458
+      ],
+      [
+        "1-0",
+        408
+      ],
+      [
+        "1-1",
+        304
+      ],
+      [
+        "2-0",
+        98
+      ]
+    ],
+    "xg": {
+      "home": 1.95,
+      "away": 0.936,
+      "total": 2.886
+    },
+    "goal_rates": {
+      "home": 1.95,
+      "away": 0.936
+    }
+  },
+  "table": [
+    {
+      "Section": "HT Winner",
+      "Selection": "Liverpool",
+      "Model%": 30.0,
+      "Sim%": 29.6,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Draw",
+      "Model%": 40.0,
+      "Sim%": 38.5,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Nott'm Forest",
+      "Model%": 30.0,
+      "Sim%": 31.9,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "1X",
+      "Model%": 70.0,
+      "Sim%": 68.2,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "X2",
+      "Model%": 70.0,
+      "Sim%": 70.3,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "12",
+      "Model%": 60.0,
+      "Sim%": 61.5,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Over 1.5",
+      "Model%": 35.0,
+      "Sim%": 33.4,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Under 1.5",
+      "Model%": 65.0,
+      "Sim%": 66.6,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Liverpool",
+      "Model%": 62.7,
+      "Sim%": 64.0,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Draw",
+      "Model%": 20.9,
+      "Sim%": 20.9,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Nott'm Forest",
+      "Model%": 16.4,
+      "Sim%": 15.0,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "1X",
+      "Model%": 83.6,
+      "Sim%": 84.9,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 37.3,
+      "Sim%": 35.9,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "12",
+      "Model%": 79.1,
+      "Sim%": 79.1,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Over 2.5",
+      "Model%": 47.6,
+      "Sim%": 63.4,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Under 2.5",
+      "Model%": 52.4,
+      "Sim%": 36.6,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "Yes",
+      "Model%": 45.0,
+      "Sim%": 46.8,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 55.0,
+      "Sim%": 53.2,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    }
+  ],
+  "locked_tip": {
+    "status": "SECURED LOCK",
+    "section": "FT DC",
+    "selection": "1X",
+    "model": 83.6,
+    "sim": 84.9,
+    "agree": "1 eng",
+    "verdict": "HARD YES"
+  },
+  "backends": {
+    "ft_result": [
+      "market"
+    ],
+    "ht_result": [
+      "market"
+    ],
+    "over25": [
+      "market"
+    ],
+    "btts": [
+      "market"
+    ],
+    "ht_over15": [
+      "market"
+    ]
+  },
+  "generated_at": "2026-08-30T08:42:30.057411Z"
+}

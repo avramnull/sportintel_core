@@ -1,0 +1,299 @@
+{
+  "match": {
+    "league": "I1",
+    "home_team": "Cagliari",
+    "away_team": "Inter",
+    "match_date": "2026-08-30 19:45",
+    "odds_home": 7.0,
+    "odds_draw": 4.5,
+    "odds_away": 1.44,
+    "n_simulations": 2000,
+    "seed": 156,
+    "odds_blend": 0.3
+  },
+  "resolved": {
+    "league": "Serie A",
+    "div": "I1",
+    "home": "Cagliari",
+    "away": "Inter",
+    "models": "market-only",
+    "match_date": "2026-08-30 19:45"
+  },
+  "report": {
+    "n": 2000,
+    "ft_model": {
+      "H": 0.13483146067415733,
+      "D": 0.20973782771535582,
+      "A": 0.6554307116104869
+    },
+    "ft_sim": {
+      "H": 0.1365,
+      "D": 0.205,
+      "A": 0.6585
+    },
+    "ht_model": {
+      "H": 0.3,
+      "D": 0.4,
+      "A": 0.3
+    },
+    "ht_sim": {
+      "H": 0.306,
+      "D": 0.397,
+      "A": 0.297
+    },
+    "over25_model": 0.47559523809523807,
+    "over25_sim": 0.606,
+    "btts_model": 0.45,
+    "btts_sim": 0.45,
+    "ht_over15_model": 0.35,
+    "ht_over15_sim": 0.3535,
+    "dc_ft": {
+      "1X": 0.3445692883895132,
+      "X2": 0.8651685393258428,
+      "12": 0.7902621722846442
+    },
+    "dc_ht": {
+      "1X": 0.7,
+      "X2": 0.7,
+      "12": 0.6
+    },
+    "top_ft": [
+      [
+        "1-2",
+        350
+      ],
+      [
+        "0-0",
+        225
+      ],
+      [
+        "0-2",
+        198
+      ],
+      [
+        "0-1",
+        189
+      ],
+      [
+        "0-3",
+        132
+      ],
+      [
+        "2-3",
+        108
+      ],
+      [
+        "0-4",
+        104
+      ],
+      [
+        "1-1",
+        101
+      ]
+    ],
+    "top_ht": [
+      [
+        "0-0",
+        474
+      ],
+      [
+        "1-0",
+        420
+      ],
+      [
+        "0-1",
+        399
+      ],
+      [
+        "1-1",
+        320
+      ],
+      [
+        "0-2",
+        98
+      ]
+    ],
+    "xg": {
+      "home": 0.911,
+      "away": 1.9385,
+      "total": 2.8495
+    },
+    "goal_rates": {
+      "home": 0.911,
+      "away": 1.9385
+    }
+  },
+  "table": [
+    {
+      "Section": "HT Winner",
+      "Selection": "Cagliari",
+      "Model%": 30.0,
+      "Sim%": 30.6,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Draw",
+      "Model%": 40.0,
+      "Sim%": 39.7,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Inter",
+      "Model%": 30.0,
+      "Sim%": 29.7,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "1X",
+      "Model%": 70.0,
+      "Sim%": 70.3,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "X2",
+      "Model%": 70.0,
+      "Sim%": 69.4,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "12",
+      "Model%": 60.0,
+      "Sim%": 60.3,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Over 1.5",
+      "Model%": 35.0,
+      "Sim%": 35.4,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Under 1.5",
+      "Model%": 65.0,
+      "Sim%": 64.7,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Cagliari",
+      "Model%": 13.5,
+      "Sim%": 13.7,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Draw",
+      "Model%": 21.0,
+      "Sim%": 20.5,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Inter",
+      "Model%": 65.5,
+      "Sim%": 65.8,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "1X",
+      "Model%": 34.5,
+      "Sim%": 34.2,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 86.5,
+      "Sim%": 86.3,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "12",
+      "Model%": 79.0,
+      "Sim%": 79.5,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Over 2.5",
+      "Model%": 47.6,
+      "Sim%": 60.6,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Under 2.5",
+      "Model%": 52.4,
+      "Sim%": 39.4,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "Yes",
+      "Model%": 45.0,
+      "Sim%": 45.0,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 55.0,
+      "Sim%": 55.0,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    }
+  ],
+  "locked_tip": {
+    "status": "SECURED LOCK",
+    "section": "FT DC",
+    "selection": "X2",
+    "model": 86.5,
+    "sim": 86.3,
+    "agree": "1 eng",
+    "verdict": "HARD YES"
+  },
+  "backends": {
+    "ft_result": [
+      "market"
+    ],
+    "ht_result": [
+      "market"
+    ],
+    "over25": [
+      "market"
+    ],
+    "btts": [
+      "market"
+    ],
+    "ht_over15": [
+      "market"
+    ]
+  },
+  "generated_at": "2026-08-30T08:42:33.561211Z"
+}

@@ -1,0 +1,299 @@
+{
+  "match": {
+    "league": "D2",
+    "home_team": "Magdeburg",
+    "away_team": "Holstein Kiel",
+    "match_date": "2026-08-30 12:30",
+    "odds_home": 2.15,
+    "odds_draw": 3.6,
+    "odds_away": 3.1,
+    "n_simulations": 2000,
+    "seed": 67,
+    "odds_blend": 0.3
+  },
+  "resolved": {
+    "league": "2. Bundesliga",
+    "div": "D2",
+    "home": "Magdeburg",
+    "away": "Holstein Kiel",
+    "models": "market-only",
+    "match_date": "2026-08-30 12:30"
+  },
+  "report": {
+    "n": 2000,
+    "ft_model": {
+      "H": 0.4365343242714649,
+      "D": 0.26070799921768045,
+      "A": 0.30275767651085467
+    },
+    "ft_sim": {
+      "H": 0.4595,
+      "D": 0.243,
+      "A": 0.2975
+    },
+    "ht_model": {
+      "H": 0.3,
+      "D": 0.4,
+      "A": 0.3
+    },
+    "ht_sim": {
+      "H": 0.2845,
+      "D": 0.4065,
+      "A": 0.309
+    },
+    "over25_model": 0.4681545386346586,
+    "over25_sim": 0.574,
+    "btts_model": 0.45,
+    "btts_sim": 0.454,
+    "ht_over15_model": 0.35,
+    "ht_over15_sim": 0.3445,
+    "dc_ft": {
+      "1X": 0.6972423234891454,
+      "X2": 0.5634656757285351,
+      "12": 0.7392920007823196
+    },
+    "dc_ht": {
+      "1X": 0.7,
+      "X2": 0.7,
+      "12": 0.6
+    },
+    "top_ft": [
+      [
+        "0-0",
+        268
+      ],
+      [
+        "2-1",
+        260
+      ],
+      [
+        "1-2",
+        150
+      ],
+      [
+        "2-0",
+        150
+      ],
+      [
+        "1-0",
+        134
+      ],
+      [
+        "1-1",
+        131
+      ],
+      [
+        "0-2",
+        86
+      ],
+      [
+        "0-1",
+        83
+      ]
+    ],
+    "top_ht": [
+      [
+        "0-0",
+        476
+      ],
+      [
+        "0-1",
+        437
+      ],
+      [
+        "1-0",
+        398
+      ],
+      [
+        "1-1",
+        337
+      ],
+      [
+        "0-2",
+        97
+      ]
+    ],
+    "xg": {
+      "home": 1.52,
+      "away": 1.2185,
+      "total": 2.7385
+    },
+    "goal_rates": {
+      "home": 1.52,
+      "away": 1.2185
+    }
+  },
+  "table": [
+    {
+      "Section": "HT Winner",
+      "Selection": "Magdeburg",
+      "Model%": 30.0,
+      "Sim%": 28.4,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Draw",
+      "Model%": 40.0,
+      "Sim%": 40.6,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Holstein Kiel",
+      "Model%": 30.0,
+      "Sim%": 30.9,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "1X",
+      "Model%": 70.0,
+      "Sim%": 69.1,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "X2",
+      "Model%": 70.0,
+      "Sim%": 71.5,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "12",
+      "Model%": 60.0,
+      "Sim%": 59.3,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Over 1.5",
+      "Model%": 35.0,
+      "Sim%": 34.4,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Under 1.5",
+      "Model%": 65.0,
+      "Sim%": 65.5,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Magdeburg",
+      "Model%": 43.7,
+      "Sim%": 46.0,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Draw",
+      "Model%": 26.1,
+      "Sim%": 24.3,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Holstein Kiel",
+      "Model%": 30.3,
+      "Sim%": 29.8,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "1X",
+      "Model%": 69.7,
+      "Sim%": 70.2,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 56.3,
+      "Sim%": 54.0,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "12",
+      "Model%": 73.9,
+      "Sim%": 75.7,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Over 2.5",
+      "Model%": 46.8,
+      "Sim%": 57.4,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Under 2.5",
+      "Model%": 53.2,
+      "Sim%": 42.6,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "Yes",
+      "Model%": 45.0,
+      "Sim%": 45.4,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 55.0,
+      "Sim%": 54.6,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    }
+  ],
+  "locked_tip": {
+    "status": "SECURED LOCK",
+    "section": "FT DC",
+    "selection": "12",
+    "model": 73.9,
+    "sim": 75.7,
+    "agree": "1 eng",
+    "verdict": "HARD YES"
+  },
+  "backends": {
+    "ft_result": [
+      "market"
+    ],
+    "ht_result": [
+      "market"
+    ],
+    "over25": [
+      "market"
+    ],
+    "btts": [
+      "market"
+    ],
+    "ht_over15": [
+      "market"
+    ]
+  },
+  "generated_at": "2026-08-30T08:42:29.935805Z"
+}

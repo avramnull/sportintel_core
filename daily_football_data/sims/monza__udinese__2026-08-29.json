@@ -1,0 +1,299 @@
+{
+  "match": {
+    "league": "I1",
+    "home_team": "Monza",
+    "away_team": "Udinese",
+    "match_date": "2026-08-29 17:30",
+    "odds_home": 3.1,
+    "odds_draw": 3.2,
+    "odds_away": 2.4,
+    "n_simulations": 2000,
+    "seed": 152,
+    "odds_blend": 0.3
+  },
+  "resolved": {
+    "league": "Serie A",
+    "div": "I1",
+    "home": "Monza",
+    "away": "Udinese",
+    "models": "market-only",
+    "match_date": "2026-08-29 17:30"
+  },
+  "report": {
+    "n": 2000,
+    "ft_model": {
+      "H": 0.30670926517571884,
+      "D": 0.2971246006389776,
+      "A": 0.39616613418530355
+    },
+    "ft_sim": {
+      "H": 0.291,
+      "D": 0.3055,
+      "A": 0.4035
+    },
+    "ht_model": {
+      "H": 0.3,
+      "D": 0.4,
+      "A": 0.3
+    },
+    "ht_sim": {
+      "H": 0.2905,
+      "D": 0.395,
+      "A": 0.3145
+    },
+    "over25_model": 0.46088709677419354,
+    "over25_sim": 0.5565,
+    "btts_model": 0.45,
+    "btts_sim": 0.4425,
+    "ht_over15_model": 0.35,
+    "ht_over15_sim": 0.34,
+    "dc_ft": {
+      "1X": 0.6038338658146964,
+      "X2": 0.6932907348242812,
+      "12": 0.7028753993610224
+    },
+    "dc_ht": {
+      "1X": 0.7,
+      "X2": 0.7,
+      "12": 0.6
+    },
+    "top_ft": [
+      [
+        "0-0",
+        336
+      ],
+      [
+        "1-2",
+        221
+      ],
+      [
+        "2-1",
+        147
+      ],
+      [
+        "1-1",
+        145
+      ],
+      [
+        "0-2",
+        117
+      ],
+      [
+        "0-1",
+        107
+      ],
+      [
+        "2-0",
+        93
+      ],
+      [
+        "1-0",
+        89
+      ]
+    ],
+    "top_ht": [
+      [
+        "0-0",
+        460
+      ],
+      [
+        "0-1",
+        450
+      ],
+      [
+        "1-0",
+        410
+      ],
+      [
+        "1-1",
+        330
+      ],
+      [
+        "0-2",
+        105
+      ]
+    ],
+    "xg": {
+      "home": 1.231,
+      "away": 1.4555,
+      "total": 2.6865
+    },
+    "goal_rates": {
+      "home": 1.231,
+      "away": 1.4555
+    }
+  },
+  "table": [
+    {
+      "Section": "HT Winner",
+      "Selection": "Monza",
+      "Model%": 30.0,
+      "Sim%": 29.0,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Draw",
+      "Model%": 40.0,
+      "Sim%": 39.5,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Udinese",
+      "Model%": 30.0,
+      "Sim%": 31.4,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "1X",
+      "Model%": 70.0,
+      "Sim%": 68.5,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "X2",
+      "Model%": 70.0,
+      "Sim%": 71.0,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "12",
+      "Model%": 60.0,
+      "Sim%": 60.5,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Over 1.5",
+      "Model%": 35.0,
+      "Sim%": 34.0,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Under 1.5",
+      "Model%": 65.0,
+      "Sim%": 66.0,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Monza",
+      "Model%": 30.7,
+      "Sim%": 29.1,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Draw",
+      "Model%": 29.7,
+      "Sim%": 30.6,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Udinese",
+      "Model%": 39.6,
+      "Sim%": 40.4,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "1X",
+      "Model%": 60.4,
+      "Sim%": 59.7,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 69.3,
+      "Sim%": 70.9,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "12",
+      "Model%": 70.3,
+      "Sim%": 69.5,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Over 2.5",
+      "Model%": 46.1,
+      "Sim%": 55.6,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Under 2.5",
+      "Model%": 53.9,
+      "Sim%": 44.4,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "Yes",
+      "Model%": 45.0,
+      "Sim%": 44.2,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 55.0,
+      "Sim%": 55.8,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    }
+  ],
+  "locked_tip": {
+    "status": "SECURED LOCK",
+    "section": "FT DC",
+    "selection": "12",
+    "model": 70.3,
+    "sim": 69.5,
+    "agree": "1 eng",
+    "verdict": "HARD YES"
+  },
+  "backends": {
+    "ft_result": [
+      "market"
+    ],
+    "ht_result": [
+      "market"
+    ],
+    "over25": [
+      "market"
+    ],
+    "btts": [
+      "market"
+    ],
+    "ht_over15": [
+      "market"
+    ]
+  },
+  "generated_at": "2026-08-30T08:42:33.390643Z"
+}

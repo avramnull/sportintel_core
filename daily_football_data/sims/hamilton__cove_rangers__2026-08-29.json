@@ -1,0 +1,299 @@
+{
+  "match": {
+    "league": "SC2",
+    "home_team": "Hamilton",
+    "away_team": "Cove Rangers",
+    "match_date": "2026-08-29 15:00",
+    "odds_home": 1.5,
+    "odds_draw": 3.9,
+    "odds_away": 5.25,
+    "n_simulations": 2000,
+    "seed": 201,
+    "odds_blend": 0.3
+  },
+  "resolved": {
+    "league": "Scottish League One",
+    "div": "SC2",
+    "home": "Hamilton",
+    "away": "Cove Rangers",
+    "models": "market-only",
+    "match_date": "2026-08-29 15:00"
+  },
+  "report": {
+    "n": 2000,
+    "ft_model": {
+      "H": 0.5986842105263158,
+      "D": 0.2302631578947369,
+      "A": 0.17105263157894737
+    },
+    "ft_sim": {
+      "H": 0.6215,
+      "D": 0.221,
+      "A": 0.1575
+    },
+    "ht_model": {
+      "H": 0.3,
+      "D": 0.4,
+      "A": 0.3
+    },
+    "ht_sim": {
+      "H": 0.3055,
+      "D": 0.3995,
+      "A": 0.295
+    },
+    "over25_model": 0.47857142857142854,
+    "over25_sim": 0.5955,
+    "btts_model": 0.45,
+    "btts_sim": 0.4535,
+    "ht_over15_model": 0.35,
+    "ht_over15_sim": 0.346,
+    "dc_ft": {
+      "1X": 0.8289473684210527,
+      "X2": 0.4013157894736843,
+      "12": 0.7697368421052632
+    },
+    "dc_ht": {
+      "1X": 0.7,
+      "X2": 0.7,
+      "12": 0.6
+    },
+    "top_ft": [
+      [
+        "2-1",
+        308
+      ],
+      [
+        "0-0",
+        241
+      ],
+      [
+        "2-0",
+        189
+      ],
+      [
+        "1-0",
+        173
+      ],
+      [
+        "3-2",
+        120
+      ],
+      [
+        "5-0",
+        115
+      ],
+      [
+        "1-1",
+        104
+      ],
+      [
+        "3-0",
+        103
+      ]
+    ],
+    "top_ht": [
+      [
+        "0-0",
+        470
+      ],
+      [
+        "1-0",
+        433
+      ],
+      [
+        "0-1",
+        405
+      ],
+      [
+        "1-1",
+        329
+      ],
+      [
+        "1-2",
+        101
+      ]
+    ],
+    "xg": {
+      "home": 1.9095,
+      "away": 0.9195,
+      "total": 2.829
+    },
+    "goal_rates": {
+      "home": 1.9095,
+      "away": 0.9195
+    }
+  },
+  "table": [
+    {
+      "Section": "HT Winner",
+      "Selection": "Hamilton",
+      "Model%": 30.0,
+      "Sim%": 30.6,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Draw",
+      "Model%": 40.0,
+      "Sim%": 40.0,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Cove Rangers",
+      "Model%": 30.0,
+      "Sim%": 29.5,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "1X",
+      "Model%": 70.0,
+      "Sim%": 70.5,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "X2",
+      "Model%": 70.0,
+      "Sim%": 69.5,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "12",
+      "Model%": 60.0,
+      "Sim%": 60.1,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Over 1.5",
+      "Model%": 35.0,
+      "Sim%": 34.6,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Under 1.5",
+      "Model%": 65.0,
+      "Sim%": 65.4,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Hamilton",
+      "Model%": 59.9,
+      "Sim%": 62.2,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Draw",
+      "Model%": 23.0,
+      "Sim%": 22.1,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Cove Rangers",
+      "Model%": 17.1,
+      "Sim%": 15.8,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "1X",
+      "Model%": 82.9,
+      "Sim%": 84.2,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 40.1,
+      "Sim%": 37.9,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "12",
+      "Model%": 77.0,
+      "Sim%": 77.9,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Over 2.5",
+      "Model%": 47.9,
+      "Sim%": 59.6,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Under 2.5",
+      "Model%": 52.1,
+      "Sim%": 40.4,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "Yes",
+      "Model%": 45.0,
+      "Sim%": 45.4,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 55.0,
+      "Sim%": 54.6,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    }
+  ],
+  "locked_tip": {
+    "status": "SECURED LOCK",
+    "section": "FT DC",
+    "selection": "1X",
+    "model": 82.9,
+    "sim": 84.2,
+    "agree": "1 eng",
+    "verdict": "HARD YES"
+  },
+  "backends": {
+    "ft_result": [
+      "market"
+    ],
+    "ht_result": [
+      "market"
+    ],
+    "over25": [
+      "market"
+    ],
+    "btts": [
+      "market"
+    ],
+    "ht_over15": [
+      "market"
+    ]
+  },
+  "generated_at": "2026-08-30T08:42:35.373840Z"
+}

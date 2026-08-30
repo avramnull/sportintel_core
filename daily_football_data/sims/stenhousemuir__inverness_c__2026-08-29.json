@@ -1,0 +1,299 @@
+{
+  "match": {
+    "league": "SC1",
+    "home_team": "Stenhousemuir",
+    "away_team": "Inverness C",
+    "match_date": "2026-08-29 15:00",
+    "odds_home": 3.2,
+    "odds_draw": 3.3,
+    "odds_away": 2.0,
+    "n_simulations": 2000,
+    "seed": 198,
+    "odds_blend": 0.3
+  },
+  "resolved": {
+    "league": "Scottish Championship",
+    "div": "SC1",
+    "home": "Stenhousemuir",
+    "away": "Inverness C",
+    "models": "market-only",
+    "match_date": "2026-08-29 15:00"
+  },
+  "report": {
+    "n": 2000,
+    "ft_model": {
+      "H": 0.28013582342954163,
+      "D": 0.27164685908319186,
+      "A": 0.44821731748726656
+    },
+    "ft_sim": {
+      "H": 0.2645,
+      "D": 0.273,
+      "A": 0.4625
+    },
+    "ht_model": {
+      "H": 0.3,
+      "D": 0.4,
+      "A": 0.3
+    },
+    "ht_sim": {
+      "H": 0.3125,
+      "D": 0.403,
+      "A": 0.2845
+    },
+    "over25_model": 0.471875,
+    "over25_sim": 0.5775,
+    "btts_model": 0.45,
+    "btts_sim": 0.459,
+    "ht_over15_model": 0.35,
+    "ht_over15_sim": 0.3525,
+    "dc_ft": {
+      "1X": 0.5517826825127334,
+      "X2": 0.7198641765704584,
+      "12": 0.7283531409168083
+    },
+    "dc_ht": {
+      "1X": 0.7,
+      "X2": 0.7,
+      "12": 0.6
+    },
+    "top_ft": [
+      [
+        "0-0",
+        294
+      ],
+      [
+        "1-2",
+        256
+      ],
+      [
+        "2-1",
+        156
+      ],
+      [
+        "0-2",
+        149
+      ],
+      [
+        "0-1",
+        138
+      ],
+      [
+        "1-1",
+        125
+      ],
+      [
+        "1-0",
+        80
+      ],
+      [
+        "0-3",
+        74
+      ]
+    ],
+    "top_ht": [
+      [
+        "1-0",
+        450
+      ],
+      [
+        "0-0",
+        449
+      ],
+      [
+        "0-1",
+        396
+      ],
+      [
+        "1-1",
+        357
+      ],
+      [
+        "1-2",
+        101
+      ]
+    ],
+    "xg": {
+      "home": 1.1875,
+      "away": 1.555,
+      "total": 2.7425
+    },
+    "goal_rates": {
+      "home": 1.1875,
+      "away": 1.555
+    }
+  },
+  "table": [
+    {
+      "Section": "HT Winner",
+      "Selection": "Stenhousemuir",
+      "Model%": 30.0,
+      "Sim%": 31.2,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Draw",
+      "Model%": 40.0,
+      "Sim%": 40.3,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Inverness C",
+      "Model%": 30.0,
+      "Sim%": 28.4,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "1X",
+      "Model%": 70.0,
+      "Sim%": 71.5,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "X2",
+      "Model%": 70.0,
+      "Sim%": 68.8,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "12",
+      "Model%": 60.0,
+      "Sim%": 59.7,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Over 1.5",
+      "Model%": 35.0,
+      "Sim%": 35.2,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Under 1.5",
+      "Model%": 65.0,
+      "Sim%": 64.8,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Stenhousemuir",
+      "Model%": 28.0,
+      "Sim%": 26.5,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Draw",
+      "Model%": 27.2,
+      "Sim%": 27.3,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Inverness C",
+      "Model%": 44.8,
+      "Sim%": 46.2,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "1X",
+      "Model%": 55.2,
+      "Sim%": 53.8,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 72.0,
+      "Sim%": 73.6,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "12",
+      "Model%": 72.8,
+      "Sim%": 72.7,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Over 2.5",
+      "Model%": 47.2,
+      "Sim%": 57.8,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Under 2.5",
+      "Model%": 52.8,
+      "Sim%": 42.2,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "Yes",
+      "Model%": 45.0,
+      "Sim%": 45.9,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 55.0,
+      "Sim%": 54.1,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    }
+  ],
+  "locked_tip": {
+    "status": "SECURED LOCK",
+    "section": "FT DC",
+    "selection": "12",
+    "model": 72.8,
+    "sim": 72.7,
+    "agree": "1 eng",
+    "verdict": "HARD YES"
+  },
+  "backends": {
+    "ft_result": [
+      "market"
+    ],
+    "ht_result": [
+      "market"
+    ],
+    "over25": [
+      "market"
+    ],
+    "btts": [
+      "market"
+    ],
+    "ht_over15": [
+      "market"
+    ]
+  },
+  "generated_at": "2026-08-30T08:42:35.254695Z"
+}

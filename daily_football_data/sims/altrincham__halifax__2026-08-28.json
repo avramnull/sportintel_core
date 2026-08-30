@@ -1,0 +1,299 @@
+{
+  "match": {
+    "league": "EC",
+    "home_team": "Altrincham",
+    "away_team": "Halifax",
+    "match_date": "2026-08-28 19:45",
+    "odds_home": 2.3,
+    "odds_draw": 3.5,
+    "odds_away": 2.7,
+    "n_simulations": 2000,
+    "seed": 115,
+    "odds_blend": 0.3
+  },
+  "resolved": {
+    "league": "National League",
+    "div": "EC",
+    "home": "Altrincham",
+    "away": "Halifax",
+    "models": "market-only",
+    "match_date": "2026-08-28 19:45"
+  },
+  "report": {
+    "n": 2000,
+    "ft_model": {
+      "H": 0.39856600590468166,
+      "D": 0.2619148038802193,
+      "A": 0.33951919021509913
+    },
+    "ft_sim": {
+      "H": 0.383,
+      "D": 0.2825,
+      "A": 0.3345
+    },
+    "ht_model": {
+      "H": 0.3,
+      "D": 0.4,
+      "A": 0.3
+    },
+    "ht_sim": {
+      "H": 0.302,
+      "D": 0.398,
+      "A": 0.3
+    },
+    "over25_model": 0.47077294685990334,
+    "over25_sim": 0.574,
+    "btts_model": 0.45,
+    "btts_sim": 0.4645,
+    "ht_over15_model": 0.35,
+    "ht_over15_sim": 0.3275,
+    "dc_ft": {
+      "1X": 0.660480809784901,
+      "X2": 0.6014339940953184,
+      "12": 0.7380851961197807
+    },
+    "dc_ht": {
+      "1X": 0.7,
+      "X2": 0.7,
+      "12": 0.6
+    },
+    "top_ft": [
+      [
+        "0-0",
+        297
+      ],
+      [
+        "2-1",
+        222
+      ],
+      [
+        "1-2",
+        187
+      ],
+      [
+        "1-1",
+        147
+      ],
+      [
+        "1-0",
+        108
+      ],
+      [
+        "2-0",
+        104
+      ],
+      [
+        "0-1",
+        103
+      ],
+      [
+        "0-2",
+        93
+      ]
+    ],
+    "top_ht": [
+      [
+        "0-0",
+        493
+      ],
+      [
+        "1-0",
+        431
+      ],
+      [
+        "0-1",
+        421
+      ],
+      [
+        "1-1",
+        303
+      ],
+      [
+        "2-1",
+        94
+      ]
+    ],
+    "xg": {
+      "home": 1.411,
+      "away": 1.307,
+      "total": 2.718
+    },
+    "goal_rates": {
+      "home": 1.411,
+      "away": 1.307
+    }
+  },
+  "table": [
+    {
+      "Section": "HT Winner",
+      "Selection": "Altrincham",
+      "Model%": 30.0,
+      "Sim%": 30.2,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Draw",
+      "Model%": 40.0,
+      "Sim%": 39.8,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Halifax",
+      "Model%": 30.0,
+      "Sim%": 30.0,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "1X",
+      "Model%": 70.0,
+      "Sim%": 70.0,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "X2",
+      "Model%": 70.0,
+      "Sim%": 69.8,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "12",
+      "Model%": 60.0,
+      "Sim%": 60.2,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Over 1.5",
+      "Model%": 35.0,
+      "Sim%": 32.8,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Under 1.5",
+      "Model%": 65.0,
+      "Sim%": 67.2,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Altrincham",
+      "Model%": 39.9,
+      "Sim%": 38.3,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Draw",
+      "Model%": 26.2,
+      "Sim%": 28.2,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Halifax",
+      "Model%": 34.0,
+      "Sim%": 33.5,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "1X",
+      "Model%": 66.0,
+      "Sim%": 66.5,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 60.1,
+      "Sim%": 61.7,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "12",
+      "Model%": 73.8,
+      "Sim%": 71.8,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Over 2.5",
+      "Model%": 47.1,
+      "Sim%": 57.4,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Under 2.5",
+      "Model%": 52.9,
+      "Sim%": 42.6,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "Yes",
+      "Model%": 45.0,
+      "Sim%": 46.5,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 55.0,
+      "Sim%": 53.5,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    }
+  ],
+  "locked_tip": {
+    "status": "SECURED LOCK",
+    "section": "FT DC",
+    "selection": "12",
+    "model": 73.8,
+    "sim": 71.8,
+    "agree": "1 eng",
+    "verdict": "HARD YES"
+  },
+  "backends": {
+    "ft_result": [
+      "market"
+    ],
+    "ht_result": [
+      "market"
+    ],
+    "over25": [
+      "market"
+    ],
+    "btts": [
+      "market"
+    ],
+    "ht_over15": [
+      "market"
+    ]
+  },
+  "generated_at": "2026-08-30T08:42:31.865897Z"
+}

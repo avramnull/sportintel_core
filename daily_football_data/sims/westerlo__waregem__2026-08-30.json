@@ -1,0 +1,299 @@
+{
+  "match": {
+    "league": "B1",
+    "home_team": "Westerlo",
+    "away_team": "Waregem",
+    "match_date": "2026-08-30 18:15",
+    "odds_home": 2.8,
+    "odds_draw": 3.6,
+    "odds_away": 2.2,
+    "n_simulations": 2000,
+    "seed": 50,
+    "odds_blend": 0.3
+  },
+  "resolved": {
+    "league": "Belgian Pro League",
+    "div": "B1",
+    "home": "Westerlo",
+    "away": "Waregem",
+    "models": "market-only",
+    "match_date": "2026-08-30 18:15"
+  },
+  "report": {
+    "n": 2000,
+    "ft_model": {
+      "H": 0.32781456953642385,
+      "D": 0.25496688741721857,
+      "A": 0.4172185430463576
+    },
+    "ft_sim": {
+      "H": 0.3405,
+      "D": 0.2535,
+      "A": 0.406
+    },
+    "ht_model": {
+      "H": 0.3,
+      "D": 0.4,
+      "A": 0.3
+    },
+    "ht_sim": {
+      "H": 0.2885,
+      "D": 0.3875,
+      "A": 0.324
+    },
+    "over25_model": 0.4717532467532467,
+    "over25_sim": 0.572,
+    "btts_model": 0.45,
+    "btts_sim": 0.4365,
+    "ht_over15_model": 0.35,
+    "ht_over15_sim": 0.333,
+    "dc_ft": {
+      "1X": 0.5827814569536425,
+      "X2": 0.6721854304635762,
+      "12": 0.7450331125827814
+    },
+    "dc_ht": {
+      "1X": 0.7,
+      "X2": 0.7,
+      "12": 0.6
+    },
+    "top_ft": [
+      [
+        "0-0",
+        269
+      ],
+      [
+        "1-2",
+        222
+      ],
+      [
+        "2-1",
+        173
+      ],
+      [
+        "1-1",
+        129
+      ],
+      [
+        "0-1",
+        118
+      ],
+      [
+        "0-2",
+        117
+      ],
+      [
+        "2-0",
+        116
+      ],
+      [
+        "1-0",
+        107
+      ]
+    ],
+    "top_ht": [
+      [
+        "0-0",
+        467
+      ],
+      [
+        "0-1",
+        448
+      ],
+      [
+        "1-0",
+        419
+      ],
+      [
+        "1-1",
+        308
+      ],
+      [
+        "1-2",
+        107
+      ]
+    ],
+    "xg": {
+      "home": 1.286,
+      "away": 1.4405,
+      "total": 2.7265
+    },
+    "goal_rates": {
+      "home": 1.286,
+      "away": 1.4405
+    }
+  },
+  "table": [
+    {
+      "Section": "HT Winner",
+      "Selection": "Westerlo",
+      "Model%": 30.0,
+      "Sim%": 28.8,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Draw",
+      "Model%": 40.0,
+      "Sim%": 38.8,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Waregem",
+      "Model%": 30.0,
+      "Sim%": 32.4,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "1X",
+      "Model%": 70.0,
+      "Sim%": 67.6,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "X2",
+      "Model%": 70.0,
+      "Sim%": 71.2,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "12",
+      "Model%": 60.0,
+      "Sim%": 61.3,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Over 1.5",
+      "Model%": 35.0,
+      "Sim%": 33.3,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Under 1.5",
+      "Model%": 65.0,
+      "Sim%": 66.7,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Westerlo",
+      "Model%": 32.8,
+      "Sim%": 34.1,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Draw",
+      "Model%": 25.5,
+      "Sim%": 25.4,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Waregem",
+      "Model%": 41.7,
+      "Sim%": 40.6,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "1X",
+      "Model%": 58.3,
+      "Sim%": 59.4,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 67.2,
+      "Sim%": 66.0,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "12",
+      "Model%": 74.5,
+      "Sim%": 74.7,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Over 2.5",
+      "Model%": 47.2,
+      "Sim%": 57.2,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Under 2.5",
+      "Model%": 52.8,
+      "Sim%": 42.8,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "Yes",
+      "Model%": 45.0,
+      "Sim%": 43.6,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 55.0,
+      "Sim%": 56.4,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    }
+  ],
+  "locked_tip": {
+    "status": "SECURED LOCK",
+    "section": "FT DC",
+    "selection": "12",
+    "model": 74.5,
+    "sim": 74.7,
+    "agree": "1 eng",
+    "verdict": "HARD YES"
+  },
+  "backends": {
+    "ft_result": [
+      "market"
+    ],
+    "ht_result": [
+      "market"
+    ],
+    "over25": [
+      "market"
+    ],
+    "btts": [
+      "market"
+    ],
+    "ht_over15": [
+      "market"
+    ]
+  },
+  "generated_at": "2026-08-30T08:42:29.259040Z"
+}

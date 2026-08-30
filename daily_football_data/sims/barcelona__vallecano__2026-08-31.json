@@ -1,0 +1,299 @@
+{
+  "match": {
+    "league": "SP1",
+    "home_team": "Barcelona",
+    "away_team": "Vallecano",
+    "match_date": "2026-08-31 20:30",
+    "odds_home": 1.17,
+    "odds_draw": 8.0,
+    "odds_away": 13.0,
+    "n_simulations": 2000,
+    "seed": 218,
+    "odds_blend": 0.3
+  },
+  "resolved": {
+    "league": "La Liga",
+    "div": "SP1",
+    "home": "Barcelona",
+    "away": "Vallecano",
+    "models": "market-only",
+    "match_date": "2026-08-31 20:30"
+  },
+  "report": {
+    "n": 2000,
+    "ft_model": {
+      "H": 0.8088978766430739,
+      "D": 0.11830131445904954,
+      "A": 0.07280080889787664
+    },
+    "ft_sim": {
+      "H": 0.826,
+      "D": 0.1105,
+      "A": 0.0635
+    },
+    "ht_model": {
+      "H": 0.3,
+      "D": 0.4,
+      "A": 0.3
+    },
+    "ht_sim": {
+      "H": 0.3115,
+      "D": 0.3975,
+      "A": 0.291
+    },
+    "over25_model": 0.4897435897435897,
+    "over25_sim": 0.6655,
+    "btts_model": 0.45,
+    "btts_sim": 0.45,
+    "ht_over15_model": 0.35,
+    "ht_over15_sim": 0.3505,
+    "dc_ft": {
+      "1X": 0.9271991911021235,
+      "X2": 0.19110212335692617,
+      "12": 0.8816986855409505
+    },
+    "dc_ht": {
+      "1X": 0.7,
+      "X2": 0.7,
+      "12": 0.6
+    },
+    "top_ft": [
+      [
+        "2-1",
+        459
+      ],
+      [
+        "1-0",
+        246
+      ],
+      [
+        "2-0",
+        211
+      ],
+      [
+        "5-0",
+        157
+      ],
+      [
+        "4-0",
+        148
+      ],
+      [
+        "3-0",
+        135
+      ],
+      [
+        "0-0",
+        125
+      ],
+      [
+        "3-2",
+        124
+      ]
+    ],
+    "top_ht": [
+      [
+        "0-0",
+        471
+      ],
+      [
+        "1-0",
+        434
+      ],
+      [
+        "0-1",
+        394
+      ],
+      [
+        "1-1",
+        324
+      ],
+      [
+        "2-1",
+        105
+      ]
+    ],
+    "xg": {
+      "home": 2.2935,
+      "away": 0.725,
+      "total": 3.0185
+    },
+    "goal_rates": {
+      "home": 2.2935,
+      "away": 0.725
+    }
+  },
+  "table": [
+    {
+      "Section": "HT Winner",
+      "Selection": "Barcelona",
+      "Model%": 30.0,
+      "Sim%": 31.1,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Draw",
+      "Model%": 40.0,
+      "Sim%": 39.8,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Vallecano",
+      "Model%": 30.0,
+      "Sim%": 29.1,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "1X",
+      "Model%": 70.0,
+      "Sim%": 70.9,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "X2",
+      "Model%": 70.0,
+      "Sim%": 68.8,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "12",
+      "Model%": 60.0,
+      "Sim%": 60.2,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Over 1.5",
+      "Model%": 35.0,
+      "Sim%": 35.0,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Under 1.5",
+      "Model%": 65.0,
+      "Sim%": 65.0,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Barcelona",
+      "Model%": 80.9,
+      "Sim%": 82.6,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Draw",
+      "Model%": 11.8,
+      "Sim%": 11.1,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Vallecano",
+      "Model%": 7.3,
+      "Sim%": 6.3,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "1X",
+      "Model%": 92.7,
+      "Sim%": 93.7,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 19.1,
+      "Sim%": 17.4,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "12",
+      "Model%": 88.2,
+      "Sim%": 88.9,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Over 2.5",
+      "Model%": 49.0,
+      "Sim%": 66.5,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Under 2.5",
+      "Model%": 51.0,
+      "Sim%": 33.5,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "Yes",
+      "Model%": 45.0,
+      "Sim%": 45.0,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 55.0,
+      "Sim%": 55.0,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    }
+  ],
+  "locked_tip": {
+    "status": "SECURED LOCK",
+    "section": "FT DC",
+    "selection": "1X",
+    "model": 92.7,
+    "sim": 93.7,
+    "agree": "1 eng",
+    "verdict": "HARD YES"
+  },
+  "backends": {
+    "ft_result": [
+      "market"
+    ],
+    "ht_result": [
+      "market"
+    ],
+    "over25": [
+      "market"
+    ],
+    "btts": [
+      "market"
+    ],
+    "ht_over15": [
+      "market"
+    ]
+  },
+  "generated_at": "2026-08-30T08:42:36.073903Z"
+}

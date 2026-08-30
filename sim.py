@@ -96,7 +96,7 @@ def fair_probs(oh, od, oa):
     return ih / t, id_ / t, ia / t
 
 
-def collect_run_dirs(home_canon, away_canon):
+def collect_run_dirs(home_canon, away_canon, strict: bool = True):
     runs = []
     for label, canon in [("home", home_canon), ("away", away_canon)]:
         d = MODELS_ROOT / "teams" / slug(canon)
@@ -107,7 +107,9 @@ def collect_run_dirs(home_canon, away_canon):
     g = MODELS_ROOT / "global"
     if (g / "registry.json").exists() or (g / "models").is_dir():
         return [(g, "global")]
-    raise SystemExit(f"No models for {home_canon}/{away_canon} and no global/")
+    if strict:
+        raise SystemExit(f"No models for {home_canon}/{away_canon} and no global/")
+    return []
 
 
 def load_run_targets(run_dir):
@@ -606,41 +608,63 @@ def locked_tip(rows, report, home, away):
     return tip
 
 
-def main():
-    print(f"ROOT = {ROOT}")
+
+def run_one_match(match_cfg: dict, quiet: bool = False, allow_market_only: bool = True) -> dict:
+    """
+    Run a single simulation using the same engine as CLI main().
+    Returns the full report dict (match / resolved / report / table / locked_tip / backends / generated_at).
+    If models are missing and allow_market_only, uses fair market probs as the model signal.
+    """
+    def log(*a, **k):
+        if not quiet:
+            print(*a, **k)
+
     if not MAP_DIR.exists():
-        raise SystemExit(f"Mappings not found: {MAP_DIR}\nRun train.py first.")
+        raise FileNotFoundError(f"Mappings not found: {MAP_DIR}")
 
     team2id = load_json(MAP_DIR / "team2id.json")
     league_map = load_json(MAP_DIR / "league_map.json")
     aliases = load_json(MAP_DIR / "team_aliases.json")
-    div_code, league_name = resolve_league(MATCH["league"], league_map)
-    home_canon = normalize_team(MATCH["home_team"], aliases)
-    away_canon = normalize_team(MATCH["away_team"], aliases)
-    if home_canon not in team2id:
-        raise SystemExit(f"Home not in map: {home_canon}")
-    if away_canon not in team2id:
-        raise SystemExit(f"Away not in map: {away_canon}")
-    home_id, away_id = team2id[home_canon], team2id[away_canon]
-    print(f"Resolved: {league_name} ({div_code}) | {home_canon} vs {away_canon}")
 
-    run_dirs = collect_run_dirs(home_canon, away_canon)
-    model_source = " + ".join(l for _, l in run_dirs)
-    print(f"Using models: {model_source}")
+    # Accept Div code or league name
+    league_in = match_cfg.get("league") or match_cfg.get("div") or "E0"
+    try:
+        div_code, league_name = resolve_league(league_in, league_map)
+    except ValueError:
+        div_code = str(league_in).strip()
+        league_name = league_map.get(div_code, div_code)
+
+    home_canon = normalize_team(match_cfg["home_team"], aliases)
+    away_canon = normalize_team(match_cfg["away_team"], aliases)
+    home_id = team2id.get(home_canon)
+    away_id = team2id.get(away_canon)
+    if home_id is None or away_id is None:
+        if not allow_market_only:
+            raise KeyError(f"Team not in map: home={home_canon} away={away_canon}")
+        home_id = home_id if home_id is not None else -1
+        away_id = away_id if away_id is not None else -2
+
+    log(f"Resolved: {league_name} ({div_code}) | {home_canon} vs {away_canon}")
+
+    run_dirs = collect_run_dirs(home_canon, away_canon, strict=False)
+    model_source = " + ".join(l for _, l in run_dirs) if run_dirs else "market-only"
+    log(f"Using models: {model_source}")
+
     runs_loaded = []
     for run_dir, label in run_dirs:
         try:
             targets = load_run_targets(run_dir)
             feature_names, scaler, le_div = load_preprocessors(run_dir)
             runs_loaded.append((run_dir, label, targets, scaler, le_div, feature_names))
-            print(f"  loaded {label}")
+            log(f"  loaded {label}")
         except Exception as e:
-            print(f"  SKIP {label}: {e}")
-    if not runs_loaded:
-        raise SystemExit("No usable runs")
+            log(f"  SKIP {label}: {e}")
+
+    if not runs_loaded and not allow_market_only:
+        raise RuntimeError("No usable model runs")
 
     hist_df = None
-    if PARQUET_PATH.exists():
+    if PARQUET_PATH.exists() and runs_loaded:
         try:
             hist_df = pd.read_parquet(PARQUET_PATH, columns=["Date", "HomeTeam", "AwayTeam", "FTHG", "FTAG", "FTR", "Div"])
             hist_df["Date"] = pd.to_datetime(hist_df["Date"], errors="coerce")
@@ -651,57 +675,122 @@ def main():
             hist_df["HomePoints"] = hist_df["FTR"].map({"H": 3, "D": 1, "A": 0})
             hist_df["AwayPoints"] = hist_df["FTR"].map({"H": 0, "D": 1, "A": 3})
         except Exception as e:
-            print(f"History warning: {e}")
+            log(f"History warning: {e}")
 
-    oh, od, oa = MATCH["odds_home"], MATCH["odds_draw"], MATCH["odds_away"]
-    alpha = float(MATCH.get("odds_blend", 0.30))
-    print("\nPer-run predictions:")
-    backends_map = {}
-    raw_ft, b = predict_across_runs("ft_result", runs_loaded, home_id, away_id, div_code, oh, od, oa, hist_df)
-    backends_map["ft_result"] = b
-    raw_ht, b = predict_across_runs("ht_result", runs_loaded, home_id, away_id, div_code, oh, od, oa, hist_df)
-    backends_map["ht_result"] = b
-    raw_over, b = predict_across_runs("over25", runs_loaded, home_id, away_id, div_code, oh, od, oa, hist_df)
-    backends_map["over25"] = b
-    raw_btts, b = predict_across_runs("btts", runs_loaded, home_id, away_id, div_code, oh, od, oa, hist_df)
-    backends_map["btts"] = b
-    raw_hto, b = predict_across_runs("ht_over15", runs_loaded, home_id, away_id, div_code, oh, od, oa, hist_df)
-    backends_map["ht_over15"] = b
-
-    p_ft = multi_prob(raw_ft, 3)
+    oh = float(match_cfg["odds_home"])
+    od = float(match_cfg["odds_draw"])
+    oa = float(match_cfg["odds_away"])
+    alpha = float(match_cfg.get("odds_blend", 0.30))
+    n_sim = int(match_cfg.get("n_simulations", 8000))
+    seed = int(match_cfg.get("seed", 42))
     p_market = np.array(fair_probs(oh, od, oa))
-    p_ft = blend_with_odds(p_ft, p_market, alpha)
-    p_ht = multi_prob(raw_ht, 3)
-    p_over = bin_prob(raw_over)
-    p_btts = bin_prob(raw_btts)
-    p_hto = bin_prob(raw_hto)
 
-    report = simulate_match(p_ft, p_ht, p_over, p_btts, p_hto, MATCH["n_simulations"], MATCH["seed"])
+    backends_map = {}
+    if runs_loaded:
+        log("\nPer-run predictions:")
+        raw_ft, b = predict_across_runs("ft_result", runs_loaded, home_id, away_id, div_code, oh, od, oa, hist_df)
+        backends_map["ft_result"] = b
+        raw_ht, b = predict_across_runs("ht_result", runs_loaded, home_id, away_id, div_code, oh, od, oa, hist_df)
+        backends_map["ht_result"] = b
+        raw_over, b = predict_across_runs("over25", runs_loaded, home_id, away_id, div_code, oh, od, oa, hist_df)
+        backends_map["over25"] = b
+        raw_btts, b = predict_across_runs("btts", runs_loaded, home_id, away_id, div_code, oh, od, oa, hist_df)
+        backends_map["btts"] = b
+        raw_hto, b = predict_across_runs("ht_over15", runs_loaded, home_id, away_id, div_code, oh, od, oa, hist_df)
+        backends_map["ht_over15"] = b
+        p_ft = blend_with_odds(multi_prob(raw_ft, 3), p_market, alpha)
+        p_ht = multi_prob(raw_ht, 3)
+        p_over = bin_prob(raw_over)
+        p_btts = bin_prob(raw_btts)
+        p_hto = bin_prob(raw_hto)
+    else:
+        # Pure market path — same schema
+        p_ft = p_market
+        p_ht = np.array([0.30, 0.40, 0.30])  # HT lean draw historically
+        p_over = float(min(0.75, max(0.25, 0.35 + 0.15 * (1/oh + 1/oa))))
+        p_btts = float(min(0.70, max(0.30, 0.45)))
+        p_hto = 0.35
+        backends_map = {k: ["market"] for k in ("ft_result", "ht_result", "over25", "btts", "ht_over15")}
 
-    print("\n" + "=" * 78)
-    print(f"  {home_canon}  vs  {away_canon}   |   {league_name}")
-    print(f"  Odds H {oh:.2f}  D {od:.2f}  A {oa:.2f}   |   blend market {alpha:.0%}")
-    print(f"  Engines: {model_source}")
-    print("=" * 78)
+    report = simulate_match(p_ft, p_ht, p_over, p_btts, p_hto, n_sim, seed)
+    # goal_rates optional enrichment matching attached sample
+    report.setdefault("goal_rates", {
+        "home": float(report["xg"]["home"]),
+        "away": float(report["xg"]["away"]),
+    })
+
+    log("\n" + "=" * 78)
+    log(f"  {home_canon}  vs  {away_canon}   |   {league_name}")
+    log(f"  Odds H {oh:.2f}  D {od:.2f}  A {oa:.2f}   |   blend market {alpha:.0%}")
+    log(f"  Engines: {model_source}")
+    log("=" * 78)
 
     rows = build_table_rows(report, backends_map, home_canon, away_canon)
-    print_table(rows)
-    tip = locked_tip(rows, report, home_canon, away_canon)
+    if not quiet:
+        print_table(rows)
+        tip = locked_tip(rows, report, home_canon, away_canon)
+    else:
+        # silent locked tip (no console noise)
+        tip = _locked_tip_silent(rows, report)
 
+    match_out = dict(match_cfg)
+    if match_cfg.get("match_date"):
+        match_out["match_date"] = match_cfg["match_date"]
+
+    payload = {
+        "match": match_out,
+        "resolved": {
+            "league": league_name,
+            "div": div_code,
+            "home": home_canon,
+            "away": away_canon,
+            "models": model_source,
+            "match_date": match_cfg.get("match_date"),
+        },
+        "report": report,
+        "table": rows,
+        "locked_tip": tip,
+        "backends": backends_map,
+        "generated_at": datetime.utcnow().isoformat() + "Z",
+    }
+    return payload
+
+
+def _locked_tip_silent(rows, report):
+    candidates = [r for r in rows if r["Verdict"] == "YES" and r["Model%"] >= 55]
+    def score(r):
+        agree_sim = 100 - abs(r["Model%"] - r["Sim%"])
+        return r["Model%"] + 0.15 * agree_sim
+    candidates = sorted(candidates, key=score, reverse=True)
+    if not candidates:
+        fallback = max(rows, key=lambda r: r["Model%"])
+        return {
+            "status": "NO LOCK",
+            "selection": fallback["Selection"],
+            "section": fallback["Section"],
+            "model": fallback["Model%"],
+            "sim": fallback["Sim%"],
+        }
+    top = candidates[0]
+    locked = top["Model%"] >= 58 and abs(top["Model%"] - top["Sim%"]) <= 12
+    return {
+        "status": "SECURED LOCK" if locked else "STRONG LEAN",
+        "section": top["Section"],
+        "selection": top["Selection"],
+        "model": top["Model%"],
+        "sim": top["Sim%"],
+        "agree": top["Agree"],
+        "verdict": "HARD YES" if locked else "YES LEAN",
+    }
+
+
+
+def main():
+    print(f"ROOT = {ROOT}")
+    payload = run_one_match(MATCH, quiet=False, allow_market_only=False)
     out = ROOT / "last_simulation_report.json"
     with open(out, "w", encoding="utf-8") as f:
-        json.dump({
-            "match": MATCH,
-            "resolved": {
-                "league": league_name, "div": div_code,
-                "home": home_canon, "away": away_canon, "models": model_source,
-            },
-            "report": report,
-            "table": rows,
-            "locked_tip": tip,
-            "backends": backends_map,
-            "generated_at": datetime.utcnow().isoformat() + "Z",
-        }, f, indent=2)
+        json.dump(payload, f, indent=2)
     print(f"\nSaved → {out}")
 
 

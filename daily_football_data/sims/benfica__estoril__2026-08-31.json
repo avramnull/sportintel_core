@@ -1,0 +1,299 @@
+{
+  "match": {
+    "league": "P1",
+    "home_team": "Benfica",
+    "away_team": "Estoril",
+    "match_date": "2026-08-31 20:15",
+    "odds_home": 1.15,
+    "odds_draw": 7.5,
+    "odds_away": 12.0,
+    "n_simulations": 2000,
+    "seed": 186,
+    "odds_blend": 0.3
+  },
+  "resolved": {
+    "league": "Primeira Liga",
+    "div": "P1",
+    "home": "Benfica",
+    "away": "Estoril",
+    "models": "market-only",
+    "match_date": "2026-08-31 20:15"
+  },
+  "report": {
+    "n": 2000,
+    "ft_model": {
+      "H": 0.8005336891260839,
+      "D": 0.12274849899933286,
+      "A": 0.07671781187458304
+    },
+    "ft_sim": {
+      "H": 0.801,
+      "D": 0.1205,
+      "A": 0.0785
+    },
+    "ht_model": {
+      "H": 0.3,
+      "D": 0.4,
+      "A": 0.3
+    },
+    "ht_sim": {
+      "H": 0.3235,
+      "D": 0.386,
+      "A": 0.2905
+    },
+    "over25_model": 0.4929347826086956,
+    "over25_sim": 0.675,
+    "btts_model": 0.45,
+    "btts_sim": 0.454,
+    "ht_over15_model": 0.35,
+    "ht_over15_sim": 0.3375,
+    "dc_ft": {
+      "1X": 0.9232821881254167,
+      "X2": 0.19946631087391592,
+      "12": 0.877251501000667
+    },
+    "dc_ht": {
+      "1X": 0.7,
+      "X2": 0.7,
+      "12": 0.6
+    },
+    "top_ft": [
+      [
+        "2-1",
+        427
+      ],
+      [
+        "1-0",
+        220
+      ],
+      [
+        "2-0",
+        207
+      ],
+      [
+        "4-0",
+        158
+      ],
+      [
+        "5-0",
+        156
+      ],
+      [
+        "3-0",
+        135
+      ],
+      [
+        "0-0",
+        130
+      ],
+      [
+        "3-2",
+        119
+      ]
+    ],
+    "top_ht": [
+      [
+        "0-0",
+        481
+      ],
+      [
+        "1-0",
+        447
+      ],
+      [
+        "0-1",
+        397
+      ],
+      [
+        "1-1",
+        291
+      ],
+      [
+        "2-1",
+        110
+      ]
+    ],
+    "xg": {
+      "home": 2.303,
+      "away": 0.767,
+      "total": 3.07
+    },
+    "goal_rates": {
+      "home": 2.303,
+      "away": 0.767
+    }
+  },
+  "table": [
+    {
+      "Section": "HT Winner",
+      "Selection": "Benfica",
+      "Model%": 30.0,
+      "Sim%": 32.4,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Draw",
+      "Model%": 40.0,
+      "Sim%": 38.6,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Estoril",
+      "Model%": 30.0,
+      "Sim%": 29.0,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "1X",
+      "Model%": 70.0,
+      "Sim%": 71.0,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "X2",
+      "Model%": 70.0,
+      "Sim%": 67.7,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "12",
+      "Model%": 60.0,
+      "Sim%": 61.4,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Over 1.5",
+      "Model%": 35.0,
+      "Sim%": 33.8,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Under 1.5",
+      "Model%": 65.0,
+      "Sim%": 66.2,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Benfica",
+      "Model%": 80.1,
+      "Sim%": 80.1,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Draw",
+      "Model%": 12.3,
+      "Sim%": 12.0,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Estoril",
+      "Model%": 7.7,
+      "Sim%": 7.8,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "1X",
+      "Model%": 92.3,
+      "Sim%": 92.2,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 19.9,
+      "Sim%": 19.9,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "12",
+      "Model%": 87.7,
+      "Sim%": 88.0,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Over 2.5",
+      "Model%": 49.3,
+      "Sim%": 67.5,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Under 2.5",
+      "Model%": 50.7,
+      "Sim%": 32.5,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "Yes",
+      "Model%": 45.0,
+      "Sim%": 45.4,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 55.0,
+      "Sim%": 54.6,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    }
+  ],
+  "locked_tip": {
+    "status": "SECURED LOCK",
+    "section": "FT DC",
+    "selection": "1X",
+    "model": 92.3,
+    "sim": 92.2,
+    "agree": "1 eng",
+    "verdict": "HARD YES"
+  },
+  "backends": {
+    "ft_result": [
+      "market"
+    ],
+    "ht_result": [
+      "market"
+    ],
+    "over25": [
+      "market"
+    ],
+    "btts": [
+      "market"
+    ],
+    "ht_over15": [
+      "market"
+    ]
+  },
+  "generated_at": "2026-08-30T08:42:34.779995Z"
+}

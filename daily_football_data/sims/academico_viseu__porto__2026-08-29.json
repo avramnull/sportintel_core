@@ -1,0 +1,299 @@
+{
+  "match": {
+    "league": "P1",
+    "home_team": "Academico Viseu",
+    "away_team": "Porto",
+    "match_date": "2026-08-29 18:00",
+    "odds_home": 9.0,
+    "odds_draw": 4.75,
+    "odds_away": 1.3,
+    "n_simulations": 2000,
+    "seed": 182,
+    "odds_blend": 0.3
+  },
+  "resolved": {
+    "league": "Primeira Liga",
+    "div": "P1",
+    "home": "Academico Viseu",
+    "away": "Porto",
+    "models": "market-only",
+    "match_date": "2026-08-29 18:00"
+  },
+  "report": {
+    "n": 2000,
+    "ft_model": {
+      "H": 0.10185567010309278,
+      "D": 0.19298969072164948,
+      "A": 0.7051546391752577
+    },
+    "ft_sim": {
+      "H": 0.0955,
+      "D": 0.1915,
+      "A": 0.713
+    },
+    "ht_model": {
+      "H": 0.3,
+      "D": 0.4,
+      "A": 0.3
+    },
+    "ht_sim": {
+      "H": 0.311,
+      "D": 0.398,
+      "A": 0.291
+    },
+    "over25_model": 0.482051282051282,
+    "over25_sim": 0.6395,
+    "btts_model": 0.45,
+    "btts_sim": 0.459,
+    "ht_over15_model": 0.35,
+    "ht_over15_sim": 0.3445,
+    "dc_ft": {
+      "1X": 0.2948453608247423,
+      "X2": 0.8981443298969072,
+      "12": 0.8070103092783505
+    },
+    "dc_ht": {
+      "1X": 0.7,
+      "X2": 0.7,
+      "12": 0.6
+    },
+    "top_ft": [
+      [
+        "1-2",
+        406
+      ],
+      [
+        "0-0",
+        209
+      ],
+      [
+        "0-2",
+        185
+      ],
+      [
+        "0-1",
+        180
+      ],
+      [
+        "0-3",
+        142
+      ],
+      [
+        "0-5",
+        134
+      ],
+      [
+        "0-4",
+        118
+      ],
+      [
+        "2-3",
+        110
+      ]
+    ],
+    "top_ht": [
+      [
+        "0-0",
+        465
+      ],
+      [
+        "1-0",
+        451
+      ],
+      [
+        "0-1",
+        395
+      ],
+      [
+        "1-1",
+        331
+      ],
+      [
+        "0-2",
+        97
+      ]
+    ],
+    "xg": {
+      "home": 0.8145,
+      "away": 2.1075,
+      "total": 2.922
+    },
+    "goal_rates": {
+      "home": 0.8145,
+      "away": 2.1075
+    }
+  },
+  "table": [
+    {
+      "Section": "HT Winner",
+      "Selection": "Academico Viseu",
+      "Model%": 30.0,
+      "Sim%": 31.1,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Draw",
+      "Model%": 40.0,
+      "Sim%": 39.8,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Porto",
+      "Model%": 30.0,
+      "Sim%": 29.1,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "1X",
+      "Model%": 70.0,
+      "Sim%": 70.9,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "X2",
+      "Model%": 70.0,
+      "Sim%": 68.9,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "12",
+      "Model%": 60.0,
+      "Sim%": 60.2,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Over 1.5",
+      "Model%": 35.0,
+      "Sim%": 34.4,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Under 1.5",
+      "Model%": 65.0,
+      "Sim%": 65.5,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Academico Viseu",
+      "Model%": 10.2,
+      "Sim%": 9.6,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Draw",
+      "Model%": 19.3,
+      "Sim%": 19.1,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Porto",
+      "Model%": 70.5,
+      "Sim%": 71.3,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "1X",
+      "Model%": 29.5,
+      "Sim%": 28.7,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 89.8,
+      "Sim%": 90.5,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "12",
+      "Model%": 80.7,
+      "Sim%": 80.8,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Over 2.5",
+      "Model%": 48.2,
+      "Sim%": 63.9,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Under 2.5",
+      "Model%": 51.8,
+      "Sim%": 36.1,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "Yes",
+      "Model%": 45.0,
+      "Sim%": 45.9,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 55.0,
+      "Sim%": 54.1,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    }
+  ],
+  "locked_tip": {
+    "status": "SECURED LOCK",
+    "section": "FT DC",
+    "selection": "X2",
+    "model": 89.8,
+    "sim": 90.5,
+    "agree": "1 eng",
+    "verdict": "HARD YES"
+  },
+  "backends": {
+    "ft_result": [
+      "market"
+    ],
+    "ht_result": [
+      "market"
+    ],
+    "over25": [
+      "market"
+    ],
+    "btts": [
+      "market"
+    ],
+    "ht_over15": [
+      "market"
+    ]
+  },
+  "generated_at": "2026-08-30T08:42:34.621724Z"
+}

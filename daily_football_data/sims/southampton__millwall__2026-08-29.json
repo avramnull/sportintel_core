@@ -1,0 +1,299 @@
+{
+  "match": {
+    "league": "E1",
+    "home_team": "Southampton",
+    "away_team": "Millwall",
+    "match_date": "2026-08-29 15:00",
+    "odds_home": 1.91,
+    "odds_draw": 3.6,
+    "odds_away": 3.6,
+    "n_simulations": 2000,
+    "seed": 89,
+    "odds_blend": 0.3
+  },
+  "resolved": {
+    "league": "Championship",
+    "div": "E1",
+    "home": "Southampton",
+    "away": "Millwall",
+    "models": "market-only",
+    "match_date": "2026-08-29 15:00"
+  },
+  "report": {
+    "n": 2000,
+    "ft_model": {
+      "H": 0.4851752021563342,
+      "D": 0.2574123989218329,
+      "A": 0.2574123989218329
+    },
+    "ft_sim": {
+      "H": 0.4815,
+      "D": 0.2545,
+      "A": 0.264
+    },
+    "ht_model": {
+      "H": 0.3,
+      "D": 0.4,
+      "A": 0.3
+    },
+    "ht_sim": {
+      "H": 0.296,
+      "D": 0.3865,
+      "A": 0.3175
+    },
+    "over25_model": 0.4702006980802792,
+    "over25_sim": 0.5745,
+    "btts_model": 0.45,
+    "btts_sim": 0.4375,
+    "ht_over15_model": 0.35,
+    "ht_over15_sim": 0.3415,
+    "dc_ft": {
+      "1X": 0.7425876010781671,
+      "X2": 0.5148247978436657,
+      "12": 0.7425876010781671
+    },
+    "dc_ht": {
+      "1X": 0.7,
+      "X2": 0.7,
+      "12": 0.6
+    },
+    "top_ft": [
+      [
+        "0-0",
+        294
+      ],
+      [
+        "2-1",
+        272
+      ],
+      [
+        "2-0",
+        134
+      ],
+      [
+        "1-2",
+        133
+      ],
+      [
+        "1-0",
+        128
+      ],
+      [
+        "1-1",
+        124
+      ],
+      [
+        "4-0",
+        97
+      ],
+      [
+        "3-0",
+        88
+      ]
+    ],
+    "top_ht": [
+      [
+        "0-0",
+        458
+      ],
+      [
+        "0-1",
+        441
+      ],
+      [
+        "1-0",
+        418
+      ],
+      [
+        "1-1",
+        315
+      ],
+      [
+        "1-2",
+        104
+      ]
+    ],
+    "xg": {
+      "home": 1.583,
+      "away": 1.1295,
+      "total": 2.7125
+    },
+    "goal_rates": {
+      "home": 1.583,
+      "away": 1.1295
+    }
+  },
+  "table": [
+    {
+      "Section": "HT Winner",
+      "Selection": "Southampton",
+      "Model%": 30.0,
+      "Sim%": 29.6,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Draw",
+      "Model%": 40.0,
+      "Sim%": 38.6,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Millwall",
+      "Model%": 30.0,
+      "Sim%": 31.8,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "1X",
+      "Model%": 70.0,
+      "Sim%": 68.2,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "X2",
+      "Model%": 70.0,
+      "Sim%": 70.4,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "12",
+      "Model%": 60.0,
+      "Sim%": 61.3,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Over 1.5",
+      "Model%": 35.0,
+      "Sim%": 34.2,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Under 1.5",
+      "Model%": 65.0,
+      "Sim%": 65.8,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Southampton",
+      "Model%": 48.5,
+      "Sim%": 48.1,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Draw",
+      "Model%": 25.7,
+      "Sim%": 25.4,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Millwall",
+      "Model%": 25.7,
+      "Sim%": 26.4,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "1X",
+      "Model%": 74.3,
+      "Sim%": 73.6,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 51.5,
+      "Sim%": 51.8,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "12",
+      "Model%": 74.3,
+      "Sim%": 74.6,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Over 2.5",
+      "Model%": 47.0,
+      "Sim%": 57.5,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Under 2.5",
+      "Model%": 53.0,
+      "Sim%": 42.5,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "Yes",
+      "Model%": 45.0,
+      "Sim%": 43.8,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 55.0,
+      "Sim%": 56.2,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    }
+  ],
+  "locked_tip": {
+    "status": "SECURED LOCK",
+    "section": "FT DC",
+    "selection": "12",
+    "model": 74.3,
+    "sim": 74.6,
+    "agree": "1 eng",
+    "verdict": "HARD YES"
+  },
+  "backends": {
+    "ft_result": [
+      "market"
+    ],
+    "ht_result": [
+      "market"
+    ],
+    "over25": [
+      "market"
+    ],
+    "btts": [
+      "market"
+    ],
+    "ht_over15": [
+      "market"
+    ]
+  },
+  "generated_at": "2026-08-30T08:42:30.805888Z"
+}

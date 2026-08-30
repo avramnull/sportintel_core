@@ -1,0 +1,299 @@
+{
+  "match": {
+    "league": "G1",
+    "home_team": "Volos NFC",
+    "away_team": "Iraklis",
+    "match_date": "2026-08-29 17:30",
+    "odds_home": 1.86,
+    "odds_draw": 3.5,
+    "odds_away": 4.1,
+    "n_simulations": 2000,
+    "seed": 143,
+    "odds_blend": 0.3
+  },
+  "resolved": {
+    "league": "Super League Greece",
+    "div": "G1",
+    "home": "Volos NFC",
+    "away": "Iraklis",
+    "models": "market-only",
+    "match_date": "2026-08-29 17:30"
+  },
+  "report": {
+    "n": 2000,
+    "ft_model": {
+      "H": 0.503756231131082,
+      "D": 0.26771045425823214,
+      "A": 0.228533314610686
+    },
+    "ft_sim": {
+      "H": 0.507,
+      "D": 0.269,
+      "A": 0.224
+    },
+    "ht_model": {
+      "H": 0.3,
+      "D": 0.4,
+      "A": 0.3
+    },
+    "ht_sim": {
+      "H": 0.303,
+      "D": 0.402,
+      "A": 0.295
+    },
+    "over25_model": 0.46723052714398106,
+    "over25_sim": 0.583,
+    "btts_model": 0.45,
+    "btts_sim": 0.445,
+    "ht_over15_model": 0.35,
+    "ht_over15_sim": 0.3455,
+    "dc_ft": {
+      "1X": 0.7714666853893142,
+      "X2": 0.49624376886891813,
+      "12": 0.732289545741768
+    },
+    "dc_ht": {
+      "1X": 0.7,
+      "X2": 0.7,
+      "12": 0.6
+    },
+    "top_ft": [
+      [
+        "0-0",
+        277
+      ],
+      [
+        "2-1",
+        267
+      ],
+      [
+        "1-0",
+        148
+      ],
+      [
+        "1-1",
+        142
+      ],
+      [
+        "2-0",
+        136
+      ],
+      [
+        "3-0",
+        116
+      ],
+      [
+        "1-2",
+        109
+      ],
+      [
+        "4-0",
+        91
+      ]
+    ],
+    "top_ht": [
+      [
+        "0-0",
+        495
+      ],
+      [
+        "0-1",
+        410
+      ],
+      [
+        "1-0",
+        404
+      ],
+      [
+        "1-1",
+        309
+      ],
+      [
+        "2-0",
+        118
+      ]
+    ],
+    "xg": {
+      "home": 1.6685,
+      "away": 1.0945,
+      "total": 2.763
+    },
+    "goal_rates": {
+      "home": 1.6685,
+      "away": 1.0945
+    }
+  },
+  "table": [
+    {
+      "Section": "HT Winner",
+      "Selection": "Volos NFC",
+      "Model%": 30.0,
+      "Sim%": 30.3,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Draw",
+      "Model%": 40.0,
+      "Sim%": 40.2,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Iraklis",
+      "Model%": 30.0,
+      "Sim%": 29.5,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "1X",
+      "Model%": 70.0,
+      "Sim%": 70.5,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "X2",
+      "Model%": 70.0,
+      "Sim%": 69.7,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "12",
+      "Model%": 60.0,
+      "Sim%": 59.8,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Over 1.5",
+      "Model%": 35.0,
+      "Sim%": 34.5,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Under 1.5",
+      "Model%": 65.0,
+      "Sim%": 65.5,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Volos NFC",
+      "Model%": 50.4,
+      "Sim%": 50.7,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Draw",
+      "Model%": 26.8,
+      "Sim%": 26.9,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Iraklis",
+      "Model%": 22.9,
+      "Sim%": 22.4,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "1X",
+      "Model%": 77.1,
+      "Sim%": 77.6,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 49.6,
+      "Sim%": 49.3,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "12",
+      "Model%": 73.2,
+      "Sim%": 73.1,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Over 2.5",
+      "Model%": 46.7,
+      "Sim%": 58.3,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Under 2.5",
+      "Model%": 53.3,
+      "Sim%": 41.7,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "Yes",
+      "Model%": 45.0,
+      "Sim%": 44.5,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 55.0,
+      "Sim%": 55.5,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    }
+  ],
+  "locked_tip": {
+    "status": "SECURED LOCK",
+    "section": "FT DC",
+    "selection": "1X",
+    "model": 77.1,
+    "sim": 77.6,
+    "agree": "1 eng",
+    "verdict": "HARD YES"
+  },
+  "backends": {
+    "ft_result": [
+      "market"
+    ],
+    "ht_result": [
+      "market"
+    ],
+    "over25": [
+      "market"
+    ],
+    "btts": [
+      "market"
+    ],
+    "ht_over15": [
+      "market"
+    ]
+  },
+  "generated_at": "2026-08-30T08:42:33.020310Z"
+}

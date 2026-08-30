@@ -1,0 +1,299 @@
+{
+  "match": {
+    "league": "E0",
+    "home_team": "Sunderland",
+    "away_team": "Fulham",
+    "match_date": "2026-08-30 14:00",
+    "odds_home": 2.4,
+    "odds_draw": 3.2,
+    "odds_away": 3.1,
+    "n_simulations": 2000,
+    "seed": 76,
+    "odds_blend": 0.3
+  },
+  "resolved": {
+    "league": "Premier League",
+    "div": "E0",
+    "home": "Sunderland",
+    "away": "Fulham",
+    "models": "market-only",
+    "match_date": "2026-08-30 14:00"
+  },
+  "report": {
+    "n": 2000,
+    "ft_model": {
+      "H": 0.39616613418530355,
+      "D": 0.2971246006389776,
+      "A": 0.30670926517571884
+    },
+    "ft_sim": {
+      "H": 0.3945,
+      "D": 0.2925,
+      "A": 0.313
+    },
+    "ht_model": {
+      "H": 0.3,
+      "D": 0.4,
+      "A": 0.3
+    },
+    "ht_sim": {
+      "H": 0.2935,
+      "D": 0.3945,
+      "A": 0.312
+    },
+    "over25_model": 0.46088709677419354,
+    "over25_sim": 0.5525,
+    "btts_model": 0.45,
+    "btts_sim": 0.456,
+    "ht_over15_model": 0.35,
+    "ht_over15_sim": 0.3195,
+    "dc_ft": {
+      "1X": 0.6932907348242812,
+      "X2": 0.6038338658146964,
+      "12": 0.7028753993610224
+    },
+    "dc_ht": {
+      "1X": 0.7,
+      "X2": 0.7,
+      "12": 0.6
+    },
+    "top_ft": [
+      [
+        "0-0",
+        312
+      ],
+      [
+        "2-1",
+        225
+      ],
+      [
+        "1-2",
+        164
+      ],
+      [
+        "1-1",
+        150
+      ],
+      [
+        "1-0",
+        121
+      ],
+      [
+        "2-0",
+        114
+      ],
+      [
+        "0-2",
+        99
+      ],
+      [
+        "0-1",
+        99
+      ]
+    ],
+    "top_ht": [
+      [
+        "0-0",
+        483
+      ],
+      [
+        "0-1",
+        447
+      ],
+      [
+        "1-0",
+        431
+      ],
+      [
+        "1-1",
+        306
+      ],
+      [
+        "0-2",
+        89
+      ]
+    ],
+    "xg": {
+      "home": 1.4205,
+      "away": 1.254,
+      "total": 2.6745
+    },
+    "goal_rates": {
+      "home": 1.4205,
+      "away": 1.254
+    }
+  },
+  "table": [
+    {
+      "Section": "HT Winner",
+      "Selection": "Sunderland",
+      "Model%": 30.0,
+      "Sim%": 29.3,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Draw",
+      "Model%": 40.0,
+      "Sim%": 39.5,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Fulham",
+      "Model%": 30.0,
+      "Sim%": 31.2,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "1X",
+      "Model%": 70.0,
+      "Sim%": 68.8,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "X2",
+      "Model%": 70.0,
+      "Sim%": 70.7,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "12",
+      "Model%": 60.0,
+      "Sim%": 60.5,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Over 1.5",
+      "Model%": 35.0,
+      "Sim%": 31.9,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Under 1.5",
+      "Model%": 65.0,
+      "Sim%": 68.0,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Sunderland",
+      "Model%": 39.6,
+      "Sim%": 39.5,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Draw",
+      "Model%": 29.7,
+      "Sim%": 29.2,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Fulham",
+      "Model%": 30.7,
+      "Sim%": 31.3,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "1X",
+      "Model%": 69.3,
+      "Sim%": 68.7,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 60.4,
+      "Sim%": 60.5,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "12",
+      "Model%": 70.3,
+      "Sim%": 70.8,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Over 2.5",
+      "Model%": 46.1,
+      "Sim%": 55.2,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Under 2.5",
+      "Model%": 53.9,
+      "Sim%": 44.8,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "Yes",
+      "Model%": 45.0,
+      "Sim%": 45.6,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 55.0,
+      "Sim%": 54.4,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    }
+  ],
+  "locked_tip": {
+    "status": "SECURED LOCK",
+    "section": "FT DC",
+    "selection": "12",
+    "model": 70.3,
+    "sim": 70.8,
+    "agree": "1 eng",
+    "verdict": "HARD YES"
+  },
+  "backends": {
+    "ft_result": [
+      "market"
+    ],
+    "ht_result": [
+      "market"
+    ],
+    "over25": [
+      "market"
+    ],
+    "btts": [
+      "market"
+    ],
+    "ht_over15": [
+      "market"
+    ]
+  },
+  "generated_at": "2026-08-30T08:42:30.293209Z"
+}

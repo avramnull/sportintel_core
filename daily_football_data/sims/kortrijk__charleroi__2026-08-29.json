@@ -1,0 +1,299 @@
+{
+  "match": {
+    "league": "B1",
+    "home_team": "Kortrijk",
+    "away_team": "Charleroi",
+    "match_date": "2026-08-29 17:15",
+    "odds_home": 3.7,
+    "odds_draw": 3.4,
+    "odds_away": 1.91,
+    "n_simulations": 2000,
+    "seed": 44,
+    "odds_blend": 0.3
+  },
+  "resolved": {
+    "league": "Belgian Pro League",
+    "div": "B1",
+    "home": "Kortrijk",
+    "away": "Charleroi",
+    "models": "market-only",
+    "match_date": "2026-08-29 17:15"
+  },
+  "report": {
+    "n": 2000,
+    "ft_model": {
+      "H": 0.2484220190505336,
+      "D": 0.2703416089667572,
+      "A": 0.48123637198270913
+    },
+    "ft_sim": {
+      "H": 0.251,
+      "D": 0.2615,
+      "A": 0.4875
+    },
+    "ht_model": {
+      "H": 0.3,
+      "D": 0.4,
+      "A": 0.3
+    },
+    "ht_sim": {
+      "H": 0.327,
+      "D": 0.3955,
+      "A": 0.2775
+    },
+    "over25_model": 0.4690745719541531,
+    "over25_sim": 0.576,
+    "btts_model": 0.45,
+    "btts_sim": 0.444,
+    "ht_over15_model": 0.35,
+    "ht_over15_sim": 0.34,
+    "dc_ft": {
+      "1X": 0.5187636280172908,
+      "X2": 0.7515779809494663,
+      "12": 0.7296583910332427
+    },
+    "dc_ht": {
+      "1X": 0.7,
+      "X2": 0.7,
+      "12": 0.6
+    },
+    "top_ft": [
+      [
+        "0-0",
+        290
+      ],
+      [
+        "1-2",
+        278
+      ],
+      [
+        "0-1",
+        150
+      ],
+      [
+        "0-2",
+        135
+      ],
+      [
+        "2-1",
+        133
+      ],
+      [
+        "1-1",
+        125
+      ],
+      [
+        "0-3",
+        90
+      ],
+      [
+        "0-4",
+        87
+      ]
+    ],
+    "top_ht": [
+      [
+        "0-0",
+        481
+      ],
+      [
+        "1-0",
+        458
+      ],
+      [
+        "0-1",
+        381
+      ],
+      [
+        "1-1",
+        310
+      ],
+      [
+        "2-0",
+        102
+      ]
+    ],
+    "xg": {
+      "home": 1.134,
+      "away": 1.591,
+      "total": 2.725
+    },
+    "goal_rates": {
+      "home": 1.134,
+      "away": 1.591
+    }
+  },
+  "table": [
+    {
+      "Section": "HT Winner",
+      "Selection": "Kortrijk",
+      "Model%": 30.0,
+      "Sim%": 32.7,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Draw",
+      "Model%": 40.0,
+      "Sim%": 39.6,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Charleroi",
+      "Model%": 30.0,
+      "Sim%": 27.8,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "1X",
+      "Model%": 70.0,
+      "Sim%": 72.2,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "X2",
+      "Model%": 70.0,
+      "Sim%": 67.3,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "12",
+      "Model%": 60.0,
+      "Sim%": 60.5,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Over 1.5",
+      "Model%": 35.0,
+      "Sim%": 34.0,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Under 1.5",
+      "Model%": 65.0,
+      "Sim%": 66.0,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Kortrijk",
+      "Model%": 24.8,
+      "Sim%": 25.1,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Draw",
+      "Model%": 27.0,
+      "Sim%": 26.2,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Charleroi",
+      "Model%": 48.1,
+      "Sim%": 48.8,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "1X",
+      "Model%": 51.9,
+      "Sim%": 51.2,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 75.2,
+      "Sim%": 74.9,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "12",
+      "Model%": 73.0,
+      "Sim%": 73.8,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Over 2.5",
+      "Model%": 46.9,
+      "Sim%": 57.6,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Under 2.5",
+      "Model%": 53.1,
+      "Sim%": 42.4,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "Yes",
+      "Model%": 45.0,
+      "Sim%": 44.4,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 55.0,
+      "Sim%": 55.6,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    }
+  ],
+  "locked_tip": {
+    "status": "SECURED LOCK",
+    "section": "FT DC",
+    "selection": "X2",
+    "model": 75.2,
+    "sim": 74.9,
+    "agree": "1 eng",
+    "verdict": "HARD YES"
+  },
+  "backends": {
+    "ft_result": [
+      "market"
+    ],
+    "ht_result": [
+      "market"
+    ],
+    "over25": [
+      "market"
+    ],
+    "btts": [
+      "market"
+    ],
+    "ht_over15": [
+      "market"
+    ]
+  },
+  "generated_at": "2026-08-30T08:42:29.022149Z"
+}

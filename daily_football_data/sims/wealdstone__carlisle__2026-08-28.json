@@ -1,0 +1,299 @@
+{
+  "match": {
+    "league": "EC",
+    "home_team": "Wealdstone",
+    "away_team": "Carlisle",
+    "match_date": "2026-08-28 19:45",
+    "odds_home": 3.7,
+    "odds_draw": 3.6,
+    "odds_away": 1.83,
+    "n_simulations": 2000,
+    "seed": 124,
+    "odds_blend": 0.3
+  },
+  "resolved": {
+    "league": "National League",
+    "div": "EC",
+    "home": "Wealdstone",
+    "away": "Carlisle",
+    "models": "market-only",
+    "match_date": "2026-08-28 19:45"
+  },
+  "report": {
+    "n": 2000,
+    "ft_model": {
+      "H": 0.24693579219610928,
+      "D": 0.25379511975711233,
+      "A": 0.49926908804677833
+    },
+    "ft_sim": {
+      "H": 0.248,
+      "D": 0.246,
+      "A": 0.506
+    },
+    "ht_model": {
+      "H": 0.3,
+      "D": 0.4,
+      "A": 0.3
+    },
+    "ht_sim": {
+      "H": 0.319,
+      "D": 0.3915,
+      "A": 0.2895
+    },
+    "over25_model": 0.47250775365529457,
+    "over25_sim": 0.585,
+    "btts_model": 0.45,
+    "btts_sim": 0.4515,
+    "ht_over15_model": 0.35,
+    "ht_over15_sim": 0.3565,
+    "dc_ft": {
+      "1X": 0.5007309119532216,
+      "X2": 0.7530642078038907,
+      "12": 0.7462048802428876
+    },
+    "dc_ht": {
+      "1X": 0.7,
+      "X2": 0.7,
+      "12": 0.6
+    },
+    "top_ft": [
+      [
+        "1-2",
+        275
+      ],
+      [
+        "0-0",
+        274
+      ],
+      [
+        "0-2",
+        145
+      ],
+      [
+        "0-1",
+        144
+      ],
+      [
+        "2-1",
+        129
+      ],
+      [
+        "1-1",
+        128
+      ],
+      [
+        "0-3",
+        90
+      ],
+      [
+        "0-5",
+        89
+      ]
+    ],
+    "top_ht": [
+      [
+        "0-0",
+        452
+      ],
+      [
+        "1-0",
+        445
+      ],
+      [
+        "0-1",
+        390
+      ],
+      [
+        "1-1",
+        331
+      ],
+      [
+        "2-1",
+        99
+      ]
+    ],
+    "xg": {
+      "home": 1.12,
+      "away": 1.6425,
+      "total": 2.7625
+    },
+    "goal_rates": {
+      "home": 1.12,
+      "away": 1.6425
+    }
+  },
+  "table": [
+    {
+      "Section": "HT Winner",
+      "Selection": "Wealdstone",
+      "Model%": 30.0,
+      "Sim%": 31.9,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Draw",
+      "Model%": 40.0,
+      "Sim%": 39.1,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Carlisle",
+      "Model%": 30.0,
+      "Sim%": 28.9,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "1X",
+      "Model%": 70.0,
+      "Sim%": 71.0,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "X2",
+      "Model%": 70.0,
+      "Sim%": 68.1,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "12",
+      "Model%": 60.0,
+      "Sim%": 60.9,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Over 1.5",
+      "Model%": 35.0,
+      "Sim%": 35.6,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Under 1.5",
+      "Model%": 65.0,
+      "Sim%": 64.3,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Wealdstone",
+      "Model%": 24.7,
+      "Sim%": 24.8,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Draw",
+      "Model%": 25.4,
+      "Sim%": 24.6,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Carlisle",
+      "Model%": 49.9,
+      "Sim%": 50.6,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "1X",
+      "Model%": 50.1,
+      "Sim%": 49.4,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 75.3,
+      "Sim%": 75.2,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "12",
+      "Model%": 74.6,
+      "Sim%": 75.4,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Over 2.5",
+      "Model%": 47.3,
+      "Sim%": 58.5,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Under 2.5",
+      "Model%": 52.7,
+      "Sim%": 41.5,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "Yes",
+      "Model%": 45.0,
+      "Sim%": 45.1,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 55.0,
+      "Sim%": 54.9,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    }
+  ],
+  "locked_tip": {
+    "status": "SECURED LOCK",
+    "section": "FT DC",
+    "selection": "X2",
+    "model": 75.3,
+    "sim": 75.2,
+    "agree": "1 eng",
+    "verdict": "HARD YES"
+  },
+  "backends": {
+    "ft_result": [
+      "market"
+    ],
+    "ht_result": [
+      "market"
+    ],
+    "over25": [
+      "market"
+    ],
+    "btts": [
+      "market"
+    ],
+    "ht_over15": [
+      "market"
+    ]
+  },
+  "generated_at": "2026-08-30T08:42:32.221779Z"
+}

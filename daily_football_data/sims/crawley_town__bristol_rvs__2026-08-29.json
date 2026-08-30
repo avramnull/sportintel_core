@@ -1,0 +1,299 @@
+{
+  "match": {
+    "league": "E3",
+    "home_team": "Crawley Town",
+    "away_team": "Bristol Rvs",
+    "match_date": "2026-08-29 15:00",
+    "odds_home": 3.4,
+    "odds_draw": 3.25,
+    "odds_away": 2.05,
+    "n_simulations": 2000,
+    "seed": 106,
+    "odds_blend": 0.3
+  },
+  "resolved": {
+    "league": "League Two",
+    "div": "E3",
+    "home": "Crawley Town",
+    "away": "Bristol Rvs",
+    "models": "market-only",
+    "match_date": "2026-08-29 15:00"
+  },
+  "report": {
+    "n": 2000,
+    "ft_model": {
+      "H": 0.269928086701104,
+      "D": 0.2823863060873088,
+      "A": 0.4476856072115872
+    },
+    "ft_sim": {
+      "H": 0.2855,
+      "D": 0.2655,
+      "A": 0.449
+    },
+    "ht_model": {
+      "H": 0.3,
+      "D": 0.4,
+      "A": 0.3
+    },
+    "ht_sim": {
+      "H": 0.289,
+      "D": 0.4045,
+      "A": 0.3065
+    },
+    "over25_model": 0.4672883787661406,
+    "over25_sim": 0.5695,
+    "btts_model": 0.45,
+    "btts_sim": 0.437,
+    "ht_over15_model": 0.35,
+    "ht_over15_sim": 0.3405,
+    "dc_ft": {
+      "1X": 0.5523143927884129,
+      "X2": 0.730071913298896,
+      "12": 0.7176136939126911
+    },
+    "dc_ht": {
+      "1X": 0.7,
+      "X2": 0.7,
+      "12": 0.6
+    },
+    "top_ft": [
+      [
+        "0-0",
+        295
+      ],
+      [
+        "1-2",
+        234
+      ],
+      [
+        "0-1",
+        151
+      ],
+      [
+        "2-1",
+        150
+      ],
+      [
+        "1-1",
+        129
+      ],
+      [
+        "0-2",
+        121
+      ],
+      [
+        "1-0",
+        90
+      ],
+      [
+        "0-4",
+        85
+      ]
+    ],
+    "top_ht": [
+      [
+        "0-0",
+        502
+      ],
+      [
+        "0-1",
+        435
+      ],
+      [
+        "1-0",
+        382
+      ],
+      [
+        "1-1",
+        307
+      ],
+      [
+        "2-0",
+        104
+      ]
+    ],
+    "xg": {
+      "home": 1.1855,
+      "away": 1.531,
+      "total": 2.7165
+    },
+    "goal_rates": {
+      "home": 1.1855,
+      "away": 1.531
+    }
+  },
+  "table": [
+    {
+      "Section": "HT Winner",
+      "Selection": "Crawley Town",
+      "Model%": 30.0,
+      "Sim%": 28.9,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Draw",
+      "Model%": 40.0,
+      "Sim%": 40.5,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Bristol Rvs",
+      "Model%": 30.0,
+      "Sim%": 30.6,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "1X",
+      "Model%": 70.0,
+      "Sim%": 69.3,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "X2",
+      "Model%": 70.0,
+      "Sim%": 71.1,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "12",
+      "Model%": 60.0,
+      "Sim%": 59.5,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Over 1.5",
+      "Model%": 35.0,
+      "Sim%": 34.1,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Under 1.5",
+      "Model%": 65.0,
+      "Sim%": 66.0,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Crawley Town",
+      "Model%": 27.0,
+      "Sim%": 28.5,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Draw",
+      "Model%": 28.2,
+      "Sim%": 26.6,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Bristol Rvs",
+      "Model%": 44.8,
+      "Sim%": 44.9,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "1X",
+      "Model%": 55.2,
+      "Sim%": 55.1,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 73.0,
+      "Sim%": 71.5,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "12",
+      "Model%": 71.8,
+      "Sim%": 73.4,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Over 2.5",
+      "Model%": 46.7,
+      "Sim%": 57.0,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Under 2.5",
+      "Model%": 53.3,
+      "Sim%": 43.0,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "Yes",
+      "Model%": 45.0,
+      "Sim%": 43.7,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 55.0,
+      "Sim%": 56.3,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    }
+  ],
+  "locked_tip": {
+    "status": "SECURED LOCK",
+    "section": "FT DC",
+    "selection": "X2",
+    "model": 73.0,
+    "sim": 71.5,
+    "agree": "1 eng",
+    "verdict": "HARD YES"
+  },
+  "backends": {
+    "ft_result": [
+      "market"
+    ],
+    "ht_result": [
+      "market"
+    ],
+    "over25": [
+      "market"
+    ],
+    "btts": [
+      "market"
+    ],
+    "ht_over15": [
+      "market"
+    ]
+  },
+  "generated_at": "2026-08-30T08:42:31.496405Z"
+}

@@ -1,0 +1,299 @@
+{
+  "match": {
+    "league": "SC3",
+    "home_team": "Elgin",
+    "away_team": "Stirling",
+    "match_date": "2026-08-29 15:00",
+    "odds_home": 1.8,
+    "odds_draw": 3.5,
+    "odds_away": 3.7,
+    "n_simulations": 2000,
+    "seed": 206,
+    "odds_blend": 0.3
+  },
+  "resolved": {
+    "league": "Scottish League Two",
+    "div": "SC3",
+    "home": "Elgin",
+    "away": "Stirling",
+    "models": "market-only",
+    "match_date": "2026-08-29 15:00"
+  },
+  "report": {
+    "n": 2000,
+    "ft_model": {
+      "H": 0.49980702431493634,
+      "D": 0.2570436125048244,
+      "A": 0.24314936318023925
+    },
+    "ft_sim": {
+      "H": 0.48,
+      "D": 0.2715,
+      "A": 0.2485
+    },
+    "ht_model": {
+      "H": 0.3,
+      "D": 0.4,
+      "A": 0.3
+    },
+    "ht_sim": {
+      "H": 0.303,
+      "D": 0.401,
+      "A": 0.296
+    },
+    "over25_model": 0.4738738738738738,
+    "over25_sim": 0.5915,
+    "btts_model": 0.45,
+    "btts_sim": 0.4585,
+    "ht_over15_model": 0.35,
+    "ht_over15_sim": 0.3345,
+    "dc_ft": {
+      "1X": 0.7568506368197607,
+      "X2": 0.5001929756850636,
+      "12": 0.7429563874951756
+    },
+    "dc_ht": {
+      "1X": 0.7,
+      "X2": 0.7,
+      "12": 0.6
+    },
+    "top_ft": [
+      [
+        "0-0",
+        297
+      ],
+      [
+        "2-1",
+        256
+      ],
+      [
+        "1-2",
+        135
+      ],
+      [
+        "1-1",
+        133
+      ],
+      [
+        "2-0",
+        125
+      ],
+      [
+        "1-0",
+        124
+      ],
+      [
+        "5-0",
+        99
+      ],
+      [
+        "3-2",
+        91
+      ]
+    ],
+    "top_ht": [
+      [
+        "0-0",
+        479
+      ],
+      [
+        "0-1",
+        432
+      ],
+      [
+        "1-0",
+        420
+      ],
+      [
+        "1-1",
+        323
+      ],
+      [
+        "2-1",
+        103
+      ]
+    ],
+    "xg": {
+      "home": 1.6545,
+      "away": 1.1515,
+      "total": 2.806
+    },
+    "goal_rates": {
+      "home": 1.6545,
+      "away": 1.1515
+    }
+  },
+  "table": [
+    {
+      "Section": "HT Winner",
+      "Selection": "Elgin",
+      "Model%": 30.0,
+      "Sim%": 30.3,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Draw",
+      "Model%": 40.0,
+      "Sim%": 40.1,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Stirling",
+      "Model%": 30.0,
+      "Sim%": 29.6,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "1X",
+      "Model%": 70.0,
+      "Sim%": 70.4,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "X2",
+      "Model%": 70.0,
+      "Sim%": 69.7,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "12",
+      "Model%": 60.0,
+      "Sim%": 59.9,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Over 1.5",
+      "Model%": 35.0,
+      "Sim%": 33.5,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Under 1.5",
+      "Model%": 65.0,
+      "Sim%": 66.5,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Elgin",
+      "Model%": 50.0,
+      "Sim%": 48.0,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Draw",
+      "Model%": 25.7,
+      "Sim%": 27.2,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Stirling",
+      "Model%": 24.3,
+      "Sim%": 24.9,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "1X",
+      "Model%": 75.7,
+      "Sim%": 75.2,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 50.0,
+      "Sim%": 52.0,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "12",
+      "Model%": 74.3,
+      "Sim%": 72.8,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Over 2.5",
+      "Model%": 47.4,
+      "Sim%": 59.2,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Under 2.5",
+      "Model%": 52.6,
+      "Sim%": 40.8,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "Yes",
+      "Model%": 45.0,
+      "Sim%": 45.9,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 55.0,
+      "Sim%": 54.1,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    }
+  ],
+  "locked_tip": {
+    "status": "SECURED LOCK",
+    "section": "FT DC",
+    "selection": "1X",
+    "model": 75.7,
+    "sim": 75.2,
+    "agree": "1 eng",
+    "verdict": "HARD YES"
+  },
+  "backends": {
+    "ft_result": [
+      "market"
+    ],
+    "ht_result": [
+      "market"
+    ],
+    "over25": [
+      "market"
+    ],
+    "btts": [
+      "market"
+    ],
+    "ht_over15": [
+      "market"
+    ]
+  },
+  "generated_at": "2026-08-30T08:42:35.578686Z"
+}

@@ -1,0 +1,299 @@
+{
+  "match": {
+    "league": "F2",
+    "home_team": "Montpellier",
+    "away_team": "Boulogne",
+    "match_date": "2026-08-28 19:00",
+    "odds_home": 1.6,
+    "odds_draw": 3.3,
+    "odds_away": 5.0,
+    "n_simulations": 2000,
+    "seed": 136,
+    "odds_blend": 0.3
+  },
+  "resolved": {
+    "league": "Ligue 2",
+    "div": "F2",
+    "home": "Montpellier",
+    "away": "Boulogne",
+    "models": "market-only",
+    "match_date": "2026-08-28 19:00"
+  },
+  "report": {
+    "n": 2000,
+    "ft_model": {
+      "H": 0.5540631296171928,
+      "D": 0.26863666890530563,
+      "A": 0.1773002014775017
+    },
+    "ft_sim": {
+      "H": 0.556,
+      "D": 0.273,
+      "A": 0.171
+    },
+    "ht_model": {
+      "H": 0.3,
+      "D": 0.4,
+      "A": 0.3
+    },
+    "ht_sim": {
+      "H": 0.2785,
+      "D": 0.4205,
+      "A": 0.301
+    },
+    "over25_model": 0.47374999999999995,
+    "over25_sim": 0.5655,
+    "btts_model": 0.45,
+    "btts_sim": 0.4345,
+    "ht_over15_model": 0.35,
+    "ht_over15_sim": 0.3375,
+    "dc_ft": {
+      "1X": 0.8226997985224984,
+      "X2": 0.4459368703828073,
+      "12": 0.7313633310946945
+    },
+    "dc_ht": {
+      "1X": 0.7,
+      "X2": 0.7,
+      "12": 0.6
+    },
+    "top_ft": [
+      [
+        "0-0",
+        296
+      ],
+      [
+        "2-1",
+        283
+      ],
+      [
+        "2-0",
+        185
+      ],
+      [
+        "1-0",
+        164
+      ],
+      [
+        "1-1",
+        122
+      ],
+      [
+        "5-0",
+        100
+      ],
+      [
+        "4-0",
+        99
+      ],
+      [
+        "3-0",
+        93
+      ]
+    ],
+    "top_ht": [
+      [
+        "0-0",
+        531
+      ],
+      [
+        "0-1",
+        399
+      ],
+      [
+        "1-0",
+        395
+      ],
+      [
+        "1-1",
+        310
+      ],
+      [
+        "1-2",
+        102
+      ]
+    ],
+    "xg": {
+      "home": 1.774,
+      "away": 0.972,
+      "total": 2.746
+    },
+    "goal_rates": {
+      "home": 1.774,
+      "away": 0.972
+    }
+  },
+  "table": [
+    {
+      "Section": "HT Winner",
+      "Selection": "Montpellier",
+      "Model%": 30.0,
+      "Sim%": 27.9,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Draw",
+      "Model%": 40.0,
+      "Sim%": 42.0,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Boulogne",
+      "Model%": 30.0,
+      "Sim%": 30.1,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "1X",
+      "Model%": 70.0,
+      "Sim%": 69.9,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "X2",
+      "Model%": 70.0,
+      "Sim%": 72.2,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "12",
+      "Model%": 60.0,
+      "Sim%": 58.0,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Over 1.5",
+      "Model%": 35.0,
+      "Sim%": 33.8,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Under 1.5",
+      "Model%": 65.0,
+      "Sim%": 66.2,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Montpellier",
+      "Model%": 55.4,
+      "Sim%": 55.6,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Draw",
+      "Model%": 26.9,
+      "Sim%": 27.3,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Boulogne",
+      "Model%": 17.7,
+      "Sim%": 17.1,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "1X",
+      "Model%": 82.3,
+      "Sim%": 82.9,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 44.6,
+      "Sim%": 44.4,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "12",
+      "Model%": 73.1,
+      "Sim%": 72.7,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Over 2.5",
+      "Model%": 47.4,
+      "Sim%": 56.5,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Under 2.5",
+      "Model%": 52.6,
+      "Sim%": 43.5,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "Yes",
+      "Model%": 45.0,
+      "Sim%": 43.5,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 55.0,
+      "Sim%": 56.5,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    }
+  ],
+  "locked_tip": {
+    "status": "SECURED LOCK",
+    "section": "FT DC",
+    "selection": "1X",
+    "model": 82.3,
+    "sim": 82.9,
+    "agree": "1 eng",
+    "verdict": "HARD YES"
+  },
+  "backends": {
+    "ft_result": [
+      "market"
+    ],
+    "ht_result": [
+      "market"
+    ],
+    "over25": [
+      "market"
+    ],
+    "btts": [
+      "market"
+    ],
+    "ht_over15": [
+      "market"
+    ]
+  },
+  "generated_at": "2026-08-30T08:42:32.742608Z"
+}

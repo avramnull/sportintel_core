@@ -1,0 +1,299 @@
+{
+  "match": {
+    "league": "SP2",
+    "home_team": "Girona",
+    "away_team": "Las Palmas",
+    "match_date": "2026-08-29 20:30",
+    "odds_home": 1.68,
+    "odds_draw": 3.5,
+    "odds_away": 5.0,
+    "n_simulations": 2000,
+    "seed": 223,
+    "odds_blend": 0.3
+  },
+  "resolved": {
+    "league": "La Liga 2",
+    "div": "SP2",
+    "home": "Girona",
+    "away": "Las Palmas",
+    "models": "market-only",
+    "match_date": "2026-08-29 20:30"
+  },
+  "report": {
+    "n": 2000,
+    "ft_model": {
+      "H": 0.5506607929515418,
+      "D": 0.26431718061674003,
+      "A": 0.18502202643171806
+    },
+    "ft_sim": {
+      "H": 0.5365,
+      "D": 0.281,
+      "A": 0.1825
+    },
+    "ht_model": {
+      "H": 0.3,
+      "D": 0.4,
+      "A": 0.3
+    },
+    "ht_sim": {
+      "H": 0.2935,
+      "D": 0.3815,
+      "A": 0.325
+    },
+    "over25_model": 0.46928571428571425,
+    "over25_sim": 0.575,
+    "btts_model": 0.45,
+    "btts_sim": 0.466,
+    "ht_over15_model": 0.35,
+    "ht_over15_sim": 0.34,
+    "dc_ft": {
+      "1X": 0.8149779735682818,
+      "X2": 0.4493392070484581,
+      "12": 0.7356828193832599
+    },
+    "dc_ht": {
+      "1X": 0.7,
+      "X2": 0.7,
+      "12": 0.6
+    },
+    "top_ft": [
+      [
+        "0-0",
+        305
+      ],
+      [
+        "2-1",
+        301
+      ],
+      [
+        "2-0",
+        158
+      ],
+      [
+        "1-0",
+        154
+      ],
+      [
+        "1-1",
+        128
+      ],
+      [
+        "1-2",
+        97
+      ],
+      [
+        "3-0",
+        96
+      ],
+      [
+        "5-0",
+        78
+      ]
+    ],
+    "top_ht": [
+      [
+        "0-0",
+        459
+      ],
+      [
+        "0-1",
+        441
+      ],
+      [
+        "1-0",
+        420
+      ],
+      [
+        "1-1",
+        304
+      ],
+      [
+        "0-2",
+        107
+      ]
+    ],
+    "xg": {
+      "home": 1.7165,
+      "away": 1.021,
+      "total": 2.7375
+    },
+    "goal_rates": {
+      "home": 1.7165,
+      "away": 1.021
+    }
+  },
+  "table": [
+    {
+      "Section": "HT Winner",
+      "Selection": "Girona",
+      "Model%": 30.0,
+      "Sim%": 29.3,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Draw",
+      "Model%": 40.0,
+      "Sim%": 38.1,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Las Palmas",
+      "Model%": 30.0,
+      "Sim%": 32.5,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "1X",
+      "Model%": 70.0,
+      "Sim%": 67.5,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "X2",
+      "Model%": 70.0,
+      "Sim%": 70.7,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "12",
+      "Model%": 60.0,
+      "Sim%": 61.9,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Over 1.5",
+      "Model%": 35.0,
+      "Sim%": 34.0,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Under 1.5",
+      "Model%": 65.0,
+      "Sim%": 66.0,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Girona",
+      "Model%": 55.1,
+      "Sim%": 53.6,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Draw",
+      "Model%": 26.4,
+      "Sim%": 28.1,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Las Palmas",
+      "Model%": 18.5,
+      "Sim%": 18.2,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "1X",
+      "Model%": 81.5,
+      "Sim%": 81.8,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 44.9,
+      "Sim%": 46.4,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "12",
+      "Model%": 73.6,
+      "Sim%": 71.9,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Over 2.5",
+      "Model%": 46.9,
+      "Sim%": 57.5,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Under 2.5",
+      "Model%": 53.1,
+      "Sim%": 42.5,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "Yes",
+      "Model%": 45.0,
+      "Sim%": 46.6,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 55.0,
+      "Sim%": 53.4,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    }
+  ],
+  "locked_tip": {
+    "status": "SECURED LOCK",
+    "section": "FT DC",
+    "selection": "1X",
+    "model": 81.5,
+    "sim": 81.8,
+    "agree": "1 eng",
+    "verdict": "HARD YES"
+  },
+  "backends": {
+    "ft_result": [
+      "market"
+    ],
+    "ht_result": [
+      "market"
+    ],
+    "over25": [
+      "market"
+    ],
+    "btts": [
+      "market"
+    ],
+    "ht_over15": [
+      "market"
+    ]
+  },
+  "generated_at": "2026-08-30T08:42:36.270892Z"
+}

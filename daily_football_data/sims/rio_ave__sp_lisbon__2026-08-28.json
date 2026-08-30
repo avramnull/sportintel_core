@@ -1,0 +1,299 @@
+{
+  "match": {
+    "league": "P1",
+    "home_team": "Rio Ave",
+    "away_team": "Sp Lisbon",
+    "match_date": "2026-08-28 20:15",
+    "odds_home": 8.5,
+    "odds_draw": 5.5,
+    "odds_away": 1.27,
+    "n_simulations": 2000,
+    "seed": 179,
+    "odds_blend": 0.3
+  },
+  "resolved": {
+    "league": "Primeira Liga",
+    "div": "P1",
+    "home": "Rio Ave",
+    "away": "Sporting Lisbon",
+    "models": "market-only",
+    "match_date": "2026-08-28 20:15"
+  },
+  "report": {
+    "n": 2000,
+    "ft_model": {
+      "H": 0.10824422749108943,
+      "D": 0.16728653339532004,
+      "A": 0.7244692391135906
+    },
+    "ft_sim": {
+      "H": 0.1105,
+      "D": 0.1675,
+      "A": 0.722
+    },
+    "ht_model": {
+      "H": 0.3,
+      "D": 0.4,
+      "A": 0.3
+    },
+    "ht_sim": {
+      "H": 0.2985,
+      "D": 0.3955,
+      "A": 0.306
+    },
+    "over25_model": 0.4857572950440018,
+    "over25_sim": 0.6465,
+    "btts_model": 0.45,
+    "btts_sim": 0.4615,
+    "ht_over15_model": 0.35,
+    "ht_over15_sim": 0.3415,
+    "dc_ft": {
+      "1X": 0.2755307608864095,
+      "X2": 0.8917557725089107,
+      "12": 0.83271346660468
+    },
+    "dc_ht": {
+      "1X": 0.7,
+      "X2": 0.7,
+      "12": 0.6
+    },
+    "top_ft": [
+      [
+        "1-2",
+        385
+      ],
+      [
+        "0-2",
+        198
+      ],
+      [
+        "0-1",
+        192
+      ],
+      [
+        "0-0",
+        178
+      ],
+      [
+        "0-5",
+        140
+      ],
+      [
+        "0-4",
+        132
+      ],
+      [
+        "0-3",
+        124
+      ],
+      [
+        "2-3",
+        117
+      ]
+    ],
+    "top_ht": [
+      [
+        "0-0",
+        467
+      ],
+      [
+        "0-1",
+        433
+      ],
+      [
+        "1-0",
+        417
+      ],
+      [
+        "1-1",
+        324
+      ],
+      [
+        "1-2",
+        103
+      ]
+    ],
+    "xg": {
+      "home": 0.8475,
+      "away": 2.1575,
+      "total": 3.005
+    },
+    "goal_rates": {
+      "home": 0.8475,
+      "away": 2.1575
+    }
+  },
+  "table": [
+    {
+      "Section": "HT Winner",
+      "Selection": "Rio Ave",
+      "Model%": 30.0,
+      "Sim%": 29.8,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Draw",
+      "Model%": 40.0,
+      "Sim%": 39.6,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Sporting Lisbon",
+      "Model%": 30.0,
+      "Sim%": 30.6,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "1X",
+      "Model%": 70.0,
+      "Sim%": 69.4,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "X2",
+      "Model%": 70.0,
+      "Sim%": 70.2,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "12",
+      "Model%": 60.0,
+      "Sim%": 60.5,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Over 1.5",
+      "Model%": 35.0,
+      "Sim%": 34.2,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Under 1.5",
+      "Model%": 65.0,
+      "Sim%": 65.8,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Rio Ave",
+      "Model%": 10.8,
+      "Sim%": 11.1,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Draw",
+      "Model%": 16.7,
+      "Sim%": 16.8,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Sporting Lisbon",
+      "Model%": 72.4,
+      "Sim%": 72.2,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "1X",
+      "Model%": 27.6,
+      "Sim%": 27.8,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 89.2,
+      "Sim%": 88.9,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "12",
+      "Model%": 83.3,
+      "Sim%": 83.2,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Over 2.5",
+      "Model%": 48.6,
+      "Sim%": 64.6,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Under 2.5",
+      "Model%": 51.4,
+      "Sim%": 35.4,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "Yes",
+      "Model%": 45.0,
+      "Sim%": 46.2,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 55.0,
+      "Sim%": 53.8,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    }
+  ],
+  "locked_tip": {
+    "status": "SECURED LOCK",
+    "section": "FT DC",
+    "selection": "X2",
+    "model": 89.2,
+    "sim": 88.9,
+    "agree": "1 eng",
+    "verdict": "HARD YES"
+  },
+  "backends": {
+    "ft_result": [
+      "market"
+    ],
+    "ht_result": [
+      "market"
+    ],
+    "over25": [
+      "market"
+    ],
+    "btts": [
+      "market"
+    ],
+    "ht_over15": [
+      "market"
+    ]
+  },
+  "generated_at": "2026-08-30T08:42:34.502809Z"
+}

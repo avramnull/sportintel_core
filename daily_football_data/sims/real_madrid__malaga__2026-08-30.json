@@ -1,0 +1,299 @@
+{
+  "match": {
+    "league": "SP1",
+    "home_team": "Real Madrid",
+    "away_team": "Malaga",
+    "match_date": "2026-08-30 16:00",
+    "odds_home": 1.11,
+    "odds_draw": 9.0,
+    "odds_away": 21.0,
+    "n_simulations": 2000,
+    "seed": 214,
+    "odds_blend": 0.3
+  },
+  "resolved": {
+    "league": "La Liga",
+    "div": "SP1",
+    "home": "Real Madrid",
+    "away": "Malaga",
+    "models": "market-only",
+    "match_date": "2026-08-30 16:00"
+  },
+  "report": {
+    "n": 2000,
+    "ft_model": {
+      "H": 0.8502024291497976,
+      "D": 0.1048582995951417,
+      "A": 0.04493927125506073
+    },
+    "ft_sim": {
+      "H": 0.848,
+      "D": 0.102,
+      "A": 0.05
+    },
+    "ht_model": {
+      "H": 0.3,
+      "D": 0.4,
+      "A": 0.3
+    },
+    "ht_sim": {
+      "H": 0.2905,
+      "D": 0.4055,
+      "A": 0.304
+    },
+    "over25_model": 0.49227799227799224,
+    "over25_sim": 0.6565,
+    "btts_model": 0.45,
+    "btts_sim": 0.441,
+    "ht_over15_model": 0.35,
+    "ht_over15_sim": 0.3435,
+    "dc_ft": {
+      "1X": 0.9550607287449393,
+      "X2": 0.14979757085020243,
+      "12": 0.8951417004048583
+    },
+    "dc_ht": {
+      "1X": 0.7,
+      "X2": 0.7,
+      "12": 0.6
+    },
+    "top_ft": [
+      [
+        "2-1",
+        450
+      ],
+      [
+        "1-0",
+        253
+      ],
+      [
+        "2-0",
+        241
+      ],
+      [
+        "5-0",
+        173
+      ],
+      [
+        "4-0",
+        141
+      ],
+      [
+        "3-0",
+        133
+      ],
+      [
+        "3-2",
+        127
+      ],
+      [
+        "0-0",
+        122
+      ]
+    ],
+    "top_ht": [
+      [
+        "0-0",
+        494
+      ],
+      [
+        "0-1",
+        417
+      ],
+      [
+        "1-0",
+        402
+      ],
+      [
+        "1-1",
+        317
+      ],
+      [
+        "0-2",
+        100
+      ]
+    ],
+    "xg": {
+      "home": 2.3465,
+      "away": 0.6705,
+      "total": 3.017
+    },
+    "goal_rates": {
+      "home": 2.3465,
+      "away": 0.6705
+    }
+  },
+  "table": [
+    {
+      "Section": "HT Winner",
+      "Selection": "Real Madrid",
+      "Model%": 30.0,
+      "Sim%": 29.0,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Draw",
+      "Model%": 40.0,
+      "Sim%": 40.6,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Malaga",
+      "Model%": 30.0,
+      "Sim%": 30.4,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "1X",
+      "Model%": 70.0,
+      "Sim%": 69.6,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "X2",
+      "Model%": 70.0,
+      "Sim%": 71.0,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "12",
+      "Model%": 60.0,
+      "Sim%": 59.5,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Over 1.5",
+      "Model%": 35.0,
+      "Sim%": 34.4,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Under 1.5",
+      "Model%": 65.0,
+      "Sim%": 65.6,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Real Madrid",
+      "Model%": 85.0,
+      "Sim%": 84.8,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Draw",
+      "Model%": 10.5,
+      "Sim%": 10.2,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Malaga",
+      "Model%": 4.5,
+      "Sim%": 5.0,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "1X",
+      "Model%": 95.5,
+      "Sim%": 95.0,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 15.0,
+      "Sim%": 15.2,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "12",
+      "Model%": 89.5,
+      "Sim%": 89.8,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Over 2.5",
+      "Model%": 49.2,
+      "Sim%": 65.6,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Under 2.5",
+      "Model%": 50.8,
+      "Sim%": 34.4,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "Yes",
+      "Model%": 45.0,
+      "Sim%": 44.1,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 55.0,
+      "Sim%": 55.9,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    }
+  ],
+  "locked_tip": {
+    "status": "SECURED LOCK",
+    "section": "FT DC",
+    "selection": "1X",
+    "model": 95.5,
+    "sim": 95.0,
+    "agree": "1 eng",
+    "verdict": "HARD YES"
+  },
+  "backends": {
+    "ft_result": [
+      "market"
+    ],
+    "ht_result": [
+      "market"
+    ],
+    "over25": [
+      "market"
+    ],
+    "btts": [
+      "market"
+    ],
+    "ht_over15": [
+      "market"
+    ]
+  },
+  "generated_at": "2026-08-30T08:42:35.915248Z"
+}

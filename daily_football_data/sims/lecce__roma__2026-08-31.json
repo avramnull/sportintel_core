@@ -1,0 +1,299 @@
+{
+  "match": {
+    "league": "I1",
+    "home_team": "Lecce",
+    "away_team": "Roma",
+    "match_date": "2026-08-31 17:30",
+    "odds_home": 8.0,
+    "odds_draw": 4.0,
+    "odds_away": 1.48,
+    "n_simulations": 2000,
+    "seed": 158,
+    "odds_blend": 0.3
+  },
+  "resolved": {
+    "league": "Serie A",
+    "div": "I1",
+    "home": "Lecce",
+    "away": "Roma",
+    "models": "market-only",
+    "match_date": "2026-08-31 17:30"
+  },
+  "report": {
+    "n": 2000,
+    "ft_model": {
+      "H": 0.1189710610932476,
+      "D": 0.2379421221864952,
+      "A": 0.6430868167202572
+    },
+    "ft_sim": {
+      "H": 0.125,
+      "D": 0.239,
+      "A": 0.636
+    },
+    "ht_model": {
+      "H": 0.3,
+      "D": 0.4,
+      "A": 0.3
+    },
+    "ht_sim": {
+      "H": 0.3005,
+      "D": 0.401,
+      "A": 0.2985
+    },
+    "over25_model": 0.47010135135135134,
+    "over25_sim": 0.5885,
+    "btts_model": 0.45,
+    "btts_sim": 0.4565,
+    "ht_over15_model": 0.35,
+    "ht_over15_sim": 0.3255,
+    "dc_ft": {
+      "1X": 0.35691318327974275,
+      "X2": 0.8810289389067525,
+      "12": 0.7620578778135049
+    },
+    "dc_ht": {
+      "1X": 0.7,
+      "X2": 0.7,
+      "12": 0.6
+    },
+    "top_ft": [
+      [
+        "1-2",
+        347
+      ],
+      [
+        "0-0",
+        249
+      ],
+      [
+        "0-2",
+        190
+      ],
+      [
+        "0-1",
+        186
+      ],
+      [
+        "1-1",
+        126
+      ],
+      [
+        "0-4",
+        110
+      ],
+      [
+        "0-3",
+        104
+      ],
+      [
+        "0-5",
+        101
+      ]
+    ],
+    "top_ht": [
+      [
+        "0-0",
+        510
+      ],
+      [
+        "1-0",
+        430
+      ],
+      [
+        "0-1",
+        409
+      ],
+      [
+        "1-1",
+        292
+      ],
+      [
+        "1-2",
+        98
+      ]
+    ],
+    "xg": {
+      "home": 0.8865,
+      "away": 1.905,
+      "total": 2.7915
+    },
+    "goal_rates": {
+      "home": 0.8865,
+      "away": 1.905
+    }
+  },
+  "table": [
+    {
+      "Section": "HT Winner",
+      "Selection": "Lecce",
+      "Model%": 30.0,
+      "Sim%": 30.0,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Draw",
+      "Model%": 40.0,
+      "Sim%": 40.1,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Roma",
+      "Model%": 30.0,
+      "Sim%": 29.8,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "1X",
+      "Model%": 70.0,
+      "Sim%": 70.2,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "X2",
+      "Model%": 70.0,
+      "Sim%": 70.0,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "12",
+      "Model%": 60.0,
+      "Sim%": 59.9,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Over 1.5",
+      "Model%": 35.0,
+      "Sim%": 32.6,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Under 1.5",
+      "Model%": 65.0,
+      "Sim%": 67.5,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Lecce",
+      "Model%": 11.9,
+      "Sim%": 12.5,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Draw",
+      "Model%": 23.8,
+      "Sim%": 23.9,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Roma",
+      "Model%": 64.3,
+      "Sim%": 63.6,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "1X",
+      "Model%": 35.7,
+      "Sim%": 36.4,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 88.1,
+      "Sim%": 87.5,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "12",
+      "Model%": 76.2,
+      "Sim%": 76.1,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Over 2.5",
+      "Model%": 47.0,
+      "Sim%": 58.9,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Under 2.5",
+      "Model%": 53.0,
+      "Sim%": 41.1,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "Yes",
+      "Model%": 45.0,
+      "Sim%": 45.6,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 55.0,
+      "Sim%": 54.4,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    }
+  ],
+  "locked_tip": {
+    "status": "SECURED LOCK",
+    "section": "FT DC",
+    "selection": "X2",
+    "model": 88.1,
+    "sim": 87.5,
+    "agree": "1 eng",
+    "verdict": "HARD YES"
+  },
+  "backends": {
+    "ft_result": [
+      "market"
+    ],
+    "ht_result": [
+      "market"
+    ],
+    "over25": [
+      "market"
+    ],
+    "btts": [
+      "market"
+    ],
+    "ht_over15": [
+      "market"
+    ]
+  },
+  "generated_at": "2026-08-30T08:42:33.643459Z"
+}

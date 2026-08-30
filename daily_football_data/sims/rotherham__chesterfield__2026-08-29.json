@@ -1,0 +1,299 @@
+{
+  "match": {
+    "league": "E3",
+    "home_team": "Rotherham",
+    "away_team": "Chesterfield",
+    "match_date": "2026-08-29 13:00",
+    "odds_home": 3.0,
+    "odds_draw": 3.3,
+    "odds_away": 2.25,
+    "n_simulations": 2000,
+    "seed": 104,
+    "odds_blend": 0.3
+  },
+  "resolved": {
+    "league": "League Two",
+    "div": "E3",
+    "home": "Rotherham",
+    "away": "Chesterfield",
+    "models": "market-only",
+    "match_date": "2026-08-29 13:00"
+  },
+  "report": {
+    "n": 2000,
+    "ft_model": {
+      "H": 0.30841121495327106,
+      "D": 0.28037383177570097,
+      "A": 0.411214953271028
+    },
+    "ft_sim": {
+      "H": 0.3185,
+      "D": 0.27,
+      "A": 0.4115
+    },
+    "ht_model": {
+      "H": 0.3,
+      "D": 0.4,
+      "A": 0.3
+    },
+    "ht_sim": {
+      "H": 0.305,
+      "D": 0.415,
+      "A": 0.28
+    },
+    "over25_model": 0.4666666666666666,
+    "over25_sim": 0.5675,
+    "btts_model": 0.45,
+    "btts_sim": 0.4475,
+    "ht_over15_model": 0.35,
+    "ht_over15_sim": 0.337,
+    "dc_ft": {
+      "1X": 0.588785046728972,
+      "X2": 0.691588785046729,
+      "12": 0.719626168224299
+    },
+    "dc_ht": {
+      "1X": 0.7,
+      "X2": 0.7,
+      "12": 0.6
+    },
+    "top_ft": [
+      [
+        "0-0",
+        319
+      ],
+      [
+        "1-2",
+        261
+      ],
+      [
+        "2-1",
+        163
+      ],
+      [
+        "1-1",
+        125
+      ],
+      [
+        "0-1",
+        122
+      ],
+      [
+        "0-2",
+        114
+      ],
+      [
+        "2-0",
+        101
+      ],
+      [
+        "1-0",
+        84
+      ]
+    ],
+    "top_ht": [
+      [
+        "0-0",
+        509
+      ],
+      [
+        "1-0",
+        409
+      ],
+      [
+        "0-1",
+        408
+      ],
+      [
+        "1-1",
+        321
+      ],
+      [
+        "2-0",
+        104
+      ]
+    ],
+    "xg": {
+      "home": 1.2805,
+      "away": 1.407,
+      "total": 2.6875
+    },
+    "goal_rates": {
+      "home": 1.2805,
+      "away": 1.407
+    }
+  },
+  "table": [
+    {
+      "Section": "HT Winner",
+      "Selection": "Rotherham",
+      "Model%": 30.0,
+      "Sim%": 30.5,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Draw",
+      "Model%": 40.0,
+      "Sim%": 41.5,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Chesterfield",
+      "Model%": 30.0,
+      "Sim%": 28.0,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "1X",
+      "Model%": 70.0,
+      "Sim%": 72.0,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "X2",
+      "Model%": 70.0,
+      "Sim%": 69.5,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "12",
+      "Model%": 60.0,
+      "Sim%": 58.5,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Over 1.5",
+      "Model%": 35.0,
+      "Sim%": 33.7,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Under 1.5",
+      "Model%": 65.0,
+      "Sim%": 66.3,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Rotherham",
+      "Model%": 30.8,
+      "Sim%": 31.9,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Draw",
+      "Model%": 28.0,
+      "Sim%": 27.0,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Chesterfield",
+      "Model%": 41.1,
+      "Sim%": 41.1,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "1X",
+      "Model%": 58.9,
+      "Sim%": 58.9,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 69.2,
+      "Sim%": 68.2,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "12",
+      "Model%": 72.0,
+      "Sim%": 73.0,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Over 2.5",
+      "Model%": 46.7,
+      "Sim%": 56.8,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Under 2.5",
+      "Model%": 53.3,
+      "Sim%": 43.2,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "Yes",
+      "Model%": 45.0,
+      "Sim%": 44.8,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 55.0,
+      "Sim%": 55.2,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    }
+  ],
+  "locked_tip": {
+    "status": "SECURED LOCK",
+    "section": "FT DC",
+    "selection": "12",
+    "model": 72.0,
+    "sim": 73.0,
+    "agree": "1 eng",
+    "verdict": "HARD YES"
+  },
+  "backends": {
+    "ft_result": [
+      "market"
+    ],
+    "ht_result": [
+      "market"
+    ],
+    "over25": [
+      "market"
+    ],
+    "btts": [
+      "market"
+    ],
+    "ht_over15": [
+      "market"
+    ]
+  },
+  "generated_at": "2026-08-30T08:42:31.417756Z"
+}

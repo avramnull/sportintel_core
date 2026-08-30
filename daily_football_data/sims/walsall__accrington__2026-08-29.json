@@ -1,0 +1,299 @@
+{
+  "match": {
+    "league": "E3",
+    "home_team": "Walsall",
+    "away_team": "Accrington",
+    "match_date": "2026-08-29 15:00",
+    "odds_home": 1.81,
+    "odds_draw": 3.4,
+    "odds_away": 4.1,
+    "n_simulations": 2000,
+    "seed": 112,
+    "odds_blend": 0.3
+  },
+  "resolved": {
+    "league": "League Two",
+    "div": "E3",
+    "home": "Walsall",
+    "away": "Accrington",
+    "models": "market-only",
+    "match_date": "2026-08-29 15:00"
+  },
+  "report": {
+    "n": 2000,
+    "ft_model": {
+      "H": 0.5066327457750318,
+      "D": 0.2697074323096493,
+      "A": 0.22365982191531894
+    },
+    "ft_sim": {
+      "H": 0.514,
+      "D": 0.2645,
+      "A": 0.2215
+    },
+    "ht_model": {
+      "H": 0.3,
+      "D": 0.4,
+      "A": 0.3
+    },
+    "ht_sim": {
+      "H": 0.3105,
+      "D": 0.4065,
+      "A": 0.283
+    },
+    "over25_model": 0.4694582940304541,
+    "over25_sim": 0.563,
+    "btts_model": 0.45,
+    "btts_sim": 0.455,
+    "ht_over15_model": 0.35,
+    "ht_over15_sim": 0.3485,
+    "dc_ft": {
+      "1X": 0.776340178084681,
+      "X2": 0.4933672542249682,
+      "12": 0.7302925676903508
+    },
+    "dc_ht": {
+      "1X": 0.7,
+      "X2": 0.7,
+      "12": 0.6
+    },
+    "top_ft": [
+      [
+        "0-0",
+        280
+      ],
+      [
+        "2-1",
+        279
+      ],
+      [
+        "1-0",
+        170
+      ],
+      [
+        "2-0",
+        162
+      ],
+      [
+        "1-2",
+        136
+      ],
+      [
+        "1-1",
+        132
+      ],
+      [
+        "4-0",
+        106
+      ],
+      [
+        "5-0",
+        72
+      ]
+    ],
+    "top_ht": [
+      [
+        "0-0",
+        463
+      ],
+      [
+        "1-0",
+        446
+      ],
+      [
+        "0-1",
+        394
+      ],
+      [
+        "1-1",
+        350
+      ],
+      [
+        "1-2",
+        102
+      ]
+    ],
+    "xg": {
+      "home": 1.655,
+      "away": 1.048,
+      "total": 2.703
+    },
+    "goal_rates": {
+      "home": 1.655,
+      "away": 1.048
+    }
+  },
+  "table": [
+    {
+      "Section": "HT Winner",
+      "Selection": "Walsall",
+      "Model%": 30.0,
+      "Sim%": 31.1,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Draw",
+      "Model%": 40.0,
+      "Sim%": 40.6,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Accrington",
+      "Model%": 30.0,
+      "Sim%": 28.3,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "1X",
+      "Model%": 70.0,
+      "Sim%": 71.7,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "X2",
+      "Model%": 70.0,
+      "Sim%": 69.0,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "12",
+      "Model%": 60.0,
+      "Sim%": 59.3,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Over 1.5",
+      "Model%": 35.0,
+      "Sim%": 34.8,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Under 1.5",
+      "Model%": 65.0,
+      "Sim%": 65.1,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Walsall",
+      "Model%": 50.7,
+      "Sim%": 51.4,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Draw",
+      "Model%": 27.0,
+      "Sim%": 26.5,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Accrington",
+      "Model%": 22.4,
+      "Sim%": 22.1,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "1X",
+      "Model%": 77.6,
+      "Sim%": 77.8,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 49.3,
+      "Sim%": 48.6,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "12",
+      "Model%": 73.0,
+      "Sim%": 73.6,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Over 2.5",
+      "Model%": 46.9,
+      "Sim%": 56.3,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Under 2.5",
+      "Model%": 53.1,
+      "Sim%": 43.7,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "Yes",
+      "Model%": 45.0,
+      "Sim%": 45.5,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 55.0,
+      "Sim%": 54.5,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    }
+  ],
+  "locked_tip": {
+    "status": "SECURED LOCK",
+    "section": "FT DC",
+    "selection": "1X",
+    "model": 77.6,
+    "sim": 77.8,
+    "agree": "1 eng",
+    "verdict": "HARD YES"
+  },
+  "backends": {
+    "ft_result": [
+      "market"
+    ],
+    "ht_result": [
+      "market"
+    ],
+    "over25": [
+      "market"
+    ],
+    "btts": [
+      "market"
+    ],
+    "ht_over15": [
+      "market"
+    ]
+  },
+  "generated_at": "2026-08-30T08:42:31.744274Z"
+}

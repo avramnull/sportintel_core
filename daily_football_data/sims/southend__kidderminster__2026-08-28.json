@@ -1,0 +1,299 @@
+{
+  "match": {
+    "league": "EC",
+    "home_team": "Southend",
+    "away_team": "Kidderminster",
+    "match_date": "2026-08-28 19:45",
+    "odds_home": 1.48,
+    "odds_draw": 4.2,
+    "odds_away": 5.75,
+    "n_simulations": 2000,
+    "seed": 122,
+    "odds_blend": 0.3
+  },
+  "resolved": {
+    "league": "National League",
+    "div": "EC",
+    "home": "Southend",
+    "away": "Kidderminster",
+    "models": "market-only",
+    "match_date": "2026-08-28 19:45"
+  },
+  "report": {
+    "n": 2000,
+    "ft_model": {
+      "H": 0.6212058853791542,
+      "D": 0.21890112151455912,
+      "A": 0.15989299310628666
+    },
+    "ft_sim": {
+      "H": 0.641,
+      "D": 0.21,
+      "A": 0.149
+    },
+    "ht_model": {
+      "H": 0.3,
+      "D": 0.4,
+      "A": 0.3
+    },
+    "ht_sim": {
+      "H": 0.2865,
+      "D": 0.425,
+      "A": 0.2885
+    },
+    "over25_model": 0.47743830787309044,
+    "over25_sim": 0.608,
+    "btts_model": 0.45,
+    "btts_sim": 0.4375,
+    "ht_over15_model": 0.35,
+    "ht_over15_sim": 0.3175,
+    "dc_ft": {
+      "1X": 0.8401070068937133,
+      "X2": 0.3787941146208458,
+      "12": 0.7810988784854409
+    },
+    "dc_ht": {
+      "1X": 0.7,
+      "X2": 0.7,
+      "12": 0.6
+    },
+    "top_ft": [
+      [
+        "2-1",
+        319
+      ],
+      [
+        "0-0",
+        243
+      ],
+      [
+        "2-0",
+        200
+      ],
+      [
+        "1-0",
+        180
+      ],
+      [
+        "5-0",
+        118
+      ],
+      [
+        "3-0",
+        115
+      ],
+      [
+        "4-0",
+        113
+      ],
+      [
+        "1-2",
+        95
+      ]
+    ],
+    "top_ht": [
+      [
+        "0-0",
+        535
+      ],
+      [
+        "1-0",
+        426
+      ],
+      [
+        "0-1",
+        404
+      ],
+      [
+        "1-1",
+        315
+      ],
+      [
+        "0-2",
+        90
+      ]
+    ],
+    "xg": {
+      "home": 1.9535,
+      "away": 0.9025,
+      "total": 2.856
+    },
+    "goal_rates": {
+      "home": 1.9535,
+      "away": 0.9025
+    }
+  },
+  "table": [
+    {
+      "Section": "HT Winner",
+      "Selection": "Southend",
+      "Model%": 30.0,
+      "Sim%": 28.6,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Draw",
+      "Model%": 40.0,
+      "Sim%": 42.5,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Kidderminster",
+      "Model%": 30.0,
+      "Sim%": 28.8,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "1X",
+      "Model%": 70.0,
+      "Sim%": 71.2,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "X2",
+      "Model%": 70.0,
+      "Sim%": 71.4,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "12",
+      "Model%": 60.0,
+      "Sim%": 57.5,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Over 1.5",
+      "Model%": 35.0,
+      "Sim%": 31.8,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Under 1.5",
+      "Model%": 65.0,
+      "Sim%": 68.2,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Southend",
+      "Model%": 62.1,
+      "Sim%": 64.1,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Draw",
+      "Model%": 21.9,
+      "Sim%": 21.0,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Kidderminster",
+      "Model%": 16.0,
+      "Sim%": 14.9,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "1X",
+      "Model%": 84.0,
+      "Sim%": 85.1,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 37.9,
+      "Sim%": 35.9,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "12",
+      "Model%": 78.1,
+      "Sim%": 79.0,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Over 2.5",
+      "Model%": 47.7,
+      "Sim%": 60.8,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Under 2.5",
+      "Model%": 52.3,
+      "Sim%": 39.2,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "Yes",
+      "Model%": 45.0,
+      "Sim%": 43.8,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 55.0,
+      "Sim%": 56.2,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    }
+  ],
+  "locked_tip": {
+    "status": "SECURED LOCK",
+    "section": "FT DC",
+    "selection": "1X",
+    "model": 84.0,
+    "sim": 85.1,
+    "agree": "1 eng",
+    "verdict": "HARD YES"
+  },
+  "backends": {
+    "ft_result": [
+      "market"
+    ],
+    "ht_result": [
+      "market"
+    ],
+    "over25": [
+      "market"
+    ],
+    "btts": [
+      "market"
+    ],
+    "ht_over15": [
+      "market"
+    ]
+  },
+  "generated_at": "2026-08-30T08:42:32.142898Z"
+}

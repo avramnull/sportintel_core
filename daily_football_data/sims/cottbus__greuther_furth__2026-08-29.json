@@ -1,0 +1,299 @@
+{
+  "match": {
+    "league": "D2",
+    "home_team": "Cottbus",
+    "away_team": "Greuther Furth",
+    "match_date": "2026-08-29 12:00",
+    "odds_home": 2.5,
+    "odds_draw": 3.8,
+    "odds_away": 2.5,
+    "n_simulations": 2000,
+    "seed": 62,
+    "odds_blend": 0.3
+  },
+  "resolved": {
+    "league": "2. Bundesliga",
+    "div": "D2",
+    "home": "Cottbus",
+    "away": "Greuther Furth",
+    "models": "market-only",
+    "match_date": "2026-08-29 12:00"
+  },
+  "report": {
+    "n": 2000,
+    "ft_model": {
+      "H": 0.3762376237623763,
+      "D": 0.24752475247524752,
+      "A": 0.3762376237623763
+    },
+    "ft_sim": {
+      "H": 0.364,
+      "D": 0.257,
+      "A": 0.379
+    },
+    "ht_model": {
+      "H": 0.3,
+      "D": 0.4,
+      "A": 0.3
+    },
+    "ht_sim": {
+      "H": 0.2955,
+      "D": 0.388,
+      "A": 0.3165
+    },
+    "over25_model": 0.47,
+    "over25_sim": 0.5755,
+    "btts_model": 0.45,
+    "btts_sim": 0.4465,
+    "ht_over15_model": 0.35,
+    "ht_over15_sim": 0.3475,
+    "dc_ft": {
+      "1X": 0.6237623762376239,
+      "X2": 0.6237623762376239,
+      "12": 0.7524752475247526
+    },
+    "dc_ht": {
+      "1X": 0.7,
+      "X2": 0.7,
+      "12": 0.6
+    },
+    "top_ft": [
+      [
+        "0-0",
+        279
+      ],
+      [
+        "1-2",
+        217
+      ],
+      [
+        "2-1",
+        181
+      ],
+      [
+        "1-1",
+        129
+      ],
+      [
+        "1-0",
+        119
+      ],
+      [
+        "0-1",
+        111
+      ],
+      [
+        "2-0",
+        107
+      ],
+      [
+        "0-2",
+        104
+      ]
+    ],
+    "top_ht": [
+      [
+        "0-0",
+        460
+      ],
+      [
+        "0-1",
+        448
+      ],
+      [
+        "1-0",
+        397
+      ],
+      [
+        "1-1",
+        316
+      ],
+      [
+        "1-2",
+        102
+      ]
+    ],
+    "xg": {
+      "home": 1.38,
+      "away": 1.375,
+      "total": 2.755
+    },
+    "goal_rates": {
+      "home": 1.38,
+      "away": 1.375
+    }
+  },
+  "table": [
+    {
+      "Section": "HT Winner",
+      "Selection": "Cottbus",
+      "Model%": 30.0,
+      "Sim%": 29.5,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Draw",
+      "Model%": 40.0,
+      "Sim%": 38.8,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Greuther Furth",
+      "Model%": 30.0,
+      "Sim%": 31.6,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "1X",
+      "Model%": 70.0,
+      "Sim%": 68.3,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "X2",
+      "Model%": 70.0,
+      "Sim%": 70.5,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "12",
+      "Model%": 60.0,
+      "Sim%": 61.2,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Over 1.5",
+      "Model%": 35.0,
+      "Sim%": 34.8,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Under 1.5",
+      "Model%": 65.0,
+      "Sim%": 65.3,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Cottbus",
+      "Model%": 37.6,
+      "Sim%": 36.4,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Draw",
+      "Model%": 24.8,
+      "Sim%": 25.7,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Greuther Furth",
+      "Model%": 37.6,
+      "Sim%": 37.9,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "1X",
+      "Model%": 62.4,
+      "Sim%": 62.1,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 62.4,
+      "Sim%": 63.6,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "12",
+      "Model%": 75.2,
+      "Sim%": 74.3,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Over 2.5",
+      "Model%": 47.0,
+      "Sim%": 57.6,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Under 2.5",
+      "Model%": 53.0,
+      "Sim%": 42.4,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "Yes",
+      "Model%": 45.0,
+      "Sim%": 44.6,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 55.0,
+      "Sim%": 55.4,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    }
+  ],
+  "locked_tip": {
+    "status": "SECURED LOCK",
+    "section": "FT DC",
+    "selection": "12",
+    "model": 75.2,
+    "sim": 74.3,
+    "agree": "1 eng",
+    "verdict": "HARD YES"
+  },
+  "backends": {
+    "ft_result": [
+      "market"
+    ],
+    "ht_result": [
+      "market"
+    ],
+    "over25": [
+      "market"
+    ],
+    "btts": [
+      "market"
+    ],
+    "ht_over15": [
+      "market"
+    ]
+  },
+  "generated_at": "2026-08-30T08:42:29.737191Z"
+}

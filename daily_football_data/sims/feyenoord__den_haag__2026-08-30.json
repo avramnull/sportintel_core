@@ -1,0 +1,299 @@
+{
+  "match": {
+    "league": "N1",
+    "home_team": "Feyenoord",
+    "away_team": "Den Haag",
+    "match_date": "2026-08-30 13:30",
+    "odds_home": 1.17,
+    "odds_draw": 8.0,
+    "odds_away": 15.0,
+    "n_simulations": 2000,
+    "seed": 175,
+    "odds_blend": 0.3
+  },
+  "resolved": {
+    "league": "Eredivisie",
+    "div": "N1",
+    "home": "Feyenoord",
+    "away": "Den Haag",
+    "models": "market-only",
+    "match_date": "2026-08-30 13:30"
+  },
+  "report": {
+    "n": 2000,
+    "ft_model": {
+      "H": 0.8168266285480907,
+      "D": 0.11946089442515825,
+      "A": 0.06371247702675106
+    },
+    "ft_sim": {
+      "H": 0.815,
+      "D": 0.1165,
+      "A": 0.0685
+    },
+    "ht_model": {
+      "H": 0.3,
+      "D": 0.4,
+      "A": 0.3
+    },
+    "ht_sim": {
+      "H": 0.304,
+      "D": 0.3935,
+      "A": 0.3025
+    },
+    "over25_model": 0.4882051282051282,
+    "over25_sim": 0.6755,
+    "btts_model": 0.45,
+    "btts_sim": 0.464,
+    "ht_over15_model": 0.35,
+    "ht_over15_sim": 0.3395,
+    "dc_ft": {
+      "1X": 0.936287522973249,
+      "X2": 0.18317337145190932,
+      "12": 0.8805391055748418
+    },
+    "dc_ht": {
+      "1X": 0.7,
+      "X2": 0.7,
+      "12": 0.6
+    },
+    "top_ft": [
+      [
+        "2-1",
+        422
+      ],
+      [
+        "1-0",
+        227
+      ],
+      [
+        "2-0",
+        219
+      ],
+      [
+        "4-0",
+        156
+      ],
+      [
+        "5-0",
+        140
+      ],
+      [
+        "3-2",
+        139
+      ],
+      [
+        "3-0",
+        138
+      ],
+      [
+        "0-0",
+        118
+      ]
+    ],
+    "top_ht": [
+      [
+        "0-0",
+        453
+      ],
+      [
+        "0-1",
+        444
+      ],
+      [
+        "1-0",
+        424
+      ],
+      [
+        "1-1",
+        334
+      ],
+      [
+        "2-0",
+        94
+      ]
+    ],
+    "xg": {
+      "home": 2.3265,
+      "away": 0.7665,
+      "total": 3.093
+    },
+    "goal_rates": {
+      "home": 2.3265,
+      "away": 0.7665
+    }
+  },
+  "table": [
+    {
+      "Section": "HT Winner",
+      "Selection": "Feyenoord",
+      "Model%": 30.0,
+      "Sim%": 30.4,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Draw",
+      "Model%": 40.0,
+      "Sim%": 39.4,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Den Haag",
+      "Model%": 30.0,
+      "Sim%": 30.2,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "1X",
+      "Model%": 70.0,
+      "Sim%": 69.8,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "X2",
+      "Model%": 70.0,
+      "Sim%": 69.6,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "12",
+      "Model%": 60.0,
+      "Sim%": 60.7,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Over 1.5",
+      "Model%": 35.0,
+      "Sim%": 34.0,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Under 1.5",
+      "Model%": 65.0,
+      "Sim%": 66.0,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Feyenoord",
+      "Model%": 81.7,
+      "Sim%": 81.5,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Draw",
+      "Model%": 11.9,
+      "Sim%": 11.7,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Den Haag",
+      "Model%": 6.4,
+      "Sim%": 6.9,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "1X",
+      "Model%": 93.6,
+      "Sim%": 93.2,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 18.3,
+      "Sim%": 18.5,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "12",
+      "Model%": 88.1,
+      "Sim%": 88.3,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Over 2.5",
+      "Model%": 48.8,
+      "Sim%": 67.5,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Under 2.5",
+      "Model%": 51.2,
+      "Sim%": 32.5,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "Yes",
+      "Model%": 45.0,
+      "Sim%": 46.4,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 55.0,
+      "Sim%": 53.6,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    }
+  ],
+  "locked_tip": {
+    "status": "SECURED LOCK",
+    "section": "FT DC",
+    "selection": "1X",
+    "model": 93.6,
+    "sim": 93.2,
+    "agree": "1 eng",
+    "verdict": "HARD YES"
+  },
+  "backends": {
+    "ft_result": [
+      "market"
+    ],
+    "ht_result": [
+      "market"
+    ],
+    "over25": [
+      "market"
+    ],
+    "btts": [
+      "market"
+    ],
+    "ht_over15": [
+      "market"
+    ]
+  },
+  "generated_at": "2026-08-30T08:42:34.334655Z"
+}

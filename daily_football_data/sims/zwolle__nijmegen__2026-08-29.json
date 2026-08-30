@@ -1,0 +1,299 @@
+{
+  "match": {
+    "league": "N1",
+    "home_team": "Zwolle",
+    "away_team": "Nijmegen",
+    "match_date": "2026-08-29 20:00",
+    "odds_home": 4.5,
+    "odds_draw": 4.33,
+    "odds_away": 1.67,
+    "n_simulations": 2000,
+    "seed": 173,
+    "odds_blend": 0.3
+  },
+  "resolved": {
+    "league": "Eredivisie",
+    "div": "N1",
+    "home": "Zwolle",
+    "away": "Nijmegen",
+    "models": "market-only",
+    "match_date": "2026-08-29 20:00"
+  },
+  "report": {
+    "n": 2000,
+    "ft_model": {
+      "H": 0.21124357674746064,
+      "D": 0.21953720447195677,
+      "A": 0.5692192187805826
+    },
+    "ft_sim": {
+      "H": 0.212,
+      "D": 0.209,
+      "A": 0.579
+    },
+    "ht_model": {
+      "H": 0.3,
+      "D": 0.4,
+      "A": 0.3
+    },
+    "ht_sim": {
+      "H": 0.3135,
+      "D": 0.3815,
+      "A": 0.305
+    },
+    "over25_model": 0.47315369261477047,
+    "over25_sim": 0.605,
+    "btts_model": 0.45,
+    "btts_sim": 0.4545,
+    "ht_over15_model": 0.35,
+    "ht_over15_sim": 0.326,
+    "dc_ft": {
+      "1X": 0.43078078121941743,
+      "X2": 0.7887564232525394,
+      "12": 0.7804627955280432
+    },
+    "dc_ht": {
+      "1X": 0.7,
+      "X2": 0.7,
+      "12": 0.6
+    },
+    "top_ft": [
+      [
+        "1-2",
+        303
+      ],
+      [
+        "0-0",
+        231
+      ],
+      [
+        "0-2",
+        177
+      ],
+      [
+        "0-1",
+        170
+      ],
+      [
+        "2-1",
+        115
+      ],
+      [
+        "0-4",
+        101
+      ],
+      [
+        "0-5",
+        101
+      ],
+      [
+        "1-1",
+        94
+      ]
+    ],
+    "top_ht": [
+      [
+        "0-0",
+        461
+      ],
+      [
+        "1-0",
+        450
+      ],
+      [
+        "0-1",
+        437
+      ],
+      [
+        "1-1",
+        302
+      ],
+      [
+        "1-2",
+        95
+      ]
+    ],
+    "xg": {
+      "home": 1.0435,
+      "away": 1.8175,
+      "total": 2.861
+    },
+    "goal_rates": {
+      "home": 1.0435,
+      "away": 1.8175
+    }
+  },
+  "table": [
+    {
+      "Section": "HT Winner",
+      "Selection": "Zwolle",
+      "Model%": 30.0,
+      "Sim%": 31.4,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Draw",
+      "Model%": 40.0,
+      "Sim%": 38.1,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Nijmegen",
+      "Model%": 30.0,
+      "Sim%": 30.5,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "1X",
+      "Model%": 70.0,
+      "Sim%": 69.5,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "X2",
+      "Model%": 70.0,
+      "Sim%": 68.7,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "12",
+      "Model%": 60.0,
+      "Sim%": 61.9,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Over 1.5",
+      "Model%": 35.0,
+      "Sim%": 32.6,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Under 1.5",
+      "Model%": 65.0,
+      "Sim%": 67.4,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Zwolle",
+      "Model%": 21.1,
+      "Sim%": 21.2,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Draw",
+      "Model%": 22.0,
+      "Sim%": 20.9,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Nijmegen",
+      "Model%": 56.9,
+      "Sim%": 57.9,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "1X",
+      "Model%": 43.1,
+      "Sim%": 42.1,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 78.9,
+      "Sim%": 78.8,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "12",
+      "Model%": 78.0,
+      "Sim%": 79.1,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Over 2.5",
+      "Model%": 47.3,
+      "Sim%": 60.5,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Under 2.5",
+      "Model%": 52.7,
+      "Sim%": 39.5,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "Yes",
+      "Model%": 45.0,
+      "Sim%": 45.5,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 55.0,
+      "Sim%": 54.5,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    }
+  ],
+  "locked_tip": {
+    "status": "SECURED LOCK",
+    "section": "FT DC",
+    "selection": "X2",
+    "model": 78.9,
+    "sim": 78.8,
+    "agree": "1 eng",
+    "verdict": "HARD YES"
+  },
+  "backends": {
+    "ft_result": [
+      "market"
+    ],
+    "ht_result": [
+      "market"
+    ],
+    "over25": [
+      "market"
+    ],
+    "btts": [
+      "market"
+    ],
+    "ht_over15": [
+      "market"
+    ]
+  },
+  "generated_at": "2026-08-30T08:42:34.246505Z"
+}

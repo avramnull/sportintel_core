@@ -1,0 +1,299 @@
+{
+  "match": {
+    "league": "E2",
+    "home_team": "Leyton Orient",
+    "away_team": "Barnsley",
+    "match_date": "2026-08-29 15:00",
+    "odds_home": 2.15,
+    "odds_draw": 3.4,
+    "odds_away": 3.0,
+    "n_simulations": 2000,
+    "seed": 94,
+    "odds_blend": 0.3
+  },
+  "resolved": {
+    "league": "League One",
+    "div": "E2",
+    "home": "Leyton Orient",
+    "away": "Barnsley",
+    "models": "market-only",
+    "match_date": "2026-08-29 15:00"
+  },
+  "report": {
+    "n": 2000,
+    "ft_model": {
+      "H": 0.4257095158597663,
+      "D": 0.2691986644407346,
+      "A": 0.30509181969949917
+    },
+    "ft_sim": {
+      "H": 0.4085,
+      "D": 0.2655,
+      "A": 0.326
+    },
+    "ht_model": {
+      "H": 0.3,
+      "D": 0.4,
+      "A": 0.3
+    },
+    "ht_sim": {
+      "H": 0.297,
+      "D": 0.4115,
+      "A": 0.2915
+    },
+    "over25_model": 0.4697674418604651,
+    "over25_sim": 0.5745,
+    "btts_model": 0.45,
+    "btts_sim": 0.4495,
+    "ht_over15_model": 0.35,
+    "ht_over15_sim": 0.3395,
+    "dc_ft": {
+      "1X": 0.6949081803005008,
+      "X2": 0.5742904841402338,
+      "12": 0.7308013355592655
+    },
+    "dc_ht": {
+      "1X": 0.7,
+      "X2": 0.7,
+      "12": 0.6
+    },
+    "top_ft": [
+      [
+        "0-0",
+        299
+      ],
+      [
+        "2-1",
+        223
+      ],
+      [
+        "1-2",
+        184
+      ],
+      [
+        "1-0",
+        130
+      ],
+      [
+        "1-1",
+        120
+      ],
+      [
+        "2-0",
+        116
+      ],
+      [
+        "0-2",
+        99
+      ],
+      [
+        "0-1",
+        87
+      ]
+    ],
+    "top_ht": [
+      [
+        "0-0",
+        493
+      ],
+      [
+        "1-0",
+        422
+      ],
+      [
+        "0-1",
+        406
+      ],
+      [
+        "1-1",
+        330
+      ],
+      [
+        "1-2",
+        92
+      ]
+    ],
+    "xg": {
+      "home": 1.444,
+      "away": 1.285,
+      "total": 2.729
+    },
+    "goal_rates": {
+      "home": 1.444,
+      "away": 1.285
+    }
+  },
+  "table": [
+    {
+      "Section": "HT Winner",
+      "Selection": "Leyton Orient",
+      "Model%": 30.0,
+      "Sim%": 29.7,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Draw",
+      "Model%": 40.0,
+      "Sim%": 41.1,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Barnsley",
+      "Model%": 30.0,
+      "Sim%": 29.1,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "1X",
+      "Model%": 70.0,
+      "Sim%": 70.8,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "X2",
+      "Model%": 70.0,
+      "Sim%": 70.3,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "12",
+      "Model%": 60.0,
+      "Sim%": 58.9,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Over 1.5",
+      "Model%": 35.0,
+      "Sim%": 34.0,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Under 1.5",
+      "Model%": 65.0,
+      "Sim%": 66.0,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Leyton Orient",
+      "Model%": 42.6,
+      "Sim%": 40.8,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Draw",
+      "Model%": 26.9,
+      "Sim%": 26.6,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Barnsley",
+      "Model%": 30.5,
+      "Sim%": 32.6,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "1X",
+      "Model%": 69.5,
+      "Sim%": 67.4,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 57.4,
+      "Sim%": 59.2,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "12",
+      "Model%": 73.1,
+      "Sim%": 73.4,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Over 2.5",
+      "Model%": 47.0,
+      "Sim%": 57.5,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Under 2.5",
+      "Model%": 53.0,
+      "Sim%": 42.5,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "Yes",
+      "Model%": 45.0,
+      "Sim%": 45.0,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 55.0,
+      "Sim%": 55.0,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    }
+  ],
+  "locked_tip": {
+    "status": "SECURED LOCK",
+    "section": "FT DC",
+    "selection": "12",
+    "model": 73.1,
+    "sim": 73.4,
+    "agree": "1 eng",
+    "verdict": "HARD YES"
+  },
+  "backends": {
+    "ft_result": [
+      "market"
+    ],
+    "ht_result": [
+      "market"
+    ],
+    "over25": [
+      "market"
+    ],
+    "btts": [
+      "market"
+    ],
+    "ht_over15": [
+      "market"
+    ]
+  },
+  "generated_at": "2026-08-30T08:42:31.025547Z"
+}

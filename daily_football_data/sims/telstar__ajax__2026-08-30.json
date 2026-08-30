@@ -1,0 +1,299 @@
+{
+  "match": {
+    "league": "N1",
+    "home_team": "Telstar",
+    "away_team": "Ajax",
+    "match_date": "2026-08-30 15:45",
+    "odds_home": 5.0,
+    "odds_draw": 4.5,
+    "odds_away": 1.57,
+    "n_simulations": 2000,
+    "seed": 177,
+    "odds_blend": 0.3
+  },
+  "resolved": {
+    "league": "Eredivisie",
+    "div": "N1",
+    "home": "Telstar",
+    "away": "Ajax",
+    "models": "market-only",
+    "match_date": "2026-08-30 15:45"
+  },
+  "report": {
+    "n": 2000,
+    "ft_model": {
+      "H": 0.18882801015635442,
+      "D": 0.2098089001737271,
+      "A": 0.6013630896699185
+    },
+    "ft_sim": {
+      "H": 0.1915,
+      "D": 0.198,
+      "A": 0.6105
+    },
+    "ht_model": {
+      "H": 0.3,
+      "D": 0.4,
+      "A": 0.3
+    },
+    "ht_sim": {
+      "H": 0.303,
+      "D": 0.4095,
+      "A": 0.2875
+    },
+    "over25_model": 0.47554140127388533,
+    "over25_sim": 0.6205,
+    "btts_model": 0.45,
+    "btts_sim": 0.439,
+    "ht_over15_model": 0.35,
+    "ht_over15_sim": 0.3395,
+    "dc_ft": {
+      "1X": 0.39863691033008153,
+      "X2": 0.8111719898436456,
+      "12": 0.7901910998262729
+    },
+    "dc_ht": {
+      "1X": 0.7,
+      "X2": 0.7,
+      "12": 0.6
+    },
+    "top_ft": [
+      [
+        "1-2",
+        314
+      ],
+      [
+        "0-0",
+        230
+      ],
+      [
+        "0-1",
+        180
+      ],
+      [
+        "0-2",
+        162
+      ],
+      [
+        "0-5",
+        133
+      ],
+      [
+        "2-1",
+        109
+      ],
+      [
+        "0-3",
+        108
+      ],
+      [
+        "0-4",
+        103
+      ]
+    ],
+    "top_ht": [
+      [
+        "0-0",
+        487
+      ],
+      [
+        "1-0",
+        428
+      ],
+      [
+        "0-1",
+        406
+      ],
+      [
+        "1-1",
+        332
+      ],
+      [
+        "2-1",
+        93
+      ]
+    ],
+    "xg": {
+      "home": 0.9875,
+      "away": 1.893,
+      "total": 2.8805
+    },
+    "goal_rates": {
+      "home": 0.9875,
+      "away": 1.893
+    }
+  },
+  "table": [
+    {
+      "Section": "HT Winner",
+      "Selection": "Telstar",
+      "Model%": 30.0,
+      "Sim%": 30.3,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Draw",
+      "Model%": 40.0,
+      "Sim%": 40.9,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Ajax",
+      "Model%": 30.0,
+      "Sim%": 28.7,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "1X",
+      "Model%": 70.0,
+      "Sim%": 71.2,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "X2",
+      "Model%": 70.0,
+      "Sim%": 69.7,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "12",
+      "Model%": 60.0,
+      "Sim%": 59.1,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Over 1.5",
+      "Model%": 35.0,
+      "Sim%": 34.0,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Under 1.5",
+      "Model%": 65.0,
+      "Sim%": 66.0,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Telstar",
+      "Model%": 18.9,
+      "Sim%": 19.1,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Draw",
+      "Model%": 21.0,
+      "Sim%": 19.8,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Ajax",
+      "Model%": 60.1,
+      "Sim%": 61.1,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "1X",
+      "Model%": 39.9,
+      "Sim%": 39.0,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 81.1,
+      "Sim%": 80.8,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "12",
+      "Model%": 79.0,
+      "Sim%": 80.2,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Over 2.5",
+      "Model%": 47.6,
+      "Sim%": 62.1,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Under 2.5",
+      "Model%": 52.4,
+      "Sim%": 37.9,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "Yes",
+      "Model%": 45.0,
+      "Sim%": 43.9,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 55.0,
+      "Sim%": 56.1,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    }
+  ],
+  "locked_tip": {
+    "status": "SECURED LOCK",
+    "section": "FT DC",
+    "selection": "X2",
+    "model": 81.1,
+    "sim": 80.8,
+    "agree": "1 eng",
+    "verdict": "HARD YES"
+  },
+  "backends": {
+    "ft_result": [
+      "market"
+    ],
+    "ht_result": [
+      "market"
+    ],
+    "over25": [
+      "market"
+    ],
+    "btts": [
+      "market"
+    ],
+    "ht_over15": [
+      "market"
+    ]
+  },
+  "generated_at": "2026-08-30T08:42:34.420882Z"
+}

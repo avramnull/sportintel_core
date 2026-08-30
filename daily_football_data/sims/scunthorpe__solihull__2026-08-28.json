@@ -1,0 +1,299 @@
+{
+  "match": {
+    "league": "EC",
+    "home_team": "Scunthorpe",
+    "away_team": "Solihull",
+    "match_date": "2026-08-28 19:45",
+    "odds_home": 1.73,
+    "odds_draw": 3.9,
+    "odds_away": 4.0,
+    "n_simulations": 2000,
+    "seed": 121,
+    "odds_blend": 0.3
+  },
+  "resolved": {
+    "league": "National League",
+    "div": "EC",
+    "home": "Scunthorpe",
+    "away": "Solihull",
+    "models": "market-only",
+    "match_date": "2026-08-28 19:45"
+  },
+  "report": {
+    "n": 2000,
+    "ft_model": {
+      "H": 0.5330235418730994,
+      "D": 0.23644377626678512,
+      "A": 0.23053268186011547
+    },
+    "ft_sim": {
+      "H": 0.539,
+      "D": 0.2315,
+      "A": 0.2295
+    },
+    "ht_model": {
+      "H": 0.3,
+      "D": 0.4,
+      "A": 0.3
+    },
+    "ht_sim": {
+      "H": 0.303,
+      "D": 0.4055,
+      "A": 0.2915
+    },
+    "over25_model": 0.4742052023121387,
+    "over25_sim": 0.5995,
+    "btts_model": 0.45,
+    "btts_sim": 0.472,
+    "ht_over15_model": 0.35,
+    "ht_over15_sim": 0.3445,
+    "dc_ft": {
+      "1X": 0.7694673181398846,
+      "X2": 0.4669764581269006,
+      "12": 0.7635562237332149
+    },
+    "dc_ht": {
+      "1X": 0.7,
+      "X2": 0.7,
+      "12": 0.6
+    },
+    "top_ft": [
+      [
+        "2-1",
+        287
+      ],
+      [
+        "0-0",
+        243
+      ],
+      [
+        "1-0",
+        158
+      ],
+      [
+        "2-0",
+        155
+      ],
+      [
+        "1-2",
+        129
+      ],
+      [
+        "1-1",
+        110
+      ],
+      [
+        "5-0",
+        94
+      ],
+      [
+        "3-0",
+        91
+      ]
+    ],
+    "top_ht": [
+      [
+        "0-0",
+        470
+      ],
+      [
+        "0-1",
+        425
+      ],
+      [
+        "1-0",
+        416
+      ],
+      [
+        "1-1",
+        341
+      ],
+      [
+        "2-1",
+        101
+      ]
+    ],
+    "xg": {
+      "home": 1.7385,
+      "away": 1.089,
+      "total": 2.8275
+    },
+    "goal_rates": {
+      "home": 1.7385,
+      "away": 1.089
+    }
+  },
+  "table": [
+    {
+      "Section": "HT Winner",
+      "Selection": "Scunthorpe",
+      "Model%": 30.0,
+      "Sim%": 30.3,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Draw",
+      "Model%": 40.0,
+      "Sim%": 40.6,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Solihull",
+      "Model%": 30.0,
+      "Sim%": 29.1,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "1X",
+      "Model%": 70.0,
+      "Sim%": 70.9,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "X2",
+      "Model%": 70.0,
+      "Sim%": 69.7,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "12",
+      "Model%": 60.0,
+      "Sim%": 59.5,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Over 1.5",
+      "Model%": 35.0,
+      "Sim%": 34.4,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Under 1.5",
+      "Model%": 65.0,
+      "Sim%": 65.5,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Scunthorpe",
+      "Model%": 53.3,
+      "Sim%": 53.9,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Draw",
+      "Model%": 23.6,
+      "Sim%": 23.2,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Solihull",
+      "Model%": 23.1,
+      "Sim%": 22.9,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "1X",
+      "Model%": 76.9,
+      "Sim%": 77.1,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 46.7,
+      "Sim%": 46.1,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "12",
+      "Model%": 76.4,
+      "Sim%": 76.9,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Over 2.5",
+      "Model%": 47.4,
+      "Sim%": 60.0,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Under 2.5",
+      "Model%": 52.6,
+      "Sim%": 40.0,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "Yes",
+      "Model%": 45.0,
+      "Sim%": 47.2,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 55.0,
+      "Sim%": 52.8,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    }
+  ],
+  "locked_tip": {
+    "status": "SECURED LOCK",
+    "section": "FT DC",
+    "selection": "1X",
+    "model": 76.9,
+    "sim": 77.1,
+    "agree": "1 eng",
+    "verdict": "HARD YES"
+  },
+  "backends": {
+    "ft_result": [
+      "market"
+    ],
+    "ht_result": [
+      "market"
+    ],
+    "over25": [
+      "market"
+    ],
+    "btts": [
+      "market"
+    ],
+    "ht_over15": [
+      "market"
+    ]
+  },
+  "generated_at": "2026-08-30T08:42:32.102622Z"
+}

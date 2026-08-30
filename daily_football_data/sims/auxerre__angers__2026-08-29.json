@@ -1,0 +1,299 @@
+{
+  "match": {
+    "league": "F1",
+    "home_team": "Auxerre",
+    "away_team": "Angers",
+    "match_date": "2026-08-29 19:45",
+    "odds_home": 1.95,
+    "odds_draw": 3.5,
+    "odds_away": 4.1,
+    "n_simulations": 2000,
+    "seed": 127,
+    "odds_blend": 0.3
+  },
+  "resolved": {
+    "league": "Ligue 1",
+    "div": "F1",
+    "home": "Auxerre",
+    "away": "Angers",
+    "models": "market-only",
+    "match_date": "2026-08-29 19:45"
+  },
+  "report": {
+    "n": 2000,
+    "ft_model": {
+      "H": 0.4919437778539596,
+      "D": 0.274082961947206,
+      "A": 0.23397326019883444
+    },
+    "ft_sim": {
+      "H": 0.5075,
+      "D": 0.2615,
+      "A": 0.231
+    },
+    "ht_model": {
+      "H": 0.3,
+      "D": 0.4,
+      "A": 0.3
+    },
+    "ht_sim": {
+      "H": 0.2965,
+      "D": 0.4035,
+      "A": 0.3
+    },
+    "over25_model": 0.4635084427767354,
+    "over25_sim": 0.567,
+    "btts_model": 0.45,
+    "btts_sim": 0.455,
+    "ht_over15_model": 0.35,
+    "ht_over15_sim": 0.327,
+    "dc_ft": {
+      "1X": 0.7660267398011655,
+      "X2": 0.5080562221460404,
+      "12": 0.7259170380527941
+    },
+    "dc_ht": {
+      "1X": 0.7,
+      "X2": 0.7,
+      "12": 0.6
+    },
+    "top_ft": [
+      [
+        "2-1",
+        288
+      ],
+      [
+        "0-0",
+        277
+      ],
+      [
+        "2-0",
+        148
+      ],
+      [
+        "1-1",
+        145
+      ],
+      [
+        "1-0",
+        144
+      ],
+      [
+        "1-2",
+        124
+      ],
+      [
+        "5-0",
+        96
+      ],
+      [
+        "3-0",
+        89
+      ]
+    ],
+    "top_ht": [
+      [
+        "0-0",
+        492
+      ],
+      [
+        "0-1",
+        433
+      ],
+      [
+        "1-0",
+        421
+      ],
+      [
+        "1-1",
+        315
+      ],
+      [
+        "2-1",
+        93
+      ]
+    ],
+    "xg": {
+      "home": 1.653,
+      "away": 1.0635,
+      "total": 2.7165
+    },
+    "goal_rates": {
+      "home": 1.653,
+      "away": 1.0635
+    }
+  },
+  "table": [
+    {
+      "Section": "HT Winner",
+      "Selection": "Auxerre",
+      "Model%": 30.0,
+      "Sim%": 29.6,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Draw",
+      "Model%": 40.0,
+      "Sim%": 40.4,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Angers",
+      "Model%": 30.0,
+      "Sim%": 30.0,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "1X",
+      "Model%": 70.0,
+      "Sim%": 70.0,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "X2",
+      "Model%": 70.0,
+      "Sim%": 70.3,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "12",
+      "Model%": 60.0,
+      "Sim%": 59.7,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Over 1.5",
+      "Model%": 35.0,
+      "Sim%": 32.7,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Under 1.5",
+      "Model%": 65.0,
+      "Sim%": 67.3,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Auxerre",
+      "Model%": 49.2,
+      "Sim%": 50.7,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Draw",
+      "Model%": 27.4,
+      "Sim%": 26.2,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Angers",
+      "Model%": 23.4,
+      "Sim%": 23.1,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "1X",
+      "Model%": 76.6,
+      "Sim%": 76.9,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 50.8,
+      "Sim%": 49.3,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "12",
+      "Model%": 72.6,
+      "Sim%": 73.8,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Over 2.5",
+      "Model%": 46.4,
+      "Sim%": 56.7,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Under 2.5",
+      "Model%": 53.6,
+      "Sim%": 43.3,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "Yes",
+      "Model%": 45.0,
+      "Sim%": 45.5,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 55.0,
+      "Sim%": 54.5,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    }
+  ],
+  "locked_tip": {
+    "status": "SECURED LOCK",
+    "section": "FT DC",
+    "selection": "1X",
+    "model": 76.6,
+    "sim": 76.9,
+    "agree": "1 eng",
+    "verdict": "HARD YES"
+  },
+  "backends": {
+    "ft_result": [
+      "market"
+    ],
+    "ht_result": [
+      "market"
+    ],
+    "over25": [
+      "market"
+    ],
+    "btts": [
+      "market"
+    ],
+    "ht_over15": [
+      "market"
+    ]
+  },
+  "generated_at": "2026-08-30T08:42:32.364076Z"
+}

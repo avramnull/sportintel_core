@@ -1,0 +1,299 @@
+{
+  "match": {
+    "league": "EC",
+    "home_team": "Hornchurch",
+    "away_team": "Woking",
+    "match_date": "2026-08-28 19:45",
+    "odds_home": 2.3,
+    "odds_draw": 3.4,
+    "odds_away": 2.7,
+    "n_simulations": 2000,
+    "seed": 120,
+    "odds_blend": 0.3
+  },
+  "resolved": {
+    "league": "National League",
+    "div": "EC",
+    "home": "Hornchurch",
+    "away": "Woking",
+    "models": "market-only",
+    "match_date": "2026-08-28 19:45"
+  },
+  "report": {
+    "n": 2000,
+    "ft_model": {
+      "H": 0.3955191727703576,
+      "D": 0.2675570874623007,
+      "A": 0.33692373976734163
+    },
+    "ft_sim": {
+      "H": 0.413,
+      "D": 0.279,
+      "A": 0.308
+    },
+    "ht_model": {
+      "H": 0.3,
+      "D": 0.4,
+      "A": 0.3
+    },
+    "ht_sim": {
+      "H": 0.3165,
+      "D": 0.3845,
+      "A": 0.299
+    },
+    "over25_model": 0.47077294685990334,
+    "over25_sim": 0.5565,
+    "btts_model": 0.45,
+    "btts_sim": 0.427,
+    "ht_over15_model": 0.35,
+    "ht_over15_sim": 0.3405,
+    "dc_ft": {
+      "1X": 0.6630762602326583,
+      "X2": 0.6044808272296424,
+      "12": 0.7324429125376992
+    },
+    "dc_ht": {
+      "1X": 0.7,
+      "X2": 0.7,
+      "12": 0.6
+    },
+    "top_ft": [
+      [
+        "0-0",
+        321
+      ],
+      [
+        "2-1",
+        217
+      ],
+      [
+        "1-2",
+        151
+      ],
+      [
+        "2-0",
+        125
+      ],
+      [
+        "1-1",
+        123
+      ],
+      [
+        "1-0",
+        114
+      ],
+      [
+        "0-2",
+        102
+      ],
+      [
+        "0-1",
+        102
+      ]
+    ],
+    "top_ht": [
+      [
+        "0-0",
+        455
+      ],
+      [
+        "1-0",
+        449
+      ],
+      [
+        "0-1",
+        415
+      ],
+      [
+        "1-1",
+        314
+      ],
+      [
+        "0-2",
+        110
+      ]
+    ],
+    "xg": {
+      "home": 1.4725,
+      "away": 1.2125,
+      "total": 2.685
+    },
+    "goal_rates": {
+      "home": 1.4725,
+      "away": 1.2125
+    }
+  },
+  "table": [
+    {
+      "Section": "HT Winner",
+      "Selection": "Hornchurch",
+      "Model%": 30.0,
+      "Sim%": 31.6,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Draw",
+      "Model%": 40.0,
+      "Sim%": 38.5,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Woking",
+      "Model%": 30.0,
+      "Sim%": 29.9,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "1X",
+      "Model%": 70.0,
+      "Sim%": 70.1,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "X2",
+      "Model%": 70.0,
+      "Sim%": 68.3,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "12",
+      "Model%": 60.0,
+      "Sim%": 61.5,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Over 1.5",
+      "Model%": 35.0,
+      "Sim%": 34.1,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Under 1.5",
+      "Model%": 65.0,
+      "Sim%": 66.0,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Hornchurch",
+      "Model%": 39.6,
+      "Sim%": 41.3,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Draw",
+      "Model%": 26.8,
+      "Sim%": 27.9,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Woking",
+      "Model%": 33.7,
+      "Sim%": 30.8,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "1X",
+      "Model%": 66.3,
+      "Sim%": 69.2,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 60.4,
+      "Sim%": 58.7,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "12",
+      "Model%": 73.2,
+      "Sim%": 72.1,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Over 2.5",
+      "Model%": 47.1,
+      "Sim%": 55.6,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Under 2.5",
+      "Model%": 52.9,
+      "Sim%": 44.4,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "Yes",
+      "Model%": 45.0,
+      "Sim%": 42.7,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 55.0,
+      "Sim%": 57.3,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    }
+  ],
+  "locked_tip": {
+    "status": "SECURED LOCK",
+    "section": "FT DC",
+    "selection": "12",
+    "model": 73.2,
+    "sim": 72.1,
+    "agree": "1 eng",
+    "verdict": "HARD YES"
+  },
+  "backends": {
+    "ft_result": [
+      "market"
+    ],
+    "ht_result": [
+      "market"
+    ],
+    "over25": [
+      "market"
+    ],
+    "btts": [
+      "market"
+    ],
+    "ht_over15": [
+      "market"
+    ]
+  },
+  "generated_at": "2026-08-30T08:42:32.062648Z"
+}

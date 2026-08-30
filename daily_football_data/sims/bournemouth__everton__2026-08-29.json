@@ -1,0 +1,299 @@
+{
+  "match": {
+    "league": "E0",
+    "home_team": "Bournemouth",
+    "away_team": "Everton",
+    "match_date": "2026-08-29 15:00",
+    "odds_home": 2.05,
+    "odds_draw": 3.5,
+    "odds_away": 3.6,
+    "n_simulations": 2000,
+    "seed": 71,
+    "odds_blend": 0.3
+  },
+  "resolved": {
+    "league": "Premier League",
+    "div": "E0",
+    "home": "Bournemouth",
+    "away": "Everton",
+    "models": "market-only",
+    "match_date": "2026-08-29 15:00"
+  },
+  "report": {
+    "n": 2000,
+    "ft_model": {
+      "H": 0.4640029460504511,
+      "D": 0.2717731541152642,
+      "A": 0.2642238998342847
+    },
+    "ft_sim": {
+      "H": 0.472,
+      "D": 0.275,
+      "A": 0.253
+    },
+    "ht_model": {
+      "H": 0.3,
+      "D": 0.4,
+      "A": 0.3
+    },
+    "ht_sim": {
+      "H": 0.3075,
+      "D": 0.3865,
+      "A": 0.306
+    },
+    "over25_model": 0.46483739837398375,
+    "over25_sim": 0.5515,
+    "btts_model": 0.45,
+    "btts_sim": 0.4405,
+    "ht_over15_model": 0.35,
+    "ht_over15_sim": 0.3415,
+    "dc_ft": {
+      "1X": 0.7357761001657153,
+      "X2": 0.5359970539495489,
+      "12": 0.7282268458847359
+    },
+    "dc_ht": {
+      "1X": 0.7,
+      "X2": 0.7,
+      "12": 0.6
+    },
+    "top_ft": [
+      [
+        "0-0",
+        301
+      ],
+      [
+        "2-1",
+        264
+      ],
+      [
+        "2-0",
+        151
+      ],
+      [
+        "1-0",
+        148
+      ],
+      [
+        "1-1",
+        146
+      ],
+      [
+        "1-2",
+        141
+      ],
+      [
+        "0-2",
+        85
+      ],
+      [
+        "4-0",
+        85
+      ]
+    ],
+    "top_ht": [
+      [
+        "0-0",
+        451
+      ],
+      [
+        "1-0",
+        434
+      ],
+      [
+        "0-1",
+        432
+      ],
+      [
+        "1-1",
+        322
+      ],
+      [
+        "0-2",
+        105
+      ]
+    ],
+    "xg": {
+      "home": 1.5605,
+      "away": 1.111,
+      "total": 2.6715
+    },
+    "goal_rates": {
+      "home": 1.5605,
+      "away": 1.111
+    }
+  },
+  "table": [
+    {
+      "Section": "HT Winner",
+      "Selection": "Bournemouth",
+      "Model%": 30.0,
+      "Sim%": 30.8,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Draw",
+      "Model%": 40.0,
+      "Sim%": 38.6,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Everton",
+      "Model%": 30.0,
+      "Sim%": 30.6,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "1X",
+      "Model%": 70.0,
+      "Sim%": 69.4,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "X2",
+      "Model%": 70.0,
+      "Sim%": 69.2,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "12",
+      "Model%": 60.0,
+      "Sim%": 61.3,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Over 1.5",
+      "Model%": 35.0,
+      "Sim%": 34.2,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Under 1.5",
+      "Model%": 65.0,
+      "Sim%": 65.8,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Bournemouth",
+      "Model%": 46.4,
+      "Sim%": 47.2,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Draw",
+      "Model%": 27.2,
+      "Sim%": 27.5,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Everton",
+      "Model%": 26.4,
+      "Sim%": 25.3,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "1X",
+      "Model%": 73.6,
+      "Sim%": 74.7,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 53.6,
+      "Sim%": 52.8,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "12",
+      "Model%": 72.8,
+      "Sim%": 72.5,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Over 2.5",
+      "Model%": 46.5,
+      "Sim%": 55.1,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Under 2.5",
+      "Model%": 53.5,
+      "Sim%": 44.9,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "Yes",
+      "Model%": 45.0,
+      "Sim%": 44.0,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 55.0,
+      "Sim%": 56.0,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    }
+  ],
+  "locked_tip": {
+    "status": "SECURED LOCK",
+    "section": "FT DC",
+    "selection": "1X",
+    "model": 73.6,
+    "sim": 74.7,
+    "agree": "1 eng",
+    "verdict": "HARD YES"
+  },
+  "backends": {
+    "ft_result": [
+      "market"
+    ],
+    "ht_result": [
+      "market"
+    ],
+    "over25": [
+      "market"
+    ],
+    "btts": [
+      "market"
+    ],
+    "ht_over15": [
+      "market"
+    ]
+  },
+  "generated_at": "2026-08-30T08:42:30.096478Z"
+}

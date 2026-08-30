@@ -1,0 +1,299 @@
+{
+  "match": {
+    "league": "I2",
+    "home_team": "Cremonese",
+    "away_team": "Modena",
+    "match_date": "2026-08-28 19:30",
+    "odds_home": 2.15,
+    "odds_draw": 3.0,
+    "odds_away": 3.3,
+    "n_simulations": 2000,
+    "seed": 160,
+    "odds_blend": 0.3
+  },
+  "resolved": {
+    "league": "Serie B",
+    "div": "I2",
+    "home": "Cremonese",
+    "away": "Modena",
+    "models": "market-only",
+    "match_date": "2026-08-28 19:30"
+  },
+  "report": {
+    "n": 2000,
+    "ft_model": {
+      "H": 0.42226487523992323,
+      "D": 0.30262316058861166,
+      "A": 0.27511196417146516
+    },
+    "ft_sim": {
+      "H": 0.412,
+      "D": 0.3165,
+      "A": 0.2715
+    },
+    "ht_model": {
+      "H": 0.3,
+      "D": 0.4,
+      "A": 0.3
+    },
+    "ht_sim": {
+      "H": 0.322,
+      "D": 0.388,
+      "A": 0.29
+    },
+    "over25_model": 0.4652219873150105,
+    "over25_sim": 0.566,
+    "btts_model": 0.45,
+    "btts_sim": 0.458,
+    "ht_over15_model": 0.35,
+    "ht_over15_sim": 0.3475,
+    "dc_ft": {
+      "1X": 0.7248880358285349,
+      "X2": 0.5777351247600768,
+      "12": 0.6973768394113884
+    },
+    "dc_ht": {
+      "1X": 0.7,
+      "X2": 0.7,
+      "12": 0.6
+    },
+    "top_ft": [
+      [
+        "0-0",
+        343
+      ],
+      [
+        "2-1",
+        207
+      ],
+      [
+        "1-1",
+        151
+      ],
+      [
+        "1-2",
+        137
+      ],
+      [
+        "1-0",
+        117
+      ],
+      [
+        "2-0",
+        114
+      ],
+      [
+        "4-0",
+        85
+      ],
+      [
+        "3-3",
+        78
+      ]
+    ],
+    "top_ht": [
+      [
+        "0-0",
+        467
+      ],
+      [
+        "1-0",
+        439
+      ],
+      [
+        "0-1",
+        399
+      ],
+      [
+        "1-1",
+        309
+      ],
+      [
+        "2-0",
+        113
+      ]
+    ],
+    "xg": {
+      "home": 1.526,
+      "away": 1.2185,
+      "total": 2.7445
+    },
+    "goal_rates": {
+      "home": 1.526,
+      "away": 1.2185
+    }
+  },
+  "table": [
+    {
+      "Section": "HT Winner",
+      "Selection": "Cremonese",
+      "Model%": 30.0,
+      "Sim%": 32.2,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Draw",
+      "Model%": 40.0,
+      "Sim%": 38.8,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Modena",
+      "Model%": 30.0,
+      "Sim%": 29.0,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "1X",
+      "Model%": 70.0,
+      "Sim%": 71.0,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "X2",
+      "Model%": 70.0,
+      "Sim%": 67.8,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "12",
+      "Model%": 60.0,
+      "Sim%": 61.2,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Over 1.5",
+      "Model%": 35.0,
+      "Sim%": 34.8,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Under 1.5",
+      "Model%": 65.0,
+      "Sim%": 65.3,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Cremonese",
+      "Model%": 42.2,
+      "Sim%": 41.2,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Draw",
+      "Model%": 30.3,
+      "Sim%": 31.6,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Modena",
+      "Model%": 27.5,
+      "Sim%": 27.2,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "1X",
+      "Model%": 72.5,
+      "Sim%": 72.8,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 57.8,
+      "Sim%": 58.8,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "12",
+      "Model%": 69.7,
+      "Sim%": 68.3,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Over 2.5",
+      "Model%": 46.5,
+      "Sim%": 56.6,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Under 2.5",
+      "Model%": 53.5,
+      "Sim%": 43.4,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "Yes",
+      "Model%": 45.0,
+      "Sim%": 45.8,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 55.0,
+      "Sim%": 54.2,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    }
+  ],
+  "locked_tip": {
+    "status": "SECURED LOCK",
+    "section": "FT DC",
+    "selection": "1X",
+    "model": 72.5,
+    "sim": 72.8,
+    "agree": "1 eng",
+    "verdict": "HARD YES"
+  },
+  "backends": {
+    "ft_result": [
+      "market"
+    ],
+    "ht_result": [
+      "market"
+    ],
+    "over25": [
+      "market"
+    ],
+    "btts": [
+      "market"
+    ],
+    "ht_over15": [
+      "market"
+    ]
+  },
+  "generated_at": "2026-08-30T08:42:33.722507Z"
+}

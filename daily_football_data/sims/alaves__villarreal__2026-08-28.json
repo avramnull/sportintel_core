@@ -1,0 +1,299 @@
+{
+  "match": {
+    "league": "SP1",
+    "home_team": "Alaves",
+    "away_team": "Villarreal",
+    "match_date": "2026-08-28 20:30",
+    "odds_home": 3.2,
+    "odds_draw": 3.5,
+    "odds_away": 2.2,
+    "n_simulations": 2000,
+    "seed": 210,
+    "odds_blend": 0.3
+  },
+  "resolved": {
+    "league": "La Liga",
+    "div": "SP1",
+    "home": "Alaves",
+    "away": "Villarreal",
+    "models": "market-only",
+    "match_date": "2026-08-28 20:30"
+  },
+  "report": {
+    "n": 2000,
+    "ft_model": {
+      "H": 0.2968388589051658,
+      "D": 0.27139552814186585,
+      "A": 0.4317656129529684
+    },
+    "ft_sim": {
+      "H": 0.303,
+      "D": 0.257,
+      "A": 0.44
+    },
+    "ht_model": {
+      "H": 0.3,
+      "D": 0.4,
+      "A": 0.3
+    },
+    "ht_sim": {
+      "H": 0.3195,
+      "D": 0.3825,
+      "A": 0.298
+    },
+    "over25_model": 0.46505681818181815,
+    "over25_sim": 0.567,
+    "btts_model": 0.45,
+    "btts_sim": 0.4415,
+    "ht_over15_model": 0.35,
+    "ht_over15_sim": 0.3155,
+    "dc_ft": {
+      "1X": 0.5682343870470317,
+      "X2": 0.7031611410948342,
+      "12": 0.7286044718581342
+    },
+    "dc_ht": {
+      "1X": 0.7,
+      "X2": 0.7,
+      "12": 0.6
+    },
+    "top_ft": [
+      [
+        "0-0",
+        296
+      ],
+      [
+        "1-2",
+        227
+      ],
+      [
+        "2-1",
+        179
+      ],
+      [
+        "0-1",
+        157
+      ],
+      [
+        "0-2",
+        119
+      ],
+      [
+        "1-1",
+        116
+      ],
+      [
+        "0-3",
+        92
+      ],
+      [
+        "1-0",
+        89
+      ]
+    ],
+    "top_ht": [
+      [
+        "0-0",
+        475
+      ],
+      [
+        "1-0",
+        473
+      ],
+      [
+        "0-1",
+        421
+      ],
+      [
+        "1-1",
+        290
+      ],
+      [
+        "1-2",
+        95
+      ]
+    ],
+    "xg": {
+      "home": 1.1925,
+      "away": 1.4855,
+      "total": 2.678
+    },
+    "goal_rates": {
+      "home": 1.1925,
+      "away": 1.4855
+    }
+  },
+  "table": [
+    {
+      "Section": "HT Winner",
+      "Selection": "Alaves",
+      "Model%": 30.0,
+      "Sim%": 31.9,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Draw",
+      "Model%": 40.0,
+      "Sim%": 38.2,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Villarreal",
+      "Model%": 30.0,
+      "Sim%": 29.8,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "1X",
+      "Model%": 70.0,
+      "Sim%": 70.2,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "X2",
+      "Model%": 70.0,
+      "Sim%": 68.0,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "12",
+      "Model%": 60.0,
+      "Sim%": 61.7,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Over 1.5",
+      "Model%": 35.0,
+      "Sim%": 31.6,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Under 1.5",
+      "Model%": 65.0,
+      "Sim%": 68.5,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Alaves",
+      "Model%": 29.7,
+      "Sim%": 30.3,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Draw",
+      "Model%": 27.1,
+      "Sim%": 25.7,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Villarreal",
+      "Model%": 43.2,
+      "Sim%": 44.0,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "1X",
+      "Model%": 56.8,
+      "Sim%": 56.0,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 70.3,
+      "Sim%": 69.7,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "12",
+      "Model%": 72.9,
+      "Sim%": 74.3,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Over 2.5",
+      "Model%": 46.5,
+      "Sim%": 56.7,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Under 2.5",
+      "Model%": 53.5,
+      "Sim%": 43.3,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "Yes",
+      "Model%": 45.0,
+      "Sim%": 44.1,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 55.0,
+      "Sim%": 55.9,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    }
+  ],
+  "locked_tip": {
+    "status": "SECURED LOCK",
+    "section": "FT DC",
+    "selection": "12",
+    "model": 72.9,
+    "sim": 74.3,
+    "agree": "1 eng",
+    "verdict": "HARD YES"
+  },
+  "backends": {
+    "ft_result": [
+      "market"
+    ],
+    "ht_result": [
+      "market"
+    ],
+    "over25": [
+      "market"
+    ],
+    "btts": [
+      "market"
+    ],
+    "ht_over15": [
+      "market"
+    ]
+  },
+  "generated_at": "2026-08-30T08:42:35.740952Z"
+}

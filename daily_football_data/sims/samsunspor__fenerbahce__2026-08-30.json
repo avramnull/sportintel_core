@@ -1,0 +1,299 @@
+{
+  "match": {
+    "league": "T1",
+    "home_team": "Samsunspor",
+    "away_team": "Fenerbahce",
+    "match_date": "2026-08-30 19:30",
+    "odds_home": 5.0,
+    "odds_draw": 4.2,
+    "odds_away": 1.56,
+    "n_simulations": 2000,
+    "seed": 236,
+    "odds_blend": 0.3
+  },
+  "resolved": {
+    "league": "S\u00fcper Lig",
+    "div": "T1",
+    "home": "Samsunspor",
+    "away": "Fenerbahce",
+    "models": "market-only",
+    "match_date": "2026-08-30 19:30"
+  },
+  "report": {
+    "n": 2000,
+    "ft_model": {
+      "H": 0.1853360488798371,
+      "D": 0.22063815342837745,
+      "A": 0.5940257976917854
+    },
+    "ft_sim": {
+      "H": 0.195,
+      "D": 0.2275,
+      "A": 0.5775
+    },
+    "ht_model": {
+      "H": 0.3,
+      "D": 0.4,
+      "A": 0.3
+    },
+    "ht_sim": {
+      "H": 0.294,
+      "D": 0.406,
+      "A": 0.3
+    },
+    "over25_model": 0.47615384615384615,
+    "over25_sim": 0.592,
+    "btts_model": 0.45,
+    "btts_sim": 0.4275,
+    "ht_over15_model": 0.35,
+    "ht_over15_sim": 0.3355,
+    "dc_ft": {
+      "1X": 0.40597420230821457,
+      "X2": 0.8146639511201629,
+      "12": 0.7793618465716226
+    },
+    "dc_ht": {
+      "1X": 0.7,
+      "X2": 0.7,
+      "12": 0.6
+    },
+    "top_ft": [
+      [
+        "1-2",
+        314
+      ],
+      [
+        "0-0",
+        245
+      ],
+      [
+        "0-2",
+        172
+      ],
+      [
+        "0-1",
+        161
+      ],
+      [
+        "1-1",
+        119
+      ],
+      [
+        "0-5",
+        116
+      ],
+      [
+        "0-4",
+        114
+      ],
+      [
+        "0-3",
+        100
+      ]
+    ],
+    "top_ht": [
+      [
+        "0-0",
+        509
+      ],
+      [
+        "0-1",
+        414
+      ],
+      [
+        "1-0",
+        406
+      ],
+      [
+        "1-1",
+        303
+      ],
+      [
+        "2-0",
+        102
+      ]
+    ],
+    "xg": {
+      "home": 0.9925,
+      "away": 1.8105,
+      "total": 2.803
+    },
+    "goal_rates": {
+      "home": 0.9925,
+      "away": 1.8105
+    }
+  },
+  "table": [
+    {
+      "Section": "HT Winner",
+      "Selection": "Samsunspor",
+      "Model%": 30.0,
+      "Sim%": 29.4,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Draw",
+      "Model%": 40.0,
+      "Sim%": 40.6,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Fenerbahce",
+      "Model%": 30.0,
+      "Sim%": 30.0,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "1X",
+      "Model%": 70.0,
+      "Sim%": 70.0,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "X2",
+      "Model%": 70.0,
+      "Sim%": 70.6,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "12",
+      "Model%": 60.0,
+      "Sim%": 59.4,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Over 1.5",
+      "Model%": 35.0,
+      "Sim%": 33.6,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Under 1.5",
+      "Model%": 65.0,
+      "Sim%": 66.5,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Samsunspor",
+      "Model%": 18.5,
+      "Sim%": 19.5,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Draw",
+      "Model%": 22.1,
+      "Sim%": 22.8,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Fenerbahce",
+      "Model%": 59.4,
+      "Sim%": 57.8,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "1X",
+      "Model%": 40.6,
+      "Sim%": 42.2,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 81.5,
+      "Sim%": 80.5,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "12",
+      "Model%": 77.9,
+      "Sim%": 77.2,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Over 2.5",
+      "Model%": 47.6,
+      "Sim%": 59.2,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Under 2.5",
+      "Model%": 52.4,
+      "Sim%": 40.8,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "Yes",
+      "Model%": 45.0,
+      "Sim%": 42.8,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 55.0,
+      "Sim%": 57.2,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    }
+  ],
+  "locked_tip": {
+    "status": "SECURED LOCK",
+    "section": "FT DC",
+    "selection": "X2",
+    "model": 81.5,
+    "sim": 80.5,
+    "agree": "1 eng",
+    "verdict": "HARD YES"
+  },
+  "backends": {
+    "ft_result": [
+      "market"
+    ],
+    "ht_result": [
+      "market"
+    ],
+    "over25": [
+      "market"
+    ],
+    "btts": [
+      "market"
+    ],
+    "ht_over15": [
+      "market"
+    ]
+  },
+  "generated_at": "2026-08-30T08:42:36.787848Z"
+}

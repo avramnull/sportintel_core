@@ -1,0 +1,299 @@
+{
+  "match": {
+    "league": "G1",
+    "home_team": "Atromitos",
+    "away_team": "PAOK",
+    "match_date": "2026-08-30 18:15",
+    "odds_home": 5.0,
+    "odds_draw": 3.75,
+    "odds_away": 1.62,
+    "n_simulations": 2000,
+    "seed": 146,
+    "odds_blend": 0.3
+  },
+  "resolved": {
+    "league": "Super League Greece",
+    "div": "G1",
+    "home": "Atromitos",
+    "away": "Paok",
+    "models": "market-only",
+    "match_date": "2026-08-30 18:15"
+  },
+  "report": {
+    "n": 2000,
+    "ft_model": {
+      "H": 0.1845102505694761,
+      "D": 0.2460136674259681,
+      "A": 0.5694760820045558
+    },
+    "ft_sim": {
+      "H": 0.2005,
+      "D": 0.2645,
+      "A": 0.535
+    },
+    "ht_model": {
+      "H": 0.3,
+      "D": 0.4,
+      "A": 0.3
+    },
+    "ht_sim": {
+      "H": 0.2935,
+      "D": 0.405,
+      "A": 0.3015
+    },
+    "over25_model": 0.47259259259259256,
+    "over25_sim": 0.5785,
+    "btts_model": 0.45,
+    "btts_sim": 0.4325,
+    "ht_over15_model": 0.35,
+    "ht_over15_sim": 0.35,
+    "dc_ft": {
+      "1X": 0.4305239179954442,
+      "X2": 0.8154897494305239,
+      "12": 0.7539863325740319
+    },
+    "dc_ht": {
+      "1X": 0.7,
+      "X2": 0.7,
+      "12": 0.6
+    },
+    "top_ft": [
+      [
+        "0-0",
+        289
+      ],
+      [
+        "1-2",
+        283
+      ],
+      [
+        "0-1",
+        163
+      ],
+      [
+        "0-2",
+        148
+      ],
+      [
+        "1-1",
+        120
+      ],
+      [
+        "0-3",
+        115
+      ],
+      [
+        "2-1",
+        100
+      ],
+      [
+        "0-4",
+        91
+      ]
+    ],
+    "top_ht": [
+      [
+        "0-0",
+        475
+      ],
+      [
+        "1-0",
+        416
+      ],
+      [
+        "0-1",
+        409
+      ],
+      [
+        "1-1",
+        335
+      ],
+      [
+        "1-2",
+        98
+      ]
+    ],
+    "xg": {
+      "home": 1.025,
+      "away": 1.6975,
+      "total": 2.7225
+    },
+    "goal_rates": {
+      "home": 1.025,
+      "away": 1.6975
+    }
+  },
+  "table": [
+    {
+      "Section": "HT Winner",
+      "Selection": "Atromitos",
+      "Model%": 30.0,
+      "Sim%": 29.3,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Draw",
+      "Model%": 40.0,
+      "Sim%": 40.5,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Paok",
+      "Model%": 30.0,
+      "Sim%": 30.1,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "1X",
+      "Model%": 70.0,
+      "Sim%": 69.8,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "X2",
+      "Model%": 70.0,
+      "Sim%": 70.7,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "12",
+      "Model%": 60.0,
+      "Sim%": 59.5,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Over 1.5",
+      "Model%": 35.0,
+      "Sim%": 35.0,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Under 1.5",
+      "Model%": 65.0,
+      "Sim%": 65.0,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Atromitos",
+      "Model%": 18.5,
+      "Sim%": 20.1,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Draw",
+      "Model%": 24.6,
+      "Sim%": 26.5,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Paok",
+      "Model%": 56.9,
+      "Sim%": 53.5,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "1X",
+      "Model%": 43.1,
+      "Sim%": 46.5,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 81.5,
+      "Sim%": 80.0,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "12",
+      "Model%": 75.4,
+      "Sim%": 73.6,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Over 2.5",
+      "Model%": 47.3,
+      "Sim%": 57.9,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Under 2.5",
+      "Model%": 52.7,
+      "Sim%": 42.1,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "Yes",
+      "Model%": 45.0,
+      "Sim%": 43.2,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 55.0,
+      "Sim%": 56.8,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    }
+  ],
+  "locked_tip": {
+    "status": "SECURED LOCK",
+    "section": "FT DC",
+    "selection": "X2",
+    "model": 81.5,
+    "sim": 80.0,
+    "agree": "1 eng",
+    "verdict": "HARD YES"
+  },
+  "backends": {
+    "ft_result": [
+      "market"
+    ],
+    "ht_result": [
+      "market"
+    ],
+    "over25": [
+      "market"
+    ],
+    "btts": [
+      "market"
+    ],
+    "ht_over15": [
+      "market"
+    ]
+  },
+  "generated_at": "2026-08-30T08:42:33.140500Z"
+}

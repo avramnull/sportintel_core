@@ -1,0 +1,299 @@
+{
+  "match": {
+    "league": "N1",
+    "home_team": "Excelsior",
+    "away_team": "Sparta Rotterdam",
+    "match_date": "2026-08-29 15:30",
+    "odds_home": 2.4,
+    "odds_draw": 3.8,
+    "odds_away": 2.63,
+    "n_simulations": 2000,
+    "seed": 171,
+    "odds_blend": 0.3
+  },
+  "resolved": {
+    "league": "Eredivisie",
+    "div": "N1",
+    "home": "Excelsior",
+    "away": "Sparta Rotterdam",
+    "models": "market-only",
+    "match_date": "2026-08-29 15:30"
+  },
+  "report": {
+    "n": 2000,
+    "ft_model": {
+      "H": 0.3930622197750335,
+      "D": 0.24824982301581058,
+      "A": 0.358687957209156
+    },
+    "ft_sim": {
+      "H": 0.412,
+      "D": 0.2405,
+      "A": 0.3475
+    },
+    "ht_model": {
+      "H": 0.3,
+      "D": 0.4,
+      "A": 0.3
+    },
+    "ht_sim": {
+      "H": 0.2835,
+      "D": 0.4155,
+      "A": 0.301
+    },
+    "over25_model": 0.46953422053231936,
+    "over25_sim": 0.59,
+    "btts_model": 0.45,
+    "btts_sim": 0.442,
+    "ht_over15_model": 0.35,
+    "ht_over15_sim": 0.3275,
+    "dc_ft": {
+      "1X": 0.6413120427908441,
+      "X2": 0.6069377802249666,
+      "12": 0.7517501769841894
+    },
+    "dc_ht": {
+      "1X": 0.7,
+      "X2": 0.7,
+      "12": 0.6
+    },
+    "top_ft": [
+      [
+        "0-0",
+        268
+      ],
+      [
+        "2-1",
+        244
+      ],
+      [
+        "1-2",
+        193
+      ],
+      [
+        "1-0",
+        119
+      ],
+      [
+        "1-1",
+        119
+      ],
+      [
+        "2-0",
+        111
+      ],
+      [
+        "0-2",
+        105
+      ],
+      [
+        "0-1",
+        98
+      ]
+    ],
+    "top_ht": [
+      [
+        "0-0",
+        514
+      ],
+      [
+        "0-1",
+        425
+      ],
+      [
+        "1-0",
+        406
+      ],
+      [
+        "1-1",
+        317
+      ],
+      [
+        "1-2",
+        95
+      ]
+    ],
+    "xg": {
+      "home": 1.4425,
+      "away": 1.305,
+      "total": 2.7475
+    },
+    "goal_rates": {
+      "home": 1.4425,
+      "away": 1.305
+    }
+  },
+  "table": [
+    {
+      "Section": "HT Winner",
+      "Selection": "Excelsior",
+      "Model%": 30.0,
+      "Sim%": 28.3,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Draw",
+      "Model%": 40.0,
+      "Sim%": 41.5,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Sparta Rotterdam",
+      "Model%": 30.0,
+      "Sim%": 30.1,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "1X",
+      "Model%": 70.0,
+      "Sim%": 69.9,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "X2",
+      "Model%": 70.0,
+      "Sim%": 71.6,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "12",
+      "Model%": 60.0,
+      "Sim%": 58.5,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Over 1.5",
+      "Model%": 35.0,
+      "Sim%": 32.8,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Under 1.5",
+      "Model%": 65.0,
+      "Sim%": 67.2,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Excelsior",
+      "Model%": 39.3,
+      "Sim%": 41.2,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Draw",
+      "Model%": 24.8,
+      "Sim%": 24.1,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Sparta Rotterdam",
+      "Model%": 35.9,
+      "Sim%": 34.8,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "1X",
+      "Model%": 64.1,
+      "Sim%": 65.2,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 60.7,
+      "Sim%": 58.8,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "12",
+      "Model%": 75.2,
+      "Sim%": 75.9,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Over 2.5",
+      "Model%": 47.0,
+      "Sim%": 59.0,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Under 2.5",
+      "Model%": 53.0,
+      "Sim%": 41.0,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "Yes",
+      "Model%": 45.0,
+      "Sim%": 44.2,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 55.0,
+      "Sim%": 55.8,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    }
+  ],
+  "locked_tip": {
+    "status": "SECURED LOCK",
+    "section": "FT DC",
+    "selection": "12",
+    "model": 75.2,
+    "sim": 75.9,
+    "agree": "1 eng",
+    "verdict": "HARD YES"
+  },
+  "backends": {
+    "ft_result": [
+      "market"
+    ],
+    "ht_result": [
+      "market"
+    ],
+    "over25": [
+      "market"
+    ],
+    "btts": [
+      "market"
+    ],
+    "ht_over15": [
+      "market"
+    ]
+  },
+  "generated_at": "2026-08-30T08:42:34.163879Z"
+}

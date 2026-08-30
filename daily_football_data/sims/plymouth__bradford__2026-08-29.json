@@ -1,0 +1,299 @@
+{
+  "match": {
+    "league": "E2",
+    "home_team": "Plymouth",
+    "away_team": "Bradford",
+    "match_date": "2026-08-29 15:00",
+    "odds_home": 2.15,
+    "odds_draw": 3.3,
+    "odds_away": 3.2,
+    "n_simulations": 2000,
+    "seed": 96,
+    "odds_blend": 0.3
+  },
+  "resolved": {
+    "league": "League One",
+    "div": "E2",
+    "home": "Plymouth",
+    "away": "Bradford",
+    "models": "market-only",
+    "match_date": "2026-08-29 15:00"
+  },
+  "report": {
+    "n": 2000,
+    "ft_model": {
+      "H": 0.43040554310169143,
+      "D": 0.2804157326268596,
+      "A": 0.2891787242714489
+    },
+    "ft_sim": {
+      "H": 0.416,
+      "D": 0.2855,
+      "A": 0.2985
+    },
+    "ht_model": {
+      "H": 0.3,
+      "D": 0.4,
+      "A": 0.3
+    },
+    "ht_sim": {
+      "H": 0.307,
+      "D": 0.3795,
+      "A": 0.3135
+    },
+    "over25_model": 0.4666424418604651,
+    "over25_sim": 0.58,
+    "btts_model": 0.45,
+    "btts_sim": 0.459,
+    "ht_over15_model": 0.35,
+    "ht_over15_sim": 0.3395,
+    "dc_ft": {
+      "1X": 0.710821275728551,
+      "X2": 0.5695944568983085,
+      "12": 0.7195842673731403
+    },
+    "dc_ht": {
+      "1X": 0.7,
+      "X2": 0.7,
+      "12": 0.6
+    },
+    "top_ft": [
+      [
+        "0-0",
+        312
+      ],
+      [
+        "2-1",
+        230
+      ],
+      [
+        "1-2",
+        181
+      ],
+      [
+        "2-0",
+        125
+      ],
+      [
+        "1-0",
+        125
+      ],
+      [
+        "1-1",
+        124
+      ],
+      [
+        "0-1",
+        80
+      ],
+      [
+        "3-0",
+        79
+      ]
+    ],
+    "top_ht": [
+      [
+        "0-0",
+        452
+      ],
+      [
+        "1-0",
+        435
+      ],
+      [
+        "0-1",
+        434
+      ],
+      [
+        "1-1",
+        307
+      ],
+      [
+        "0-2",
+        103
+      ]
+    ],
+    "xg": {
+      "home": 1.4635,
+      "away": 1.2735,
+      "total": 2.737
+    },
+    "goal_rates": {
+      "home": 1.4635,
+      "away": 1.2735
+    }
+  },
+  "table": [
+    {
+      "Section": "HT Winner",
+      "Selection": "Plymouth",
+      "Model%": 30.0,
+      "Sim%": 30.7,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Draw",
+      "Model%": 40.0,
+      "Sim%": 38.0,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Bradford",
+      "Model%": 30.0,
+      "Sim%": 31.4,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "1X",
+      "Model%": 70.0,
+      "Sim%": 68.7,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "X2",
+      "Model%": 70.0,
+      "Sim%": 69.3,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "12",
+      "Model%": 60.0,
+      "Sim%": 62.1,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Over 1.5",
+      "Model%": 35.0,
+      "Sim%": 34.0,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Under 1.5",
+      "Model%": 65.0,
+      "Sim%": 66.0,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Plymouth",
+      "Model%": 43.0,
+      "Sim%": 41.6,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Draw",
+      "Model%": 28.0,
+      "Sim%": 28.5,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Bradford",
+      "Model%": 28.9,
+      "Sim%": 29.8,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "1X",
+      "Model%": 71.1,
+      "Sim%": 70.2,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 57.0,
+      "Sim%": 58.4,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "12",
+      "Model%": 72.0,
+      "Sim%": 71.4,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Over 2.5",
+      "Model%": 46.7,
+      "Sim%": 58.0,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Under 2.5",
+      "Model%": 53.3,
+      "Sim%": 42.0,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "Yes",
+      "Model%": 45.0,
+      "Sim%": 45.9,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 55.0,
+      "Sim%": 54.1,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    }
+  ],
+  "locked_tip": {
+    "status": "SECURED LOCK",
+    "section": "FT DC",
+    "selection": "12",
+    "model": 72.0,
+    "sim": 71.4,
+    "agree": "1 eng",
+    "verdict": "HARD YES"
+  },
+  "backends": {
+    "ft_result": [
+      "market"
+    ],
+    "ht_result": [
+      "market"
+    ],
+    "over25": [
+      "market"
+    ],
+    "btts": [
+      "market"
+    ],
+    "ht_over15": [
+      "market"
+    ]
+  },
+  "generated_at": "2026-08-30T08:42:31.104196Z"
+}

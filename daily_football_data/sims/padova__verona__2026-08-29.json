@@ -1,0 +1,299 @@
+{
+  "match": {
+    "league": "I2",
+    "home_team": "Padova",
+    "away_team": "Verona",
+    "match_date": "2026-08-29 20:00",
+    "odds_home": 2.82,
+    "odds_draw": 3.0,
+    "odds_away": 2.4,
+    "n_simulations": 2000,
+    "seed": 165,
+    "odds_blend": 0.3
+  },
+  "resolved": {
+    "league": "Serie B",
+    "div": "I2",
+    "home": "Padova",
+    "away": "Verona",
+    "models": "market-only",
+    "match_date": "2026-08-29 20:00"
+  },
+  "report": {
+    "n": 2000,
+    "ft_model": {
+      "H": 0.32102728731942215,
+      "D": 0.3017656500802568,
+      "A": 0.377207062600321
+    },
+    "ft_sim": {
+      "H": 0.302,
+      "D": 0.3225,
+      "A": 0.3755
+    },
+    "ht_model": {
+      "H": 0.3,
+      "D": 0.4,
+      "A": 0.3
+    },
+    "ht_sim": {
+      "H": 0.315,
+      "D": 0.4,
+      "A": 0.285
+    },
+    "over25_model": 0.4656914893617021,
+    "over25_sim": 0.537,
+    "btts_model": 0.45,
+    "btts_sim": 0.4475,
+    "ht_over15_model": 0.35,
+    "ht_over15_sim": 0.3475,
+    "dc_ft": {
+      "1X": 0.622792937399679,
+      "X2": 0.6789727126805778,
+      "12": 0.6982343499197432
+    },
+    "dc_ht": {
+      "1X": 0.7,
+      "X2": 0.7,
+      "12": 0.6
+    },
+    "top_ft": [
+      [
+        "0-0",
+        362
+      ],
+      [
+        "1-2",
+        209
+      ],
+      [
+        "2-1",
+        174
+      ],
+      [
+        "1-1",
+        156
+      ],
+      [
+        "0-2",
+        113
+      ],
+      [
+        "0-1",
+        110
+      ],
+      [
+        "2-0",
+        100
+      ],
+      [
+        "1-0",
+        85
+      ]
+    ],
+    "top_ht": [
+      [
+        "0-0",
+        465
+      ],
+      [
+        "1-0",
+        438
+      ],
+      [
+        "0-1",
+        402
+      ],
+      [
+        "1-1",
+        335
+      ],
+      [
+        "2-1",
+        109
+      ]
+    ],
+    "xg": {
+      "home": 1.22,
+      "away": 1.381,
+      "total": 2.601
+    },
+    "goal_rates": {
+      "home": 1.22,
+      "away": 1.381
+    }
+  },
+  "table": [
+    {
+      "Section": "HT Winner",
+      "Selection": "Padova",
+      "Model%": 30.0,
+      "Sim%": 31.5,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Draw",
+      "Model%": 40.0,
+      "Sim%": 40.0,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Verona",
+      "Model%": 30.0,
+      "Sim%": 28.5,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "1X",
+      "Model%": 70.0,
+      "Sim%": 71.5,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "X2",
+      "Model%": 70.0,
+      "Sim%": 68.5,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "12",
+      "Model%": 60.0,
+      "Sim%": 60.0,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Over 1.5",
+      "Model%": 35.0,
+      "Sim%": 34.8,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Under 1.5",
+      "Model%": 65.0,
+      "Sim%": 65.3,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Padova",
+      "Model%": 32.1,
+      "Sim%": 30.2,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Draw",
+      "Model%": 30.2,
+      "Sim%": 32.2,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Verona",
+      "Model%": 37.7,
+      "Sim%": 37.5,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "1X",
+      "Model%": 62.3,
+      "Sim%": 62.5,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 67.9,
+      "Sim%": 69.8,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "12",
+      "Model%": 69.8,
+      "Sim%": 67.8,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Over 2.5",
+      "Model%": 46.6,
+      "Sim%": 53.7,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Under 2.5",
+      "Model%": 53.4,
+      "Sim%": 46.3,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "Yes",
+      "Model%": 45.0,
+      "Sim%": 44.8,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 55.0,
+      "Sim%": 55.2,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    }
+  ],
+  "locked_tip": {
+    "status": "SECURED LOCK",
+    "section": "HT DC",
+    "selection": "1X",
+    "model": 70.0,
+    "sim": 71.5,
+    "agree": "1 eng",
+    "verdict": "HARD YES"
+  },
+  "backends": {
+    "ft_result": [
+      "market"
+    ],
+    "ht_result": [
+      "market"
+    ],
+    "over25": [
+      "market"
+    ],
+    "btts": [
+      "market"
+    ],
+    "ht_over15": [
+      "market"
+    ]
+  },
+  "generated_at": "2026-08-30T08:42:33.923872Z"
+}

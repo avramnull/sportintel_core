@@ -1,0 +1,299 @@
+{
+  "match": {
+    "league": "SC0",
+    "home_team": "Aberdeen",
+    "away_team": "Rangers",
+    "match_date": "2026-08-30 12:00",
+    "odds_home": 4.33,
+    "odds_draw": 3.8,
+    "odds_away": 1.76,
+    "n_simulations": 2000,
+    "seed": 191,
+    "odds_blend": 0.3
+  },
+  "resolved": {
+    "league": "Scottish Premiership",
+    "div": "SC0",
+    "home": "Aberdeen",
+    "away": "Rangers",
+    "models": "market-only",
+    "match_date": "2026-08-30 12:00"
+  },
+  "report": {
+    "n": 2000,
+    "ft_model": {
+      "H": 0.21740543773648693,
+      "D": 0.24772777510499694,
+      "A": 0.5348667871585162
+    },
+    "ft_sim": {
+      "H": 0.2125,
+      "D": 0.2425,
+      "A": 0.545
+    },
+    "ht_model": {
+      "H": 0.3,
+      "D": 0.4,
+      "A": 0.3
+    },
+    "ht_sim": {
+      "H": 0.293,
+      "D": 0.407,
+      "A": 0.3
+    },
+    "over25_model": 0.4698693050598362,
+    "over25_sim": 0.6105,
+    "btts_model": 0.45,
+    "btts_sim": 0.4735,
+    "ht_over15_model": 0.35,
+    "ht_over15_sim": 0.338,
+    "dc_ft": {
+      "1X": 0.4651332128414839,
+      "X2": 0.7825945622635131,
+      "12": 0.7522722248950031
+    },
+    "dc_ht": {
+      "1X": 0.7,
+      "X2": 0.7,
+      "12": 0.6
+    },
+    "top_ft": [
+      [
+        "1-2",
+        305
+      ],
+      [
+        "0-0",
+        263
+      ],
+      [
+        "0-2",
+        154
+      ],
+      [
+        "0-1",
+        140
+      ],
+      [
+        "2-1",
+        127
+      ],
+      [
+        "1-1",
+        117
+      ],
+      [
+        "0-4",
+        101
+      ],
+      [
+        "0-3",
+        95
+      ]
+    ],
+    "top_ht": [
+      [
+        "0-0",
+        494
+      ],
+      [
+        "0-1",
+        424
+      ],
+      [
+        "1-0",
+        406
+      ],
+      [
+        "1-1",
+        320
+      ],
+      [
+        "1-2",
+        97
+      ]
+    ],
+    "xg": {
+      "home": 1.0705,
+      "away": 1.771,
+      "total": 2.8415
+    },
+    "goal_rates": {
+      "home": 1.0705,
+      "away": 1.771
+    }
+  },
+  "table": [
+    {
+      "Section": "HT Winner",
+      "Selection": "Aberdeen",
+      "Model%": 30.0,
+      "Sim%": 29.3,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Draw",
+      "Model%": 40.0,
+      "Sim%": 40.7,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Rangers",
+      "Model%": 30.0,
+      "Sim%": 30.0,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "1X",
+      "Model%": 70.0,
+      "Sim%": 70.0,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "X2",
+      "Model%": 70.0,
+      "Sim%": 70.7,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "12",
+      "Model%": 60.0,
+      "Sim%": 59.3,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Over 1.5",
+      "Model%": 35.0,
+      "Sim%": 33.8,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Under 1.5",
+      "Model%": 65.0,
+      "Sim%": 66.2,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Aberdeen",
+      "Model%": 21.7,
+      "Sim%": 21.2,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Draw",
+      "Model%": 24.8,
+      "Sim%": 24.2,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Rangers",
+      "Model%": 53.5,
+      "Sim%": 54.5,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "1X",
+      "Model%": 46.5,
+      "Sim%": 45.5,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 78.3,
+      "Sim%": 78.8,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "12",
+      "Model%": 75.2,
+      "Sim%": 75.8,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Over 2.5",
+      "Model%": 47.0,
+      "Sim%": 61.1,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Under 2.5",
+      "Model%": 53.0,
+      "Sim%": 38.9,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "Yes",
+      "Model%": 45.0,
+      "Sim%": 47.3,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 55.0,
+      "Sim%": 52.6,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    }
+  ],
+  "locked_tip": {
+    "status": "SECURED LOCK",
+    "section": "FT DC",
+    "selection": "X2",
+    "model": 78.3,
+    "sim": 78.8,
+    "agree": "1 eng",
+    "verdict": "HARD YES"
+  },
+  "backends": {
+    "ft_result": [
+      "market"
+    ],
+    "ht_result": [
+      "market"
+    ],
+    "over25": [
+      "market"
+    ],
+    "btts": [
+      "market"
+    ],
+    "ht_over15": [
+      "market"
+    ]
+  },
+  "generated_at": "2026-08-30T08:42:34.979102Z"
+}

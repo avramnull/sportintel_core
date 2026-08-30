@@ -1,0 +1,299 @@
+{
+  "match": {
+    "league": "E1",
+    "home_team": "Watford",
+    "away_team": "West Ham",
+    "match_date": "2026-08-29 15:00",
+    "odds_home": 3.9,
+    "odds_draw": 3.8,
+    "odds_away": 1.79,
+    "n_simulations": 2000,
+    "seed": 90,
+    "odds_blend": 0.3
+  },
+  "resolved": {
+    "league": "Championship",
+    "div": "E1",
+    "home": "Watford",
+    "away": "West Ham",
+    "models": "market-only",
+    "match_date": "2026-08-29 15:00"
+  },
+  "report": {
+    "n": 2000,
+    "ft_model": {
+      "H": 0.23780722301856452,
+      "D": 0.24406530783484248,
+      "A": 0.518127469146593
+    },
+    "ft_sim": {
+      "H": 0.242,
+      "D": 0.2395,
+      "A": 0.5185
+    },
+    "ht_model": {
+      "H": 0.3,
+      "D": 0.4,
+      "A": 0.3
+    },
+    "ht_sim": {
+      "H": 0.309,
+      "D": 0.3965,
+      "A": 0.2945
+    },
+    "over25_model": 0.4722604211431027,
+    "over25_sim": 0.593,
+    "btts_model": 0.45,
+    "btts_sim": 0.4495,
+    "ht_over15_model": 0.35,
+    "ht_over15_sim": 0.3465,
+    "dc_ft": {
+      "1X": 0.481872530853407,
+      "X2": 0.7621927769814355,
+      "12": 0.7559346921651575
+    },
+    "dc_ht": {
+      "1X": 0.7,
+      "X2": 0.7,
+      "12": 0.6
+    },
+    "top_ft": [
+      [
+        "1-2",
+        299
+      ],
+      [
+        "0-0",
+        264
+      ],
+      [
+        "0-1",
+        150
+      ],
+      [
+        "0-2",
+        147
+      ],
+      [
+        "2-1",
+        137
+      ],
+      [
+        "1-1",
+        116
+      ],
+      [
+        "0-3",
+        101
+      ],
+      [
+        "0-4",
+        92
+      ]
+    ],
+    "top_ht": [
+      [
+        "0-0",
+        466
+      ],
+      [
+        "1-0",
+        434
+      ],
+      [
+        "0-1",
+        407
+      ],
+      [
+        "1-1",
+        327
+      ],
+      [
+        "1-2",
+        106
+      ]
+    ],
+    "xg": {
+      "home": 1.108,
+      "away": 1.6735,
+      "total": 2.7815
+    },
+    "goal_rates": {
+      "home": 1.108,
+      "away": 1.6735
+    }
+  },
+  "table": [
+    {
+      "Section": "HT Winner",
+      "Selection": "Watford",
+      "Model%": 30.0,
+      "Sim%": 30.9,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Draw",
+      "Model%": 40.0,
+      "Sim%": 39.6,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "West Ham",
+      "Model%": 30.0,
+      "Sim%": 29.4,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "1X",
+      "Model%": 70.0,
+      "Sim%": 70.5,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "X2",
+      "Model%": 70.0,
+      "Sim%": 69.1,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "12",
+      "Model%": 60.0,
+      "Sim%": 60.3,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Over 1.5",
+      "Model%": 35.0,
+      "Sim%": 34.6,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Under 1.5",
+      "Model%": 65.0,
+      "Sim%": 65.3,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Watford",
+      "Model%": 23.8,
+      "Sim%": 24.2,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Draw",
+      "Model%": 24.4,
+      "Sim%": 23.9,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "West Ham",
+      "Model%": 51.8,
+      "Sim%": 51.8,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "1X",
+      "Model%": 48.2,
+      "Sim%": 48.1,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 76.2,
+      "Sim%": 75.8,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "12",
+      "Model%": 75.6,
+      "Sim%": 76.0,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Over 2.5",
+      "Model%": 47.2,
+      "Sim%": 59.3,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Under 2.5",
+      "Model%": 52.8,
+      "Sim%": 40.7,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "Yes",
+      "Model%": 45.0,
+      "Sim%": 45.0,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 55.0,
+      "Sim%": 55.0,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    }
+  ],
+  "locked_tip": {
+    "status": "SECURED LOCK",
+    "section": "FT DC",
+    "selection": "X2",
+    "model": 76.2,
+    "sim": 75.8,
+    "agree": "1 eng",
+    "verdict": "HARD YES"
+  },
+  "backends": {
+    "ft_result": [
+      "market"
+    ],
+    "ht_result": [
+      "market"
+    ],
+    "over25": [
+      "market"
+    ],
+    "btts": [
+      "market"
+    ],
+    "ht_over15": [
+      "market"
+    ]
+  },
+  "generated_at": "2026-08-30T08:42:30.845328Z"
+}

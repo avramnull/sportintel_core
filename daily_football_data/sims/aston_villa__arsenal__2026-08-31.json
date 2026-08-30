@@ -1,0 +1,299 @@
+{
+  "match": {
+    "league": "E0",
+    "home_team": "Aston Villa",
+    "away_team": "Arsenal",
+    "match_date": "2026-08-31 20:00",
+    "odds_home": 6.0,
+    "odds_draw": 4.1,
+    "odds_away": 1.53,
+    "n_simulations": 2000,
+    "seed": 78,
+    "odds_blend": 0.3
+  },
+  "resolved": {
+    "league": "Premier League",
+    "div": "E0",
+    "home": "Aston Villa",
+    "away": "Arsenal",
+    "models": "market-only",
+    "match_date": "2026-08-31 20:00"
+  },
+  "report": {
+    "n": 2000,
+    "ft_model": {
+      "H": 0.15661748183656654,
+      "D": 0.22919631488278033,
+      "A": 0.6141862032806532
+    },
+    "ft_sim": {
+      "H": 0.1565,
+      "D": 0.219,
+      "A": 0.6245
+    },
+    "ht_model": {
+      "H": 0.3,
+      "D": 0.4,
+      "A": 0.3
+    },
+    "ht_sim": {
+      "H": 0.292,
+      "D": 0.405,
+      "A": 0.303
+    },
+    "over25_model": 0.4730392156862745,
+    "over25_sim": 0.594,
+    "btts_model": 0.45,
+    "btts_sim": 0.4385,
+    "ht_over15_model": 0.35,
+    "ht_over15_sim": 0.328,
+    "dc_ft": {
+      "1X": 0.3858137967193469,
+      "X2": 0.8433825181634336,
+      "12": 0.7708036851172198
+    },
+    "dc_ht": {
+      "1X": 0.7,
+      "X2": 0.7,
+      "12": 0.6
+    },
+    "top_ft": [
+      [
+        "1-2",
+        326
+      ],
+      [
+        "0-0",
+        253
+      ],
+      [
+        "0-1",
+        193
+      ],
+      [
+        "0-2",
+        188
+      ],
+      [
+        "0-4",
+        115
+      ],
+      [
+        "0-5",
+        111
+      ],
+      [
+        "2-3",
+        100
+      ],
+      [
+        "1-1",
+        95
+      ]
+    ],
+    "top_ht": [
+      [
+        "0-0",
+        489
+      ],
+      [
+        "1-0",
+        438
+      ],
+      [
+        "0-1",
+        417
+      ],
+      [
+        "1-1",
+        321
+      ],
+      [
+        "1-2",
+        103
+      ]
+    ],
+    "xg": {
+      "home": 0.924,
+      "away": 1.884,
+      "total": 2.808
+    },
+    "goal_rates": {
+      "home": 0.924,
+      "away": 1.884
+    }
+  },
+  "table": [
+    {
+      "Section": "HT Winner",
+      "Selection": "Aston Villa",
+      "Model%": 30.0,
+      "Sim%": 29.2,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Draw",
+      "Model%": 40.0,
+      "Sim%": 40.5,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Arsenal",
+      "Model%": 30.0,
+      "Sim%": 30.3,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "1X",
+      "Model%": 70.0,
+      "Sim%": 69.7,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "X2",
+      "Model%": 70.0,
+      "Sim%": 70.8,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "12",
+      "Model%": 60.0,
+      "Sim%": 59.5,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Over 1.5",
+      "Model%": 35.0,
+      "Sim%": 32.8,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Under 1.5",
+      "Model%": 65.0,
+      "Sim%": 67.2,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Aston Villa",
+      "Model%": 15.7,
+      "Sim%": 15.7,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Draw",
+      "Model%": 22.9,
+      "Sim%": 21.9,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Arsenal",
+      "Model%": 61.4,
+      "Sim%": 62.5,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "1X",
+      "Model%": 38.6,
+      "Sim%": 37.5,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 84.3,
+      "Sim%": 84.4,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "12",
+      "Model%": 77.1,
+      "Sim%": 78.1,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Over 2.5",
+      "Model%": 47.3,
+      "Sim%": 59.4,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Under 2.5",
+      "Model%": 52.7,
+      "Sim%": 40.6,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "Yes",
+      "Model%": 45.0,
+      "Sim%": 43.9,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 55.0,
+      "Sim%": 56.1,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    }
+  ],
+  "locked_tip": {
+    "status": "SECURED LOCK",
+    "section": "FT DC",
+    "selection": "X2",
+    "model": 84.3,
+    "sim": 84.4,
+    "agree": "1 eng",
+    "verdict": "HARD YES"
+  },
+  "backends": {
+    "ft_result": [
+      "market"
+    ],
+    "ht_result": [
+      "market"
+    ],
+    "over25": [
+      "market"
+    ],
+    "btts": [
+      "market"
+    ],
+    "ht_over15": [
+      "market"
+    ]
+  },
+  "generated_at": "2026-08-30T08:42:30.373668Z"
+}

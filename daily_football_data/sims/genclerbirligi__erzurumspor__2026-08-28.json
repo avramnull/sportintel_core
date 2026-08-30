@@ -1,0 +1,299 @@
+{
+  "match": {
+    "league": "T1",
+    "home_team": "Genclerbirligi",
+    "away_team": "Erzurumspor",
+    "match_date": "2026-08-28 19:30",
+    "odds_home": 1.96,
+    "odds_draw": 3.25,
+    "odds_away": 3.9,
+    "n_simulations": 2000,
+    "seed": 230,
+    "odds_blend": 0.3
+  },
+  "resolved": {
+    "league": "S\u00fcper Lig",
+    "div": "T1",
+    "home": "Genclerbirligi",
+    "away": "Erzurumspor",
+    "models": "market-only",
+    "match_date": "2026-08-28 19:30"
+  },
+  "report": {
+    "n": 2000,
+    "ft_model": {
+      "H": 0.4749147588894301,
+      "D": 0.2864101315148563,
+      "A": 0.23867510959571359
+    },
+    "ft_sim": {
+      "H": 0.453,
+      "D": 0.3,
+      "A": 0.247
+    },
+    "ht_model": {
+      "H": 0.3,
+      "D": 0.4,
+      "A": 0.3
+    },
+    "ht_sim": {
+      "H": 0.307,
+      "D": 0.3985,
+      "A": 0.2945
+    },
+    "over25_model": 0.4649921507064364,
+    "over25_sim": 0.5635,
+    "btts_model": 0.45,
+    "btts_sim": 0.466,
+    "ht_over15_model": 0.35,
+    "ht_over15_sim": 0.335,
+    "dc_ft": {
+      "1X": 0.7613248904042864,
+      "X2": 0.5250852411105699,
+      "12": 0.7135898684851436
+    },
+    "dc_ht": {
+      "1X": 0.7,
+      "X2": 0.7,
+      "12": 0.6
+    },
+    "top_ft": [
+      [
+        "0-0",
+        325
+      ],
+      [
+        "2-1",
+        258
+      ],
+      [
+        "1-1",
+        144
+      ],
+      [
+        "1-0",
+        136
+      ],
+      [
+        "1-2",
+        135
+      ],
+      [
+        "2-0",
+        120
+      ],
+      [
+        "0-2",
+        86
+      ],
+      [
+        "3-0",
+        76
+      ]
+    ],
+    "top_ht": [
+      [
+        "0-0",
+        463
+      ],
+      [
+        "1-0",
+        451
+      ],
+      [
+        "0-1",
+        416
+      ],
+      [
+        "1-1",
+        334
+      ],
+      [
+        "1-2",
+        87
+      ]
+    ],
+    "xg": {
+      "home": 1.5505,
+      "away": 1.151,
+      "total": 2.7015
+    },
+    "goal_rates": {
+      "home": 1.5505,
+      "away": 1.151
+    }
+  },
+  "table": [
+    {
+      "Section": "HT Winner",
+      "Selection": "Genclerbirligi",
+      "Model%": 30.0,
+      "Sim%": 30.7,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Draw",
+      "Model%": 40.0,
+      "Sim%": 39.9,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Erzurumspor",
+      "Model%": 30.0,
+      "Sim%": 29.4,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "1X",
+      "Model%": 70.0,
+      "Sim%": 70.5,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "X2",
+      "Model%": 70.0,
+      "Sim%": 69.3,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "12",
+      "Model%": 60.0,
+      "Sim%": 60.1,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Over 1.5",
+      "Model%": 35.0,
+      "Sim%": 33.5,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Under 1.5",
+      "Model%": 65.0,
+      "Sim%": 66.5,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Genclerbirligi",
+      "Model%": 47.5,
+      "Sim%": 45.3,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Draw",
+      "Model%": 28.6,
+      "Sim%": 30.0,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Erzurumspor",
+      "Model%": 23.9,
+      "Sim%": 24.7,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "1X",
+      "Model%": 76.1,
+      "Sim%": 75.3,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 52.5,
+      "Sim%": 54.7,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "12",
+      "Model%": 71.4,
+      "Sim%": 70.0,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Over 2.5",
+      "Model%": 46.5,
+      "Sim%": 56.4,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Under 2.5",
+      "Model%": 53.5,
+      "Sim%": 43.6,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "Yes",
+      "Model%": 45.0,
+      "Sim%": 46.6,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 55.0,
+      "Sim%": 53.4,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    }
+  ],
+  "locked_tip": {
+    "status": "SECURED LOCK",
+    "section": "FT DC",
+    "selection": "1X",
+    "model": 76.1,
+    "sim": 75.3,
+    "agree": "1 eng",
+    "verdict": "HARD YES"
+  },
+  "backends": {
+    "ft_result": [
+      "market"
+    ],
+    "ht_result": [
+      "market"
+    ],
+    "over25": [
+      "market"
+    ],
+    "btts": [
+      "market"
+    ],
+    "ht_over15": [
+      "market"
+    ]
+  },
+  "generated_at": "2026-08-30T08:42:36.547924Z"
+}

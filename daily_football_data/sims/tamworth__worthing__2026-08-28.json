@@ -1,0 +1,299 @@
+{
+  "match": {
+    "league": "EC",
+    "home_team": "Tamworth",
+    "away_team": "Worthing",
+    "match_date": "2026-08-28 19:45",
+    "odds_home": 2.15,
+    "odds_draw": 3.5,
+    "odds_away": 2.9,
+    "n_simulations": 2000,
+    "seed": 123,
+    "odds_blend": 0.3
+  },
+  "resolved": {
+    "league": "National League",
+    "div": "EC",
+    "home": "Tamworth",
+    "away": "Worthing",
+    "models": "market-only",
+    "match_date": "2026-08-28 19:45"
+  },
+  "report": {
+    "n": 2000,
+    "ft_model": {
+      "H": 0.42450857381848595,
+      "D": 0.26076955248849853,
+      "A": 0.31472187369301546
+    },
+    "ft_sim": {
+      "H": 0.4315,
+      "D": 0.2655,
+      "A": 0.303
+    },
+    "ht_model": {
+      "H": 0.3,
+      "D": 0.4,
+      "A": 0.3
+    },
+    "ht_sim": {
+      "H": 0.3075,
+      "D": 0.4005,
+      "A": 0.292
+    },
+    "over25_model": 0.4714915797914996,
+    "over25_sim": 0.5725,
+    "btts_model": 0.45,
+    "btts_sim": 0.452,
+    "ht_over15_model": 0.35,
+    "ht_over15_sim": 0.341,
+    "dc_ft": {
+      "1X": 0.6852781263069845,
+      "X2": 0.575491426181514,
+      "12": 0.7392304475115015
+    },
+    "dc_ht": {
+      "1X": 0.7,
+      "X2": 0.7,
+      "12": 0.6
+    },
+    "top_ft": [
+      [
+        "0-0",
+        285
+      ],
+      [
+        "2-1",
+        235
+      ],
+      [
+        "1-2",
+        154
+      ],
+      [
+        "1-0",
+        138
+      ],
+      [
+        "1-1",
+        133
+      ],
+      [
+        "2-0",
+        121
+      ],
+      [
+        "0-1",
+        90
+      ],
+      [
+        "0-2",
+        88
+      ]
+    ],
+    "top_ht": [
+      [
+        "0-0",
+        478
+      ],
+      [
+        "1-0",
+        449
+      ],
+      [
+        "0-1",
+        391
+      ],
+      [
+        "1-1",
+        323
+      ],
+      [
+        "0-2",
+        98
+      ]
+    ],
+    "xg": {
+      "home": 1.4825,
+      "away": 1.2505,
+      "total": 2.733
+    },
+    "goal_rates": {
+      "home": 1.4825,
+      "away": 1.2505
+    }
+  },
+  "table": [
+    {
+      "Section": "HT Winner",
+      "Selection": "Tamworth",
+      "Model%": 30.0,
+      "Sim%": 30.8,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Draw",
+      "Model%": 40.0,
+      "Sim%": 40.1,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Worthing",
+      "Model%": 30.0,
+      "Sim%": 29.2,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "1X",
+      "Model%": 70.0,
+      "Sim%": 70.8,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "X2",
+      "Model%": 70.0,
+      "Sim%": 69.2,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "12",
+      "Model%": 60.0,
+      "Sim%": 59.9,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Over 1.5",
+      "Model%": 35.0,
+      "Sim%": 34.1,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Under 1.5",
+      "Model%": 65.0,
+      "Sim%": 65.9,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Tamworth",
+      "Model%": 42.5,
+      "Sim%": 43.1,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Draw",
+      "Model%": 26.1,
+      "Sim%": 26.6,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Worthing",
+      "Model%": 31.5,
+      "Sim%": 30.3,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "1X",
+      "Model%": 68.5,
+      "Sim%": 69.7,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 57.5,
+      "Sim%": 56.9,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "12",
+      "Model%": 73.9,
+      "Sim%": 73.4,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Over 2.5",
+      "Model%": 47.1,
+      "Sim%": 57.2,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Under 2.5",
+      "Model%": 52.9,
+      "Sim%": 42.8,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "Yes",
+      "Model%": 45.0,
+      "Sim%": 45.2,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 55.0,
+      "Sim%": 54.8,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    }
+  ],
+  "locked_tip": {
+    "status": "SECURED LOCK",
+    "section": "FT DC",
+    "selection": "12",
+    "model": 73.9,
+    "sim": 73.4,
+    "agree": "1 eng",
+    "verdict": "HARD YES"
+  },
+  "backends": {
+    "ft_result": [
+      "market"
+    ],
+    "ht_result": [
+      "market"
+    ],
+    "over25": [
+      "market"
+    ],
+    "btts": [
+      "market"
+    ],
+    "ht_over15": [
+      "market"
+    ]
+  },
+  "generated_at": "2026-08-30T08:42:32.182305Z"
+}

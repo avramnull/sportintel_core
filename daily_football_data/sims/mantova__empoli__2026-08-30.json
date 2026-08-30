@@ -1,0 +1,299 @@
+{
+  "match": {
+    "league": "I2",
+    "home_team": "Mantova",
+    "away_team": "Empoli",
+    "match_date": "2026-08-30 18:00",
+    "odds_home": 2.05,
+    "odds_draw": 3.1,
+    "odds_away": 3.5,
+    "n_simulations": 2000,
+    "seed": 167,
+    "odds_blend": 0.3
+  },
+  "resolved": {
+    "league": "Serie B",
+    "div": "I2",
+    "home": "Mantova",
+    "away": "Empoli",
+    "models": "market-only",
+    "match_date": "2026-08-30 18:00"
+  },
+  "report": {
+    "n": 2000,
+    "ft_model": {
+      "H": 0.4450369155045119,
+      "D": 0.294298605414274,
+      "A": 0.2606644790812141
+    },
+    "ft_sim": {
+      "H": 0.4315,
+      "D": 0.2955,
+      "A": 0.273
+    },
+    "ht_model": {
+      "H": 0.3,
+      "D": 0.4,
+      "A": 0.3
+    },
+    "ht_sim": {
+      "H": 0.304,
+      "D": 0.3985,
+      "A": 0.2975
+    },
+    "over25_model": 0.46602787456445993,
+    "over25_sim": 0.5675,
+    "btts_model": 0.45,
+    "btts_sim": 0.4625,
+    "ht_over15_model": 0.35,
+    "ht_over15_sim": 0.337,
+    "dc_ft": {
+      "1X": 0.739335520918786,
+      "X2": 0.554963084495488,
+      "12": 0.705701394585726
+    },
+    "dc_ht": {
+      "1X": 0.7,
+      "X2": 0.7,
+      "12": 0.6
+    },
+    "top_ft": [
+      [
+        "0-0",
+        324
+      ],
+      [
+        "2-1",
+        244
+      ],
+      [
+        "1-2",
+        146
+      ],
+      [
+        "1-1",
+        141
+      ],
+      [
+        "1-0",
+        119
+      ],
+      [
+        "2-0",
+        119
+      ],
+      [
+        "0-2",
+        83
+      ],
+      [
+        "5-0",
+        82
+      ]
+    ],
+    "top_ht": [
+      [
+        "0-0",
+        479
+      ],
+      [
+        "1-0",
+        428
+      ],
+      [
+        "0-1",
+        419
+      ],
+      [
+        "1-1",
+        318
+      ],
+      [
+        "1-2",
+        96
+      ]
+    ],
+    "xg": {
+      "home": 1.5345,
+      "away": 1.1825,
+      "total": 2.717
+    },
+    "goal_rates": {
+      "home": 1.5345,
+      "away": 1.1825
+    }
+  },
+  "table": [
+    {
+      "Section": "HT Winner",
+      "Selection": "Mantova",
+      "Model%": 30.0,
+      "Sim%": 30.4,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Draw",
+      "Model%": 40.0,
+      "Sim%": 39.9,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Empoli",
+      "Model%": 30.0,
+      "Sim%": 29.8,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "1X",
+      "Model%": 70.0,
+      "Sim%": 70.2,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "X2",
+      "Model%": 70.0,
+      "Sim%": 69.6,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "12",
+      "Model%": 60.0,
+      "Sim%": 60.1,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Over 1.5",
+      "Model%": 35.0,
+      "Sim%": 33.7,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Under 1.5",
+      "Model%": 65.0,
+      "Sim%": 66.3,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Mantova",
+      "Model%": 44.5,
+      "Sim%": 43.1,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Draw",
+      "Model%": 29.4,
+      "Sim%": 29.5,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Empoli",
+      "Model%": 26.1,
+      "Sim%": 27.3,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "1X",
+      "Model%": 73.9,
+      "Sim%": 72.7,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 55.5,
+      "Sim%": 56.9,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "12",
+      "Model%": 70.6,
+      "Sim%": 70.5,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Over 2.5",
+      "Model%": 46.6,
+      "Sim%": 56.8,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Under 2.5",
+      "Model%": 53.4,
+      "Sim%": 43.2,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "Yes",
+      "Model%": 45.0,
+      "Sim%": 46.2,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 55.0,
+      "Sim%": 53.8,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    }
+  ],
+  "locked_tip": {
+    "status": "SECURED LOCK",
+    "section": "FT DC",
+    "selection": "1X",
+    "model": 73.9,
+    "sim": 72.7,
+    "agree": "1 eng",
+    "verdict": "HARD YES"
+  },
+  "backends": {
+    "ft_result": [
+      "market"
+    ],
+    "ht_result": [
+      "market"
+    ],
+    "over25": [
+      "market"
+    ],
+    "btts": [
+      "market"
+    ],
+    "ht_over15": [
+      "market"
+    ]
+  },
+  "generated_at": "2026-08-30T08:42:34.003634Z"
+}

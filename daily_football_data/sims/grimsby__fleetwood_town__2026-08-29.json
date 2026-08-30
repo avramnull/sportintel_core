@@ -1,0 +1,299 @@
+{
+  "match": {
+    "league": "E3",
+    "home_team": "Grimsby",
+    "away_team": "Fleetwood Town",
+    "match_date": "2026-08-29 15:00",
+    "odds_home": 1.81,
+    "odds_draw": 3.5,
+    "odds_away": 4.1,
+    "n_simulations": 2000,
+    "seed": 108,
+    "odds_blend": 0.3
+  },
+  "resolved": {
+    "league": "League Two",
+    "div": "E3",
+    "home": "Grimsby",
+    "away": "Fleetwood Town",
+    "models": "market-only",
+    "match_date": "2026-08-29 15:00"
+  },
+  "report": {
+    "n": 2000,
+    "ft_model": {
+      "H": 0.5105671386892479,
+      "D": 0.26403614886501103,
+      "A": 0.22539671244574114
+    },
+    "ft_sim": {
+      "H": 0.511,
+      "D": 0.2675,
+      "A": 0.2215
+    },
+    "ht_model": {
+      "H": 0.3,
+      "D": 0.4,
+      "A": 0.3
+    },
+    "ht_sim": {
+      "H": 0.291,
+      "D": 0.3875,
+      "A": 0.3215
+    },
+    "over25_model": 0.4694582940304541,
+    "over25_sim": 0.5725,
+    "btts_model": 0.45,
+    "btts_sim": 0.443,
+    "ht_over15_model": 0.35,
+    "ht_over15_sim": 0.3365,
+    "dc_ft": {
+      "1X": 0.7746032875542589,
+      "X2": 0.48943286131075214,
+      "12": 0.735963851134989
+    },
+    "dc_ht": {
+      "1X": 0.7,
+      "X2": 0.7,
+      "12": 0.6
+    },
+    "top_ft": [
+      [
+        "0-0",
+        299
+      ],
+      [
+        "2-1",
+        274
+      ],
+      [
+        "2-0",
+        155
+      ],
+      [
+        "1-0",
+        150
+      ],
+      [
+        "1-1",
+        124
+      ],
+      [
+        "1-2",
+        115
+      ],
+      [
+        "3-0",
+        96
+      ],
+      [
+        "5-0",
+        95
+      ]
+    ],
+    "top_ht": [
+      [
+        "0-1",
+        469
+      ],
+      [
+        "0-0",
+        449
+      ],
+      [
+        "1-0",
+        409
+      ],
+      [
+        "1-1",
+        326
+      ],
+      [
+        "1-2",
+        94
+      ]
+    ],
+    "xg": {
+      "home": 1.6645,
+      "away": 1.075,
+      "total": 2.7395
+    },
+    "goal_rates": {
+      "home": 1.6645,
+      "away": 1.075
+    }
+  },
+  "table": [
+    {
+      "Section": "HT Winner",
+      "Selection": "Grimsby",
+      "Model%": 30.0,
+      "Sim%": 29.1,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Draw",
+      "Model%": 40.0,
+      "Sim%": 38.8,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Fleetwood Town",
+      "Model%": 30.0,
+      "Sim%": 32.1,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "1X",
+      "Model%": 70.0,
+      "Sim%": 67.8,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "X2",
+      "Model%": 70.0,
+      "Sim%": 70.9,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "12",
+      "Model%": 60.0,
+      "Sim%": 61.3,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Over 1.5",
+      "Model%": 35.0,
+      "Sim%": 33.7,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Under 1.5",
+      "Model%": 65.0,
+      "Sim%": 66.3,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Grimsby",
+      "Model%": 51.1,
+      "Sim%": 51.1,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Draw",
+      "Model%": 26.4,
+      "Sim%": 26.8,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Fleetwood Town",
+      "Model%": 22.5,
+      "Sim%": 22.1,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "1X",
+      "Model%": 77.5,
+      "Sim%": 77.8,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 48.9,
+      "Sim%": 48.9,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "12",
+      "Model%": 73.6,
+      "Sim%": 73.2,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Over 2.5",
+      "Model%": 46.9,
+      "Sim%": 57.2,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Under 2.5",
+      "Model%": 53.1,
+      "Sim%": 42.8,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "Yes",
+      "Model%": 45.0,
+      "Sim%": 44.3,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 55.0,
+      "Sim%": 55.7,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    }
+  ],
+  "locked_tip": {
+    "status": "SECURED LOCK",
+    "section": "FT DC",
+    "selection": "1X",
+    "model": 77.5,
+    "sim": 77.8,
+    "agree": "1 eng",
+    "verdict": "HARD YES"
+  },
+  "backends": {
+    "ft_result": [
+      "market"
+    ],
+    "ht_result": [
+      "market"
+    ],
+    "over25": [
+      "market"
+    ],
+    "btts": [
+      "market"
+    ],
+    "ht_over15": [
+      "market"
+    ]
+  },
+  "generated_at": "2026-08-30T08:42:31.575255Z"
+}

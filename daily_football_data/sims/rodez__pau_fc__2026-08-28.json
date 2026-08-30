@@ -1,0 +1,299 @@
+{
+  "match": {
+    "league": "F2",
+    "home_team": "Rodez",
+    "away_team": "Pau FC",
+    "match_date": "2026-08-28 19:00",
+    "odds_home": 1.62,
+    "odds_draw": 3.6,
+    "odds_away": 4.33,
+    "n_simulations": 2000,
+    "seed": 138,
+    "odds_blend": 0.3
+  },
+  "resolved": {
+    "league": "Ligue 2",
+    "div": "F2",
+    "home": "Rodez",
+    "away": "Pau FC",
+    "models": "market-only",
+    "match_date": "2026-08-28 19:00"
+  },
+  "report": {
+    "n": 2000,
+    "ft_model": {
+      "H": 0.5482053554472368,
+      "D": 0.24669240995125657,
+      "A": 0.2051022346015066
+    },
+    "ft_sim": {
+      "H": 0.5475,
+      "D": 0.2465,
+      "A": 0.206
+    },
+    "ht_model": {
+      "H": 0.3,
+      "D": 0.4,
+      "A": 0.3
+    },
+    "ht_sim": {
+      "H": 0.3085,
+      "D": 0.4025,
+      "A": 0.289
+    },
+    "over25_model": 0.47723462492515606,
+    "over25_sim": 0.6055,
+    "btts_model": 0.45,
+    "btts_sim": 0.4545,
+    "ht_over15_model": 0.35,
+    "ht_over15_sim": 0.3525,
+    "dc_ft": {
+      "1X": 0.7948977653984934,
+      "X2": 0.4517946445527632,
+      "12": 0.7533075900487434
+    },
+    "dc_ht": {
+      "1X": 0.7,
+      "X2": 0.7,
+      "12": 0.6
+    },
+    "top_ft": [
+      [
+        "2-1",
+        286
+      ],
+      [
+        "0-0",
+        249
+      ],
+      [
+        "1-0",
+        164
+      ],
+      [
+        "2-0",
+        141
+      ],
+      [
+        "1-1",
+        122
+      ],
+      [
+        "1-2",
+        108
+      ],
+      [
+        "3-0",
+        106
+      ],
+      [
+        "5-0",
+        102
+      ]
+    ],
+    "top_ht": [
+      [
+        "0-0",
+        486
+      ],
+      [
+        "1-0",
+        421
+      ],
+      [
+        "0-1",
+        388
+      ],
+      [
+        "1-1",
+        319
+      ],
+      [
+        "0-2",
+        105
+      ]
+    ],
+    "xg": {
+      "home": 1.785,
+      "away": 1.0645,
+      "total": 2.8495
+    },
+    "goal_rates": {
+      "home": 1.785,
+      "away": 1.0645
+    }
+  },
+  "table": [
+    {
+      "Section": "HT Winner",
+      "Selection": "Rodez",
+      "Model%": 30.0,
+      "Sim%": 30.9,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Draw",
+      "Model%": 40.0,
+      "Sim%": 40.2,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Pau FC",
+      "Model%": 30.0,
+      "Sim%": 28.9,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "1X",
+      "Model%": 70.0,
+      "Sim%": 71.1,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "X2",
+      "Model%": 70.0,
+      "Sim%": 69.2,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "12",
+      "Model%": 60.0,
+      "Sim%": 59.7,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Over 1.5",
+      "Model%": 35.0,
+      "Sim%": 35.2,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Under 1.5",
+      "Model%": 65.0,
+      "Sim%": 64.8,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Rodez",
+      "Model%": 54.8,
+      "Sim%": 54.8,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Draw",
+      "Model%": 24.7,
+      "Sim%": 24.6,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Pau FC",
+      "Model%": 20.5,
+      "Sim%": 20.6,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "1X",
+      "Model%": 79.5,
+      "Sim%": 79.4,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 45.2,
+      "Sim%": 45.2,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "12",
+      "Model%": 75.3,
+      "Sim%": 75.3,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Over 2.5",
+      "Model%": 47.7,
+      "Sim%": 60.6,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Under 2.5",
+      "Model%": 52.3,
+      "Sim%": 39.4,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "Yes",
+      "Model%": 45.0,
+      "Sim%": 45.5,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 55.0,
+      "Sim%": 54.5,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    }
+  ],
+  "locked_tip": {
+    "status": "SECURED LOCK",
+    "section": "FT DC",
+    "selection": "1X",
+    "model": 79.5,
+    "sim": 79.4,
+    "agree": "1 eng",
+    "verdict": "HARD YES"
+  },
+  "backends": {
+    "ft_result": [
+      "market"
+    ],
+    "ht_result": [
+      "market"
+    ],
+    "over25": [
+      "market"
+    ],
+    "btts": [
+      "market"
+    ],
+    "ht_over15": [
+      "market"
+    ]
+  },
+  "generated_at": "2026-08-30T08:42:32.823572Z"
+}

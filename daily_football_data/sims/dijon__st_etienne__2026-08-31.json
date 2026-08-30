@@ -1,0 +1,299 @@
+{
+  "match": {
+    "league": "F2",
+    "home_team": "Dijon",
+    "away_team": "St Etienne",
+    "match_date": "2026-08-31 19:45",
+    "odds_home": 3.9,
+    "odds_draw": 3.2,
+    "odds_away": 1.8,
+    "n_simulations": 2000,
+    "seed": 142,
+    "odds_blend": 0.3
+  },
+  "resolved": {
+    "league": "Ligue 2",
+    "div": "F2",
+    "home": "Dijon",
+    "away": "St Etienne",
+    "models": "market-only",
+    "match_date": "2026-08-31 19:45"
+  },
+  "report": {
+    "n": 2000,
+    "ft_model": {
+      "H": 0.2280285035629454,
+      "D": 0.27790973871733965,
+      "A": 0.494061757719715
+    },
+    "ft_sim": {
+      "H": 0.2055,
+      "D": 0.2825,
+      "A": 0.512
+    },
+    "ht_model": {
+      "H": 0.3,
+      "D": 0.4,
+      "A": 0.3
+    },
+    "ht_sim": {
+      "H": 0.2945,
+      "D": 0.403,
+      "A": 0.3025
+    },
+    "over25_model": 0.4717948717948718,
+    "over25_sim": 0.578,
+    "btts_model": 0.45,
+    "btts_sim": 0.464,
+    "ht_over15_model": 0.35,
+    "ht_over15_sim": 0.3445,
+    "dc_ft": {
+      "1X": 0.505938242280285,
+      "X2": 0.7719714964370546,
+      "12": 0.7220902612826604
+    },
+    "dc_ht": {
+      "1X": 0.7,
+      "X2": 0.7,
+      "12": 0.6
+    },
+    "top_ft": [
+      [
+        "0-0",
+        308
+      ],
+      [
+        "1-2",
+        282
+      ],
+      [
+        "0-2",
+        152
+      ],
+      [
+        "0-1",
+        146
+      ],
+      [
+        "1-1",
+        137
+      ],
+      [
+        "2-1",
+        119
+      ],
+      [
+        "0-5",
+        91
+      ],
+      [
+        "0-4",
+        82
+      ]
+    ],
+    "top_ht": [
+      [
+        "0-0",
+        496
+      ],
+      [
+        "0-1",
+        411
+      ],
+      [
+        "1-0",
+        404
+      ],
+      [
+        "1-1",
+        310
+      ],
+      [
+        "1-2",
+        103
+      ]
+    ],
+    "xg": {
+      "home": 1.0665,
+      "away": 1.683,
+      "total": 2.7495
+    },
+    "goal_rates": {
+      "home": 1.0665,
+      "away": 1.683
+    }
+  },
+  "table": [
+    {
+      "Section": "HT Winner",
+      "Selection": "Dijon",
+      "Model%": 30.0,
+      "Sim%": 29.4,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Draw",
+      "Model%": 40.0,
+      "Sim%": 40.3,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "St Etienne",
+      "Model%": 30.0,
+      "Sim%": 30.2,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "1X",
+      "Model%": 70.0,
+      "Sim%": 69.8,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "X2",
+      "Model%": 70.0,
+      "Sim%": 70.5,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "12",
+      "Model%": 60.0,
+      "Sim%": 59.7,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Over 1.5",
+      "Model%": 35.0,
+      "Sim%": 34.4,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Under 1.5",
+      "Model%": 65.0,
+      "Sim%": 65.5,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Dijon",
+      "Model%": 22.8,
+      "Sim%": 20.5,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Draw",
+      "Model%": 27.8,
+      "Sim%": 28.2,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "St Etienne",
+      "Model%": 49.4,
+      "Sim%": 51.2,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "1X",
+      "Model%": 50.6,
+      "Sim%": 48.8,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 77.2,
+      "Sim%": 79.5,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "12",
+      "Model%": 72.2,
+      "Sim%": 71.8,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Over 2.5",
+      "Model%": 47.2,
+      "Sim%": 57.8,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Under 2.5",
+      "Model%": 52.8,
+      "Sim%": 42.2,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "Yes",
+      "Model%": 45.0,
+      "Sim%": 46.4,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 55.0,
+      "Sim%": 53.6,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    }
+  ],
+  "locked_tip": {
+    "status": "SECURED LOCK",
+    "section": "FT DC",
+    "selection": "X2",
+    "model": 77.2,
+    "sim": 79.5,
+    "agree": "1 eng",
+    "verdict": "HARD YES"
+  },
+  "backends": {
+    "ft_result": [
+      "market"
+    ],
+    "ht_result": [
+      "market"
+    ],
+    "over25": [
+      "market"
+    ],
+    "btts": [
+      "market"
+    ],
+    "ht_over15": [
+      "market"
+    ]
+  },
+  "generated_at": "2026-08-30T08:42:32.980576Z"
+}

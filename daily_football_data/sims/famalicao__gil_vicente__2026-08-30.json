@@ -1,0 +1,299 @@
+{
+  "match": {
+    "league": "P1",
+    "home_team": "Famalicao",
+    "away_team": "Gil Vicente",
+    "match_date": "2026-08-30 20:30",
+    "odds_home": 2.15,
+    "odds_draw": 3.25,
+    "odds_away": 3.3,
+    "n_simulations": 2000,
+    "seed": 185,
+    "odds_blend": 0.3
+  },
+  "resolved": {
+    "league": "Primeira Liga",
+    "div": "P1",
+    "home": "Famalicao",
+    "away": "Gil Vicente",
+    "models": "market-only",
+    "match_date": "2026-08-30 20:30"
+  },
+  "report": {
+    "n": 2000,
+    "ft_model": {
+      "H": 0.4323289327824247,
+      "D": 0.2860022170714502,
+      "A": 0.2816688501461252
+    },
+    "ft_sim": {
+      "H": 0.439,
+      "D": 0.2815,
+      "A": 0.2795
+    },
+    "ht_model": {
+      "H": 0.3,
+      "D": 0.4,
+      "A": 0.3
+    },
+    "ht_sim": {
+      "H": 0.287,
+      "D": 0.4165,
+      "A": 0.2965
+    },
+    "over25_model": 0.4652219873150105,
+    "over25_sim": 0.5595,
+    "btts_model": 0.45,
+    "btts_sim": 0.4555,
+    "ht_over15_model": 0.35,
+    "ht_over15_sim": 0.338,
+    "dc_ft": {
+      "1X": 0.7183311498538749,
+      "X2": 0.5676710672175753,
+      "12": 0.7139977829285499
+    },
+    "dc_ht": {
+      "1X": 0.7,
+      "X2": 0.7,
+      "12": 0.6
+    },
+    "top_ft": [
+      [
+        "0-0",
+        310
+      ],
+      [
+        "2-1",
+        236
+      ],
+      [
+        "1-2",
+        176
+      ],
+      [
+        "1-1",
+        152
+      ],
+      [
+        "2-0",
+        137
+      ],
+      [
+        "1-0",
+        123
+      ],
+      [
+        "3-0",
+        96
+      ],
+      [
+        "0-1",
+        84
+      ]
+    ],
+    "top_ht": [
+      [
+        "0-0",
+        510
+      ],
+      [
+        "0-1",
+        413
+      ],
+      [
+        "1-0",
+        401
+      ],
+      [
+        "1-1",
+        323
+      ],
+      [
+        "1-2",
+        95
+      ]
+    ],
+    "xg": {
+      "home": 1.4965,
+      "away": 1.1465,
+      "total": 2.643
+    },
+    "goal_rates": {
+      "home": 1.4965,
+      "away": 1.1465
+    }
+  },
+  "table": [
+    {
+      "Section": "HT Winner",
+      "Selection": "Famalicao",
+      "Model%": 30.0,
+      "Sim%": 28.7,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Draw",
+      "Model%": 40.0,
+      "Sim%": 41.6,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Gil Vicente",
+      "Model%": 30.0,
+      "Sim%": 29.6,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "1X",
+      "Model%": 70.0,
+      "Sim%": 70.3,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "X2",
+      "Model%": 70.0,
+      "Sim%": 71.3,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "12",
+      "Model%": 60.0,
+      "Sim%": 58.3,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Over 1.5",
+      "Model%": 35.0,
+      "Sim%": 33.8,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Under 1.5",
+      "Model%": 65.0,
+      "Sim%": 66.2,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Famalicao",
+      "Model%": 43.2,
+      "Sim%": 43.9,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Draw",
+      "Model%": 28.6,
+      "Sim%": 28.1,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Gil Vicente",
+      "Model%": 28.2,
+      "Sim%": 28.0,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "1X",
+      "Model%": 71.8,
+      "Sim%": 72.0,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 56.8,
+      "Sim%": 56.1,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "12",
+      "Model%": 71.4,
+      "Sim%": 71.9,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Over 2.5",
+      "Model%": 46.5,
+      "Sim%": 56.0,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Under 2.5",
+      "Model%": 53.5,
+      "Sim%": 44.0,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "Yes",
+      "Model%": 45.0,
+      "Sim%": 45.6,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 55.0,
+      "Sim%": 54.4,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    }
+  ],
+  "locked_tip": {
+    "status": "SECURED LOCK",
+    "section": "FT DC",
+    "selection": "1X",
+    "model": 71.8,
+    "sim": 72.0,
+    "agree": "1 eng",
+    "verdict": "HARD YES"
+  },
+  "backends": {
+    "ft_result": [
+      "market"
+    ],
+    "ht_result": [
+      "market"
+    ],
+    "over25": [
+      "market"
+    ],
+    "btts": [
+      "market"
+    ],
+    "ht_over15": [
+      "market"
+    ]
+  },
+  "generated_at": "2026-08-30T08:42:34.738451Z"
+}

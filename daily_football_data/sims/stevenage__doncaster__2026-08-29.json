@@ -1,0 +1,299 @@
+{
+  "match": {
+    "league": "E2",
+    "home_team": "Stevenage",
+    "away_team": "Doncaster",
+    "match_date": "2026-08-29 15:00",
+    "odds_home": 2.15,
+    "odds_draw": 3.2,
+    "odds_away": 3.3,
+    "n_simulations": 2000,
+    "seed": 98,
+    "odds_blend": 0.3
+  },
+  "resolved": {
+    "league": "League One",
+    "div": "E2",
+    "home": "Stevenage",
+    "away": "Doncaster",
+    "models": "market-only",
+    "match_date": "2026-08-29 15:00"
+  },
+  "report": {
+    "n": 2000,
+    "ft_model": {
+      "H": 0.4304055431016914,
+      "D": 0.2891787242714489,
+      "A": 0.2804157326268596
+    },
+    "ft_sim": {
+      "H": 0.429,
+      "D": 0.2935,
+      "A": 0.2775
+    },
+    "ht_model": {
+      "H": 0.3,
+      "D": 0.4,
+      "A": 0.3
+    },
+    "ht_sim": {
+      "H": 0.2985,
+      "D": 0.4025,
+      "A": 0.299
+    },
+    "over25_model": 0.4652219873150105,
+    "over25_sim": 0.5505,
+    "btts_model": 0.45,
+    "btts_sim": 0.4465,
+    "ht_over15_model": 0.35,
+    "ht_over15_sim": 0.332,
+    "dc_ft": {
+      "1X": 0.7195842673731403,
+      "X2": 0.5695944568983085,
+      "12": 0.710821275728551
+    },
+    "dc_ht": {
+      "1X": 0.7,
+      "X2": 0.7,
+      "12": 0.6
+    },
+    "top_ft": [
+      [
+        "0-0",
+        319
+      ],
+      [
+        "2-1",
+        237
+      ],
+      [
+        "1-2",
+        150
+      ],
+      [
+        "2-0",
+        139
+      ],
+      [
+        "1-1",
+        136
+      ],
+      [
+        "1-0",
+        130
+      ],
+      [
+        "0-1",
+        98
+      ],
+      [
+        "0-2",
+        77
+      ]
+    ],
+    "top_ht": [
+      [
+        "0-0",
+        484
+      ],
+      [
+        "1-0",
+        434
+      ],
+      [
+        "0-1",
+        418
+      ],
+      [
+        "1-1",
+        321
+      ],
+      [
+        "0-2",
+        95
+      ]
+    ],
+    "xg": {
+      "home": 1.4885,
+      "away": 1.161,
+      "total": 2.6495
+    },
+    "goal_rates": {
+      "home": 1.4885,
+      "away": 1.161
+    }
+  },
+  "table": [
+    {
+      "Section": "HT Winner",
+      "Selection": "Stevenage",
+      "Model%": 30.0,
+      "Sim%": 29.8,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Draw",
+      "Model%": 40.0,
+      "Sim%": 40.2,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Doncaster",
+      "Model%": 30.0,
+      "Sim%": 29.9,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "1X",
+      "Model%": 70.0,
+      "Sim%": 70.1,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "X2",
+      "Model%": 70.0,
+      "Sim%": 70.2,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "12",
+      "Model%": 60.0,
+      "Sim%": 59.7,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Over 1.5",
+      "Model%": 35.0,
+      "Sim%": 33.2,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Under 1.5",
+      "Model%": 65.0,
+      "Sim%": 66.8,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Stevenage",
+      "Model%": 43.0,
+      "Sim%": 42.9,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Draw",
+      "Model%": 28.9,
+      "Sim%": 29.3,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Doncaster",
+      "Model%": 28.0,
+      "Sim%": 27.8,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "1X",
+      "Model%": 72.0,
+      "Sim%": 72.2,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 57.0,
+      "Sim%": 57.1,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "12",
+      "Model%": 71.1,
+      "Sim%": 70.7,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Over 2.5",
+      "Model%": 46.5,
+      "Sim%": 55.0,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Under 2.5",
+      "Model%": 53.5,
+      "Sim%": 45.0,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "Yes",
+      "Model%": 45.0,
+      "Sim%": 44.6,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 55.0,
+      "Sim%": 55.4,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    }
+  ],
+  "locked_tip": {
+    "status": "SECURED LOCK",
+    "section": "FT DC",
+    "selection": "1X",
+    "model": 72.0,
+    "sim": 72.2,
+    "agree": "1 eng",
+    "verdict": "HARD YES"
+  },
+  "backends": {
+    "ft_result": [
+      "market"
+    ],
+    "ht_result": [
+      "market"
+    ],
+    "over25": [
+      "market"
+    ],
+    "btts": [
+      "market"
+    ],
+    "ht_over15": [
+      "market"
+    ]
+  },
+  "generated_at": "2026-08-30T08:42:31.182633Z"
+}

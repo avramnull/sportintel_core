@@ -1,0 +1,299 @@
+{
+  "match": {
+    "league": "SC2",
+    "home_team": "Montrose",
+    "away_team": "Queen of Sth",
+    "match_date": "2026-08-29 15:00",
+    "odds_home": 2.0,
+    "odds_draw": 3.5,
+    "odds_away": 3.0,
+    "n_simulations": 2000,
+    "seed": 202,
+    "odds_blend": 0.3
+  },
+  "resolved": {
+    "league": "Scottish League One",
+    "div": "SC2",
+    "home": "Montrose",
+    "away": "Queen of Sth",
+    "models": "market-only",
+    "match_date": "2026-08-29 15:00"
+  },
+  "report": {
+    "n": 2000,
+    "ft_model": {
+      "H": 0.44680851063829785,
+      "D": 0.2553191489361702,
+      "A": 0.2978723404255319
+    },
+    "ft_sim": {
+      "H": 0.442,
+      "D": 0.272,
+      "A": 0.286
+    },
+    "ht_model": {
+      "H": 0.3,
+      "D": 0.4,
+      "A": 0.3
+    },
+    "ht_sim": {
+      "H": 0.302,
+      "D": 0.402,
+      "A": 0.296
+    },
+    "over25_model": 0.475,
+    "over25_sim": 0.5705,
+    "btts_model": 0.45,
+    "btts_sim": 0.428,
+    "ht_over15_model": 0.35,
+    "ht_over15_sim": 0.337,
+    "dc_ft": {
+      "1X": 0.7021276595744681,
+      "X2": 0.553191489361702,
+      "12": 0.7446808510638298
+    },
+    "dc_ht": {
+      "1X": 0.7,
+      "X2": 0.7,
+      "12": 0.6
+    },
+    "top_ft": [
+      [
+        "0-0",
+        319
+      ],
+      [
+        "2-1",
+        221
+      ],
+      [
+        "1-2",
+        153
+      ],
+      [
+        "1-0",
+        139
+      ],
+      [
+        "2-0",
+        124
+      ],
+      [
+        "1-1",
+        122
+      ],
+      [
+        "5-0",
+        87
+      ],
+      [
+        "0-2",
+        82
+      ]
+    ],
+    "top_ht": [
+      [
+        "0-0",
+        498
+      ],
+      [
+        "1-0",
+        430
+      ],
+      [
+        "0-1",
+        398
+      ],
+      [
+        "1-1",
+        306
+      ],
+      [
+        "0-2",
+        106
+      ]
+    ],
+    "xg": {
+      "home": 1.5255,
+      "away": 1.193,
+      "total": 2.7185
+    },
+    "goal_rates": {
+      "home": 1.5255,
+      "away": 1.193
+    }
+  },
+  "table": [
+    {
+      "Section": "HT Winner",
+      "Selection": "Montrose",
+      "Model%": 30.0,
+      "Sim%": 30.2,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Draw",
+      "Model%": 40.0,
+      "Sim%": 40.2,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Queen of Sth",
+      "Model%": 30.0,
+      "Sim%": 29.6,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "1X",
+      "Model%": 70.0,
+      "Sim%": 70.4,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "X2",
+      "Model%": 70.0,
+      "Sim%": 69.8,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "12",
+      "Model%": 60.0,
+      "Sim%": 59.8,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Over 1.5",
+      "Model%": 35.0,
+      "Sim%": 33.7,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Under 1.5",
+      "Model%": 65.0,
+      "Sim%": 66.3,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Montrose",
+      "Model%": 44.7,
+      "Sim%": 44.2,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Draw",
+      "Model%": 25.5,
+      "Sim%": 27.2,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Queen of Sth",
+      "Model%": 29.8,
+      "Sim%": 28.6,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "1X",
+      "Model%": 70.2,
+      "Sim%": 71.4,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 55.3,
+      "Sim%": 55.8,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "12",
+      "Model%": 74.5,
+      "Sim%": 72.8,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Over 2.5",
+      "Model%": 47.5,
+      "Sim%": 57.0,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Under 2.5",
+      "Model%": 52.5,
+      "Sim%": 43.0,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "Yes",
+      "Model%": 45.0,
+      "Sim%": 42.8,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 55.0,
+      "Sim%": 57.2,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    }
+  ],
+  "locked_tip": {
+    "status": "SECURED LOCK",
+    "section": "FT DC",
+    "selection": "12",
+    "model": 74.5,
+    "sim": 72.8,
+    "agree": "1 eng",
+    "verdict": "HARD YES"
+  },
+  "backends": {
+    "ft_result": [
+      "market"
+    ],
+    "ht_result": [
+      "market"
+    ],
+    "over25": [
+      "market"
+    ],
+    "btts": [
+      "market"
+    ],
+    "ht_over15": [
+      "market"
+    ]
+  },
+  "generated_at": "2026-08-30T08:42:35.413298Z"
+}

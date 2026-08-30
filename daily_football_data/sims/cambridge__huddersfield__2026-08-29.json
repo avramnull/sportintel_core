@@ -1,0 +1,299 @@
+{
+  "match": {
+    "league": "E2",
+    "home_team": "Cambridge",
+    "away_team": "Huddersfield",
+    "match_date": "2026-08-29 15:00",
+    "odds_home": 3.0,
+    "odds_draw": 3.3,
+    "odds_away": 2.3,
+    "n_simulations": 2000,
+    "seed": 93,
+    "odds_blend": 0.3
+  },
+  "resolved": {
+    "league": "League One",
+    "div": "E2",
+    "home": "Cambridge",
+    "away": "Huddersfield",
+    "models": "market-only",
+    "match_date": "2026-08-29 15:00"
+  },
+  "report": {
+    "n": 2000,
+    "ft_model": {
+      "H": 0.31119311193111926,
+      "D": 0.2829028290282903,
+      "A": 0.40590405904059046
+    },
+    "ft_sim": {
+      "H": 0.31,
+      "D": 0.289,
+      "A": 0.401
+    },
+    "ht_model": {
+      "H": 0.3,
+      "D": 0.4,
+      "A": 0.3
+    },
+    "ht_sim": {
+      "H": 0.292,
+      "D": 0.394,
+      "A": 0.314
+    },
+    "over25_model": 0.4652173913043478,
+    "over25_sim": 0.559,
+    "btts_model": 0.45,
+    "btts_sim": 0.454,
+    "ht_over15_model": 0.35,
+    "ht_over15_sim": 0.344,
+    "dc_ft": {
+      "1X": 0.5940959409594095,
+      "X2": 0.6888068880688807,
+      "12": 0.7170971709717098
+    },
+    "dc_ht": {
+      "1X": 0.7,
+      "X2": 0.7,
+      "12": 0.6
+    },
+    "top_ft": [
+      [
+        "0-0",
+        324
+      ],
+      [
+        "1-2",
+        225
+      ],
+      [
+        "2-1",
+        177
+      ],
+      [
+        "1-1",
+        145
+      ],
+      [
+        "0-2",
+        138
+      ],
+      [
+        "0-1",
+        101
+      ],
+      [
+        "1-0",
+        100
+      ],
+      [
+        "0-4",
+        85
+      ]
+    ],
+    "top_ht": [
+      [
+        "0-0",
+        482
+      ],
+      [
+        "0-1",
+        425
+      ],
+      [
+        "1-0",
+        405
+      ],
+      [
+        "1-1",
+        306
+      ],
+      [
+        "0-2",
+        107
+      ]
+    ],
+    "xg": {
+      "home": 1.2315,
+      "away": 1.4325,
+      "total": 2.664
+    },
+    "goal_rates": {
+      "home": 1.2315,
+      "away": 1.4325
+    }
+  },
+  "table": [
+    {
+      "Section": "HT Winner",
+      "Selection": "Cambridge",
+      "Model%": 30.0,
+      "Sim%": 29.2,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Draw",
+      "Model%": 40.0,
+      "Sim%": 39.4,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Huddersfield",
+      "Model%": 30.0,
+      "Sim%": 31.4,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "1X",
+      "Model%": 70.0,
+      "Sim%": 68.6,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "X2",
+      "Model%": 70.0,
+      "Sim%": 70.8,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "12",
+      "Model%": 60.0,
+      "Sim%": 60.6,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Over 1.5",
+      "Model%": 35.0,
+      "Sim%": 34.4,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Under 1.5",
+      "Model%": 65.0,
+      "Sim%": 65.6,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Cambridge",
+      "Model%": 31.1,
+      "Sim%": 31.0,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Draw",
+      "Model%": 28.3,
+      "Sim%": 28.9,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Huddersfield",
+      "Model%": 40.6,
+      "Sim%": 40.1,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "1X",
+      "Model%": 59.4,
+      "Sim%": 59.9,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 68.9,
+      "Sim%": 69.0,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "12",
+      "Model%": 71.7,
+      "Sim%": 71.1,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Over 2.5",
+      "Model%": 46.5,
+      "Sim%": 55.9,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Under 2.5",
+      "Model%": 53.5,
+      "Sim%": 44.1,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "Yes",
+      "Model%": 45.0,
+      "Sim%": 45.4,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 55.0,
+      "Sim%": 54.6,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    }
+  ],
+  "locked_tip": {
+    "status": "SECURED LOCK",
+    "section": "FT DC",
+    "selection": "12",
+    "model": 71.7,
+    "sim": 71.1,
+    "agree": "1 eng",
+    "verdict": "HARD YES"
+  },
+  "backends": {
+    "ft_result": [
+      "market"
+    ],
+    "ht_result": [
+      "market"
+    ],
+    "over25": [
+      "market"
+    ],
+    "btts": [
+      "market"
+    ],
+    "ht_over15": [
+      "market"
+    ]
+  },
+  "generated_at": "2026-08-30T08:42:30.978388Z"
+}

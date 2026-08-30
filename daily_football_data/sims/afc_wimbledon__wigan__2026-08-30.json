@@ -1,0 +1,299 @@
+{
+  "match": {
+    "league": "E2",
+    "home_team": "AFC Wimbledon",
+    "away_team": "Wigan",
+    "match_date": "2026-08-30 14:00",
+    "odds_home": 3.2,
+    "odds_draw": 3.2,
+    "odds_away": 2.2,
+    "n_simulations": 2000,
+    "seed": 100,
+    "odds_blend": 0.3
+  },
+  "resolved": {
+    "league": "League One",
+    "div": "E2",
+    "home": "AFC Wimbledon",
+    "away": "Wigan",
+    "models": "market-only",
+    "match_date": "2026-08-30 14:00"
+  },
+  "report": {
+    "n": 2000,
+    "ft_model": {
+      "H": 0.2894736842105263,
+      "D": 0.2894736842105263,
+      "A": 0.42105263157894735
+    },
+    "ft_sim": {
+      "H": 0.2885,
+      "D": 0.29,
+      "A": 0.4215
+    },
+    "ht_model": {
+      "H": 0.3,
+      "D": 0.4,
+      "A": 0.3
+    },
+    "ht_sim": {
+      "H": 0.3085,
+      "D": 0.4035,
+      "A": 0.288
+    },
+    "over25_model": 0.46505681818181815,
+    "over25_sim": 0.557,
+    "btts_model": 0.45,
+    "btts_sim": 0.4345,
+    "ht_over15_model": 0.35,
+    "ht_over15_sim": 0.339,
+    "dc_ft": {
+      "1X": 0.5789473684210527,
+      "X2": 0.7105263157894737,
+      "12": 0.7105263157894737
+    },
+    "dc_ht": {
+      "1X": 0.7,
+      "X2": 0.7,
+      "12": 0.6
+    },
+    "top_ft": [
+      [
+        "0-0",
+        331
+      ],
+      [
+        "1-2",
+        227
+      ],
+      [
+        "2-1",
+        152
+      ],
+      [
+        "1-1",
+        135
+      ],
+      [
+        "0-2",
+        130
+      ],
+      [
+        "0-1",
+        108
+      ],
+      [
+        "1-0",
+        92
+      ],
+      [
+        "2-0",
+        90
+      ]
+    ],
+    "top_ht": [
+      [
+        "0-0",
+        482
+      ],
+      [
+        "1-0",
+        432
+      ],
+      [
+        "0-1",
+        408
+      ],
+      [
+        "1-1",
+        325
+      ],
+      [
+        "2-1",
+        94
+      ]
+    ],
+    "xg": {
+      "home": 1.1785,
+      "away": 1.4905,
+      "total": 2.669
+    },
+    "goal_rates": {
+      "home": 1.1785,
+      "away": 1.4905
+    }
+  },
+  "table": [
+    {
+      "Section": "HT Winner",
+      "Selection": "AFC Wimbledon",
+      "Model%": 30.0,
+      "Sim%": 30.9,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Draw",
+      "Model%": 40.0,
+      "Sim%": 40.4,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Wigan",
+      "Model%": 30.0,
+      "Sim%": 28.8,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "1X",
+      "Model%": 70.0,
+      "Sim%": 71.2,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "X2",
+      "Model%": 70.0,
+      "Sim%": 69.2,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "12",
+      "Model%": 60.0,
+      "Sim%": 59.7,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Over 1.5",
+      "Model%": 35.0,
+      "Sim%": 33.9,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Under 1.5",
+      "Model%": 65.0,
+      "Sim%": 66.1,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "AFC Wimbledon",
+      "Model%": 28.9,
+      "Sim%": 28.8,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Draw",
+      "Model%": 28.9,
+      "Sim%": 29.0,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Wigan",
+      "Model%": 42.1,
+      "Sim%": 42.1,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "1X",
+      "Model%": 57.9,
+      "Sim%": 57.9,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 71.1,
+      "Sim%": 71.2,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "12",
+      "Model%": 71.1,
+      "Sim%": 71.0,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Over 2.5",
+      "Model%": 46.5,
+      "Sim%": 55.7,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Under 2.5",
+      "Model%": 53.5,
+      "Sim%": 44.3,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "Yes",
+      "Model%": 45.0,
+      "Sim%": 43.5,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 55.0,
+      "Sim%": 56.5,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    }
+  ],
+  "locked_tip": {
+    "status": "SECURED LOCK",
+    "section": "FT DC",
+    "selection": "X2",
+    "model": 71.1,
+    "sim": 71.2,
+    "agree": "1 eng",
+    "verdict": "HARD YES"
+  },
+  "backends": {
+    "ft_result": [
+      "market"
+    ],
+    "ht_result": [
+      "market"
+    ],
+    "over25": [
+      "market"
+    ],
+    "btts": [
+      "market"
+    ],
+    "ht_over15": [
+      "market"
+    ]
+  },
+  "generated_at": "2026-08-30T08:42:31.260455Z"
+}

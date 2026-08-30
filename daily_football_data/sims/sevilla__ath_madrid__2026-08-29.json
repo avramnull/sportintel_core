@@ -1,0 +1,299 @@
+{
+  "match": {
+    "league": "SP1",
+    "home_team": "Sevilla",
+    "away_team": "Ath Madrid",
+    "match_date": "2026-08-29 20:30",
+    "odds_home": 3.6,
+    "odds_draw": 3.3,
+    "odds_away": 2.1,
+    "n_simulations": 2000,
+    "seed": 213,
+    "odds_blend": 0.3
+  },
+  "resolved": {
+    "league": "La Liga",
+    "div": "SP1",
+    "home": "Sevilla",
+    "away": "Atletico Madrid",
+    "models": "market-only",
+    "match_date": "2026-08-29 20:30"
+  },
+  "report": {
+    "n": 2000,
+    "ft_model": {
+      "H": 0.2627986348122867,
+      "D": 0.2866894197952219,
+      "A": 0.45051194539249145
+    },
+    "ft_sim": {
+      "H": 0.2505,
+      "D": 0.2925,
+      "A": 0.457
+    },
+    "ht_model": {
+      "H": 0.3,
+      "D": 0.4,
+      "A": 0.3
+    },
+    "ht_sim": {
+      "H": 0.294,
+      "D": 0.4075,
+      "A": 0.2985
+    },
+    "over25_model": 0.46309523809523806,
+    "over25_sim": 0.5535,
+    "btts_model": 0.45,
+    "btts_sim": 0.448,
+    "ht_over15_model": 0.35,
+    "ht_over15_sim": 0.341,
+    "dc_ft": {
+      "1X": 0.5494880546075086,
+      "X2": 0.7372013651877134,
+      "12": 0.7133105802047781
+    },
+    "dc_ht": {
+      "1X": 0.7,
+      "X2": 0.7,
+      "12": 0.6
+    },
+    "top_ft": [
+      [
+        "0-0",
+        307
+      ],
+      [
+        "1-2",
+        248
+      ],
+      [
+        "1-1",
+        154
+      ],
+      [
+        "0-1",
+        132
+      ],
+      [
+        "0-2",
+        131
+      ],
+      [
+        "2-1",
+        126
+      ],
+      [
+        "0-5",
+        92
+      ],
+      [
+        "1-0",
+        92
+      ]
+    ],
+    "top_ht": [
+      [
+        "0-0",
+        483
+      ],
+      [
+        "0-1",
+        429
+      ],
+      [
+        "1-0",
+        406
+      ],
+      [
+        "1-1",
+        332
+      ],
+      [
+        "2-0",
+        94
+      ]
+    ],
+    "xg": {
+      "home": 1.1085,
+      "away": 1.582,
+      "total": 2.6905
+    },
+    "goal_rates": {
+      "home": 1.1085,
+      "away": 1.582
+    }
+  },
+  "table": [
+    {
+      "Section": "HT Winner",
+      "Selection": "Sevilla",
+      "Model%": 30.0,
+      "Sim%": 29.4,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Draw",
+      "Model%": 40.0,
+      "Sim%": 40.8,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Atletico Madrid",
+      "Model%": 30.0,
+      "Sim%": 29.8,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "1X",
+      "Model%": 70.0,
+      "Sim%": 70.2,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "X2",
+      "Model%": 70.0,
+      "Sim%": 70.6,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "12",
+      "Model%": 60.0,
+      "Sim%": 59.2,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Over 1.5",
+      "Model%": 35.0,
+      "Sim%": 34.1,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Under 1.5",
+      "Model%": 65.0,
+      "Sim%": 65.9,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Sevilla",
+      "Model%": 26.3,
+      "Sim%": 25.1,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Draw",
+      "Model%": 28.7,
+      "Sim%": 29.2,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Atletico Madrid",
+      "Model%": 45.1,
+      "Sim%": 45.7,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "1X",
+      "Model%": 54.9,
+      "Sim%": 54.3,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 73.7,
+      "Sim%": 75.0,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "12",
+      "Model%": 71.3,
+      "Sim%": 70.8,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Over 2.5",
+      "Model%": 46.3,
+      "Sim%": 55.4,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Under 2.5",
+      "Model%": 53.7,
+      "Sim%": 44.6,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "Yes",
+      "Model%": 45.0,
+      "Sim%": 44.8,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 55.0,
+      "Sim%": 55.2,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    }
+  ],
+  "locked_tip": {
+    "status": "SECURED LOCK",
+    "section": "FT DC",
+    "selection": "X2",
+    "model": 73.7,
+    "sim": 75.0,
+    "agree": "1 eng",
+    "verdict": "HARD YES"
+  },
+  "backends": {
+    "ft_result": [
+      "market"
+    ],
+    "ht_result": [
+      "market"
+    ],
+    "over25": [
+      "market"
+    ],
+    "btts": [
+      "market"
+    ],
+    "ht_over15": [
+      "market"
+    ]
+  },
+  "generated_at": "2026-08-30T08:42:35.857914Z"
+}

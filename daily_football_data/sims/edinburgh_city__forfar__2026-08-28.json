@@ -1,0 +1,299 @@
+{
+  "match": {
+    "league": "SC3",
+    "home_team": "Edinburgh City",
+    "away_team": "Forfar",
+    "match_date": "2026-08-28 19:45",
+    "odds_home": 1.6,
+    "odds_draw": 3.7,
+    "odds_away": 4.75,
+    "n_simulations": 2000,
+    "seed": 204,
+    "odds_blend": 0.3
+  },
+  "resolved": {
+    "league": "Scottish League Two",
+    "div": "SC3",
+    "home": "Edinburgh City",
+    "away": "Forfar",
+    "models": "market-only",
+    "match_date": "2026-08-28 19:45"
+  },
+  "report": {
+    "n": 2000,
+    "ft_model": {
+      "H": 0.5652034089081847,
+      "D": 0.244412284933269,
+      "A": 0.1903843061585464
+    },
+    "ft_sim": {
+      "H": 0.557,
+      "D": 0.2465,
+      "A": 0.1965
+    },
+    "ht_model": {
+      "H": 0.3,
+      "D": 0.4,
+      "A": 0.3
+    },
+    "ht_sim": {
+      "H": 0.297,
+      "D": 0.4075,
+      "A": 0.2955
+    },
+    "over25_model": 0.475328947368421,
+    "over25_sim": 0.5705,
+    "btts_model": 0.45,
+    "btts_sim": 0.44,
+    "ht_over15_model": 0.35,
+    "ht_over15_sim": 0.331,
+    "dc_ft": {
+      "1X": 0.8096156938414536,
+      "X2": 0.4347965910918154,
+      "12": 0.7555877150667311
+    },
+    "dc_ht": {
+      "1X": 0.7,
+      "X2": 0.7,
+      "12": 0.6
+    },
+    "top_ft": [
+      [
+        "2-1",
+        320
+      ],
+      [
+        "0-0",
+        286
+      ],
+      [
+        "1-0",
+        172
+      ],
+      [
+        "2-0",
+        155
+      ],
+      [
+        "1-1",
+        115
+      ],
+      [
+        "5-0",
+        97
+      ],
+      [
+        "1-2",
+        96
+      ],
+      [
+        "4-0",
+        89
+      ]
+    ],
+    "top_ht": [
+      [
+        "0-0",
+        484
+      ],
+      [
+        "0-1",
+        445
+      ],
+      [
+        "1-0",
+        409
+      ],
+      [
+        "1-1",
+        331
+      ],
+      [
+        "2-1",
+        107
+      ]
+    ],
+    "xg": {
+      "home": 1.71,
+      "away": 0.986,
+      "total": 2.696
+    },
+    "goal_rates": {
+      "home": 1.71,
+      "away": 0.986
+    }
+  },
+  "table": [
+    {
+      "Section": "HT Winner",
+      "Selection": "Edinburgh City",
+      "Model%": 30.0,
+      "Sim%": 29.7,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Draw",
+      "Model%": 40.0,
+      "Sim%": 40.8,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Forfar",
+      "Model%": 30.0,
+      "Sim%": 29.5,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "1X",
+      "Model%": 70.0,
+      "Sim%": 70.4,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "X2",
+      "Model%": 70.0,
+      "Sim%": 70.3,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "12",
+      "Model%": 60.0,
+      "Sim%": 59.2,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Over 1.5",
+      "Model%": 35.0,
+      "Sim%": 33.1,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Under 1.5",
+      "Model%": 65.0,
+      "Sim%": 66.9,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Edinburgh City",
+      "Model%": 56.5,
+      "Sim%": 55.7,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Draw",
+      "Model%": 24.4,
+      "Sim%": 24.6,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Forfar",
+      "Model%": 19.0,
+      "Sim%": 19.7,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "1X",
+      "Model%": 81.0,
+      "Sim%": 80.4,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 43.5,
+      "Sim%": 44.3,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "12",
+      "Model%": 75.6,
+      "Sim%": 75.4,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Over 2.5",
+      "Model%": 47.5,
+      "Sim%": 57.0,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Under 2.5",
+      "Model%": 52.5,
+      "Sim%": 43.0,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "Yes",
+      "Model%": 45.0,
+      "Sim%": 44.0,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 55.0,
+      "Sim%": 56.0,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    }
+  ],
+  "locked_tip": {
+    "status": "SECURED LOCK",
+    "section": "FT DC",
+    "selection": "1X",
+    "model": 81.0,
+    "sim": 80.4,
+    "agree": "1 eng",
+    "verdict": "HARD YES"
+  },
+  "backends": {
+    "ft_result": [
+      "market"
+    ],
+    "ht_result": [
+      "market"
+    ],
+    "over25": [
+      "market"
+    ],
+    "btts": [
+      "market"
+    ],
+    "ht_over15": [
+      "market"
+    ]
+  },
+  "generated_at": "2026-08-30T08:42:35.492746Z"
+}

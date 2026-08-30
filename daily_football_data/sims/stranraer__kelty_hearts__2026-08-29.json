@@ -1,0 +1,299 @@
+{
+  "match": {
+    "league": "SC3",
+    "home_team": "Stranraer",
+    "away_team": "Kelty Hearts",
+    "match_date": "2026-08-29 15:00",
+    "odds_home": 2.05,
+    "odds_draw": 3.4,
+    "odds_away": 3.0,
+    "n_simulations": 2000,
+    "seed": 208,
+    "odds_blend": 0.3
+  },
+  "resolved": {
+    "league": "Scottish League Two",
+    "div": "SC3",
+    "home": "Stranraer",
+    "away": "Kelty Hearts",
+    "models": "market-only",
+    "match_date": "2026-08-29 15:00"
+  },
+  "report": {
+    "n": 2000,
+    "ft_model": {
+      "H": 0.437392795883362,
+      "D": 0.2637221269296741,
+      "A": 0.29888507718696394
+    },
+    "ft_sim": {
+      "H": 0.4435,
+      "D": 0.261,
+      "A": 0.2955
+    },
+    "ht_model": {
+      "H": 0.3,
+      "D": 0.4,
+      "A": 0.3
+    },
+    "ht_sim": {
+      "H": 0.3035,
+      "D": 0.4025,
+      "A": 0.294
+    },
+    "over25_model": 0.47317073170731705,
+    "over25_sim": 0.5795,
+    "btts_model": 0.45,
+    "btts_sim": 0.447,
+    "ht_over15_model": 0.35,
+    "ht_over15_sim": 0.3445,
+    "dc_ft": {
+      "1X": 0.7011149228130361,
+      "X2": 0.5626072041166381,
+      "12": 0.7362778730703259
+    },
+    "dc_ht": {
+      "1X": 0.7,
+      "X2": 0.7,
+      "12": 0.6
+    },
+    "top_ft": [
+      [
+        "0-0",
+        283
+      ],
+      [
+        "2-1",
+        248
+      ],
+      [
+        "1-2",
+        159
+      ],
+      [
+        "1-0",
+        137
+      ],
+      [
+        "1-1",
+        124
+      ],
+      [
+        "2-0",
+        115
+      ],
+      [
+        "0-2",
+        106
+      ],
+      [
+        "4-0",
+        85
+      ]
+    ],
+    "top_ht": [
+      [
+        "0-0",
+        491
+      ],
+      [
+        "1-0",
+        424
+      ],
+      [
+        "0-1",
+        396
+      ],
+      [
+        "1-1",
+        314
+      ],
+      [
+        "0-2",
+        103
+      ]
+    ],
+    "xg": {
+      "home": 1.5275,
+      "away": 1.2245,
+      "total": 2.752
+    },
+    "goal_rates": {
+      "home": 1.5275,
+      "away": 1.2245
+    }
+  },
+  "table": [
+    {
+      "Section": "HT Winner",
+      "Selection": "Stranraer",
+      "Model%": 30.0,
+      "Sim%": 30.3,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Draw",
+      "Model%": 40.0,
+      "Sim%": 40.2,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Kelty Hearts",
+      "Model%": 30.0,
+      "Sim%": 29.4,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "1X",
+      "Model%": 70.0,
+      "Sim%": 70.6,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "X2",
+      "Model%": 70.0,
+      "Sim%": 69.7,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "12",
+      "Model%": 60.0,
+      "Sim%": 59.7,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Over 1.5",
+      "Model%": 35.0,
+      "Sim%": 34.4,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Under 1.5",
+      "Model%": 65.0,
+      "Sim%": 65.5,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Stranraer",
+      "Model%": 43.7,
+      "Sim%": 44.4,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Draw",
+      "Model%": 26.4,
+      "Sim%": 26.1,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Kelty Hearts",
+      "Model%": 29.9,
+      "Sim%": 29.5,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "1X",
+      "Model%": 70.1,
+      "Sim%": 70.5,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 56.3,
+      "Sim%": 55.6,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "12",
+      "Model%": 73.6,
+      "Sim%": 73.9,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Over 2.5",
+      "Model%": 47.3,
+      "Sim%": 58.0,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Under 2.5",
+      "Model%": 52.7,
+      "Sim%": 42.0,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "Yes",
+      "Model%": 45.0,
+      "Sim%": 44.7,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 55.0,
+      "Sim%": 55.3,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    }
+  ],
+  "locked_tip": {
+    "status": "SECURED LOCK",
+    "section": "FT DC",
+    "selection": "12",
+    "model": 73.6,
+    "sim": 73.9,
+    "agree": "1 eng",
+    "verdict": "HARD YES"
+  },
+  "backends": {
+    "ft_result": [
+      "market"
+    ],
+    "ht_result": [
+      "market"
+    ],
+    "over25": [
+      "market"
+    ],
+    "btts": [
+      "market"
+    ],
+    "ht_over15": [
+      "market"
+    ]
+  },
+  "generated_at": "2026-08-30T08:42:35.659825Z"
+}

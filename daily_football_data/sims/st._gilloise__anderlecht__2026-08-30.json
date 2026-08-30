@@ -1,0 +1,299 @@
+{
+  "match": {
+    "league": "B1",
+    "home_team": "St. Gilloise",
+    "away_team": "Anderlecht",
+    "match_date": "2026-08-30 17:30",
+    "odds_home": 1.67,
+    "odds_draw": 3.7,
+    "odds_away": 4.75,
+    "n_simulations": 2000,
+    "seed": 49,
+    "odds_blend": 0.3
+  },
+  "resolved": {
+    "league": "Belgian Pro League",
+    "div": "B1",
+    "home": "St. Gilloise",
+    "away": "Anderlecht",
+    "models": "market-only",
+    "match_date": "2026-08-30 17:30"
+  },
+  "report": {
+    "n": 2000,
+    "ft_model": {
+      "H": 0.5546526123112367,
+      "D": 0.2503432060972338,
+      "A": 0.19500418159152952
+    },
+    "ft_sim": {
+      "H": 0.5655,
+      "D": 0.2495,
+      "A": 0.185
+    },
+    "ht_model": {
+      "H": 0.3,
+      "D": 0.4,
+      "A": 0.3
+    },
+    "ht_sim": {
+      "H": 0.302,
+      "D": 0.3855,
+      "A": 0.3125
+    },
+    "over25_model": 0.4713993066498582,
+    "over25_sim": 0.577,
+    "btts_model": 0.45,
+    "btts_sim": 0.442,
+    "ht_over15_model": 0.35,
+    "ht_over15_sim": 0.317,
+    "dc_ft": {
+      "1X": 0.8049958184084706,
+      "X2": 0.44534738768876336,
+      "12": 0.7496567939027663
+    },
+    "dc_ht": {
+      "1X": 0.7,
+      "X2": 0.7,
+      "12": 0.6
+    },
+    "top_ft": [
+      [
+        "2-1",
+        301
+      ],
+      [
+        "0-0",
+        288
+      ],
+      [
+        "2-0",
+        170
+      ],
+      [
+        "1-0",
+        160
+      ],
+      [
+        "1-1",
+        123
+      ],
+      [
+        "3-0",
+        120
+      ],
+      [
+        "4-0",
+        92
+      ],
+      [
+        "3-2",
+        89
+      ]
+    ],
+    "top_ht": [
+      [
+        "0-0",
+        465
+      ],
+      [
+        "0-1",
+        453
+      ],
+      [
+        "1-0",
+        448
+      ],
+      [
+        "1-1",
+        306
+      ],
+      [
+        "0-2",
+        91
+      ]
+    ],
+    "xg": {
+      "home": 1.7605,
+      "away": 0.9825,
+      "total": 2.743
+    },
+    "goal_rates": {
+      "home": 1.7605,
+      "away": 0.9825
+    }
+  },
+  "table": [
+    {
+      "Section": "HT Winner",
+      "Selection": "St. Gilloise",
+      "Model%": 30.0,
+      "Sim%": 30.2,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Draw",
+      "Model%": 40.0,
+      "Sim%": 38.6,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Anderlecht",
+      "Model%": 30.0,
+      "Sim%": 31.2,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "1X",
+      "Model%": 70.0,
+      "Sim%": 68.8,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "X2",
+      "Model%": 70.0,
+      "Sim%": 69.8,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "12",
+      "Model%": 60.0,
+      "Sim%": 61.5,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Over 1.5",
+      "Model%": 35.0,
+      "Sim%": 31.7,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Under 1.5",
+      "Model%": 65.0,
+      "Sim%": 68.3,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "St. Gilloise",
+      "Model%": 55.5,
+      "Sim%": 56.5,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Draw",
+      "Model%": 25.0,
+      "Sim%": 24.9,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Anderlecht",
+      "Model%": 19.5,
+      "Sim%": 18.5,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "1X",
+      "Model%": 80.5,
+      "Sim%": 81.5,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 44.5,
+      "Sim%": 43.5,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "12",
+      "Model%": 75.0,
+      "Sim%": 75.0,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Over 2.5",
+      "Model%": 47.1,
+      "Sim%": 57.7,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Under 2.5",
+      "Model%": 52.9,
+      "Sim%": 42.3,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "Yes",
+      "Model%": 45.0,
+      "Sim%": 44.2,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 55.0,
+      "Sim%": 55.8,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    }
+  ],
+  "locked_tip": {
+    "status": "SECURED LOCK",
+    "section": "FT DC",
+    "selection": "1X",
+    "model": 80.5,
+    "sim": 81.5,
+    "agree": "1 eng",
+    "verdict": "HARD YES"
+  },
+  "backends": {
+    "ft_result": [
+      "market"
+    ],
+    "ht_result": [
+      "market"
+    ],
+    "over25": [
+      "market"
+    ],
+    "btts": [
+      "market"
+    ],
+    "ht_over15": [
+      "market"
+    ]
+  },
+  "generated_at": "2026-08-30T08:42:29.219698Z"
+}

@@ -1,0 +1,299 @@
+{
+  "match": {
+    "league": "N1",
+    "home_team": "Cambuur",
+    "away_team": "Twente",
+    "match_date": "2026-08-30 19:00",
+    "odds_home": 7.5,
+    "odds_draw": 5.75,
+    "odds_away": 1.33,
+    "n_simulations": 2000,
+    "seed": 178,
+    "odds_blend": 0.3
+  },
+  "resolved": {
+    "league": "Eredivisie",
+    "div": "N1",
+    "home": "Cambuur",
+    "away": "Twente",
+    "models": "market-only",
+    "match_date": "2026-08-30 19:00"
+  },
+  "report": {
+    "n": 2000,
+    "ft_model": {
+      "H": 0.1258899543191078,
+      "D": 0.1642042882423145,
+      "A": 0.7099057574385778
+    },
+    "ft_sim": {
+      "H": 0.1225,
+      "D": 0.171,
+      "A": 0.7065
+    },
+    "ht_model": {
+      "H": 0.3,
+      "D": 0.4,
+      "A": 0.3
+    },
+    "ht_sim": {
+      "H": 0.2845,
+      "D": 0.4105,
+      "A": 0.305
+    },
+    "over25_model": 0.482781954887218,
+    "over25_sim": 0.637,
+    "btts_model": 0.45,
+    "btts_sim": 0.458,
+    "ht_over15_model": 0.35,
+    "ht_over15_sim": 0.3385,
+    "dc_ft": {
+      "1X": 0.2900942425614223,
+      "X2": 0.8741100456808922,
+      "12": 0.8357957117576855
+    },
+    "dc_ht": {
+      "1X": 0.7,
+      "X2": 0.7,
+      "12": 0.6
+    },
+    "top_ft": [
+      [
+        "1-2",
+        399
+      ],
+      [
+        "0-2",
+        210
+      ],
+      [
+        "0-0",
+        189
+      ],
+      [
+        "0-1",
+        184
+      ],
+      [
+        "0-5",
+        136
+      ],
+      [
+        "0-4",
+        114
+      ],
+      [
+        "0-3",
+        114
+      ],
+      [
+        "2-3",
+        91
+      ]
+    ],
+    "top_ht": [
+      [
+        "0-0",
+        476
+      ],
+      [
+        "0-1",
+        442
+      ],
+      [
+        "1-0",
+        405
+      ],
+      [
+        "1-1",
+        345
+      ],
+      [
+        "0-2",
+        90
+      ]
+    ],
+    "xg": {
+      "home": 0.874,
+      "away": 2.087,
+      "total": 2.961
+    },
+    "goal_rates": {
+      "home": 0.874,
+      "away": 2.087
+    }
+  },
+  "table": [
+    {
+      "Section": "HT Winner",
+      "Selection": "Cambuur",
+      "Model%": 30.0,
+      "Sim%": 28.4,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Draw",
+      "Model%": 40.0,
+      "Sim%": 41.0,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Twente",
+      "Model%": 30.0,
+      "Sim%": 30.5,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "1X",
+      "Model%": 70.0,
+      "Sim%": 69.5,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "X2",
+      "Model%": 70.0,
+      "Sim%": 71.5,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "12",
+      "Model%": 60.0,
+      "Sim%": 58.9,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Over 1.5",
+      "Model%": 35.0,
+      "Sim%": 33.9,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Under 1.5",
+      "Model%": 65.0,
+      "Sim%": 66.1,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Cambuur",
+      "Model%": 12.6,
+      "Sim%": 12.2,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Draw",
+      "Model%": 16.4,
+      "Sim%": 17.1,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Twente",
+      "Model%": 71.0,
+      "Sim%": 70.7,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "1X",
+      "Model%": 29.0,
+      "Sim%": 29.3,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 87.4,
+      "Sim%": 87.8,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "12",
+      "Model%": 83.6,
+      "Sim%": 82.9,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Over 2.5",
+      "Model%": 48.3,
+      "Sim%": 63.7,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Under 2.5",
+      "Model%": 51.7,
+      "Sim%": 36.3,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "Yes",
+      "Model%": 45.0,
+      "Sim%": 45.8,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 55.0,
+      "Sim%": 54.2,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    }
+  ],
+  "locked_tip": {
+    "status": "SECURED LOCK",
+    "section": "FT DC",
+    "selection": "X2",
+    "model": 87.4,
+    "sim": 87.8,
+    "agree": "1 eng",
+    "verdict": "HARD YES"
+  },
+  "backends": {
+    "ft_result": [
+      "market"
+    ],
+    "ht_result": [
+      "market"
+    ],
+    "over25": [
+      "market"
+    ],
+    "btts": [
+      "market"
+    ],
+    "ht_over15": [
+      "market"
+    ]
+  },
+  "generated_at": "2026-08-30T08:42:34.461831Z"
+}

@@ -1,0 +1,299 @@
+{
+  "match": {
+    "league": "D1",
+    "home_team": "Elversberg",
+    "away_team": "Leverkusen",
+    "match_date": "2026-08-29 14:30",
+    "odds_home": 5.0,
+    "odds_draw": 4.5,
+    "odds_away": 1.57,
+    "n_simulations": 2000,
+    "seed": 52,
+    "odds_blend": 0.3
+  },
+  "resolved": {
+    "league": "Bundesliga",
+    "div": "D1",
+    "home": "Elversberg",
+    "away": "Leverkusen",
+    "models": "market-only",
+    "match_date": "2026-08-29 14:30"
+  },
+  "report": {
+    "n": 2000,
+    "ft_model": {
+      "H": 0.18882801015635442,
+      "D": 0.2098089001737271,
+      "A": 0.6013630896699185
+    },
+    "ft_sim": {
+      "H": 0.2005,
+      "D": 0.201,
+      "A": 0.5985
+    },
+    "ht_model": {
+      "H": 0.3,
+      "D": 0.4,
+      "A": 0.3
+    },
+    "ht_sim": {
+      "H": 0.3055,
+      "D": 0.392,
+      "A": 0.3025
+    },
+    "over25_model": 0.47554140127388533,
+    "over25_sim": 0.611,
+    "btts_model": 0.45,
+    "btts_sim": 0.443,
+    "ht_over15_model": 0.35,
+    "ht_over15_sim": 0.3465,
+    "dc_ft": {
+      "1X": 0.39863691033008153,
+      "X2": 0.8111719898436456,
+      "12": 0.7901910998262729
+    },
+    "dc_ht": {
+      "1X": 0.7,
+      "X2": 0.7,
+      "12": 0.6
+    },
+    "top_ft": [
+      [
+        "1-2",
+        320
+      ],
+      [
+        "0-0",
+        217
+      ],
+      [
+        "0-1",
+        197
+      ],
+      [
+        "0-2",
+        162
+      ],
+      [
+        "2-1",
+        117
+      ],
+      [
+        "0-4",
+        116
+      ],
+      [
+        "0-3",
+        104
+      ],
+      [
+        "1-1",
+        94
+      ]
+    ],
+    "top_ht": [
+      [
+        "0-0",
+        468
+      ],
+      [
+        "0-1",
+        420
+      ],
+      [
+        "1-0",
+        419
+      ],
+      [
+        "1-1",
+        316
+      ],
+      [
+        "2-0",
+        102
+      ]
+    ],
+    "xg": {
+      "home": 1.0065,
+      "away": 1.8225,
+      "total": 2.829
+    },
+    "goal_rates": {
+      "home": 1.0065,
+      "away": 1.8225
+    }
+  },
+  "table": [
+    {
+      "Section": "HT Winner",
+      "Selection": "Elversberg",
+      "Model%": 30.0,
+      "Sim%": 30.6,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Draw",
+      "Model%": 40.0,
+      "Sim%": 39.2,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Leverkusen",
+      "Model%": 30.0,
+      "Sim%": 30.2,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "1X",
+      "Model%": 70.0,
+      "Sim%": 69.8,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "X2",
+      "Model%": 70.0,
+      "Sim%": 69.5,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "12",
+      "Model%": 60.0,
+      "Sim%": 60.8,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Over 1.5",
+      "Model%": 35.0,
+      "Sim%": 34.6,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Under 1.5",
+      "Model%": 65.0,
+      "Sim%": 65.3,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Elversberg",
+      "Model%": 18.9,
+      "Sim%": 20.1,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Draw",
+      "Model%": 21.0,
+      "Sim%": 20.1,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Leverkusen",
+      "Model%": 60.1,
+      "Sim%": 59.9,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "1X",
+      "Model%": 39.9,
+      "Sim%": 40.2,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 81.1,
+      "Sim%": 80.0,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "12",
+      "Model%": 79.0,
+      "Sim%": 79.9,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Over 2.5",
+      "Model%": 47.6,
+      "Sim%": 61.1,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Under 2.5",
+      "Model%": 52.4,
+      "Sim%": 38.9,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "Yes",
+      "Model%": 45.0,
+      "Sim%": 44.3,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 55.0,
+      "Sim%": 55.7,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    }
+  ],
+  "locked_tip": {
+    "status": "SECURED LOCK",
+    "section": "FT DC",
+    "selection": "X2",
+    "model": 81.1,
+    "sim": 80.0,
+    "agree": "1 eng",
+    "verdict": "HARD YES"
+  },
+  "backends": {
+    "ft_result": [
+      "market"
+    ],
+    "ht_result": [
+      "market"
+    ],
+    "over25": [
+      "market"
+    ],
+    "btts": [
+      "market"
+    ],
+    "ht_over15": [
+      "market"
+    ]
+  },
+  "generated_at": "2026-08-30T08:42:29.340258Z"
+}

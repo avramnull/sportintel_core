@@ -1,0 +1,299 @@
+{
+  "match": {
+    "league": "T1",
+    "home_team": "Gaziantep",
+    "away_team": "Rizespor",
+    "match_date": "2026-08-29 19:30",
+    "odds_home": 2.45,
+    "odds_draw": 3.5,
+    "odds_away": 2.57,
+    "n_simulations": 2000,
+    "seed": 233,
+    "odds_blend": 0.3
+  },
+  "resolved": {
+    "league": "S\u00fcper Lig",
+    "div": "T1",
+    "home": "Gaziantep",
+    "away": "Rizespor",
+    "models": "market-only",
+    "match_date": "2026-08-29 19:30"
+  },
+  "report": {
+    "n": 2000,
+    "ft_model": {
+      "H": 0.3768881067605221,
+      "D": 0.26382167473236545,
+      "A": 0.3592902185071125
+    },
+    "ft_sim": {
+      "H": 0.3745,
+      "D": 0.247,
+      "A": 0.3785
+    },
+    "ht_model": {
+      "H": 0.3,
+      "D": 0.4,
+      "A": 0.3
+    },
+    "ht_sim": {
+      "H": 0.3185,
+      "D": 0.3915,
+      "A": 0.29
+    },
+    "over25_model": 0.46959024855078213,
+    "over25_sim": 0.5955,
+    "btts_model": 0.45,
+    "btts_sim": 0.4715,
+    "ht_over15_model": 0.35,
+    "ht_over15_sim": 0.355,
+    "dc_ft": {
+      "1X": 0.6407097814928875,
+      "X2": 0.6231118932394779,
+      "12": 0.7361783252676346
+    },
+    "dc_ht": {
+      "1X": 0.7,
+      "X2": 0.7,
+      "12": 0.6
+    },
+    "top_ft": [
+      [
+        "0-0",
+        261
+      ],
+      [
+        "2-1",
+        213
+      ],
+      [
+        "1-2",
+        199
+      ],
+      [
+        "0-1",
+        123
+      ],
+      [
+        "1-1",
+        115
+      ],
+      [
+        "2-0",
+        113
+      ],
+      [
+        "0-2",
+        105
+      ],
+      [
+        "1-0",
+        92
+      ]
+    ],
+    "top_ht": [
+      [
+        "0-0",
+        460
+      ],
+      [
+        "1-0",
+        429
+      ],
+      [
+        "0-1",
+        401
+      ],
+      [
+        "1-1",
+        323
+      ],
+      [
+        "2-1",
+        108
+      ]
+    ],
+    "xg": {
+      "home": 1.394,
+      "away": 1.4295,
+      "total": 2.8235
+    },
+    "goal_rates": {
+      "home": 1.394,
+      "away": 1.4295
+    }
+  },
+  "table": [
+    {
+      "Section": "HT Winner",
+      "Selection": "Gaziantep",
+      "Model%": 30.0,
+      "Sim%": 31.9,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Draw",
+      "Model%": 40.0,
+      "Sim%": 39.1,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Rizespor",
+      "Model%": 30.0,
+      "Sim%": 29.0,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "1X",
+      "Model%": 70.0,
+      "Sim%": 71.0,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "X2",
+      "Model%": 70.0,
+      "Sim%": 68.2,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "12",
+      "Model%": 60.0,
+      "Sim%": 60.9,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Over 1.5",
+      "Model%": 35.0,
+      "Sim%": 35.5,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Under 1.5",
+      "Model%": 65.0,
+      "Sim%": 64.5,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Gaziantep",
+      "Model%": 37.7,
+      "Sim%": 37.5,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Draw",
+      "Model%": 26.4,
+      "Sim%": 24.7,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Rizespor",
+      "Model%": 35.9,
+      "Sim%": 37.9,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "1X",
+      "Model%": 64.1,
+      "Sim%": 62.1,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 62.3,
+      "Sim%": 62.5,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "12",
+      "Model%": 73.6,
+      "Sim%": 75.3,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Over 2.5",
+      "Model%": 47.0,
+      "Sim%": 59.6,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Under 2.5",
+      "Model%": 53.0,
+      "Sim%": 40.4,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "Yes",
+      "Model%": 45.0,
+      "Sim%": 47.1,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 55.0,
+      "Sim%": 52.8,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    }
+  ],
+  "locked_tip": {
+    "status": "SECURED LOCK",
+    "section": "FT DC",
+    "selection": "12",
+    "model": 73.6,
+    "sim": 75.3,
+    "agree": "1 eng",
+    "verdict": "HARD YES"
+  },
+  "backends": {
+    "ft_result": [
+      "market"
+    ],
+    "ht_result": [
+      "market"
+    ],
+    "over25": [
+      "market"
+    ],
+    "btts": [
+      "market"
+    ],
+    "ht_over15": [
+      "market"
+    ]
+  },
+  "generated_at": "2026-08-30T08:42:36.668827Z"
+}

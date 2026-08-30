@@ -1,0 +1,299 @@
+{
+  "match": {
+    "league": "I2",
+    "home_team": "Virtus Entella",
+    "away_team": "Cesena",
+    "match_date": "2026-08-29 18:00",
+    "odds_home": 2.15,
+    "odds_draw": 3.1,
+    "odds_away": 3.3,
+    "n_simulations": 2000,
+    "seed": 162,
+    "odds_blend": 0.3
+  },
+  "resolved": {
+    "league": "Serie B",
+    "div": "I2",
+    "home": "Virtus Entella",
+    "away": "Cesena",
+    "models": "market-only",
+    "match_date": "2026-08-29 18:00"
+  },
+  "report": {
+    "n": 2000,
+    "ft_model": {
+      "H": 0.42642767819924965,
+      "D": 0.29574822842851184,
+      "A": 0.2778240933722384
+    },
+    "ft_sim": {
+      "H": 0.4295,
+      "D": 0.3015,
+      "A": 0.269
+    },
+    "ht_model": {
+      "H": 0.3,
+      "D": 0.4,
+      "A": 0.3
+    },
+    "ht_sim": {
+      "H": 0.3195,
+      "D": 0.3895,
+      "A": 0.291
+    },
+    "over25_model": 0.4652219873150105,
+    "over25_sim": 0.5655,
+    "btts_model": 0.45,
+    "btts_sim": 0.443,
+    "ht_over15_model": 0.35,
+    "ht_over15_sim": 0.369,
+    "dc_ft": {
+      "1X": 0.7221759066277615,
+      "X2": 0.5735723218007502,
+      "12": 0.704251771571488
+    },
+    "dc_ht": {
+      "1X": 0.7,
+      "X2": 0.7,
+      "12": 0.6
+    },
+    "top_ft": [
+      [
+        "0-0",
+        332
+      ],
+      [
+        "2-1",
+        238
+      ],
+      [
+        "1-2",
+        159
+      ],
+      [
+        "1-1",
+        143
+      ],
+      [
+        "2-0",
+        125
+      ],
+      [
+        "1-0",
+        121
+      ],
+      [
+        "3-0",
+        85
+      ],
+      [
+        "4-0",
+        85
+      ]
+    ],
+    "top_ht": [
+      [
+        "0-0",
+        438
+      ],
+      [
+        "1-0",
+        433
+      ],
+      [
+        "0-1",
+        391
+      ],
+      [
+        "1-1",
+        341
+      ],
+      [
+        "2-1",
+        111
+      ]
+    ],
+    "xg": {
+      "home": 1.501,
+      "away": 1.175,
+      "total": 2.676
+    },
+    "goal_rates": {
+      "home": 1.501,
+      "away": 1.175
+    }
+  },
+  "table": [
+    {
+      "Section": "HT Winner",
+      "Selection": "Virtus Entella",
+      "Model%": 30.0,
+      "Sim%": 31.9,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Draw",
+      "Model%": 40.0,
+      "Sim%": 39.0,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Cesena",
+      "Model%": 30.0,
+      "Sim%": 29.1,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "1X",
+      "Model%": 70.0,
+      "Sim%": 70.9,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "X2",
+      "Model%": 70.0,
+      "Sim%": 68.0,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "12",
+      "Model%": 60.0,
+      "Sim%": 61.1,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Over 1.5",
+      "Model%": 35.0,
+      "Sim%": 36.9,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Under 1.5",
+      "Model%": 65.0,
+      "Sim%": 63.1,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Virtus Entella",
+      "Model%": 42.6,
+      "Sim%": 43.0,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Draw",
+      "Model%": 29.6,
+      "Sim%": 30.1,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Cesena",
+      "Model%": 27.8,
+      "Sim%": 26.9,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "1X",
+      "Model%": 72.2,
+      "Sim%": 73.1,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 57.4,
+      "Sim%": 57.0,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "12",
+      "Model%": 70.4,
+      "Sim%": 69.8,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Over 2.5",
+      "Model%": 46.5,
+      "Sim%": 56.5,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Under 2.5",
+      "Model%": 53.5,
+      "Sim%": 43.5,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "Yes",
+      "Model%": 45.0,
+      "Sim%": 44.3,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 55.0,
+      "Sim%": 55.7,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    }
+  ],
+  "locked_tip": {
+    "status": "SECURED LOCK",
+    "section": "FT DC",
+    "selection": "1X",
+    "model": 72.2,
+    "sim": 73.1,
+    "agree": "1 eng",
+    "verdict": "HARD YES"
+  },
+  "backends": {
+    "ft_result": [
+      "market"
+    ],
+    "ht_result": [
+      "market"
+    ],
+    "over25": [
+      "market"
+    ],
+    "btts": [
+      "market"
+    ],
+    "ht_over15": [
+      "market"
+    ]
+  },
+  "generated_at": "2026-08-30T08:42:33.801784Z"
+}

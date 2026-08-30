@@ -1,0 +1,299 @@
+{
+  "match": {
+    "league": "SP2",
+    "home_team": "Celta B",
+    "away_team": "Castellon",
+    "match_date": "2026-08-31 20:30",
+    "odds_home": 4.2,
+    "odds_draw": 3.7,
+    "odds_away": 1.76,
+    "n_simulations": 2000,
+    "seed": 229,
+    "odds_blend": 0.3
+  },
+  "resolved": {
+    "league": "La Liga 2",
+    "div": "SP2",
+    "home": "Celta B",
+    "away": "Castellon",
+    "models": "market-only",
+    "match_date": "2026-08-31 20:30"
+  },
+  "report": {
+    "n": 2000,
+    "ft_model": {
+      "H": 0.22116560249966033,
+      "D": 0.2510528460806955,
+      "A": 0.5277815514196441
+    },
+    "ft_sim": {
+      "H": 0.255,
+      "D": 0.2355,
+      "A": 0.5095
+    },
+    "ht_model": {
+      "H": 0.3,
+      "D": 0.4,
+      "A": 0.3
+    },
+    "ht_sim": {
+      "H": 0.296,
+      "D": 0.4035,
+      "A": 0.3005
+    },
+    "over25_model": 0.4709415584415584,
+    "over25_sim": 0.602,
+    "btts_model": 0.45,
+    "btts_sim": 0.4525,
+    "ht_over15_model": 0.35,
+    "ht_over15_sim": 0.346,
+    "dc_ft": {
+      "1X": 0.47221844858035583,
+      "X2": 0.7788343975003396,
+      "12": 0.7489471539193044
+    },
+    "dc_ht": {
+      "1X": 0.7,
+      "X2": 0.7,
+      "12": 0.6
+    },
+    "top_ft": [
+      [
+        "1-2",
+        307
+      ],
+      [
+        "0-0",
+        265
+      ],
+      [
+        "0-2",
+        158
+      ],
+      [
+        "0-1",
+        127
+      ],
+      [
+        "2-1",
+        125
+      ],
+      [
+        "1-1",
+        97
+      ],
+      [
+        "0-5",
+        93
+      ],
+      [
+        "0-4",
+        88
+      ]
+    ],
+    "top_ht": [
+      [
+        "0-0",
+        480
+      ],
+      [
+        "0-1",
+        435
+      ],
+      [
+        "1-0",
+        393
+      ],
+      [
+        "1-1",
+        327
+      ],
+      [
+        "2-0",
+        101
+      ]
+    ],
+    "xg": {
+      "home": 1.145,
+      "away": 1.6665,
+      "total": 2.8115
+    },
+    "goal_rates": {
+      "home": 1.145,
+      "away": 1.6665
+    }
+  },
+  "table": [
+    {
+      "Section": "HT Winner",
+      "Selection": "Celta B",
+      "Model%": 30.0,
+      "Sim%": 29.6,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Draw",
+      "Model%": 40.0,
+      "Sim%": 40.4,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Castellon",
+      "Model%": 30.0,
+      "Sim%": 30.0,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "1X",
+      "Model%": 70.0,
+      "Sim%": 70.0,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "X2",
+      "Model%": 70.0,
+      "Sim%": 70.4,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "12",
+      "Model%": 60.0,
+      "Sim%": 59.7,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Over 1.5",
+      "Model%": 35.0,
+      "Sim%": 34.6,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Under 1.5",
+      "Model%": 65.0,
+      "Sim%": 65.4,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Celta B",
+      "Model%": 22.1,
+      "Sim%": 25.5,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Draw",
+      "Model%": 25.1,
+      "Sim%": 23.5,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Castellon",
+      "Model%": 52.8,
+      "Sim%": 50.9,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "1X",
+      "Model%": 47.2,
+      "Sim%": 49.0,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 77.9,
+      "Sim%": 74.5,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "12",
+      "Model%": 74.9,
+      "Sim%": 76.4,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Over 2.5",
+      "Model%": 47.1,
+      "Sim%": 60.2,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Under 2.5",
+      "Model%": 52.9,
+      "Sim%": 39.8,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "Yes",
+      "Model%": 45.0,
+      "Sim%": 45.2,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 55.0,
+      "Sim%": 54.8,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    }
+  ],
+  "locked_tip": {
+    "status": "SECURED LOCK",
+    "section": "FT DC",
+    "selection": "X2",
+    "model": 77.9,
+    "sim": 74.5,
+    "agree": "1 eng",
+    "verdict": "HARD YES"
+  },
+  "backends": {
+    "ft_result": [
+      "market"
+    ],
+    "ht_result": [
+      "market"
+    ],
+    "over25": [
+      "market"
+    ],
+    "btts": [
+      "market"
+    ],
+    "ht_over15": [
+      "market"
+    ]
+  },
+  "generated_at": "2026-08-30T08:42:36.508562Z"
+}

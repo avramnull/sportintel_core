@@ -1,0 +1,299 @@
+{
+  "match": {
+    "league": "EC",
+    "home_team": "Fylde",
+    "away_team": "Forest Green",
+    "match_date": "2026-08-28 19:45",
+    "odds_home": 2.63,
+    "odds_draw": 3.7,
+    "odds_away": 2.25,
+    "n_simulations": 2000,
+    "seed": 117,
+    "odds_blend": 0.3
+  },
+  "resolved": {
+    "league": "National League",
+    "div": "EC",
+    "home": "Fylde",
+    "away": "Forest Green",
+    "models": "market-only",
+    "match_date": "2026-08-28 19:45"
+  },
+  "report": {
+    "n": 2000,
+    "ft_model": {
+      "H": 0.34725843118443284,
+      "D": 0.2468350470310968,
+      "A": 0.40590652178447034
+    },
+    "ft_sim": {
+      "H": 0.36,
+      "D": 0.2455,
+      "A": 0.3945
+    },
+    "ht_model": {
+      "H": 0.3,
+      "D": 0.4,
+      "A": 0.3
+    },
+    "ht_sim": {
+      "H": 0.283,
+      "D": 0.399,
+      "A": 0.318
+    },
+    "over25_model": 0.47370088719898606,
+    "over25_sim": 0.586,
+    "btts_model": 0.45,
+    "btts_sim": 0.4315,
+    "ht_over15_model": 0.35,
+    "ht_over15_sim": 0.342,
+    "dc_ft": {
+      "1X": 0.5940934782155296,
+      "X2": 0.6527415688155671,
+      "12": 0.7531649529689032
+    },
+    "dc_ht": {
+      "1X": 0.7,
+      "X2": 0.7,
+      "12": 0.6
+    },
+    "top_ft": [
+      [
+        "0-0",
+        274
+      ],
+      [
+        "2-1",
+        212
+      ],
+      [
+        "1-2",
+        193
+      ],
+      [
+        "0-2",
+        134
+      ],
+      [
+        "1-1",
+        113
+      ],
+      [
+        "0-1",
+        108
+      ],
+      [
+        "1-0",
+        100
+      ],
+      [
+        "2-0",
+        99
+      ]
+    ],
+    "top_ht": [
+      [
+        "0-0",
+        459
+      ],
+      [
+        "0-1",
+        442
+      ],
+      [
+        "1-0",
+        415
+      ],
+      [
+        "1-1",
+        339
+      ],
+      [
+        "0-2",
+        103
+      ]
+    ],
+    "xg": {
+      "home": 1.315,
+      "away": 1.435,
+      "total": 2.75
+    },
+    "goal_rates": {
+      "home": 1.315,
+      "away": 1.435
+    }
+  },
+  "table": [
+    {
+      "Section": "HT Winner",
+      "Selection": "Fylde",
+      "Model%": 30.0,
+      "Sim%": 28.3,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Draw",
+      "Model%": 40.0,
+      "Sim%": 39.9,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Forest Green",
+      "Model%": 30.0,
+      "Sim%": 31.8,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "1X",
+      "Model%": 70.0,
+      "Sim%": 68.2,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "X2",
+      "Model%": 70.0,
+      "Sim%": 71.7,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "12",
+      "Model%": 60.0,
+      "Sim%": 60.1,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Over 1.5",
+      "Model%": 35.0,
+      "Sim%": 34.2,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Under 1.5",
+      "Model%": 65.0,
+      "Sim%": 65.8,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Fylde",
+      "Model%": 34.7,
+      "Sim%": 36.0,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Draw",
+      "Model%": 24.7,
+      "Sim%": 24.6,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Forest Green",
+      "Model%": 40.6,
+      "Sim%": 39.5,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "1X",
+      "Model%": 59.4,
+      "Sim%": 60.5,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 65.3,
+      "Sim%": 64.0,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "12",
+      "Model%": 75.3,
+      "Sim%": 75.4,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Over 2.5",
+      "Model%": 47.4,
+      "Sim%": 58.6,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Under 2.5",
+      "Model%": 52.6,
+      "Sim%": 41.4,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "Yes",
+      "Model%": 45.0,
+      "Sim%": 43.1,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 55.0,
+      "Sim%": 56.9,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    }
+  ],
+  "locked_tip": {
+    "status": "SECURED LOCK",
+    "section": "FT DC",
+    "selection": "12",
+    "model": 75.3,
+    "sim": 75.4,
+    "agree": "1 eng",
+    "verdict": "HARD YES"
+  },
+  "backends": {
+    "ft_result": [
+      "market"
+    ],
+    "ht_result": [
+      "market"
+    ],
+    "over25": [
+      "market"
+    ],
+    "btts": [
+      "market"
+    ],
+    "ht_over15": [
+      "market"
+    ]
+  },
+  "generated_at": "2026-08-30T08:42:31.944453Z"
+}

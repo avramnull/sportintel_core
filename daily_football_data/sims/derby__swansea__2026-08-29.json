@@ -1,0 +1,299 @@
+{
+  "match": {
+    "league": "E1",
+    "home_team": "Derby",
+    "away_team": "Swansea",
+    "match_date": "2026-08-29 12:30",
+    "odds_home": 2.2,
+    "odds_draw": 3.25,
+    "odds_away": 3.2,
+    "n_simulations": 2000,
+    "seed": 80,
+    "odds_blend": 0.3
+  },
+  "resolved": {
+    "league": "Championship",
+    "div": "E1",
+    "home": "Derby",
+    "away": "Swansea",
+    "models": "market-only",
+    "match_date": "2026-08-29 12:30"
+  },
+  "report": {
+    "n": 2000,
+    "ft_model": {
+      "H": 0.42293615290768605,
+      "D": 0.2862952419682798,
+      "A": 0.2907686051240342
+    },
+    "ft_sim": {
+      "H": 0.4275,
+      "D": 0.283,
+      "A": 0.2895
+    },
+    "ht_model": {
+      "H": 0.3,
+      "D": 0.4,
+      "A": 0.3
+    },
+    "ht_sim": {
+      "H": 0.2905,
+      "D": 0.4085,
+      "A": 0.301
+    },
+    "over25_model": 0.46505681818181815,
+    "over25_sim": 0.556,
+    "btts_model": 0.45,
+    "btts_sim": 0.4395,
+    "ht_over15_model": 0.35,
+    "ht_over15_sim": 0.3325,
+    "dc_ft": {
+      "1X": 0.7092313948759659,
+      "X2": 0.577063847092314,
+      "12": 0.7137047580317202
+    },
+    "dc_ht": {
+      "1X": 0.7,
+      "X2": 0.7,
+      "12": 0.6
+    },
+    "top_ft": [
+      [
+        "0-0",
+        336
+      ],
+      [
+        "2-1",
+        221
+      ],
+      [
+        "1-2",
+        157
+      ],
+      [
+        "1-1",
+        137
+      ],
+      [
+        "2-0",
+        126
+      ],
+      [
+        "1-0",
+        121
+      ],
+      [
+        "0-1",
+        88
+      ],
+      [
+        "4-0",
+        87
+      ]
+    ],
+    "top_ht": [
+      [
+        "0-0",
+        516
+      ],
+      [
+        "0-1",
+        418
+      ],
+      [
+        "1-0",
+        401
+      ],
+      [
+        "1-1",
+        301
+      ],
+      [
+        "0-2",
+        97
+      ]
+    ],
+    "xg": {
+      "home": 1.485,
+      "away": 1.172,
+      "total": 2.657
+    },
+    "goal_rates": {
+      "home": 1.485,
+      "away": 1.172
+    }
+  },
+  "table": [
+    {
+      "Section": "HT Winner",
+      "Selection": "Derby",
+      "Model%": 30.0,
+      "Sim%": 29.0,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Draw",
+      "Model%": 40.0,
+      "Sim%": 40.8,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Swansea",
+      "Model%": 30.0,
+      "Sim%": 30.1,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "1X",
+      "Model%": 70.0,
+      "Sim%": 69.9,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "X2",
+      "Model%": 70.0,
+      "Sim%": 71.0,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "12",
+      "Model%": 60.0,
+      "Sim%": 59.1,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Over 1.5",
+      "Model%": 35.0,
+      "Sim%": 33.2,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Under 1.5",
+      "Model%": 65.0,
+      "Sim%": 66.8,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Derby",
+      "Model%": 42.3,
+      "Sim%": 42.8,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Draw",
+      "Model%": 28.6,
+      "Sim%": 28.3,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Swansea",
+      "Model%": 29.1,
+      "Sim%": 28.9,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "1X",
+      "Model%": 70.9,
+      "Sim%": 71.0,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 57.7,
+      "Sim%": 57.2,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "12",
+      "Model%": 71.4,
+      "Sim%": 71.7,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Over 2.5",
+      "Model%": 46.5,
+      "Sim%": 55.6,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Under 2.5",
+      "Model%": 53.5,
+      "Sim%": 44.4,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "Yes",
+      "Model%": 45.0,
+      "Sim%": 44.0,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 55.0,
+      "Sim%": 56.0,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    }
+  ],
+  "locked_tip": {
+    "status": "SECURED LOCK",
+    "section": "FT DC",
+    "selection": "12",
+    "model": 71.4,
+    "sim": 71.7,
+    "agree": "1 eng",
+    "verdict": "HARD YES"
+  },
+  "backends": {
+    "ft_result": [
+      "market"
+    ],
+    "ht_result": [
+      "market"
+    ],
+    "over25": [
+      "market"
+    ],
+    "btts": [
+      "market"
+    ],
+    "ht_over15": [
+      "market"
+    ]
+  },
+  "generated_at": "2026-08-30T08:42:30.451485Z"
+}

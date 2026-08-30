@@ -1,0 +1,299 @@
+{
+  "match": {
+    "league": "SC2",
+    "home_team": "Airdrie Utd",
+    "away_team": "East Fife",
+    "match_date": "2026-08-29 15:00",
+    "odds_home": 1.8,
+    "odds_draw": 3.5,
+    "odds_away": 3.7,
+    "n_simulations": 2000,
+    "seed": 199,
+    "odds_blend": 0.3
+  },
+  "resolved": {
+    "league": "Scottish League One",
+    "div": "SC2",
+    "home": "Airdrie Utd",
+    "away": "East Fife",
+    "models": "market-only",
+    "match_date": "2026-08-29 15:00"
+  },
+  "report": {
+    "n": 2000,
+    "ft_model": {
+      "H": 0.49980702431493634,
+      "D": 0.2570436125048244,
+      "A": 0.24314936318023925
+    },
+    "ft_sim": {
+      "H": 0.4915,
+      "D": 0.263,
+      "A": 0.2455
+    },
+    "ht_model": {
+      "H": 0.3,
+      "D": 0.4,
+      "A": 0.3
+    },
+    "ht_sim": {
+      "H": 0.2845,
+      "D": 0.408,
+      "A": 0.3075
+    },
+    "over25_model": 0.4738738738738738,
+    "over25_sim": 0.5885,
+    "btts_model": 0.45,
+    "btts_sim": 0.462,
+    "ht_over15_model": 0.35,
+    "ht_over15_sim": 0.34,
+    "dc_ft": {
+      "1X": 0.7568506368197607,
+      "X2": 0.5001929756850636,
+      "12": 0.7429563874951756
+    },
+    "dc_ht": {
+      "1X": 0.7,
+      "X2": 0.7,
+      "12": 0.6
+    },
+    "top_ft": [
+      [
+        "2-1",
+        297
+      ],
+      [
+        "0-0",
+        287
+      ],
+      [
+        "1-0",
+        138
+      ],
+      [
+        "1-2",
+        136
+      ],
+      [
+        "1-1",
+        127
+      ],
+      [
+        "2-0",
+        127
+      ],
+      [
+        "3-0",
+        88
+      ],
+      [
+        "5-0",
+        86
+      ]
+    ],
+    "top_ht": [
+      [
+        "0-0",
+        486
+      ],
+      [
+        "0-1",
+        439
+      ],
+      [
+        "1-0",
+        395
+      ],
+      [
+        "1-1",
+        330
+      ],
+      [
+        "0-2",
+        94
+      ]
+    ],
+    "xg": {
+      "home": 1.62,
+      "away": 1.133,
+      "total": 2.753
+    },
+    "goal_rates": {
+      "home": 1.62,
+      "away": 1.133
+    }
+  },
+  "table": [
+    {
+      "Section": "HT Winner",
+      "Selection": "Airdrie Utd",
+      "Model%": 30.0,
+      "Sim%": 28.4,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Draw",
+      "Model%": 40.0,
+      "Sim%": 40.8,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "East Fife",
+      "Model%": 30.0,
+      "Sim%": 30.8,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "1X",
+      "Model%": 70.0,
+      "Sim%": 69.2,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "X2",
+      "Model%": 70.0,
+      "Sim%": 71.5,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "12",
+      "Model%": 60.0,
+      "Sim%": 59.2,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Over 1.5",
+      "Model%": 35.0,
+      "Sim%": 34.0,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Under 1.5",
+      "Model%": 65.0,
+      "Sim%": 66.0,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Airdrie Utd",
+      "Model%": 50.0,
+      "Sim%": 49.1,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Draw",
+      "Model%": 25.7,
+      "Sim%": 26.3,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "East Fife",
+      "Model%": 24.3,
+      "Sim%": 24.6,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "1X",
+      "Model%": 75.7,
+      "Sim%": 75.4,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 50.0,
+      "Sim%": 50.8,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "12",
+      "Model%": 74.3,
+      "Sim%": 73.7,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Over 2.5",
+      "Model%": 47.4,
+      "Sim%": 58.9,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Under 2.5",
+      "Model%": 52.6,
+      "Sim%": 41.1,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "Yes",
+      "Model%": 45.0,
+      "Sim%": 46.2,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 55.0,
+      "Sim%": 53.8,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    }
+  ],
+  "locked_tip": {
+    "status": "SECURED LOCK",
+    "section": "FT DC",
+    "selection": "1X",
+    "model": 75.7,
+    "sim": 75.4,
+    "agree": "1 eng",
+    "verdict": "HARD YES"
+  },
+  "backends": {
+    "ft_result": [
+      "market"
+    ],
+    "ht_result": [
+      "market"
+    ],
+    "over25": [
+      "market"
+    ],
+    "btts": [
+      "market"
+    ],
+    "ht_over15": [
+      "market"
+    ]
+  },
+  "generated_at": "2026-08-30T08:42:35.294168Z"
+}

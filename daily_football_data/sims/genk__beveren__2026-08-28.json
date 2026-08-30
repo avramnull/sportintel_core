@@ -1,0 +1,299 @@
+{
+  "match": {
+    "league": "B1",
+    "home_team": "Genk",
+    "away_team": "Beveren",
+    "match_date": "2026-08-28 19:45",
+    "odds_home": 1.42,
+    "odds_draw": 4.1,
+    "odds_away": 6.0,
+    "n_simulations": 2000,
+    "seed": 42,
+    "odds_blend": 0.3
+  },
+  "resolved": {
+    "league": "Belgian Pro League",
+    "div": "B1",
+    "home": "Genk",
+    "away": "Beveren",
+    "models": "market-only",
+    "match_date": "2026-08-28 19:45"
+  },
+  "report": {
+    "n": 2000,
+    "ft_model": {
+      "H": 0.6317086949822814,
+      "D": 0.2187869138719121,
+      "A": 0.14950439114580658
+    },
+    "ft_sim": {
+      "H": 0.627,
+      "D": 0.217,
+      "A": 0.156
+    },
+    "ht_model": {
+      "H": 0.3,
+      "D": 0.4,
+      "A": 0.3
+    },
+    "ht_sim": {
+      "H": 0.303,
+      "D": 0.41,
+      "A": 0.287
+    },
+    "over25_model": 0.4806338028169014,
+    "over25_sim": 0.6095,
+    "btts_model": 0.45,
+    "btts_sim": 0.474,
+    "ht_over15_model": 0.35,
+    "ht_over15_sim": 0.329,
+    "dc_ft": {
+      "1X": 0.8504956088541935,
+      "X2": 0.3682913050177187,
+      "12": 0.781213086128088
+    },
+    "dc_ht": {
+      "1X": 0.7,
+      "X2": 0.7,
+      "12": 0.6
+    },
+    "top_ft": [
+      [
+        "2-1",
+        340
+      ],
+      [
+        "0-0",
+        231
+      ],
+      [
+        "2-0",
+        182
+      ],
+      [
+        "1-0",
+        171
+      ],
+      [
+        "3-0",
+        117
+      ],
+      [
+        "3-2",
+        111
+      ],
+      [
+        "1-1",
+        107
+      ],
+      [
+        "5-0",
+        94
+      ]
+    ],
+    "top_ht": [
+      [
+        "0-0",
+        502
+      ],
+      [
+        "1-0",
+        433
+      ],
+      [
+        "0-1",
+        407
+      ],
+      [
+        "1-1",
+        318
+      ],
+      [
+        "2-0",
+        87
+      ]
+    ],
+    "xg": {
+      "home": 1.892,
+      "away": 0.963,
+      "total": 2.855
+    },
+    "goal_rates": {
+      "home": 1.892,
+      "away": 0.963
+    }
+  },
+  "table": [
+    {
+      "Section": "HT Winner",
+      "Selection": "Genk",
+      "Model%": 30.0,
+      "Sim%": 30.3,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Draw",
+      "Model%": 40.0,
+      "Sim%": 41.0,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Beveren",
+      "Model%": 30.0,
+      "Sim%": 28.7,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "1X",
+      "Model%": 70.0,
+      "Sim%": 71.3,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "X2",
+      "Model%": 70.0,
+      "Sim%": 69.7,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "12",
+      "Model%": 60.0,
+      "Sim%": 59.0,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Over 1.5",
+      "Model%": 35.0,
+      "Sim%": 32.9,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Under 1.5",
+      "Model%": 65.0,
+      "Sim%": 67.1,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Genk",
+      "Model%": 63.2,
+      "Sim%": 62.7,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Draw",
+      "Model%": 21.9,
+      "Sim%": 21.7,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Beveren",
+      "Model%": 15.0,
+      "Sim%": 15.6,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "1X",
+      "Model%": 85.0,
+      "Sim%": 84.4,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 36.8,
+      "Sim%": 37.3,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "12",
+      "Model%": 78.1,
+      "Sim%": 78.3,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Over 2.5",
+      "Model%": 48.1,
+      "Sim%": 61.0,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Under 2.5",
+      "Model%": 51.9,
+      "Sim%": 39.0,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "Yes",
+      "Model%": 45.0,
+      "Sim%": 47.4,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 55.0,
+      "Sim%": 52.6,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    }
+  ],
+  "locked_tip": {
+    "status": "SECURED LOCK",
+    "section": "FT DC",
+    "selection": "1X",
+    "model": 85.0,
+    "sim": 84.4,
+    "agree": "1 eng",
+    "verdict": "HARD YES"
+  },
+  "backends": {
+    "ft_result": [
+      "market"
+    ],
+    "ht_result": [
+      "market"
+    ],
+    "over25": [
+      "market"
+    ],
+    "btts": [
+      "market"
+    ],
+    "ht_over15": [
+      "market"
+    ]
+  },
+  "generated_at": "2026-08-30T08:42:28.942267Z"
+}

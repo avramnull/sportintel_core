@@ -1,0 +1,299 @@
+{
+  "match": {
+    "league": "P1",
+    "home_team": "Alverca",
+    "away_team": "Santa Clara",
+    "match_date": "2026-08-29 15:30",
+    "odds_home": 2.57,
+    "odds_draw": 3.1,
+    "odds_away": 2.65,
+    "n_simulations": 2000,
+    "seed": 180,
+    "odds_blend": 0.3
+  },
+  "resolved": {
+    "league": "Primeira Liga",
+    "div": "P1",
+    "home": "Alverca",
+    "away": "Santa Clara",
+    "models": "market-only",
+    "match_date": "2026-08-29 15:30"
+  },
+  "report": {
+    "n": 2000,
+    "ft_model": {
+      "H": 0.35729042078938783,
+      "D": 0.29620528433184734,
+      "A": 0.34650429487876483
+    },
+    "ft_sim": {
+      "H": 0.343,
+      "D": 0.3025,
+      "A": 0.3545
+    },
+    "ht_model": {
+      "H": 0.3,
+      "D": 0.4,
+      "A": 0.3
+    },
+    "ht_sim": {
+      "H": 0.287,
+      "D": 0.397,
+      "A": 0.316
+    },
+    "over25_model": 0.46496953233976945,
+    "over25_sim": 0.5565,
+    "btts_model": 0.45,
+    "btts_sim": 0.455,
+    "ht_over15_model": 0.35,
+    "ht_over15_sim": 0.332,
+    "dc_ft": {
+      "1X": 0.6534957051212351,
+      "X2": 0.6427095792106121,
+      "12": 0.7037947156681527
+    },
+    "dc_ht": {
+      "1X": 0.7,
+      "X2": 0.7,
+      "12": 0.6
+    },
+    "top_ft": [
+      [
+        "0-0",
+        337
+      ],
+      [
+        "1-2",
+        212
+      ],
+      [
+        "2-1",
+        181
+      ],
+      [
+        "1-1",
+        158
+      ],
+      [
+        "2-0",
+        100
+      ],
+      [
+        "0-2",
+        100
+      ],
+      [
+        "1-0",
+        98
+      ],
+      [
+        "0-1",
+        94
+      ]
+    ],
+    "top_ht": [
+      [
+        "0-0",
+        470
+      ],
+      [
+        "0-1",
+        439
+      ],
+      [
+        "1-0",
+        427
+      ],
+      [
+        "1-1",
+        324
+      ],
+      [
+        "0-2",
+        103
+      ]
+    ],
+    "xg": {
+      "home": 1.3185,
+      "away": 1.3395,
+      "total": 2.658
+    },
+    "goal_rates": {
+      "home": 1.3185,
+      "away": 1.3395
+    }
+  },
+  "table": [
+    {
+      "Section": "HT Winner",
+      "Selection": "Alverca",
+      "Model%": 30.0,
+      "Sim%": 28.7,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Draw",
+      "Model%": 40.0,
+      "Sim%": 39.7,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Santa Clara",
+      "Model%": 30.0,
+      "Sim%": 31.6,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "1X",
+      "Model%": 70.0,
+      "Sim%": 68.4,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "X2",
+      "Model%": 70.0,
+      "Sim%": 71.3,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "12",
+      "Model%": 60.0,
+      "Sim%": 60.3,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Over 1.5",
+      "Model%": 35.0,
+      "Sim%": 33.2,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Under 1.5",
+      "Model%": 65.0,
+      "Sim%": 66.8,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Alverca",
+      "Model%": 35.7,
+      "Sim%": 34.3,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Draw",
+      "Model%": 29.6,
+      "Sim%": 30.2,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Santa Clara",
+      "Model%": 34.7,
+      "Sim%": 35.4,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "1X",
+      "Model%": 65.3,
+      "Sim%": 64.5,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 64.3,
+      "Sim%": 65.7,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "12",
+      "Model%": 70.4,
+      "Sim%": 69.8,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Over 2.5",
+      "Model%": 46.5,
+      "Sim%": 55.6,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Under 2.5",
+      "Model%": 53.5,
+      "Sim%": 44.4,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "Yes",
+      "Model%": 45.0,
+      "Sim%": 45.5,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 55.0,
+      "Sim%": 54.5,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    }
+  ],
+  "locked_tip": {
+    "status": "SECURED LOCK",
+    "section": "FT DC",
+    "selection": "12",
+    "model": 70.4,
+    "sim": 69.8,
+    "agree": "1 eng",
+    "verdict": "HARD YES"
+  },
+  "backends": {
+    "ft_result": [
+      "market"
+    ],
+    "ht_result": [
+      "market"
+    ],
+    "over25": [
+      "market"
+    ],
+    "btts": [
+      "market"
+    ],
+    "ht_over15": [
+      "market"
+    ]
+  },
+  "generated_at": "2026-08-30T08:42:34.542066Z"
+}

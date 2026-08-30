@@ -1,0 +1,299 @@
+{
+  "match": {
+    "league": "SP2",
+    "home_team": "Mallorca",
+    "away_team": "Ceuta",
+    "match_date": "2026-08-30 18:00",
+    "odds_home": 1.39,
+    "odds_draw": 4.2,
+    "odds_away": 8.0,
+    "n_simulations": 2000,
+    "seed": 226,
+    "odds_blend": 0.3
+  },
+  "resolved": {
+    "league": "La Liga 2",
+    "div": "SP2",
+    "home": "Mallorca",
+    "away": "Ceuta",
+    "models": "market-only",
+    "match_date": "2026-08-30 18:00"
+  },
+  "report": {
+    "n": 2000,
+    "ft_model": {
+      "H": 0.6645832509197358,
+      "D": 0.21994540923296016,
+      "A": 0.11547133984730408
+    },
+    "ft_sim": {
+      "H": 0.6495,
+      "D": 0.2215,
+      "A": 0.129
+    },
+    "ht_model": {
+      "H": 0.3,
+      "D": 0.4,
+      "A": 0.3
+    },
+    "ht_sim": {
+      "H": 0.302,
+      "D": 0.402,
+      "A": 0.296
+    },
+    "over25_model": 0.4766636690647482,
+    "over25_sim": 0.594,
+    "btts_model": 0.45,
+    "btts_sim": 0.4405,
+    "ht_over15_model": 0.35,
+    "ht_over15_sim": 0.347,
+    "dc_ft": {
+      "1X": 0.8845286601526959,
+      "X2": 0.33541674908026425,
+      "12": 0.7800545907670399
+    },
+    "dc_ht": {
+      "1X": 0.7,
+      "X2": 0.7,
+      "12": 0.6
+    },
+    "top_ft": [
+      [
+        "2-1",
+        334
+      ],
+      [
+        "0-0",
+        248
+      ],
+      [
+        "1-0",
+        201
+      ],
+      [
+        "2-0",
+        190
+      ],
+      [
+        "3-0",
+        125
+      ],
+      [
+        "4-0",
+        115
+      ],
+      [
+        "3-2",
+        100
+      ],
+      [
+        "1-1",
+        95
+      ]
+    ],
+    "top_ht": [
+      [
+        "0-0",
+        493
+      ],
+      [
+        "0-1",
+        408
+      ],
+      [
+        "1-0",
+        405
+      ],
+      [
+        "1-1",
+        311
+      ],
+      [
+        "2-1",
+        100
+      ]
+    ],
+    "xg": {
+      "home": 1.922,
+      "away": 0.868,
+      "total": 2.79
+    },
+    "goal_rates": {
+      "home": 1.922,
+      "away": 0.868
+    }
+  },
+  "table": [
+    {
+      "Section": "HT Winner",
+      "Selection": "Mallorca",
+      "Model%": 30.0,
+      "Sim%": 30.2,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Draw",
+      "Model%": 40.0,
+      "Sim%": 40.2,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Ceuta",
+      "Model%": 30.0,
+      "Sim%": 29.6,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "1X",
+      "Model%": 70.0,
+      "Sim%": 70.4,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "X2",
+      "Model%": 70.0,
+      "Sim%": 69.8,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "12",
+      "Model%": 60.0,
+      "Sim%": 59.8,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Over 1.5",
+      "Model%": 35.0,
+      "Sim%": 34.7,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Under 1.5",
+      "Model%": 65.0,
+      "Sim%": 65.3,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Mallorca",
+      "Model%": 66.5,
+      "Sim%": 65.0,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Draw",
+      "Model%": 22.0,
+      "Sim%": 22.1,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Ceuta",
+      "Model%": 11.5,
+      "Sim%": 12.9,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "1X",
+      "Model%": 88.5,
+      "Sim%": 87.1,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 33.5,
+      "Sim%": 35.1,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "12",
+      "Model%": 78.0,
+      "Sim%": 77.8,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Over 2.5",
+      "Model%": 47.7,
+      "Sim%": 59.4,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Under 2.5",
+      "Model%": 52.3,
+      "Sim%": 40.6,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "Yes",
+      "Model%": 45.0,
+      "Sim%": 44.0,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 55.0,
+      "Sim%": 56.0,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    }
+  ],
+  "locked_tip": {
+    "status": "SECURED LOCK",
+    "section": "FT DC",
+    "selection": "1X",
+    "model": 88.5,
+    "sim": 87.1,
+    "agree": "1 eng",
+    "verdict": "HARD YES"
+  },
+  "backends": {
+    "ft_result": [
+      "market"
+    ],
+    "ht_result": [
+      "market"
+    ],
+    "over25": [
+      "market"
+    ],
+    "btts": [
+      "market"
+    ],
+    "ht_over15": [
+      "market"
+    ]
+  },
+  "generated_at": "2026-08-30T08:42:36.389853Z"
+}

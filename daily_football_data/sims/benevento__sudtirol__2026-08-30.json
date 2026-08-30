@@ -1,0 +1,299 @@
+{
+  "match": {
+    "league": "I2",
+    "home_team": "Benevento",
+    "away_team": "Sudtirol",
+    "match_date": "2026-08-30 20:00",
+    "odds_home": 2.05,
+    "odds_draw": 3.1,
+    "odds_away": 3.6,
+    "n_simulations": 2000,
+    "seed": 168,
+    "odds_blend": 0.3
+  },
+  "resolved": {
+    "league": "Serie B",
+    "div": "I2",
+    "home": "Benevento",
+    "away": "Sudtirol",
+    "models": "market-only",
+    "match_date": "2026-08-30 20:00"
+  },
+  "report": {
+    "n": 2000,
+    "ft_model": {
+      "H": 0.4482827877083752,
+      "D": 0.29644506929102227,
+      "A": 0.2552721430006025
+    },
+    "ft_sim": {
+      "H": 0.441,
+      "D": 0.294,
+      "A": 0.265
+    },
+    "ht_model": {
+      "H": 0.3,
+      "D": 0.4,
+      "A": 0.3
+    },
+    "ht_sim": {
+      "H": 0.2965,
+      "D": 0.414,
+      "A": 0.2895
+    },
+    "over25_model": 0.46483739837398375,
+    "over25_sim": 0.5675,
+    "btts_model": 0.45,
+    "btts_sim": 0.4605,
+    "ht_over15_model": 0.35,
+    "ht_over15_sim": 0.3495,
+    "dc_ft": {
+      "1X": 0.7447278569993975,
+      "X2": 0.5517172122916247,
+      "12": 0.7035549307089777
+    },
+    "dc_ht": {
+      "1X": 0.7,
+      "X2": 0.7,
+      "12": 0.6
+    },
+    "top_ft": [
+      [
+        "0-0",
+        318
+      ],
+      [
+        "2-1",
+        251
+      ],
+      [
+        "1-2",
+        143
+      ],
+      [
+        "1-1",
+        141
+      ],
+      [
+        "2-0",
+        137
+      ],
+      [
+        "1-0",
+        117
+      ],
+      [
+        "0-2",
+        86
+      ],
+      [
+        "3-0",
+        76
+      ]
+    ],
+    "top_ht": [
+      [
+        "0-0",
+        483
+      ],
+      [
+        "1-0",
+        412
+      ],
+      [
+        "0-1",
+        406
+      ],
+      [
+        "1-1",
+        345
+      ],
+      [
+        "2-0",
+        92
+      ]
+    ],
+    "xg": {
+      "home": 1.527,
+      "away": 1.2025,
+      "total": 2.7295
+    },
+    "goal_rates": {
+      "home": 1.527,
+      "away": 1.2025
+    }
+  },
+  "table": [
+    {
+      "Section": "HT Winner",
+      "Selection": "Benevento",
+      "Model%": 30.0,
+      "Sim%": 29.6,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Draw",
+      "Model%": 40.0,
+      "Sim%": 41.4,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Sudtirol",
+      "Model%": 30.0,
+      "Sim%": 28.9,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "1X",
+      "Model%": 70.0,
+      "Sim%": 71.0,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "X2",
+      "Model%": 70.0,
+      "Sim%": 70.3,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "12",
+      "Model%": 60.0,
+      "Sim%": 58.6,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Over 1.5",
+      "Model%": 35.0,
+      "Sim%": 34.9,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Under 1.5",
+      "Model%": 65.0,
+      "Sim%": 65.1,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Benevento",
+      "Model%": 44.8,
+      "Sim%": 44.1,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Draw",
+      "Model%": 29.6,
+      "Sim%": 29.4,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Sudtirol",
+      "Model%": 25.5,
+      "Sim%": 26.5,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "1X",
+      "Model%": 74.5,
+      "Sim%": 73.5,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 55.2,
+      "Sim%": 55.9,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "12",
+      "Model%": 70.4,
+      "Sim%": 70.6,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Over 2.5",
+      "Model%": 46.5,
+      "Sim%": 56.8,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Under 2.5",
+      "Model%": 53.5,
+      "Sim%": 43.2,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "Yes",
+      "Model%": 45.0,
+      "Sim%": 46.1,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 55.0,
+      "Sim%": 53.9,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    }
+  ],
+  "locked_tip": {
+    "status": "SECURED LOCK",
+    "section": "FT DC",
+    "selection": "1X",
+    "model": 74.5,
+    "sim": 73.5,
+    "agree": "1 eng",
+    "verdict": "HARD YES"
+  },
+  "backends": {
+    "ft_result": [
+      "market"
+    ],
+    "ht_result": [
+      "market"
+    ],
+    "over25": [
+      "market"
+    ],
+    "btts": [
+      "market"
+    ],
+    "ht_over15": [
+      "market"
+    ]
+  },
+  "generated_at": "2026-08-30T08:42:34.042845Z"
+}

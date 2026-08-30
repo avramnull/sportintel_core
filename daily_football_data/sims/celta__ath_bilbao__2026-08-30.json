@@ -1,0 +1,299 @@
+{
+  "match": {
+    "league": "SP1",
+    "home_team": "Celta",
+    "away_team": "Ath Bilbao",
+    "match_date": "2026-08-30 20:30",
+    "odds_home": 2.38,
+    "odds_draw": 3.2,
+    "odds_away": 3.1,
+    "n_simulations": 2000,
+    "seed": 216,
+    "odds_blend": 0.3
+  },
+  "resolved": {
+    "league": "La Liga",
+    "div": "SP1",
+    "home": "Celta Vigo",
+    "away": "Athletic Bilbao",
+    "models": "market-only",
+    "match_date": "2026-08-30 20:30"
+  },
+  "report": {
+    "n": 2000,
+    "ft_model": {
+      "H": 0.3981697037810067,
+      "D": 0.2961387171871237,
+      "A": 0.3056915790318696
+    },
+    "ft_sim": {
+      "H": 0.3895,
+      "D": 0.297,
+      "A": 0.3135
+    },
+    "ht_model": {
+      "H": 0.3,
+      "D": 0.4,
+      "A": 0.3
+    },
+    "ht_sim": {
+      "H": 0.297,
+      "D": 0.407,
+      "A": 0.296
+    },
+    "over25_model": 0.46141230685822715,
+    "over25_sim": 0.555,
+    "btts_model": 0.45,
+    "btts_sim": 0.4465,
+    "ht_over15_model": 0.35,
+    "ht_over15_sim": 0.3285,
+    "dc_ft": {
+      "1X": 0.6943084209681304,
+      "X2": 0.6018302962189933,
+      "12": 0.7038612828128763
+    },
+    "dc_ht": {
+      "1X": 0.7,
+      "X2": 0.7,
+      "12": 0.6
+    },
+    "top_ft": [
+      [
+        "0-0",
+        332
+      ],
+      [
+        "2-1",
+        221
+      ],
+      [
+        "1-2",
+        169
+      ],
+      [
+        "1-1",
+        145
+      ],
+      [
+        "2-0",
+        115
+      ],
+      [
+        "1-0",
+        105
+      ],
+      [
+        "0-2",
+        105
+      ],
+      [
+        "0-1",
+        88
+      ]
+    ],
+    "top_ht": [
+      [
+        "0-0",
+        495
+      ],
+      [
+        "0-1",
+        432
+      ],
+      [
+        "1-0",
+        416
+      ],
+      [
+        "1-1",
+        319
+      ],
+      [
+        "2-0",
+        96
+      ]
+    ],
+    "xg": {
+      "home": 1.4115,
+      "away": 1.249,
+      "total": 2.6605
+    },
+    "goal_rates": {
+      "home": 1.4115,
+      "away": 1.249
+    }
+  },
+  "table": [
+    {
+      "Section": "HT Winner",
+      "Selection": "Celta Vigo",
+      "Model%": 30.0,
+      "Sim%": 29.7,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Draw",
+      "Model%": 40.0,
+      "Sim%": 40.7,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Athletic Bilbao",
+      "Model%": 30.0,
+      "Sim%": 29.6,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "1X",
+      "Model%": 70.0,
+      "Sim%": 70.4,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "X2",
+      "Model%": 70.0,
+      "Sim%": 70.3,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "12",
+      "Model%": 60.0,
+      "Sim%": 59.3,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Over 1.5",
+      "Model%": 35.0,
+      "Sim%": 32.9,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Under 1.5",
+      "Model%": 65.0,
+      "Sim%": 67.2,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Celta Vigo",
+      "Model%": 39.8,
+      "Sim%": 39.0,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Draw",
+      "Model%": 29.6,
+      "Sim%": 29.7,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Athletic Bilbao",
+      "Model%": 30.6,
+      "Sim%": 31.4,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "1X",
+      "Model%": 69.4,
+      "Sim%": 68.7,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 60.2,
+      "Sim%": 61.1,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "12",
+      "Model%": 70.4,
+      "Sim%": 70.3,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Over 2.5",
+      "Model%": 46.1,
+      "Sim%": 55.5,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Under 2.5",
+      "Model%": 53.9,
+      "Sim%": 44.5,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "Yes",
+      "Model%": 45.0,
+      "Sim%": 44.6,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 55.0,
+      "Sim%": 55.4,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    }
+  ],
+  "locked_tip": {
+    "status": "SECURED LOCK",
+    "section": "FT DC",
+    "selection": "12",
+    "model": 70.4,
+    "sim": 70.3,
+    "agree": "1 eng",
+    "verdict": "HARD YES"
+  },
+  "backends": {
+    "ft_result": [
+      "market"
+    ],
+    "ht_result": [
+      "market"
+    ],
+    "over25": [
+      "market"
+    ],
+    "btts": [
+      "market"
+    ],
+    "ht_over15": [
+      "market"
+    ]
+  },
+  "generated_at": "2026-08-30T08:42:35.993187Z"
+}

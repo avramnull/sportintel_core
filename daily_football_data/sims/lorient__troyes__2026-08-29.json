@@ -1,0 +1,299 @@
+{
+  "match": {
+    "league": "F1",
+    "home_team": "Lorient",
+    "away_team": "Troyes",
+    "match_date": "2026-08-29 19:45",
+    "odds_home": 1.8,
+    "odds_draw": 3.6,
+    "odds_away": 4.5,
+    "n_simulations": 2000,
+    "seed": 129,
+    "odds_blend": 0.3
+  },
+  "resolved": {
+    "league": "Ligue 1",
+    "div": "F1",
+    "home": "Lorient",
+    "away": "Troyes",
+    "models": "market-only",
+    "match_date": "2026-08-29 19:45"
+  },
+  "report": {
+    "n": 2000,
+    "ft_model": {
+      "H": 0.5263157894736842,
+      "D": 0.2631578947368421,
+      "A": 0.21052631578947367
+    },
+    "ft_sim": {
+      "H": 0.518,
+      "D": 0.255,
+      "A": 0.227
+    },
+    "ht_model": {
+      "H": 0.3,
+      "D": 0.4,
+      "A": 0.3
+    },
+    "ht_sim": {
+      "H": 0.296,
+      "D": 0.396,
+      "A": 0.308
+    },
+    "over25_model": 0.4666666666666667,
+    "over25_sim": 0.584,
+    "btts_model": 0.45,
+    "btts_sim": 0.4415,
+    "ht_over15_model": 0.35,
+    "ht_over15_sim": 0.3505,
+    "dc_ft": {
+      "1X": 0.7894736842105263,
+      "X2": 0.47368421052631576,
+      "12": 0.7368421052631579
+    },
+    "dc_ht": {
+      "1X": 0.7,
+      "X2": 0.7,
+      "12": 0.6
+    },
+    "top_ft": [
+      [
+        "0-0",
+        298
+      ],
+      [
+        "2-1",
+        261
+      ],
+      [
+        "1-0",
+        154
+      ],
+      [
+        "2-0",
+        137
+      ],
+      [
+        "1-2",
+        135
+      ],
+      [
+        "1-1",
+        114
+      ],
+      [
+        "5-0",
+        103
+      ],
+      [
+        "4-0",
+        92
+      ]
+    ],
+    "top_ht": [
+      [
+        "0-0",
+        474
+      ],
+      [
+        "0-1",
+        415
+      ],
+      [
+        "1-0",
+        410
+      ],
+      [
+        "1-1",
+        318
+      ],
+      [
+        "0-2",
+        104
+      ]
+    ],
+    "xg": {
+      "home": 1.694,
+      "away": 1.0525,
+      "total": 2.7465
+    },
+    "goal_rates": {
+      "home": 1.694,
+      "away": 1.0525
+    }
+  },
+  "table": [
+    {
+      "Section": "HT Winner",
+      "Selection": "Lorient",
+      "Model%": 30.0,
+      "Sim%": 29.6,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Draw",
+      "Model%": 40.0,
+      "Sim%": 39.6,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Troyes",
+      "Model%": 30.0,
+      "Sim%": 30.8,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "1X",
+      "Model%": 70.0,
+      "Sim%": 69.2,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "X2",
+      "Model%": 70.0,
+      "Sim%": 70.4,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "12",
+      "Model%": 60.0,
+      "Sim%": 60.4,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Over 1.5",
+      "Model%": 35.0,
+      "Sim%": 35.0,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Under 1.5",
+      "Model%": 65.0,
+      "Sim%": 65.0,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Lorient",
+      "Model%": 52.6,
+      "Sim%": 51.8,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Draw",
+      "Model%": 26.3,
+      "Sim%": 25.5,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Troyes",
+      "Model%": 21.1,
+      "Sim%": 22.7,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "1X",
+      "Model%": 78.9,
+      "Sim%": 77.3,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 47.4,
+      "Sim%": 48.2,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "12",
+      "Model%": 73.7,
+      "Sim%": 74.5,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Over 2.5",
+      "Model%": 46.7,
+      "Sim%": 58.4,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Under 2.5",
+      "Model%": 53.3,
+      "Sim%": 41.6,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "Yes",
+      "Model%": 45.0,
+      "Sim%": 44.1,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 55.0,
+      "Sim%": 55.9,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    }
+  ],
+  "locked_tip": {
+    "status": "SECURED LOCK",
+    "section": "FT DC",
+    "selection": "1X",
+    "model": 78.9,
+    "sim": 77.3,
+    "agree": "1 eng",
+    "verdict": "HARD YES"
+  },
+  "backends": {
+    "ft_result": [
+      "market"
+    ],
+    "ht_result": [
+      "market"
+    ],
+    "over25": [
+      "market"
+    ],
+    "btts": [
+      "market"
+    ],
+    "ht_over15": [
+      "market"
+    ]
+  },
+  "generated_at": "2026-08-30T08:42:32.450979Z"
+}

@@ -1,0 +1,299 @@
+{
+  "match": {
+    "league": "D2",
+    "home_team": "Bochum",
+    "away_team": "Osnabruck",
+    "match_date": "2026-08-28 17:30",
+    "odds_home": 1.73,
+    "odds_draw": 3.75,
+    "odds_away": 4.5,
+    "n_simulations": 2000,
+    "seed": 60,
+    "odds_blend": 0.3
+  },
+  "resolved": {
+    "league": "2. Bundesliga",
+    "div": "D2",
+    "home": "Bochum",
+    "away": "Osnabruck",
+    "models": "market-only",
+    "match_date": "2026-08-28 17:30"
+  },
+  "report": {
+    "n": 2000,
+    "ft_model": {
+      "H": 0.5417770286539851,
+      "D": 0.24993980255237178,
+      "A": 0.20828316879364314
+    },
+    "ft_sim": {
+      "H": 0.551,
+      "D": 0.2425,
+      "A": 0.2065
+    },
+    "ht_model": {
+      "H": 0.3,
+      "D": 0.4,
+      "A": 0.3
+    },
+    "ht_sim": {
+      "H": 0.281,
+      "D": 0.402,
+      "A": 0.317
+    },
+    "over25_model": 0.47003853564547204,
+    "over25_sim": 0.59,
+    "btts_model": 0.45,
+    "btts_sim": 0.433,
+    "ht_over15_model": 0.35,
+    "ht_over15_sim": 0.344,
+    "dc_ft": {
+      "1X": 0.7917168312063569,
+      "X2": 0.4582229713460149,
+      "12": 0.7500601974476283
+    },
+    "dc_ht": {
+      "1X": 0.7,
+      "X2": 0.7,
+      "12": 0.6
+    },
+    "top_ft": [
+      [
+        "2-1",
+        284
+      ],
+      [
+        "0-0",
+        257
+      ],
+      [
+        "1-0",
+        167
+      ],
+      [
+        "2-0",
+        156
+      ],
+      [
+        "1-1",
+        120
+      ],
+      [
+        "1-2",
+        113
+      ],
+      [
+        "5-0",
+        112
+      ],
+      [
+        "4-0",
+        108
+      ]
+    ],
+    "top_ht": [
+      [
+        "0-0",
+        486
+      ],
+      [
+        "0-1",
+        442
+      ],
+      [
+        "1-0",
+        384
+      ],
+      [
+        "1-1",
+        318
+      ],
+      [
+        "0-2",
+        101
+      ]
+    ],
+    "xg": {
+      "home": 1.7665,
+      "away": 1.0335,
+      "total": 2.8
+    },
+    "goal_rates": {
+      "home": 1.7665,
+      "away": 1.0335
+    }
+  },
+  "table": [
+    {
+      "Section": "HT Winner",
+      "Selection": "Bochum",
+      "Model%": 30.0,
+      "Sim%": 28.1,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Draw",
+      "Model%": 40.0,
+      "Sim%": 40.2,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Osnabruck",
+      "Model%": 30.0,
+      "Sim%": 31.7,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "1X",
+      "Model%": 70.0,
+      "Sim%": 68.3,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "X2",
+      "Model%": 70.0,
+      "Sim%": 71.9,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "12",
+      "Model%": 60.0,
+      "Sim%": 59.8,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Over 1.5",
+      "Model%": 35.0,
+      "Sim%": 34.4,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Under 1.5",
+      "Model%": 65.0,
+      "Sim%": 65.6,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Bochum",
+      "Model%": 54.2,
+      "Sim%": 55.1,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Draw",
+      "Model%": 25.0,
+      "Sim%": 24.2,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Osnabruck",
+      "Model%": 20.8,
+      "Sim%": 20.6,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "1X",
+      "Model%": 79.2,
+      "Sim%": 79.4,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 45.8,
+      "Sim%": 44.9,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "12",
+      "Model%": 75.0,
+      "Sim%": 75.8,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Over 2.5",
+      "Model%": 47.0,
+      "Sim%": 59.0,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Under 2.5",
+      "Model%": 53.0,
+      "Sim%": 41.0,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "Yes",
+      "Model%": 45.0,
+      "Sim%": 43.3,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 55.0,
+      "Sim%": 56.7,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    }
+  ],
+  "locked_tip": {
+    "status": "SECURED LOCK",
+    "section": "FT DC",
+    "selection": "1X",
+    "model": 79.2,
+    "sim": 79.4,
+    "agree": "1 eng",
+    "verdict": "HARD YES"
+  },
+  "backends": {
+    "ft_result": [
+      "market"
+    ],
+    "ht_result": [
+      "market"
+    ],
+    "over25": [
+      "market"
+    ],
+    "btts": [
+      "market"
+    ],
+    "ht_over15": [
+      "market"
+    ]
+  },
+  "generated_at": "2026-08-30T08:42:29.658418Z"
+}

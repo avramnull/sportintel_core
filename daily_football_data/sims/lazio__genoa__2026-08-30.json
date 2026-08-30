@@ -1,0 +1,299 @@
+{
+  "match": {
+    "league": "I1",
+    "home_team": "Lazio",
+    "away_team": "Genoa",
+    "match_date": "2026-08-30 19:45",
+    "odds_home": 2.0,
+    "odds_draw": 3.1,
+    "odds_away": 4.33,
+    "n_simulations": 2000,
+    "seed": 157,
+    "odds_blend": 0.3
+  },
+  "resolved": {
+    "league": "Serie A",
+    "div": "I1",
+    "home": "Lazio",
+    "away": "Genoa",
+    "models": "market-only",
+    "match_date": "2026-08-30 19:45"
+  },
+  "report": {
+    "n": 2000,
+    "ft_model": {
+      "H": 0.47459604709542835,
+      "D": 0.3061909981260828,
+      "A": 0.21921295477848884
+    },
+    "ft_sim": {
+      "H": 0.4505,
+      "D": 0.3185,
+      "A": 0.231
+    },
+    "ht_model": {
+      "H": 0.3,
+      "D": 0.4,
+      "A": 0.3
+    },
+    "ht_sim": {
+      "H": 0.2895,
+      "D": 0.4135,
+      "A": 0.297
+    },
+    "over25_model": 0.4596420323325635,
+    "over25_sim": 0.5575,
+    "btts_model": 0.45,
+    "btts_sim": 0.4795,
+    "ht_over15_model": 0.35,
+    "ht_over15_sim": 0.348,
+    "dc_ft": {
+      "1X": 0.7807870452215111,
+      "X2": 0.5254039529045716,
+      "12": 0.6938090018739171
+    },
+    "dc_ht": {
+      "1X": 0.7,
+      "X2": 0.7,
+      "12": 0.6
+    },
+    "top_ft": [
+      [
+        "0-0",
+        312
+      ],
+      [
+        "2-1",
+        255
+      ],
+      [
+        "1-1",
+        171
+      ],
+      [
+        "2-0",
+        130
+      ],
+      [
+        "1-0",
+        126
+      ],
+      [
+        "1-2",
+        124
+      ],
+      [
+        "4-0",
+        81
+      ],
+      [
+        "0-1",
+        79
+      ]
+    ],
+    "top_ht": [
+      [
+        "0-0",
+        496
+      ],
+      [
+        "0-1",
+        408
+      ],
+      [
+        "1-0",
+        400
+      ],
+      [
+        "1-1",
+        331
+      ],
+      [
+        "2-1",
+        99
+      ]
+    ],
+    "xg": {
+      "home": 1.583,
+      "away": 1.128,
+      "total": 2.711
+    },
+    "goal_rates": {
+      "home": 1.583,
+      "away": 1.128
+    }
+  },
+  "table": [
+    {
+      "Section": "HT Winner",
+      "Selection": "Lazio",
+      "Model%": 30.0,
+      "Sim%": 28.9,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Draw",
+      "Model%": 40.0,
+      "Sim%": 41.3,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Genoa",
+      "Model%": 30.0,
+      "Sim%": 29.7,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "1X",
+      "Model%": 70.0,
+      "Sim%": 70.3,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "X2",
+      "Model%": 70.0,
+      "Sim%": 71.0,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "12",
+      "Model%": 60.0,
+      "Sim%": 58.7,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Over 1.5",
+      "Model%": 35.0,
+      "Sim%": 34.8,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Under 1.5",
+      "Model%": 65.0,
+      "Sim%": 65.2,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Lazio",
+      "Model%": 47.5,
+      "Sim%": 45.1,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Draw",
+      "Model%": 30.6,
+      "Sim%": 31.9,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Genoa",
+      "Model%": 21.9,
+      "Sim%": 23.1,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "1X",
+      "Model%": 78.1,
+      "Sim%": 76.9,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 52.5,
+      "Sim%": 54.9,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "12",
+      "Model%": 69.4,
+      "Sim%": 68.2,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Over 2.5",
+      "Model%": 46.0,
+      "Sim%": 55.8,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Under 2.5",
+      "Model%": 54.0,
+      "Sim%": 44.2,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "Yes",
+      "Model%": 45.0,
+      "Sim%": 47.9,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 55.0,
+      "Sim%": 52.0,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    }
+  ],
+  "locked_tip": {
+    "status": "SECURED LOCK",
+    "section": "FT DC",
+    "selection": "1X",
+    "model": 78.1,
+    "sim": 76.9,
+    "agree": "1 eng",
+    "verdict": "HARD YES"
+  },
+  "backends": {
+    "ft_result": [
+      "market"
+    ],
+    "ht_result": [
+      "market"
+    ],
+    "over25": [
+      "market"
+    ],
+    "btts": [
+      "market"
+    ],
+    "ht_over15": [
+      "market"
+    ]
+  },
+  "generated_at": "2026-08-30T08:42:33.601829Z"
+}
