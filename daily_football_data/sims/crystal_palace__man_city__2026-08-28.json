@@ -7,7 +7,7 @@
     "odds_home": 5.0,
     "odds_draw": 3.9,
     "odds_away": 1.67,
-    "n_simulations": 2000,
+    "n_simulations": 8000,
     "seed": 69,
     "odds_blend": 0.3
   },
@@ -16,284 +16,299 @@
     "div": "E0",
     "home": "Crystal Palace",
     "away": "Manchester City",
-    "models": "market-only",
+    "models": "Crystal Palace (home)",
     "match_date": "2026-08-28 20:00"
   },
   "report": {
-    "n": 2000,
+    "n": 8000,
     "ft_model": {
-      "H": 0.18953525594389314,
-      "D": 0.24299391787678612,
-      "A": 0.5674708261793209
+      "H": 0.517529069600691,
+      "D": 0.22358873709055907,
+      "A": 0.25888219330875
     },
     "ft_sim": {
-      "H": 0.1935,
-      "D": 0.228,
-      "A": 0.5785
+      "H": 0.518125,
+      "D": 0.222125,
+      "A": 0.25975
     },
     "ht_model": {
-      "H": 0.3,
-      "D": 0.4,
-      "A": 0.3
+      "H": 0.31038306928474674,
+      "D": 0.46795191036860495,
+      "A": 0.22166502034664837
     },
     "ht_sim": {
-      "H": 0.2965,
-      "D": 0.4075,
-      "A": 0.296
+      "H": 0.300625,
+      "D": 0.478625,
+      "A": 0.22075
     },
-    "over25_model": 0.4698203592814371,
-    "over25_sim": 0.599,
-    "btts_model": 0.45,
-    "btts_sim": 0.4585,
-    "ht_over15_model": 0.35,
-    "ht_over15_sim": 0.3495,
+    "over25_model": 0.4621544688456843,
+    "over25_sim": 0.614125,
+    "btts_model": 0.506242885959316,
+    "btts_sim": 0.49425,
+    "ht_over15_model": 0.25048385107626575,
+    "ht_over15_sim": 0.3465,
     "dc_ft": {
-      "1X": 0.43252917382067924,
-      "X2": 0.810464744056107,
-      "12": 0.7570060821232141
+      "1X": 0.74111780669125,
+      "X2": 0.4824709303993091,
+      "12": 0.7764112629094411
     },
     "dc_ht": {
-      "1X": 0.7,
-      "X2": 0.7,
-      "12": 0.6
+      "1X": 0.7783349796533516,
+      "X2": 0.6896169307152533,
+      "12": 0.532048089631395
     },
     "top_ft": [
       [
-        "1-2",
-        339
+        "2-1",
+        1254
       ],
       [
         "0-0",
-        253
+        893
       ],
       [
-        "0-2",
-        169
+        "1-2",
+        644
       ],
       [
-        "0-1",
-        156
+        "1-0",
+        569
       ],
       [
-        "2-1",
-        113
+        "2-0",
+        565
       ],
       [
         "1-1",
-        107
+        504
       ],
       [
-        "0-3",
-        101
+        "5-0",
+        346
       ],
       [
-        "0-4",
-        96
+        "3-0",
+        321
       ]
     ],
     "top_ht": [
       [
         "0-0",
-        502
+        2296
       ],
       [
         "1-0",
-        408
-      ],
-      [
-        "0-1",
-        391
+        1682
       ],
       [
         "1-1",
-        313
+        1533
       ],
       [
-        "1-2",
-        105
+        "0-1",
+        1250
+      ],
+      [
+        "2-1",
+        367
       ]
     ],
     "xg": {
-      "home": 1.008,
-      "away": 1.78,
-      "total": 2.788
+      "home": 1.68975,
+      "away": 1.165875,
+      "total": 2.855625
     },
     "goal_rates": {
-      "home": 1.008,
-      "away": 1.78
+      "home": 1.68975,
+      "away": 1.165875
     }
   },
   "table": [
     {
       "Section": "HT Winner",
       "Selection": "Crystal Palace",
-      "Model%": 30.0,
-      "Sim%": 29.6,
-      "Agree": "1 eng",
+      "Model%": 31.0,
+      "Sim%": 30.1,
+      "Agree": "4 eng",
       "Verdict": "NO"
     },
     {
       "Section": "HT Winner",
       "Selection": "Draw",
-      "Model%": 40.0,
-      "Sim%": 40.8,
-      "Agree": "1 eng",
+      "Model%": 46.8,
+      "Sim%": 47.9,
+      "Agree": "4 eng",
       "Verdict": "NO"
     },
     {
       "Section": "HT Winner",
       "Selection": "Manchester City",
-      "Model%": 30.0,
-      "Sim%": 29.6,
-      "Agree": "1 eng",
+      "Model%": 22.2,
+      "Sim%": 22.1,
+      "Agree": "4 eng",
       "Verdict": "NO"
     },
     {
       "Section": "HT DC",
       "Selection": "1X",
-      "Model%": 70.0,
-      "Sim%": 70.4,
-      "Agree": "1 eng",
+      "Model%": 77.8,
+      "Sim%": 77.9,
+      "Agree": "4 eng",
       "Verdict": "YES"
     },
     {
       "Section": "HT DC",
       "Selection": "X2",
-      "Model%": 70.0,
-      "Sim%": 70.3,
-      "Agree": "1 eng",
+      "Model%": 69.0,
+      "Sim%": 69.9,
+      "Agree": "4 eng",
       "Verdict": "YES"
     },
     {
       "Section": "HT DC",
       "Selection": "12",
-      "Model%": 60.0,
-      "Sim%": 59.2,
-      "Agree": "1 eng",
-      "Verdict": "YES"
+      "Model%": 53.2,
+      "Sim%": 52.1,
+      "Agree": "4 eng",
+      "Verdict": "NO"
     },
     {
       "Section": "HT O/U",
       "Selection": "Over 1.5",
-      "Model%": 35.0,
-      "Sim%": 34.9,
-      "Agree": "1 eng",
+      "Model%": 25.0,
+      "Sim%": 34.6,
+      "Agree": "4 eng",
       "Verdict": "NO"
     },
     {
       "Section": "HT O/U",
       "Selection": "Under 1.5",
-      "Model%": 65.0,
-      "Sim%": 65.1,
-      "Agree": "1 eng",
+      "Model%": 75.0,
+      "Sim%": 65.3,
+      "Agree": "4 eng",
       "Verdict": "YES"
     },
     {
       "Section": "FT Winner",
       "Selection": "Crystal Palace",
-      "Model%": 19.0,
-      "Sim%": 19.4,
-      "Agree": "1 eng",
+      "Model%": 51.8,
+      "Sim%": 51.8,
+      "Agree": "4 eng",
       "Verdict": "NO"
     },
     {
       "Section": "FT Winner",
       "Selection": "Draw",
-      "Model%": 24.3,
-      "Sim%": 22.8,
-      "Agree": "1 eng",
+      "Model%": 22.4,
+      "Sim%": 22.2,
+      "Agree": "4 eng",
       "Verdict": "NO"
     },
     {
       "Section": "FT Winner",
       "Selection": "Manchester City",
-      "Model%": 56.7,
-      "Sim%": 57.9,
-      "Agree": "1 eng",
-      "Verdict": "YES"
-    },
-    {
-      "Section": "FT DC",
-      "Selection": "1X",
-      "Model%": 43.3,
-      "Sim%": 42.1,
-      "Agree": "1 eng",
+      "Model%": 25.9,
+      "Sim%": 26.0,
+      "Agree": "4 eng",
       "Verdict": "NO"
     },
     {
       "Section": "FT DC",
-      "Selection": "X2",
-      "Model%": 81.0,
-      "Sim%": 80.7,
-      "Agree": "1 eng",
+      "Selection": "1X",
+      "Model%": 74.1,
+      "Sim%": 74.0,
+      "Agree": "4 eng",
       "Verdict": "YES"
     },
     {
       "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 48.2,
+      "Sim%": 48.2,
+      "Agree": "4 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
       "Selection": "12",
-      "Model%": 75.7,
-      "Sim%": 77.2,
-      "Agree": "1 eng",
+      "Model%": 77.6,
+      "Sim%": 77.8,
+      "Agree": "4 eng",
       "Verdict": "YES"
     },
     {
       "Section": "FT O/U",
       "Selection": "Over 2.5",
-      "Model%": 47.0,
-      "Sim%": 59.9,
-      "Agree": "1 eng",
+      "Model%": 46.2,
+      "Sim%": 61.4,
+      "Agree": "4 eng",
       "Verdict": "NO"
     },
     {
       "Section": "FT O/U",
       "Selection": "Under 2.5",
-      "Model%": 53.0,
-      "Sim%": 40.1,
-      "Agree": "1 eng",
+      "Model%": 53.8,
+      "Sim%": 38.6,
+      "Agree": "4 eng",
       "Verdict": "YES"
     },
     {
       "Section": "BTTS",
       "Selection": "Yes",
-      "Model%": 45.0,
-      "Sim%": 45.9,
-      "Agree": "1 eng",
+      "Model%": 50.6,
+      "Sim%": 49.4,
+      "Agree": "4 eng",
       "Verdict": "NO"
     },
     {
       "Section": "BTTS",
       "Selection": "No",
-      "Model%": 55.0,
-      "Sim%": 54.1,
-      "Agree": "1 eng",
-      "Verdict": "YES"
+      "Model%": 49.4,
+      "Sim%": 50.6,
+      "Agree": "4 eng",
+      "Verdict": "NO"
     }
   ],
   "locked_tip": {
     "status": "SECURED LOCK",
-    "section": "FT DC",
-    "selection": "X2",
-    "model": 81.0,
-    "sim": 80.7,
-    "agree": "1 eng",
+    "section": "HT DC",
+    "selection": "1X",
+    "model": 77.8,
+    "sim": 77.9,
+    "agree": "4 eng",
     "verdict": "HARD YES"
   },
   "backends": {
     "ft_result": [
-      "market"
+      "cat",
+      "lgbm",
+      "rf",
+      "xgb"
     ],
     "ht_result": [
-      "market"
+      "cat",
+      "lgbm",
+      "rf",
+      "xgb"
     ],
     "over25": [
-      "market"
+      "cat",
+      "lgbm",
+      "rf",
+      "xgb"
     ],
     "btts": [
-      "market"
+      "cat",
+      "lgbm",
+      "rf",
+      "xgb"
     ],
     "ht_over15": [
-      "market"
+      "cat",
+      "lgbm",
+      "rf",
+      "xgb"
     ]
   },
-  "generated_at": "2026-08-30T08:42:30.016314Z"
+  "generated_at": "2026-08-30T09:06:03.065587Z"
 }

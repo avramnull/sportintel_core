@@ -7,7 +7,7 @@
     "odds_home": 2.4,
     "odds_draw": 3.0,
     "odds_away": 2.63,
-    "n_simulations": 2000,
+    "n_simulations": 8000,
     "seed": 134,
     "odds_blend": 0.3
   },
@@ -20,16 +20,16 @@
     "match_date": "2026-08-28 19:00"
   },
   "report": {
-    "n": 2000,
+    "n": 8000,
     "ft_model": {
       "H": 0.3686571348472105,
       "D": 0.2949257078777684,
       "A": 0.33641715727502103
     },
     "ft_sim": {
-      "H": 0.3685,
-      "D": 0.296,
-      "A": 0.3355
+      "H": 0.3705,
+      "D": 0.2945,
+      "A": 0.335
     },
     "ht_model": {
       "H": 0.3,
@@ -37,16 +37,16 @@
       "A": 0.3
     },
     "ht_sim": {
-      "H": 0.3015,
-      "D": 0.4,
-      "A": 0.2985
+      "H": 0.304125,
+      "D": 0.401375,
+      "A": 0.2945
     },
     "over25_model": 0.46953422053231936,
-    "over25_sim": 0.567,
+    "over25_sim": 0.562875,
     "btts_model": 0.45,
-    "btts_sim": 0.442,
+    "btts_sim": 0.452125,
     "ht_over15_model": 0.35,
-    "ht_over15_sim": 0.336,
+    "ht_over15_sim": 0.349375,
     "dc_ft": {
       "1X": 0.6635828427249789,
       "X2": 0.6313428651527895,
@@ -60,67 +60,67 @@
     "top_ft": [
       [
         "0-0",
-        332
+        1291
       ],
       [
         "2-1",
-        196
+        883
       ],
       [
         "1-2",
-        175
+        727
       ],
       [
         "1-1",
-        125
-      ],
-      [
-        "2-0",
-        117
-      ],
-      [
-        "0-1",
-        103
+        561
       ],
       [
         "1-0",
-        103
+        438
       ],
       [
         "0-2",
-        86
+        419
+      ],
+      [
+        "0-1",
+        406
+      ],
+      [
+        "2-0",
+        382
       ]
     ],
     "top_ht": [
       [
         "0-0",
-        478
+        1918
       ],
       [
         "1-0",
-        426
+        1645
       ],
       [
         "0-1",
-        424
+        1642
       ],
       [
         "1-1",
-        322
+        1293
       ],
       [
-        "1-2",
-        90
+        "2-1",
+        410
       ]
     ],
     "xg": {
-      "home": 1.395,
-      "away": 1.32,
-      "total": 2.715
+      "home": 1.377125,
+      "away": 1.306625,
+      "total": 2.68375
     },
     "goal_rates": {
-      "home": 1.395,
-      "away": 1.32
+      "home": 1.377125,
+      "away": 1.306625
     }
   },
   "table": [
@@ -128,7 +128,7 @@
       "Section": "HT Winner",
       "Selection": "Clermont",
       "Model%": 30.0,
-      "Sim%": 30.1,
+      "Sim%": 30.4,
       "Agree": "1 eng",
       "Verdict": "NO"
     },
@@ -136,7 +136,7 @@
       "Section": "HT Winner",
       "Selection": "Draw",
       "Model%": 40.0,
-      "Sim%": 40.0,
+      "Sim%": 40.1,
       "Agree": "1 eng",
       "Verdict": "NO"
     },
@@ -144,7 +144,7 @@
       "Section": "HT Winner",
       "Selection": "Sochaux",
       "Model%": 30.0,
-      "Sim%": 29.8,
+      "Sim%": 29.4,
       "Agree": "1 eng",
       "Verdict": "NO"
     },
@@ -152,7 +152,7 @@
       "Section": "HT DC",
       "Selection": "1X",
       "Model%": 70.0,
-      "Sim%": 70.2,
+      "Sim%": 70.5,
       "Agree": "1 eng",
       "Verdict": "YES"
     },
@@ -160,7 +160,7 @@
       "Section": "HT DC",
       "Selection": "X2",
       "Model%": 70.0,
-      "Sim%": 69.8,
+      "Sim%": 69.6,
       "Agree": "1 eng",
       "Verdict": "YES"
     },
@@ -168,7 +168,7 @@
       "Section": "HT DC",
       "Selection": "12",
       "Model%": 60.0,
-      "Sim%": 60.0,
+      "Sim%": 59.9,
       "Agree": "1 eng",
       "Verdict": "YES"
     },
@@ -176,7 +176,7 @@
       "Section": "HT O/U",
       "Selection": "Over 1.5",
       "Model%": 35.0,
-      "Sim%": 33.6,
+      "Sim%": 34.9,
       "Agree": "1 eng",
       "Verdict": "NO"
     },
@@ -184,7 +184,7 @@
       "Section": "HT O/U",
       "Selection": "Under 1.5",
       "Model%": 65.0,
-      "Sim%": 66.4,
+      "Sim%": 65.1,
       "Agree": "1 eng",
       "Verdict": "YES"
     },
@@ -192,7 +192,7 @@
       "Section": "FT Winner",
       "Selection": "Clermont",
       "Model%": 36.9,
-      "Sim%": 36.9,
+      "Sim%": 37.0,
       "Agree": "1 eng",
       "Verdict": "NO"
     },
@@ -200,7 +200,7 @@
       "Section": "FT Winner",
       "Selection": "Draw",
       "Model%": 29.5,
-      "Sim%": 29.6,
+      "Sim%": 29.4,
       "Agree": "1 eng",
       "Verdict": "NO"
     },
@@ -208,7 +208,7 @@
       "Section": "FT Winner",
       "Selection": "Sochaux",
       "Model%": 33.6,
-      "Sim%": 33.6,
+      "Sim%": 33.5,
       "Agree": "1 eng",
       "Verdict": "NO"
     },
@@ -224,7 +224,7 @@
       "Section": "FT DC",
       "Selection": "X2",
       "Model%": 63.1,
-      "Sim%": 63.1,
+      "Sim%": 62.9,
       "Agree": "1 eng",
       "Verdict": "YES"
     },
@@ -232,7 +232,7 @@
       "Section": "FT DC",
       "Selection": "12",
       "Model%": 70.5,
-      "Sim%": 70.4,
+      "Sim%": 70.5,
       "Agree": "1 eng",
       "Verdict": "YES"
     },
@@ -240,7 +240,7 @@
       "Section": "FT O/U",
       "Selection": "Over 2.5",
       "Model%": 47.0,
-      "Sim%": 56.7,
+      "Sim%": 56.3,
       "Agree": "1 eng",
       "Verdict": "NO"
     },
@@ -248,7 +248,7 @@
       "Section": "FT O/U",
       "Selection": "Under 2.5",
       "Model%": 53.0,
-      "Sim%": 43.3,
+      "Sim%": 43.7,
       "Agree": "1 eng",
       "Verdict": "YES"
     },
@@ -256,7 +256,7 @@
       "Section": "BTTS",
       "Selection": "Yes",
       "Model%": 45.0,
-      "Sim%": 44.2,
+      "Sim%": 45.2,
       "Agree": "1 eng",
       "Verdict": "NO"
     },
@@ -264,7 +264,7 @@
       "Section": "BTTS",
       "Selection": "No",
       "Model%": 55.0,
-      "Sim%": 55.8,
+      "Sim%": 54.8,
       "Agree": "1 eng",
       "Verdict": "YES"
     }
@@ -274,7 +274,7 @@
     "section": "FT DC",
     "selection": "12",
     "model": 70.5,
-    "sim": 70.4,
+    "sim": 70.5,
     "agree": "1 eng",
     "verdict": "HARD YES"
   },
@@ -295,5 +295,5 @@
       "market"
     ]
   },
-  "generated_at": "2026-08-30T08:42:32.653431Z"
+  "generated_at": "2026-08-30T09:06:20.140349Z"
 }

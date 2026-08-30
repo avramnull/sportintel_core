@@ -7,7 +7,7 @@
     "odds_home": 1.96,
     "odds_draw": 3.25,
     "odds_away": 3.9,
-    "n_simulations": 2000,
+    "n_simulations": 8000,
     "seed": 230,
     "odds_blend": 0.3
   },
@@ -20,16 +20,16 @@
     "match_date": "2026-08-28 19:30"
   },
   "report": {
-    "n": 2000,
+    "n": 8000,
     "ft_model": {
       "H": 0.4749147588894301,
       "D": 0.2864101315148563,
       "A": 0.23867510959571359
     },
     "ft_sim": {
-      "H": 0.453,
-      "D": 0.3,
-      "A": 0.247
+      "H": 0.47625,
+      "D": 0.282375,
+      "A": 0.241375
     },
     "ht_model": {
       "H": 0.3,
@@ -37,16 +37,16 @@
       "A": 0.3
     },
     "ht_sim": {
-      "H": 0.307,
-      "D": 0.3985,
-      "A": 0.2945
+      "H": 0.30925,
+      "D": 0.39075,
+      "A": 0.3
     },
     "over25_model": 0.4649921507064364,
-    "over25_sim": 0.5635,
+    "over25_sim": 0.562,
     "btts_model": 0.45,
-    "btts_sim": 0.466,
+    "btts_sim": 0.451125,
     "ht_over15_model": 0.35,
-    "ht_over15_sim": 0.335,
+    "ht_over15_sim": 0.347,
     "dc_ft": {
       "1X": 0.7613248904042864,
       "X2": 0.5250852411105699,
@@ -60,67 +60,67 @@
     "top_ft": [
       [
         "0-0",
-        325
+        1233
       ],
       [
         "2-1",
-        258
+        1014
       ],
       [
         "1-1",
-        144
-      ],
-      [
-        "1-0",
-        136
-      ],
-      [
-        "1-2",
-        135
+        592
       ],
       [
         "2-0",
-        120
+        553
       ],
       [
-        "0-2",
-        86
+        "1-0",
+        547
       ],
       [
-        "3-0",
-        76
+        "1-2",
+        530
+      ],
+      [
+        "4-0",
+        342
+      ],
+      [
+        "5-0",
+        328
       ]
     ],
     "top_ht": [
       [
         "0-0",
-        463
+        1862
       ],
       [
         "1-0",
-        451
+        1696
       ],
       [
         "0-1",
-        416
+        1666
       ],
       [
         "1-1",
-        334
+        1264
       ],
       [
-        "1-2",
-        87
+        "2-1",
+        394
       ]
     ],
     "xg": {
-      "home": 1.5505,
-      "away": 1.151,
-      "total": 2.7015
+      "home": 1.5995,
+      "away": 1.10225,
+      "total": 2.70175
     },
     "goal_rates": {
-      "home": 1.5505,
-      "away": 1.151
+      "home": 1.5995,
+      "away": 1.10225
     }
   },
   "table": [
@@ -128,7 +128,7 @@
       "Section": "HT Winner",
       "Selection": "Genclerbirligi",
       "Model%": 30.0,
-      "Sim%": 30.7,
+      "Sim%": 30.9,
       "Agree": "1 eng",
       "Verdict": "NO"
     },
@@ -136,7 +136,7 @@
       "Section": "HT Winner",
       "Selection": "Draw",
       "Model%": 40.0,
-      "Sim%": 39.9,
+      "Sim%": 39.1,
       "Agree": "1 eng",
       "Verdict": "NO"
     },
@@ -144,7 +144,7 @@
       "Section": "HT Winner",
       "Selection": "Erzurumspor",
       "Model%": 30.0,
-      "Sim%": 29.4,
+      "Sim%": 30.0,
       "Agree": "1 eng",
       "Verdict": "NO"
     },
@@ -152,7 +152,7 @@
       "Section": "HT DC",
       "Selection": "1X",
       "Model%": 70.0,
-      "Sim%": 70.5,
+      "Sim%": 70.0,
       "Agree": "1 eng",
       "Verdict": "YES"
     },
@@ -160,7 +160,7 @@
       "Section": "HT DC",
       "Selection": "X2",
       "Model%": 70.0,
-      "Sim%": 69.3,
+      "Sim%": 69.1,
       "Agree": "1 eng",
       "Verdict": "YES"
     },
@@ -168,7 +168,7 @@
       "Section": "HT DC",
       "Selection": "12",
       "Model%": 60.0,
-      "Sim%": 60.1,
+      "Sim%": 60.9,
       "Agree": "1 eng",
       "Verdict": "YES"
     },
@@ -176,7 +176,7 @@
       "Section": "HT O/U",
       "Selection": "Over 1.5",
       "Model%": 35.0,
-      "Sim%": 33.5,
+      "Sim%": 34.7,
       "Agree": "1 eng",
       "Verdict": "NO"
     },
@@ -184,7 +184,7 @@
       "Section": "HT O/U",
       "Selection": "Under 1.5",
       "Model%": 65.0,
-      "Sim%": 66.5,
+      "Sim%": 65.3,
       "Agree": "1 eng",
       "Verdict": "YES"
     },
@@ -192,7 +192,7 @@
       "Section": "FT Winner",
       "Selection": "Genclerbirligi",
       "Model%": 47.5,
-      "Sim%": 45.3,
+      "Sim%": 47.6,
       "Agree": "1 eng",
       "Verdict": "NO"
     },
@@ -200,7 +200,7 @@
       "Section": "FT Winner",
       "Selection": "Draw",
       "Model%": 28.6,
-      "Sim%": 30.0,
+      "Sim%": 28.2,
       "Agree": "1 eng",
       "Verdict": "NO"
     },
@@ -208,7 +208,7 @@
       "Section": "FT Winner",
       "Selection": "Erzurumspor",
       "Model%": 23.9,
-      "Sim%": 24.7,
+      "Sim%": 24.1,
       "Agree": "1 eng",
       "Verdict": "NO"
     },
@@ -216,7 +216,7 @@
       "Section": "FT DC",
       "Selection": "1X",
       "Model%": 76.1,
-      "Sim%": 75.3,
+      "Sim%": 75.9,
       "Agree": "1 eng",
       "Verdict": "YES"
     },
@@ -224,7 +224,7 @@
       "Section": "FT DC",
       "Selection": "X2",
       "Model%": 52.5,
-      "Sim%": 54.7,
+      "Sim%": 52.4,
       "Agree": "1 eng",
       "Verdict": "NO"
     },
@@ -232,7 +232,7 @@
       "Section": "FT DC",
       "Selection": "12",
       "Model%": 71.4,
-      "Sim%": 70.0,
+      "Sim%": 71.8,
       "Agree": "1 eng",
       "Verdict": "YES"
     },
@@ -240,7 +240,7 @@
       "Section": "FT O/U",
       "Selection": "Over 2.5",
       "Model%": 46.5,
-      "Sim%": 56.4,
+      "Sim%": 56.2,
       "Agree": "1 eng",
       "Verdict": "NO"
     },
@@ -248,7 +248,7 @@
       "Section": "FT O/U",
       "Selection": "Under 2.5",
       "Model%": 53.5,
-      "Sim%": 43.6,
+      "Sim%": 43.8,
       "Agree": "1 eng",
       "Verdict": "YES"
     },
@@ -256,7 +256,7 @@
       "Section": "BTTS",
       "Selection": "Yes",
       "Model%": 45.0,
-      "Sim%": 46.6,
+      "Sim%": 45.1,
       "Agree": "1 eng",
       "Verdict": "NO"
     },
@@ -264,7 +264,7 @@
       "Section": "BTTS",
       "Selection": "No",
       "Model%": 55.0,
-      "Sim%": 53.4,
+      "Sim%": 54.9,
       "Agree": "1 eng",
       "Verdict": "YES"
     }
@@ -274,7 +274,7 @@
     "section": "FT DC",
     "selection": "1X",
     "model": 76.1,
-    "sim": 75.3,
+    "sim": 75.9,
     "agree": "1 eng",
     "verdict": "HARD YES"
   },
@@ -295,5 +295,5 @@
       "market"
     ]
   },
-  "generated_at": "2026-08-30T08:42:36.547924Z"
+  "generated_at": "2026-08-30T09:06:41.658823Z"
 }

@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-08-30T08:42:36.870207+00:00",
+  "generated_at": "2026-08-30T09:06:43.334261+00:00",
   "feed_date": "2026-08-30",
   "source": "https://www.football-data.co.uk/fixtures.csv",
   "n_ok": 197,
   "n_fail": 0,
-  "n_simulations_each": 2000,
+  "n_simulations_each": 8000,
   "sims": [
     {
       "id": "genk__beveren__2026-08-28",
@@ -21,9 +21,9 @@
       "locked_section": "FT DC",
       "locked_selection": "1X",
       "locked_model": 85.0,
-      "locked_sim": 84.4,
+      "locked_sim": 85.3,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:28.942267Z"
+      "generated_at": "2026-08-30T09:05:55.214302Z"
     },
     {
       "id": "raal_la_louviere__mechelen__2026-08-29",
@@ -40,9 +40,9 @@
       "locked_section": "FT DC",
       "locked_selection": "12",
       "locked_model": 71.4,
-      "locked_sim": 72.0,
+      "locked_sim": 71.6,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:28.981825Z"
+      "generated_at": "2026-08-30T09:05:55.424459Z"
     },
     {
       "id": "kortrijk__charleroi__2026-08-29",
@@ -59,9 +59,9 @@
       "locked_section": "FT DC",
       "locked_selection": "X2",
       "locked_model": 75.2,
-      "locked_sim": 74.9,
+      "locked_sim": 75.0,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:29.022149Z"
+      "generated_at": "2026-08-30T09:05:55.634440Z"
     },
     {
       "id": "cercle_brugge__lommel_sk__2026-08-29",
@@ -78,9 +78,9 @@
       "locked_section": "FT DC",
       "locked_selection": "1X",
       "locked_model": 82.5,
-      "locked_sim": 83.6,
+      "locked_sim": 82.6,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:29.061926Z"
+      "generated_at": "2026-08-30T09:05:55.853955Z"
     },
     {
       "id": "oud-heverlee_leuven__standard__2026-08-29",
@@ -97,9 +97,9 @@
       "locked_section": "FT DC",
       "locked_selection": "12",
       "locked_model": 71.8,
-      "locked_sim": 73.5,
+      "locked_sim": 72.1,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:29.101442Z"
+      "generated_at": "2026-08-30T09:05:56.063548Z"
     },
     {
       "id": "gent__club_brugge__2026-08-30",
@@ -116,9 +116,9 @@
       "locked_section": "FT DC",
       "locked_selection": "X2",
       "locked_model": 77.7,
-      "locked_sim": 79.8,
+      "locked_sim": 79.1,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:29.141179Z"
+      "generated_at": "2026-08-30T09:05:56.276104Z"
     },
     {
       "id": "antwerp__st_truiden__2026-08-30",
@@ -135,9 +135,9 @@
       "locked_section": "FT DC",
       "locked_selection": "12",
       "locked_model": 72.6,
-      "locked_sim": 71.6,
+      "locked_sim": 72.3,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:29.180214Z"
+      "generated_at": "2026-08-30T09:05:56.483424Z"
     },
     {
       "id": "st._gilloise__anderlecht__2026-08-30",
@@ -154,9 +154,9 @@
       "locked_section": "FT DC",
       "locked_selection": "1X",
       "locked_model": 80.5,
-      "locked_sim": 81.5,
+      "locked_sim": 80.5,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:29.219698Z"
+      "generated_at": "2026-08-30T09:05:56.697757Z"
     },
     {
       "id": "westerlo__waregem__2026-08-30",
@@ -173,9 +173,9 @@
       "locked_section": "FT DC",
       "locked_selection": "12",
       "locked_model": 74.5,
-      "locked_sim": 74.7,
+      "locked_sim": 74.1,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:29.259040Z"
+      "generated_at": "2026-08-30T09:05:56.910059Z"
     },
     {
       "id": "bayern_munich__stuttgart__2026-08-28",
@@ -192,9 +192,9 @@
       "locked_section": "FT DC",
       "locked_selection": "1X",
       "locked_model": 90.6,
-      "locked_sim": 90.2,
+      "locked_sim": 90.3,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:29.300069Z"
+      "generated_at": "2026-08-30T09:05:57.129977Z"
     },
     {
       "id": "elversberg__leverkusen__2026-08-29",
@@ -211,9 +211,9 @@
       "locked_section": "FT DC",
       "locked_selection": "X2",
       "locked_model": 81.1,
-      "locked_sim": 80.0,
+      "locked_sim": 81.6,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:29.340258Z"
+      "generated_at": "2026-08-30T09:05:57.346497Z"
     },
     {
       "id": "fc_koln__hoffenheim__2026-08-29",
@@ -230,9 +230,9 @@
       "locked_section": "FT DC",
       "locked_selection": "12",
       "locked_model": 74.8,
-      "locked_sim": 76.0,
+      "locked_sim": 75.2,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:29.379767Z"
+      "generated_at": "2026-08-30T09:05:57.558687Z"
     },
     {
       "id": "mainz__paderborn__2026-08-29",
@@ -249,9 +249,9 @@
       "locked_section": "FT DC",
       "locked_selection": "1X",
       "locked_model": 81.1,
-      "locked_sim": 82.5,
+      "locked_sim": 81.1,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:29.419575Z"
+      "generated_at": "2026-08-30T09:05:57.783872Z"
     },
     {
       "id": "rb_leipzig__m_gladbach__2026-08-29",
@@ -268,9 +268,9 @@
       "locked_section": "FT DC",
       "locked_selection": "1X",
       "locked_model": 81.9,
-      "locked_sim": 81.8,
+      "locked_sim": 81.9,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:29.459605Z"
+      "generated_at": "2026-08-30T09:05:57.999006Z"
     },
     {
       "id": "union_berlin__ein_frankfurt__2026-08-29",
@@ -287,9 +287,9 @@
       "locked_section": "FT DC",
       "locked_selection": "12",
       "locked_model": 73.5,
-      "locked_sim": 72.7,
+      "locked_sim": 72.6,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:29.499019Z"
+      "generated_at": "2026-08-30T09:05:58.209564Z"
     },
     {
       "id": "dortmund__hamburg__2026-08-29",
@@ -306,9 +306,9 @@
       "locked_section": "FT DC",
       "locked_selection": "1X",
       "locked_model": 89.5,
-      "locked_sim": 88.2,
+      "locked_sim": 89.3,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:29.539737Z"
+      "generated_at": "2026-08-30T09:05:58.426960Z"
     },
     {
       "id": "freiburg__werder_bremen__2026-08-30",
@@ -325,9 +325,9 @@
       "locked_section": "FT DC",
       "locked_selection": "1X",
       "locked_model": 76.2,
-      "locked_sim": 76.7,
+      "locked_sim": 76.8,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:29.579004Z"
+      "generated_at": "2026-08-30T09:05:58.638151Z"
     },
     {
       "id": "augsburg__schalke_04__2026-08-30",
@@ -344,9 +344,9 @@
       "locked_section": "FT DC",
       "locked_selection": "12",
       "locked_model": 74.5,
-      "locked_sim": 75.9,
+      "locked_sim": 74.8,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:29.618534Z"
+      "generated_at": "2026-08-30T09:05:58.853401Z"
     },
     {
       "id": "bochum__osnabruck__2026-08-28",
@@ -363,9 +363,9 @@
       "locked_section": "FT DC",
       "locked_selection": "1X",
       "locked_model": 79.2,
-      "locked_sim": 79.4,
+      "locked_sim": 78.9,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:29.658418Z"
+      "generated_at": "2026-08-30T09:05:59.066696Z"
     },
     {
       "id": "braunschweig__hertha__2026-08-28",
@@ -382,9 +382,9 @@
       "locked_section": "FT DC",
       "locked_selection": "12",
       "locked_model": 72.4,
-      "locked_sim": 73.2,
+      "locked_sim": 72.8,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:29.697850Z"
+      "generated_at": "2026-08-30T09:05:59.276034Z"
     },
     {
       "id": "cottbus__greuther_furth__2026-08-29",
@@ -401,9 +401,9 @@
       "locked_section": "FT DC",
       "locked_selection": "12",
       "locked_model": 75.2,
-      "locked_sim": 74.3,
+      "locked_sim": 74.6,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:29.737191Z"
+      "generated_at": "2026-08-30T09:05:59.488654Z"
     },
     {
       "id": "heidenheim__dresden__2026-08-29",
@@ -420,9 +420,9 @@
       "locked_section": "FT DC",
       "locked_selection": "12",
       "locked_model": 72.9,
-      "locked_sim": 73.4,
+      "locked_sim": 72.3,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:29.776443Z"
+      "generated_at": "2026-08-30T09:05:59.699014Z"
     },
     {
       "id": "karlsruhe__wolfsburg__2026-08-29",
@@ -439,9 +439,9 @@
       "locked_section": "FT DC",
       "locked_selection": "12",
       "locked_model": 74.5,
-      "locked_sim": 75.8,
+      "locked_sim": 75.2,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:29.816378Z"
+      "generated_at": "2026-08-30T09:05:59.911685Z"
     },
     {
       "id": "nurnberg__bielefeld__2026-08-29",
@@ -458,9 +458,9 @@
       "locked_section": "FT DC",
       "locked_selection": "12",
       "locked_model": 73.9,
-      "locked_sim": 72.4,
+      "locked_sim": 74.6,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:29.856156Z"
+      "generated_at": "2026-08-30T09:06:00.125028Z"
     },
     {
       "id": "darmstadt__hannover__2026-08-30",
@@ -477,9 +477,9 @@
       "locked_section": "FT DC",
       "locked_selection": "12",
       "locked_model": 74.1,
-      "locked_sim": 76.2,
+      "locked_sim": 74.5,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:29.896041Z"
+      "generated_at": "2026-08-30T09:06:00.335942Z"
     },
     {
       "id": "magdeburg__holstein_kiel__2026-08-30",
@@ -496,9 +496,9 @@
       "locked_section": "FT DC",
       "locked_selection": "12",
       "locked_model": 73.9,
-      "locked_sim": 75.7,
+      "locked_sim": 74.8,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:29.935805Z"
+      "generated_at": "2026-08-30T09:06:00.549665Z"
     },
     {
       "id": "st_pauli__kaiserslautern__2026-08-30",
@@ -515,9 +515,9 @@
       "locked_section": "FT DC",
       "locked_selection": "1X",
       "locked_model": 75.9,
-      "locked_sim": 75.5,
+      "locked_sim": 75.6,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:29.976170Z"
+      "generated_at": "2026-08-30T09:06:00.761483Z"
     },
     {
       "id": "crystal_palace__man_city__2026-08-28",
@@ -529,14 +529,14 @@
       "away": "Manchester City",
       "fixture": "Crystal Palace vs Manchester City",
       "odds": "5.00 / 3.90 / 1.67",
-      "models": "market-only",
+      "models": "Crystal Palace (home)",
       "locked_status": "SECURED LOCK",
-      "locked_section": "FT DC",
-      "locked_selection": "X2",
-      "locked_model": 81.0,
-      "locked_sim": 80.7,
+      "locked_section": "HT DC",
+      "locked_selection": "1X",
+      "locked_model": 77.8,
+      "locked_sim": 77.9,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:30.016314Z"
+      "generated_at": "2026-08-30T09:06:03.065587Z"
     },
     {
       "id": "liverpool__nott_m_forest__2026-08-29",
@@ -548,14 +548,14 @@
       "away": "Nott'm Forest",
       "fixture": "Liverpool vs Nott'm Forest",
       "odds": "1.50 / 4.50 / 5.75",
-      "models": "market-only",
+      "models": "Liverpool (home) + Nott'm Forest (away)",
       "locked_status": "SECURED LOCK",
-      "locked_section": "FT DC",
-      "locked_selection": "1X",
-      "locked_model": 83.6,
-      "locked_sim": 84.9,
+      "locked_section": "HT DC",
+      "locked_selection": "X2",
+      "locked_model": 79.8,
+      "locked_sim": 79.9,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:30.057411Z"
+      "generated_at": "2026-08-30T09:06:04.405895Z"
     },
     {
       "id": "bournemouth__everton__2026-08-29",
@@ -567,14 +567,14 @@
       "away": "Everton",
       "fixture": "Bournemouth vs Everton",
       "odds": "2.05 / 3.50 / 3.60",
-      "models": "market-only",
+      "models": "Bournemouth (home) + Everton (away)",
       "locked_status": "SECURED LOCK",
-      "locked_section": "FT DC",
-      "locked_selection": "1X",
-      "locked_model": 73.6,
-      "locked_sim": 74.7,
+      "locked_section": "HT DC",
+      "locked_selection": "X2",
+      "locked_model": 74.5,
+      "locked_sim": 74.8,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:30.096478Z"
+      "generated_at": "2026-08-30T09:06:05.742878Z"
     },
     {
       "id": "coventry__hull__2026-08-29",
@@ -586,14 +586,14 @@
       "away": "Hull",
       "fixture": "Coventry vs Hull",
       "odds": "1.90 / 3.50 / 4.20",
-      "models": "market-only",
+      "models": "Coventry (home) + Hull (away)",
       "locked_status": "SECURED LOCK",
-      "locked_section": "FT DC",
-      "locked_selection": "1X",
-      "locked_model": 77.3,
-      "locked_sim": 78.8,
+      "locked_section": "HT DC",
+      "locked_selection": "X2",
+      "locked_model": 77.6,
+      "locked_sim": 78.2,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:30.136158Z"
+      "generated_at": "2026-08-30T09:06:07.104058Z"
     },
     {
       "id": "tottenham__newcastle__2026-08-29",
@@ -610,9 +610,9 @@
       "locked_section": "FT DC",
       "locked_selection": "12",
       "locked_model": 74.7,
-      "locked_sim": 75.2,
+      "locked_sim": 74.6,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:30.175695Z"
+      "generated_at": "2026-08-30T09:06:07.320993Z"
     },
     {
       "id": "chelsea__brighton__2026-08-30",
@@ -629,9 +629,9 @@
       "locked_section": "FT DC",
       "locked_selection": "1X",
       "locked_model": 76.1,
-      "locked_sim": 75.6,
+      "locked_sim": 76.3,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:30.215289Z"
+      "generated_at": "2026-08-30T09:06:07.548434Z"
     },
     {
       "id": "leeds__brentford__2026-08-30",
@@ -648,9 +648,9 @@
       "locked_section": "FT DC",
       "locked_selection": "12",
       "locked_model": 71.4,
-      "locked_sim": 71.6,
+      "locked_sim": 71.9,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:30.254269Z"
+      "generated_at": "2026-08-30T09:06:07.778016Z"
     },
     {
       "id": "sunderland__fulham__2026-08-30",
@@ -667,9 +667,9 @@
       "locked_section": "FT DC",
       "locked_selection": "12",
       "locked_model": 70.3,
-      "locked_sim": 70.8,
+      "locked_sim": 70.1,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:30.293209Z"
+      "generated_at": "2026-08-30T09:06:07.987057Z"
     },
     {
       "id": "man_united__ipswich__2026-08-30",
@@ -686,9 +686,9 @@
       "locked_section": "FT DC",
       "locked_selection": "1X",
       "locked_model": 86.4,
-      "locked_sim": 87.2,
+      "locked_sim": 86.2,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:30.333532Z"
+      "generated_at": "2026-08-30T09:06:08.204486Z"
     },
     {
       "id": "aston_villa__arsenal__2026-08-31",
@@ -705,9 +705,9 @@
       "locked_section": "FT DC",
       "locked_selection": "X2",
       "locked_model": 84.3,
-      "locked_sim": 84.4,
+      "locked_sim": 84.1,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:30.373668Z"
+      "generated_at": "2026-08-30T09:06:08.420024Z"
     },
     {
       "id": "wrexham__birmingham__2026-08-28",
@@ -724,9 +724,9 @@
       "locked_section": "FT DC",
       "locked_selection": "12",
       "locked_model": 72.3,
-      "locked_sim": 69.5,
+      "locked_sim": 72.4,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:30.412290Z"
+      "generated_at": "2026-08-30T09:06:08.630236Z"
     },
     {
       "id": "derby__swansea__2026-08-29",
@@ -743,9 +743,9 @@
       "locked_section": "FT DC",
       "locked_selection": "12",
       "locked_model": 71.4,
-      "locked_sim": 71.7,
+      "locked_sim": 71.9,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:30.451485Z"
+      "generated_at": "2026-08-30T09:06:08.844038Z"
     },
     {
       "id": "middlesbrough__west_brom__2026-08-29",
@@ -762,9 +762,9 @@
       "locked_section": "FT DC",
       "locked_selection": "1X",
       "locked_model": 79.2,
-      "locked_sim": 80.1,
+      "locked_sim": 79.3,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:30.491145Z"
+      "generated_at": "2026-08-30T09:06:09.056725Z"
     },
     {
       "id": "wolves__stoke__2026-08-29",
@@ -781,9 +781,9 @@
       "locked_section": "FT DC",
       "locked_selection": "1X",
       "locked_model": 85.7,
-      "locked_sim": 84.8,
+      "locked_sim": 85.0,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:30.530929Z"
+      "generated_at": "2026-08-30T09:06:09.270470Z"
     },
     {
       "id": "blackburn__qpr__2026-08-29",
@@ -800,9 +800,9 @@
       "locked_section": "FT DC",
       "locked_selection": "12",
       "locked_model": 72.0,
-      "locked_sim": 71.5,
+      "locked_sim": 72.0,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:30.569800Z"
+      "generated_at": "2026-08-30T09:06:09.478352Z"
     },
     {
       "id": "bolton__lincoln__2026-08-29",
@@ -819,9 +819,9 @@
       "locked_section": "FT DC",
       "locked_selection": "12",
       "locked_model": 71.5,
-      "locked_sim": 72.3,
+      "locked_sim": 71.8,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:30.609096Z"
+      "generated_at": "2026-08-30T09:06:09.684114Z"
     },
     {
       "id": "bristol_city__portsmouth__2026-08-29",
@@ -840,7 +840,7 @@
       "locked_model": 72.6,
       "locked_sim": 72.9,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:30.648048Z"
+      "generated_at": "2026-08-30T09:06:09.890022Z"
     },
     {
       "id": "cardiff__sheffield_united__2026-08-29",
@@ -857,9 +857,9 @@
       "locked_section": "FT DC",
       "locked_selection": "12",
       "locked_model": 73.5,
-      "locked_sim": 72.6,
+      "locked_sim": 73.5,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:30.687399Z"
+      "generated_at": "2026-08-30T09:06:10.096140Z"
     },
     {
       "id": "charlton__preston__2026-08-29",
@@ -876,9 +876,9 @@
       "locked_section": "FT DC",
       "locked_selection": "1X",
       "locked_model": 74.0,
-      "locked_sim": 74.1,
+      "locked_sim": 73.5,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:30.726807Z"
+      "generated_at": "2026-08-30T09:06:10.301183Z"
     },
     {
       "id": "norwich__burnley__2026-08-29",
@@ -895,9 +895,9 @@
       "locked_section": "FT DC",
       "locked_selection": "12",
       "locked_model": 73.9,
-      "locked_sim": 73.0,
+      "locked_sim": 73.5,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:30.766584Z"
+      "generated_at": "2026-08-30T09:06:10.508778Z"
     },
     {
       "id": "southampton__millwall__2026-08-29",
@@ -914,9 +914,9 @@
       "locked_section": "FT DC",
       "locked_selection": "12",
       "locked_model": 74.3,
-      "locked_sim": 74.6,
+      "locked_sim": 74.2,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:30.805888Z"
+      "generated_at": "2026-08-30T09:06:10.716950Z"
     },
     {
       "id": "watford__west_ham__2026-08-29",
@@ -935,7 +935,7 @@
       "locked_model": 76.2,
       "locked_sim": 75.8,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:30.845328Z"
+      "generated_at": "2026-08-30T09:06:10.928525Z"
     },
     {
       "id": "blackpool__peterboro__2026-08-29",
@@ -952,9 +952,9 @@
       "locked_section": "FT DC",
       "locked_selection": "1X",
       "locked_model": 78.1,
-      "locked_sim": 79.7,
+      "locked_sim": 79.1,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:30.885095Z"
+      "generated_at": "2026-08-30T09:06:11.142146Z"
     },
     {
       "id": "milton_keynes_dons__leicester__2026-08-29",
@@ -971,9 +971,9 @@
       "locked_section": "FT DC",
       "locked_selection": "12",
       "locked_model": 73.0,
-      "locked_sim": 74.1,
+      "locked_sim": 73.3,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:30.938700Z"
+      "generated_at": "2026-08-30T09:06:11.355025Z"
     },
     {
       "id": "cambridge__huddersfield__2026-08-29",
@@ -990,9 +990,9 @@
       "locked_section": "FT DC",
       "locked_selection": "12",
       "locked_model": 71.7,
-      "locked_sim": 71.1,
+      "locked_sim": 70.6,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:30.978388Z"
+      "generated_at": "2026-08-30T09:06:11.566757Z"
     },
     {
       "id": "leyton_orient__barnsley__2026-08-29",
@@ -1009,9 +1009,9 @@
       "locked_section": "FT DC",
       "locked_selection": "12",
       "locked_model": 73.1,
-      "locked_sim": 73.4,
+      "locked_sim": 72.6,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:31.025547Z"
+      "generated_at": "2026-08-30T09:06:11.774335Z"
     },
     {
       "id": "notts_county__burton__2026-08-29",
@@ -1028,9 +1028,9 @@
       "locked_section": "FT DC",
       "locked_selection": "12",
       "locked_model": 72.8,
-      "locked_sim": 74.0,
+      "locked_sim": 72.8,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:31.064857Z"
+      "generated_at": "2026-08-30T09:06:11.979282Z"
     },
     {
       "id": "plymouth__bradford__2026-08-29",
@@ -1047,9 +1047,9 @@
       "locked_section": "FT DC",
       "locked_selection": "12",
       "locked_model": 72.0,
-      "locked_sim": 71.4,
+      "locked_sim": 71.8,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:31.104196Z"
+      "generated_at": "2026-08-30T09:06:12.186758Z"
     },
     {
       "id": "sheffield_weds__bromley__2026-08-29",
@@ -1066,9 +1066,9 @@
       "locked_section": "FT DC",
       "locked_selection": "1X",
       "locked_model": 77.4,
-      "locked_sim": 76.8,
+      "locked_sim": 77.1,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:31.143700Z"
+      "generated_at": "2026-08-30T09:06:12.393838Z"
     },
     {
       "id": "stevenage__doncaster__2026-08-29",
@@ -1087,7 +1087,7 @@
       "locked_model": 72.0,
       "locked_sim": 72.2,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:31.182633Z"
+      "generated_at": "2026-08-30T09:06:12.603742Z"
     },
     {
       "id": "stockport__wycombe__2026-08-29",
@@ -1104,9 +1104,9 @@
       "locked_section": "FT DC",
       "locked_selection": "1X",
       "locked_model": 76.3,
-      "locked_sim": 74.8,
+      "locked_sim": 76.2,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:31.221739Z"
+      "generated_at": "2026-08-30T09:06:12.813883Z"
     },
     {
       "id": "afc_wimbledon__wigan__2026-08-30",
@@ -1123,9 +1123,9 @@
       "locked_section": "FT DC",
       "locked_selection": "X2",
       "locked_model": 71.1,
-      "locked_sim": 71.2,
+      "locked_sim": 71.4,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:31.260455Z"
+      "generated_at": "2026-08-30T09:06:13.020828Z"
     },
     {
       "id": "mansfield__luton__2026-08-30",
@@ -1142,9 +1142,9 @@
       "locked_section": "FT DC",
       "locked_selection": "12",
       "locked_model": 73.0,
-      "locked_sim": 72.8,
+      "locked_sim": 73.5,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:31.299605Z"
+      "generated_at": "2026-08-30T09:06:13.234187Z"
     },
     {
       "id": "barnet__cheltenham__2026-08-29",
@@ -1161,9 +1161,9 @@
       "locked_section": "FT DC",
       "locked_selection": "1X",
       "locked_model": 82.5,
-      "locked_sim": 82.8,
+      "locked_sim": 82.4,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:31.339321Z"
+      "generated_at": "2026-08-30T09:06:13.442665Z"
     },
     {
       "id": "port_vale__crewe__2026-08-29",
@@ -1180,9 +1180,9 @@
       "locked_section": "FT DC",
       "locked_selection": "12",
       "locked_model": 72.0,
-      "locked_sim": 71.0,
+      "locked_sim": 71.8,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:31.378499Z"
+      "generated_at": "2026-08-30T09:06:13.648035Z"
     },
     {
       "id": "rotherham__chesterfield__2026-08-29",
@@ -1199,9 +1199,9 @@
       "locked_section": "FT DC",
       "locked_selection": "12",
       "locked_model": 72.0,
-      "locked_sim": 73.0,
+      "locked_sim": 72.5,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:31.417756Z"
+      "generated_at": "2026-08-30T09:06:13.856834Z"
     },
     {
       "id": "colchester__rochdale__2026-08-29",
@@ -1218,9 +1218,9 @@
       "locked_section": "FT DC",
       "locked_selection": "12",
       "locked_model": 72.2,
-      "locked_sim": 72.1,
+      "locked_sim": 71.9,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:31.457164Z"
+      "generated_at": "2026-08-30T09:06:14.062161Z"
     },
     {
       "id": "crawley_town__bristol_rvs__2026-08-29",
@@ -1237,9 +1237,9 @@
       "locked_section": "FT DC",
       "locked_selection": "X2",
       "locked_model": 73.0,
-      "locked_sim": 71.5,
+      "locked_sim": 72.9,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:31.496405Z"
+      "generated_at": "2026-08-30T09:06:14.267547Z"
     },
     {
       "id": "gillingham__northampton__2026-08-29",
@@ -1256,9 +1256,9 @@
       "locked_section": "FT DC",
       "locked_selection": "12",
       "locked_model": 72.2,
-      "locked_sim": 73.0,
+      "locked_sim": 72.3,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:31.535853Z"
+      "generated_at": "2026-08-30T09:06:14.474716Z"
     },
     {
       "id": "grimsby__fleetwood_town__2026-08-29",
@@ -1275,9 +1275,9 @@
       "locked_section": "FT DC",
       "locked_selection": "1X",
       "locked_model": 77.5,
-      "locked_sim": 77.8,
+      "locked_sim": 77.0,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:31.575255Z"
+      "generated_at": "2026-08-30T09:06:14.682681Z"
     },
     {
       "id": "newport_county__tranmere__2026-08-29",
@@ -1294,9 +1294,9 @@
       "locked_section": "FT DC",
       "locked_selection": "12",
       "locked_model": 71.3,
-      "locked_sim": 73.2,
+      "locked_sim": 71.7,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:31.614549Z"
+      "generated_at": "2026-08-30T09:06:14.888983Z"
     },
     {
       "id": "oldham__swindon__2026-08-29",
@@ -1313,9 +1313,9 @@
       "locked_section": "FT DC",
       "locked_selection": "1X",
       "locked_model": 74.4,
-      "locked_sim": 73.8,
+      "locked_sim": 74.1,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:31.654057Z"
+      "generated_at": "2026-08-30T09:06:15.096396Z"
     },
     {
       "id": "shrewsbury__salford__2026-08-29",
@@ -1332,9 +1332,9 @@
       "locked_section": "FT DC",
       "locked_selection": "X2",
       "locked_model": 75.8,
-      "locked_sim": 76.8,
+      "locked_sim": 76.7,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:31.693535Z"
+      "generated_at": "2026-08-30T09:06:15.303982Z"
     },
     {
       "id": "walsall__accrington__2026-08-29",
@@ -1351,9 +1351,9 @@
       "locked_section": "FT DC",
       "locked_selection": "1X",
       "locked_model": 77.6,
-      "locked_sim": 77.8,
+      "locked_sim": 77.4,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:31.744274Z"
+      "generated_at": "2026-08-30T09:06:15.516351Z"
     },
     {
       "id": "york__exeter__2026-08-29",
@@ -1370,9 +1370,9 @@
       "locked_section": "FT DC",
       "locked_selection": "1X",
       "locked_model": 80.8,
-      "locked_sim": 80.6,
+      "locked_sim": 80.8,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:31.786700Z"
+      "generated_at": "2026-08-30T09:06:15.725283Z"
     },
     {
       "id": "aldershot__harrogate__2026-08-28",
@@ -1389,9 +1389,9 @@
       "locked_section": "FT DC",
       "locked_selection": "12",
       "locked_model": 76.0,
-      "locked_sim": 75.8,
+      "locked_sim": 76.6,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:31.826812Z"
+      "generated_at": "2026-08-30T09:06:15.934244Z"
     },
     {
       "id": "altrincham__halifax__2026-08-28",
@@ -1408,9 +1408,9 @@
       "locked_section": "FT DC",
       "locked_selection": "12",
       "locked_model": 73.8,
-      "locked_sim": 71.8,
+      "locked_sim": 73.5,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:31.865897Z"
+      "generated_at": "2026-08-30T09:06:16.139308Z"
     },
     {
       "id": "barrow__yeovil__2026-08-28",
@@ -1427,9 +1427,9 @@
       "locked_section": "FT DC",
       "locked_selection": "12",
       "locked_model": 73.0,
-      "locked_sim": 71.9,
+      "locked_sim": 72.4,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:31.905073Z"
+      "generated_at": "2026-08-30T09:06:16.348052Z"
     },
     {
       "id": "fylde__forest_green__2026-08-28",
@@ -1446,9 +1446,9 @@
       "locked_section": "FT DC",
       "locked_selection": "12",
       "locked_model": 75.3,
-      "locked_sim": 75.4,
+      "locked_sim": 75.5,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:31.944453Z"
+      "generated_at": "2026-08-30T09:06:16.557384Z"
     },
     {
       "id": "gateshead__sutton__2026-08-28",
@@ -1465,9 +1465,9 @@
       "locked_section": "FT DC",
       "locked_selection": "12",
       "locked_model": 73.9,
-      "locked_sim": 73.0,
+      "locked_sim": 73.6,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:31.983583Z"
+      "generated_at": "2026-08-30T09:06:16.763819Z"
     },
     {
       "id": "hartlepool__eastleigh__2026-08-28",
@@ -1484,9 +1484,9 @@
       "locked_section": "FT DC",
       "locked_selection": "1X",
       "locked_model": 78.3,
-      "locked_sim": 78.1,
+      "locked_sim": 78.2,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:32.023519Z"
+      "generated_at": "2026-08-30T09:06:16.971926Z"
     },
     {
       "id": "hornchurch__woking__2026-08-28",
@@ -1503,9 +1503,9 @@
       "locked_section": "FT DC",
       "locked_selection": "12",
       "locked_model": 73.2,
-      "locked_sim": 72.1,
+      "locked_sim": 73.5,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:32.062648Z"
+      "generated_at": "2026-08-30T09:06:17.211941Z"
     },
     {
       "id": "scunthorpe__solihull__2026-08-28",
@@ -1522,9 +1522,9 @@
       "locked_section": "FT DC",
       "locked_selection": "1X",
       "locked_model": 76.9,
-      "locked_sim": 77.1,
+      "locked_sim": 76.7,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:32.102622Z"
+      "generated_at": "2026-08-30T09:06:17.422070Z"
     },
     {
       "id": "southend__kidderminster__2026-08-28",
@@ -1541,9 +1541,9 @@
       "locked_section": "FT DC",
       "locked_selection": "1X",
       "locked_model": 84.0,
-      "locked_sim": 85.1,
+      "locked_sim": 83.8,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:32.142898Z"
+      "generated_at": "2026-08-30T09:06:17.633350Z"
     },
     {
       "id": "tamworth__worthing__2026-08-28",
@@ -1560,9 +1560,9 @@
       "locked_section": "FT DC",
       "locked_selection": "12",
       "locked_model": 73.9,
-      "locked_sim": 73.4,
+      "locked_sim": 72.7,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:32.182305Z"
+      "generated_at": "2026-08-30T09:06:17.843276Z"
     },
     {
       "id": "wealdstone__carlisle__2026-08-28",
@@ -1579,9 +1579,9 @@
       "locked_section": "FT DC",
       "locked_selection": "X2",
       "locked_model": 75.3,
-      "locked_sim": 75.2,
+      "locked_sim": 75.3,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:32.221779Z"
+      "generated_at": "2026-08-30T09:06:18.051575Z"
     },
     {
       "id": "lille__paris_sg__2026-08-28",
@@ -1598,9 +1598,9 @@
       "locked_section": "FT DC",
       "locked_selection": "X2",
       "locked_model": 81.0,
-      "locked_sim": 80.4,
+      "locked_sim": 80.3,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:32.261778Z"
+      "generated_at": "2026-08-30T09:06:18.259814Z"
     },
     {
       "id": "strasbourg__lens__2026-08-29",
@@ -1617,9 +1617,9 @@
       "locked_section": "FT DC",
       "locked_selection": "12",
       "locked_model": 73.6,
-      "locked_sim": 72.5,
+      "locked_sim": 72.9,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:32.304853Z"
+      "generated_at": "2026-08-30T09:06:18.469509Z"
     },
     {
       "id": "auxerre__angers__2026-08-29",
@@ -1636,9 +1636,9 @@
       "locked_section": "FT DC",
       "locked_selection": "1X",
       "locked_model": 76.6,
-      "locked_sim": 76.9,
+      "locked_sim": 76.2,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:32.364076Z"
+      "generated_at": "2026-08-30T09:06:18.676646Z"
     },
     {
       "id": "brest__toulouse__2026-08-29",
@@ -1657,7 +1657,7 @@
       "locked_model": 72.1,
       "locked_sim": 71.8,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:32.408640Z"
+      "generated_at": "2026-08-30T09:06:18.883534Z"
     },
     {
       "id": "lorient__troyes__2026-08-29",
@@ -1674,9 +1674,9 @@
       "locked_section": "FT DC",
       "locked_selection": "1X",
       "locked_model": 78.9,
-      "locked_sim": 77.3,
+      "locked_sim": 79.0,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:32.450979Z"
+      "generated_at": "2026-08-30T09:06:19.090880Z"
     },
     {
       "id": "lyon__le_havre__2026-08-29",
@@ -1695,7 +1695,7 @@
       "locked_model": 86.5,
       "locked_sim": 87.1,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:32.493355Z"
+      "generated_at": "2026-08-30T09:06:19.301692Z"
     },
     {
       "id": "paris_fc__nice__2026-08-30",
@@ -1714,7 +1714,7 @@
       "locked_model": 75.0,
       "locked_sim": 74.6,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:32.533186Z"
+      "generated_at": "2026-08-30T09:06:19.509574Z"
     },
     {
       "id": "rennes__le_mans__2026-08-30",
@@ -1731,9 +1731,9 @@
       "locked_section": "FT DC",
       "locked_selection": "1X",
       "locked_model": 85.3,
-      "locked_sim": 83.5,
+      "locked_sim": 85.0,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:32.573917Z"
+      "generated_at": "2026-08-30T09:06:19.723334Z"
     },
     {
       "id": "monaco__marseille__2026-08-30",
@@ -1750,9 +1750,9 @@
       "locked_section": "FT DC",
       "locked_selection": "12",
       "locked_model": 74.3,
-      "locked_sim": 71.8,
+      "locked_sim": 74.0,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:32.613245Z"
+      "generated_at": "2026-08-30T09:06:19.935055Z"
     },
     {
       "id": "clermont__sochaux__2026-08-28",
@@ -1769,9 +1769,9 @@
       "locked_section": "FT DC",
       "locked_selection": "12",
       "locked_model": 70.5,
-      "locked_sim": 70.4,
+      "locked_sim": 70.5,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:32.653431Z"
+      "generated_at": "2026-08-30T09:06:20.140349Z"
     },
     {
       "id": "laval__grenoble__2026-08-28",
@@ -1788,9 +1788,9 @@
       "locked_section": "FT DC",
       "locked_selection": "1X",
       "locked_model": 74.5,
-      "locked_sim": 75.0,
+      "locked_sim": 74.5,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:32.693656Z"
+      "generated_at": "2026-08-30T09:06:20.347303Z"
     },
     {
       "id": "montpellier__boulogne__2026-08-28",
@@ -1807,9 +1807,9 @@
       "locked_section": "FT DC",
       "locked_selection": "1X",
       "locked_model": 82.3,
-      "locked_sim": 82.9,
+      "locked_sim": 82.4,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:32.742608Z"
+      "generated_at": "2026-08-30T09:06:20.555511Z"
     },
     {
       "id": "nancy__dunkerque__2026-08-28",
@@ -1826,9 +1826,9 @@
       "locked_section": "FT DC",
       "locked_selection": "12",
       "locked_model": 71.3,
-      "locked_sim": 69.8,
+      "locked_sim": 71.4,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:32.781425Z"
+      "generated_at": "2026-08-30T09:06:20.763171Z"
     },
     {
       "id": "rodez__pau_fc__2026-08-28",
@@ -1845,9 +1845,9 @@
       "locked_section": "FT DC",
       "locked_selection": "1X",
       "locked_model": 79.5,
-      "locked_sim": 79.4,
+      "locked_sim": 79.9,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:32.823572Z"
+      "generated_at": "2026-08-30T09:06:20.974974Z"
     },
     {
       "id": "annecy__metz__2026-08-29",
@@ -1864,9 +1864,9 @@
       "locked_section": "FT DC",
       "locked_selection": "12",
       "locked_model": 70.2,
-      "locked_sim": 69.5,
+      "locked_sim": 69.7,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:32.862097Z"
+      "generated_at": "2026-08-30T09:06:21.178746Z"
     },
     {
       "id": "red_star__reims__2026-08-29",
@@ -1883,9 +1883,9 @@
       "locked_section": "FT DC",
       "locked_selection": "12",
       "locked_model": 70.2,
-      "locked_sim": 70.0,
+      "locked_sim": 70.2,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:32.901788Z"
+      "generated_at": "2026-08-30T09:06:21.385309Z"
     },
     {
       "id": "guingamp__nantes__2026-08-29",
@@ -1902,9 +1902,9 @@
       "locked_section": "FT DC",
       "locked_selection": "12",
       "locked_model": 71.0,
-      "locked_sim": 69.5,
+      "locked_sim": 70.4,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:32.941399Z"
+      "generated_at": "2026-08-30T09:06:21.591083Z"
     },
     {
       "id": "dijon__st_etienne__2026-08-31",
@@ -1921,9 +1921,9 @@
       "locked_section": "FT DC",
       "locked_selection": "X2",
       "locked_model": 77.2,
-      "locked_sim": 79.5,
+      "locked_sim": 77.0,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:32.980576Z"
+      "generated_at": "2026-08-30T09:06:21.798994Z"
     },
     {
       "id": "volos_nfc__iraklis__2026-08-29",
@@ -1940,9 +1940,9 @@
       "locked_section": "FT DC",
       "locked_selection": "1X",
       "locked_model": 77.1,
-      "locked_sim": 77.6,
+      "locked_sim": 77.5,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:33.020310Z"
+      "generated_at": "2026-08-30T09:06:22.005000Z"
     },
     {
       "id": "panetolikos__kalamata__2026-08-29",
@@ -1959,9 +1959,9 @@
       "locked_section": "FT DC",
       "locked_selection": "1X",
       "locked_model": 72.5,
-      "locked_sim": 71.0,
+      "locked_sim": 72.4,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:33.059485Z"
+      "generated_at": "2026-08-30T09:06:22.209611Z"
     },
     {
       "id": "aris__ofi_crete__2026-08-30",
@@ -1978,9 +1978,9 @@
       "locked_section": "FT DC",
       "locked_selection": "1X",
       "locked_model": 82.4,
-      "locked_sim": 81.7,
+      "locked_sim": 82.4,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:33.099984Z"
+      "generated_at": "2026-08-30T09:06:22.418690Z"
     },
     {
       "id": "atromitos__paok__2026-08-30",
@@ -1997,9 +1997,9 @@
       "locked_section": "FT DC",
       "locked_selection": "X2",
       "locked_model": 81.5,
-      "locked_sim": 80.0,
+      "locked_sim": 81.6,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:33.140500Z"
+      "generated_at": "2026-08-30T09:06:22.626086Z"
     },
     {
       "id": "asteras_tripolis__olympiakos__2026-08-30",
@@ -2016,9 +2016,9 @@
       "locked_section": "FT DC",
       "locked_selection": "X2",
       "locked_model": 91.6,
-      "locked_sim": 91.0,
+      "locked_sim": 91.3,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:33.181638Z"
+      "generated_at": "2026-08-30T09:06:22.838850Z"
     },
     {
       "id": "kifisia__aek__2026-08-30",
@@ -2035,9 +2035,9 @@
       "locked_section": "FT DC",
       "locked_selection": "X2",
       "locked_model": 89.8,
-      "locked_sim": 90.3,
+      "locked_sim": 89.7,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:33.222547Z"
+      "generated_at": "2026-08-30T09:06:23.052470Z"
     },
     {
       "id": "levadeiakos__panathinaikos__2026-08-31",
@@ -2054,9 +2054,9 @@
       "locked_section": "FT DC",
       "locked_selection": "X2",
       "locked_model": 85.2,
-      "locked_sim": 84.6,
+      "locked_sim": 84.9,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:33.265284Z"
+      "generated_at": "2026-08-30T09:06:23.267377Z"
     },
     {
       "id": "milan__venezia__2026-08-28",
@@ -2073,9 +2073,9 @@
       "locked_section": "FT DC",
       "locked_selection": "1X",
       "locked_model": 86.5,
-      "locked_sim": 88.0,
+      "locked_sim": 87.4,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:33.306887Z"
+      "generated_at": "2026-08-30T09:06:23.477922Z"
     },
     {
       "id": "fiorentina__frosinone__2026-08-29",
@@ -2092,9 +2092,9 @@
       "locked_section": "FT DC",
       "locked_selection": "1X",
       "locked_model": 81.9,
-      "locked_sim": 79.5,
+      "locked_sim": 81.4,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:33.351844Z"
+      "generated_at": "2026-08-30T09:06:23.687535Z"
     },
     {
       "id": "monza__udinese__2026-08-29",
@@ -2111,9 +2111,9 @@
       "locked_section": "FT DC",
       "locked_selection": "12",
       "locked_model": 70.3,
-      "locked_sim": 69.5,
+      "locked_sim": 69.7,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:33.390643Z"
+      "generated_at": "2026-08-30T09:06:23.892905Z"
     },
     {
       "id": "sassuolo__torino__2026-08-29",
@@ -2130,9 +2130,9 @@
       "locked_section": "FT DC",
       "locked_selection": "1X",
       "locked_model": 71.3,
-      "locked_sim": 70.3,
+      "locked_sim": 71.4,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:33.432210Z"
+      "generated_at": "2026-08-30T09:06:24.099467Z"
     },
     {
       "id": "juventus__parma__2026-08-29",
@@ -2149,9 +2149,9 @@
       "locked_section": "FT DC",
       "locked_selection": "1X",
       "locked_model": 91.5,
-      "locked_sim": 91.7,
+      "locked_sim": 91.5,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:33.477698Z"
+      "generated_at": "2026-08-30T09:06:24.314429Z"
     },
     {
       "id": "napoli__como__2026-08-30",
@@ -2166,11 +2166,11 @@
       "models": "market-only",
       "locked_status": "SECURED LOCK",
       "locked_section": "HT DC",
-      "locked_selection": "X2",
+      "locked_selection": "1X",
       "locked_model": 70.0,
-      "locked_sim": 69.1,
+      "locked_sim": 69.6,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:33.519796Z"
+      "generated_at": "2026-08-30T09:06:24.518025Z"
     },
     {
       "id": "cagliari__inter__2026-08-30",
@@ -2187,9 +2187,9 @@
       "locked_section": "FT DC",
       "locked_selection": "X2",
       "locked_model": 86.5,
-      "locked_sim": 86.3,
+      "locked_sim": 86.5,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:33.561211Z"
+      "generated_at": "2026-08-30T09:06:24.729070Z"
     },
     {
       "id": "lazio__genoa__2026-08-30",
@@ -2206,9 +2206,9 @@
       "locked_section": "FT DC",
       "locked_selection": "1X",
       "locked_model": 78.1,
-      "locked_sim": 76.9,
+      "locked_sim": 78.5,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:33.601829Z"
+      "generated_at": "2026-08-30T09:06:24.932852Z"
     },
     {
       "id": "lecce__roma__2026-08-31",
@@ -2225,9 +2225,9 @@
       "locked_section": "FT DC",
       "locked_selection": "X2",
       "locked_model": 88.1,
-      "locked_sim": 87.5,
+      "locked_sim": 88.0,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:33.643459Z"
+      "generated_at": "2026-08-30T09:06:25.141700Z"
     },
     {
       "id": "atalanta__bologna__2026-08-31",
@@ -2244,9 +2244,9 @@
       "locked_section": "FT DC",
       "locked_selection": "1X",
       "locked_model": 76.4,
-      "locked_sim": 76.0,
+      "locked_sim": 76.5,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:33.683114Z"
+      "generated_at": "2026-08-30T09:06:25.350362Z"
     },
     {
       "id": "cremonese__modena__2026-08-28",
@@ -2263,9 +2263,9 @@
       "locked_section": "FT DC",
       "locked_selection": "1X",
       "locked_model": 72.5,
-      "locked_sim": 72.8,
+      "locked_sim": 73.2,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:33.722507Z"
+      "generated_at": "2026-08-30T09:06:25.556338Z"
     },
     {
       "id": "sampdoria__juve_stabia__2026-08-29",
@@ -2282,9 +2282,9 @@
       "locked_section": "FT DC",
       "locked_selection": "1X",
       "locked_model": 79.1,
-      "locked_sim": 78.0,
+      "locked_sim": 78.3,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:33.761795Z"
+      "generated_at": "2026-08-30T09:06:25.762187Z"
     },
     {
       "id": "virtus_entella__cesena__2026-08-29",
@@ -2301,9 +2301,9 @@
       "locked_section": "FT DC",
       "locked_selection": "1X",
       "locked_model": 72.2,
-      "locked_sim": 73.1,
+      "locked_sim": 72.6,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:33.801784Z"
+      "generated_at": "2026-08-30T09:06:25.971199Z"
     },
     {
       "id": "ascoli__carrarese__2026-08-29",
@@ -2320,9 +2320,9 @@
       "locked_section": "FT DC",
       "locked_selection": "1X",
       "locked_model": 77.7,
-      "locked_sim": 78.9,
+      "locked_sim": 77.8,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:33.843625Z"
+      "generated_at": "2026-08-30T09:06:26.177280Z"
     },
     {
       "id": "avellino__vicenza__2026-08-29",
@@ -2339,9 +2339,9 @@
       "locked_section": "FT DC",
       "locked_selection": "12",
       "locked_model": 71.0,
-      "locked_sim": 71.3,
+      "locked_sim": 71.2,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:33.883645Z"
+      "generated_at": "2026-08-30T09:06:26.383730Z"
     },
     {
       "id": "padova__verona__2026-08-29",
@@ -2356,11 +2356,11 @@
       "models": "market-only",
       "locked_status": "SECURED LOCK",
       "locked_section": "HT DC",
-      "locked_selection": "1X",
+      "locked_selection": "X2",
       "locked_model": 70.0,
-      "locked_sim": 71.5,
+      "locked_sim": 69.8,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:33.923872Z"
+      "generated_at": "2026-08-30T09:06:26.589234Z"
     },
     {
       "id": "arezzo__palermo__2026-08-30",
@@ -2377,9 +2377,9 @@
       "locked_section": "FT DC",
       "locked_selection": "X2",
       "locked_model": 73.7,
-      "locked_sim": 71.4,
+      "locked_sim": 72.8,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:33.963624Z"
+      "generated_at": "2026-08-30T09:06:26.795109Z"
     },
     {
       "id": "mantova__empoli__2026-08-30",
@@ -2396,9 +2396,9 @@
       "locked_section": "FT DC",
       "locked_selection": "1X",
       "locked_model": 73.9,
-      "locked_sim": 72.7,
+      "locked_sim": 74.0,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:34.003634Z"
+      "generated_at": "2026-08-30T09:06:27.000844Z"
     },
     {
       "id": "benevento__sudtirol__2026-08-30",
@@ -2415,9 +2415,9 @@
       "locked_section": "FT DC",
       "locked_selection": "1X",
       "locked_model": 74.5,
-      "locked_sim": 73.5,
+      "locked_sim": 73.9,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:34.042845Z"
+      "generated_at": "2026-08-30T09:06:27.206227Z"
     },
     {
       "id": "pisa__catanzaro__2026-08-30",
@@ -2434,9 +2434,9 @@
       "locked_section": "FT DC",
       "locked_selection": "1X",
       "locked_model": 79.9,
-      "locked_sim": 79.2,
+      "locked_sim": 79.7,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:34.082450Z"
+      "generated_at": "2026-08-30T09:06:27.412277Z"
     },
     {
       "id": "groningen__for_sittard__2026-08-28",
@@ -2453,9 +2453,9 @@
       "locked_section": "FT DC",
       "locked_selection": "1X",
       "locked_model": 84.9,
-      "locked_sim": 85.9,
+      "locked_sim": 84.9,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:34.123360Z"
+      "generated_at": "2026-08-30T09:06:27.624116Z"
     },
     {
       "id": "excelsior__sparta_rotterdam__2026-08-29",
@@ -2472,9 +2472,9 @@
       "locked_section": "FT DC",
       "locked_selection": "12",
       "locked_model": 75.2,
-      "locked_sim": 75.9,
+      "locked_sim": 75.5,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:34.163879Z"
+      "generated_at": "2026-08-30T09:06:27.832813Z"
     },
     {
       "id": "az_alkmaar__go_ahead_eagles__2026-08-29",
@@ -2493,7 +2493,7 @@
       "locked_model": 87.3,
       "locked_sim": 87.1,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:34.205284Z"
+      "generated_at": "2026-08-30T09:06:28.043181Z"
     },
     {
       "id": "zwolle__nijmegen__2026-08-29",
@@ -2510,9 +2510,9 @@
       "locked_section": "FT DC",
       "locked_selection": "X2",
       "locked_model": 78.9,
-      "locked_sim": 78.8,
+      "locked_sim": 78.7,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:34.246505Z"
+      "generated_at": "2026-08-30T09:06:28.254840Z"
     },
     {
       "id": "utrecht__psv_eindhoven__2026-08-30",
@@ -2529,9 +2529,9 @@
       "locked_section": "FT DC",
       "locked_selection": "X2",
       "locked_model": 78.9,
-      "locked_sim": 78.8,
+      "locked_sim": 79.2,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:34.287594Z"
+      "generated_at": "2026-08-30T09:06:28.466927Z"
     },
     {
       "id": "feyenoord__den_haag__2026-08-30",
@@ -2548,9 +2548,9 @@
       "locked_section": "FT DC",
       "locked_selection": "1X",
       "locked_model": 93.6,
-      "locked_sim": 93.2,
+      "locked_sim": 93.5,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:34.334655Z"
+      "generated_at": "2026-08-30T09:06:28.685452Z"
     },
     {
       "id": "willem_ii__heerenveen__2026-08-30",
@@ -2567,9 +2567,9 @@
       "locked_section": "FT DC",
       "locked_selection": "12",
       "locked_model": 78.1,
-      "locked_sim": 77.4,
+      "locked_sim": 77.5,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:34.380323Z"
+      "generated_at": "2026-08-30T09:06:28.896298Z"
     },
     {
       "id": "telstar__ajax__2026-08-30",
@@ -2586,9 +2586,9 @@
       "locked_section": "FT DC",
       "locked_selection": "X2",
       "locked_model": 81.1,
-      "locked_sim": 80.8,
+      "locked_sim": 81.2,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:34.420882Z"
+      "generated_at": "2026-08-30T09:06:29.107105Z"
     },
     {
       "id": "cambuur__twente__2026-08-30",
@@ -2605,9 +2605,9 @@
       "locked_section": "FT DC",
       "locked_selection": "X2",
       "locked_model": 87.4,
-      "locked_sim": 87.8,
+      "locked_sim": 87.1,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:34.461831Z"
+      "generated_at": "2026-08-30T09:06:29.320587Z"
     },
     {
       "id": "rio_ave__sp_lisbon__2026-08-28",
@@ -2616,17 +2616,17 @@
       "league": "Primeira Liga",
       "div": "P1",
       "home": "Rio Ave",
-      "away": "Sporting Lisbon",
-      "fixture": "Rio Ave vs Sporting Lisbon",
+      "away": "Sp Lisbon",
+      "fixture": "Rio Ave vs Sp Lisbon",
       "odds": "8.50 / 5.50 / 1.27",
       "models": "market-only",
       "locked_status": "SECURED LOCK",
       "locked_section": "FT DC",
       "locked_selection": "X2",
       "locked_model": 89.2,
-      "locked_sim": 88.9,
+      "locked_sim": 88.5,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:34.502809Z"
+      "generated_at": "2026-08-30T09:06:29.533936Z"
     },
     {
       "id": "alverca__santa_clara__2026-08-29",
@@ -2643,9 +2643,9 @@
       "locked_section": "FT DC",
       "locked_selection": "12",
       "locked_model": 70.4,
-      "locked_sim": 69.8,
+      "locked_sim": 70.0,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:34.542066Z"
+      "generated_at": "2026-08-30T09:06:29.738880Z"
     },
     {
       "id": "arouca__maritimo__2026-08-29",
@@ -2662,9 +2662,9 @@
       "locked_section": "FT DC",
       "locked_selection": "1X",
       "locked_model": 72.7,
-      "locked_sim": 71.7,
+      "locked_sim": 72.3,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:34.581157Z"
+      "generated_at": "2026-08-30T09:06:29.944980Z"
     },
     {
       "id": "academico_viseu__porto__2026-08-29",
@@ -2681,9 +2681,9 @@
       "locked_section": "FT DC",
       "locked_selection": "X2",
       "locked_model": 89.8,
-      "locked_sim": 90.5,
+      "locked_sim": 89.7,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:34.621724Z"
+      "generated_at": "2026-08-30T09:06:30.158436Z"
     },
     {
       "id": "nacional__estrela__2026-08-30",
@@ -2700,9 +2700,9 @@
       "locked_section": "FT DC",
       "locked_selection": "12",
       "locked_model": 71.4,
-      "locked_sim": 70.3,
+      "locked_sim": 70.1,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:34.660744Z"
+      "generated_at": "2026-08-30T09:06:30.365081Z"
     },
     {
       "id": "casa_pia__moreirense__2026-08-30",
@@ -2719,9 +2719,9 @@
       "locked_section": "HT DC",
       "locked_selection": "1X",
       "locked_model": 70.0,
-      "locked_sim": 70.3,
+      "locked_sim": 69.9,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:34.699403Z"
+      "generated_at": "2026-08-30T09:06:30.569195Z"
     },
     {
       "id": "famalicao__gil_vicente__2026-08-30",
@@ -2738,9 +2738,9 @@
       "locked_section": "FT DC",
       "locked_selection": "1X",
       "locked_model": 71.8,
-      "locked_sim": 72.0,
+      "locked_sim": 71.2,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:34.738451Z"
+      "generated_at": "2026-08-30T09:06:30.775403Z"
     },
     {
       "id": "benfica__estoril__2026-08-31",
@@ -2757,9 +2757,9 @@
       "locked_section": "FT DC",
       "locked_selection": "1X",
       "locked_model": 92.3,
-      "locked_sim": 92.2,
+      "locked_sim": 92.5,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:34.779995Z"
+      "generated_at": "2026-08-30T09:06:30.992994Z"
     },
     {
       "id": "sp_braga__guimaraes__2026-08-31",
@@ -2778,7 +2778,7 @@
       "locked_model": 81.4,
       "locked_sim": 81.0,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:34.819534Z"
+      "generated_at": "2026-08-30T09:06:31.200858Z"
     },
     {
       "id": "celtic__falkirk__2026-08-29",
@@ -2795,9 +2795,9 @@
       "locked_section": "FT DC",
       "locked_selection": "1X",
       "locked_model": 91.6,
-      "locked_sim": 91.6,
+      "locked_sim": 91.2,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:34.860296Z"
+      "generated_at": "2026-08-30T09:06:31.420770Z"
     },
     {
       "id": "hearts__st_johnstone__2026-08-29",
@@ -2814,9 +2814,9 @@
       "locked_section": "FT DC",
       "locked_selection": "1X",
       "locked_model": 79.5,
-      "locked_sim": 81.1,
+      "locked_sim": 79.4,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:34.899883Z"
+      "generated_at": "2026-08-30T09:06:31.630770Z"
     },
     {
       "id": "kilmarnock__dundee_united__2026-08-29",
@@ -2833,9 +2833,9 @@
       "locked_section": "FT DC",
       "locked_selection": "12",
       "locked_model": 73.0,
-      "locked_sim": 72.3,
+      "locked_sim": 73.6,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:34.939195Z"
+      "generated_at": "2026-08-30T09:06:31.843214Z"
     },
     {
       "id": "aberdeen__rangers__2026-08-30",
@@ -2852,9 +2852,9 @@
       "locked_section": "FT DC",
       "locked_selection": "X2",
       "locked_model": 78.3,
-      "locked_sim": 78.8,
+      "locked_sim": 78.3,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:34.979102Z"
+      "generated_at": "2026-08-30T09:06:32.051442Z"
     },
     {
       "id": "dundee__hibernian__2026-08-30",
@@ -2871,9 +2871,9 @@
       "locked_section": "FT DC",
       "locked_selection": "12",
       "locked_model": 72.3,
-      "locked_sim": 73.6,
+      "locked_sim": 73.2,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:35.018506Z"
+      "generated_at": "2026-08-30T09:06:32.257863Z"
     },
     {
       "id": "st_mirren__motherwell__2026-08-30",
@@ -2890,9 +2890,9 @@
       "locked_section": "FT DC",
       "locked_selection": "12",
       "locked_model": 72.0,
-      "locked_sim": 71.9,
+      "locked_sim": 71.7,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:35.057694Z"
+      "generated_at": "2026-08-30T09:06:32.464529Z"
     },
     {
       "id": "dunfermline__raith_rvs__2026-08-28",
@@ -2909,9 +2909,9 @@
       "locked_section": "FT DC",
       "locked_selection": "12",
       "locked_model": 72.1,
-      "locked_sim": 71.5,
+      "locked_sim": 72.3,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:35.096833Z"
+      "generated_at": "2026-08-30T09:06:32.673475Z"
     },
     {
       "id": "arbroath__livingston__2026-08-29",
@@ -2928,9 +2928,9 @@
       "locked_section": "FT DC",
       "locked_selection": "12",
       "locked_model": 71.9,
-      "locked_sim": 71.5,
+      "locked_sim": 71.1,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:35.135842Z"
+      "generated_at": "2026-08-30T09:06:32.879521Z"
     },
     {
       "id": "ayr__morton__2026-08-29",
@@ -2947,9 +2947,9 @@
       "locked_section": "FT DC",
       "locked_selection": "1X",
       "locked_model": 80.8,
-      "locked_sim": 80.9,
+      "locked_sim": 80.0,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:35.175116Z"
+      "generated_at": "2026-08-30T09:06:33.088324Z"
     },
     {
       "id": "partick__queens_park__2026-08-29",
@@ -2966,9 +2966,9 @@
       "locked_section": "FT DC",
       "locked_selection": "1X",
       "locked_model": 88.9,
-      "locked_sim": 88.9,
+      "locked_sim": 89.0,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:35.215168Z"
+      "generated_at": "2026-08-30T09:06:33.306415Z"
     },
     {
       "id": "stenhousemuir__inverness_c__2026-08-29",
@@ -2985,9 +2985,9 @@
       "locked_section": "FT DC",
       "locked_selection": "12",
       "locked_model": 72.8,
-      "locked_sim": 72.7,
+      "locked_sim": 72.9,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:35.254695Z"
+      "generated_at": "2026-08-30T09:06:33.514334Z"
     },
     {
       "id": "airdrie_utd__east_fife__2026-08-29",
@@ -3004,9 +3004,9 @@
       "locked_section": "FT DC",
       "locked_selection": "1X",
       "locked_model": 75.7,
-      "locked_sim": 75.4,
+      "locked_sim": 75.0,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:35.294168Z"
+      "generated_at": "2026-08-30T09:06:33.723657Z"
     },
     {
       "id": "alloa__peterhead__2026-08-29",
@@ -3023,9 +3023,9 @@
       "locked_section": "FT DC",
       "locked_selection": "12",
       "locked_model": 72.5,
-      "locked_sim": 72.0,
+      "locked_sim": 72.1,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:35.333688Z"
+      "generated_at": "2026-08-30T09:06:33.931025Z"
     },
     {
       "id": "hamilton__cove_rangers__2026-08-29",
@@ -3042,9 +3042,9 @@
       "locked_section": "FT DC",
       "locked_selection": "1X",
       "locked_model": 82.9,
-      "locked_sim": 84.2,
+      "locked_sim": 83.1,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:35.373840Z"
+      "generated_at": "2026-08-30T09:06:34.141176Z"
     },
     {
       "id": "montrose__queen_of_sth__2026-08-29",
@@ -3061,9 +3061,9 @@
       "locked_section": "FT DC",
       "locked_selection": "12",
       "locked_model": 74.5,
-      "locked_sim": 72.8,
+      "locked_sim": 74.0,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:35.413298Z"
+      "generated_at": "2026-08-30T09:06:34.349200Z"
     },
     {
       "id": "ross_county__east_kilbride__2026-08-29",
@@ -3080,9 +3080,9 @@
       "locked_section": "FT DC",
       "locked_selection": "1X",
       "locked_model": 80.1,
-      "locked_sim": 80.6,
+      "locked_sim": 80.4,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:35.453050Z"
+      "generated_at": "2026-08-30T09:06:34.559819Z"
     },
     {
       "id": "edinburgh_city__forfar__2026-08-28",
@@ -3099,9 +3099,9 @@
       "locked_section": "FT DC",
       "locked_selection": "1X",
       "locked_model": 81.0,
-      "locked_sim": 80.4,
+      "locked_sim": 80.3,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:35.492746Z"
+      "generated_at": "2026-08-30T09:06:34.770443Z"
     },
     {
       "id": "annan_athletic__dumbarton__2026-08-29",
@@ -3118,9 +3118,9 @@
       "locked_section": "FT DC",
       "locked_selection": "12",
       "locked_model": 75.0,
-      "locked_sim": 76.2,
+      "locked_sim": 75.8,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:35.536962Z"
+      "generated_at": "2026-08-30T09:06:34.980242Z"
     },
     {
       "id": "elgin__stirling__2026-08-29",
@@ -3137,9 +3137,9 @@
       "locked_section": "FT DC",
       "locked_selection": "1X",
       "locked_model": 75.7,
-      "locked_sim": 75.2,
+      "locked_sim": 75.6,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:35.578686Z"
+      "generated_at": "2026-08-30T09:06:35.187691Z"
     },
     {
       "id": "spartans__clyde__2026-08-29",
@@ -3156,9 +3156,9 @@
       "locked_section": "FT DC",
       "locked_selection": "12",
       "locked_model": 74.5,
-      "locked_sim": 73.0,
+      "locked_sim": 73.6,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:35.618913Z"
+      "generated_at": "2026-08-30T09:06:35.396493Z"
     },
     {
       "id": "stranraer__kelty_hearts__2026-08-29",
@@ -3177,7 +3177,7 @@
       "locked_model": 73.6,
       "locked_sim": 73.9,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:35.659825Z"
+      "generated_at": "2026-08-30T09:06:35.604793Z"
     },
     {
       "id": "santander__elche__2026-08-28",
@@ -3194,9 +3194,9 @@
       "locked_section": "FT DC",
       "locked_selection": "1X",
       "locked_model": 73.7,
-      "locked_sim": 73.8,
+      "locked_sim": 73.6,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:35.700475Z"
+      "generated_at": "2026-08-30T09:06:35.813348Z"
     },
     {
       "id": "alaves__villarreal__2026-08-28",
@@ -3213,9 +3213,9 @@
       "locked_section": "FT DC",
       "locked_selection": "12",
       "locked_model": 72.9,
-      "locked_sim": 74.3,
+      "locked_sim": 72.6,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:35.740952Z"
+      "generated_at": "2026-08-30T09:06:36.020268Z"
     },
     {
       "id": "levante__betis__2026-08-29",
@@ -3229,12 +3229,12 @@
       "odds": "3.40 / 3.30 / 2.20",
       "models": "Real Betis (away)",
       "locked_status": "SECURED LOCK",
-      "locked_section": "FT DC",
-      "locked_selection": "X2",
-      "locked_model": 72.0,
-      "locked_sim": 72.8,
+      "locked_section": "HT DC",
+      "locked_selection": "1X",
+      "locked_model": 75.0,
+      "locked_sim": 74.9,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:35.779837Z"
+      "generated_at": "2026-08-30T09:06:36.978012Z"
     },
     {
       "id": "sociedad__espanol__2026-08-29",
@@ -3251,9 +3251,9 @@
       "locked_section": "FT DC",
       "locked_selection": "1X",
       "locked_model": 76.2,
-      "locked_sim": 75.3,
+      "locked_sim": 76.3,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:35.819187Z"
+      "generated_at": "2026-08-30T09:06:37.187550Z"
     },
     {
       "id": "sevilla__ath_madrid__2026-08-29",
@@ -3270,9 +3270,9 @@
       "locked_section": "FT DC",
       "locked_selection": "X2",
       "locked_model": 73.7,
-      "locked_sim": 75.0,
+      "locked_sim": 74.0,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:35.857914Z"
+      "generated_at": "2026-08-30T09:06:37.393065Z"
     },
     {
       "id": "real_madrid__malaga__2026-08-30",
@@ -3289,9 +3289,9 @@
       "locked_section": "FT DC",
       "locked_selection": "1X",
       "locked_model": 95.5,
-      "locked_sim": 95.0,
+      "locked_sim": 95.5,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:35.915248Z"
+      "generated_at": "2026-08-30T09:06:37.609382Z"
     },
     {
       "id": "la_coruna__valencia__2026-08-30",
@@ -3307,10 +3307,10 @@
       "locked_status": "SECURED LOCK",
       "locked_section": "HT DC",
       "locked_selection": "X2",
-      "locked_model": 70.0,
-      "locked_sim": 69.8,
+      "locked_model": 76.5,
+      "locked_sim": 76.5,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:35.954126Z"
+      "generated_at": "2026-08-30T09:06:38.555244Z"
     },
     {
       "id": "celta__ath_bilbao__2026-08-30",
@@ -3327,9 +3327,9 @@
       "locked_section": "FT DC",
       "locked_selection": "12",
       "locked_model": 70.4,
-      "locked_sim": 70.3,
+      "locked_sim": 70.5,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:35.993187Z"
+      "generated_at": "2026-08-30T09:06:38.765183Z"
     },
     {
       "id": "osasuna__getafe__2026-08-31",
@@ -3346,9 +3346,9 @@
       "locked_section": "FT DC",
       "locked_selection": "1X",
       "locked_model": 74.7,
-      "locked_sim": 74.8,
+      "locked_sim": 74.9,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:36.032533Z"
+      "generated_at": "2026-08-30T09:06:38.968417Z"
     },
     {
       "id": "barcelona__vallecano__2026-08-31",
@@ -3365,9 +3365,9 @@
       "locked_section": "FT DC",
       "locked_selection": "1X",
       "locked_model": 92.7,
-      "locked_sim": 93.7,
+      "locked_sim": 92.9,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:36.073903Z"
+      "generated_at": "2026-08-30T09:06:39.184583Z"
     },
     {
       "id": "tenerife__sp_gijon__2026-08-28",
@@ -3384,9 +3384,9 @@
       "locked_section": "FT DC",
       "locked_selection": "1X",
       "locked_model": 71.7,
-      "locked_sim": 71.5,
+      "locked_sim": 71.9,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:36.113369Z"
+      "generated_at": "2026-08-30T09:06:39.389954Z"
     },
     {
       "id": "sabadell__almeria__2026-08-29",
@@ -3405,7 +3405,7 @@
       "locked_model": 71.1,
       "locked_sim": 70.8,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:36.152838Z"
+      "generated_at": "2026-08-30T09:06:39.593709Z"
     },
     {
       "id": "albacete__oviedo__2026-08-29",
@@ -3422,9 +3422,9 @@
       "locked_section": "FT DC",
       "locked_selection": "12",
       "locked_model": 70.8,
-      "locked_sim": 70.2,
+      "locked_sim": 70.8,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:36.191981Z"
+      "generated_at": "2026-08-30T09:06:39.799329Z"
     },
     {
       "id": "leganes__eldense__2026-08-29",
@@ -3441,9 +3441,9 @@
       "locked_section": "FT DC",
       "locked_selection": "1X",
       "locked_model": 75.5,
-      "locked_sim": 77.2,
+      "locked_sim": 76.3,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:36.231486Z"
+      "generated_at": "2026-08-30T09:06:40.005712Z"
     },
     {
       "id": "girona__las_palmas__2026-08-29",
@@ -3460,9 +3460,9 @@
       "locked_section": "FT DC",
       "locked_selection": "1X",
       "locked_model": 81.5,
-      "locked_sim": 81.8,
+      "locked_sim": 82.5,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:36.270892Z"
+      "generated_at": "2026-08-30T09:06:40.212784Z"
     },
     {
       "id": "andorra__eibar__2026-08-30",
@@ -3479,9 +3479,9 @@
       "locked_section": "FT DC",
       "locked_selection": "1X",
       "locked_model": 74.5,
-      "locked_sim": 75.5,
+      "locked_sim": 74.0,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:36.309789Z"
+      "generated_at": "2026-08-30T09:06:40.417539Z"
     },
     {
       "id": "cadiz__valladolid__2026-08-30",
@@ -3496,11 +3496,11 @@
       "models": "market-only",
       "locked_status": "SECURED LOCK",
       "locked_section": "HT DC",
-      "locked_selection": "X2",
+      "locked_selection": "1X",
       "locked_model": 70.0,
-      "locked_sim": 70.2,
+      "locked_sim": 70.1,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:36.349279Z"
+      "generated_at": "2026-08-30T09:06:40.621587Z"
     },
     {
       "id": "mallorca__ceuta__2026-08-30",
@@ -3517,9 +3517,9 @@
       "locked_section": "FT DC",
       "locked_selection": "1X",
       "locked_model": 88.5,
-      "locked_sim": 87.1,
+      "locked_sim": 88.1,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:36.389853Z"
+      "generated_at": "2026-08-30T09:06:40.833743Z"
     },
     {
       "id": "cordoba__granada__2026-08-30",
@@ -3536,9 +3536,9 @@
       "locked_section": "FT DC",
       "locked_selection": "1X",
       "locked_model": 78.6,
-      "locked_sim": 78.6,
+      "locked_sim": 78.7,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:36.429333Z"
+      "generated_at": "2026-08-30T09:06:41.040526Z"
     },
     {
       "id": "burgos__sociedad_b__2026-08-31",
@@ -3555,9 +3555,9 @@
       "locked_section": "FT DC",
       "locked_selection": "1X",
       "locked_model": 80.4,
-      "locked_sim": 79.4,
+      "locked_sim": 80.1,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:36.468876Z"
+      "generated_at": "2026-08-30T09:06:41.244746Z"
     },
     {
       "id": "celta_b__castellon__2026-08-31",
@@ -3574,9 +3574,9 @@
       "locked_section": "FT DC",
       "locked_selection": "X2",
       "locked_model": 77.9,
-      "locked_sim": 74.5,
+      "locked_sim": 77.0,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:36.508562Z"
+      "generated_at": "2026-08-30T09:06:41.453461Z"
     },
     {
       "id": "genclerbirligi__erzurumspor__2026-08-28",
@@ -3593,9 +3593,9 @@
       "locked_section": "FT DC",
       "locked_selection": "1X",
       "locked_model": 76.1,
-      "locked_sim": 75.3,
+      "locked_sim": 75.9,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:36.547924Z"
+      "generated_at": "2026-08-30T09:06:41.658823Z"
     },
     {
       "id": "konyaspor__kocaelispor__2026-08-29",
@@ -3612,9 +3612,9 @@
       "locked_section": "FT DC",
       "locked_selection": "1X",
       "locked_model": 75.7,
-      "locked_sim": 76.3,
+      "locked_sim": 76.4,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:36.587647Z"
+      "generated_at": "2026-08-30T09:06:41.865762Z"
     },
     {
       "id": "galatasaray__goztep__2026-08-29",
@@ -3631,9 +3631,9 @@
       "locked_section": "FT DC",
       "locked_selection": "1X",
       "locked_model": 88.5,
-      "locked_sim": 88.6,
+      "locked_sim": 88.9,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:36.628241Z"
+      "generated_at": "2026-08-30T09:06:42.076026Z"
     },
     {
       "id": "gaziantep__rizespor__2026-08-29",
@@ -3650,9 +3650,9 @@
       "locked_section": "FT DC",
       "locked_selection": "12",
       "locked_model": 73.6,
-      "locked_sim": 75.3,
+      "locked_sim": 74.1,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:36.668827Z"
+      "generated_at": "2026-08-30T09:06:42.284113Z"
     },
     {
       "id": "eyupspor__alanyaspor__2026-08-30",
@@ -3669,9 +3669,9 @@
       "locked_section": "FT DC",
       "locked_selection": "12",
       "locked_model": 71.7,
-      "locked_sim": 72.0,
+      "locked_sim": 71.3,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:36.708368Z"
+      "generated_at": "2026-08-30T09:06:42.489987Z"
     },
     {
       "id": "buyuksehyr__kasimpasa__2026-08-30",
@@ -3688,9 +3688,9 @@
       "locked_section": "FT DC",
       "locked_selection": "1X",
       "locked_model": 82.3,
-      "locked_sim": 83.4,
+      "locked_sim": 83.0,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:36.748176Z"
+      "generated_at": "2026-08-30T09:06:42.698350Z"
     },
     {
       "id": "samsunspor__fenerbahce__2026-08-30",
@@ -3707,9 +3707,9 @@
       "locked_section": "FT DC",
       "locked_selection": "X2",
       "locked_model": 81.5,
-      "locked_sim": 80.5,
+      "locked_sim": 81.7,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:36.787848Z"
+      "generated_at": "2026-08-30T09:06:42.907057Z"
     },
     {
       "id": "amedspor__trabzonspor__2026-08-31",
@@ -3726,9 +3726,9 @@
       "locked_section": "FT DC",
       "locked_selection": "12",
       "locked_model": 75.6,
-      "locked_sim": 75.6,
+      "locked_sim": 75.7,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:36.829234Z"
+      "generated_at": "2026-08-30T09:06:43.115104Z"
     },
     {
       "id": "besiktas__corum__2026-08-31",
@@ -3745,9 +3745,9 @@
       "locked_section": "FT DC",
       "locked_selection": "1X",
       "locked_model": 86.7,
-      "locked_sim": 86.7,
+      "locked_sim": 86.3,
       "locked_verdict": "HARD YES",
-      "generated_at": "2026-08-30T08:42:36.869594Z"
+      "generated_at": "2026-08-30T09:06:43.333437Z"
     }
   ]
 }

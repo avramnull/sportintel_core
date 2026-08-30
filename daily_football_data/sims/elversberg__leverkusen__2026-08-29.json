@@ -7,7 +7,7 @@
     "odds_home": 5.0,
     "odds_draw": 4.5,
     "odds_away": 1.57,
-    "n_simulations": 2000,
+    "n_simulations": 8000,
     "seed": 52,
     "odds_blend": 0.3
   },
@@ -20,16 +20,16 @@
     "match_date": "2026-08-29 14:30"
   },
   "report": {
-    "n": 2000,
+    "n": 8000,
     "ft_model": {
       "H": 0.18882801015635442,
       "D": 0.2098089001737271,
       "A": 0.6013630896699185
     },
     "ft_sim": {
-      "H": 0.2005,
-      "D": 0.201,
-      "A": 0.5985
+      "H": 0.18375,
+      "D": 0.215875,
+      "A": 0.600375
     },
     "ht_model": {
       "H": 0.3,
@@ -37,16 +37,16 @@
       "A": 0.3
     },
     "ht_sim": {
-      "H": 0.3055,
-      "D": 0.392,
-      "A": 0.3025
+      "H": 0.301875,
+      "D": 0.39875,
+      "A": 0.299375
     },
     "over25_model": 0.47554140127388533,
-    "over25_sim": 0.611,
+    "over25_sim": 0.603375,
     "btts_model": 0.45,
-    "btts_sim": 0.443,
+    "btts_sim": 0.456875,
     "ht_over15_model": 0.35,
-    "ht_over15_sim": 0.3465,
+    "ht_over15_sim": 0.346,
     "dc_ft": {
       "1X": 0.39863691033008153,
       "X2": 0.8111719898436456,
@@ -60,67 +60,67 @@
     "top_ft": [
       [
         "1-2",
-        320
+        1323
       ],
       [
         "0-0",
-        217
-      ],
-      [
-        "0-1",
-        197
+        939
       ],
       [
         "0-2",
-        162
+        709
       ],
       [
-        "2-1",
-        117
+        "0-1",
+        691
       ],
       [
-        "0-4",
-        116
-      ],
-      [
-        "0-3",
-        104
+        "0-5",
+        413
       ],
       [
         "1-1",
-        94
+        412
+      ],
+      [
+        "0-4",
+        409
+      ],
+      [
+        "2-1",
+        394
       ]
     ],
     "top_ht": [
       [
         "0-0",
-        468
-      ],
-      [
-        "0-1",
-        420
+        1864
       ],
       [
         "1-0",
-        419
+        1696
+      ],
+      [
+        "0-1",
+        1672
       ],
       [
         "1-1",
-        316
+        1326
       ],
       [
-        "2-0",
-        102
+        "1-2",
+        370
       ]
     ],
     "xg": {
-      "home": 1.0065,
-      "away": 1.8225,
-      "total": 2.829
+      "home": 0.99075,
+      "away": 1.848,
+      "total": 2.83875
     },
     "goal_rates": {
-      "home": 1.0065,
-      "away": 1.8225
+      "home": 0.99075,
+      "away": 1.848
     }
   },
   "table": [
@@ -128,7 +128,7 @@
       "Section": "HT Winner",
       "Selection": "Elversberg",
       "Model%": 30.0,
-      "Sim%": 30.6,
+      "Sim%": 30.2,
       "Agree": "1 eng",
       "Verdict": "NO"
     },
@@ -136,7 +136,7 @@
       "Section": "HT Winner",
       "Selection": "Draw",
       "Model%": 40.0,
-      "Sim%": 39.2,
+      "Sim%": 39.9,
       "Agree": "1 eng",
       "Verdict": "NO"
     },
@@ -144,7 +144,7 @@
       "Section": "HT Winner",
       "Selection": "Leverkusen",
       "Model%": 30.0,
-      "Sim%": 30.2,
+      "Sim%": 29.9,
       "Agree": "1 eng",
       "Verdict": "NO"
     },
@@ -152,7 +152,7 @@
       "Section": "HT DC",
       "Selection": "1X",
       "Model%": 70.0,
-      "Sim%": 69.8,
+      "Sim%": 70.1,
       "Agree": "1 eng",
       "Verdict": "YES"
     },
@@ -160,7 +160,7 @@
       "Section": "HT DC",
       "Selection": "X2",
       "Model%": 70.0,
-      "Sim%": 69.5,
+      "Sim%": 69.8,
       "Agree": "1 eng",
       "Verdict": "YES"
     },
@@ -168,7 +168,7 @@
       "Section": "HT DC",
       "Selection": "12",
       "Model%": 60.0,
-      "Sim%": 60.8,
+      "Sim%": 60.1,
       "Agree": "1 eng",
       "Verdict": "YES"
     },
@@ -184,7 +184,7 @@
       "Section": "HT O/U",
       "Selection": "Under 1.5",
       "Model%": 65.0,
-      "Sim%": 65.3,
+      "Sim%": 65.4,
       "Agree": "1 eng",
       "Verdict": "YES"
     },
@@ -192,7 +192,7 @@
       "Section": "FT Winner",
       "Selection": "Elversberg",
       "Model%": 18.9,
-      "Sim%": 20.1,
+      "Sim%": 18.4,
       "Agree": "1 eng",
       "Verdict": "NO"
     },
@@ -200,7 +200,7 @@
       "Section": "FT Winner",
       "Selection": "Draw",
       "Model%": 21.0,
-      "Sim%": 20.1,
+      "Sim%": 21.6,
       "Agree": "1 eng",
       "Verdict": "NO"
     },
@@ -208,7 +208,7 @@
       "Section": "FT Winner",
       "Selection": "Leverkusen",
       "Model%": 60.1,
-      "Sim%": 59.9,
+      "Sim%": 60.0,
       "Agree": "1 eng",
       "Verdict": "YES"
     },
@@ -216,7 +216,7 @@
       "Section": "FT DC",
       "Selection": "1X",
       "Model%": 39.9,
-      "Sim%": 40.2,
+      "Sim%": 40.0,
       "Agree": "1 eng",
       "Verdict": "NO"
     },
@@ -224,7 +224,7 @@
       "Section": "FT DC",
       "Selection": "X2",
       "Model%": 81.1,
-      "Sim%": 80.0,
+      "Sim%": 81.6,
       "Agree": "1 eng",
       "Verdict": "YES"
     },
@@ -232,7 +232,7 @@
       "Section": "FT DC",
       "Selection": "12",
       "Model%": 79.0,
-      "Sim%": 79.9,
+      "Sim%": 78.4,
       "Agree": "1 eng",
       "Verdict": "YES"
     },
@@ -240,7 +240,7 @@
       "Section": "FT O/U",
       "Selection": "Over 2.5",
       "Model%": 47.6,
-      "Sim%": 61.1,
+      "Sim%": 60.3,
       "Agree": "1 eng",
       "Verdict": "NO"
     },
@@ -248,7 +248,7 @@
       "Section": "FT O/U",
       "Selection": "Under 2.5",
       "Model%": 52.4,
-      "Sim%": 38.9,
+      "Sim%": 39.7,
       "Agree": "1 eng",
       "Verdict": "YES"
     },
@@ -256,7 +256,7 @@
       "Section": "BTTS",
       "Selection": "Yes",
       "Model%": 45.0,
-      "Sim%": 44.3,
+      "Sim%": 45.7,
       "Agree": "1 eng",
       "Verdict": "NO"
     },
@@ -264,7 +264,7 @@
       "Section": "BTTS",
       "Selection": "No",
       "Model%": 55.0,
-      "Sim%": 55.7,
+      "Sim%": 54.3,
       "Agree": "1 eng",
       "Verdict": "YES"
     }
@@ -274,7 +274,7 @@
     "section": "FT DC",
     "selection": "X2",
     "model": 81.1,
-    "sim": 80.0,
+    "sim": 81.6,
     "agree": "1 eng",
     "verdict": "HARD YES"
   },
@@ -295,5 +295,5 @@
       "market"
     ]
   },
-  "generated_at": "2026-08-30T08:42:29.340258Z"
+  "generated_at": "2026-08-30T09:05:57.346497Z"
 }

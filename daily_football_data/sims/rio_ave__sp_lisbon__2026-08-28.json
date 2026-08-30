@@ -7,7 +7,7 @@
     "odds_home": 8.5,
     "odds_draw": 5.5,
     "odds_away": 1.27,
-    "n_simulations": 2000,
+    "n_simulations": 8000,
     "seed": 179,
     "odds_blend": 0.3
   },
@@ -15,21 +15,21 @@
     "league": "Primeira Liga",
     "div": "P1",
     "home": "Rio Ave",
-    "away": "Sporting Lisbon",
+    "away": "Sp Lisbon",
     "models": "market-only",
     "match_date": "2026-08-28 20:15"
   },
   "report": {
-    "n": 2000,
+    "n": 8000,
     "ft_model": {
       "H": 0.10824422749108943,
       "D": 0.16728653339532004,
       "A": 0.7244692391135906
     },
     "ft_sim": {
-      "H": 0.1105,
-      "D": 0.1675,
-      "A": 0.722
+      "H": 0.11475,
+      "D": 0.17125,
+      "A": 0.714
     },
     "ht_model": {
       "H": 0.3,
@@ -37,16 +37,16 @@
       "A": 0.3
     },
     "ht_sim": {
-      "H": 0.2985,
-      "D": 0.3955,
-      "A": 0.306
+      "H": 0.306,
+      "D": 0.39375,
+      "A": 0.30025
     },
     "over25_model": 0.4857572950440018,
-    "over25_sim": 0.6465,
+    "over25_sim": 0.63125,
     "btts_model": 0.45,
-    "btts_sim": 0.4615,
+    "btts_sim": 0.45225,
     "ht_over15_model": 0.35,
-    "ht_over15_sim": 0.3415,
+    "ht_over15_sim": 0.351,
     "dc_ft": {
       "1X": 0.2755307608864095,
       "X2": 0.8917557725089107,
@@ -60,67 +60,67 @@
     "top_ft": [
       [
         "1-2",
-        385
-      ],
-      [
-        "0-2",
-        198
+        1568
       ],
       [
         "0-1",
-        192
+        816
+      ],
+      [
+        "0-2",
+        774
       ],
       [
         "0-0",
-        178
-      ],
-      [
-        "0-5",
-        140
+        758
       ],
       [
         "0-4",
-        132
+        557
+      ],
+      [
+        "0-5",
+        486
       ],
       [
         "0-3",
-        124
+        475
       ],
       [
         "2-3",
-        117
+        445
       ]
     ],
     "top_ht": [
       [
         "0-0",
-        467
-      ],
-      [
-        "0-1",
-        433
+        1844
       ],
       [
         "1-0",
-        417
+        1708
+      ],
+      [
+        "0-1",
+        1640
       ],
       [
         "1-1",
-        324
+        1306
       ],
       [
         "1-2",
-        103
+        394
       ]
     ],
     "xg": {
-      "home": 0.8475,
-      "away": 2.1575,
-      "total": 3.005
+      "home": 0.840125,
+      "away": 2.079625,
+      "total": 2.91975
     },
     "goal_rates": {
-      "home": 0.8475,
-      "away": 2.1575
+      "home": 0.840125,
+      "away": 2.079625
     }
   },
   "table": [
@@ -128,7 +128,7 @@
       "Section": "HT Winner",
       "Selection": "Rio Ave",
       "Model%": 30.0,
-      "Sim%": 29.8,
+      "Sim%": 30.6,
       "Agree": "1 eng",
       "Verdict": "NO"
     },
@@ -136,21 +136,29 @@
       "Section": "HT Winner",
       "Selection": "Draw",
       "Model%": 40.0,
-      "Sim%": 39.6,
+      "Sim%": 39.4,
       "Agree": "1 eng",
       "Verdict": "NO"
     },
     {
       "Section": "HT Winner",
-      "Selection": "Sporting Lisbon",
+      "Selection": "Sp Lisbon",
       "Model%": 30.0,
-      "Sim%": 30.6,
+      "Sim%": 30.0,
       "Agree": "1 eng",
       "Verdict": "NO"
     },
     {
       "Section": "HT DC",
       "Selection": "1X",
+      "Model%": 70.0,
+      "Sim%": 70.0,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "X2",
       "Model%": 70.0,
       "Sim%": 69.4,
       "Agree": "1 eng",
@@ -158,17 +166,9 @@
     },
     {
       "Section": "HT DC",
-      "Selection": "X2",
-      "Model%": 70.0,
-      "Sim%": 70.2,
-      "Agree": "1 eng",
-      "Verdict": "YES"
-    },
-    {
-      "Section": "HT DC",
       "Selection": "12",
       "Model%": 60.0,
-      "Sim%": 60.5,
+      "Sim%": 60.6,
       "Agree": "1 eng",
       "Verdict": "YES"
     },
@@ -176,7 +176,7 @@
       "Section": "HT O/U",
       "Selection": "Over 1.5",
       "Model%": 35.0,
-      "Sim%": 34.2,
+      "Sim%": 35.1,
       "Agree": "1 eng",
       "Verdict": "NO"
     },
@@ -184,7 +184,7 @@
       "Section": "HT O/U",
       "Selection": "Under 1.5",
       "Model%": 65.0,
-      "Sim%": 65.8,
+      "Sim%": 64.9,
       "Agree": "1 eng",
       "Verdict": "YES"
     },
@@ -192,7 +192,7 @@
       "Section": "FT Winner",
       "Selection": "Rio Ave",
       "Model%": 10.8,
-      "Sim%": 11.1,
+      "Sim%": 11.5,
       "Agree": "1 eng",
       "Verdict": "NO"
     },
@@ -200,15 +200,15 @@
       "Section": "FT Winner",
       "Selection": "Draw",
       "Model%": 16.7,
-      "Sim%": 16.8,
+      "Sim%": 17.1,
       "Agree": "1 eng",
       "Verdict": "NO"
     },
     {
       "Section": "FT Winner",
-      "Selection": "Sporting Lisbon",
+      "Selection": "Sp Lisbon",
       "Model%": 72.4,
-      "Sim%": 72.2,
+      "Sim%": 71.4,
       "Agree": "1 eng",
       "Verdict": "YES"
     },
@@ -216,7 +216,7 @@
       "Section": "FT DC",
       "Selection": "1X",
       "Model%": 27.6,
-      "Sim%": 27.8,
+      "Sim%": 28.6,
       "Agree": "1 eng",
       "Verdict": "NO"
     },
@@ -224,7 +224,7 @@
       "Section": "FT DC",
       "Selection": "X2",
       "Model%": 89.2,
-      "Sim%": 88.9,
+      "Sim%": 88.5,
       "Agree": "1 eng",
       "Verdict": "YES"
     },
@@ -232,7 +232,7 @@
       "Section": "FT DC",
       "Selection": "12",
       "Model%": 83.3,
-      "Sim%": 83.2,
+      "Sim%": 82.9,
       "Agree": "1 eng",
       "Verdict": "YES"
     },
@@ -240,7 +240,7 @@
       "Section": "FT O/U",
       "Selection": "Over 2.5",
       "Model%": 48.6,
-      "Sim%": 64.6,
+      "Sim%": 63.1,
       "Agree": "1 eng",
       "Verdict": "NO"
     },
@@ -248,7 +248,7 @@
       "Section": "FT O/U",
       "Selection": "Under 2.5",
       "Model%": 51.4,
-      "Sim%": 35.4,
+      "Sim%": 36.9,
       "Agree": "1 eng",
       "Verdict": "NO"
     },
@@ -256,7 +256,7 @@
       "Section": "BTTS",
       "Selection": "Yes",
       "Model%": 45.0,
-      "Sim%": 46.2,
+      "Sim%": 45.2,
       "Agree": "1 eng",
       "Verdict": "NO"
     },
@@ -264,7 +264,7 @@
       "Section": "BTTS",
       "Selection": "No",
       "Model%": 55.0,
-      "Sim%": 53.8,
+      "Sim%": 54.8,
       "Agree": "1 eng",
       "Verdict": "YES"
     }
@@ -274,7 +274,7 @@
     "section": "FT DC",
     "selection": "X2",
     "model": 89.2,
-    "sim": 88.9,
+    "sim": 88.5,
     "agree": "1 eng",
     "verdict": "HARD YES"
   },
@@ -295,5 +295,5 @@
       "market"
     ]
   },
-  "generated_at": "2026-08-30T08:42:34.502809Z"
+  "generated_at": "2026-08-30T09:06:29.533936Z"
 }
