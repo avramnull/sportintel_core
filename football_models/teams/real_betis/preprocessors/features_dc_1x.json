@@ -1,1 +1,3 @@
-["AvgH", "AvgD", "AvgA", "B365H", "B365D", "B365A", "LogOddsH", "LogOddsD", "LogOddsA", "ImpH", "ImpD", "ImpA", "OddsMargin", "HomeOddsEdge", "AwayOddsEdge", "Year", "Month", "DayOfWeek", "IsWeekend", "HomeFormPts_5", "HomeFormGF_5", "HomeFormGA_5", "HomeFormGD_5", "AwayFormPts_5", "AwayFormGF_5", "AwayFormGA_5", "AwayFormGD_5", "HomeFormPts_10", "HomeFormGF_10", "HomeFormGA_10", "HomeFormGD_10", "AwayFormPts_10", "AwayFormGF_10", "AwayFormGA_10", "AwayFormGD_10", "HomeFormPts_20", "AwayFormPts_20", "H2H_HomeWins_5", "H2H_Draws_5", "H2H_AwayWins_5", "HomeTeamId", "AwayTeamId", "DivEnc"]
+version https://git-lfs.github.com/spec/v1
+oid sha256:07655fa5a3a5e5e657b709593ecf1fd3b0d62dd93e958860677a81e4e79f349a
+size 593

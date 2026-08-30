@@ -69,3 +69,15 @@ Environment:
 - FTR always consistent with FTHG/FTAG
 - Deterministic match key: `Div|YYYY-MM-DD|HomeTeam|AwayTeam`
 - Upserts replace prior rows for the same key
+
+## Daily pipeline (GitHub Actions)
+
+1. `scraper.py` — latest results CSV  
+2. `scraper_fixtures.py` — upcoming `fixtures.csv` from football-data.co.uk  
+3. `daily_update_parquet.py` — upsert results into master parquet  
+4. `run_fixture_sims.py` — pure-raw Monte Carlo sims for every fixture with odds  
+   - Outputs `daily_football_data/picks_for_admin.json` (shape matches sportintel `picks` table)  
+   - Outputs `fixture_sims_YYYY-MM-DD.json` (full reports)  
+   - Outputs `fixtures_teams.json` (teams seen — feed these into `train.py` focus_teams for targeted retrain)
+
+Large binaries (parquet, CatBoost `.cbm`, pickles) are tracked with **Git LFS**.

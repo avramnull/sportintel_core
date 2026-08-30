@@ -1,35 +1,53 @@
-name: Daily Football Scraper + Parquet Update
+name: Daily Football Scraper + Fixtures Sims + Parquet Update
 
 on:
   schedule:
-    - cron: "0 18 * * *"
+    - cron: "0 18 * * *"   # ~19:00 WAT
   workflow_dispatch:
 
 jobs:
-  scrape-and-update:
+  scrape-update-sim:
     runs-on: ubuntu-latest
     permissions:
       contents: write
     steps:
       - uses: actions/checkout@v4
+        with:
+          lfs: true
+
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
+
       - name: Install dependencies
-        run: pip install requests pandas numpy pyarrow
+        run: |
+          pip install requests pandas numpy pyarrow scikit-learn
+          pip install xgboost lightgbm catboost || true
+
       - name: Scrape latest results
         run: python scraper.py
         env:
           FOOTBALL_SEASON: "2627"
+
+      - name: Scrape upcoming fixtures
+        run: python scraper_fixtures.py
+
       - name: Update master parquet
         run: python daily_update_parquet.py
         env:
           FOOTBALL_SEASON: "2627"
           FOOTBALL_SEASON_LABEL: "2026/2027"
-      - name: Commit CSV + parquet
+
+      - name: Run pure-raw fixture simulations
+        run: python run_fixture_sims.py
+        env:
+          N_SIMULATIONS: "4000"
+          ODDS_BLEND: "0.45"
+
+      - name: Commit data + sims
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add daily_football_data/ master_football_data.parquet
-          git diff --staged --quiet || git commit -m "Daily update: $(date -u +%Y-%m-%d)"
+          git add daily_football_data/ master_football_data.parquet .gitattributes
+          git diff --staged --quiet || git commit -m "Daily update + fixture sims: $(date -u +%Y-%m-%d)"
           git push
