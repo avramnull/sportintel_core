@@ -9,7 +9,7 @@ import pandas as pd
 import pyarrow as pa
 import pyarrow.parquet as pq
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parents[2]  # repo root
 RAW_DIR = ROOT / "data" / "raw"
 OUT_PARQUET = ROOT / "master_football_data.parquet"
 

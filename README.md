@@ -11,10 +11,13 @@ Football results master dataset built from [football-data.co.uk](https://www.foo
 | Hard-coded season only in places | `FOOTBALL_SEASON` env var |
 | No validation | Builder enforces non-null teams, non-negative scores, consistent FTR |
 | Empty README | This file |
+| Absolute `/workspaces/...` paths in model registries | Relative paths from repo root |
+| Missing `.gitignore` (pycache, temps) | Added |
+| `build_master_parquet.py` ROOT pointed at wrong dir | Fixed to repo root |
 
 ## Master parquet
 
-- **Rows:** ~217k (1993/94 → present)
+- **Rows:** ~233k (1993/94 → present)
 - **Columns:** 109 (identity, scores, stats, 1X2 / O-U / AH odds, derived targets)
 - **Compression:** zstd
 - **Types:** timestamps, float64 odds, int64 flags — no mixed string odds
@@ -27,12 +30,15 @@ Football results master dataset built from [football-data.co.uk](https://www.foo
 ```bash
 pip install -r requirements.txt
 
-# Rebuild master from downloaded historical CSVs (already in data/raw/)
-python scripts/build_master_parquet.py
+# Rebuild master from downloaded historical CSVs (place under data/raw/{season}/{div}.csv)
+python football_models/scripts/build_master_parquet.py
 
 # Daily update
 python scraper.py
 python daily_update_parquet.py
+
+# Simulation (default Valencia vs Betis; needs sklearn + model libs)
+python sim.py
 ```
 
 Environment:
@@ -45,8 +51,13 @@ Environment:
 ├── master_football_data.parquet   # clean master
 ├── scraper.py                     # fetch Latest_Results.csv
 ├── daily_update_parquet.py        # upsert into master
-├── scripts/build_master_parquet.py
-├── data/raw/{season}/{div}.csv    # historical source CSVs
+├── sim.py                         # match simulation
+├── train.py                       # model training (heavy deps)
+├── football_models/
+│   ├── model_registry.json
+│   ├── mappings/
+│   ├── scripts/build_master_parquet.py
+│   └── teams/{valencia,real_betis}/...
 ├── daily_football_data/           # daily snapshots
 └── .github/workflows/daily_run.yaml
 ```

@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+*.egg-info/
+.eggs/
+dist/
+build/
+
+# Temp / local
+*.tmp
+*.tmp.parquet
+*.log
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*~
+
+# Notebooks
+.ipynb_checkpoints/
+
+# Large data if not intentional (keep master for now)
+# master_football_data.parquet
+# daily_football_data/
+
+# Model training artifacts that are regenerable (keep committed models for now)

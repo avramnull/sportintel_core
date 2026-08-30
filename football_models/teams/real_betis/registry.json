@@ -2,42 +2,42 @@
   "team": "Real Betis",
   "n_train": 1082,
   "n_val": 148,
-  "dir": "/workspaces/sportintel_core/teams/real_betis",
+  "dir": "football_models/teams/real_betis",
   "targets": {
     "ft_result": {
-      "xgboost": "/workspaces/sportintel_core/teams/real_betis/models/xgb_ft_result.json",
-      "lightgbm": "/workspaces/sportintel_core/teams/real_betis/models/lgbm_ft_result.txt",
-      "catboost": "/workspaces/sportintel_core/teams/real_betis/models/cat_ft_result.cbm"
+      "xgboost": "football_models/teams/real_betis/models/xgb_ft_result.json",
+      "lightgbm": "football_models/teams/real_betis/models/lgbm_ft_result.txt",
+      "catboost": "football_models/teams/real_betis/models/cat_ft_result.cbm"
     },
     "ht_result": {
-      "xgboost": "/workspaces/sportintel_core/teams/real_betis/models/xgb_ht_result.json",
-      "lightgbm": "/workspaces/sportintel_core/teams/real_betis/models/lgbm_ht_result.txt",
-      "catboost": "/workspaces/sportintel_core/teams/real_betis/models/cat_ht_result.cbm"
+      "xgboost": "football_models/teams/real_betis/models/xgb_ht_result.json",
+      "lightgbm": "football_models/teams/real_betis/models/lgbm_ht_result.txt",
+      "catboost": "football_models/teams/real_betis/models/cat_ht_result.cbm"
     },
     "over25": {
-      "xgboost": "/workspaces/sportintel_core/teams/real_betis/models/xgb_over25.json",
-      "lightgbm": "/workspaces/sportintel_core/teams/real_betis/models/lgbm_over25.txt",
-      "catboost": "/workspaces/sportintel_core/teams/real_betis/models/cat_over25.cbm"
+      "xgboost": "football_models/teams/real_betis/models/xgb_over25.json",
+      "lightgbm": "football_models/teams/real_betis/models/lgbm_over25.txt",
+      "catboost": "football_models/teams/real_betis/models/cat_over25.cbm"
     },
     "btts": {
-      "xgboost": "/workspaces/sportintel_core/teams/real_betis/models/xgb_btts.json",
-      "lightgbm": "/workspaces/sportintel_core/teams/real_betis/models/lgbm_btts.txt",
-      "catboost": "/workspaces/sportintel_core/teams/real_betis/models/cat_btts.cbm"
+      "xgboost": "football_models/teams/real_betis/models/xgb_btts.json",
+      "lightgbm": "football_models/teams/real_betis/models/lgbm_btts.txt",
+      "catboost": "football_models/teams/real_betis/models/cat_btts.cbm"
     },
     "dc_1x": {
-      "xgboost": "/workspaces/sportintel_core/teams/real_betis/models/xgb_dc_1x.json",
-      "lightgbm": "/workspaces/sportintel_core/teams/real_betis/models/lgbm_dc_1x.txt",
-      "catboost": "/workspaces/sportintel_core/teams/real_betis/models/cat_dc_1x.cbm"
+      "xgboost": "football_models/teams/real_betis/models/xgb_dc_1x.json",
+      "lightgbm": "football_models/teams/real_betis/models/lgbm_dc_1x.txt",
+      "catboost": "football_models/teams/real_betis/models/cat_dc_1x.cbm"
     },
     "dc_x2": {
-      "xgboost": "/workspaces/sportintel_core/teams/real_betis/models/xgb_dc_x2.json",
-      "lightgbm": "/workspaces/sportintel_core/teams/real_betis/models/lgbm_dc_x2.txt",
-      "catboost": "/workspaces/sportintel_core/teams/real_betis/models/cat_dc_x2.cbm"
+      "xgboost": "football_models/teams/real_betis/models/xgb_dc_x2.json",
+      "lightgbm": "football_models/teams/real_betis/models/lgbm_dc_x2.txt",
+      "catboost": "football_models/teams/real_betis/models/cat_dc_x2.cbm"
     },
     "dc_12": {
-      "xgboost": "/workspaces/sportintel_core/teams/real_betis/models/xgb_dc_12.json",
-      "lightgbm": "/workspaces/sportintel_core/teams/real_betis/models/lgbm_dc_12.txt",
-      "catboost": "/workspaces/sportintel_core/teams/real_betis/models/cat_dc_12.cbm"
+      "xgboost": "football_models/teams/real_betis/models/xgb_dc_12.json",
+      "lightgbm": "football_models/teams/real_betis/models/lgbm_dc_12.txt",
+      "catboost": "football_models/teams/real_betis/models/cat_dc_12.cbm"
     }
   }
 }
