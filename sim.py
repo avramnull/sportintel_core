@@ -177,23 +177,44 @@ def build_live_features(home_id, away_id, div_code, odds_h, odds_d, odds_a,
             row[f"{prefix}FormGF_{w}"] = np.nan
             row[f"{prefix}FormGA_{w}"] = np.nan
             row[f"{prefix}FormGD_{w}"] = np.nan
-        if hist_df is not None and len(hist_df):
-            if prefix == "Home":
-                sub = hist_df[hist_df["HomeTeamId"] == tid].sort_values("Date").tail(20)
-                pts = sub["HomePoints"] if "HomePoints" in sub.columns else pd.Series(dtype=float)
-                gf = sub["FTHG"] if "FTHG" in sub.columns else pd.Series(dtype=float)
-                ga = sub["FTAG"] if "FTAG" in sub.columns else pd.Series(dtype=float)
-            else:
-                sub = hist_df[hist_df["AwayTeamId"] == tid].sort_values("Date").tail(20)
-                pts = sub["AwayPoints"] if "AwayPoints" in sub.columns else pd.Series(dtype=float)
-                gf = sub["FTAG"] if "FTAG" in sub.columns else pd.Series(dtype=float)
-                ga = sub["FTHG"] if "FTHG" in sub.columns else pd.Series(dtype=float)
-            for w in (5, 10, 20):
-                row[f"{prefix}FormPts_{w}"] = float(pts.tail(w).mean()) if len(pts) else np.nan
-                row[f"{prefix}FormGF_{w}"] = float(gf.tail(w).mean()) if len(gf) else np.nan
-                row[f"{prefix}FormGA_{w}"] = float(ga.tail(w).mean()) if len(ga) else np.nan
-                if np.isfinite(row[f"{prefix}FormGF_{w}"]) and np.isfinite(row[f"{prefix}FormGA_{w}"]):
+        if hist_df is not None and len(hist_df) and tid is not None and int(tid) >= 0:
+            # ALL recent matches for this team (home or away) — fixes major form bias
+            mask = (hist_df["HomeTeamId"] == tid) | (hist_df["AwayTeamId"] == tid)
+            sub = hist_df.loc[mask].sort_values("Date").tail(25)
+            if len(sub):
+                is_home = (sub["HomeTeamId"] == tid).to_numpy()
+                ftr = sub["FTR"].astype(str).to_numpy()
+                pts = np.where(
+                    is_home,
+                    np.where(ftr == "H", 3, np.where(ftr == "D", 1, 0)),
+                    np.where(ftr == "A", 3, np.where(ftr == "D", 1, 0)),
+                ).astype(float)
+                gf = np.where(is_home, sub["FTHG"].to_numpy(), sub["FTAG"].to_numpy()).astype(float)
+                ga = np.where(is_home, sub["FTAG"].to_numpy(), sub["FTHG"].to_numpy()).astype(float)
+                for w in (5, 10, 20):
+                    row[f"{prefix}FormPts_{w}"] = float(np.nanmean(pts[-w:]))
+                    row[f"{prefix}FormGF_{w}"] = float(np.nanmean(gf[-w:]))
+                    row[f"{prefix}FormGA_{w}"] = float(np.nanmean(ga[-w:]))
                     row[f"{prefix}FormGD_{w}"] = row[f"{prefix}FormGF_{w}"] - row[f"{prefix}FormGA_{w}"]
+            # H2H last 5 (once, on Home pass)
+            if prefix == "Home" and away_id is not None and int(away_id) >= 0:
+                h2h = hist_df[
+                    ((hist_df["HomeTeamId"] == tid) & (hist_df["AwayTeamId"] == away_id))
+                    | ((hist_df["HomeTeamId"] == away_id) & (hist_df["AwayTeamId"] == tid))
+                ].sort_values("Date").tail(5)
+                hw = dw = aw = 0
+                for _, m in h2h.iterrows():
+                    if m["HomeTeamId"] == tid:
+                        if m["FTR"] == "H": hw += 1
+                        elif m["FTR"] == "D": dw += 1
+                        else: aw += 1
+                    else:
+                        if m["FTR"] == "A": hw += 1
+                        elif m["FTR"] == "D": dw += 1
+                        else: aw += 1
+                row["H2H_HomeWins_5"] = hw
+                row["H2H_Draws_5"] = dw
+                row["H2H_AwayWins_5"] = aw
     vals = []
     for name in feature_names:
         if name == "HomeTeamId":
@@ -396,7 +417,8 @@ def predict_across_runs(target_key, runs, home_id, away_id, div_code, oh, od, oa
         if p is not None:
             preds.append(np.asarray(p, float).ravel())
             all_backends.extend(backends)
-            print(f"  {target_key:12s}  [{label}]  backends={backends}  -> {np.round(p, 3)}")
+            if not os.environ.get("SIM_QUIET", "").strip():
+                print(f"  {target_key:12s}  [{label}]  backends={backends}  -> {np.round(p, 3)}")
     if not preds:
         return None, []
     max_len = max(len(p) for p in preds)
@@ -605,29 +627,39 @@ def print_table(rows):
 
 
 def locked_tip(rows, report, home, away):
-    """Hard strong secured tip from highest-confidence YES leans."""
-    # Prefer DC / winner / goals with high model% and YES
-    candidates = [r for r in rows if r["Verdict"] == "YES" and r["Model%"] >= 55]
-    # rank by model% then sim agreement (model close to sim)
+    """Strict tip selection — avoid flooding SECURED with weak double-chance."""
+    def is_dc(r):
+        return "DC" in str(r.get("Section", ""))
+
     def score(r):
         agree_sim = 100 - abs(r["Model%"] - r["Sim%"])
-        return r["Model%"] + 0.15 * agree_sim
+        dc_pen = -18 if is_dc(r) else 0
+        return r["Model%"] + 0.2 * agree_sim + dc_pen
 
-    candidates = sorted(candidates, key=score, reverse=True)
+    pool = [r for r in rows if r["Verdict"] == "YES" and r["Model%"] >= 58]
+    non_dc = [r for r in pool if not is_dc(r)]
+    candidates = sorted(non_dc or pool, key=score, reverse=True)
+
     print("\n" + "=" * 78)
     print("  LOCKED SECURED TIP")
     print("=" * 78)
     if not candidates:
-        # fallback: highest model% overall
         fallback = max(rows, key=lambda r: r["Model%"])
-        print(f"  No high-confidence YES. Soft lean: {fallback['Section']} → {fallback['Selection']}")
-        print(f"  Model {fallback['Model%']:.1f}%  Sim {fallback['Sim%']:.1f}%  → NOT SECURED")
-        tip = {"status": "NO LOCK", "selection": fallback["Selection"], "section": fallback["Section"],
-               "model": fallback["Model%"], "sim": fallback["Sim%"]}
+        print(f"  No high-confidence YES. Soft lean: {fallback['Section']} -> {fallback['Selection']}")
+        print(f"  Model {fallback['Model%']:.1f}%  Sim {fallback['Sim%']:.1f}%  -> NOT SECURED")
+        tip = {
+            "status": "NO LOCK",
+            "selection": fallback["Selection"],
+            "section": fallback["Section"],
+            "model": fallback["Model%"],
+            "sim": fallback["Sim%"],
+        }
     else:
         top = candidates[0]
-        # require model>=58 and |model-sim|<12 for SECURED
-        locked = top["Model%"] >= 58 and abs(top["Model%"] - top["Sim%"]) <= 12
+        if is_dc(top):
+            locked = top["Model%"] >= 75 and abs(top["Model%"] - top["Sim%"]) <= 10
+        else:
+            locked = top["Model%"] >= 62 and abs(top["Model%"] - top["Sim%"]) <= 10
         status = "SECURED LOCK" if locked else "STRONG LEAN"
         print(f"  Status     : {status}")
         print(f"  Market     : {top['Section']}")
@@ -639,10 +671,11 @@ def locked_tip(rows, report, home, away):
             print("  Verdict    : HARD YES — take this side")
         else:
             print("  Verdict    : YES lean — size down if needed")
-        # secondary
         if len(candidates) > 1:
-            print(f"\n  Secondary  : {candidates[1]['Section']} → {candidates[1]['Selection']} "
-                  f"({candidates[1]['Model%']:.1f}%)")
+            print(
+                f"\n  Secondary  : {candidates[1]['Section']} -> {candidates[1]['Selection']} "
+                f"({candidates[1]['Model%']:.1f}%)"
+            )
         tip = {
             "status": status,
             "section": top["Section"],
@@ -652,7 +685,6 @@ def locked_tip(rows, report, home, away):
             "agree": top["Agree"],
             "verdict": "HARD YES" if locked else "YES LEAN",
         }
-    # scoreline context
     print(f"\n  Top FT scores : {', '.join(f'{s}({c})' for s,c in report['top_ft'][:5])}")
     print(f"  Top HT scores : {', '.join(f'{s}({c})' for s,c in report['top_ht'][:3])}")
     print(f"  Exp goals     : H {report['xg']['home']:.2f}  A {report['xg']['away']:.2f}  T {report['xg']['total']:.2f}")

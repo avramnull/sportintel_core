@@ -61,10 +61,16 @@ def parquet_team_counts() -> Counter:
         pass
     try:
         df = pd.read_parquet(PARQUET, columns=["HomeTeam", "AwayTeam"])
+        aliases = load_aliases()
+        team2id = load_team2id()
         c: Counter = Counter()
         for col in ("HomeTeam", "AwayTeam"):
             for v in df[col].dropna().astype(str):
-                c[clean_name(v)] += 1
+                raw = clean_name(v)
+                canon, _ = normalize_team(raw, aliases, team2id)
+                c[canon] += 1
+                if raw != canon:
+                    c[raw] += 1  # also keep raw for fallback lookups
         return c
     except Exception as e:
         print(f"[scan] parquet read failed: {e}")
