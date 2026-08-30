@@ -82,24 +82,24 @@ if os.environ.get("MIN_TEAM_MATCHES"):
 if os.environ.get("MAX_BOOST_ROUNDS"):
     CONFIG["max_boost_rounds"] = int(os.environ["MAX_BOOST_ROUNDS"])
 if os.environ.get("DAILY_LIGHT", "").strip() in ("1", "true", "yes"):
-    # Lightning daily: deep nets kept, capacity cut, parallel teams
-    CONFIG["capacity_growth_steps"] = 0
-    CONFIG["max_boost_rounds"] = min(int(os.environ.get("MAX_BOOST_ROUNDS", "350")), 400)
-    CONFIG["patience_overfit"] = 20
-    CONFIG["nn_epochs"] = int(os.environ.get("NN_EPOCHS", "15"))
-    CONFIG["nn_patience"] = 5
-    CONFIG["nn_batch"] = 512
-    CONFIG["nn_hidden"] = [64, 32]
-    CONFIG["n_jobs"] = max(1, min(2, (os.cpu_count() or 2)))  # leave cores for workers
-    # AdaBoost off (slow + sklearn churn); RF on but light
+    # Advanced daily training: real capacity, parallel for wall-clock only
+    CONFIG["capacity_growth_steps"] = int(os.environ.get("CAPACITY_STEPS", "1"))
+    CONFIG["max_boost_rounds"] = min(int(os.environ.get("MAX_BOOST_ROUNDS", "900")), 1200)
+    CONFIG["patience_overfit"] = 35
+    CONFIG["nn_epochs"] = int(os.environ.get("NN_EPOCHS", "45"))
+    CONFIG["nn_patience"] = 10
+    CONFIG["nn_batch"] = 256
+    CONFIG["nn_hidden"] = [128, 64, 32]  # real depth
+    CONFIG["n_jobs"] = max(1, min(2, (os.cpu_count() or 2)))
     if os.environ.get("USE_ADABOOST", "").strip() not in ("1", "true", "yes"):
         CONFIG["use_adaboost"] = False
     if os.environ.get("USE_RANDOM_FOREST", "").strip() in ("0", "false", "no"):
         CONFIG["use_random_forest"] = False
     else:
-        CONFIG["use_random_forest"] = True  # keep RF for ensemble power
-    print("[train] DAILY_LIGHT LIGHTNING: boost<=%s nn_epochs=%s hidden=%s workers parallel"
-          % (CONFIG["max_boost_rounds"], CONFIG["nn_epochs"], CONFIG["nn_hidden"]))
+        CONFIG["use_random_forest"] = True
+    print("[train] DAILY ADVANCED: boost<=%s nn_epochs=%s hidden=%s capacity=%s"
+          % (CONFIG["max_boost_rounds"], CONFIG["nn_epochs"], CONFIG["nn_hidden"],
+             CONFIG["capacity_growth_steps"]))
 
 # Parallel team workers (ProcessPool). 1 = sequential.
 CONFIG["train_workers"] = int(os.environ.get("TRAIN_WORKERS", "1"))
@@ -528,10 +528,6 @@ def train_random_forest(Xtr, ytr, Xva, yva, task, out_path):
     for level in range(CONFIG["capacity_growth_steps"] + 1):
         n_est = min(200 + level * 150, 700)
         depth = min(12 + level * 2, 20)
-        # Daily lightning: fewer trees still strong
-        if CONFIG.get("capacity_growth_steps", 2) == 0:
-            n_est = min(n_est, 120)
-            depth = min(depth, 12)
         model = RandomForestClassifier(
             n_estimators=n_est, max_depth=depth, min_samples_leaf=4,
             max_features="sqrt", n_jobs=CONFIG["n_jobs"],

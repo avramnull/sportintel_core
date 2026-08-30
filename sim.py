@@ -444,6 +444,7 @@ def bin_prob(p):
 
 
 def blend_with_odds(p_model, p_market, alpha):
+    """Light fixed blend only — models carry the signal; no anti-model patches."""
     p_model = np.asarray(p_model, float)
     p_market = np.asarray(p_market, float)
     n = max(len(p_model), len(p_market))
@@ -451,20 +452,8 @@ def blend_with_odds(p_model, p_market, alpha):
     b = np.pad(p_market, (0, max(0, n - len(p_market))))[:n]
     a = np.clip(a, 1e-9, None); b = np.clip(b, 1e-9, None)
     a, b = a / a.sum(), b / b.sum()
-    # If model is near-uniform or fights a strong market favourite, trust market more
-    ent = float(-np.sum(a * np.log(a + 1e-12)))
-    max_ent = float(np.log(n))
-    flatness = ent / max_ent if max_ent > 0 else 1.0  # 1 = fully flat
-    # strong market fav: max market prob
-    m_max = float(b.max())
-    alpha_eff = float(alpha)
-    if flatness > 0.95:
-        alpha_eff = max(alpha_eff, 0.55)  # model almost prior → lean market
-    if m_max >= 0.45 and a[int(np.argmax(b))] < 0.30:
-        # model disagrees with clear favourite
-        alpha_eff = max(alpha_eff, 0.50)
-    alpha_eff = min(0.75, alpha_eff)
-    out = (1 - alpha_eff) * a + alpha_eff * b
+    alpha = float(np.clip(alpha, 0.0, 0.45))  # never let market dominate the models
+    out = (1 - alpha) * a + alpha * b
     return out / out.sum()
 
 
@@ -475,59 +464,109 @@ def agreement_pct(backends_count: int, total_possible: int = 7) -> str:
 
 
 def simulate_match(p_ft, p_ht, p_over25, p_btts, p_ht_over15, n, seed):
+    """
+    Coherent Monte Carlo:
+      - FT scorelines from outcome + O2.5 + BTTS
+      - HT scorelines always subsets of FT (hh<=hg, ah<=ag)
+      - Top-3 correct scores with % share
+    """
     rng = np.random.default_rng(seed)
+    p_ft = np.asarray(p_ft, float).ravel()
+    p_ft = np.clip(p_ft, 1e-9, None)
     p_ft = p_ft / p_ft.sum()
-    ft_outcomes = rng.choice(["H", "D", "A"], size=n, p=p_ft)
-    scores = []
-    for outcome in ft_outcomes:
-        over, btts = rng.random() < p_over25, rng.random() < p_btts
-        if outcome == "H":
-            if over and btts:
-                h, a = int(rng.choice([2, 3, 4])), int(rng.choice([1, 2]))
-                h = max(h, a + 1)
-            elif over:
-                h, a = int(rng.choice([3, 4, 5])), 0
-            elif btts:
-                h, a = int(rng.choice([1, 2])), 1
-                h = max(h, a + 1)
-            else:
-                h, a = int(rng.choice([1, 2])), 0
-        elif outcome == "A":
-            if over and btts:
-                a, h = int(rng.choice([2, 3, 4])), int(rng.choice([1, 2]))
-                a = max(a, h + 1)
-            elif over:
-                a, h = int(rng.choice([3, 4, 5])), 0
-            elif btts:
-                a, h = int(rng.choice([1, 2])), 1
-                a = max(a, h + 1)
-            else:
-                a, h = int(rng.choice([1, 2])), 0
-        else:
-            if over and btts:
-                h = a = int(rng.choice([2, 3]))
-            elif btts:
-                h = a = 1
-            else:
-                h = a = 0
-        scores.append((h, a))
-    scores = np.array(scores)
-    if p_ht is None or len(p_ht) < 3:
-        p_ht = np.array([0.35, 0.30, 0.35])
+    if p_ht is None or len(np.asarray(p_ht).ravel()) < 3:
+        p_ht = np.array([0.32, 0.36, 0.32])
     else:
+        p_ht = np.asarray(p_ht, float).ravel()[:3]
+        p_ht = np.clip(p_ht, 1e-9, None)
         p_ht = p_ht / p_ht.sum()
-    ht_scores = []
-    for _ in range(n):
-        o = rng.choice(["H", "D", "A"], p=p_ht)
-        if o == "H":
-            ht_scores.append((1, 0) if rng.random() > 0.3 else (2, 0) if rng.random() > 0.5 else (2, 1))
-        elif o == "A":
-            ht_scores.append((0, 1) if rng.random() > 0.3 else (0, 2) if rng.random() > 0.5 else (1, 2))
-        else:
-            ht_scores.append((0, 0) if rng.random() > 0.4 else (1, 1))
-    ht_scores = np.array(ht_scores)
-    top = Counter(map(tuple, scores)).most_common(8)
-    top_ht = Counter(map(tuple, ht_scores)).most_common(5)
+    p_over25 = float(np.clip(p_over25, 0.05, 0.95))
+    p_btts = float(np.clip(p_btts, 0.05, 0.95))
+    p_ht_over15 = float(np.clip(p_ht_over15 if p_ht_over15 is not None else 0.35, 0.05, 0.95))
+
+    # Implied goal rates from 1X2 + totals (simple, stable)
+    # E[goals] rises with P(over), home share rises with P(H)
+    tot = 2.15 + 1.35 * (p_over25 - 0.5) * 2  # ~1.5 .. 2.8
+    tot = float(np.clip(tot, 1.6, 3.4))
+    home_share = 0.38 + 0.28 * (p_ft[0] - p_ft[2])  # fav gets more xG
+    home_share = float(np.clip(home_share, 0.28, 0.72))
+    lam_h = tot * home_share
+    lam_a = tot * (1 - home_share)
+
+    def sample_ft_score():
+        # rejection to match outcome / o25 / btts preferences softly
+        for _ in range(40):
+            h = int(rng.poisson(lam_h))
+            a = int(rng.poisson(lam_a))
+            h, a = min(h, 7), min(a, 7)
+            if h > a:
+                out = "H"
+            elif h < a:
+                out = "A"
+            else:
+                out = "D"
+            # soft accept by target probs
+            w = p_ft[{"H": 0, "D": 1, "A": 2}[out]]
+            if (h + a > 2.5) != (rng.random() < p_over25):
+                if rng.random() > 0.35:
+                    continue
+            if ((h > 0 and a > 0) != (rng.random() < p_btts)):
+                if rng.random() > 0.35:
+                    continue
+            if rng.random() < w + 0.15:
+                return h, a
+        # fallback pure poisson
+        return int(min(rng.poisson(lam_h), 7)), int(min(rng.poisson(lam_a), 7))
+
+    def sample_ht(hg, ag):
+        """HT goals never exceed FT; shaped by p_ht and p_ht_over15."""
+        # possible HT scores inside FT box
+        candidates = []
+        weights = []
+        for hh in range(0, hg + 1):
+            for ah in range(0, ag + 1):
+                # remaining 2nd-half goals non-negative already by construction
+                if hh > ah:
+                    o = "H"
+                elif hh < ah:
+                    o = "A"
+                else:
+                    o = "D"
+                w = p_ht[{"H": 0, "D": 1, "A": 2}[o]]
+                # prefer realistic HT totals
+                tot_ht = hh + ah
+                if tot_ht > 1.5:
+                    w *= (0.5 + p_ht_over15)
+                else:
+                    w *= (1.2 - 0.4 * p_ht_over15)
+                # 2nd half should usually still have some goals if FT is high
+                if hg + ag >= 3 and tot_ht == hg + ag and rng.random() < 0.5:
+                    w *= 0.3  # rare: all goals before HT
+                candidates.append((hh, ah))
+                weights.append(max(w, 1e-6))
+        weights = np.asarray(weights, float)
+        weights /= weights.sum()
+        idx = int(rng.choice(len(candidates), p=weights))
+        return candidates[idx]
+
+    scores = np.zeros((n, 2), dtype=int)
+    ht_scores = np.zeros((n, 2), dtype=int)
+    for i in range(n):
+        hg, ag = sample_ft_score()
+        hh, ah = sample_ht(hg, ag)
+        scores[i] = (hg, ag)
+        ht_scores[i] = (hh, ah)
+
+    top = Counter(map(tuple, map(tuple, scores))).most_common(8)
+    top_ht = Counter(map(tuple, map(tuple, ht_scores))).most_common(5)
+
+    def top_pct(counter_list, k=3):
+        total = float(n) if n else 1.0
+        out = []
+        for (h, a), c in counter_list[:k]:
+            out.append({"score": f"{h}-{a}", "count": int(c), "pct": round(100.0 * c / total, 1)})
+        return out
+
     return {
         "n": n,
         "ft_model": {"H": float(p_ft[0]), "D": float(p_ft[1]), "A": float(p_ft[2])},
@@ -560,12 +599,23 @@ def simulate_match(p_ft, p_ht, p_over25, p_btts, p_ht_over15, n, seed):
         },
         "top_ft": [(f"{h}-{a}", int(c)) for (h, a), c in top],
         "top_ht": [(f"{h}-{a}", int(c)) for (h, a), c in top_ht],
+        "top3_ft": top_pct(top, 3),
+        "top3_ht": top_pct(top_ht, 3),
         "xg": {
             "home": float(scores[:, 0].mean()),
             "away": float(scores[:, 1].mean()),
             "total": float(scores.sum(1).mean()),
         },
+        "ht_xg": {
+            "home": float(ht_scores[:, 0].mean()),
+            "away": float(ht_scores[:, 1].mean()),
+            "total": float(ht_scores.sum(1).mean()),
+        },
+        "score_consistency": {
+            "ht_leq_ft": float(np.mean((ht_scores[:, 0] <= scores[:, 0]) & (ht_scores[:, 1] <= scores[:, 1]))),
+        },
     }
+
 
 
 def verdict(model_p, threshold=0.52):
@@ -699,9 +749,26 @@ def locked_tip(rows, report, home, away):
             "agree": top["Agree"],
             "verdict": "HARD YES" if locked else "YES LEAN",
         }
-    print(f"\n  Top FT scores : {', '.join(f'{s}({c})' for s,c in report['top_ft'][:5])}")
-    print(f"  Top HT scores : {', '.join(f'{s}({c})' for s,c in report['top_ht'][:3])}")
-    print(f"  Exp goals     : H {report['xg']['home']:.2f}  A {report['xg']['away']:.2f}  T {report['xg']['total']:.2f}")
+    t3 = report.get("top3_ft") or []
+    if t3:
+        print("\n  Top-3 FT correct scores:")
+        for i, row in enumerate(t3, 1):
+            print(f"    {i}. {row['score']:>5}  {row['pct']:5.1f}%  (n={row['count']})")
+    else:
+        print(f"\n  Top FT scores : {', '.join(f'{s}({c})' for s,c in report.get('top_ft', [])[:3])}")
+    t3h = report.get("top3_ht") or []
+    if t3h:
+        print("  Top-3 HT scores (consistent with FT):")
+        for i, row in enumerate(t3h, 1):
+            print(f"    {i}. {row['score']:>5}  {row['pct']:5.1f}%  (n={row['count']})")
+    else:
+        print(f"  Top HT scores : {', '.join(f'{s}({c})' for s,c in report.get('top_ht', [])[:3])}")
+    print(f"  Exp goals FT  : H {report['xg']['home']:.2f}  A {report['xg']['away']:.2f}  T {report['xg']['total']:.2f}")
+    if report.get("ht_xg"):
+        print(f"  Exp goals HT  : H {report['ht_xg']['home']:.2f}  A {report['ht_xg']['away']:.2f}  T {report['ht_xg']['total']:.2f}")
+    cons = (report.get("score_consistency") or {}).get("ht_leq_ft")
+    if cons is not None:
+        print(f"  HT⊆FT check   : {100*cons:.1f}% of sims")
     print("=" * 78)
     return tip
 
@@ -819,20 +886,10 @@ def run_one_match(match_cfg: dict, quiet: bool = False, allow_market_only: bool 
         raw_hto, b = predict_across_runs("ht_over15", runs_loaded, home_id, away_id, div_code, oh, od, oa, hist_df)
         backends_map["ht_over15"] = b
         p_ft = blend_with_odds(multi_prob(raw_ft, 3), p_market, alpha)
-        # HT: blend model with softened FT market (HT is flatter)
-        p_ht_m = multi_prob(raw_ht, 3)
-        p_ht_mkt = np.array([
-            0.5 * p_market[0] + 0.25,
-            0.35,
-            0.5 * p_market[2] + 0.25,
-        ], dtype=float)
-        p_ht_mkt = p_ht_mkt / p_ht_mkt.sum()
-        p_ht = blend_with_odds(p_ht_m, p_ht_mkt, min(0.45, alpha + 0.10))
+        p_ht = multi_prob(raw_ht, 3)  # pure model HT — no market patch
         p_over = bin_prob(raw_over)
         p_btts = bin_prob(raw_btts)
-        p_hto = bin_prob(raw_hto) if raw_hto is not None else 0.35
-        if raw_hto is None:
-            p_hto = float(0.25 + 0.25 * p_over)  # sane default tied to O2.5
+        p_hto = bin_prob(raw_hto) if raw_hto is not None else float(0.25 + 0.25 * p_over)
     else:
         # Pure market path — same schema
         p_ft = p_market

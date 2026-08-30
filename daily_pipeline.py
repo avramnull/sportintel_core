@@ -102,8 +102,8 @@ def main():
             "FOCUS_TEAMS": ",".join(focus),
             "DAILY_LIGHT": os.environ.get("DAILY_LIGHT", "1"),
             "MIN_TEAM_MATCHES": os.environ.get("MIN_TEAM_MATCHES", "25"),
-            "MAX_BOOST_ROUNDS": os.environ.get("MAX_BOOST_ROUNDS", "350"),
-            "NN_EPOCHS": os.environ.get("NN_EPOCHS", "15"),
+            "MAX_BOOST_ROUNDS": os.environ.get("MAX_BOOST_ROUNDS", "900"),
+            "NN_EPOCHS": os.environ.get("NN_EPOCHS", "45"),
             "DAILY_TARGETS": os.environ.get(
                 "DAILY_TARGETS", "ft_result,over25,btts,ht_result"
             ),
