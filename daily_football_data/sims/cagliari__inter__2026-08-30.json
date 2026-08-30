@@ -9,7 +9,7 @@
     "odds_away": 1.44,
     "n_simulations": 3000,
     "seed": 156,
-    "odds_blend": 0.3
+    "odds_blend": 0.25
   },
   "resolved": {
     "league": "Serie A",
@@ -22,249 +22,291 @@
   "report": {
     "n": 3000,
     "ft_model": {
-      "H": 0.48779230178860444,
-      "D": 0.1903759635608643,
-      "A": 0.3218317346505313
+      "H": 0.5477028645282574,
+      "D": 0.18500185311271883,
+      "A": 0.2672952823590237
     },
     "ft_sim": {
-      "H": 0.49566666666666664,
-      "D": 0.18666666666666668,
-      "A": 0.31766666666666665
+      "H": 0.466,
+      "D": 0.18866666666666668,
+      "A": 0.3453333333333333
     },
     "ht_model": {
-      "H": 0.38663755362954066,
-      "D": 0.3896507061469184,
-      "A": 0.22371174022354087
+      "H": 0.4768887645298682,
+      "D": 0.31182040257860577,
+      "A": 0.21129083289152611
     },
     "ht_sim": {
-      "H": 0.37666666666666665,
-      "D": 0.391,
-      "A": 0.23233333333333334
+      "H": 0.4086666666666667,
+      "D": 0.397,
+      "A": 0.19433333333333333
     },
-    "over25_model": 0.5143155722383028,
-    "over25_sim": 0.6963333333333334,
-    "btts_model": 0.5691639567467461,
-    "btts_sim": 0.5756666666666667,
-    "ht_over15_model": 0.5,
-    "ht_over15_sim": 0.33566666666666667,
+    "over25_model": 0.5489571887213556,
+    "over25_sim": 0.48733333333333334,
+    "btts_model": 0.5807060656877817,
+    "btts_sim": 0.49533333333333335,
+    "ht_over15_model": 0.3872392971803389,
+    "ht_over15_sim": 0.3006666666666667,
     "dc_ft": {
-      "1X": 0.6781682653494687,
-      "X2": 0.5122076982113956,
-      "12": 0.8096240364391357
+      "1X": 0.7327047176409762,
+      "X2": 0.45229713547174255,
+      "12": 0.8149981468872811
     },
     "dc_ht": {
-      "1X": 0.7762882597764591,
-      "X2": 0.6133624463704592,
-      "12": 0.6103492938530816
+      "1X": 0.788709167108474,
+      "X2": 0.5231112354701319,
+      "12": 0.6881795974213943
     },
     "top_ft": [
       [
+        "1-0",
+        421
+      ],
+      [
         "2-1",
-        458
+        356
       ],
       [
-        "1-2",
-        322
-      ],
-      [
-        "0-0",
-        249
+        "0-1",
+        280
       ],
       [
         "1-1",
-        164
+        266
       ],
       [
-        "3-2",
-        154
+        "1-2",
+        263
       ],
       [
         "2-0",
-        151
+        226
       ],
       [
-        "1-0",
-        148
+        "0-0",
+        181
       ],
       [
-        "5-0",
-        127
+        "0-2",
+        164
       ]
     ],
     "top_ht": [
       [
-        "1-0",
-        819
+        "0-0",
+        971
       ],
       [
-        "0-0",
-        680
+        "1-0",
+        760
       ],
       [
         "0-1",
-        494
-      ],
-      [
-        "1-1",
-        493
+        367
       ],
       [
         "2-0",
-        161
+        251
+      ],
+      [
+        "1-1",
+        194
       ]
     ],
+    "top3_ft": [
+      {
+        "score": "1-0",
+        "count": 421,
+        "pct": 14.0
+      },
+      {
+        "score": "2-1",
+        "count": 356,
+        "pct": 11.9
+      },
+      {
+        "score": "0-1",
+        "count": 280,
+        "pct": 9.3
+      }
+    ],
+    "top3_ht": [
+      {
+        "score": "0-0",
+        "count": 971,
+        "pct": 32.4
+      },
+      {
+        "score": "1-0",
+        "count": 760,
+        "pct": 25.3
+      },
+      {
+        "score": "0-1",
+        "count": 367,
+        "pct": 12.2
+      }
+    ],
     "xg": {
-      "home": 1.7666666666666666,
-      "away": 1.3863333333333334,
-      "total": 3.153
+      "home": 1.3256666666666668,
+      "away": 1.171,
+      "total": 2.4966666666666666
+    },
+    "ht_xg": {
+      "home": 0.7133333333333334,
+      "away": 0.4246666666666667,
+      "total": 1.138
+    },
+    "score_consistency": {
+      "ht_leq_ft": 1.0
     },
     "goal_rates": {
-      "home": 1.7666666666666666,
-      "away": 1.3863333333333334
+      "home": 1.3256666666666668,
+      "away": 1.171
     }
   },
   "table": [
     {
       "Section": "HT Winner",
       "Selection": "Cagliari",
-      "Model%": 38.7,
-      "Sim%": 37.7,
+      "Model%": 47.7,
+      "Sim%": 40.9,
       "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "HT Winner",
       "Selection": "Draw",
-      "Model%": 39.0,
-      "Sim%": 39.1,
+      "Model%": 31.2,
+      "Sim%": 39.7,
       "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "HT Winner",
       "Selection": "Inter",
-      "Model%": 22.4,
-      "Sim%": 23.2,
+      "Model%": 21.1,
+      "Sim%": 19.4,
       "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "HT DC",
       "Selection": "1X",
-      "Model%": 77.6,
-      "Sim%": 76.8,
+      "Model%": 78.9,
+      "Sim%": 80.6,
       "Agree": "6 eng",
       "Verdict": "YES"
     },
     {
       "Section": "HT DC",
       "Selection": "X2",
-      "Model%": 61.3,
-      "Sim%": 62.3,
+      "Model%": 52.3,
+      "Sim%": 59.1,
       "Agree": "6 eng",
-      "Verdict": "YES"
+      "Verdict": "NO"
     },
     {
       "Section": "HT DC",
       "Selection": "12",
-      "Model%": 61.0,
-      "Sim%": 60.9,
+      "Model%": 68.8,
+      "Sim%": 60.3,
       "Agree": "6 eng",
       "Verdict": "YES"
     },
     {
       "Section": "HT O/U",
       "Selection": "Over 1.5",
-      "Model%": 50.0,
-      "Sim%": 33.6,
+      "Model%": 38.7,
+      "Sim%": 30.1,
       "Agree": "-",
       "Verdict": "NO"
     },
     {
       "Section": "HT O/U",
       "Selection": "Under 1.5",
-      "Model%": 50.0,
-      "Sim%": 66.4,
+      "Model%": 61.3,
+      "Sim%": 69.9,
       "Agree": "-",
-      "Verdict": "NO"
+      "Verdict": "YES"
     },
     {
       "Section": "FT Winner",
       "Selection": "Cagliari",
-      "Model%": 48.8,
-      "Sim%": 49.6,
+      "Model%": 54.8,
+      "Sim%": 46.6,
       "Agree": "6 eng",
-      "Verdict": "NO"
+      "Verdict": "YES"
     },
     {
       "Section": "FT Winner",
       "Selection": "Draw",
-      "Model%": 19.0,
-      "Sim%": 18.7,
+      "Model%": 18.5,
+      "Sim%": 18.9,
       "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "FT Winner",
       "Selection": "Inter",
-      "Model%": 32.2,
-      "Sim%": 31.8,
+      "Model%": 26.7,
+      "Sim%": 34.5,
       "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "FT DC",
       "Selection": "1X",
-      "Model%": 67.8,
-      "Sim%": 68.2,
+      "Model%": 73.3,
+      "Sim%": 65.5,
       "Agree": "6 eng",
       "Verdict": "YES"
     },
     {
       "Section": "FT DC",
       "Selection": "X2",
-      "Model%": 51.2,
-      "Sim%": 50.4,
+      "Model%": 45.2,
+      "Sim%": 53.4,
       "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "FT DC",
       "Selection": "12",
-      "Model%": 81.0,
-      "Sim%": 81.3,
+      "Model%": 81.5,
+      "Sim%": 81.1,
       "Agree": "6 eng",
       "Verdict": "YES"
     },
     {
       "Section": "FT O/U",
       "Selection": "Over 2.5",
-      "Model%": 51.4,
-      "Sim%": 69.6,
+      "Model%": 54.9,
+      "Sim%": 48.7,
       "Agree": "6 eng",
-      "Verdict": "NO"
+      "Verdict": "YES"
     },
     {
       "Section": "FT O/U",
       "Selection": "Under 2.5",
-      "Model%": 48.6,
-      "Sim%": 30.4,
+      "Model%": 45.1,
+      "Sim%": 51.3,
       "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "BTTS",
       "Selection": "Yes",
-      "Model%": 56.9,
-      "Sim%": 57.6,
+      "Model%": 58.1,
+      "Sim%": 49.5,
       "Agree": "6 eng",
       "Verdict": "YES"
     },
     {
       "Section": "BTTS",
       "Selection": "No",
-      "Model%": 43.1,
-      "Sim%": 42.4,
+      "Model%": 41.9,
+      "Sim%": 50.5,
       "Agree": "6 eng",
       "Verdict": "NO"
     }
@@ -273,8 +315,8 @@
     "status": "SECURED LOCK",
     "section": "FT DC",
     "selection": "12",
-    "model": 81.0,
-    "sim": 81.3,
+    "model": 81.5,
+    "sim": 81.1,
     "agree": "6 eng",
     "verdict": "HARD YES"
   },
@@ -313,5 +355,5 @@
     ],
     "ht_over15": []
   },
-  "generated_at": "2026-08-30T20:17:59.304188Z"
+  "generated_at": "2026-08-30T23:33:01.495048Z"
 }

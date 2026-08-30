@@ -9,7 +9,7 @@
     "odds_away": 2.2,
     "n_simulations": 3000,
     "seed": 234,
-    "odds_blend": 0.3
+    "odds_blend": 0.25
   },
   "resolved": {
     "league": "S\u00fcper Lig",
@@ -22,259 +22,301 @@
   "report": {
     "n": 3000,
     "ft_model": {
-      "H": 0.4043998725218899,
-      "D": 0.25620225124017526,
-      "A": 0.3393978762379349
+      "H": 0.333828133113238,
+      "D": 0.28090109214515363,
+      "A": 0.38527077474160826
     },
     "ft_sim": {
-      "H": 0.4103333333333333,
-      "D": 0.2623333333333333,
-      "A": 0.3273333333333333
+      "H": 0.20166666666666666,
+      "D": 0.22833333333333333,
+      "A": 0.57
     },
     "ht_model": {
-      "H": 0.2872153372147256,
-      "D": 0.43299490850824374,
-      "A": 0.2797897542770308
+      "H": 0.34772572461478113,
+      "D": 0.3840719232451355,
+      "A": 0.2682023521400835
     },
     "ht_sim": {
-      "H": 0.2876666666666667,
-      "D": 0.42966666666666664,
-      "A": 0.2826666666666667
+      "H": 0.18466666666666667,
+      "D": 0.4886666666666667,
+      "A": 0.32666666666666666
     },
-    "over25_model": 0.47329423788878594,
-    "over25_sim": 0.6466666666666666,
-    "btts_model": 0.5672950203822775,
-    "btts_sim": 0.5786666666666667,
-    "ht_over15_model": 0.5,
-    "ht_over15_sim": 0.335,
+    "over25_model": 0.5304944415157142,
+    "over25_sim": 0.418,
+    "btts_model": 0.5277228364868113,
+    "btts_sim": 0.42833333333333334,
+    "ht_over15_model": 0.38262361037892856,
+    "ht_over15_sim": 0.2773333333333333,
     "dc_ft": {
-      "1X": 0.6606021237620652,
-      "X2": 0.5956001274781102,
-      "12": 0.7437977487598249
+      "1X": 0.6147292252583916,
+      "X2": 0.6661718668867619,
+      "12": 0.7190989078548462
     },
     "dc_ht": {
-      "1X": 0.7202102457229693,
-      "X2": 0.7127846627852745,
-      "12": 0.5670050914917564
+      "1X": 0.7317976478599166,
+      "X2": 0.652274275385219,
+      "12": 0.6159280767548646
     },
     "top_ft": [
       [
-        "2-1",
-        430
+        "0-1",
+        504
       ],
       [
-        "1-2",
-        352
-      ],
-      [
-        "0-0",
-        325
+        "0-2",
+        320
       ],
       [
         "1-1",
-        247
+        320
+      ],
+      [
+        "1-2",
+        308
+      ],
+      [
+        "0-0",
+        272
       ],
       [
         "1-0",
+        236
+      ],
+      [
+        "0-3",
+        183
+      ],
+      [
+        "1-3",
         152
-      ],
-      [
-        "2-0",
-        126
-      ],
-      [
-        "3-2",
-        113
-      ],
-      [
-        "2-2",
-        113
       ]
     ],
     "top_ht": [
       [
         "0-0",
-        789
-      ],
-      [
-        "1-0",
-        619
+        1220
       ],
       [
         "0-1",
-        587
+        549
+      ],
+      [
+        "1-0",
+        399
+      ],
+      [
+        "0-2",
+        234
       ],
       [
         "1-1",
-        500
-      ],
-      [
-        "1-2",
-        133
+        229
       ]
     ],
+    "top3_ft": [
+      {
+        "score": "0-1",
+        "count": 504,
+        "pct": 16.8
+      },
+      {
+        "score": "0-2",
+        "count": 320,
+        "pct": 10.7
+      },
+      {
+        "score": "1-1",
+        "count": 320,
+        "pct": 10.7
+      }
+    ],
+    "top3_ht": [
+      {
+        "score": "0-0",
+        "count": 1220,
+        "pct": 40.7
+      },
+      {
+        "score": "0-1",
+        "count": 549,
+        "pct": 18.3
+      },
+      {
+        "score": "1-0",
+        "count": 399,
+        "pct": 13.3
+      }
+    ],
     "xg": {
-      "home": 1.5556666666666668,
-      "away": 1.4026666666666667,
-      "total": 2.9583333333333335
+      "home": 0.7946666666666666,
+      "away": 1.5166666666666666,
+      "total": 2.3113333333333332
+    },
+    "ht_xg": {
+      "home": 0.376,
+      "away": 0.6356666666666667,
+      "total": 1.0116666666666667
+    },
+    "score_consistency": {
+      "ht_leq_ft": 1.0
     },
     "goal_rates": {
-      "home": 1.5556666666666668,
-      "away": 1.4026666666666667
+      "home": 0.7946666666666666,
+      "away": 1.5166666666666666
     }
   },
   "table": [
     {
       "Section": "HT Winner",
       "Selection": "Eyupspor",
-      "Model%": 28.7,
-      "Sim%": 28.8,
+      "Model%": 34.8,
+      "Sim%": 18.5,
       "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "HT Winner",
       "Selection": "Draw",
-      "Model%": 43.3,
-      "Sim%": 43.0,
+      "Model%": 38.4,
+      "Sim%": 48.9,
       "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "HT Winner",
       "Selection": "Alanyaspor",
-      "Model%": 28.0,
-      "Sim%": 28.3,
+      "Model%": 26.8,
+      "Sim%": 32.7,
       "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "HT DC",
       "Selection": "1X",
-      "Model%": 72.0,
-      "Sim%": 71.7,
+      "Model%": 73.2,
+      "Sim%": 67.3,
       "Agree": "6 eng",
       "Verdict": "YES"
     },
     {
       "Section": "HT DC",
       "Selection": "X2",
-      "Model%": 71.3,
-      "Sim%": 71.2,
+      "Model%": 65.2,
+      "Sim%": 81.5,
       "Agree": "6 eng",
       "Verdict": "YES"
     },
     {
       "Section": "HT DC",
       "Selection": "12",
-      "Model%": 56.7,
-      "Sim%": 57.0,
+      "Model%": 61.6,
+      "Sim%": 51.1,
       "Agree": "6 eng",
       "Verdict": "YES"
     },
     {
       "Section": "HT O/U",
       "Selection": "Over 1.5",
-      "Model%": 50.0,
-      "Sim%": 33.5,
+      "Model%": 38.3,
+      "Sim%": 27.7,
       "Agree": "-",
       "Verdict": "NO"
     },
     {
       "Section": "HT O/U",
       "Selection": "Under 1.5",
-      "Model%": 50.0,
-      "Sim%": 66.5,
+      "Model%": 61.7,
+      "Sim%": 72.3,
       "Agree": "-",
-      "Verdict": "NO"
+      "Verdict": "YES"
     },
     {
       "Section": "FT Winner",
       "Selection": "Eyupspor",
-      "Model%": 40.4,
-      "Sim%": 41.0,
+      "Model%": 33.4,
+      "Sim%": 20.2,
       "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "FT Winner",
       "Selection": "Draw",
-      "Model%": 25.6,
-      "Sim%": 26.2,
+      "Model%": 28.1,
+      "Sim%": 22.8,
       "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "FT Winner",
       "Selection": "Alanyaspor",
-      "Model%": 33.9,
-      "Sim%": 32.7,
+      "Model%": 38.5,
+      "Sim%": 57.0,
       "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "FT DC",
       "Selection": "1X",
-      "Model%": 66.1,
-      "Sim%": 67.3,
+      "Model%": 61.5,
+      "Sim%": 43.0,
       "Agree": "6 eng",
       "Verdict": "YES"
     },
     {
       "Section": "FT DC",
       "Selection": "X2",
-      "Model%": 59.6,
-      "Sim%": 59.0,
+      "Model%": 66.6,
+      "Sim%": 79.8,
       "Agree": "6 eng",
       "Verdict": "YES"
     },
     {
       "Section": "FT DC",
       "Selection": "12",
-      "Model%": 74.4,
-      "Sim%": 73.8,
+      "Model%": 71.9,
+      "Sim%": 77.2,
       "Agree": "6 eng",
       "Verdict": "YES"
     },
     {
       "Section": "FT O/U",
       "Selection": "Over 2.5",
-      "Model%": 47.3,
-      "Sim%": 64.7,
-      "Agree": "6 eng",
-      "Verdict": "NO"
-    },
-    {
-      "Section": "FT O/U",
-      "Selection": "Under 2.5",
-      "Model%": 52.7,
-      "Sim%": 35.3,
+      "Model%": 53.0,
+      "Sim%": 41.8,
       "Agree": "6 eng",
       "Verdict": "YES"
     },
     {
+      "Section": "FT O/U",
+      "Selection": "Under 2.5",
+      "Model%": 47.0,
+      "Sim%": 58.2,
+      "Agree": "6 eng",
+      "Verdict": "NO"
+    },
+    {
       "Section": "BTTS",
       "Selection": "Yes",
-      "Model%": 56.7,
-      "Sim%": 57.9,
+      "Model%": 52.8,
+      "Sim%": 42.8,
       "Agree": "6 eng",
       "Verdict": "YES"
     },
     {
       "Section": "BTTS",
       "Selection": "No",
-      "Model%": 43.3,
-      "Sim%": 42.1,
+      "Model%": 47.2,
+      "Sim%": 57.2,
       "Agree": "6 eng",
       "Verdict": "NO"
     }
   ],
   "locked_tip": {
     "status": "SECURED LOCK",
-    "section": "FT DC",
-    "selection": "12",
-    "model": 74.4,
-    "sim": 73.8,
+    "section": "HT DC",
+    "selection": "1X",
+    "model": 73.2,
+    "sim": 67.3,
     "agree": "6 eng",
     "verdict": "HARD YES"
   },
@@ -313,5 +355,5 @@
     ],
     "ht_over15": []
   },
-  "generated_at": "2026-08-30T20:18:25.811568Z"
+  "generated_at": "2026-08-30T23:33:39.808820Z"
 }
