@@ -18,7 +18,10 @@ import numpy as np
 import pandas as pd
 
 warnings.filterwarnings("ignore")
-os.environ.setdefault("TF_CPP_MIN_LOG_LEVEL", "2")
+# Force CPU — GitHub Actions has no GPU; avoids CUDA hang/spam
+os.environ.setdefault("CUDA_VISIBLE_DEVICES", "")
+os.environ.setdefault("TF_CPP_MIN_LOG_LEVEL", "3")
+os.environ.setdefault("TF_ENABLE_ONEDNN_OPTS", "0")
 
 # =============================================================================
 # MATCH CONFIG — EDIT ONLY THIS
@@ -206,30 +209,45 @@ def build_live_features(home_id, away_id, div_code, odds_h, odds_d, odds_a,
     return np.nan_to_num(np.array(vals, dtype=np.float64).reshape(1, -1), nan=0.0)
 
 
+# In-memory model caches (avoid reload + TF retracing every fixture)
+_TORCH_CACHE: Dict[str, Any] = {}
+_TF_CACHE: Dict[str, Any] = {}
+_XGB_CACHE: Dict[str, Any] = {}
+_LGBM_CACHE: Dict[str, Any] = {}
+_CAT_CACHE: Dict[str, Any] = {}
+_SK_CACHE: Dict[str, Any] = {}
+
+
 def _predict_torch(path, X):
     import torch
     import torch.nn as nn
-    ckpt = torch.load(path, map_location="cpu", weights_only=False)
-    in_dim, hidden, out_dim = ckpt["in_dim"], ckpt["hidden"], ckpt["out_dim"]
-    task = ckpt["task"]
+    key = str(path)
+    entry = _TORCH_CACHE.get(key)
+    if entry is None:
+        ckpt = torch.load(path, map_location="cpu", weights_only=False)
+        in_dim, hidden, out_dim = ckpt["in_dim"], ckpt["hidden"], ckpt["out_dim"]
+        task = ckpt["task"]
 
-    class MLP(nn.Module):
-        def __init__(self):
-            super().__init__()
-            layers = []
-            prev = in_dim
-            for h in hidden:
-                layers += [nn.Linear(prev, h), nn.BatchNorm1d(h), nn.ReLU(), nn.Dropout(0.0)]
-                prev = h
-            layers.append(nn.Linear(prev, out_dim))
-            self.net = nn.Sequential(*layers)
+        class MLP(nn.Module):
+            def __init__(self):
+                super().__init__()
+                layers = []
+                prev = in_dim
+                for h in hidden:
+                    layers += [nn.Linear(prev, h), nn.BatchNorm1d(h), nn.ReLU(), nn.Dropout(0.0)]
+                    prev = h
+                layers.append(nn.Linear(prev, out_dim))
+                self.net = nn.Sequential(*layers)
 
-        def forward(self, x):
-            return self.net(x)
+            def forward(self, x):
+                return self.net(x)
 
-    model = MLP()
-    model.load_state_dict(ckpt["state_dict"])
-    model.eval()
+        model = MLP()
+        model.load_state_dict(ckpt["state_dict"])
+        model.eval()
+        entry = (model, task)
+        _TORCH_CACHE[key] = entry
+    model, task = entry
     with torch.no_grad():
         logits = model(torch.tensor(X, dtype=torch.float32))
         if task == "multiclass":
@@ -239,8 +257,23 @@ def _predict_torch(path, X):
 
 def _predict_tf(path, X):
     import tensorflow as tf
-    model = tf.keras.models.load_model(path)
-    pred = model.predict(X, verbose=0)
+    # Hard CPU — never touch CUDA on Actions
+    try:
+        tf.config.set_visible_devices([], "GPU")
+    except Exception:
+        pass
+    key = str(path)
+    model = _TF_CACHE.get(key)
+    if model is None:
+        model = tf.keras.models.load_model(path)
+        # warm once to compile graph
+        try:
+            _ = model(tf.constant(X, dtype=tf.float32), training=False)
+        except Exception:
+            pass
+        _TF_CACHE[key] = model
+    # __call__ avoids Keras predict() retracing spam
+    pred = model(tf.constant(X, dtype=tf.float32), training=False)
     pred = np.asarray(pred)
     if pred.ndim == 2 and pred.shape[1] > 1:
         return pred[0]
@@ -258,8 +291,12 @@ def predict_backends(target_key, X_scaled, targets) -> Tuple[Optional[np.ndarray
     if "xgboost" in paths and Path(paths["xgboost"]).exists():
         try:
             import xgboost as xgb
-            m = xgb.Booster()
-            m.load_model(paths["xgboost"])
+            key = paths["xgboost"]
+            m = _XGB_CACHE.get(key)
+            if m is None:
+                m = xgb.Booster()
+                m.load_model(key)
+                _XGB_CACHE[key] = m
             p = np.asarray(m.predict(xgb.DMatrix(X_scaled)))
             preds.append(np.array([1 - p[0], p[0]]) if p.ndim == 1 else p[0])
             names.append("xgb")
@@ -269,7 +306,11 @@ def predict_backends(target_key, X_scaled, targets) -> Tuple[Optional[np.ndarray
     if "lightgbm" in paths and Path(paths["lightgbm"]).exists():
         try:
             import lightgbm as lgb
-            m = lgb.Booster(model_file=paths["lightgbm"])
+            key = paths["lightgbm"]
+            m = _LGBM_CACHE.get(key)
+            if m is None:
+                m = lgb.Booster(model_file=key)
+                _LGBM_CACHE[key] = m
             p = np.asarray(m.predict(X_scaled))
             preds.append(np.array([1 - p[0], p[0]]) if p.ndim == 1 else p[0])
             names.append("lgbm")
@@ -279,8 +320,12 @@ def predict_backends(target_key, X_scaled, targets) -> Tuple[Optional[np.ndarray
     if "catboost" in paths and Path(paths["catboost"]).exists():
         try:
             from catboost import CatBoostClassifier
-            m = CatBoostClassifier()
-            m.load_model(paths["catboost"])
+            key = paths["catboost"]
+            m = _CAT_CACHE.get(key)
+            if m is None:
+                m = CatBoostClassifier()
+                m.load_model(key)
+                _CAT_CACHE[key] = m
             preds.append(m.predict_proba(X_scaled)[0])
             names.append("cat")
         except Exception as e:
@@ -288,8 +333,12 @@ def predict_backends(target_key, X_scaled, targets) -> Tuple[Optional[np.ndarray
 
     if "adaboost" in paths and Path(paths["adaboost"]).exists():
         try:
-            with open(paths["adaboost"], "rb") as f:
-                m = pickle.load(f)
+            key = paths["adaboost"]
+            m = _SK_CACHE.get(key)
+            if m is None:
+                with open(key, "rb") as f:
+                    m = pickle.load(f)
+                _SK_CACHE[key] = m
             p = m.predict_proba(X_scaled)[0]
             if np.isfinite(p).all():
                 preds.append(p)
@@ -299,8 +348,12 @@ def predict_backends(target_key, X_scaled, targets) -> Tuple[Optional[np.ndarray
 
     if "random_forest" in paths and Path(paths["random_forest"]).exists():
         try:
-            with open(paths["random_forest"], "rb") as f:
-                m = pickle.load(f)
+            key = paths["random_forest"]
+            m = _SK_CACHE.get(key)
+            if m is None:
+                with open(key, "rb") as f:
+                    m = pickle.load(f)
+                _SK_CACHE[key] = m
             p = m.predict_proba(X_scaled)[0]
             if np.isfinite(p).all():
                 preds.append(p)

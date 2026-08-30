@@ -24,6 +24,11 @@ SAVE_DIR = ROOT / "daily_football_data"
 SIMS_DIR = SAVE_DIR / "sims"
 sys.path.insert(0, str(ROOT))
 
+# Must set before TensorFlow import (via sim)
+os.environ.setdefault("CUDA_VISIBLE_DEVICES", "")
+os.environ.setdefault("TF_CPP_MIN_LOG_LEVEL", "3")
+os.environ.setdefault("TF_ENABLE_ONEDNN_OPTS", "0")
+
 import sim as sim_mod  # uses upgraded run_one_match
 
 N_SIM = int(os.environ.get("N_SIMULATIONS", "8000"))
