@@ -15,6 +15,7 @@ import re
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
+import time
 
 import numpy as np
 import pandas as pd
@@ -71,15 +72,23 @@ def main():
             raise SystemExit("No fixtures CSV")
 
     df = load_fixtures(fixtures_path)
+    # Align with train: only fixtures on script run day when TODAY_ONLY=1
+    today_only = os.environ.get("TODAY_ONLY", "1").strip().lower() in ("1", "true", "yes")
+    if today_only and "Date" in df.columns:
+        today = pd.Timestamp.now(tz="UTC").normalize().tz_localize(None)
+        before = len(df)
+        df = df[pd.to_datetime(df["Date"], errors="coerce").dt.normalize() == today].copy()
+        print(f"TODAY_ONLY={today.date()}: {before} -> {len(df)} fixtures", flush=True)
     if MAX_FIXTURES > 0:
         df = df.head(MAX_FIXTURES)
-    print(f"Simulating {len(df)} fixtures via sim.run_one_match …")
+    print(f"Simulating {len(df)} fixtures via sim.run_one_match …", flush=True)
 
     SIMS_DIR.mkdir(parents=True, exist_ok=True)
     # clear previous index only; keep old reports optional — overwrite same keys
     index = []
     teams_seen = set()
     ok, fail = 0, 0
+    t0_all = time.time()
 
     for i, row in df.iterrows():
         home = str(row["HomeTeam"]).strip()
@@ -104,7 +113,7 @@ def main():
             "seed": SEED + int(i),
             "odds_blend": ODDS_BLEND,
         }
-        t0 = _time.time()
+        t0 = time.time()
         print(f"  [{ok+fail+1}/{len(df)}] {home} vs {away} …", flush=True)
         try:
             payload = sim_mod.run_one_match(match_cfg, quiet=True, allow_market_only=True)
@@ -112,7 +121,7 @@ def main():
             print(f"  FAIL {home} vs {away}: {e}", flush=True)
             fail += 1
             continue
-        print(f"      ok in {_time.time()-t0:.1f}s", flush=True)
+        print(f"      ok in {time.time()-t0:.1f}s", flush=True)
 
         key = slug_key(home, away, date_str)
         out_path = SIMS_DIR / f"{key}.json"
@@ -180,7 +189,7 @@ def main():
         "n_teams": len(teams_seen),
     }, indent=2), encoding="utf-8")
 
-    print(f"Done: {ok} ok, {fail} fail in {_time.time()-t0_all:.0f}s → {SIMS_DIR}/index.json")
+    print(f"Done: {ok} ok, {fail} fail in {time.time()-t0_all:.0f}s → {SIMS_DIR}/index.json")
     secured = [s for s in index if s.get("locked_status") == "SECURED LOCK"]
     print(f"SECURED LOCKs: {len(secured)}")
     for s in secured[:10]:
