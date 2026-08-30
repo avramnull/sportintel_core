@@ -78,8 +78,12 @@ def main():
     # 3. Fixtures
     run([sys.executable, "scraper_fixtures.py"])
 
-    # 4. Team scan + mapping
-    run([sys.executable, "scan_fixture_teams.py"])
+    # 4. Team scan + mapping (strict: only teams with fixtures TODAY)
+    run([sys.executable, "scan_fixture_teams.py"], env={
+        "TODAY_ONLY": os.environ.get("TODAY_ONLY", "1"),
+        "MAX_TRAIN_TEAMS": os.environ.get("MAX_TRAIN_TEAMS", "0"),
+        "MIN_TEAM_MATCHES": os.environ.get("MIN_TEAM_MATCHES", "25"),
+    })
 
     focus_path = SAVE / "train_focus_teams.json"
     focus = []
@@ -98,6 +102,9 @@ def main():
             "DAILY_LIGHT": os.environ.get("DAILY_LIGHT", "1"),
             "MIN_TEAM_MATCHES": os.environ.get("MIN_TEAM_MATCHES", "40"),
             "MAX_BOOST_ROUNDS": os.environ.get("MAX_BOOST_ROUNDS", "1000"),
+            # Force neural nets on for daily focus teams
+            "USE_PYTORCH": os.environ.get("USE_PYTORCH", "1"),
+            "USE_TENSORFLOW": os.environ.get("USE_TENSORFLOW", "1"),
         })
 
     # 6. Live batch sim (sim.py engine)

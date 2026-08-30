@@ -35,16 +35,20 @@ jobs:
         run: |
           pip install requests pandas numpy pyarrow scikit-learn
           pip install xgboost lightgbm catboost || true
-          # optional; DAILY_LIGHT skips these but keep available
+          # Neural nets required for daily train
           pip install torch --index-url https://download.pytorch.org/whl/cpu || true
+          pip install tensorflow || true
 
       - name: Run full daily pipeline
         env:
           FOOTBALL_SEASON: "2627"
           FOOTBALL_SEASON_LABEL: "2026/2027"
-          MAX_TRAIN_TEAMS: "0"  # 0 = all unique fixture teams
+          MAX_TRAIN_TEAMS: "0"   # 0 = all teams that have a fixture TODAY
           MIN_TEAM_MATCHES: "25"
-          DAILY_LIGHT: "1"
+          TODAY_ONLY: "1"        # strict: only current-day fixtures
+          DAILY_LIGHT: "1"       # reduced capacity but torch+tf still ON
+          USE_PYTORCH: "1"
+          USE_TENSORFLOW: "1"
           MAX_BOOST_ROUNDS: "800"
           N_SIMULATIONS: "8000"
           ODDS_BLEND: "0.30"

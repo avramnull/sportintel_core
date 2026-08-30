@@ -37,6 +37,8 @@ MAX_TRAIN = int(os.environ.get("MAX_TRAIN_TEAMS", "0"))
 MIN_MATCHES = int(os.environ.get("MIN_TEAM_MATCHES", "25"))
 # Always include previously trained teams that appear in fixtures (retrain)
 RETRAIN_EXISTING = os.environ.get("RETRAIN_EXISTING", "1").strip().lower() in ("1", "true", "yes")
+# Strict: only teams with a fixture on the current calendar day (UTC date)
+TODAY_ONLY = os.environ.get("TODAY_ONLY", "1").strip().lower() in ("1", "true", "yes")
 
 PRIORITY_DIVS = {
     "E0": 100, "SP1": 95, "I1": 95, "D1": 95, "F1": 90,
@@ -83,6 +85,21 @@ def main():
     df.columns = [str(c).replace("\ufeff", "").strip() for c in df.columns]
     if "HomeTeam" not in df.columns or "AwayTeam" not in df.columns:
         raise SystemExit("fixtures missing HomeTeam/AwayTeam")
+
+    # Parse Date and keep only fixtures on current UTC day when TODAY_ONLY=1
+    if "Date" in df.columns:
+        df["_date"] = pd.to_datetime(df["Date"], dayfirst=True, errors="coerce")
+        today = pd.Timestamp.now(tz="UTC").normalize().tz_localize(None)
+        if TODAY_ONLY:
+            before = len(df)
+            df = df[df["_date"].dt.normalize() == today].copy()
+            print(f"[scan] TODAY_ONLY={today.date()}: {before} -> {len(df)} fixtures")
+            if len(df) == 0:
+                print("[scan] WARNING: zero fixtures for today — focus will be empty")
+        else:
+            print(f"[scan] TODAY_ONLY=0: using all {len(df)} fixtures in CSV")
+    else:
+        print("[scan] WARNING: no Date column — cannot filter to today")
 
     aliases = load_aliases()
     team2id = load_team2id()
@@ -160,6 +177,8 @@ def main():
         "train_all_fixtures": MAX_TRAIN <= 0,
         "min_matches": MIN_MATCHES,
         "retrain_existing": RETRAIN_EXISTING,
+        "today_only": TODAY_ONLY,
+        "focus_date": str(pd.Timestamp.now(tz="UTC").date()) if TODAY_ONLY else "all",
         "focus_teams": focus,
         "scores": {t: score[t] for t in focus},
         "note": "Pass to train.py via FOCUS_TEAMS env (comma-separated)",

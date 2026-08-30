@@ -82,13 +82,28 @@ if os.environ.get("MIN_TEAM_MATCHES"):
 if os.environ.get("MAX_BOOST_ROUNDS"):
     CONFIG["max_boost_rounds"] = int(os.environ["MAX_BOOST_ROUNDS"])
 if os.environ.get("DAILY_LIGHT", "").strip() in ("1", "true", "yes"):
-    # Faster daily train: skip neural nets, fewer growth steps
-    CONFIG["use_pytorch"] = False
-    CONFIG["use_tensorflow"] = False
+    # Faster capacity for daily, but KEEP neural nets unless explicitly disabled
     CONFIG["capacity_growth_steps"] = 1
     CONFIG["max_boost_rounds"] = min(CONFIG["max_boost_rounds"], 1200)
     CONFIG["patience_overfit"] = 40
-    print("[train] DAILY_LIGHT mode: xgb/lgbm/cat/ada/rf only, reduced rounds")
+    CONFIG["nn_epochs"] = min(CONFIG.get("nn_epochs", 80), 40)
+    print("[train] DAILY_LIGHT mode: reduced rounds; torch/tf still ON unless USE_PYTORCH/USE_TENSORFLOW=0")
+
+# Explicit backend overrides (env wins)
+for flag, key in (
+    ("USE_XGBOOST", "use_xgboost"),
+    ("USE_LIGHTGBM", "use_lightgbm"),
+    ("USE_CATBOOST", "use_catboost"),
+    ("USE_ADABOOST", "use_adaboost"),
+    ("USE_RANDOM_FOREST", "use_random_forest"),
+    ("USE_PYTORCH", "use_pytorch"),
+    ("USE_TENSORFLOW", "use_tensorflow"),
+):
+    v = os.environ.get(flag, "").strip().lower()
+    if v in ("1", "true", "yes"):
+        CONFIG[key] = True
+    elif v in ("0", "false", "no"):
+        CONFIG[key] = False
 
 LEAGUE_MAP = dict(team_mapping.LEAGUE_MAP)
 
@@ -750,6 +765,14 @@ def main():
 
         models_dir = run_dir / "models"
         preproc_dir = run_dir / "preprocessors"
+        # Fresh models: delete any previous weights for this team
+        import shutil
+        if models_dir.exists():
+            shutil.rmtree(models_dir)
+            log(f"    cleared old models: {models_dir}")
+        if preproc_dir.exists():
+            shutil.rmtree(preproc_dir)
+            log(f"    cleared old preprocessors: {preproc_dir}")
         models_dir.mkdir(parents=True, exist_ok=True)
         preproc_dir.mkdir(parents=True, exist_ok=True)
 
