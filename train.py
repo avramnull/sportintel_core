@@ -308,24 +308,42 @@ def engineer(df: pd.DataFrame) -> pd.DataFrame:
         df[f"AwayFormGD_{w}"] = A_gf[w] - A_ga[w]
     df.drop(columns=["_pts_as_home", "_pts_as_away"], inplace=True, errors="ignore")
 
+    # PairKey groups the two fixtures' worth of history together regardless of
+    # who hosted; the counts below are then computed relative to whichever
+    # team is HOME in the CURRENT row — matching sim.py's build_live_features,
+    # which counts H2H wins for "the team that is home today", not "whoever
+    # was home in that particular past meeting".
     df["PairKey"] = df.apply(
         lambda r: tuple(sorted([int(r["HomeTeamId"]), int(r["AwayTeamId"])])), axis=1
     )
-    hist = defaultdict(lambda: deque(maxlen=5))
+    hist = defaultdict(lambda: deque(maxlen=5))  # winner_team_id, or None for draw
     hw, dr, aw = [], [], []
     for _, r in df.iterrows():
+        cur_home = int(r["HomeTeamId"])
         past = list(hist[r["PairKey"]])
-        hw.append(sum(1 for x in past if x == "H"))
-        dr.append(sum(1 for x in past if x == "D"))
-        aw.append(sum(1 for x in past if x == "A"))
-        hist[r["PairKey"]].append(r["FTR"] if pd.notna(r["FTR"]) else "D")
+        hw.append(sum(1 for w in past if w == cur_home))
+        dr.append(sum(1 for w in past if w is None))
+        aw.append(sum(1 for w in past if w is not None and w != cur_home))
+        ftr = r["FTR"] if pd.notna(r["FTR"]) else "D"
+        if ftr == "H":
+            winner = int(r["HomeTeamId"])
+        elif ftr == "A":
+            winner = int(r["AwayTeamId"])
+        else:
+            winner = None
+        hist[r["PairKey"]].append(winner)
     df["H2H_HomeWins_5"] = hw
     df["H2H_Draws_5"] = dr
     df["H2H_AwayWins_5"] = aw
     return df
 
 
-def prepare_xy(df, target_key):
+def prepare_xy(df, target_key, le_div_in=None, le_y_in=None):
+    """
+    le_div_in / le_y_in: pass the TRAIN-fitted encoders when preparing a
+    validation split, so Div and class encodings match training exactly.
+    Leave None when preparing the training split (fits fresh encoders).
+    """
     cfg = TARGETS[target_key]
     sub = df.dropna(subset=[cfg["col"]]).copy()
     if len(sub) < 25:
@@ -337,26 +355,43 @@ def prepare_xy(df, target_key):
     X_num = X_num[valid].fillna(X_num[valid].median(numeric_only=True)).fillna(0.0)
 
     X_teams = sub[["HomeTeamId", "AwayTeamId"]].astype(int).values
-    le_div = LabelEncoder()
-    div_enc = le_div.fit_transform(sub["Div"].fillna("UNK").astype(str)).reshape(-1, 1)
+
+    if le_div_in is not None:
+        # Reuse the training encoding — never refit on the val split, or the
+        # same division could get a different integer code than in Xtr.
+        le_div = le_div_in
+        div_map = {c: i for i, c in enumerate(le_div.classes_)}
+        oov = len(le_div.classes_)  # unseen division -> dedicated OOV bucket
+        div_enc = (
+            sub["Div"].fillna("UNK").astype(str).map(div_map).fillna(oov).astype(int).values.reshape(-1, 1)
+        )
+    else:
+        le_div = LabelEncoder()
+        div_enc = le_div.fit_transform(sub["Div"].fillna("UNK").astype(str)).reshape(-1, 1)
+
     X = np.nan_to_num(np.hstack([X_num.values.astype(np.float64), X_teams, div_enc]), nan=0.0)
     feat_names = valid + ["HomeTeamId", "AwayTeamId", "DivEnc"]
 
     y_raw = sub[cfg["col"]]
-    le_y = None
+    le_y = le_y_in
     if cfg["type"] == "multiclass":
-        classes = cfg.get("classes")
+        classes = list(le_y_in.classes_) if le_y_in is not None else cfg.get("classes")
         if classes:
             mask = y_raw.isin(classes).values
             X, y_raw = X[mask], y_raw[mask]
-        le_y = LabelEncoder()
-        y = le_y.fit_transform(y_raw.astype(str).values)
+        if le_y is None:
+            le_y = LabelEncoder()
+            y = le_y.fit_transform(y_raw.astype(str).values)
+        else:
+            # Same encoder as training -> Xva/yva always come from this one
+            # filter+transform pass, so features and labels stay row-aligned.
+            y = le_y.transform(y_raw.astype(str).values)
     else:
         y = (pd.to_numeric(y_raw, errors="coerce").fillna(0).astype(int).values > 0).astype(int)
 
     ok = np.isfinite(y) if cfg["type"] == "multiclass" else (np.isfinite(y) & np.isin(y, [0, 1]))
     X, y = X[ok], y[ok]
-    if len(np.unique(y)) < 2:
+    if le_y_in is None and len(np.unique(y)) < 2:
         raise ValueError(f"{target_key}: need >=2 classes")
     return X, y, feat_names, le_y, le_div
 
@@ -688,15 +723,9 @@ def train_one_target(train_df, val_df, target_key, models_dir, preproc_dir):
 
     Xtr, ytr, feat_names, le_y, le_div = prepare_xy(train_df, target_key)
     if task == "multiclass" and le_y is not None:
-        val_sub = val_df[val_df[cfg["col"]].astype(str).isin(set(le_y.classes_))].copy()
-        Xva, yva_raw, _, _, _ = prepare_xy(val_sub, target_key)
-        y_series = val_sub.dropna(subset=[cfg["col"]])[cfg["col"]].astype(str)
-        y_series = y_series[y_series.isin(le_y.classes_)]
-        yva = le_y.transform(y_series.values)
-        m = min(len(Xva), len(yva))
-        Xva, yva = Xva[:m], yva[:m]
+        Xva, yva, _, _, _ = prepare_xy(val_df, target_key, le_div_in=le_div, le_y_in=le_y)
     else:
-        Xva, yva, _, _, _ = prepare_xy(val_df, target_key)
+        Xva, yva, _, _, _ = prepare_xy(val_df, target_key, le_div_in=le_div)
 
     n_classes = int(len(np.unique(ytr))) if task == "multiclass" else 2
     log(f"    {target_key}: n_train={len(ytr)} n_val={len(yva)} classes={n_classes} feats={Xtr.shape[1]}")
