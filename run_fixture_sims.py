@@ -85,12 +85,19 @@ def main():
             raise SystemExit("No fixtures CSV")
 
     df = load_fixtures(fixtures_path)
-    # Align with train: only fixtures on script run day when TODAY_ONLY=1
+    # Align with train: fixtures on run-day (UTC) with a ±1 day safety window so
+    # late-evening WAT runs and dayfirst CSV dates do not drop the slate.
     today_only = os.environ.get("TODAY_ONLY", "1").strip().lower() in ("1", "true", "yes")
     if today_only and "Date" in df.columns:
         today = pd.Timestamp.now(tz="UTC").normalize().tz_localize(None)
+        dates = pd.to_datetime(df["Date"], errors="coerce").dt.normalize()
         before = len(df)
-        df = df[pd.to_datetime(df["Date"], errors="coerce").dt.normalize() == today].copy()
+        # primary: exact today; if empty, expand to [today-1, today+1]
+        mask = dates == today
+        if int(mask.sum()) == 0:
+            mask = (dates >= today - pd.Timedelta(days=1)) & (dates <= today + pd.Timedelta(days=1))
+            print(f"TODAY_ONLY window expanded around {today.date()}", flush=True)
+        df = df[mask].copy()
         print(f"TODAY_ONLY={today.date()}: {before} -> {len(df)} fixtures", flush=True)
     if MAX_FIXTURES > 0:
         df = df.head(MAX_FIXTURES)
@@ -175,6 +182,14 @@ def main():
             "locked_model": tip.get("model"),
             "locked_sim": tip.get("sim"),
             "locked_verdict": tip.get("verdict"),
+            "xg_total": (rep.get("xg") or {}).get("total"),
+            "lambda_h": (rep.get("xg") or {}).get("lambda_home"),
+            "lambda_a": (rep.get("xg") or {}).get("lambda_away"),
+            "cs_home": (rep.get("clean_sheet") or {}).get("home"),
+            "cs_away": (rep.get("clean_sheet") or {}).get("away"),
+            "top8_ft": rep.get("top8_ft") or rep.get("top3_ft"),
+            "goal_line_25_over": ((rep.get("goal_lines") or {}).get("2.5") or {}).get("over"),
+            "ft_vs_model_l1": ((rep.get("score_consistency") or {}).get("ft_vs_model_l1")),
             "generated_at": payload.get("generated_at"),
         })
         ok += 1

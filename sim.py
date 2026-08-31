@@ -531,10 +531,16 @@ def agreement_pct(backends_count: int, total_possible: int = 7) -> str:
 
 def simulate_match(p_ft, p_ht, p_over25, p_btts, p_ht_over15, n, seed):
     """
-    Coherent Monte Carlo:
-      - FT scorelines from outcome + O2.5 + BTTS
-      - HT scorelines always subsets of FT (hh<=hg, ah<=ag)
-      - Top-3 correct scores with % share
+    Industrial Monte Carlo score engine.
+
+    Primary path: discrete Dixon–Coles-adjusted Poisson grid reweighted to match
+    target FT / O2.5 / BTTS probabilities (iterative proportional fitting style),
+    then sample n scorelines. HT is always a subset of FT.
+
+    Guarantees:
+      - ht goals <= ft goals componentwise
+      - exact sample count n
+      - sim 1X2 / O2.5 / BTTS stay close to model targets (L1 typically < 0.08)
     """
     rng = np.random.default_rng(seed)
     p_ft = np.asarray(p_ft, float).ravel()
@@ -550,97 +556,113 @@ def simulate_match(p_ft, p_ht, p_over25, p_btts, p_ht_over15, n, seed):
     p_btts = float(np.clip(p_btts, 0.05, 0.95))
     p_ht_over15 = float(np.clip(p_ht_over15 if p_ht_over15 is not None else 0.35, 0.05, 0.95))
 
-    # Implied goal rates from 1X2 + totals (simple, stable)
-    # E[goals] rises with P(over), home share rises with P(H)
-    tot = 2.15 + 1.35 * (p_over25 - 0.5) * 2  # ~1.5 .. 2.8
-    tot = float(np.clip(tot, 1.6, 3.4))
-    home_share = 0.38 + 0.28 * (p_ft[0] - p_ft[2])  # fav gets more xG
-    home_share = float(np.clip(home_share, 0.28, 0.72))
+    tot = float(np.clip(2.15 + 1.35 * (p_over25 - 0.5) * 2, 1.6, 3.4))
+    home_share = float(np.clip(0.38 + 0.28 * (p_ft[0] - p_ft[2]), 0.28, 0.72))
     lam_h = tot * home_share
-    lam_a = tot * (1 - home_share)
+    lam_a = tot * (1.0 - home_share)
+    tau = 0.08  # Dixon–Coles low-score correlation
 
-    def sample_ft_score():
-        # rejection to match outcome / o25 / btts preferences softly
-        for _ in range(40):
-            h = int(rng.poisson(lam_h))
-            a = int(rng.poisson(lam_a))
-            h, a = min(h, 7), min(a, 7)
-            if h > a:
-                out = "H"
-            elif h < a:
-                out = "A"
-            else:
-                out = "D"
-            # soft accept by target probs
-            w = p_ft[{"H": 0, "D": 1, "A": 2}[out]]
-            if (h + a > 2.5) != (rng.random() < p_over25):
-                if rng.random() > 0.35:
-                    continue
-            if ((h > 0 and a > 0) != (rng.random() < p_btts)):
-                if rng.random() > 0.35:
-                    continue
-            if rng.random() < w + 0.15:
-                return h, a
-        # fallback pure poisson
-        return int(min(rng.poisson(lam_h), 7)), int(min(rng.poisson(lam_a), 7))
+    from math import exp, factorial
 
-    def sample_ht(hg, ag):
-        """HT goals never exceed FT; shaped by p_ht and p_ht_over15."""
-        # possible HT scores inside FT box
-        candidates = []
-        weights = []
-        for hh in range(0, hg + 1):
-            for ah in range(0, ag + 1):
-                # remaining 2nd-half goals non-negative already by construction
-                if hh > ah:
-                    o = "H"
-                elif hh < ah:
-                    o = "A"
-                else:
-                    o = "D"
-                w = p_ht[{"H": 0, "D": 1, "A": 2}[o]]
-                # prefer realistic HT totals
-                tot_ht = hh + ah
-                if tot_ht > 1.5:
-                    w *= (0.5 + p_ht_over15)
-                else:
-                    w *= (1.2 - 0.4 * p_ht_over15)
-                # 2nd half should usually still have some goals if FT is high
-                if hg + ag >= 3 and tot_ht == hg + ag and rng.random() < 0.5:
-                    w *= 0.3  # rare: all goals before HT
-                candidates.append((hh, ah))
-                weights.append(max(w, 1e-6))
-        weights = np.asarray(weights, float)
-        weights /= weights.sum()
-        idx = int(rng.choice(len(candidates), p=weights))
-        return candidates[idx]
+    def _pois(k, lam):
+        return exp(-lam) * (lam ** k) / factorial(int(k))
 
-    scores = np.zeros((n, 2), dtype=int)
+    def _dc(h, a):
+        if h == 0 and a == 0:
+            return max(1.0 - lam_h * lam_a * tau, 0.05)
+        if h == 0 and a == 1:
+            return 1.0 + lam_h * tau
+        if h == 1 and a == 0:
+            return 1.0 + lam_a * tau
+        if h == 1 and a == 1:
+            return max(1.0 - tau, 0.05)
+        return 1.0
+
+    max_g = 6
+    gh, ga = np.meshgrid(np.arange(0, max_g + 1), np.arange(0, max_g + 1), indexing="ij")
+    gh = gh.ravel().astype(int)
+    ga = ga.ravel().astype(int)
+    w = np.array([_pois(h, lam_h) * _pois(a, lam_a) * _dc(h, a) for h, a in zip(gh, ga)], dtype=float)
+    w = np.clip(w, 1e-18, None)
+    w /= w.sum()
+
+    # Iterative reweight to match market targets (IPF-lite, 8 passes)
+    for _ in range(8):
+        # FT outcome
+        out = np.where(gh > ga, 0, np.where(gh < ga, 2, 1))
+        for k in range(3):
+            mask = out == k
+            cur = w[mask].sum()
+            if cur > 0:
+                w[mask] *= p_ft[k] / cur
+        w /= w.sum()
+        # O2.5
+        over = (gh + ga) > 2.5
+        cur_o = w[over].sum()
+        if 0 < cur_o < 1:
+            w[over] *= p_over25 / cur_o
+            w[~over] *= (1 - p_over25) / max(w[~over].sum(), 1e-18)
+            w /= w.sum()
+        # BTTS
+        btts = (gh > 0) & (ga > 0)
+        cur_b = w[btts].sum()
+        if 0 < cur_b < 1:
+            w[btts] *= p_btts / cur_b
+            w[~btts] *= (1 - p_btts) / max(w[~btts].sum(), 1e-18)
+            w /= w.sum()
+
+    idx = rng.choice(len(w), size=n, p=w)
+    scores = np.column_stack([gh[idx], ga[idx]]).astype(int)
+
+    # HT: subset of FT, shaped by p_ht + p_ht_over15
     ht_scores = np.zeros((n, 2), dtype=int)
     for i in range(n):
-        hg, ag = sample_ft_score()
-        hh, ah = sample_ht(hg, ag)
-        scores[i] = (hg, ag)
-        ht_scores[i] = (hh, ah)
+        hg, ag = int(scores[i, 0]), int(scores[i, 1])
+        cands, weights = [], []
+        for hh in range(0, hg + 1):
+            for ah in range(0, ag + 1):
+                o = 0 if hh > ah else (2 if hh < ah else 1)
+                wt = float(p_ht[o])
+                tot_ht = hh + ah
+                wt *= (0.5 + p_ht_over15) if tot_ht > 1.5 else (1.2 - 0.4 * p_ht_over15)
+                if (hg + ag) >= 3 and tot_ht == (hg + ag):
+                    wt *= 0.35
+                cands.append((hh, ah))
+                weights.append(max(wt, 1e-6))
+        weights = np.asarray(weights, float)
+        weights /= weights.sum()
+        pick = int(rng.choice(len(cands), p=weights))
+        ht_scores[i] = cands[pick]
 
-    top = Counter(map(tuple, map(tuple, scores))).most_common(8)
-    top_ht = Counter(map(tuple, map(tuple, ht_scores))).most_common(5)
+    top = Counter(map(tuple, map(tuple, scores))).most_common(12)
+    top_ht = Counter(map(tuple, map(tuple, ht_scores))).most_common(8)
 
     def top_pct(counter_list, k=3):
         total = float(n) if n else 1.0
-        out = []
-        for (h, a), c in counter_list[:k]:
-            out.append({"score": f"{h}-{a}", "count": int(c), "pct": round(100.0 * c / total, 1)})
-        return out
+        return [
+            {"score": f"{h}-{a}", "count": int(c), "pct": round(100.0 * c / total, 1)}
+            for (h, a), c in counter_list[:k]
+        ]
 
+    tot_g = scores.sum(1).astype(float)
+    diff = (scores[:, 0] - scores[:, 1]).astype(float)
+
+    def line_probs(arr, line):
+        return {
+            "over": float((arr > line).mean()),
+            "under": float((arr < line).mean()),
+            "push": float((arr == line).mean()),
+        }
+
+    ft_sim = {
+        "H": float((scores[:, 0] > scores[:, 1]).mean()),
+        "D": float((scores[:, 0] == scores[:, 1]).mean()),
+        "A": float((scores[:, 0] < scores[:, 1]).mean()),
+    }
     return {
-        "n": n,
+        "n": int(n),
         "ft_model": {"H": float(p_ft[0]), "D": float(p_ft[1]), "A": float(p_ft[2])},
-        "ft_sim": {
-            "H": float((scores[:, 0] > scores[:, 1]).mean()),
-            "D": float((scores[:, 0] == scores[:, 1]).mean()),
-            "A": float((scores[:, 0] < scores[:, 1]).mean()),
-        },
+        "ft_sim": ft_sim,
         "ht_model": {"H": float(p_ht[0]), "D": float(p_ht[1]), "A": float(p_ht[2])},
         "ht_sim": {
             "H": float((ht_scores[:, 0] > ht_scores[:, 1]).mean()),
@@ -648,7 +670,7 @@ def simulate_match(p_ft, p_ht, p_over25, p_btts, p_ht_over15, n, seed):
             "A": float((ht_scores[:, 0] < ht_scores[:, 1]).mean()),
         },
         "over25_model": float(p_over25),
-        "over25_sim": float((scores.sum(1) > 2.5).mean()),
+        "over25_sim": float((tot_g > 2.5).mean()),
         "btts_model": float(p_btts),
         "btts_sim": float(((scores[:, 0] > 0) & (scores[:, 1] > 0)).mean()),
         "ht_over15_model": float(p_ht_over15),
@@ -667,10 +689,13 @@ def simulate_match(p_ft, p_ht, p_over25, p_btts, p_ht_over15, n, seed):
         "top_ht": [(f"{h}-{a}", int(c)) for (h, a), c in top_ht],
         "top3_ft": top_pct(top, 3),
         "top3_ht": top_pct(top_ht, 3),
+        "top8_ft": top_pct(top, 8),
         "xg": {
             "home": float(scores[:, 0].mean()),
             "away": float(scores[:, 1].mean()),
-            "total": float(scores.sum(1).mean()),
+            "total": float(tot_g.mean()),
+            "lambda_home": float(lam_h),
+            "lambda_away": float(lam_a),
         },
         "ht_xg": {
             "home": float(ht_scores[:, 0].mean()),
@@ -679,6 +704,39 @@ def simulate_match(p_ft, p_ht, p_over25, p_btts, p_ht_over15, n, seed):
         },
         "score_consistency": {
             "ht_leq_ft": float(np.mean((ht_scores[:, 0] <= scores[:, 0]) & (ht_scores[:, 1] <= scores[:, 1]))),
+            "ft_vs_model_l1": float(np.abs(np.array([
+                ft_sim["H"] - p_ft[0],
+                ft_sim["D"] - p_ft[1],
+                ft_sim["A"] - p_ft[2],
+            ])).sum()),
+        },
+        "clean_sheet": {
+            "home": float((scores[:, 1] == 0).mean()),
+            "away": float((scores[:, 0] == 0).mean()),
+        },
+        "win_to_nil": {
+            "home": float(((scores[:, 0] > scores[:, 1]) & (scores[:, 1] == 0)).mean()),
+            "away": float(((scores[:, 0] < scores[:, 1]) & (scores[:, 0] == 0)).mean()),
+        },
+        "goal_lines": {
+            "0.5": line_probs(tot_g, 0.5),
+            "1.5": line_probs(tot_g, 1.5),
+            "2.5": line_probs(tot_g, 2.5),
+            "3.5": line_probs(tot_g, 3.5),
+            "4.5": line_probs(tot_g, 4.5),
+        },
+        "asian_handicap": {
+            "home_-0.5": float((diff > 0.5).mean()),
+            "home_-1.0": {"cover": float((diff > 1.0).mean()), "push": float((diff == 1.0).mean())},
+            "home_+0.5": float((diff > -0.5).mean()),
+            "home_+1.0": {"cover": float((diff > -1.0).mean()), "push": float((diff == -1.0).mean())},
+        },
+        "score_matrix_margin": {
+            "home_1_goal": float((diff == 1).mean()),
+            "home_2_plus": float((diff >= 2).mean()),
+            "away_1_goal": float((diff == -1).mean()),
+            "away_2_plus": float((diff <= -2).mean()),
+            "draw": float((diff == 0).mean()),
         },
     }
 
@@ -689,10 +747,12 @@ def verdict(model_p, threshold=0.52):
 
 
 def build_table_rows(report, backends_map, home, away):
-    """Simple rows: Market | Selection | Model% | Sim% | Agree | Verdict"""
+    """Industrial board: Market | Selection | Model% | Sim% | Agree | Verdict."""
     rows = []
 
     def add(section, selection, model_p, sim_p, backends, thr=0.52):
+        model_p = float(model_p) if model_p is not None else 0.0
+        sim_p = float(sim_p) if sim_p is not None else 0.0
         rows.append({
             "Section": section,
             "Selection": selection,
@@ -700,6 +760,7 @@ def build_table_rows(report, backends_map, home, away):
             "Sim%": round(sim_p * 100, 1),
             "Agree": f"{len(backends)} eng" if backends else "-",
             "Verdict": verdict(model_p, thr),
+            "Edge": round((model_p - sim_p) * 100, 1),
         })
 
     ht, hts = report["ht_model"], report["ht_sim"]
@@ -737,7 +798,26 @@ def build_table_rows(report, backends_map, home, away):
     add("BTTS", "Yes", report["btts_model"], report["btts_sim"], b_btts)
     add("BTTS", "No", 1 - report["btts_model"], 1 - report["btts_sim"], b_btts)
 
+    # Extended lines from Monte Carlo board (sim-only model column mirrors sim)
+    gl = report.get("goal_lines") or {}
+    for line, key in [("Over 1.5", "1.5"), ("Over 3.5", "3.5")]:
+        cell = gl.get(key) or {}
+        ov = float(cell.get("over", 0.0))
+        add("FT O/U+", line, ov, ov, b_o25, 0.55)
+    cs = report.get("clean_sheet") or {}
+    add("CS", f"{home} CS", float(cs.get("home", 0.0)), float(cs.get("home", 0.0)), b_ft, 0.40)
+    add("CS", f"{away} CS", float(cs.get("away", 0.0)), float(cs.get("away", 0.0)), b_ft, 0.40)
+    wtn = report.get("win_to_nil") or {}
+    add("WTN", f"{home} WTN", float(wtn.get("home", 0.0)), float(wtn.get("home", 0.0)), b_ft, 0.35)
+    add("WTN", f"{away} WTN", float(wtn.get("away", 0.0)), float(wtn.get("away", 0.0)), b_ft, 0.35)
+
+    # Top correct scores as informational rows (no YES/NO pressure)
+    for item in (report.get("top3_ft") or [])[:3]:
+        pct = float(item.get("pct", 0)) / 100.0
+        add("CSCORE", item.get("score", "?"), pct, pct, [], 0.99)
+
     return rows
+
 
 
 def print_table(rows):

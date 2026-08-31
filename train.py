@@ -856,6 +856,30 @@ def main():
 
     df = pd.read_parquet(pq_path)
     log(f"Loaded  : {df.shape}")
+    # --- data quality gate (critical for clean models) ---
+    req = ["Div", "Date", "HomeTeam", "AwayTeam", "FTHG", "FTAG", "FTR"]
+    miss = [c for c in req if c not in df.columns]
+    if miss:
+        log(f"ERROR: parquet missing columns {miss}")
+        sys.exit(1)
+    null_teams = int(df["HomeTeam"].isna().sum() + df["AwayTeam"].isna().sum())
+    if null_teams:
+        log(f"ERROR: {null_teams} null team names — clean parquet first")
+        sys.exit(1)
+    fthg = pd.to_numeric(df["FTHG"], errors="coerce")
+    ftag = pd.to_numeric(df["FTAG"], errors="coerce")
+    if int(((fthg < 0) | (ftag < 0)).sum()):
+        log("ERROR: negative scores in parquet")
+        sys.exit(1)
+    same = int((df["HomeTeam"].astype(str) == df["AwayTeam"].astype(str)).sum())
+    if same:
+        log(f"WARNING: dropping {same} rows where HomeTeam==AwayTeam")
+        df = df[df["HomeTeam"].astype(str) != df["AwayTeam"].astype(str)].copy()
+    # drop rows with null essential fields before feature engineering
+    before = len(df)
+    df = df.dropna(subset=["Date", "HomeTeam", "AwayTeam", "FTR"]).copy()
+    if len(df) < before:
+        log(f"Dropped {before - len(df)} rows with null Date/Team/FTR")
     if CONFIG["train_leagues"]:
         df = df[df["Div"].isin(CONFIG["train_leagues"])].copy()
         log(f"Leagues : {df.shape}")

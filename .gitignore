@@ -30,3 +30,19 @@ build/
 # daily_football_data/
 
 # Model training artifacts that are regenerable (keep committed models for now)
+
+# Local / runtime
+*.log
+.env
+.env.*
+!.env.example
+__pycache__/
+*.pyc
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+daily_football_data/results_*.csv
+daily_football_data/fixtures_*.csv
+!daily_football_data/.gitkeep

@@ -29,6 +29,9 @@ def make_key(df):
             + df["HomeTeam"].astype(str) + "|" + df["AwayTeam"].astype(str))
 
 def pick_latest_csv():
+    stable = SAVE_DIR / "results_latest.csv"
+    if stable.exists() and stable.stat().st_size > 100:
+        return stable
     files = sorted(SAVE_DIR.glob("results_*.csv"), key=lambda p: p.stat().st_mtime, reverse=True)
     if not files:
         raise FileNotFoundError(f"No results_*.csv in {SAVE_DIR}")

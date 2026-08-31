@@ -10,12 +10,8 @@ Daily end-to-end pipeline:
   6. Batch sim.py over fixtures (odds + models)
   7. Optionally publish sims → sportintel Sim Lab (if SPORTINTEL_PUSH=1)
 
-Env:
-  FOOTBALL_SEASON, FOOTBALL_SEASON_LABEL
-  MAX_TRAIN_TEAMS (default 12), MIN_TEAM_MATCHES (40)
-  N_SIMULATIONS (8000), ODDS_BLEND (0.30)
-  SKIP_TRAIN=1  SKIP_SIM=1  SPORTINTEL_PUSH=1
-  SPORTINTEL_REPO_URL / GITHUB_TOKEN for admin push
+Season codes are auto-inferred from calendar date unless FOOTBALL_SEASON /
+FOOTBALL_SEASON_LABEL are set. See si_config.py.
 """
 from __future__ import annotations
 
@@ -27,15 +23,33 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
-SAVE = ROOT / "daily_football_data"
+sys.path.insert(0, str(ROOT))
 os.chdir(ROOT)
+
+from si_config import (  # noqa: E402
+    SAVE_DIR,
+    PARQUET_PATH,
+    season_code,
+    season_label,
+    MAX_TRAIN_TEAMS,
+    MIN_TEAM_MATCHES,
+    N_SIMULATIONS,
+    ODDS_BLEND,
+    SKIP_TRAIN,
+    SKIP_SIM,
+    SPORTINTEL_PUSH,
+    TODAY_ONLY,
+)
+from si_logging import get_logger, log_step  # noqa: E402
+
+log = get_logger("pipeline")
 
 
 def run(cmd, env=None, check=True):
-    print("\n>>>", " ".join(cmd), flush=True)
+    log.info("exec: %s", " ".join(cmd))
     e = os.environ.copy()
     if env:
-        e.update(env)
+        e.update({k: str(v) for k, v in env.items() if v is not None})
     r = subprocess.run(cmd, env=e)
     if check and r.returncode != 0:
         raise SystemExit(f"Command failed ({r.returncode}): {' '.join(cmd)}")
@@ -43,65 +57,73 @@ def run(cmd, env=None, check=True):
 
 
 def ensure_parquet():
-    pq = ROOT / "master_football_data.parquet"
-    if not pq.exists():
-        raise SystemExit(f"Missing {pq}")
-    head = pq.read_bytes()[:64]
-    if head.startswith(b"version https://git-lfs") or pq.stat().st_size < 2000:
+    if not PARQUET_PATH.exists():
+        raise SystemExit(f"Missing {PARQUET_PATH}")
+    head = PARQUET_PATH.read_bytes()[:64]
+    if head.startswith(b"version https://git-lfs") or PARQUET_PATH.stat().st_size < 2_000_000:
         raise SystemExit(
-            "master_football_data.parquet is a Git LFS pointer — run: git lfs pull\n"
+            "master_football_data.parquet is a Git LFS pointer or too small — run: git lfs pull\n"
             "Training/sim cannot run without the real historical parquet."
         )
-    print(f"Parquet OK: {pq.stat().st_size/1e6:.1f} MB")
+    log.info("parquet OK: %.1f MB", PARQUET_PATH.stat().st_size / 1e6)
 
 
 def main():
     ensure_parquet()
+    SAVE_DIR.mkdir(parents=True, exist_ok=True)
 
     started = datetime.now(timezone.utc).isoformat()
-    print("=" * 64)
-    print("DAILY PIPELINE", started)
-    print("=" * 64)
-
-    season = os.environ.get("FOOTBALL_SEASON", "2627")
-    label = os.environ.get("FOOTBALL_SEASON_LABEL", "2026/2027")
+    sc = season_code()
+    sl = season_label()
+    log.info("=" * 64)
+    log.info("DAILY PIPELINE %s | season=%s (%s)", started, sc, sl)
+    log.info(
+        "flags: MAX_TRAIN_TEAMS=%s SKIP_TRAIN=%s SKIP_SIM=%s PUSH=%s TODAY_ONLY=%s",
+        MAX_TRAIN_TEAMS, SKIP_TRAIN, SKIP_SIM, SPORTINTEL_PUSH, TODAY_ONLY,
+    )
+    log.info("=" * 64)
 
     # 1. Latest results
-    run([sys.executable, "scraper.py"], env={"FOOTBALL_SEASON": season})
+    log_step(log, "scrape_results", "fetching Latest_Results.csv")
+    run([sys.executable, "scraper.py"], env={"FOOTBALL_SEASON": sc})
 
     # 2. Parquet upsert
+    log_step(log, "upsert_parquet", "merging results into master parquet")
     run([sys.executable, "daily_update_parquet.py"], env={
-        "FOOTBALL_SEASON": season,
-        "FOOTBALL_SEASON_LABEL": label,
+        "FOOTBALL_SEASON": sc,
+        "FOOTBALL_SEASON_LABEL": sl,
     })
 
     # 3. Fixtures
+    log_step(log, "scrape_fixtures", "fetching fixtures.csv")
     run([sys.executable, "scraper_fixtures.py"])
 
-    # 4. Team scan + mapping (strict: only teams with fixtures TODAY)
+    # 4. Team scan + mapping
+    log_step(log, "scan_teams", "building train focus list")
     run([sys.executable, "scan_fixture_teams.py"], env={
-        "TODAY_ONLY": os.environ.get("TODAY_ONLY", "1"),
-        "MAX_TRAIN_TEAMS": os.environ.get("MAX_TRAIN_TEAMS", "0"),
-        "MIN_TEAM_MATCHES": os.environ.get("MIN_TEAM_MATCHES", "25"),
-        "TRAIN_DIVS": os.environ.get("TRAIN_DIVS", ""),  # empty = all today's divs
+        "TODAY_ONLY": "1" if TODAY_ONLY else "0",
+        "MAX_TRAIN_TEAMS": str(MAX_TRAIN_TEAMS),
+        "MIN_TEAM_MATCHES": str(MIN_TEAM_MATCHES),
+        "TRAIN_DIVS": os.environ.get("TRAIN_DIVS", ""),
     })
 
-    focus_path = SAVE / "train_focus_teams.json"
+    focus_path = SAVE_DIR / "train_focus_teams.json"
     focus = []
     if focus_path.exists():
-        focus = json.loads(focus_path.read_text()).get("focus_teams") or []
-    print(f"Focus teams for train: {focus}")
+        focus = json.loads(focus_path.read_text(encoding="utf-8")).get("focus_teams") or []
+    log.info("focus teams for train (%d): %s", len(focus), focus)
 
     # 5. Batch train
-    if os.environ.get("SKIP_TRAIN", "").strip() in ("1", "true", "yes"):
-        print("SKIP_TRAIN set — skipping training")
+    if SKIP_TRAIN:
+        log.info("SKIP_TRAIN set — skipping training")
     elif not focus:
-        print("No focus teams — skipping training")
+        log.info("No focus teams — skipping training")
     else:
+        log_step(log, "train", f"training {len(focus)} focus teams")
         run([sys.executable, "train.py"], env={
             "FOCUS_TEAMS": ",".join(focus),
             "DAILY_LIGHT": os.environ.get("DAILY_LIGHT", "1"),
-            "MIN_TEAM_MATCHES": os.environ.get("MIN_TEAM_MATCHES", "25"),
+            "MIN_TEAM_MATCHES": str(MIN_TEAM_MATCHES),
             "MAX_BOOST_ROUNDS": os.environ.get("MAX_BOOST_ROUNDS", "900"),
             "NN_EPOCHS": os.environ.get("NN_EPOCHS", "45"),
             "DAILY_TARGETS": os.environ.get(
@@ -111,35 +133,41 @@ def main():
             "USE_TENSORFLOW": os.environ.get("USE_TENSORFLOW", "1"),
             "USE_ADABOOST": os.environ.get("USE_ADABOOST", "0"),
             "USE_RANDOM_FOREST": os.environ.get("USE_RANDOM_FOREST", "1"),
-            # Parallel team training (lightning wall-clock)
             "TRAIN_WORKERS": os.environ.get("TRAIN_WORKERS", "3"),
         })
 
-    # 6. Live batch sim (sim.py engine)
-    if os.environ.get("SKIP_SIM", "").strip() in ("1", "true", "yes"):
-        print("SKIP_SIM set — skipping simulations")
+    # 6. Live batch sim
+    if SKIP_SIM:
+        log.info("SKIP_SIM set — skipping simulations")
     else:
+        log_step(log, "sim", "batch simulating fixtures")
         run([sys.executable, "run_fixture_sims.py"], env={
-            "N_SIMULATIONS": os.environ.get("N_SIMULATIONS", "3000"),
-            "ODDS_BLEND": os.environ.get("ODDS_BLEND", "0.30"),
+            "N_SIMULATIONS": str(N_SIMULATIONS),
+            "ODDS_BLEND": str(ODDS_BLEND),
+            "TODAY_ONLY": "1" if TODAY_ONLY else "0",
         })
 
     # 7. Publish to admin Sim Lab
-    if os.environ.get("SPORTINTEL_PUSH", "").strip() in ("1", "true", "yes"):
+    if SPORTINTEL_PUSH:
+        log_step(log, "publish", "pushing sims to sportintel admin")
         run([sys.executable, "publish_sims_to_admin.py"])
     else:
-        print("SPORTINTEL_PUSH not set — sims stay in daily_football_data/sims/")
+        log.info("SPORTINTEL_PUSH not set — sims stay in daily_football_data/sims/")
 
     summary = {
         "started": started,
         "finished": datetime.now(timezone.utc).isoformat(),
+        "season_code": sc,
+        "season_label": sl,
         "focus_teams": focus,
-        "sims_index": str(SAVE / "sims" / "index.json"),
+        "sims_index": str(SAVE_DIR / "sims" / "index.json"),
     }
-    (SAVE / "last_pipeline_run.json").write_text(json.dumps(summary, indent=2))
-    print("=" * 64)
-    print("PIPELINE DONE", summary["finished"])
-    print("=" * 64)
+    (SAVE_DIR / "last_pipeline_run.json").write_text(
+        json.dumps(summary, indent=2), encoding="utf-8"
+    )
+    log.info("=" * 64)
+    log.info("PIPELINE DONE %s", summary["finished"])
+    log.info("=" * 64)
 
 
 if __name__ == "__main__":

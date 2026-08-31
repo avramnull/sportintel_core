@@ -6,13 +6,18 @@ concurrency:
 
 on:
   schedule:
-    - cron: "0 18 * * *"   # ~19:00 WAT
+    # ~19:00 WAT (18:00 UTC) — after most European kickoffs / results settle
+    - cron: "0 18 * * *"
   workflow_dispatch:
     inputs:
       skip_train:
         description: "Skip training (re-sim + publish only)"
         type: boolean
         default: false
+      max_train_teams:
+        description: "Override MAX_TRAIN_TEAMS (0 = skip train focus)"
+        type: string
+        default: "12"
 
 jobs:
   daily:
@@ -29,32 +34,44 @@ jobs:
 
       - name: Ensure Git LFS files
         run: |
+          set -euo pipefail
           git lfs install
           git lfs pull
-          ls -lh master_football_data.parquet
-          # fail fast if still a pointer
-          if head -1 master_football_data.parquet | grep -q "git-lfs"; then
-            echo "ERROR: parquet still LFS pointer"
+          ls -lh master_football_data.parquet || true
+          if head -1 master_football_data.parquet 2>/dev/null | grep -q "git-lfs"; then
+            echo "ERROR: parquet still LFS pointer — cannot train/sim"
             exit 1
           fi
+          SIZE=$(stat -c%s master_football_data.parquet 2>/dev/null || echo 0)
+          if [ "$SIZE" -lt 2000000 ]; then
+            echo "ERROR: parquet too small (${SIZE} bytes) — LFS pull likely failed"
+            exit 1
+          fi
+          echo "Parquet OK: ${SIZE} bytes"
 
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
+          cache: pip
 
-      - name: Install dependencies
+      - name: Install core dependencies
         run: |
-          pip install requests pandas numpy pyarrow scikit-learn
-          pip install xgboost lightgbm catboost || true
-          # Neural nets required for daily train
-          pip install torch --index-url https://download.pytorch.org/whl/cpu || true
-          pip install tensorflow || true
+          set -euo pipefail
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          # Boosters — required for production models; fail job if missing
+          pip install "xgboost>=2.0" "lightgbm>=4.0" "catboost>=1.2"
+          # Optional neural nets (best-effort; train continues without them)
+          pip install torch --index-url https://download.pytorch.org/whl/cpu || echo "WARN: torch unavailable"
+          pip install "tensorflow>=2.15" || echo "WARN: tensorflow unavailable"
+
+      - name: Health check (imports + parquet schema)
+        run: python -m tools.smoke_test --quick
 
       - name: Run full daily pipeline
         env:
-          FOOTBALL_SEASON: "2627"
-          FOOTBALL_SEASON_LABEL: "2026/2027"
-          MAX_TRAIN_TEAMS: "0"
+          # Season auto-inferred if unset; override only when needed
+          MAX_TRAIN_TEAMS: ${{ github.event.inputs.max_train_teams || '12' }}
           MIN_TEAM_MATCHES: "25"
           TODAY_ONLY: "1"
           DAILY_LIGHT: "1"
@@ -67,7 +84,6 @@ jobs:
           CAPACITY_STEPS: "1"
           DAILY_TARGETS: "ft_result,over25,btts,ht_result"
           TRAIN_WORKERS: "3"
-          # empty TRAIN_DIVS = all leagues with fixtures today; set e.g. E0,SP1,D1,I1,F1 for top-only
           TRAIN_DIVS: ""
           N_SIMULATIONS: "3000"
           ODDS_BLEND: "0.25"
@@ -75,11 +91,12 @@ jobs:
           SPORTINTEL_PUSH: "1"
           GITHUB_TOKEN: ${{ secrets.SPORTINTEL_PUSH_TOKEN || secrets.GITHUB_TOKEN }}
           SPORTINTEL_REPO: avramnull/sportintel
+          LOG_LEVEL: INFO
         run: python daily_pipeline.py
 
       - name: Commit core data + models
         run: |
-          set -e
+          set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git fetch origin main
@@ -88,15 +105,13 @@ jobs:
             echo "No core changes to commit"
             exit 0
           fi
-          git commit -m "Daily pipeline: $(date -u +%Y-%m-%d)"
-          # Integrate remote then push (handles concurrent pushes / shallow history)
+          git commit -m "Daily pipeline: $(date -u +%Y-%m-%dT%H:%MZ)"
           if ! git pull --rebase origin main; then
-            echo "Rebase failed — merging with ours for model artifacts"
+            echo "Rebase failed — merging with preference for this run's artifacts"
             git rebase --abort 2>/dev/null || true
             git pull origin main --no-rebase --allow-unrelated-histories || true
-            # Prefer this run's trained artifacts on conflict
             git checkout --ours football_models daily_football_data master_football_data.parquet 2>/dev/null || true
             git add daily_football_data/ master_football_data.parquet football_models/ .gitattributes || true
-            git commit -m "Daily pipeline merge: $(date -u +%Y-%m-%d)" || true
+            git commit -m "Daily pipeline merge: $(date -u +%Y-%m-%dT%H:%MZ)" || true
           fi
           git push origin HEAD:main
