@@ -508,33 +508,6 @@
       "Agree": "6 eng",
       "Verdict": "NO",
       "Edge": 0.0
-    },
-    {
-      "Section": "CSCORE",
-      "Selection": "1-0",
-      "Model%": 14.6,
-      "Sim%": 14.6,
-      "Agree": "-",
-      "Verdict": "NO",
-      "Edge": 0.0
-    },
-    {
-      "Section": "CSCORE",
-      "Selection": "2-1",
-      "Model%": 12.5,
-      "Sim%": 12.5,
-      "Agree": "-",
-      "Verdict": "NO",
-      "Edge": 0.0
-    },
-    {
-      "Section": "CSCORE",
-      "Selection": "1-1",
-      "Model%": 11.2,
-      "Sim%": 11.2,
-      "Agree": "-",
-      "Verdict": "NO",
-      "Edge": 0.0
     }
   ],
   "locked_tip": {
@@ -581,5 +554,5 @@
     ],
     "ht_over15": []
   },
-  "generated_at": "2026-08-31T18:34:26.696822Z"
+  "generated_at": "2026-08-31T22:18:21.611695Z"
 }

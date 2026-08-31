@@ -22,444 +22,444 @@
   "report": {
     "n": 3000,
     "ft_model": {
-      "H": 0.47707206717219164,
-      "D": 0.28018722454060896,
-      "A": 0.2427407082871994
+      "H": 0.478849795721897,
+      "D": 0.2914992044464298,
+      "A": 0.22965099983167325
     },
     "ft_sim": {
-      "H": 0.4796666666666667,
-      "D": 0.2743333333333333,
-      "A": 0.246
+      "H": 0.47933333333333333,
+      "D": 0.2906666666666667,
+      "A": 0.23
     },
     "ht_model": {
-      "H": 0.3495988720013059,
-      "D": 0.4398639087544374,
-      "A": 0.21053721924425667
+      "H": 0.3598100863738519,
+      "D": 0.4111433937216251,
+      "A": 0.2290465199045229
     },
     "ht_sim": {
-      "H": 0.30833333333333335,
-      "D": 0.553,
-      "A": 0.13866666666666666
+      "H": 0.3243333333333333,
+      "D": 0.5266666666666666,
+      "A": 0.149
     },
-    "over25_model": 0.49243568792618697,
-    "over25_sim": 0.489,
-    "btts_model": 0.49636022000126634,
-    "btts_sim": 0.49733333333333335,
-    "ht_over15_model": 0.37310892198154677,
-    "ht_over15_sim": 0.30033333333333334,
+    "over25_model": 0.49744185472207647,
+    "over25_sim": 0.501,
+    "btts_model": 0.48860785115373717,
+    "btts_sim": 0.49466666666666664,
+    "ht_over15_model": 0.3743604636805191,
+    "ht_over15_sim": 0.30366666666666664,
     "dc_ft": {
-      "1X": 0.7572592917128006,
-      "X2": 0.5229279328278084,
-      "12": 0.719812775459391
+      "1X": 0.7703490001683269,
+      "X2": 0.5211502042781031,
+      "12": 0.7085007955535703
     },
     "dc_ht": {
-      "1X": 0.7894627807557433,
-      "X2": 0.6504011279986941,
-      "12": 0.5601360912455626
+      "1X": 0.770953480095477,
+      "X2": 0.640189913626148,
+      "12": 0.5888566062783749
     },
     "top_ft": [
       [
         "1-0",
-        434
+        423
       ],
       [
         "2-1",
-        388
+        393
       ],
       [
         "0-0",
-        316
+        344
       ],
       [
         "1-1",
-        285
-      ],
-      [
-        "2-0",
-        197
+        276
       ],
       [
         "2-2",
-        191
+        213
+      ],
+      [
+        "2-0",
+        179
       ],
       [
         "0-1",
-        186
+        173
       ],
       [
         "1-2",
-        184
+        165
       ],
       [
         "3-0",
-        127
+        148
       ],
       [
         "3-1",
-        125
+        122
       ],
       [
         "0-2",
-        115
+        102
       ],
       [
         "0-3",
-        80
+        85
       ]
     ],
     "top_ht": [
       [
         "0-0",
-        1322
+        1269
       ],
       [
         "1-0",
-        547
+        570
       ],
       [
         "1-1",
-        317
+        290
       ],
       [
         "0-1",
-        230
+        250
       ],
       [
         "2-0",
-        214
+        227
       ],
       [
         "0-2",
-        95
+        97
       ],
       [
         "2-1",
-        73
+        82
       ],
       [
         "3-0",
-        55
+        52
       ]
     ],
     "top3_ft": [
       {
         "score": "1-0",
-        "count": 434,
-        "pct": 14.5
+        "count": 423,
+        "pct": 14.1
       },
       {
         "score": "2-1",
-        "count": 388,
-        "pct": 12.9
+        "count": 393,
+        "pct": 13.1
       },
       {
         "score": "0-0",
-        "count": 316,
-        "pct": 10.5
+        "count": 344,
+        "pct": 11.5
       }
     ],
     "top3_ht": [
       {
         "score": "0-0",
-        "count": 1322,
-        "pct": 44.1
+        "count": 1269,
+        "pct": 42.3
       },
       {
         "score": "1-0",
-        "count": 547,
-        "pct": 18.2
+        "count": 570,
+        "pct": 19.0
       },
       {
         "score": "1-1",
-        "count": 317,
-        "pct": 10.6
+        "count": 290,
+        "pct": 9.7
       }
     ],
     "top8_ft": [
       {
         "score": "1-0",
-        "count": 434,
-        "pct": 14.5
+        "count": 423,
+        "pct": 14.1
       },
       {
         "score": "2-1",
-        "count": 388,
-        "pct": 12.9
+        "count": 393,
+        "pct": 13.1
       },
       {
         "score": "0-0",
-        "count": 316,
-        "pct": 10.5
+        "count": 344,
+        "pct": 11.5
       },
       {
         "score": "1-1",
-        "count": 285,
-        "pct": 9.5
-      },
-      {
-        "score": "2-0",
-        "count": 197,
-        "pct": 6.6
+        "count": 276,
+        "pct": 9.2
       },
       {
         "score": "2-2",
-        "count": 191,
-        "pct": 6.4
+        "count": 213,
+        "pct": 7.1
+      },
+      {
+        "score": "2-0",
+        "count": 179,
+        "pct": 6.0
       },
       {
         "score": "0-1",
-        "count": 186,
-        "pct": 6.2
+        "count": 173,
+        "pct": 5.8
       },
       {
         "score": "1-2",
-        "count": 184,
-        "pct": 6.1
+        "count": 165,
+        "pct": 5.5
       }
     ],
     "xg": {
-      "home": 1.3793333333333333,
-      "away": 1.0483333333333333,
-      "total": 2.4276666666666666,
-      "lambda_home": 0.9489664418824043,
-      "lambda_away": 1.1806099155183003
+      "home": 1.397,
+      "away": 1.0463333333333333,
+      "total": 2.4433333333333334,
+      "lambda_home": 0.9639110781081992,
+      "lambda_away": 1.1791819296414072
     },
     "ht_xg": {
-      "home": 0.6133333333333333,
-      "away": 0.37533333333333335,
-      "total": 0.9886666666666667
+      "home": 0.632,
+      "away": 0.3883333333333333,
+      "total": 1.0203333333333333
     },
     "score_consistency": {
       "ht_leq_ft": 1.0,
-      "ft_vs_model_l1": 0.011707782414551282
+      "ft_vs_model_l1": 0.0016650755595261912
     },
     "clean_sheet": {
-      "home": 0.369,
-      "away": 0.239
+      "home": 0.37733333333333335,
+      "away": 0.24266666666666667
     },
     "win_to_nil": {
-      "home": 0.26366666666666666,
-      "away": 0.13366666666666666
+      "home": 0.26266666666666666,
+      "away": 0.128
     },
     "goal_lines": {
       "0.5": {
-        "over": 0.8946666666666667,
-        "under": 0.10533333333333333,
+        "over": 0.8853333333333333,
+        "under": 0.11466666666666667,
         "push": 0.0
       },
       "1.5": {
-        "over": 0.688,
-        "under": 0.312,
+        "over": 0.6866666666666666,
+        "under": 0.31333333333333335,
         "push": 0.0
       },
       "2.5": {
-        "over": 0.489,
-        "under": 0.511,
+        "over": 0.501,
+        "under": 0.499,
         "push": 0.0
       },
       "3.5": {
-        "over": 0.22933333333333333,
-        "under": 0.7706666666666667,
+        "over": 0.23733333333333334,
+        "under": 0.7626666666666667,
         "push": 0.0
       },
       "4.5": {
-        "over": 0.08366666666666667,
-        "under": 0.9163333333333333,
+        "over": 0.08866666666666667,
+        "under": 0.9113333333333333,
         "push": 0.0
       }
     },
     "asian_handicap": {
-      "home_-0.5": 0.4796666666666667,
+      "home_-0.5": 0.47933333333333333,
       "home_-1.0": {
-        "cover": 0.178,
-        "push": 0.3016666666666667
+        "cover": 0.18033333333333335,
+        "push": 0.299
       },
-      "home_+0.5": 0.754,
+      "home_+0.5": 0.77,
       "home_+1.0": {
-        "cover": 0.754,
-        "push": 0.13733333333333334
+        "cover": 0.77,
+        "push": 0.12266666666666666
       }
     },
     "score_matrix_margin": {
-      "home_1_goal": 0.3016666666666667,
-      "home_2_plus": 0.178,
-      "away_1_goal": 0.13733333333333334,
-      "away_2_plus": 0.10866666666666666,
-      "draw": 0.2743333333333333
+      "home_1_goal": 0.299,
+      "home_2_plus": 0.18033333333333335,
+      "away_1_goal": 0.12266666666666666,
+      "away_2_plus": 0.10733333333333334,
+      "draw": 0.2906666666666667
     },
     "goal_rates": {
-      "home": 1.3793333333333333,
-      "away": 1.0483333333333333
+      "home": 1.397,
+      "away": 1.0463333333333333
     }
   },
   "table": [
     {
       "Section": "HT Winner",
       "Selection": "Atalanta",
-      "Model%": 35.0,
-      "Sim%": 30.8,
+      "Model%": 36.0,
+      "Sim%": 32.4,
       "Agree": "6 eng",
       "Verdict": "NO",
-      "Edge": 4.1
+      "Edge": 3.5
     },
     {
       "Section": "HT Winner",
       "Selection": "Draw",
-      "Model%": 44.0,
-      "Sim%": 55.3,
+      "Model%": 41.1,
+      "Sim%": 52.7,
       "Agree": "6 eng",
       "Verdict": "NO",
-      "Edge": -11.3
+      "Edge": -11.6
     },
     {
       "Section": "HT Winner",
       "Selection": "Bologna",
-      "Model%": 21.1,
-      "Sim%": 13.9,
+      "Model%": 22.9,
+      "Sim%": 14.9,
       "Agree": "6 eng",
       "Verdict": "NO",
-      "Edge": 7.2
+      "Edge": 8.0
     },
     {
       "Section": "HT DC",
       "Selection": "1X",
-      "Model%": 78.9,
-      "Sim%": 86.1,
+      "Model%": 77.1,
+      "Sim%": 85.1,
       "Agree": "6 eng",
       "Verdict": "YES",
-      "Edge": -7.2
+      "Edge": -8.0
     },
     {
       "Section": "HT DC",
       "Selection": "X2",
-      "Model%": 65.0,
-      "Sim%": 69.2,
+      "Model%": 64.0,
+      "Sim%": 67.6,
       "Agree": "6 eng",
       "Verdict": "YES",
-      "Edge": -4.1
+      "Edge": -3.5
     },
     {
       "Section": "HT DC",
       "Selection": "12",
-      "Model%": 56.0,
-      "Sim%": 44.7,
+      "Model%": 58.9,
+      "Sim%": 47.3,
       "Agree": "6 eng",
       "Verdict": "YES",
-      "Edge": 11.3
+      "Edge": 11.6
     },
     {
       "Section": "HT O/U",
       "Selection": "Over 1.5",
-      "Model%": 37.3,
-      "Sim%": 30.0,
+      "Model%": 37.4,
+      "Sim%": 30.4,
       "Agree": "-",
       "Verdict": "NO",
-      "Edge": 7.3
+      "Edge": 7.1
     },
     {
       "Section": "HT O/U",
       "Selection": "Under 1.5",
-      "Model%": 62.7,
-      "Sim%": 70.0,
+      "Model%": 62.6,
+      "Sim%": 69.6,
       "Agree": "-",
       "Verdict": "YES",
-      "Edge": -7.3
+      "Edge": -7.1
     },
     {
       "Section": "FT Winner",
       "Selection": "Atalanta",
-      "Model%": 47.7,
-      "Sim%": 48.0,
+      "Model%": 47.9,
+      "Sim%": 47.9,
       "Agree": "6 eng",
       "Verdict": "NO",
-      "Edge": -0.3
+      "Edge": -0.0
     },
     {
       "Section": "FT Winner",
       "Selection": "Draw",
-      "Model%": 28.0,
-      "Sim%": 27.4,
-      "Agree": "6 eng",
-      "Verdict": "NO",
-      "Edge": 0.6
-    },
-    {
-      "Section": "FT Winner",
-      "Selection": "Bologna",
-      "Model%": 24.3,
-      "Sim%": 24.6,
-      "Agree": "6 eng",
-      "Verdict": "NO",
-      "Edge": -0.3
-    },
-    {
-      "Section": "FT DC",
-      "Selection": "1X",
-      "Model%": 75.7,
-      "Sim%": 75.4,
-      "Agree": "6 eng",
-      "Verdict": "YES",
-      "Edge": 0.3
-    },
-    {
-      "Section": "FT DC",
-      "Selection": "X2",
-      "Model%": 52.3,
-      "Sim%": 52.0,
-      "Agree": "6 eng",
-      "Verdict": "NO",
-      "Edge": 0.3
-    },
-    {
-      "Section": "FT DC",
-      "Selection": "12",
-      "Model%": 72.0,
-      "Sim%": 72.6,
-      "Agree": "6 eng",
-      "Verdict": "YES",
-      "Edge": -0.6
-    },
-    {
-      "Section": "FT O/U",
-      "Selection": "Over 2.5",
-      "Model%": 49.2,
-      "Sim%": 48.9,
-      "Agree": "6 eng",
-      "Verdict": "NO",
-      "Edge": 0.3
-    },
-    {
-      "Section": "FT O/U",
-      "Selection": "Under 2.5",
-      "Model%": 50.8,
-      "Sim%": 51.1,
-      "Agree": "6 eng",
-      "Verdict": "NO",
-      "Edge": -0.3
-    },
-    {
-      "Section": "BTTS",
-      "Selection": "Yes",
-      "Model%": 49.6,
-      "Sim%": 49.7,
-      "Agree": "6 eng",
-      "Verdict": "NO",
-      "Edge": -0.1
-    },
-    {
-      "Section": "BTTS",
-      "Selection": "No",
-      "Model%": 50.4,
-      "Sim%": 50.3,
+      "Model%": 29.1,
+      "Sim%": 29.1,
       "Agree": "6 eng",
       "Verdict": "NO",
       "Edge": 0.1
     },
     {
+      "Section": "FT Winner",
+      "Selection": "Bologna",
+      "Model%": 23.0,
+      "Sim%": 23.0,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": -0.0
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "1X",
+      "Model%": 77.0,
+      "Sim%": 77.0,
+      "Agree": "6 eng",
+      "Verdict": "YES",
+      "Edge": 0.0
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 52.1,
+      "Sim%": 52.1,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 0.0
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "12",
+      "Model%": 70.9,
+      "Sim%": 70.9,
+      "Agree": "6 eng",
+      "Verdict": "YES",
+      "Edge": -0.1
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Over 2.5",
+      "Model%": 49.7,
+      "Sim%": 50.1,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": -0.4
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Under 2.5",
+      "Model%": 50.3,
+      "Sim%": 49.9,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 0.4
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "Yes",
+      "Model%": 48.9,
+      "Sim%": 49.5,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": -0.6
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 51.1,
+      "Sim%": 50.5,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 0.6
+    },
+    {
       "Section": "FT O/U+",
       "Selection": "Over 1.5",
-      "Model%": 68.8,
-      "Sim%": 68.8,
+      "Model%": 68.7,
+      "Sim%": 68.7,
       "Agree": "6 eng",
       "Verdict": "YES",
       "Edge": 0.0
@@ -467,8 +467,8 @@
     {
       "Section": "FT O/U+",
       "Selection": "Over 3.5",
-      "Model%": 22.9,
-      "Sim%": 22.9,
+      "Model%": 23.7,
+      "Sim%": 23.7,
       "Agree": "6 eng",
       "Verdict": "NO",
       "Edge": 0.0
@@ -476,8 +476,8 @@
     {
       "Section": "CS",
       "Selection": "Atalanta CS",
-      "Model%": 36.9,
-      "Sim%": 36.9,
+      "Model%": 37.7,
+      "Sim%": 37.7,
       "Agree": "6 eng",
       "Verdict": "NO",
       "Edge": 0.0
@@ -485,8 +485,8 @@
     {
       "Section": "CS",
       "Selection": "Bologna CS",
-      "Model%": 23.9,
-      "Sim%": 23.9,
+      "Model%": 24.3,
+      "Sim%": 24.3,
       "Agree": "6 eng",
       "Verdict": "NO",
       "Edge": 0.0
@@ -494,8 +494,8 @@
     {
       "Section": "WTN",
       "Selection": "Atalanta WTN",
-      "Model%": 26.4,
-      "Sim%": 26.4,
+      "Model%": 26.3,
+      "Sim%": 26.3,
       "Agree": "6 eng",
       "Verdict": "NO",
       "Edge": 0.0
@@ -503,46 +503,19 @@
     {
       "Section": "WTN",
       "Selection": "Bologna WTN",
-      "Model%": 13.4,
-      "Sim%": 13.4,
+      "Model%": 12.8,
+      "Sim%": 12.8,
       "Agree": "6 eng",
-      "Verdict": "NO",
-      "Edge": 0.0
-    },
-    {
-      "Section": "CSCORE",
-      "Selection": "1-0",
-      "Model%": 14.5,
-      "Sim%": 14.5,
-      "Agree": "-",
-      "Verdict": "NO",
-      "Edge": 0.0
-    },
-    {
-      "Section": "CSCORE",
-      "Selection": "2-1",
-      "Model%": 12.9,
-      "Sim%": 12.9,
-      "Agree": "-",
-      "Verdict": "NO",
-      "Edge": 0.0
-    },
-    {
-      "Section": "CSCORE",
-      "Selection": "0-0",
-      "Model%": 10.5,
-      "Sim%": 10.5,
-      "Agree": "-",
       "Verdict": "NO",
       "Edge": 0.0
     }
   ],
   "locked_tip": {
     "status": "SECURED LOCK",
-    "section": "HT DC",
+    "section": "FT DC",
     "selection": "1X",
-    "model": 78.9,
-    "sim": 86.1,
+    "model": 77.0,
+    "sim": 77.0,
     "agree": "6 eng",
     "verdict": "HARD YES"
   },
@@ -581,5 +554,5 @@
     ],
     "ht_over15": []
   },
-  "generated_at": "2026-08-31T18:34:07.544057Z"
+  "generated_at": "2026-08-31T22:17:58.615001Z"
 }

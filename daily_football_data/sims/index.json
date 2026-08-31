@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-31T18:34:30.278786+00:00",
+  "generated_at": "2026-08-31T22:18:25.893790+00:00",
   "feed_date": "2026-08-31",
   "source": "https://www.football-data.co.uk/fixtures.csv",
   "n_ok": 24,
@@ -20,71 +20,71 @@
       "odds_d": 4.1,
       "odds_a": 1.53,
       "models": "Aston Villa (home) + Arsenal (away)",
-      "ft_h": 20.8,
-      "ft_d": 23.3,
-      "ft_a": 55.9,
-      "over25": 56.3,
-      "btts": 54.3,
-      "cs_top": "1-2 (352)",
-      "cs_second": "1-1 (325)",
-      "xg_h": 0.9486666666666667,
-      "xg_a": 1.781,
+      "ft_h": 19.3,
+      "ft_d": 22.1,
+      "ft_a": 58.6,
+      "over25": 56.9,
+      "btts": 53.7,
+      "cs_top": "1-2 (363)",
+      "cs_second": "0-1 (315)",
+      "xg_h": 0.922,
+      "xg_a": 1.84,
       "locked_status": "SECURED LOCK",
       "locked_section": "FT DC",
       "locked_selection": "X2",
-      "locked_model": 79.2,
-      "locked_sim": 79.2,
+      "locked_model": 80.9,
+      "locked_sim": 80.7,
       "locked_verdict": "HARD YES",
-      "xg_total": 2.7296666666666667,
-      "lambda_h": 0.6523417586228809,
-      "lambda_a": 1.6773078781515525,
-      "cs_home": 0.15966666666666668,
-      "cs_away": 0.3616666666666667,
+      "xg_total": 2.762,
+      "lambda_h": 0.6569934584460343,
+      "lambda_a": 1.6894117502898023,
+      "cs_home": 0.152,
+      "cs_away": 0.37166666666666665,
       "top8_ft": [
         {
           "score": "1-2",
-          "count": 352,
-          "pct": 11.7
-        },
-        {
-          "score": "1-1",
-          "count": 325,
-          "pct": 10.8
+          "count": 363,
+          "pct": 12.1
         },
         {
           "score": "0-1",
-          "count": 302,
-          "pct": 10.1
+          "count": 315,
+          "pct": 10.5
         },
         {
-          "score": "0-2",
-          "count": 233,
-          "pct": 7.8
-        },
-        {
-          "score": "2-1",
-          "count": 232,
-          "pct": 7.7
+          "score": "1-1",
+          "count": 307,
+          "pct": 10.2
         },
         {
           "score": "0-3",
-          "count": 228,
-          "pct": 7.6
+          "count": 242,
+          "pct": 8.1
+        },
+        {
+          "score": "0-2",
+          "count": 241,
+          "pct": 8.0
+        },
+        {
+          "score": "2-1",
+          "count": 210,
+          "pct": 7.0
         },
         {
           "score": "1-0",
-          "count": 196,
-          "pct": 6.5
+          "count": 189,
+          "pct": 6.3
         },
         {
-          "score": "0-0",
-          "count": 192,
-          "pct": 6.4
+          "score": "1-3",
+          "count": 188,
+          "pct": 6.3
         }
       ],
-      "goal_line_25_over": 0.563,
-      "ft_vs_model_l1": 0.012422902747555947,
-      "generated_at": "2026-08-31T18:34:01.376535Z"
+      "goal_line_25_over": 0.5686666666666667,
+      "ft_vs_model_l1": 0.006148214972187455,
+      "generated_at": "2026-08-31T22:17:51.375419Z"
     },
     {
       "id": "dijon__st_etienne__2026-08-31",
@@ -164,7 +164,7 @@
       ],
       "goal_line_25_over": 0.45666666666666667,
       "ft_vs_model_l1": 0.044661890069406074,
-      "generated_at": "2026-08-31T18:34:02.943470Z"
+      "generated_at": "2026-08-31T22:17:53.198794Z"
     },
     {
       "id": "levadeiakos__panathinaikos__2026-08-31",
@@ -244,7 +244,7 @@
       ],
       "goal_line_25_over": 0.4736666666666667,
       "ft_vs_model_l1": 0.022772269777820237,
-      "generated_at": "2026-08-31T18:34:04.397075Z"
+      "generated_at": "2026-08-31T22:17:54.885510Z"
     },
     {
       "id": "lecce__roma__2026-08-31",
@@ -260,71 +260,71 @@
       "odds_d": 4.0,
       "odds_a": 1.48,
       "models": "Lecce (home) + Roma (away)",
-      "ft_h": 21.2,
-      "ft_d": 25.5,
-      "ft_a": 53.3,
-      "over25": 51.1,
-      "btts": 52.3,
-      "cs_top": "1-1 (354)",
-      "cs_second": "1-2 (343)",
-      "xg_h": 0.9146666666666666,
-      "xg_a": 1.656,
+      "ft_h": 19.9,
+      "ft_d": 25.0,
+      "ft_a": 55.1,
+      "over25": 51.5,
+      "btts": 50.4,
+      "cs_top": "0-1 (338)",
+      "cs_second": "1-2 (332)",
+      "xg_h": 0.8716666666666667,
+      "xg_a": 1.688,
       "locked_status": "SECURED LOCK",
       "locked_section": "FT DC",
       "locked_selection": "X2",
-      "locked_model": 78.8,
-      "locked_sim": 78.8,
+      "locked_model": 79.6,
+      "locked_sim": 80.1,
       "locked_verdict": "HARD YES",
-      "xg_total": 2.570666666666667,
-      "lambda_h": 0.6467181551377408,
-      "lambda_a": 1.5798361088767499,
-      "cs_home": 0.185,
-      "cs_away": 0.37433333333333335,
+      "xg_total": 2.5596666666666668,
+      "lambda_h": 0.6303420783426269,
+      "lambda_a": 1.5894961354642483,
+      "cs_home": 0.18266666666666667,
+      "cs_away": 0.40166666666666667,
       "top8_ft": [
         {
-          "score": "1-1",
-          "count": 354,
-          "pct": 11.8
+          "score": "0-1",
+          "count": 338,
+          "pct": 11.3
         },
         {
           "score": "1-2",
-          "count": 343,
-          "pct": 11.4
+          "count": 332,
+          "pct": 11.1
         },
         {
-          "score": "0-1",
-          "count": 329,
-          "pct": 11.0
+          "score": "1-1",
+          "count": 328,
+          "pct": 10.9
         },
         {
           "score": "0-2",
-          "count": 254,
-          "pct": 8.5
+          "count": 268,
+          "pct": 8.9
         },
         {
           "score": "0-0",
-          "count": 247,
-          "pct": 8.2
+          "count": 265,
+          "pct": 8.8
         },
         {
           "score": "1-0",
-          "count": 228,
-          "pct": 7.6
-        },
-        {
-          "score": "2-1",
-          "count": 207,
-          "pct": 6.9
+          "count": 212,
+          "pct": 7.1
         },
         {
           "score": "0-3",
-          "count": 199,
-          "pct": 6.6
+          "count": 204,
+          "pct": 6.8
+        },
+        {
+          "score": "2-1",
+          "count": 203,
+          "pct": 6.8
         }
       ],
-      "goal_line_25_over": 0.511,
-      "ft_vs_model_l1": 0.0027172960812736346,
-      "generated_at": "2026-08-31T18:34:05.916345Z"
+      "goal_line_25_over": 0.5146666666666667,
+      "ft_vs_model_l1": 0.009640392699024974,
+      "generated_at": "2026-08-31T22:17:56.723253Z"
     },
     {
       "id": "atalanta__bologna__2026-08-31",
@@ -340,71 +340,71 @@
       "odds_d": 3.75,
       "odds_a": 4.0,
       "models": "Atalanta (home) + Bologna (away)",
-      "ft_h": 48.0,
-      "ft_d": 27.4,
-      "ft_a": 24.6,
-      "over25": 48.9,
-      "btts": 49.7,
-      "cs_top": "1-0 (434)",
-      "cs_second": "2-1 (388)",
-      "xg_h": 1.3793333333333333,
-      "xg_a": 1.0483333333333333,
+      "ft_h": 47.9,
+      "ft_d": 29.1,
+      "ft_a": 23.0,
+      "over25": 50.1,
+      "btts": 49.5,
+      "cs_top": "1-0 (423)",
+      "cs_second": "2-1 (393)",
+      "xg_h": 1.397,
+      "xg_a": 1.0463333333333333,
       "locked_status": "SECURED LOCK",
-      "locked_section": "HT DC",
+      "locked_section": "FT DC",
       "locked_selection": "1X",
-      "locked_model": 78.9,
-      "locked_sim": 86.1,
+      "locked_model": 77.0,
+      "locked_sim": 77.0,
       "locked_verdict": "HARD YES",
-      "xg_total": 2.4276666666666666,
-      "lambda_h": 0.9489664418824043,
-      "lambda_a": 1.1806099155183003,
-      "cs_home": 0.369,
-      "cs_away": 0.239,
+      "xg_total": 2.4433333333333334,
+      "lambda_h": 0.9639110781081992,
+      "lambda_a": 1.1791819296414072,
+      "cs_home": 0.37733333333333335,
+      "cs_away": 0.24266666666666667,
       "top8_ft": [
         {
           "score": "1-0",
-          "count": 434,
-          "pct": 14.5
+          "count": 423,
+          "pct": 14.1
         },
         {
           "score": "2-1",
-          "count": 388,
-          "pct": 12.9
+          "count": 393,
+          "pct": 13.1
         },
         {
           "score": "0-0",
-          "count": 316,
-          "pct": 10.5
+          "count": 344,
+          "pct": 11.5
         },
         {
           "score": "1-1",
-          "count": 285,
-          "pct": 9.5
-        },
-        {
-          "score": "2-0",
-          "count": 197,
-          "pct": 6.6
+          "count": 276,
+          "pct": 9.2
         },
         {
           "score": "2-2",
-          "count": 191,
-          "pct": 6.4
+          "count": 213,
+          "pct": 7.1
+        },
+        {
+          "score": "2-0",
+          "count": 179,
+          "pct": 6.0
         },
         {
           "score": "0-1",
-          "count": 186,
-          "pct": 6.2
+          "count": 173,
+          "pct": 5.8
         },
         {
           "score": "1-2",
-          "count": 184,
-          "pct": 6.1
+          "count": 165,
+          "pct": 5.5
         }
       ],
-      "goal_line_25_over": 0.489,
-      "ft_vs_model_l1": 0.011707782414551282,
-      "generated_at": "2026-08-31T18:34:07.544057Z"
+      "goal_line_25_over": 0.501,
+      "ft_vs_model_l1": 0.0016650755595261912,
+      "generated_at": "2026-08-31T22:17:58.615001Z"
     },
     {
       "id": "benfica__estoril__2026-08-31",
@@ -420,71 +420,71 @@
       "odds_d": 7.5,
       "odds_a": 12.0,
       "models": "Benfica (home) + Estoril (away)",
-      "ft_h": 78.8,
-      "ft_d": 13.6,
-      "ft_a": 7.6,
-      "over25": 60.4,
-      "btts": 46.4,
-      "cs_top": "1-0 (525)",
-      "cs_second": "2-1 (474)",
-      "xg_h": 2.1066666666666665,
-      "xg_a": 0.7246666666666667,
+      "ft_h": 80.8,
+      "ft_d": 12.7,
+      "ft_a": 6.5,
+      "over25": 58.8,
+      "btts": 46.8,
+      "cs_top": "1-0 (559)",
+      "cs_second": "2-1 (498)",
+      "xg_h": 2.1033333333333335,
+      "xg_a": 0.691,
       "locked_status": "SECURED LOCK",
       "locked_section": "FT DC",
       "locked_selection": "1X",
-      "locked_model": 91.7,
-      "locked_sim": 92.4,
+      "locked_model": 92.6,
+      "locked_sim": 93.5,
       "locked_verdict": "HARD YES",
-      "xg_total": 2.8313333333333333,
-      "lambda_h": 1.4167124671936533,
-      "lambda_a": 1.0393384145071394,
-      "cs_home": 0.49766666666666665,
-      "cs_away": 0.07933333333333334,
+      "xg_total": 2.7943333333333333,
+      "lambda_h": 1.412278516188367,
+      "lambda_a": 1.0076695907731594,
+      "cs_home": 0.501,
+      "cs_away": 0.07033333333333333,
       "top8_ft": [
         {
           "score": "1-0",
-          "count": 525,
-          "pct": 17.5
+          "count": 559,
+          "pct": 18.6
         },
         {
           "score": "2-1",
-          "count": 474,
-          "pct": 15.8
-        },
-        {
-          "score": "3-0",
-          "count": 353,
-          "pct": 11.8
+          "count": 498,
+          "pct": 16.6
         },
         {
           "score": "2-0",
-          "count": 322,
-          "pct": 10.7
+          "count": 336,
+          "pct": 11.2
+        },
+        {
+          "score": "3-0",
+          "count": 334,
+          "pct": 11.1
         },
         {
           "score": "3-1",
-          "count": 214,
-          "pct": 7.1
+          "count": 228,
+          "pct": 7.6
         },
         {
           "score": "1-1",
-          "count": 140,
-          "pct": 4.7
+          "count": 149,
+          "pct": 5.0
+        },
+        {
+          "score": "3-2",
+          "count": 117,
+          "pct": 3.9
         },
         {
           "score": "0-0",
-          "count": 124,
-          "pct": 4.1
-        },
-        {
-          "score": "2-2",
-          "count": 120,
-          "pct": 4.0
+          "count": 117,
+          "pct": 3.9
         }
       ],
-      "goal_line_25_over": 0.604,
-      "ft_vs_model_l1": 0.014255467311452455,
-      "generated_at": "2026-08-31T18:34:09.057455Z"
+      "goal_line_25_over": 0.5883333333333334,
+      "ft_vs_model_l1": 0.018086457436131673,
+      "generated_at": "2026-08-31T22:18:00.350192Z"
     },
     {
       "id": "sp_braga__guimaraes__2026-08-31",
@@ -564,7 +564,7 @@
       ],
       "goal_line_25_over": 0.4673333333333333,
       "ft_vs_model_l1": 0.022349167455219587,
-      "generated_at": "2026-08-31T18:34:10.546819Z"
+      "generated_at": "2026-08-31T22:18:02.141313Z"
     },
     {
       "id": "osasuna__getafe__2026-08-31",
@@ -580,71 +580,71 @@
       "odds_d": 3.0,
       "odds_a": 3.75,
       "models": "Osasuna (home) + Getafe (away)",
-      "ft_h": 42.9,
-      "ft_d": 30.1,
-      "ft_a": 27.0,
-      "over25": 40.6,
-      "btts": 46.6,
-      "cs_top": "1-0 (458)",
-      "cs_second": "1-1 (392)",
-      "xg_h": 1.1813333333333333,
-      "xg_a": 0.9986666666666667,
+      "ft_h": 42.6,
+      "ft_d": 31.2,
+      "ft_a": 26.2,
+      "over25": 41.8,
+      "btts": 48.2,
+      "cs_top": "1-0 (434)",
+      "cs_second": "1-1 (403)",
+      "xg_h": 1.202,
+      "xg_a": 1.0186666666666666,
       "locked_status": "SECURED LOCK",
       "locked_section": "HT DC",
       "locked_selection": "1X",
-      "locked_model": 77.2,
-      "locked_sim": 82.4,
+      "locked_model": 78.2,
+      "locked_sim": 82.8,
       "locked_verdict": "HARD YES",
-      "xg_total": 2.18,
-      "lambda_h": 0.800095403655255,
-      "lambda_a": 1.1081423403974762,
-      "cs_home": 0.36666666666666664,
-      "cs_away": 0.287,
+      "xg_total": 2.220666666666667,
+      "lambda_h": 0.8147205558172903,
+      "lambda_a": 1.1225734579109339,
+      "cs_home": 0.358,
+      "cs_away": 0.2813333333333333,
       "top8_ft": [
         {
           "score": "1-0",
-          "count": 458,
-          "pct": 15.3
+          "count": 434,
+          "pct": 14.5
         },
         {
           "score": "1-1",
-          "count": 392,
-          "pct": 13.1
+          "count": 403,
+          "pct": 13.4
         },
         {
           "score": "0-0",
-          "count": 358,
-          "pct": 11.9
+          "count": 365,
+          "pct": 12.2
         },
         {
           "score": "2-1",
-          "count": 351,
-          "pct": 11.7
+          "count": 361,
+          "pct": 12.0
         },
         {
           "score": "0-1",
-          "count": 259,
-          "pct": 8.6
-        },
-        {
-          "score": "2-0",
-          "count": 177,
-          "pct": 5.9
+          "count": 239,
+          "pct": 8.0
         },
         {
           "score": "1-2",
-          "count": 173,
+          "count": 175,
           "pct": 5.8
         },
         {
-          "score": "0-2",
-          "count": 138,
-          "pct": 4.6
+          "score": "2-0",
+          "count": 169,
+          "pct": 5.6
+        },
+        {
+          "score": "2-2",
+          "count": 149,
+          "pct": 5.0
         }
       ],
-      "goal_line_25_over": 0.406,
-      "ft_vs_model_l1": 0.029214511008940403,
-      "generated_at": "2026-08-31T18:34:12.067567Z"
+      "goal_line_25_over": 0.41833333333333333,
+      "ft_vs_model_l1": 0.030872903774949112,
+      "generated_at": "2026-08-31T22:18:03.952591Z"
     },
     {
       "id": "barcelona__vallecano__2026-08-31",
@@ -660,71 +660,71 @@
       "odds_d": 8.0,
       "odds_a": 13.0,
       "models": "Barcelona (home) + Vallecano (away)",
-      "ft_h": 75.8,
-      "ft_d": 11.1,
-      "ft_a": 13.2,
-      "over25": 65.0,
-      "btts": 51.1,
-      "cs_top": "2-1 (528)",
-      "cs_second": "1-0 (437)",
-      "xg_h": 2.0733333333333333,
-      "xg_a": 0.8703333333333333,
+      "ft_h": 74.4,
+      "ft_d": 13.0,
+      "ft_a": 12.7,
+      "over25": 60.5,
+      "btts": 51.2,
+      "cs_top": "2-1 (537)",
+      "cs_second": "1-0 (492)",
+      "xg_h": 1.9706666666666666,
+      "xg_a": 0.843,
       "locked_status": "SECURED LOCK",
       "locked_section": "FT DC",
       "locked_selection": "12",
-      "locked_model": 88.0,
-      "locked_sim": 88.9,
+      "locked_model": 87.2,
+      "locked_sim": 87.0,
       "locked_verdict": "HARD YES",
-      "xg_total": 2.9436666666666667,
-      "lambda_h": 1.4059058798257937,
-      "lambda_a": 1.1284786083507576,
-      "cs_home": 0.42866666666666664,
-      "cs_away": 0.09133333333333334,
+      "xg_total": 2.8136666666666668,
+      "lambda_h": 1.337566854777407,
+      "lambda_a": 1.088436326274053,
+      "cs_home": 0.42766666666666664,
+      "cs_away": 0.09533333333333334,
       "top8_ft": [
         {
           "score": "2-1",
-          "count": 528,
-          "pct": 17.6
+          "count": 537,
+          "pct": 17.9
         },
         {
           "score": "1-0",
-          "count": 437,
-          "pct": 14.6
-        },
-        {
-          "score": "3-0",
-          "count": 346,
-          "pct": 11.5
+          "count": 492,
+          "pct": 16.4
         },
         {
           "score": "2-0",
-          "count": 272,
-          "pct": 9.1
+          "count": 306,
+          "pct": 10.2
+        },
+        {
+          "score": "3-0",
+          "count": 266,
+          "pct": 8.9
         },
         {
           "score": "3-1",
-          "count": 233,
-          "pct": 7.8
-        },
-        {
-          "score": "3-2",
-          "count": 132,
-          "pct": 4.4
+          "count": 231,
+          "pct": 7.7
         },
         {
           "score": "1-1",
-          "count": 111,
-          "pct": 3.7
+          "count": 140,
+          "pct": 4.7
         },
         {
           "score": "2-2",
-          "count": 110,
-          "pct": 3.7
+          "count": 129,
+          "pct": 4.3
+        },
+        {
+          "score": "3-2",
+          "count": 127,
+          "pct": 4.2
         }
       ],
-      "goal_line_25_over": 0.6503333333333333,
-      "ft_vs_model_l1": 0.01896817781369041,
-      "generated_at": "2026-08-31T18:34:13.460456Z"
+      "goal_line_25_over": 0.6046666666666667,
+      "ft_vs_model_l1": 0.006361231086874697,
+      "generated_at": "2026-08-31T22:18:05.660105Z"
     },
     {
       "id": "burgos__sociedad_b__2026-08-31",
@@ -804,7 +804,7 @@
       ],
       "goal_line_25_over": 0.38433333333333336,
       "ft_vs_model_l1": 0.015254166086671572,
-      "generated_at": "2026-08-31T18:34:14.140019Z"
+      "generated_at": "2026-08-31T22:18:06.477946Z"
     },
     {
       "id": "celta_b__castellon__2026-08-31",
@@ -884,7 +884,7 @@
       ],
       "goal_line_25_over": 0.547,
       "ft_vs_model_l1": 0.023001904369653797,
-      "generated_at": "2026-08-31T18:34:14.816892Z"
+      "generated_at": "2026-08-31T22:18:07.317272Z"
     },
     {
       "id": "amedspor__trabzonspor__2026-08-31",
@@ -964,7 +964,7 @@
       ],
       "goal_line_25_over": 0.5106666666666667,
       "ft_vs_model_l1": 0.018656469012741206,
-      "generated_at": "2026-08-31T18:34:15.569105Z"
+      "generated_at": "2026-08-31T22:18:08.212177Z"
     },
     {
       "id": "besiktas__corum__2026-08-31",
@@ -1044,7 +1044,7 @@
       ],
       "goal_line_25_over": 0.6076666666666667,
       "ft_vs_model_l1": 0.013193202520221908,
-      "generated_at": "2026-08-31T18:34:16.314644Z"
+      "generated_at": "2026-08-31T22:18:09.119688Z"
     },
     {
       "id": "boston_utd__hornchurch__2026-08-31",
@@ -1124,7 +1124,7 @@
       ],
       "goal_line_25_over": 0.467,
       "ft_vs_model_l1": 0.0293291264050482,
-      "generated_at": "2026-08-31T18:34:16.370911Z"
+      "generated_at": "2026-08-31T22:18:09.191400Z"
     },
     {
       "id": "carlisle__scunthorpe__2026-08-31",
@@ -1204,7 +1204,7 @@
       ],
       "goal_line_25_over": 0.5046666666666667,
       "ft_vs_model_l1": 0.011720861830077478,
-      "generated_at": "2026-08-31T18:34:17.750295Z"
+      "generated_at": "2026-08-31T22:18:10.907669Z"
     },
     {
       "id": "eastleigh__aldershot__2026-08-31",
@@ -1284,7 +1284,7 @@
       ],
       "goal_line_25_over": 0.488,
       "ft_vs_model_l1": 0.024200513357954978,
-      "generated_at": "2026-08-31T18:34:19.557201Z"
+      "generated_at": "2026-08-31T22:18:13.049394Z"
     },
     {
       "id": "forest_green__altrincham__2026-08-31",
@@ -1364,7 +1364,7 @@
       ],
       "goal_line_25_over": 0.5426666666666666,
       "ft_vs_model_l1": 0.01970394973856962,
-      "generated_at": "2026-08-31T18:34:21.003966Z"
+      "generated_at": "2026-08-31T22:18:14.778690Z"
     },
     {
       "id": "harrogate__gateshead__2026-08-31",
@@ -1444,7 +1444,7 @@
       ],
       "goal_line_25_over": 0.4513333333333333,
       "ft_vs_model_l1": 0.03924259598255203,
-      "generated_at": "2026-08-31T18:34:22.468615Z"
+      "generated_at": "2026-08-31T22:18:16.521494Z"
     },
     {
       "id": "kidderminster__barrow__2026-08-31",
@@ -1524,7 +1524,7 @@
       ],
       "goal_line_25_over": 0.5046666666666667,
       "ft_vs_model_l1": 0.006798915793075289,
-      "generated_at": "2026-08-31T18:34:23.950717Z"
+      "generated_at": "2026-08-31T22:18:18.283563Z"
     },
     {
       "id": "solihull__fylde__2026-08-31",
@@ -1604,7 +1604,7 @@
       ],
       "goal_line_25_over": 0.5616666666666666,
       "ft_vs_model_l1": 0.0077191843244778235,
-      "generated_at": "2026-08-31T18:34:25.367838Z"
+      "generated_at": "2026-08-31T22:18:19.980437Z"
     },
     {
       "id": "sutton__wealdstone__2026-08-31",
@@ -1684,7 +1684,7 @@
       ],
       "goal_line_25_over": 0.462,
       "ft_vs_model_l1": 0.044363728529054514,
-      "generated_at": "2026-08-31T18:34:26.696822Z"
+      "generated_at": "2026-08-31T22:18:21.611695Z"
     },
     {
       "id": "woking__southend__2026-08-31",
@@ -1764,7 +1764,7 @@
       ],
       "goal_line_25_over": 0.48833333333333334,
       "ft_vs_model_l1": 0.01777569058495923,
-      "generated_at": "2026-08-31T18:34:28.164155Z"
+      "generated_at": "2026-08-31T22:18:23.365040Z"
     },
     {
       "id": "worthing__boreham_wood__2026-08-31",
@@ -1844,7 +1844,7 @@
       ],
       "goal_line_25_over": 0.4583333333333333,
       "ft_vs_model_l1": 0.009959441606284591,
-      "generated_at": "2026-08-31T18:34:28.907292Z"
+      "generated_at": "2026-08-31T22:18:24.234722Z"
     },
     {
       "id": "yeovil__tamworth__2026-08-31",
@@ -1924,7 +1924,7 @@
       ],
       "goal_line_25_over": 0.5026666666666667,
       "ft_vs_model_l1": 0.005415918469325098,
-      "generated_at": "2026-08-31T18:34:30.277557Z"
+      "generated_at": "2026-08-31T22:18:25.892601Z"
     }
   ]
 }

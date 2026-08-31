@@ -508,33 +508,6 @@
       "Agree": "1 eng",
       "Verdict": "NO",
       "Edge": 0.0
-    },
-    {
-      "Section": "CSCORE",
-      "Selection": "1-0",
-      "Model%": 16.2,
-      "Sim%": 16.2,
-      "Agree": "-",
-      "Verdict": "NO",
-      "Edge": 0.0
-    },
-    {
-      "Section": "CSCORE",
-      "Selection": "2-1",
-      "Model%": 12.9,
-      "Sim%": 12.9,
-      "Agree": "-",
-      "Verdict": "NO",
-      "Edge": 0.0
-    },
-    {
-      "Section": "CSCORE",
-      "Selection": "0-0",
-      "Model%": 11.1,
-      "Sim%": 11.1,
-      "Agree": "-",
-      "Verdict": "NO",
-      "Edge": 0.0
     }
   ],
   "locked_tip": {
@@ -563,5 +536,5 @@
       "market"
     ]
   },
-  "generated_at": "2026-08-31T18:34:16.370911Z"
+  "generated_at": "2026-08-31T22:18:09.191400Z"
 }

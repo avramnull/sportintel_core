@@ -1,5 +1,5 @@
 {
-  "created_at": "2026-08-31T03:02:34.455291Z",
+  "created_at": "2026-08-31T22:14:25.467905Z",
   "parquet": "/home/runner/work/sportintel_core/sportintel_core/master_football_data.parquet",
   "n_teams_total": 821,
   "leagues": {
@@ -35,46 +35,6 @@
     "tensorflow"
   ],
   "runs": {
-    "arsenal": {
-      "team": "Arsenal",
-      "n_train": 1069,
-      "n_val": 146,
-      "dir": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/arsenal",
-      "targets": {
-        "ft_result": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/arsenal/models/xgb_ft_result.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/arsenal/models/lgbm_ft_result.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/arsenal/models/cat_ft_result.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/arsenal/models/rf_ft_result.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/arsenal/models/torch_ft_result.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/arsenal/models/tf_ft_result.keras"
-        },
-        "ht_result": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/arsenal/models/xgb_ht_result.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/arsenal/models/lgbm_ht_result.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/arsenal/models/cat_ht_result.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/arsenal/models/rf_ht_result.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/arsenal/models/torch_ht_result.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/arsenal/models/tf_ht_result.keras"
-        },
-        "over25": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/arsenal/models/xgb_over25.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/arsenal/models/lgbm_over25.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/arsenal/models/cat_over25.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/arsenal/models/rf_over25.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/arsenal/models/torch_over25.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/arsenal/models/tf_over25.keras"
-        },
-        "btts": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/arsenal/models/xgb_btts.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/arsenal/models/lgbm_btts.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/arsenal/models/cat_btts.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/arsenal/models/rf_btts.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/arsenal/models/torch_btts.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/arsenal/models/tf_btts.keras"
-        }
-      }
-    },
     "aston_villa": {
       "team": "Aston Villa",
       "n_train": 1092,
@@ -155,43 +115,43 @@
         }
       }
     },
-    "atalanta": {
-      "team": "Atalanta",
-      "n_train": 1035,
-      "n_val": 142,
-      "dir": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/atalanta",
+    "arsenal": {
+      "team": "Arsenal",
+      "n_train": 1069,
+      "n_val": 146,
+      "dir": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/arsenal",
       "targets": {
         "ft_result": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/atalanta/models/xgb_ft_result.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/atalanta/models/lgbm_ft_result.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/atalanta/models/cat_ft_result.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/atalanta/models/rf_ft_result.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/atalanta/models/torch_ft_result.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/atalanta/models/tf_ft_result.keras"
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/arsenal/models/xgb_ft_result.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/arsenal/models/lgbm_ft_result.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/arsenal/models/cat_ft_result.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/arsenal/models/rf_ft_result.pkl",
+          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/arsenal/models/torch_ft_result.pt",
+          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/arsenal/models/tf_ft_result.keras"
         },
         "ht_result": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/atalanta/models/xgb_ht_result.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/atalanta/models/lgbm_ht_result.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/atalanta/models/cat_ht_result.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/atalanta/models/rf_ht_result.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/atalanta/models/torch_ht_result.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/atalanta/models/tf_ht_result.keras"
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/arsenal/models/xgb_ht_result.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/arsenal/models/lgbm_ht_result.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/arsenal/models/cat_ht_result.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/arsenal/models/rf_ht_result.pkl",
+          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/arsenal/models/torch_ht_result.pt",
+          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/arsenal/models/tf_ht_result.keras"
         },
         "over25": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/atalanta/models/xgb_over25.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/atalanta/models/lgbm_over25.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/atalanta/models/cat_over25.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/atalanta/models/rf_over25.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/atalanta/models/torch_over25.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/atalanta/models/tf_over25.keras"
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/arsenal/models/xgb_over25.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/arsenal/models/lgbm_over25.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/arsenal/models/cat_over25.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/arsenal/models/rf_over25.pkl",
+          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/arsenal/models/torch_over25.pt",
+          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/arsenal/models/tf_over25.keras"
         },
         "btts": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/atalanta/models/xgb_btts.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/atalanta/models/lgbm_btts.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/atalanta/models/cat_btts.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/atalanta/models/rf_btts.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/atalanta/models/torch_btts.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/atalanta/models/tf_btts.keras"
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/arsenal/models/xgb_btts.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/arsenal/models/lgbm_btts.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/arsenal/models/cat_btts.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/arsenal/models/rf_btts.pkl",
+          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/arsenal/models/torch_btts.pt",
+          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/arsenal/models/tf_btts.keras"
         }
       }
     },
@@ -275,43 +235,43 @@
         }
       }
     },
-    "osasuna": {
-      "team": "Osasuna",
-      "n_train": 1054,
-      "n_val": 144,
-      "dir": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/osasuna",
+    "atalanta": {
+      "team": "Atalanta",
+      "n_train": 1035,
+      "n_val": 142,
+      "dir": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/atalanta",
       "targets": {
         "ft_result": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/osasuna/models/xgb_ft_result.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/osasuna/models/lgbm_ft_result.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/osasuna/models/cat_ft_result.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/osasuna/models/rf_ft_result.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/osasuna/models/torch_ft_result.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/osasuna/models/tf_ft_result.keras"
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/atalanta/models/xgb_ft_result.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/atalanta/models/lgbm_ft_result.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/atalanta/models/cat_ft_result.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/atalanta/models/rf_ft_result.pkl",
+          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/atalanta/models/torch_ft_result.pt",
+          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/atalanta/models/tf_ft_result.keras"
         },
         "ht_result": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/osasuna/models/xgb_ht_result.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/osasuna/models/lgbm_ht_result.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/osasuna/models/cat_ht_result.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/osasuna/models/rf_ht_result.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/osasuna/models/torch_ht_result.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/osasuna/models/tf_ht_result.keras"
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/atalanta/models/xgb_ht_result.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/atalanta/models/lgbm_ht_result.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/atalanta/models/cat_ht_result.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/atalanta/models/rf_ht_result.pkl",
+          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/atalanta/models/torch_ht_result.pt",
+          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/atalanta/models/tf_ht_result.keras"
         },
         "over25": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/osasuna/models/xgb_over25.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/osasuna/models/lgbm_over25.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/osasuna/models/cat_over25.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/osasuna/models/rf_over25.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/osasuna/models/torch_over25.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/osasuna/models/tf_over25.keras"
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/atalanta/models/xgb_over25.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/atalanta/models/lgbm_over25.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/atalanta/models/cat_over25.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/atalanta/models/rf_over25.pkl",
+          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/atalanta/models/torch_over25.pt",
+          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/atalanta/models/tf_over25.keras"
         },
         "btts": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/osasuna/models/xgb_btts.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/osasuna/models/lgbm_btts.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/osasuna/models/cat_btts.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/osasuna/models/rf_btts.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/osasuna/models/torch_btts.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/osasuna/models/tf_btts.keras"
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/atalanta/models/xgb_btts.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/atalanta/models/lgbm_btts.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/atalanta/models/cat_btts.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/atalanta/models/rf_btts.pkl",
+          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/atalanta/models/torch_btts.pt",
+          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/atalanta/models/tf_btts.keras"
         }
       }
     },
@@ -395,6 +355,46 @@
         }
       }
     },
+    "osasuna": {
+      "team": "Osasuna",
+      "n_train": 1054,
+      "n_val": 144,
+      "dir": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/osasuna",
+      "targets": {
+        "ft_result": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/osasuna/models/xgb_ft_result.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/osasuna/models/lgbm_ft_result.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/osasuna/models/cat_ft_result.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/osasuna/models/rf_ft_result.pkl",
+          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/osasuna/models/torch_ft_result.pt",
+          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/osasuna/models/tf_ft_result.keras"
+        },
+        "ht_result": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/osasuna/models/xgb_ht_result.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/osasuna/models/lgbm_ht_result.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/osasuna/models/cat_ht_result.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/osasuna/models/rf_ht_result.pkl",
+          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/osasuna/models/torch_ht_result.pt",
+          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/osasuna/models/tf_ht_result.keras"
+        },
+        "over25": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/osasuna/models/xgb_over25.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/osasuna/models/lgbm_over25.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/osasuna/models/cat_over25.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/osasuna/models/rf_over25.pkl",
+          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/osasuna/models/torch_over25.pt",
+          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/osasuna/models/tf_over25.keras"
+        },
+        "btts": {
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/osasuna/models/xgb_btts.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/osasuna/models/lgbm_btts.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/osasuna/models/cat_btts.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/osasuna/models/rf_btts.pkl",
+          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/osasuna/models/torch_btts.pt",
+          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/osasuna/models/tf_btts.keras"
+        }
+      }
+    },
     "vallecano": {
       "team": "Vallecano",
       "n_train": 957,
@@ -432,46 +432,6 @@
           "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/vallecano/models/rf_btts.pkl",
           "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/vallecano/models/torch_btts.pt",
           "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/vallecano/models/tf_btts.keras"
-        }
-      }
-    },
-    "estoril": {
-      "team": "Estoril",
-      "n_train": 354,
-      "n_val": 49,
-      "dir": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/estoril",
-      "targets": {
-        "ft_result": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/estoril/models/xgb_ft_result.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/estoril/models/lgbm_ft_result.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/estoril/models/cat_ft_result.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/estoril/models/rf_ft_result.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/estoril/models/torch_ft_result.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/estoril/models/tf_ft_result.keras"
-        },
-        "ht_result": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/estoril/models/xgb_ht_result.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/estoril/models/lgbm_ht_result.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/estoril/models/cat_ht_result.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/estoril/models/rf_ht_result.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/estoril/models/torch_ht_result.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/estoril/models/tf_ht_result.keras"
-        },
-        "over25": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/estoril/models/xgb_over25.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/estoril/models/lgbm_over25.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/estoril/models/cat_over25.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/estoril/models/rf_over25.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/estoril/models/torch_over25.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/estoril/models/tf_over25.keras"
-        },
-        "btts": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/estoril/models/xgb_btts.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/estoril/models/lgbm_btts.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/estoril/models/cat_btts.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/estoril/models/rf_btts.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/estoril/models/torch_btts.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/estoril/models/tf_btts.keras"
         }
       }
     },
@@ -514,1203 +474,43 @@
         }
       }
     },
-    "sp_braga": {
-      "team": "Sp Braga",
-      "n_train": 903,
-      "n_val": 124,
-      "dir": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/sp_braga",
+    "estoril": {
+      "team": "Estoril",
+      "n_train": 354,
+      "n_val": 49,
+      "dir": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/estoril",
       "targets": {
         "ft_result": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/sp_braga/models/xgb_ft_result.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/sp_braga/models/lgbm_ft_result.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/sp_braga/models/cat_ft_result.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/sp_braga/models/rf_ft_result.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/sp_braga/models/torch_ft_result.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/sp_braga/models/tf_ft_result.keras"
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/estoril/models/xgb_ft_result.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/estoril/models/lgbm_ft_result.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/estoril/models/cat_ft_result.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/estoril/models/rf_ft_result.pkl",
+          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/estoril/models/torch_ft_result.pt",
+          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/estoril/models/tf_ft_result.keras"
         },
         "ht_result": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/sp_braga/models/xgb_ht_result.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/sp_braga/models/lgbm_ht_result.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/sp_braga/models/cat_ht_result.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/sp_braga/models/rf_ht_result.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/sp_braga/models/torch_ht_result.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/sp_braga/models/tf_ht_result.keras"
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/estoril/models/xgb_ht_result.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/estoril/models/lgbm_ht_result.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/estoril/models/cat_ht_result.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/estoril/models/rf_ht_result.pkl",
+          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/estoril/models/torch_ht_result.pt",
+          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/estoril/models/tf_ht_result.keras"
         },
         "over25": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/sp_braga/models/xgb_over25.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/sp_braga/models/lgbm_over25.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/sp_braga/models/cat_over25.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/sp_braga/models/rf_over25.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/sp_braga/models/torch_over25.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/sp_braga/models/tf_over25.keras"
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/estoril/models/xgb_over25.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/estoril/models/lgbm_over25.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/estoril/models/cat_over25.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/estoril/models/rf_over25.pkl",
+          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/estoril/models/torch_over25.pt",
+          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/estoril/models/tf_over25.keras"
         },
         "btts": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/sp_braga/models/xgb_btts.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/sp_braga/models/lgbm_btts.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/sp_braga/models/cat_btts.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/sp_braga/models/rf_btts.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/sp_braga/models/torch_btts.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/sp_braga/models/tf_btts.keras"
-        }
-      }
-    },
-    "guimaraes": {
-      "team": "Guimaraes",
-      "n_train": 880,
-      "n_val": 121,
-      "dir": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/guimaraes",
-      "targets": {
-        "ft_result": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/guimaraes/models/xgb_ft_result.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/guimaraes/models/lgbm_ft_result.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/guimaraes/models/cat_ft_result.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/guimaraes/models/rf_ft_result.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/guimaraes/models/torch_ft_result.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/guimaraes/models/tf_ft_result.keras"
-        },
-        "ht_result": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/guimaraes/models/xgb_ht_result.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/guimaraes/models/lgbm_ht_result.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/guimaraes/models/cat_ht_result.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/guimaraes/models/rf_ht_result.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/guimaraes/models/torch_ht_result.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/guimaraes/models/tf_ht_result.keras"
-        },
-        "over25": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/guimaraes/models/xgb_over25.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/guimaraes/models/lgbm_over25.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/guimaraes/models/cat_over25.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/guimaraes/models/rf_over25.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/guimaraes/models/torch_over25.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/guimaraes/models/tf_over25.keras"
-        },
-        "btts": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/guimaraes/models/xgb_btts.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/guimaraes/models/lgbm_btts.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/guimaraes/models/cat_btts.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/guimaraes/models/rf_btts.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/guimaraes/models/torch_btts.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/guimaraes/models/tf_btts.keras"
-        }
-      }
-    },
-    "trabzonspor": {
-      "team": "Trabzonspor",
-      "n_train": 926,
-      "n_val": 127,
-      "dir": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/trabzonspor",
-      "targets": {
-        "ft_result": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/trabzonspor/models/xgb_ft_result.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/trabzonspor/models/lgbm_ft_result.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/trabzonspor/models/cat_ft_result.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/trabzonspor/models/rf_ft_result.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/trabzonspor/models/torch_ft_result.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/trabzonspor/models/tf_ft_result.keras"
-        },
-        "ht_result": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/trabzonspor/models/xgb_ht_result.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/trabzonspor/models/lgbm_ht_result.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/trabzonspor/models/cat_ht_result.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/trabzonspor/models/rf_ht_result.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/trabzonspor/models/torch_ht_result.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/trabzonspor/models/tf_ht_result.keras"
-        },
-        "over25": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/trabzonspor/models/xgb_over25.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/trabzonspor/models/lgbm_over25.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/trabzonspor/models/cat_over25.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/trabzonspor/models/rf_over25.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/trabzonspor/models/torch_over25.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/trabzonspor/models/tf_over25.keras"
-        },
-        "btts": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/trabzonspor/models/xgb_btts.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/trabzonspor/models/lgbm_btts.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/trabzonspor/models/cat_btts.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/trabzonspor/models/rf_btts.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/trabzonspor/models/torch_btts.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/trabzonspor/models/tf_btts.keras"
-        }
-      }
-    },
-    "besiktas": {
-      "team": "Besiktas",
-      "n_train": 925,
-      "n_val": 127,
-      "dir": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/besiktas",
-      "targets": {
-        "ft_result": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/besiktas/models/xgb_ft_result.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/besiktas/models/lgbm_ft_result.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/besiktas/models/cat_ft_result.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/besiktas/models/rf_ft_result.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/besiktas/models/torch_ft_result.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/besiktas/models/tf_ft_result.keras"
-        },
-        "ht_result": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/besiktas/models/xgb_ht_result.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/besiktas/models/lgbm_ht_result.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/besiktas/models/cat_ht_result.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/besiktas/models/rf_ht_result.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/besiktas/models/torch_ht_result.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/besiktas/models/tf_ht_result.keras"
-        },
-        "over25": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/besiktas/models/xgb_over25.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/besiktas/models/lgbm_over25.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/besiktas/models/cat_over25.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/besiktas/models/rf_over25.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/besiktas/models/torch_over25.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/besiktas/models/tf_over25.keras"
-        },
-        "btts": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/besiktas/models/xgb_btts.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/besiktas/models/lgbm_btts.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/besiktas/models/cat_btts.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/besiktas/models/rf_btts.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/besiktas/models/torch_btts.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/besiktas/models/tf_btts.keras"
-        }
-      }
-    },
-    "levadeiakos": {
-      "team": "Levadeiakos",
-      "n_train": 412,
-      "n_val": 57,
-      "dir": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/levadeiakos",
-      "targets": {
-        "ft_result": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/levadeiakos/models/xgb_ft_result.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/levadeiakos/models/lgbm_ft_result.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/levadeiakos/models/cat_ft_result.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/levadeiakos/models/rf_ft_result.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/levadeiakos/models/torch_ft_result.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/levadeiakos/models/tf_ft_result.keras"
-        },
-        "ht_result": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/levadeiakos/models/xgb_ht_result.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/levadeiakos/models/lgbm_ht_result.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/levadeiakos/models/cat_ht_result.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/levadeiakos/models/rf_ht_result.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/levadeiakos/models/torch_ht_result.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/levadeiakos/models/tf_ht_result.keras"
-        },
-        "over25": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/levadeiakos/models/xgb_over25.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/levadeiakos/models/lgbm_over25.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/levadeiakos/models/cat_over25.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/levadeiakos/models/rf_over25.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/levadeiakos/models/torch_over25.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/levadeiakos/models/tf_over25.keras"
-        },
-        "btts": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/levadeiakos/models/xgb_btts.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/levadeiakos/models/lgbm_btts.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/levadeiakos/models/cat_btts.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/levadeiakos/models/rf_btts.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/levadeiakos/models/torch_btts.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/levadeiakos/models/tf_btts.keras"
-        }
-      }
-    },
-    "panathinaikos": {
-      "team": "Panathinaikos",
-      "n_train": 770,
-      "n_val": 105,
-      "dir": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/panathinaikos",
-      "targets": {
-        "ft_result": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/panathinaikos/models/xgb_ft_result.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/panathinaikos/models/lgbm_ft_result.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/panathinaikos/models/cat_ft_result.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/panathinaikos/models/rf_ft_result.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/panathinaikos/models/torch_ft_result.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/panathinaikos/models/tf_ft_result.keras"
-        },
-        "ht_result": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/panathinaikos/models/xgb_ht_result.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/panathinaikos/models/lgbm_ht_result.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/panathinaikos/models/cat_ht_result.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/panathinaikos/models/rf_ht_result.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/panathinaikos/models/torch_ht_result.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/panathinaikos/models/tf_ht_result.keras"
-        },
-        "over25": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/panathinaikos/models/xgb_over25.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/panathinaikos/models/lgbm_over25.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/panathinaikos/models/cat_over25.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/panathinaikos/models/rf_over25.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/panathinaikos/models/torch_over25.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/panathinaikos/models/tf_over25.keras"
-        },
-        "btts": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/panathinaikos/models/xgb_btts.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/panathinaikos/models/lgbm_btts.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/panathinaikos/models/cat_btts.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/panathinaikos/models/rf_btts.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/panathinaikos/models/torch_btts.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/panathinaikos/models/tf_btts.keras"
-        }
-      }
-    },
-    "castellon": {
-      "team": "Castellon",
-      "n_train": 296,
-      "n_val": 41,
-      "dir": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/castellon",
-      "targets": {
-        "ft_result": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/castellon/models/xgb_ft_result.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/castellon/models/lgbm_ft_result.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/castellon/models/cat_ft_result.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/castellon/models/rf_ft_result.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/castellon/models/torch_ft_result.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/castellon/models/tf_ft_result.keras"
-        },
-        "ht_result": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/castellon/models/xgb_ht_result.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/castellon/models/lgbm_ht_result.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/castellon/models/cat_ht_result.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/castellon/models/rf_ht_result.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/castellon/models/torch_ht_result.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/castellon/models/tf_ht_result.keras"
-        },
-        "over25": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/castellon/models/xgb_over25.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/castellon/models/lgbm_over25.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/castellon/models/cat_over25.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/castellon/models/rf_over25.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/castellon/models/torch_over25.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/castellon/models/tf_over25.keras"
-        },
-        "btts": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/castellon/models/xgb_btts.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/castellon/models/lgbm_btts.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/castellon/models/cat_btts.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/castellon/models/rf_btts.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/castellon/models/torch_btts.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/castellon/models/tf_btts.keras"
-        }
-      }
-    },
-    "burgos": {
-      "team": "Burgos",
-      "n_train": 220,
-      "n_val": 30,
-      "dir": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/burgos",
-      "targets": {
-        "ft_result": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/burgos/models/xgb_ft_result.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/burgos/models/lgbm_ft_result.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/burgos/models/cat_ft_result.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/burgos/models/rf_ft_result.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/burgos/models/torch_ft_result.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/burgos/models/tf_ft_result.keras"
-        },
-        "ht_result": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/burgos/models/xgb_ht_result.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/burgos/models/lgbm_ht_result.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/burgos/models/cat_ht_result.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/burgos/models/rf_ht_result.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/burgos/models/torch_ht_result.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/burgos/models/tf_ht_result.keras"
-        },
-        "over25": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/burgos/models/xgb_over25.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/burgos/models/lgbm_over25.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/burgos/models/cat_over25.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/burgos/models/rf_over25.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/burgos/models/torch_over25.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/burgos/models/tf_over25.keras"
-        },
-        "btts": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/burgos/models/xgb_btts.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/burgos/models/lgbm_btts.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/burgos/models/cat_btts.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/burgos/models/rf_btts.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/burgos/models/torch_btts.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/burgos/models/tf_btts.keras"
-        }
-      }
-    },
-    "sociedad_b": {
-      "team": "Sociedad B",
-      "n_train": 66,
-      "n_val": 20,
-      "dir": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/sociedad_b",
-      "targets": {
-        "ft_result": {
-          "error": "Too few rows for ft_result: 20"
-        },
-        "ht_result": {
-          "error": "Too few rows for ht_result: 20"
-        },
-        "over25": {
-          "error": "Too few rows for over25: 20"
-        },
-        "btts": {
-          "error": "Too few rows for btts: 20"
-        }
-      }
-    },
-    "dijon": {
-      "team": "Dijon",
-      "n_train": 593,
-      "n_val": 81,
-      "dir": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/dijon",
-      "targets": {
-        "ft_result": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/dijon/models/xgb_ft_result.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/dijon/models/lgbm_ft_result.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/dijon/models/cat_ft_result.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/dijon/models/rf_ft_result.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/dijon/models/torch_ft_result.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/dijon/models/tf_ft_result.keras"
-        },
-        "ht_result": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/dijon/models/xgb_ht_result.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/dijon/models/lgbm_ht_result.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/dijon/models/cat_ht_result.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/dijon/models/rf_ht_result.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/dijon/models/torch_ht_result.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/dijon/models/tf_ht_result.keras"
-        },
-        "over25": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/dijon/models/xgb_over25.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/dijon/models/lgbm_over25.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/dijon/models/cat_over25.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/dijon/models/rf_over25.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/dijon/models/torch_over25.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/dijon/models/tf_over25.keras"
-        },
-        "btts": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/dijon/models/xgb_btts.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/dijon/models/lgbm_btts.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/dijon/models/cat_btts.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/dijon/models/rf_btts.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/dijon/models/torch_btts.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/dijon/models/tf_btts.keras"
-        }
-      }
-    },
-    "st_etienne": {
-      "team": "St Etienne",
-      "n_train": 1003,
-      "n_val": 137,
-      "dir": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/st_etienne",
-      "targets": {
-        "ft_result": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/st_etienne/models/xgb_ft_result.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/st_etienne/models/lgbm_ft_result.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/st_etienne/models/cat_ft_result.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/st_etienne/models/rf_ft_result.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/st_etienne/models/torch_ft_result.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/st_etienne/models/tf_ft_result.keras"
-        },
-        "ht_result": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/st_etienne/models/xgb_ht_result.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/st_etienne/models/lgbm_ht_result.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/st_etienne/models/cat_ht_result.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/st_etienne/models/rf_ht_result.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/st_etienne/models/torch_ht_result.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/st_etienne/models/tf_ht_result.keras"
-        },
-        "over25": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/st_etienne/models/xgb_over25.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/st_etienne/models/lgbm_over25.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/st_etienne/models/cat_over25.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/st_etienne/models/rf_over25.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/st_etienne/models/torch_over25.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/st_etienne/models/tf_over25.keras"
-        },
-        "btts": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/st_etienne/models/xgb_btts.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/st_etienne/models/lgbm_btts.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/st_etienne/models/cat_btts.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/st_etienne/models/rf_btts.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/st_etienne/models/torch_btts.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/st_etienne/models/tf_btts.keras"
-        }
-      }
-    },
-    "carlisle": {
-      "team": "Carlisle",
-      "n_train": 1262,
-      "n_val": 173,
-      "dir": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/carlisle",
-      "targets": {
-        "ft_result": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/carlisle/models/xgb_ft_result.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/carlisle/models/lgbm_ft_result.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/carlisle/models/cat_ft_result.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/carlisle/models/rf_ft_result.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/carlisle/models/torch_ft_result.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/carlisle/models/tf_ft_result.keras"
-        },
-        "ht_result": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/carlisle/models/xgb_ht_result.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/carlisle/models/lgbm_ht_result.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/carlisle/models/cat_ht_result.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/carlisle/models/rf_ht_result.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/carlisle/models/torch_ht_result.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/carlisle/models/tf_ht_result.keras"
-        },
-        "over25": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/carlisle/models/xgb_over25.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/carlisle/models/lgbm_over25.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/carlisle/models/cat_over25.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/carlisle/models/rf_over25.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/carlisle/models/torch_over25.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/carlisle/models/tf_over25.keras"
-        },
-        "btts": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/carlisle/models/xgb_btts.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/carlisle/models/lgbm_btts.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/carlisle/models/cat_btts.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/carlisle/models/rf_btts.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/carlisle/models/torch_btts.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/carlisle/models/tf_btts.keras"
-        }
-      }
-    },
-    "scunthorpe": {
-      "team": "Scunthorpe",
-      "n_train": 1214,
-      "n_val": 166,
-      "dir": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/scunthorpe",
-      "targets": {
-        "ft_result": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/scunthorpe/models/xgb_ft_result.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/scunthorpe/models/lgbm_ft_result.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/scunthorpe/models/cat_ft_result.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/scunthorpe/models/rf_ft_result.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/scunthorpe/models/torch_ft_result.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/scunthorpe/models/tf_ft_result.keras"
-        },
-        "ht_result": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/scunthorpe/models/xgb_ht_result.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/scunthorpe/models/lgbm_ht_result.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/scunthorpe/models/cat_ht_result.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/scunthorpe/models/rf_ht_result.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/scunthorpe/models/torch_ht_result.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/scunthorpe/models/tf_ht_result.keras"
-        },
-        "over25": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/scunthorpe/models/xgb_over25.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/scunthorpe/models/lgbm_over25.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/scunthorpe/models/cat_over25.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/scunthorpe/models/rf_over25.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/scunthorpe/models/torch_over25.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/scunthorpe/models/tf_over25.keras"
-        },
-        "btts": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/scunthorpe/models/xgb_btts.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/scunthorpe/models/lgbm_btts.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/scunthorpe/models/cat_btts.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/scunthorpe/models/rf_btts.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/scunthorpe/models/torch_btts.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/scunthorpe/models/tf_btts.keras"
-        }
-      }
-    },
-    "aldershot": {
-      "team": "Aldershot",
-      "n_train": 839,
-      "n_val": 115,
-      "dir": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/aldershot",
-      "targets": {
-        "ft_result": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/aldershot/models/xgb_ft_result.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/aldershot/models/lgbm_ft_result.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/aldershot/models/cat_ft_result.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/aldershot/models/rf_ft_result.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/aldershot/models/torch_ft_result.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/aldershot/models/tf_ft_result.keras"
-        },
-        "ht_result": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/aldershot/models/xgb_ht_result.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/aldershot/models/lgbm_ht_result.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/aldershot/models/cat_ht_result.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/aldershot/models/rf_ht_result.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/aldershot/models/torch_ht_result.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/aldershot/models/tf_ht_result.keras"
-        },
-        "over25": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/aldershot/models/xgb_over25.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/aldershot/models/lgbm_over25.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/aldershot/models/cat_over25.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/aldershot/models/rf_over25.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/aldershot/models/torch_over25.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/aldershot/models/tf_over25.keras"
-        },
-        "btts": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/aldershot/models/xgb_btts.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/aldershot/models/lgbm_btts.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/aldershot/models/cat_btts.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/aldershot/models/rf_btts.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/aldershot/models/torch_btts.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/aldershot/models/tf_btts.keras"
-        }
-      }
-    },
-    "eastleigh": {
-      "team": "Eastleigh",
-      "n_train": 476,
-      "n_val": 66,
-      "dir": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/eastleigh",
-      "targets": {
-        "ft_result": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/eastleigh/models/xgb_ft_result.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/eastleigh/models/lgbm_ft_result.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/eastleigh/models/cat_ft_result.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/eastleigh/models/rf_ft_result.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/eastleigh/models/torch_ft_result.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/eastleigh/models/tf_ft_result.keras"
-        },
-        "ht_result": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/eastleigh/models/xgb_ht_result.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/eastleigh/models/lgbm_ht_result.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/eastleigh/models/cat_ht_result.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/eastleigh/models/rf_ht_result.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/eastleigh/models/torch_ht_result.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/eastleigh/models/tf_ht_result.keras"
-        },
-        "over25": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/eastleigh/models/xgb_over25.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/eastleigh/models/lgbm_over25.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/eastleigh/models/cat_over25.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/eastleigh/models/rf_over25.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/eastleigh/models/torch_over25.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/eastleigh/models/tf_over25.keras"
-        },
-        "btts": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/eastleigh/models/xgb_btts.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/eastleigh/models/lgbm_btts.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/eastleigh/models/cat_btts.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/eastleigh/models/rf_btts.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/eastleigh/models/torch_btts.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/eastleigh/models/tf_btts.keras"
-        }
-      }
-    },
-    "forest_green": {
-      "team": "Forest Green",
-      "n_train": 839,
-      "n_val": 115,
-      "dir": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/forest_green",
-      "targets": {
-        "ft_result": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/forest_green/models/xgb_ft_result.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/forest_green/models/lgbm_ft_result.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/forest_green/models/cat_ft_result.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/forest_green/models/rf_ft_result.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/forest_green/models/torch_ft_result.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/forest_green/models/tf_ft_result.keras"
-        },
-        "ht_result": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/forest_green/models/xgb_ht_result.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/forest_green/models/lgbm_ht_result.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/forest_green/models/cat_ht_result.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/forest_green/models/rf_ht_result.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/forest_green/models/torch_ht_result.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/forest_green/models/tf_ht_result.keras"
-        },
-        "over25": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/forest_green/models/xgb_over25.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/forest_green/models/lgbm_over25.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/forest_green/models/cat_over25.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/forest_green/models/rf_over25.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/forest_green/models/torch_over25.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/forest_green/models/tf_over25.keras"
-        },
-        "btts": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/forest_green/models/xgb_btts.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/forest_green/models/lgbm_btts.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/forest_green/models/cat_btts.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/forest_green/models/rf_btts.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/forest_green/models/torch_btts.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/forest_green/models/tf_btts.keras"
-        }
-      }
-    },
-    "altrincham": {
-      "team": "Altrincham",
-      "n_train": 560,
-      "n_val": 77,
-      "dir": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/altrincham",
-      "targets": {
-        "ft_result": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/altrincham/models/xgb_ft_result.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/altrincham/models/lgbm_ft_result.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/altrincham/models/cat_ft_result.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/altrincham/models/rf_ft_result.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/altrincham/models/torch_ft_result.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/altrincham/models/tf_ft_result.keras"
-        },
-        "ht_result": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/altrincham/models/xgb_ht_result.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/altrincham/models/lgbm_ht_result.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/altrincham/models/cat_ht_result.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/altrincham/models/rf_ht_result.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/altrincham/models/torch_ht_result.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/altrincham/models/tf_ht_result.keras"
-        },
-        "over25": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/altrincham/models/xgb_over25.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/altrincham/models/lgbm_over25.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/altrincham/models/cat_over25.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/altrincham/models/rf_over25.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/altrincham/models/torch_over25.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/altrincham/models/tf_over25.keras"
-        },
-        "btts": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/altrincham/models/xgb_btts.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/altrincham/models/lgbm_btts.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/altrincham/models/cat_btts.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/altrincham/models/rf_btts.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/altrincham/models/torch_btts.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/altrincham/models/tf_btts.keras"
-        }
-      }
-    },
-    "gateshead": {
-      "team": "Gateshead",
-      "n_train": 568,
-      "n_val": 78,
-      "dir": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/gateshead",
-      "targets": {
-        "ft_result": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/gateshead/models/xgb_ft_result.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/gateshead/models/lgbm_ft_result.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/gateshead/models/cat_ft_result.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/gateshead/models/rf_ft_result.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/gateshead/models/torch_ft_result.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/gateshead/models/tf_ft_result.keras"
-        },
-        "ht_result": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/gateshead/models/xgb_ht_result.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/gateshead/models/lgbm_ht_result.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/gateshead/models/cat_ht_result.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/gateshead/models/rf_ht_result.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/gateshead/models/torch_ht_result.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/gateshead/models/tf_ht_result.keras"
-        },
-        "over25": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/gateshead/models/xgb_over25.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/gateshead/models/lgbm_over25.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/gateshead/models/cat_over25.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/gateshead/models/rf_over25.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/gateshead/models/torch_over25.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/gateshead/models/tf_over25.keras"
-        },
-        "btts": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/gateshead/models/xgb_btts.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/gateshead/models/lgbm_btts.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/gateshead/models/cat_btts.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/gateshead/models/rf_btts.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/gateshead/models/torch_btts.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/gateshead/models/tf_btts.keras"
-        }
-      }
-    },
-    "kidderminster": {
-      "team": "Kidderminster",
-      "n_train": 655,
-      "n_val": 90,
-      "dir": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/kidderminster",
-      "targets": {
-        "ft_result": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/kidderminster/models/xgb_ft_result.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/kidderminster/models/lgbm_ft_result.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/kidderminster/models/cat_ft_result.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/kidderminster/models/rf_ft_result.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/kidderminster/models/torch_ft_result.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/kidderminster/models/tf_ft_result.keras"
-        },
-        "ht_result": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/kidderminster/models/xgb_ht_result.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/kidderminster/models/lgbm_ht_result.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/kidderminster/models/cat_ht_result.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/kidderminster/models/rf_ht_result.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/kidderminster/models/torch_ht_result.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/kidderminster/models/tf_ht_result.keras"
-        },
-        "over25": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/kidderminster/models/xgb_over25.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/kidderminster/models/lgbm_over25.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/kidderminster/models/cat_over25.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/kidderminster/models/rf_over25.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/kidderminster/models/torch_over25.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/kidderminster/models/tf_over25.keras"
-        },
-        "btts": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/kidderminster/models/xgb_btts.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/kidderminster/models/lgbm_btts.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/kidderminster/models/cat_btts.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/kidderminster/models/rf_btts.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/kidderminster/models/torch_btts.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/kidderminster/models/tf_btts.keras"
-        }
-      }
-    },
-    "solihull": {
-      "team": "Solihull",
-      "n_train": 396,
-      "n_val": 55,
-      "dir": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/solihull",
-      "targets": {
-        "ft_result": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/solihull/models/xgb_ft_result.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/solihull/models/lgbm_ft_result.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/solihull/models/cat_ft_result.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/solihull/models/rf_ft_result.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/solihull/models/torch_ft_result.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/solihull/models/tf_ft_result.keras"
-        },
-        "ht_result": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/solihull/models/xgb_ht_result.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/solihull/models/lgbm_ht_result.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/solihull/models/cat_ht_result.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/solihull/models/rf_ht_result.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/solihull/models/torch_ht_result.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/solihull/models/tf_ht_result.keras"
-        },
-        "over25": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/solihull/models/xgb_over25.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/solihull/models/lgbm_over25.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/solihull/models/cat_over25.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/solihull/models/rf_over25.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/solihull/models/torch_over25.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/solihull/models/tf_over25.keras"
-        },
-        "btts": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/solihull/models/xgb_btts.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/solihull/models/lgbm_btts.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/solihull/models/cat_btts.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/solihull/models/rf_btts.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/solihull/models/torch_btts.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/solihull/models/tf_btts.keras"
-        }
-      }
-    },
-    "barrow": {
-      "team": "Barrow",
-      "n_train": 641,
-      "n_val": 88,
-      "dir": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/barrow",
-      "targets": {
-        "ft_result": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/barrow/models/xgb_ft_result.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/barrow/models/lgbm_ft_result.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/barrow/models/cat_ft_result.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/barrow/models/rf_ft_result.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/barrow/models/torch_ft_result.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/barrow/models/tf_ft_result.keras"
-        },
-        "ht_result": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/barrow/models/xgb_ht_result.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/barrow/models/lgbm_ht_result.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/barrow/models/cat_ht_result.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/barrow/models/rf_ht_result.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/barrow/models/torch_ht_result.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/barrow/models/tf_ht_result.keras"
-        },
-        "over25": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/barrow/models/xgb_over25.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/barrow/models/lgbm_over25.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/barrow/models/cat_over25.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/barrow/models/rf_over25.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/barrow/models/torch_over25.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/barrow/models/tf_over25.keras"
-        },
-        "btts": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/barrow/models/xgb_btts.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/barrow/models/lgbm_btts.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/barrow/models/cat_btts.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/barrow/models/rf_btts.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/barrow/models/torch_btts.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/barrow/models/tf_btts.keras"
-        }
-      }
-    },
-    "sutton": {
-      "team": "Sutton",
-      "n_train": 397,
-      "n_val": 55,
-      "dir": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/sutton",
-      "targets": {
-        "ft_result": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/sutton/models/xgb_ft_result.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/sutton/models/lgbm_ft_result.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/sutton/models/cat_ft_result.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/sutton/models/rf_ft_result.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/sutton/models/torch_ft_result.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/sutton/models/tf_ft_result.keras"
-        },
-        "ht_result": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/sutton/models/xgb_ht_result.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/sutton/models/lgbm_ht_result.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/sutton/models/cat_ht_result.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/sutton/models/rf_ht_result.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/sutton/models/torch_ht_result.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/sutton/models/tf_ht_result.keras"
-        },
-        "over25": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/sutton/models/xgb_over25.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/sutton/models/lgbm_over25.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/sutton/models/cat_over25.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/sutton/models/rf_over25.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/sutton/models/torch_over25.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/sutton/models/tf_over25.keras"
-        },
-        "btts": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/sutton/models/xgb_btts.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/sutton/models/lgbm_btts.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/sutton/models/cat_btts.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/sutton/models/rf_btts.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/sutton/models/torch_btts.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/sutton/models/tf_btts.keras"
-        }
-      }
-    },
-    "woking": {
-      "team": "Woking",
-      "n_train": 676,
-      "n_val": 93,
-      "dir": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/woking",
-      "targets": {
-        "ft_result": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/woking/models/xgb_ft_result.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/woking/models/lgbm_ft_result.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/woking/models/cat_ft_result.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/woking/models/rf_ft_result.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/woking/models/torch_ft_result.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/woking/models/tf_ft_result.keras"
-        },
-        "ht_result": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/woking/models/xgb_ht_result.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/woking/models/lgbm_ht_result.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/woking/models/cat_ht_result.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/woking/models/rf_ht_result.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/woking/models/torch_ht_result.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/woking/models/tf_ht_result.keras"
-        },
-        "over25": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/woking/models/xgb_over25.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/woking/models/lgbm_over25.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/woking/models/cat_over25.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/woking/models/rf_over25.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/woking/models/torch_over25.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/woking/models/tf_over25.keras"
-        },
-        "btts": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/woking/models/xgb_btts.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/woking/models/lgbm_btts.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/woking/models/cat_btts.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/woking/models/rf_btts.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/woking/models/torch_btts.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/woking/models/tf_btts.keras"
-        }
-      }
-    },
-    "southend": {
-      "team": "Southend",
-      "n_train": 1290,
-      "n_val": 176,
-      "dir": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/southend",
-      "targets": {
-        "ft_result": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/southend/models/xgb_ft_result.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/southend/models/lgbm_ft_result.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/southend/models/cat_ft_result.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/southend/models/rf_ft_result.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/southend/models/torch_ft_result.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/southend/models/tf_ft_result.keras"
-        },
-        "ht_result": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/southend/models/xgb_ht_result.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/southend/models/lgbm_ht_result.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/southend/models/cat_ht_result.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/southend/models/rf_ht_result.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/southend/models/torch_ht_result.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/southend/models/tf_ht_result.keras"
-        },
-        "over25": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/southend/models/xgb_over25.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/southend/models/lgbm_over25.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/southend/models/cat_over25.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/southend/models/rf_over25.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/southend/models/torch_over25.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/southend/models/tf_over25.keras"
-        },
-        "btts": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/southend/models/xgb_btts.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/southend/models/lgbm_btts.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/southend/models/cat_btts.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/southend/models/rf_btts.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/southend/models/torch_btts.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/southend/models/tf_btts.keras"
-        }
-      }
-    },
-    "boreham_wood": {
-      "team": "Boreham Wood",
-      "n_train": 396,
-      "n_val": 54,
-      "dir": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/boreham_wood",
-      "targets": {
-        "ft_result": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/boreham_wood/models/xgb_ft_result.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/boreham_wood/models/lgbm_ft_result.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/boreham_wood/models/cat_ft_result.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/boreham_wood/models/rf_ft_result.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/boreham_wood/models/torch_ft_result.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/boreham_wood/models/tf_ft_result.keras"
-        },
-        "ht_result": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/boreham_wood/models/xgb_ht_result.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/boreham_wood/models/lgbm_ht_result.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/boreham_wood/models/cat_ht_result.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/boreham_wood/models/rf_ht_result.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/boreham_wood/models/torch_ht_result.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/boreham_wood/models/tf_ht_result.keras"
-        },
-        "over25": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/boreham_wood/models/xgb_over25.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/boreham_wood/models/lgbm_over25.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/boreham_wood/models/cat_over25.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/boreham_wood/models/rf_over25.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/boreham_wood/models/torch_over25.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/boreham_wood/models/tf_over25.keras"
-        },
-        "btts": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/boreham_wood/models/xgb_btts.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/boreham_wood/models/lgbm_btts.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/boreham_wood/models/cat_btts.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/boreham_wood/models/rf_btts.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/boreham_wood/models/torch_btts.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/boreham_wood/models/tf_btts.keras"
-        }
-      }
-    },
-    "yeovil": {
-      "team": "Yeovil",
-      "n_train": 866,
-      "n_val": 119,
-      "dir": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/yeovil",
-      "targets": {
-        "ft_result": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/yeovil/models/xgb_ft_result.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/yeovil/models/lgbm_ft_result.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/yeovil/models/cat_ft_result.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/yeovil/models/rf_ft_result.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/yeovil/models/torch_ft_result.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/yeovil/models/tf_ft_result.keras"
-        },
-        "ht_result": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/yeovil/models/xgb_ht_result.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/yeovil/models/lgbm_ht_result.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/yeovil/models/cat_ht_result.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/yeovil/models/rf_ht_result.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/yeovil/models/torch_ht_result.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/yeovil/models/tf_ht_result.keras"
-        },
-        "over25": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/yeovil/models/xgb_over25.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/yeovil/models/lgbm_over25.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/yeovil/models/cat_over25.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/yeovil/models/rf_over25.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/yeovil/models/torch_over25.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/yeovil/models/tf_over25.keras"
-        },
-        "btts": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/yeovil/models/xgb_btts.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/yeovil/models/lgbm_btts.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/yeovil/models/cat_btts.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/yeovil/models/rf_btts.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/yeovil/models/torch_btts.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/yeovil/models/tf_btts.keras"
-        }
-      }
-    },
-    "tamworth": {
-      "team": "Tamworth",
-      "n_train": 362,
-      "n_val": 50,
-      "dir": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/tamworth",
-      "targets": {
-        "ft_result": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/tamworth/models/xgb_ft_result.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/tamworth/models/lgbm_ft_result.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/tamworth/models/cat_ft_result.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/tamworth/models/rf_ft_result.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/tamworth/models/torch_ft_result.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/tamworth/models/tf_ft_result.keras"
-        },
-        "ht_result": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/tamworth/models/xgb_ht_result.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/tamworth/models/lgbm_ht_result.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/tamworth/models/cat_ht_result.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/tamworth/models/rf_ht_result.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/tamworth/models/torch_ht_result.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/tamworth/models/tf_ht_result.keras"
-        },
-        "over25": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/tamworth/models/xgb_over25.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/tamworth/models/lgbm_over25.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/tamworth/models/cat_over25.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/tamworth/models/rf_over25.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/tamworth/models/torch_over25.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/tamworth/models/tf_over25.keras"
-        },
-        "btts": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/tamworth/models/xgb_btts.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/tamworth/models/lgbm_btts.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/tamworth/models/cat_btts.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/tamworth/models/rf_btts.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/tamworth/models/torch_btts.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/tamworth/models/tf_btts.keras"
-        }
-      }
-    },
-    "harrogate": {
-      "team": "Harrogate",
-      "n_train": 319,
-      "n_val": 44,
-      "dir": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/harrogate",
-      "targets": {
-        "ft_result": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/harrogate/models/xgb_ft_result.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/harrogate/models/lgbm_ft_result.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/harrogate/models/cat_ft_result.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/harrogate/models/rf_ft_result.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/harrogate/models/torch_ft_result.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/harrogate/models/tf_ft_result.keras"
-        },
-        "ht_result": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/harrogate/models/xgb_ht_result.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/harrogate/models/lgbm_ht_result.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/harrogate/models/cat_ht_result.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/harrogate/models/rf_ht_result.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/harrogate/models/torch_ht_result.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/harrogate/models/tf_ht_result.keras"
-        },
-        "over25": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/harrogate/models/xgb_over25.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/harrogate/models/lgbm_over25.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/harrogate/models/cat_over25.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/harrogate/models/rf_over25.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/harrogate/models/torch_over25.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/harrogate/models/tf_over25.keras"
-        },
-        "btts": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/harrogate/models/xgb_btts.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/harrogate/models/lgbm_btts.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/harrogate/models/cat_btts.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/harrogate/models/rf_btts.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/harrogate/models/torch_btts.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/harrogate/models/tf_btts.keras"
-        }
-      }
-    },
-    "boston_utd": {
-      "team": "Boston Utd",
-      "n_train": 76,
-      "n_val": 20,
-      "dir": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/boston_utd",
-      "targets": {
-        "ft_result": {
-          "error": "Too few rows for ft_result: 20"
-        },
-        "ht_result": {
-          "error": "Too few rows for ht_result: 20"
-        },
-        "over25": {
-          "error": "Too few rows for over25: 20"
-        },
-        "btts": {
-          "error": "Too few rows for btts: 20"
-        }
-      }
-    },
-    "fylde": {
-      "team": "Fylde",
-      "n_train": 198,
-      "n_val": 27,
-      "dir": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/fylde",
-      "targets": {
-        "ft_result": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/fylde/models/xgb_ft_result.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/fylde/models/lgbm_ft_result.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/fylde/models/cat_ft_result.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/fylde/models/rf_ft_result.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/fylde/models/torch_ft_result.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/fylde/models/tf_ft_result.keras"
-        },
-        "ht_result": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/fylde/models/xgb_ht_result.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/fylde/models/lgbm_ht_result.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/fylde/models/cat_ht_result.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/fylde/models/rf_ht_result.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/fylde/models/torch_ht_result.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/fylde/models/tf_ht_result.keras"
-        },
-        "over25": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/fylde/models/xgb_over25.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/fylde/models/lgbm_over25.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/fylde/models/cat_over25.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/fylde/models/rf_over25.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/fylde/models/torch_over25.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/fylde/models/tf_over25.keras"
-        },
-        "btts": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/fylde/models/xgb_btts.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/fylde/models/lgbm_btts.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/fylde/models/cat_btts.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/fylde/models/rf_btts.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/fylde/models/torch_btts.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/fylde/models/tf_btts.keras"
-        }
-      }
-    },
-    "wealdstone": {
-      "team": "Wealdstone",
-      "n_train": 241,
-      "n_val": 33,
-      "dir": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/wealdstone",
-      "targets": {
-        "ft_result": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/wealdstone/models/xgb_ft_result.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/wealdstone/models/lgbm_ft_result.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/wealdstone/models/cat_ft_result.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/wealdstone/models/rf_ft_result.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/wealdstone/models/torch_ft_result.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/wealdstone/models/tf_ft_result.keras"
-        },
-        "ht_result": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/wealdstone/models/xgb_ht_result.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/wealdstone/models/lgbm_ht_result.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/wealdstone/models/cat_ht_result.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/wealdstone/models/rf_ht_result.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/wealdstone/models/torch_ht_result.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/wealdstone/models/tf_ht_result.keras"
-        },
-        "over25": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/wealdstone/models/xgb_over25.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/wealdstone/models/lgbm_over25.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/wealdstone/models/cat_over25.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/wealdstone/models/rf_over25.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/wealdstone/models/torch_over25.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/wealdstone/models/tf_over25.keras"
-        },
-        "btts": {
-          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/wealdstone/models/xgb_btts.json",
-          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/wealdstone/models/lgbm_btts.txt",
-          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/wealdstone/models/cat_btts.cbm",
-          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/wealdstone/models/rf_btts.pkl",
-          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/wealdstone/models/torch_btts.pt",
-          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/wealdstone/models/tf_btts.keras"
+          "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/estoril/models/xgb_btts.json",
+          "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/estoril/models/lgbm_btts.txt",
+          "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/estoril/models/cat_btts.cbm",
+          "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/estoril/models/rf_btts.pkl",
+          "pytorch": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/estoril/models/torch_btts.pt",
+          "tensorflow": "/home/runner/work/sportintel_core/sportintel_core/football_models/teams/estoril/models/tf_btts.keras"
         }
       }
     }
