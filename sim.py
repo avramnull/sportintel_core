@@ -811,10 +811,8 @@ def build_table_rows(report, backends_map, home, away):
     add("WTN", f"{home} WTN", float(wtn.get("home", 0.0)), float(wtn.get("home", 0.0)), b_ft, 0.35)
     add("WTN", f"{away} WTN", float(wtn.get("away", 0.0)), float(wtn.get("away", 0.0)), b_ft, 0.35)
 
-    # Top correct scores as informational rows (no YES/NO pressure)
-    for item in (report.get("top3_ft") or [])[:3]:
-        pct = float(item.get("pct", 0)) / 100.0
-        add("CSCORE", item.get("score", "?"), pct, pct, [], 0.99)
+    # Correct scores are shown in the distribution panel only — do not spam
+    # the markets table with NO verdicts on low-probability scorelines.
 
     return rows
 
