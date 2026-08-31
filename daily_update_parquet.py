@@ -148,8 +148,7 @@ def merge(parquet_path, res):
     table = pa.Table.from_pandas(res2[schema.names], schema=schema, preserve_index=False)
     writer.write_table(table)
     writer.close()
-    parquet_path.unlink()
-    tmp.rename(parquet_path)
+    tmp.replace(parquet_path)  # atomic: never leaves parquet_path missing mid-write
     n_new = pq.ParquetFile(parquet_path).metadata.num_rows
     log(f"Dropped overlap: {dropped} | Appended: {len(res)} | Master after: {n_new:,}")
     log(f"OK -> {parquet_path} ({parquet_path.stat().st_size/1e6:.1f} MB)")
