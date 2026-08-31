@@ -63,6 +63,19 @@ def slug_key(home: str, away: str, date_str: str) -> str:
     return re.sub(r"[^a-zA-Z0-9._-]+", "_", raw).strip("_").lower()[:120]
 
 
+def _first_present(*vals, default=0.0):
+    """Like `a or b or default`, but a genuine 0.0 counts as present."""
+    for v in vals:
+        if v is not None:
+            return v
+    return default
+
+
+def _pct(v) -> float:
+    v = float(v)
+    return round(v * 100, 1) if v <= 1 else round(v, 1)
+
+
 def main():
     fixtures_path = SAVE_DIR / "fixtures_latest.csv"
     if not fixtures_path.exists():
@@ -150,12 +163,8 @@ def main():
             "ft_h": round(float(ft.get("H", 0)) * 100, 1) if ft.get("H", 0) <= 1 else round(float(ft.get("H", 0)), 1),
             "ft_d": round(float(ft.get("D", 0)) * 100, 1) if ft.get("D", 0) <= 1 else round(float(ft.get("D", 0)), 1),
             "ft_a": round(float(ft.get("A", 0)) * 100, 1) if ft.get("A", 0) <= 1 else round(float(ft.get("A", 0)), 1),
-            "over25": round(float(rep.get("over25_sim") or rep.get("over25_model") or 0) * 100, 1)
-                      if float(rep.get("over25_sim") or rep.get("over25_model") or 0) <= 1
-                      else round(float(rep.get("over25_sim") or rep.get("over25_model") or 0), 1),
-            "btts": round(float(rep.get("btts_sim") or rep.get("btts_model") or 0) * 100, 1)
-                    if float(rep.get("btts_sim") or rep.get("btts_model") or 0) <= 1
-                    else round(float(rep.get("btts_sim") or rep.get("btts_model") or 0), 1),
+            "over25": _pct(_first_present(rep.get("over25_sim"), rep.get("over25_model"))),
+            "btts": _pct(_first_present(rep.get("btts_sim"), rep.get("btts_model"))),
             "cs_top": cs1,
             "cs_second": cs2,
             "xg_h": (rep.get("xg") or {}).get("home"),
