@@ -1,0 +1,359 @@
+{
+  "match": {
+    "league": "EC",
+    "home_team": "Yeovil",
+    "away_team": "Tamworth",
+    "match_date": "2026-08-31 15:00",
+    "odds_home": 2.1,
+    "odds_draw": 3.5,
+    "odds_away": 3.0,
+    "n_simulations": 3000,
+    "seed": 249,
+    "odds_blend": 0.25
+  },
+  "resolved": {
+    "league": "National League",
+    "div": "EC",
+    "home": "Yeovil",
+    "away": "Tamworth",
+    "models": "Yeovil (home) + Tamworth (away)",
+    "match_date": "2026-08-31 15:00"
+  },
+  "report": {
+    "n": 3000,
+    "ft_model": {
+      "H": 0.35602511017767735,
+      "D": 0.2442920441568459,
+      "A": 0.39968284566547685
+    },
+    "ft_sim": {
+      "H": 0.226,
+      "D": 0.222,
+      "A": 0.552
+    },
+    "ht_model": {
+      "H": 0.2560219789109864,
+      "D": 0.48591613993842886,
+      "A": 0.25806188115058487
+    },
+    "ht_sim": {
+      "H": 0.13466666666666666,
+      "D": 0.5866666666666667,
+      "A": 0.2786666666666667
+    },
+    "over25_model": 0.510347922977936,
+    "over25_sim": 0.39866666666666667,
+    "btts_model": 0.567670282041548,
+    "btts_sim": 0.43133333333333335,
+    "ht_over15_model": 0.377586980744484,
+    "ht_over15_sim": 0.25533333333333336,
+    "dc_ft": {
+      "1X": 0.6003171543345233,
+      "X2": 0.6439748898223228,
+      "12": 0.7557079558431542
+    },
+    "dc_ht": {
+      "1X": 0.7419381188494152,
+      "X2": 0.7439780210890137,
+      "12": 0.5140838600615713
+    },
+    "top_ft": [
+      [
+        "0-1",
+        520
+      ],
+      [
+        "1-1",
+        332
+      ],
+      [
+        "0-2",
+        328
+      ],
+      [
+        "1-2",
+        307
+      ],
+      [
+        "1-0",
+        265
+      ],
+      [
+        "0-0",
+        241
+      ],
+      [
+        "2-1",
+        174
+      ],
+      [
+        "1-3",
+        153
+      ]
+    ],
+    "top_ht": [
+      [
+        "0-0",
+        1453
+      ],
+      [
+        "0-1",
+        495
+      ],
+      [
+        "1-0",
+        286
+      ],
+      [
+        "1-1",
+        281
+      ],
+      [
+        "0-2",
+        176
+      ]
+    ],
+    "top3_ft": [
+      {
+        "score": "0-1",
+        "count": 520,
+        "pct": 17.3
+      },
+      {
+        "score": "1-1",
+        "count": 332,
+        "pct": 11.1
+      },
+      {
+        "score": "0-2",
+        "count": 328,
+        "pct": 10.9
+      }
+    ],
+    "top3_ht": [
+      {
+        "score": "0-0",
+        "count": 1453,
+        "pct": 48.4
+      },
+      {
+        "score": "0-1",
+        "count": 495,
+        "pct": 16.5
+      },
+      {
+        "score": "1-0",
+        "count": 286,
+        "pct": 9.5
+      }
+    ],
+    "xg": {
+      "home": 0.8233333333333334,
+      "away": 1.4486666666666668,
+      "total": 2.272
+    },
+    "ht_xg": {
+      "home": 0.33266666666666667,
+      "away": 0.5636666666666666,
+      "total": 0.8963333333333333
+    },
+    "score_consistency": {
+      "ht_leq_ft": 1.0
+    },
+    "goal_rates": {
+      "home": 0.8233333333333334,
+      "away": 1.4486666666666668
+    }
+  },
+  "table": [
+    {
+      "Section": "HT Winner",
+      "Selection": "Yeovil",
+      "Model%": 25.6,
+      "Sim%": 13.5,
+      "Agree": "6 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Draw",
+      "Model%": 48.6,
+      "Sim%": 58.7,
+      "Agree": "6 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Tamworth",
+      "Model%": 25.8,
+      "Sim%": 27.9,
+      "Agree": "6 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "1X",
+      "Model%": 74.2,
+      "Sim%": 72.1,
+      "Agree": "6 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "X2",
+      "Model%": 74.4,
+      "Sim%": 86.5,
+      "Agree": "6 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "12",
+      "Model%": 51.4,
+      "Sim%": 41.3,
+      "Agree": "6 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Over 1.5",
+      "Model%": 37.8,
+      "Sim%": 25.5,
+      "Agree": "-",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Under 1.5",
+      "Model%": 62.2,
+      "Sim%": 74.5,
+      "Agree": "-",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Yeovil",
+      "Model%": 35.6,
+      "Sim%": 22.6,
+      "Agree": "6 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Draw",
+      "Model%": 24.4,
+      "Sim%": 22.2,
+      "Agree": "6 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Tamworth",
+      "Model%": 40.0,
+      "Sim%": 55.2,
+      "Agree": "6 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "1X",
+      "Model%": 60.0,
+      "Sim%": 44.8,
+      "Agree": "6 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 64.4,
+      "Sim%": 77.4,
+      "Agree": "6 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "12",
+      "Model%": 75.6,
+      "Sim%": 77.8,
+      "Agree": "6 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Over 2.5",
+      "Model%": 51.0,
+      "Sim%": 39.9,
+      "Agree": "6 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Under 2.5",
+      "Model%": 49.0,
+      "Sim%": 60.1,
+      "Agree": "6 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "Yes",
+      "Model%": 56.8,
+      "Sim%": 43.1,
+      "Agree": "6 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 43.2,
+      "Sim%": 56.9,
+      "Agree": "6 eng",
+      "Verdict": "NO"
+    }
+  ],
+  "locked_tip": {
+    "status": "SECURED LOCK",
+    "section": "FT DC",
+    "selection": "12",
+    "model": 75.6,
+    "sim": 77.8,
+    "agree": "6 eng",
+    "verdict": "HARD YES"
+  },
+  "backends": {
+    "ft_result": [
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
+    ],
+    "ht_result": [
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
+    ],
+    "over25": [
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
+    ],
+    "btts": [
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
+    ],
+    "ht_over15": []
+  },
+  "generated_at": "2026-08-31T03:10:32.386212Z"
+}

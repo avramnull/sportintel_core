@@ -1,0 +1,359 @@
+{
+  "match": {
+    "league": "EC",
+    "home_team": "Carlisle",
+    "away_team": "Scunthorpe",
+    "match_date": "2026-08-31 15:00",
+    "odds_home": 1.67,
+    "odds_draw": 3.8,
+    "odds_away": 4.2,
+    "n_simulations": 3000,
+    "seed": 240,
+    "odds_blend": 0.25
+  },
+  "resolved": {
+    "league": "National League",
+    "div": "EC",
+    "home": "Carlisle",
+    "away": "Scunthorpe",
+    "models": "Carlisle (home) + Scunthorpe (away)",
+    "match_date": "2026-08-31 15:00"
+  },
+  "report": {
+    "n": 3000,
+    "ft_model": {
+      "H": 0.29371956790121245,
+      "D": 0.28680624251003284,
+      "A": 0.41947418958875476
+    },
+    "ft_sim": {
+      "H": 0.162,
+      "D": 0.243,
+      "A": 0.595
+    },
+    "ht_model": {
+      "H": 0.225413014563572,
+      "D": 0.3889112110394241,
+      "A": 0.38567577439700396
+    },
+    "ht_sim": {
+      "H": 0.112,
+      "D": 0.478,
+      "A": 0.41
+    },
+    "over25_model": 0.5049082143954113,
+    "over25_sim": 0.379,
+    "btts_model": 0.5346845183714513,
+    "btts_sim": 0.39866666666666667,
+    "ht_over15_model": 0.37622705359885283,
+    "ht_over15_sim": 0.2663333333333333,
+    "dc_ft": {
+      "1X": 0.5805258104112453,
+      "X2": 0.7062804320987877,
+      "12": 0.7131937574899672
+    },
+    "dc_ht": {
+      "1X": 0.6143242256029962,
+      "X2": 0.774586985436428,
+      "12": 0.611088788960576
+    },
+    "top_ft": [
+      [
+        "0-1",
+        571
+      ],
+      [
+        "0-2",
+        379
+      ],
+      [
+        "1-1",
+        336
+      ],
+      [
+        "1-2",
+        310
+      ],
+      [
+        "0-0",
+        298
+      ],
+      [
+        "1-0",
+        219
+      ],
+      [
+        "0-3",
+        173
+      ],
+      [
+        "2-1",
+        135
+      ]
+    ],
+    "top_ht": [
+      [
+        "0-0",
+        1224
+      ],
+      [
+        "0-1",
+        728
+      ],
+      [
+        "0-2",
+        292
+      ],
+      [
+        "1-0",
+        249
+      ],
+      [
+        "1-1",
+        192
+      ]
+    ],
+    "top3_ft": [
+      {
+        "score": "0-1",
+        "count": 571,
+        "pct": 19.0
+      },
+      {
+        "score": "0-2",
+        "count": 379,
+        "pct": 12.6
+      },
+      {
+        "score": "1-1",
+        "count": 336,
+        "pct": 11.2
+      }
+    ],
+    "top3_ht": [
+      {
+        "score": "0-0",
+        "count": 1224,
+        "pct": 40.8
+      },
+      {
+        "score": "0-1",
+        "count": 728,
+        "pct": 24.3
+      },
+      {
+        "score": "0-2",
+        "count": 292,
+        "pct": 9.7
+      }
+    ],
+    "xg": {
+      "home": 0.684,
+      "away": 1.503,
+      "total": 2.187
+    },
+    "ht_xg": {
+      "home": 0.26166666666666666,
+      "away": 0.72,
+      "total": 0.9816666666666667
+    },
+    "score_consistency": {
+      "ht_leq_ft": 1.0
+    },
+    "goal_rates": {
+      "home": 0.684,
+      "away": 1.503
+    }
+  },
+  "table": [
+    {
+      "Section": "HT Winner",
+      "Selection": "Carlisle",
+      "Model%": 22.5,
+      "Sim%": 11.2,
+      "Agree": "6 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Draw",
+      "Model%": 38.9,
+      "Sim%": 47.8,
+      "Agree": "6 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Scunthorpe",
+      "Model%": 38.6,
+      "Sim%": 41.0,
+      "Agree": "6 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "1X",
+      "Model%": 61.4,
+      "Sim%": 59.0,
+      "Agree": "6 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "X2",
+      "Model%": 77.5,
+      "Sim%": 88.8,
+      "Agree": "6 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "12",
+      "Model%": 61.1,
+      "Sim%": 52.2,
+      "Agree": "6 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Over 1.5",
+      "Model%": 37.6,
+      "Sim%": 26.6,
+      "Agree": "-",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Under 1.5",
+      "Model%": 62.4,
+      "Sim%": 73.4,
+      "Agree": "-",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Carlisle",
+      "Model%": 29.4,
+      "Sim%": 16.2,
+      "Agree": "6 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Draw",
+      "Model%": 28.7,
+      "Sim%": 24.3,
+      "Agree": "6 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Scunthorpe",
+      "Model%": 41.9,
+      "Sim%": 59.5,
+      "Agree": "6 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "1X",
+      "Model%": 58.1,
+      "Sim%": 40.5,
+      "Agree": "6 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 70.6,
+      "Sim%": 83.8,
+      "Agree": "6 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "12",
+      "Model%": 71.3,
+      "Sim%": 75.7,
+      "Agree": "6 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Over 2.5",
+      "Model%": 50.5,
+      "Sim%": 37.9,
+      "Agree": "6 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Under 2.5",
+      "Model%": 49.5,
+      "Sim%": 62.1,
+      "Agree": "6 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "Yes",
+      "Model%": 53.5,
+      "Sim%": 39.9,
+      "Agree": "6 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 46.5,
+      "Sim%": 60.1,
+      "Agree": "6 eng",
+      "Verdict": "NO"
+    }
+  ],
+  "locked_tip": {
+    "status": "SECURED LOCK",
+    "section": "HT DC",
+    "selection": "X2",
+    "model": 77.5,
+    "sim": 88.8,
+    "agree": "6 eng",
+    "verdict": "HARD YES"
+  },
+  "backends": {
+    "ft_result": [
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
+    ],
+    "ht_result": [
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
+    ],
+    "over25": [
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
+    ],
+    "btts": [
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
+    ],
+    "ht_over15": []
+  },
+  "generated_at": "2026-08-31T03:10:21.720990Z"
+}

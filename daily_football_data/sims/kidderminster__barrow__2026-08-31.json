@@ -1,0 +1,359 @@
+{
+  "match": {
+    "league": "EC",
+    "home_team": "Kidderminster",
+    "away_team": "Barrow",
+    "match_date": "2026-08-31 15:00",
+    "odds_home": 2.38,
+    "odds_draw": 3.4,
+    "odds_away": 2.55,
+    "n_simulations": 3000,
+    "seed": 244,
+    "odds_blend": 0.25
+  },
+  "resolved": {
+    "league": "National League",
+    "div": "EC",
+    "home": "Kidderminster",
+    "away": "Barrow",
+    "models": "Kidderminster (home) + Barrow (away)",
+    "match_date": "2026-08-31 15:00"
+  },
+  "report": {
+    "n": 3000,
+    "ft_model": {
+      "H": 0.3139296541807374,
+      "D": 0.29272050179482373,
+      "A": 0.3933498440244388
+    },
+    "ft_sim": {
+      "H": 0.19866666666666666,
+      "D": 0.24866666666666667,
+      "A": 0.5526666666666666
+    },
+    "ht_model": {
+      "H": 0.26579994417542196,
+      "D": 0.4119576957257913,
+      "A": 0.3222423600987868
+    },
+    "ht_sim": {
+      "H": 0.14833333333333334,
+      "D": 0.5006666666666667,
+      "A": 0.351
+    },
+    "over25_model": 0.4935805713758086,
+    "over25_sim": 0.3993333333333333,
+    "btts_model": 0.5807067671870892,
+    "btts_sim": 0.43733333333333335,
+    "ht_over15_model": 0.37339514284395214,
+    "ht_over15_sim": 0.2763333333333333,
+    "dc_ft": {
+      "1X": 0.6066501559755612,
+      "X2": 0.6860703458192625,
+      "12": 0.7072794982051762
+    },
+    "dc_ht": {
+      "1X": 0.6777576399012133,
+      "X2": 0.734200055824578,
+      "12": 0.5880423042742088
+    },
+    "top_ft": [
+      [
+        "0-1",
+        489
+      ],
+      [
+        "1-1",
+        360
+      ],
+      [
+        "0-2",
+        349
+      ],
+      [
+        "1-2",
+        302
+      ],
+      [
+        "0-0",
+        279
+      ],
+      [
+        "1-0",
+        242
+      ],
+      [
+        "0-3",
+        163
+      ],
+      [
+        "2-1",
+        162
+      ]
+    ],
+    "top_ht": [
+      [
+        "0-0",
+        1247
+      ],
+      [
+        "0-1",
+        617
+      ],
+      [
+        "1-0",
+        307
+      ],
+      [
+        "1-1",
+        239
+      ],
+      [
+        "0-2",
+        237
+      ]
+    ],
+    "top3_ft": [
+      {
+        "score": "0-1",
+        "count": 489,
+        "pct": 16.3
+      },
+      {
+        "score": "1-1",
+        "count": 360,
+        "pct": 12.0
+      },
+      {
+        "score": "0-2",
+        "count": 349,
+        "pct": 11.6
+      }
+    ],
+    "top3_ht": [
+      {
+        "score": "0-0",
+        "count": 1247,
+        "pct": 41.6
+      },
+      {
+        "score": "0-1",
+        "count": 617,
+        "pct": 20.6
+      },
+      {
+        "score": "1-0",
+        "count": 307,
+        "pct": 10.2
+      }
+    ],
+    "xg": {
+      "home": 0.788,
+      "away": 1.4846666666666666,
+      "total": 2.272666666666667
+    },
+    "ht_xg": {
+      "home": 0.3343333333333333,
+      "away": 0.6593333333333333,
+      "total": 0.9936666666666667
+    },
+    "score_consistency": {
+      "ht_leq_ft": 1.0
+    },
+    "goal_rates": {
+      "home": 0.788,
+      "away": 1.4846666666666666
+    }
+  },
+  "table": [
+    {
+      "Section": "HT Winner",
+      "Selection": "Kidderminster",
+      "Model%": 26.6,
+      "Sim%": 14.8,
+      "Agree": "6 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Draw",
+      "Model%": 41.2,
+      "Sim%": 50.1,
+      "Agree": "6 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Barrow",
+      "Model%": 32.2,
+      "Sim%": 35.1,
+      "Agree": "6 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "1X",
+      "Model%": 67.8,
+      "Sim%": 64.9,
+      "Agree": "6 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "X2",
+      "Model%": 73.4,
+      "Sim%": 85.2,
+      "Agree": "6 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "12",
+      "Model%": 58.8,
+      "Sim%": 49.9,
+      "Agree": "6 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Over 1.5",
+      "Model%": 37.3,
+      "Sim%": 27.6,
+      "Agree": "-",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Under 1.5",
+      "Model%": 62.7,
+      "Sim%": 72.4,
+      "Agree": "-",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Kidderminster",
+      "Model%": 31.4,
+      "Sim%": 19.9,
+      "Agree": "6 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Draw",
+      "Model%": 29.3,
+      "Sim%": 24.9,
+      "Agree": "6 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Barrow",
+      "Model%": 39.3,
+      "Sim%": 55.3,
+      "Agree": "6 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "1X",
+      "Model%": 60.7,
+      "Sim%": 44.7,
+      "Agree": "6 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 68.6,
+      "Sim%": 80.1,
+      "Agree": "6 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "12",
+      "Model%": 70.7,
+      "Sim%": 75.1,
+      "Agree": "6 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Over 2.5",
+      "Model%": 49.4,
+      "Sim%": 39.9,
+      "Agree": "6 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Under 2.5",
+      "Model%": 50.6,
+      "Sim%": 60.1,
+      "Agree": "6 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "Yes",
+      "Model%": 58.1,
+      "Sim%": 43.7,
+      "Agree": "6 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 41.9,
+      "Sim%": 56.3,
+      "Agree": "6 eng",
+      "Verdict": "NO"
+    }
+  ],
+  "locked_tip": {
+    "status": "SECURED LOCK",
+    "section": "HT DC",
+    "selection": "X2",
+    "model": 73.4,
+    "sim": 85.2,
+    "agree": "6 eng",
+    "verdict": "HARD YES"
+  },
+  "backends": {
+    "ft_result": [
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
+    ],
+    "ht_result": [
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
+    ],
+    "over25": [
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
+    ],
+    "btts": [
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
+    ],
+    "ht_over15": []
+  },
+  "generated_at": "2026-08-31T03:10:26.816738Z"
+}

@@ -7,293 +7,353 @@
     "odds_home": 1.68,
     "odds_draw": 3.6,
     "odds_away": 5.0,
-    "n_simulations": 8000,
+    "n_simulations": 3000,
     "seed": 187,
-    "odds_blend": 0.3
+    "odds_blend": 0.25
   },
   "resolved": {
     "league": "Primeira Liga",
     "div": "P1",
     "home": "Sp Braga",
     "away": "Guimaraes",
-    "models": "market-only (no models for Sp Braga / Guimaraes)",
+    "models": "Sp Braga (home) + Guimaraes (away)",
     "match_date": "2026-08-31 20:15"
   },
   "report": {
-    "n": 8000,
+    "n": 3000,
     "ft_model": {
-      "H": 0.5547337278106509,
-      "D": 0.25887573964497046,
-      "A": 0.1863905325443787
+      "H": 0.2775937100537449,
+      "D": 0.24342090012858,
+      "A": 0.4789853898176751
     },
     "ft_sim": {
-      "H": 0.554375,
-      "D": 0.2555,
-      "A": 0.190125
+      "H": 0.14733333333333334,
+      "D": 0.20033333333333334,
+      "A": 0.6523333333333333
     },
     "ht_model": {
-      "H": 0.3,
-      "D": 0.4,
-      "A": 0.3
+      "H": 0.14537279397470243,
+      "D": 0.448985957446485,
+      "A": 0.4056412485788126
     },
     "ht_sim": {
-      "H": 0.293875,
-      "D": 0.41025,
-      "A": 0.295875
+      "H": 0.069,
+      "D": 0.507,
+      "A": 0.424
     },
-    "over25_model": 0.46928571428571425,
-    "over25_sim": 0.59,
-    "btts_model": 0.45,
-    "btts_sim": 0.451875,
-    "ht_over15_model": 0.35,
-    "ht_over15_sim": 0.333125,
+    "over25_model": 0.4749544084793924,
+    "over25_sim": 0.3616666666666667,
+    "btts_model": 0.48607496870231615,
+    "btts_sim": 0.3456666666666667,
+    "ht_over15_model": 0.3687386021198481,
+    "ht_over15_sim": 0.24733333333333332,
     "dc_ft": {
-      "1X": 0.8136094674556213,
-      "X2": 0.44526627218934917,
-      "12": 0.7411242603550297
+      "1X": 0.5210146101823249,
+      "X2": 0.7224062899462551,
+      "12": 0.7565790998714199
     },
     "dc_ht": {
-      "1X": 0.7,
-      "X2": 0.7,
-      "12": 0.6
+      "1X": 0.5943587514211874,
+      "X2": 0.8546272060252976,
+      "12": 0.551014042553515
     },
     "top_ft": [
       [
-        "2-1",
-        1228
+        "0-1",
+        672
       ],
       [
-        "0-0",
-        1143
-      ],
-      [
-        "1-0",
-        613
-      ],
-      [
-        "2-0",
-        608
-      ],
-      [
-        "1-1",
-        474
+        "0-2",
+        436
       ],
       [
         "1-2",
-        417
+        296
       ],
       [
-        "5-0",
-        416
+        "0-0",
+        277
       ],
       [
-        "3-0",
-        395
+        "1-1",
+        254
+      ],
+      [
+        "1-0",
+        221
+      ],
+      [
+        "0-3",
+        189
+      ],
+      [
+        "1-3",
+        134
       ]
     ],
     "top_ht": [
       [
         "0-0",
-        2000
+        1324
       ],
       [
         "0-1",
-        1675
+        782
       ],
       [
-        "1-0",
-        1660
+        "0-2",
+        267
       ],
       [
         "1-1",
-        1282
+        188
       ],
       [
-        "2-0",
-        376
+        "1-0",
+        152
       ]
     ],
+    "top3_ft": [
+      {
+        "score": "0-1",
+        "count": 672,
+        "pct": 22.4
+      },
+      {
+        "score": "0-2",
+        "count": 436,
+        "pct": 14.5
+      },
+      {
+        "score": "1-2",
+        "count": 296,
+        "pct": 9.9
+      }
+    ],
+    "top3_ht": [
+      {
+        "score": "0-0",
+        "count": 1324,
+        "pct": 44.1
+      },
+      {
+        "score": "0-1",
+        "count": 782,
+        "pct": 26.1
+      },
+      {
+        "score": "0-2",
+        "count": 267,
+        "pct": 8.9
+      }
+    ],
     "xg": {
-      "home": 1.766,
-      "away": 1.00425,
-      "total": 2.77025
+      "home": 0.5916666666666667,
+      "away": 1.5456666666666667,
+      "total": 2.1373333333333333
+    },
+    "ht_xg": {
+      "home": 0.19966666666666666,
+      "away": 0.727,
+      "total": 0.9266666666666666
+    },
+    "score_consistency": {
+      "ht_leq_ft": 1.0
     },
     "goal_rates": {
-      "home": 1.766,
-      "away": 1.00425
+      "home": 0.5916666666666667,
+      "away": 1.5456666666666667
     }
   },
   "table": [
     {
       "Section": "HT Winner",
       "Selection": "Sp Braga",
-      "Model%": 30.0,
-      "Sim%": 29.4,
-      "Agree": "1 eng",
+      "Model%": 14.5,
+      "Sim%": 6.9,
+      "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "HT Winner",
       "Selection": "Draw",
-      "Model%": 40.0,
-      "Sim%": 41.0,
-      "Agree": "1 eng",
+      "Model%": 44.9,
+      "Sim%": 50.7,
+      "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "HT Winner",
       "Selection": "Guimaraes",
-      "Model%": 30.0,
-      "Sim%": 29.6,
-      "Agree": "1 eng",
+      "Model%": 40.6,
+      "Sim%": 42.4,
+      "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "HT DC",
       "Selection": "1X",
-      "Model%": 70.0,
-      "Sim%": 70.4,
-      "Agree": "1 eng",
+      "Model%": 59.4,
+      "Sim%": 57.6,
+      "Agree": "6 eng",
       "Verdict": "YES"
     },
     {
       "Section": "HT DC",
       "Selection": "X2",
-      "Model%": 70.0,
-      "Sim%": 70.6,
-      "Agree": "1 eng",
+      "Model%": 85.5,
+      "Sim%": 93.1,
+      "Agree": "6 eng",
       "Verdict": "YES"
     },
     {
       "Section": "HT DC",
       "Selection": "12",
-      "Model%": 60.0,
-      "Sim%": 59.0,
-      "Agree": "1 eng",
+      "Model%": 55.1,
+      "Sim%": 49.3,
+      "Agree": "6 eng",
       "Verdict": "YES"
     },
     {
       "Section": "HT O/U",
       "Selection": "Over 1.5",
-      "Model%": 35.0,
-      "Sim%": 33.3,
-      "Agree": "1 eng",
+      "Model%": 36.9,
+      "Sim%": 24.7,
+      "Agree": "-",
       "Verdict": "NO"
     },
     {
       "Section": "HT O/U",
       "Selection": "Under 1.5",
-      "Model%": 65.0,
-      "Sim%": 66.7,
-      "Agree": "1 eng",
+      "Model%": 63.1,
+      "Sim%": 75.3,
+      "Agree": "-",
       "Verdict": "YES"
     },
     {
       "Section": "FT Winner",
       "Selection": "Sp Braga",
-      "Model%": 55.5,
-      "Sim%": 55.4,
-      "Agree": "1 eng",
-      "Verdict": "YES"
+      "Model%": 27.8,
+      "Sim%": 14.7,
+      "Agree": "6 eng",
+      "Verdict": "NO"
     },
     {
       "Section": "FT Winner",
       "Selection": "Draw",
-      "Model%": 25.9,
-      "Sim%": 25.6,
-      "Agree": "1 eng",
+      "Model%": 24.3,
+      "Sim%": 20.0,
+      "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "FT Winner",
       "Selection": "Guimaraes",
-      "Model%": 18.6,
-      "Sim%": 19.0,
-      "Agree": "1 eng",
+      "Model%": 47.9,
+      "Sim%": 65.2,
+      "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "FT DC",
       "Selection": "1X",
-      "Model%": 81.4,
-      "Sim%": 81.0,
-      "Agree": "1 eng",
-      "Verdict": "YES"
-    },
-    {
-      "Section": "FT DC",
-      "Selection": "X2",
-      "Model%": 44.5,
-      "Sim%": 44.6,
-      "Agree": "1 eng",
+      "Model%": 52.1,
+      "Sim%": 34.8,
+      "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 72.2,
+      "Sim%": 85.3,
+      "Agree": "6 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
       "Selection": "12",
-      "Model%": 74.1,
-      "Sim%": 74.4,
-      "Agree": "1 eng",
+      "Model%": 75.7,
+      "Sim%": 80.0,
+      "Agree": "6 eng",
       "Verdict": "YES"
     },
     {
       "Section": "FT O/U",
       "Selection": "Over 2.5",
-      "Model%": 46.9,
-      "Sim%": 59.0,
-      "Agree": "1 eng",
+      "Model%": 47.5,
+      "Sim%": 36.2,
+      "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "FT O/U",
       "Selection": "Under 2.5",
-      "Model%": 53.1,
-      "Sim%": 41.0,
-      "Agree": "1 eng",
+      "Model%": 52.5,
+      "Sim%": 63.8,
+      "Agree": "6 eng",
       "Verdict": "YES"
     },
     {
       "Section": "BTTS",
       "Selection": "Yes",
-      "Model%": 45.0,
-      "Sim%": 45.2,
-      "Agree": "1 eng",
+      "Model%": 48.6,
+      "Sim%": 34.6,
+      "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "BTTS",
       "Selection": "No",
-      "Model%": 55.0,
-      "Sim%": 54.8,
-      "Agree": "1 eng",
-      "Verdict": "YES"
+      "Model%": 51.4,
+      "Sim%": 65.4,
+      "Agree": "6 eng",
+      "Verdict": "NO"
     }
   ],
   "locked_tip": {
     "status": "SECURED LOCK",
-    "section": "FT DC",
-    "selection": "1X",
-    "model": 81.4,
-    "sim": 81.0,
-    "agree": "1 eng",
+    "section": "HT DC",
+    "selection": "X2",
+    "model": 85.5,
+    "sim": 93.1,
+    "agree": "6 eng",
     "verdict": "HARD YES"
   },
   "backends": {
     "ft_result": [
-      "market"
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
     ],
     "ht_result": [
-      "market"
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
     ],
     "over25": [
-      "market"
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
     ],
     "btts": [
-      "market"
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
     ],
-    "ht_over15": [
-      "market"
-    ]
+    "ht_over15": []
   },
-  "generated_at": "2026-08-30T11:31:12.240532Z"
+  "generated_at": "2026-08-31T03:10:15.012681Z"
 }

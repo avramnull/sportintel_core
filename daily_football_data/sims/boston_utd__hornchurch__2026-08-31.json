@@ -1,0 +1,341 @@
+{
+  "match": {
+    "league": "EC",
+    "home_team": "Boston Utd",
+    "away_team": "Hornchurch",
+    "match_date": "2026-08-31 15:00",
+    "odds_home": 1.95,
+    "odds_draw": 3.5,
+    "odds_away": 3.4,
+    "n_simulations": 3000,
+    "seed": 239,
+    "odds_blend": 0.25
+  },
+  "resolved": {
+    "league": "National League",
+    "div": "EC",
+    "home": "Boston Utd",
+    "away": "Hornchurch",
+    "models": "market-only (models found but failed to load)",
+    "match_date": "2026-08-31 15:00"
+  },
+  "report": {
+    "n": 3000,
+    "ft_model": {
+      "H": 0.46933543679747586,
+      "D": 0.2614868862157365,
+      "A": 0.2691776769867876
+    },
+    "ft_sim": {
+      "H": 0.36533333333333334,
+      "D": 0.24733333333333332,
+      "A": 0.3873333333333333
+    },
+    "ht_model": {
+      "H": 0.3,
+      "D": 0.4,
+      "A": 0.3
+    },
+    "ht_sim": {
+      "H": 0.23133333333333334,
+      "D": 0.5123333333333333,
+      "A": 0.25633333333333336
+    },
+    "over25_model": 0.47104072398190044,
+    "over25_sim": 0.32133333333333336,
+    "btts_model": 0.45,
+    "btts_sim": 0.37233333333333335,
+    "ht_over15_model": 0.35,
+    "ht_over15_sim": 0.23266666666666666,
+    "dc_ft": {
+      "1X": 0.7308223230132124,
+      "X2": 0.5306645632025241,
+      "12": 0.7385131137842634
+    },
+    "dc_ht": {
+      "1X": 0.7,
+      "X2": 0.7,
+      "12": 0.6
+    },
+    "top_ft": [
+      [
+        "1-0",
+        477
+      ],
+      [
+        "0-1",
+        452
+      ],
+      [
+        "1-1",
+        337
+      ],
+      [
+        "0-0",
+        319
+      ],
+      [
+        "0-2",
+        233
+      ],
+      [
+        "1-2",
+        218
+      ],
+      [
+        "2-0",
+        218
+      ],
+      [
+        "2-1",
+        193
+      ]
+    ],
+    "top_ht": [
+      [
+        "0-0",
+        1309
+      ],
+      [
+        "0-1",
+        504
+      ],
+      [
+        "1-0",
+        489
+      ],
+      [
+        "1-1",
+        214
+      ],
+      [
+        "0-2",
+        144
+      ]
+    ],
+    "top3_ft": [
+      {
+        "score": "1-0",
+        "count": 477,
+        "pct": 15.9
+      },
+      {
+        "score": "0-1",
+        "count": 452,
+        "pct": 15.1
+      },
+      {
+        "score": "1-1",
+        "count": 337,
+        "pct": 11.2
+      }
+    ],
+    "top3_ht": [
+      {
+        "score": "0-0",
+        "count": 1309,
+        "pct": 43.6
+      },
+      {
+        "score": "0-1",
+        "count": 504,
+        "pct": 16.8
+      },
+      {
+        "score": "1-0",
+        "count": 489,
+        "pct": 16.3
+      }
+    ],
+    "xg": {
+      "home": 0.9716666666666667,
+      "away": 1.045,
+      "total": 2.0166666666666666
+    },
+    "ht_xg": {
+      "home": 0.4256666666666667,
+      "away": 0.47533333333333333,
+      "total": 0.901
+    },
+    "score_consistency": {
+      "ht_leq_ft": 1.0
+    },
+    "goal_rates": {
+      "home": 0.9716666666666667,
+      "away": 1.045
+    }
+  },
+  "table": [
+    {
+      "Section": "HT Winner",
+      "Selection": "Boston Utd",
+      "Model%": 30.0,
+      "Sim%": 23.1,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Draw",
+      "Model%": 40.0,
+      "Sim%": 51.2,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Hornchurch",
+      "Model%": 30.0,
+      "Sim%": 25.6,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "1X",
+      "Model%": 70.0,
+      "Sim%": 74.4,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "X2",
+      "Model%": 70.0,
+      "Sim%": 76.9,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "12",
+      "Model%": 60.0,
+      "Sim%": 48.8,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Over 1.5",
+      "Model%": 35.0,
+      "Sim%": 23.3,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Under 1.5",
+      "Model%": 65.0,
+      "Sim%": 76.7,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Boston Utd",
+      "Model%": 46.9,
+      "Sim%": 36.5,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Draw",
+      "Model%": 26.1,
+      "Sim%": 24.7,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Hornchurch",
+      "Model%": 26.9,
+      "Sim%": 38.7,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "1X",
+      "Model%": 73.1,
+      "Sim%": 61.3,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 53.1,
+      "Sim%": 63.5,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "12",
+      "Model%": 73.9,
+      "Sim%": 75.3,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Over 2.5",
+      "Model%": 47.1,
+      "Sim%": 32.1,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Under 2.5",
+      "Model%": 52.9,
+      "Sim%": 67.9,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "Yes",
+      "Model%": 45.0,
+      "Sim%": 37.2,
+      "Agree": "1 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 55.0,
+      "Sim%": 62.8,
+      "Agree": "1 eng",
+      "Verdict": "YES"
+    }
+  ],
+  "locked_tip": {
+    "status": "SECURED LOCK",
+    "section": "FT DC",
+    "selection": "12",
+    "model": 73.9,
+    "sim": 75.3,
+    "agree": "1 eng",
+    "verdict": "HARD YES"
+  },
+  "backends": {
+    "ft_result": [
+      "market"
+    ],
+    "ht_result": [
+      "market"
+    ],
+    "over25": [
+      "market"
+    ],
+    "btts": [
+      "market"
+    ],
+    "ht_over15": [
+      "market"
+    ]
+  },
+  "generated_at": "2026-08-31T03:10:20.264140Z"
+}

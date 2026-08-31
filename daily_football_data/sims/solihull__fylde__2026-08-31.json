@@ -1,0 +1,359 @@
+{
+  "match": {
+    "league": "EC",
+    "home_team": "Solihull",
+    "away_team": "Fylde",
+    "match_date": "2026-08-31 15:00",
+    "odds_home": 2.4,
+    "odds_draw": 3.6,
+    "odds_away": 2.5,
+    "n_simulations": 3000,
+    "seed": 245,
+    "odds_blend": 0.25
+  },
+  "resolved": {
+    "league": "National League",
+    "div": "EC",
+    "home": "Solihull",
+    "away": "Fylde",
+    "models": "Solihull (home) + Fylde (away)",
+    "match_date": "2026-08-31 15:00"
+  },
+  "report": {
+    "n": 3000,
+    "ft_model": {
+      "H": 0.3671434068584653,
+      "D": 0.24152626164506288,
+      "A": 0.3913303314964718
+    },
+    "ft_sim": {
+      "H": 0.25066666666666665,
+      "D": 0.225,
+      "A": 0.5243333333333333
+    },
+    "ht_model": {
+      "H": 0.24427603297053407,
+      "D": 0.377435658644092,
+      "A": 0.3782883083853739
+    },
+    "ht_sim": {
+      "H": 0.16666666666666666,
+      "D": 0.4513333333333333,
+      "A": 0.382
+    },
+    "over25_model": 0.5417100840768203,
+    "over25_sim": 0.445,
+    "btts_model": 0.5651314387626281,
+    "btts_sim": 0.469,
+    "ht_over15_model": 0.3854275210192051,
+    "ht_over15_sim": 0.2986666666666667,
+    "dc_ft": {
+      "1X": 0.6086696685035282,
+      "X2": 0.6328565931415346,
+      "12": 0.7584737383549371
+    },
+    "dc_ht": {
+      "1X": 0.6217116916146261,
+      "X2": 0.755723967029466,
+      "12": 0.622564341355908
+    },
+    "top_ft": [
+      [
+        "0-1",
+        405
+      ],
+      [
+        "1-1",
+        344
+      ],
+      [
+        "0-2",
+        308
+      ],
+      [
+        "1-2",
+        293
+      ],
+      [
+        "1-0",
+        272
+      ],
+      [
+        "0-0",
+        212
+      ],
+      [
+        "2-1",
+        185
+      ],
+      [
+        "1-3",
+        168
+      ]
+    ],
+    "top_ht": [
+      [
+        "0-0",
+        1115
+      ],
+      [
+        "0-1",
+        647
+      ],
+      [
+        "1-0",
+        342
+      ],
+      [
+        "0-2",
+        253
+      ],
+      [
+        "1-1",
+        219
+      ]
+    ],
+    "top3_ft": [
+      {
+        "score": "0-1",
+        "count": 405,
+        "pct": 13.5
+      },
+      {
+        "score": "1-1",
+        "count": 344,
+        "pct": 11.5
+      },
+      {
+        "score": "0-2",
+        "count": 308,
+        "pct": 10.3
+      }
+    ],
+    "top3_ht": [
+      {
+        "score": "0-0",
+        "count": 1115,
+        "pct": 37.2
+      },
+      {
+        "score": "0-1",
+        "count": 647,
+        "pct": 21.6
+      },
+      {
+        "score": "1-0",
+        "count": 342,
+        "pct": 11.4
+      }
+    ],
+    "xg": {
+      "home": 0.9293333333333333,
+      "away": 1.5113333333333334,
+      "total": 2.4406666666666665
+    },
+    "ht_xg": {
+      "home": 0.37566666666666665,
+      "away": 0.7213333333333334,
+      "total": 1.097
+    },
+    "score_consistency": {
+      "ht_leq_ft": 1.0
+    },
+    "goal_rates": {
+      "home": 0.9293333333333333,
+      "away": 1.5113333333333334
+    }
+  },
+  "table": [
+    {
+      "Section": "HT Winner",
+      "Selection": "Solihull",
+      "Model%": 24.4,
+      "Sim%": 16.7,
+      "Agree": "6 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Draw",
+      "Model%": 37.7,
+      "Sim%": 45.1,
+      "Agree": "6 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Fylde",
+      "Model%": 37.8,
+      "Sim%": 38.2,
+      "Agree": "6 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "1X",
+      "Model%": 62.2,
+      "Sim%": 61.8,
+      "Agree": "6 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "X2",
+      "Model%": 75.6,
+      "Sim%": 83.3,
+      "Agree": "6 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "12",
+      "Model%": 62.3,
+      "Sim%": 54.9,
+      "Agree": "6 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Over 1.5",
+      "Model%": 38.5,
+      "Sim%": 29.9,
+      "Agree": "-",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Under 1.5",
+      "Model%": 61.5,
+      "Sim%": 70.1,
+      "Agree": "-",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Solihull",
+      "Model%": 36.7,
+      "Sim%": 25.1,
+      "Agree": "6 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Draw",
+      "Model%": 24.2,
+      "Sim%": 22.5,
+      "Agree": "6 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Fylde",
+      "Model%": 39.1,
+      "Sim%": 52.4,
+      "Agree": "6 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "1X",
+      "Model%": 60.9,
+      "Sim%": 47.6,
+      "Agree": "6 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 63.3,
+      "Sim%": 74.9,
+      "Agree": "6 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "12",
+      "Model%": 75.8,
+      "Sim%": 77.5,
+      "Agree": "6 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Over 2.5",
+      "Model%": 54.2,
+      "Sim%": 44.5,
+      "Agree": "6 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Under 2.5",
+      "Model%": 45.8,
+      "Sim%": 55.5,
+      "Agree": "6 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "Yes",
+      "Model%": 56.5,
+      "Sim%": 46.9,
+      "Agree": "6 eng",
+      "Verdict": "YES"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 43.5,
+      "Sim%": 53.1,
+      "Agree": "6 eng",
+      "Verdict": "NO"
+    }
+  ],
+  "locked_tip": {
+    "status": "SECURED LOCK",
+    "section": "FT DC",
+    "selection": "12",
+    "model": 75.8,
+    "sim": 77.5,
+    "agree": "6 eng",
+    "verdict": "HARD YES"
+  },
+  "backends": {
+    "ft_result": [
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
+    ],
+    "ht_result": [
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
+    ],
+    "over25": [
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
+    ],
+    "btts": [
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
+    ],
+    "ht_over15": []
+  },
+  "generated_at": "2026-08-31T03:10:28.024073Z"
+}
