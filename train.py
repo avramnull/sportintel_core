@@ -125,6 +125,9 @@ LEAGUE_MAP = dict(team_mapping.LEAGUE_MAP)
 TEAM_ALIASES = dict(team_mapping.TEAM_ALIASES)
 
 TARGETS = {
+    # Class index is positional and MUST stay H=0, D=1, A=2.
+    # Never LabelEncoder.fit() these — sklearn sorts to A,D,H and sim.py
+    # would read home/away swapped.
     "ft_result": {"col": "FTR", "type": "multiclass", "classes": ["H", "D", "A"]},
     "ht_result": {"col": "HTR", "type": "multiclass", "classes": ["H", "D", "A"]},
     "over25":    {"col": "Over2_5", "type": "binary"},
@@ -375,17 +378,17 @@ def prepare_xy(df, target_key, le_div_in=None, le_y_in=None):
     y_raw = sub[cfg["col"]]
     le_y = le_y_in
     if cfg["type"] == "multiclass":
-        classes = list(le_y_in.classes_) if le_y_in is not None else cfg.get("classes")
+        classes = list(le_y_in.classes_) if le_y_in is not None else list(cfg.get("classes") or ["H", "D", "A"])
         if classes:
             mask = y_raw.isin(classes).values
             X, y_raw = X[mask], y_raw[mask]
+        mapping = {str(c): i for i, c in enumerate(classes)}
+        y = np.array([mapping[str(v)] for v in y_raw.astype(str).values], dtype=int)
         if le_y is None:
+            # Pin class order to cfg (H,D,A). Do NOT fit LabelEncoder —
+            # .fit() sorts alphabetically to A,D,H and inverts home/away.
             le_y = LabelEncoder()
-            y = le_y.fit_transform(y_raw.astype(str).values)
-        else:
-            # Same encoder as training -> Xva/yva always come from this one
-            # filter+transform pass, so features and labels stay row-aligned.
-            y = le_y.transform(y_raw.astype(str).values)
+            le_y.classes_ = np.asarray(classes)
     else:
         y = (pd.to_numeric(y_raw, errors="coerce").fillna(0).astype(int).values > 0).astype(int)
 

@@ -134,8 +134,15 @@ def load_run_targets(run_dir):
     return targets
 
 
+_PREPROC_CACHE: Dict[Any, Any] = {}
+
+
 def load_preprocessors(run_dir, target_key="ft_result"):
     preproc_dir = run_dir / "preprocessors"
+    cache_key = (str(run_dir), str(target_key))
+    cached = _PREPROC_CACHE.get(cache_key)
+    if cached is not None:
+        return cached
     # prefer target-specific, fallback to ft_result
     feat_path = preproc_dir / f"features_{target_key}.json"
     if not feat_path.exists():
@@ -151,7 +158,57 @@ def load_preprocessors(run_dir, target_key="ft_result"):
         scaler = pickle.load(f)
     with open(le_path, "rb") as f:
         le_div = pickle.load(f)
-    return feature_names, scaler, le_div
+    le_y = None
+    le_y_path = preproc_dir / f"le_y_{target_key}.pkl"
+    if not le_y_path.exists() and target_key != "ft_result":
+        le_y_path = preproc_dir / "le_y_ft_result.pkl"
+    if le_y_path.exists():
+        try:
+            with open(le_y_path, "rb") as f:
+                le_y = pickle.load(f)
+        except Exception:
+            le_y = None
+    packed = (feature_names, scaler, le_div, le_y)
+    _PREPROC_CACHE[cache_key] = packed
+    return packed
+
+
+HDA_ORDER = ("H", "D", "A")
+_ALIGN_HDA_LOGGED = False
+
+
+def align_hda(p, le_y=None):
+    """Reorder a 3-class vector to [P(H), P(D), P(A)].
+
+    sklearn LabelEncoder.fit sorts classes, so models trained with
+    LabelEncoder on FTR/HTR emit [P(A), P(D), P(H)]. New training writes
+    classes_ as ["H","D","A"]. Always remap via the encoder (or the known
+    historical A,D,H order) so column 0 is home.
+    """
+    global _ALIGN_HDA_LOGGED
+    if p is None:
+        return None
+    p = np.asarray(p, dtype=float).ravel()
+    if p.size < 3:
+        return p
+    classes = None
+    if le_y is not None and getattr(le_y, "classes_", None) is not None:
+        classes = [str(c) for c in le_y.classes_]
+    if not classes or not all(c in classes for c in HDA_ORDER):
+        classes = ["A", "D", "H"]  # sklearn default sort of {H,D,A}
+    idx = {c: i for i, c in enumerate(classes)}
+    out = np.array(
+        [float(p[idx["H"]]), float(p[idx["D"]]), float(p[idx["A"]])],
+        dtype=float,
+    )
+    out = np.clip(out, 1e-12, None)
+    if not _ALIGN_HDA_LOGGED:
+        _ALIGN_HDA_LOGGED = True
+        if classes != list(HDA_ORDER):
+            print(f"  [align_hda] remapped class order {classes} -> {list(HDA_ORDER)}")
+        else:
+            print(f"  [align_hda] class order already {list(HDA_ORDER)}")
+    return out / out.sum()
 
 
 def build_live_features(home_id, away_id, div_code, odds_h, odds_d, odds_a,
@@ -408,6 +465,12 @@ def predict_backends(target_key, X_scaled, targets) -> Tuple[Optional[np.ndarray
 def predict_across_runs(target_key, runs, home_id, away_id, div_code, oh, od, oa, hist_df):
     preds, all_backends = [], []
     for run_dir, label, targets, scaler, le_div, feature_names in runs:
+        le_y = None
+        try:
+            feature_names, scaler, le_div, le_y = load_preprocessors(run_dir, target_key)
+        except Exception as e:
+            if not os.environ.get("SIM_QUIET", "").strip():
+                print(f"  [warn] preproc {target_key} [{label}]: {e}")
         X = build_live_features(home_id, away_id, div_code, oh, od, oa, hist_df, feature_names, le_div)
         Xs = X.copy()
         n_scaled = min(Xs.shape[1] - 3, scaler.n_features_in_ if hasattr(scaler, "n_features_in_") else Xs.shape[1] - 3)
@@ -415,7 +478,10 @@ def predict_across_runs(target_key, runs, home_id, away_id, div_code, oh, od, oa
         Xs = np.nan_to_num(Xs, nan=0.0)
         p, backends = predict_backends(target_key, Xs, targets)
         if p is not None:
-            preds.append(np.asarray(p, float).ravel())
+            p = np.asarray(p, float).ravel()
+            if target_key in ("ft_result", "ht_result") and len(p) >= 3:
+                p = align_hda(p, le_y)
+            preds.append(p)
             all_backends.extend(backends)
             if not os.environ.get("SIM_QUIET", "").strip():
                 print(f"  {target_key:12s}  [{label}]  backends={backends}  -> {np.round(p, 3)}")
@@ -816,7 +882,7 @@ def run_one_match(match_cfg: dict, quiet: bool = False, allow_market_only: bool 
     for run_dir, label in run_dirs:
         try:
             targets = load_run_targets(run_dir)
-            feature_names, scaler, le_div = load_preprocessors(run_dir)
+            feature_names, scaler, le_div, _le_y = load_preprocessors(run_dir)
             runs_loaded.append((run_dir, label, targets, scaler, le_div, feature_names))
             log(f"  loaded {label}")
         except Exception as e:

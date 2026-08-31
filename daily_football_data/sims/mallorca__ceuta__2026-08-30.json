@@ -22,155 +22,155 @@
   "report": {
     "n": 3000,
     "ft_model": {
-      "H": 0.3124652052694929,
+      "H": 0.5875228279823006,
       "D": 0.23728994451631447,
-      "A": 0.45024485021419264
+      "A": 0.17518722750138496
     },
     "ft_sim": {
-      "H": 0.176,
-      "D": 0.23033333333333333,
-      "A": 0.5936666666666667
+      "H": 0.5153333333333333,
+      "D": 0.2643333333333333,
+      "A": 0.22033333333333333
     },
     "ht_model": {
-      "H": 0.2057888244921867,
+      "H": 0.4169117691853095,
       "D": 0.3772994063225038,
-      "A": 0.4169117691853095
+      "A": 0.2057888244921867
     },
     "ht_sim": {
-      "H": 0.101,
-      "D": 0.49,
-      "A": 0.409
+      "H": 0.36233333333333334,
+      "D": 0.511,
+      "A": 0.12666666666666668
     },
     "over25_model": 0.4453452988297824,
-    "over25_sim": 0.31333333333333335,
+    "over25_sim": 0.299,
     "btts_model": 0.4839630194826566,
-    "btts_sim": 0.32,
+    "btts_sim": 0.35033333333333333,
     "ht_over15_model": 0.3613363247074456,
-    "ht_over15_sim": 0.23633333333333334,
+    "ht_over15_sim": 0.231,
     "dc_ft": {
-      "1X": 0.5497551497858073,
-      "X2": 0.687534794730507,
+      "1X": 0.8248127724986151,
+      "X2": 0.4124771720176994,
       "12": 0.7627100554836855
     },
     "dc_ht": {
-      "1X": 0.5830882308146905,
-      "X2": 0.7942111755078133,
+      "1X": 0.7942111755078133,
+      "X2": 0.5830882308146905,
       "12": 0.6227005936774962
     },
     "top_ft": [
       [
-        "0-1",
-        642
-      ],
-      [
-        "0-2",
-        448
+        "1-0",
+        643
       ],
       [
         "0-0",
-        350
+        367
+      ],
+      [
+        "2-0",
+        343
       ],
       [
         "1-1",
-        276
+        324
       ],
       [
-        "1-0",
-        239
-      ],
-      [
-        "1-2",
-        236
-      ],
-      [
-        "0-3",
-        165
+        "0-1",
+        292
       ],
       [
         "2-1",
-        123
+        257
+      ],
+      [
+        "0-2",
+        134
+      ],
+      [
+        "1-2",
+        110
       ]
     ],
     "top_ht": [
       [
         "0-0",
-        1289
-      ],
-      [
-        "0-1",
-        775
-      ],
-      [
-        "0-2",
-        272
+        1321
       ],
       [
         "1-0",
-        227
+        729
+      ],
+      [
+        "0-1",
+        257
+      ],
+      [
+        "2-0",
+        222
       ],
       [
         "1-1",
-        168
+        189
       ]
     ],
     "top3_ft": [
       {
-        "score": "0-1",
-        "count": 642,
+        "score": "1-0",
+        "count": 643,
         "pct": 21.4
       },
       {
-        "score": "0-2",
-        "count": 448,
-        "pct": 14.9
+        "score": "0-0",
+        "count": 367,
+        "pct": 12.2
       },
       {
-        "score": "0-0",
-        "count": 350,
-        "pct": 11.7
+        "score": "2-0",
+        "count": 343,
+        "pct": 11.4
       }
     ],
     "top3_ht": [
       {
         "score": "0-0",
-        "count": 1289,
-        "pct": 43.0
+        "count": 1321,
+        "pct": 44.0
+      },
+      {
+        "score": "1-0",
+        "count": 729,
+        "pct": 24.3
       },
       {
         "score": "0-1",
-        "count": 775,
-        "pct": 25.8
-      },
-      {
-        "score": "0-2",
-        "count": 272,
-        "pct": 9.1
+        "count": 257,
+        "pct": 8.6
       }
     ],
     "xg": {
-      "home": 0.6046666666666667,
-      "away": 1.388,
-      "total": 1.9926666666666666
+      "home": 1.201,
+      "away": 0.7506666666666667,
+      "total": 1.9516666666666667
     },
     "ht_xg": {
-      "home": 0.22766666666666666,
-      "away": 0.6863333333333334,
-      "total": 0.914
+      "home": 0.6016666666666667,
+      "away": 0.2876666666666667,
+      "total": 0.8893333333333333
     },
     "score_consistency": {
       "ht_leq_ft": 1.0
     },
     "goal_rates": {
-      "home": 0.6046666666666667,
-      "away": 1.388
+      "home": 1.201,
+      "away": 0.7506666666666667
     }
   },
   "table": [
     {
       "Section": "HT Winner",
       "Selection": "Mallorca",
-      "Model%": 20.6,
-      "Sim%": 10.1,
+      "Model%": 41.7,
+      "Sim%": 36.2,
       "Agree": "6 eng",
       "Verdict": "NO"
     },
@@ -178,31 +178,31 @@
       "Section": "HT Winner",
       "Selection": "Draw",
       "Model%": 37.7,
-      "Sim%": 49.0,
+      "Sim%": 51.1,
       "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "HT Winner",
       "Selection": "Ceuta",
-      "Model%": 41.7,
-      "Sim%": 40.9,
+      "Model%": 20.6,
+      "Sim%": 12.7,
       "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "HT DC",
       "Selection": "1X",
-      "Model%": 58.3,
-      "Sim%": 59.1,
+      "Model%": 79.4,
+      "Sim%": 87.3,
       "Agree": "6 eng",
       "Verdict": "YES"
     },
     {
       "Section": "HT DC",
       "Selection": "X2",
-      "Model%": 79.4,
-      "Sim%": 89.9,
+      "Model%": 58.3,
+      "Sim%": 63.8,
       "Agree": "6 eng",
       "Verdict": "YES"
     },
@@ -210,7 +210,7 @@
       "Section": "HT DC",
       "Selection": "12",
       "Model%": 62.3,
-      "Sim%": 51.0,
+      "Sim%": 48.9,
       "Agree": "6 eng",
       "Verdict": "YES"
     },
@@ -218,7 +218,7 @@
       "Section": "HT O/U",
       "Selection": "Over 1.5",
       "Model%": 36.1,
-      "Sim%": 23.6,
+      "Sim%": 23.1,
       "Agree": "-",
       "Verdict": "NO"
     },
@@ -226,55 +226,55 @@
       "Section": "HT O/U",
       "Selection": "Under 1.5",
       "Model%": 63.9,
-      "Sim%": 76.4,
+      "Sim%": 76.9,
       "Agree": "-",
       "Verdict": "YES"
     },
     {
       "Section": "FT Winner",
       "Selection": "Mallorca",
-      "Model%": 31.2,
-      "Sim%": 17.6,
+      "Model%": 58.8,
+      "Sim%": 51.5,
       "Agree": "6 eng",
-      "Verdict": "NO"
+      "Verdict": "YES"
     },
     {
       "Section": "FT Winner",
       "Selection": "Draw",
       "Model%": 23.7,
-      "Sim%": 23.0,
+      "Sim%": 26.4,
       "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "FT Winner",
       "Selection": "Ceuta",
-      "Model%": 45.0,
-      "Sim%": 59.4,
+      "Model%": 17.5,
+      "Sim%": 22.0,
       "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "FT DC",
       "Selection": "1X",
-      "Model%": 55.0,
-      "Sim%": 40.6,
-      "Agree": "6 eng",
-      "Verdict": "NO"
-    },
-    {
-      "Section": "FT DC",
-      "Selection": "X2",
-      "Model%": 68.8,
-      "Sim%": 82.4,
+      "Model%": 82.5,
+      "Sim%": 78.0,
       "Agree": "6 eng",
       "Verdict": "YES"
     },
     {
       "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 41.2,
+      "Sim%": 48.5,
+      "Agree": "6 eng",
+      "Verdict": "NO"
+    },
+    {
+      "Section": "FT DC",
       "Selection": "12",
       "Model%": 76.3,
-      "Sim%": 77.0,
+      "Sim%": 73.6,
       "Agree": "6 eng",
       "Verdict": "YES"
     },
@@ -282,7 +282,7 @@
       "Section": "FT O/U",
       "Selection": "Over 2.5",
       "Model%": 44.5,
-      "Sim%": 31.3,
+      "Sim%": 29.9,
       "Agree": "6 eng",
       "Verdict": "NO"
     },
@@ -290,7 +290,7 @@
       "Section": "FT O/U",
       "Selection": "Under 2.5",
       "Model%": 55.5,
-      "Sim%": 68.7,
+      "Sim%": 70.1,
       "Agree": "6 eng",
       "Verdict": "YES"
     },
@@ -298,7 +298,7 @@
       "Section": "BTTS",
       "Selection": "Yes",
       "Model%": 48.4,
-      "Sim%": 32.0,
+      "Sim%": 35.0,
       "Agree": "6 eng",
       "Verdict": "NO"
     },
@@ -306,17 +306,17 @@
       "Section": "BTTS",
       "Selection": "No",
       "Model%": 51.6,
-      "Sim%": 68.0,
+      "Sim%": 65.0,
       "Agree": "6 eng",
       "Verdict": "NO"
     }
   ],
   "locked_tip": {
     "status": "SECURED LOCK",
-    "section": "HT DC",
-    "selection": "X2",
-    "model": 79.4,
-    "sim": 89.9,
+    "section": "FT DC",
+    "selection": "1X",
+    "model": 82.5,
+    "sim": 78.0,
     "agree": "6 eng",
     "verdict": "HARD YES"
   },
@@ -355,5 +355,7 @@
     ],
     "ht_over15": []
   },
-  "generated_at": "2026-08-30T23:33:36.925549Z"
+  "generated_at": "2026-08-30T23:33:36.925549Z",
+  "hda_aligned": true,
+  "hda_aligned_at": "2026-08-31T04:17:55.880393+00:00"
 }

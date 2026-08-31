@@ -22,155 +22,155 @@
   "report": {
     "n": 3000,
     "ft_model": {
-      "H": 0.3851418327187699,
-      "D": 0.2793184700061566,
-      "A": 0.3355396972750734
+      "H": 0.22406766431674674,
+      "D": 0.27931847000615667,
+      "A": 0.49661386567709664
     },
     "ft_sim": {
-      "H": 0.272,
-      "D": 0.258,
-      "A": 0.47
+      "H": 0.11166666666666666,
+      "D": 0.20766666666666667,
+      "A": 0.6806666666666666
     },
     "ht_model": {
-      "H": 0.3453760483426345,
+      "H": 0.2718473142987694,
       "D": 0.382776637358596,
-      "A": 0.2718473142987694
+      "A": 0.3453760483426345
     },
     "ht_sim": {
-      "H": 0.20433333333333334,
-      "D": 0.5303333333333333,
-      "A": 0.2653333333333333
+      "H": 0.09666666666666666,
+      "D": 0.5016666666666667,
+      "A": 0.40166666666666667
     },
     "over25_model": 0.4768452687434733,
-    "over25_sim": 0.324,
+    "over25_sim": 0.34833333333333333,
     "btts_model": 0.40615763570707075,
-    "btts_sim": 0.351,
+    "btts_sim": 0.306,
     "ht_over15_model": 0.3692113171858683,
-    "ht_over15_sim": 0.22533333333333333,
+    "ht_over15_sim": 0.23733333333333334,
     "dc_ft": {
-      "1X": 0.6644603027249265,
-      "X2": 0.61485816728123,
-      "12": 0.7206815299938433
+      "1X": 0.5033861343229034,
+      "X2": 0.7759323356832533,
+      "12": 0.7206815299938434
     },
     "dc_ht": {
-      "1X": 0.7281526857012306,
-      "X2": 0.6546239516573654,
+      "1X": 0.6546239516573654,
+      "X2": 0.7281526857012306,
       "12": 0.6172233626414039
     },
     "top_ft": [
       [
         "0-1",
-        498
-      ],
-      [
-        "1-0",
-        358
+        704
       ],
       [
         "0-2",
-        352
+        483
       ],
       [
         "0-0",
-        350
-      ],
-      [
-        "1-1",
-        318
+        322
       ],
       [
         "1-2",
-        176
+        269
       ],
       [
-        "2-1",
-        162
+        "0-3",
+        238
       ],
       [
-        "2-0",
-        152
+        "1-1",
+        236
+      ],
+      [
+        "1-0",
+        163
+      ],
+      [
+        "1-3",
+        106
       ]
     ],
     "top_ht": [
       [
         "0-0",
-        1372
+        1330
       ],
       [
         "0-1",
-        526
-      ],
-      [
-        "1-0",
-        426
-      ],
-      [
-        "1-1",
-        199
+        738
       ],
       [
         "0-2",
-        158
+        285
+      ],
+      [
+        "1-0",
+        220
+      ],
+      [
+        "1-1",
+        164
       ]
     ],
     "top3_ft": [
       {
         "score": "0-1",
-        "count": 498,
-        "pct": 16.6
-      },
-      {
-        "score": "1-0",
-        "count": 358,
-        "pct": 11.9
+        "count": 704,
+        "pct": 23.5
       },
       {
         "score": "0-2",
-        "count": 352,
-        "pct": 11.7
+        "count": 483,
+        "pct": 16.1
+      },
+      {
+        "score": "0-0",
+        "count": 322,
+        "pct": 10.7
       }
     ],
     "top3_ht": [
       {
         "score": "0-0",
-        "count": 1372,
-        "pct": 45.7
+        "count": 1330,
+        "pct": 44.3
       },
       {
         "score": "0-1",
-        "count": 526,
-        "pct": 17.5
+        "count": 738,
+        "pct": 24.6
       },
       {
-        "score": "1-0",
-        "count": 426,
-        "pct": 14.2
+        "score": "0-2",
+        "count": 285,
+        "pct": 9.5
       }
     ],
     "xg": {
-      "home": 0.8116666666666666,
-      "away": 1.2353333333333334,
-      "total": 2.047
+      "home": 0.5036666666666667,
+      "away": 1.584,
+      "total": 2.087666666666667
     },
     "ht_xg": {
-      "home": 0.38066666666666665,
-      "away": 0.49033333333333334,
-      "total": 0.871
+      "home": 0.22,
+      "away": 0.6786666666666666,
+      "total": 0.8986666666666666
     },
     "score_consistency": {
       "ht_leq_ft": 1.0
     },
     "goal_rates": {
-      "home": 0.8116666666666666,
-      "away": 1.2353333333333334
+      "home": 0.5036666666666667,
+      "away": 1.584
     }
   },
   "table": [
     {
       "Section": "HT Winner",
       "Selection": "Levadeiakos",
-      "Model%": 34.5,
-      "Sim%": 20.4,
+      "Model%": 27.2,
+      "Sim%": 9.7,
       "Agree": "6 eng",
       "Verdict": "NO"
     },
@@ -178,31 +178,31 @@
       "Section": "HT Winner",
       "Selection": "Draw",
       "Model%": 38.3,
-      "Sim%": 53.0,
+      "Sim%": 50.2,
       "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "HT Winner",
       "Selection": "Panathinaikos",
-      "Model%": 27.2,
-      "Sim%": 26.5,
+      "Model%": 34.5,
+      "Sim%": 40.2,
       "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "HT DC",
       "Selection": "1X",
-      "Model%": 72.8,
-      "Sim%": 73.5,
+      "Model%": 65.5,
+      "Sim%": 59.8,
       "Agree": "6 eng",
       "Verdict": "YES"
     },
     {
       "Section": "HT DC",
       "Selection": "X2",
-      "Model%": 65.5,
-      "Sim%": 79.6,
+      "Model%": 72.8,
+      "Sim%": 90.3,
       "Agree": "6 eng",
       "Verdict": "YES"
     },
@@ -210,7 +210,7 @@
       "Section": "HT DC",
       "Selection": "12",
       "Model%": 61.7,
-      "Sim%": 47.0,
+      "Sim%": 49.8,
       "Agree": "6 eng",
       "Verdict": "YES"
     },
@@ -218,7 +218,7 @@
       "Section": "HT O/U",
       "Selection": "Over 1.5",
       "Model%": 36.9,
-      "Sim%": 22.5,
+      "Sim%": 23.7,
       "Agree": "-",
       "Verdict": "NO"
     },
@@ -226,15 +226,15 @@
       "Section": "HT O/U",
       "Selection": "Under 1.5",
       "Model%": 63.1,
-      "Sim%": 77.5,
+      "Sim%": 76.3,
       "Agree": "-",
       "Verdict": "YES"
     },
     {
       "Section": "FT Winner",
       "Selection": "Levadeiakos",
-      "Model%": 38.5,
-      "Sim%": 27.2,
+      "Model%": 22.4,
+      "Sim%": 11.2,
       "Agree": "6 eng",
       "Verdict": "NO"
     },
@@ -242,31 +242,31 @@
       "Section": "FT Winner",
       "Selection": "Draw",
       "Model%": 27.9,
-      "Sim%": 25.8,
+      "Sim%": 20.8,
       "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "FT Winner",
       "Selection": "Panathinaikos",
-      "Model%": 33.6,
-      "Sim%": 47.0,
+      "Model%": 49.7,
+      "Sim%": 68.1,
       "Agree": "6 eng",
       "Verdict": "NO"
     },
     {
       "Section": "FT DC",
       "Selection": "1X",
-      "Model%": 66.4,
-      "Sim%": 53.0,
+      "Model%": 50.3,
+      "Sim%": 31.9,
       "Agree": "6 eng",
-      "Verdict": "YES"
+      "Verdict": "NO"
     },
     {
       "Section": "FT DC",
       "Selection": "X2",
-      "Model%": 61.5,
-      "Sim%": 72.8,
+      "Model%": 77.6,
+      "Sim%": 88.8,
       "Agree": "6 eng",
       "Verdict": "YES"
     },
@@ -274,7 +274,7 @@
       "Section": "FT DC",
       "Selection": "12",
       "Model%": 72.1,
-      "Sim%": 74.2,
+      "Sim%": 79.2,
       "Agree": "6 eng",
       "Verdict": "YES"
     },
@@ -282,7 +282,7 @@
       "Section": "FT O/U",
       "Selection": "Over 2.5",
       "Model%": 47.7,
-      "Sim%": 32.4,
+      "Sim%": 34.8,
       "Agree": "6 eng",
       "Verdict": "NO"
     },
@@ -290,7 +290,7 @@
       "Section": "FT O/U",
       "Selection": "Under 2.5",
       "Model%": 52.3,
-      "Sim%": 67.6,
+      "Sim%": 65.2,
       "Agree": "6 eng",
       "Verdict": "YES"
     },
@@ -298,7 +298,7 @@
       "Section": "BTTS",
       "Selection": "Yes",
       "Model%": 40.6,
-      "Sim%": 35.1,
+      "Sim%": 30.6,
       "Agree": "6 eng",
       "Verdict": "NO"
     },
@@ -306,17 +306,17 @@
       "Section": "BTTS",
       "Selection": "No",
       "Model%": 59.4,
-      "Sim%": 64.9,
+      "Sim%": 69.4,
       "Agree": "6 eng",
       "Verdict": "YES"
     }
   ],
   "locked_tip": {
     "status": "SECURED LOCK",
-    "section": "HT DC",
-    "selection": "1X",
-    "model": 72.8,
-    "sim": 73.5,
+    "section": "FT DC",
+    "selection": "X2",
+    "model": 77.6,
+    "sim": 88.8,
     "agree": "6 eng",
     "verdict": "HARD YES"
   },
@@ -355,5 +355,7 @@
     ],
     "ht_over15": []
   },
-  "generated_at": "2026-08-31T03:10:09.640257Z"
+  "generated_at": "2026-08-31T03:10:09.640257Z",
+  "hda_aligned": true,
+  "hda_aligned_at": "2026-08-31T04:17:54.047991+00:00"
 }

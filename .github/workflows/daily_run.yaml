@@ -8,6 +8,11 @@ on:
   schedule:
     - cron: "0 18 * * *"   # ~19:00 WAT
   workflow_dispatch:
+    inputs:
+      skip_train:
+        description: "Skip training (re-sim + publish only)"
+        type: boolean
+        default: false
 
 jobs:
   daily:
@@ -66,6 +71,7 @@ jobs:
           TRAIN_DIVS: ""
           N_SIMULATIONS: "3000"
           ODDS_BLEND: "0.25"
+          SKIP_TRAIN: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.skip_train == 'true' && '1' || '0' }}
           SPORTINTEL_PUSH: "1"
           GITHUB_TOKEN: ${{ secrets.SPORTINTEL_PUSH_TOKEN || secrets.GITHUB_TOKEN }}
           SPORTINTEL_REPO: avramnull/sportintel
