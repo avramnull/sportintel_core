@@ -105,5 +105,10 @@ GITHUB_TOKEN = _env("GITHUB_TOKEN") or _env("GH_TOKEN") or _env("SPORTINTEL_TOKE
 LOG_LEVEL = _env("LOG_LEVEL", "INFO").upper()
 LOG_JSON = _env_bool("LOG_JSON", False)
 
+# API-Football: backup key is the preferred fixture credential when supplied.
+# It is intentionally read from the environment/CI secret only; no secret is stored in git.
+API_FOOTBALL_BACKUP_KEY = _env("API_FOOTBALL_BACKUP_KEY")
 API_FOOTBALL_KEY = _env("API_FOOTBALL_KEY")
+# Standings API integration is disabled by the daily workflow; keep this value
+# available only for compatibility with older callers, never as fixture fallback.
 API_FOOTBALL_STANDINGS_KEY = _env("API_FOOTBALL_STANDINGS_KEY")
