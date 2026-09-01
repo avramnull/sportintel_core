@@ -9,10 +9,11 @@ Endpoints used:
       One league_id = one request, no matter how many fixture teams share that league.
 
 Env:
-  API_FOOTBALL_KEY              primary key (Africa fixtures; also standings fallback)
-  API_FOOTBALL_STANDINGS_KEY    optional 2nd key used only for league standings
-  API_FOOTBALL_BASE             optional (default https://v3.football.api-sports.io)
-  API_FOOTBALL_CACHE_DIR        optional (default daily_football_data/api_football_cache)
+  API_FOOTBALL_BACKUP_KEY        preferred fixture key (CI secret; never stored in git)
+  API_FOOTBALL_KEY               fallback fixture key
+  API_FOOTBALL_STANDINGS_KEY     legacy compatibility only; not a fixture fallback
+  API_FOOTBALL_BASE              optional (default https://v3.football.api-sports.io)
+  API_FOOTBALL_CACHE_DIR         optional (default daily_football_data/api_football_cache)
   API_FOOTBALL_MAX_STANDINGS
       max *network* standings pulls this process may perform.
       0 = no cap (fetch every unique league that has fixtures today).
@@ -68,32 +69,26 @@ def api_season_year(as_of: Optional[datetime] = None) -> int:
 
 def key_pool() -> List[str]:
     """
-    Ordered keys: primary fixtures key first, 2nd key subordinate for failover.
-    Deduped. Either key can serve fixtures or standings when the other is exhausted.
+    Ordered fixture keys: backup first, then the legacy primary.
+    Standings key is intentionally excluded because standings API integration is disabled.
+    Deduped so the same secret cannot be retried twice.
     """
+    backup = (os.environ.get("API_FOOTBALL_BACKUP_KEY") or "").strip()
     primary = (os.environ.get("API_FOOTBALL_KEY") or "").strip()
-    secondary = (os.environ.get("API_FOOTBALL_STANDINGS_KEY") or "").strip()
     out: List[str] = []
-    for k in (primary, secondary):
+    for k in (backup, primary):
         if k and k not in out:
             out.append(k)
     return out
 
 
 def resolve_api_key(purpose: str = "fixtures") -> str:
-    """
-    Preferred key for purpose, with cross-fallback:
-      fixtures  → primary, else secondary
-      standings → secondary, else primary
-    """
-    pool = key_pool()
-    if not pool:
-        return ""
-    primary = (os.environ.get("API_FOOTBALL_KEY") or "").strip()
-    secondary = (os.environ.get("API_FOOTBALL_STANDINGS_KEY") or "").strip()
+    """Resolve the configured API-Football credential without using standings keys."""
     if purpose == "standings":
-        return secondary or primary or pool[0]
-    return primary or secondary or pool[0]
+        # Standings integration is disabled by the production workflow.
+        return ""
+    pool = key_pool()
+    return pool[0] if pool else ""
 
 
 def _is_quota_or_auth_error(exc: BaseException) -> bool:
@@ -119,7 +114,6 @@ class ApiFootballClient:
         self.purpose = purpose
         self._keys = [key] if key else key_pool()
         self._key_idx = 0
-        # purpose-preferred key first in rotation
         preferred = resolve_api_key(purpose)
         if preferred and preferred in self._keys:
             self._keys = [preferred] + [k for k in self._keys if k != preferred]
@@ -131,7 +125,6 @@ class ApiFootballClient:
             or DEFAULT_CACHE
         )
         self.cache_dir.mkdir(parents=True, exist_ok=True)
-        # 0 = unlimited unique leagues (still one request per league, never per team)
         raw_max = (
             max_standings
             if max_standings is not None
@@ -147,10 +140,10 @@ class ApiFootballClient:
             else os.environ.get("API_FOOTBALL_MIN_INTERVAL_SEC", "0.40")
         )
         self._last_req = 0.0
-        self._network_standings = 0  # only live HTTP standings calls
+        self._network_standings = 0
         self._cache_standings = 0
         self._req_count = 0
-        self._standings_seen: set = set()  # league_id already resolved this process
+        self._standings_seen: set = set()
 
     @property
     def available(self) -> bool:
@@ -177,7 +170,7 @@ class ApiFootballClient:
         from_cache=True means no network quota was spent.
         """
         if not self.key:
-            raise RuntimeError("API_FOOTBALL_KEY / API_FOOTBALL_STANDINGS_KEY not set")
+            raise RuntimeError("API_FOOTBALL_BACKUP_KEY / API_FOOTBALL_KEY not set")
         params = dict(params or {})
         cache_key = path.strip("/").replace("/", "_") + "_" + "_".join(
             f"{k}-{v}" for k, v in sorted(params.items())
@@ -210,16 +203,13 @@ class ApiFootballClient:
             return self.get(path, params, use_cache=use_cache, cache_ttl_h=cache_ttl_h)
         r.raise_for_status()
         payload = r.json()
-        # API-Football often returns HTTP 200 with errors: {access: "..."} when suspended/quota
         errs = payload.get("errors")
         if errs:
             msg = errs if isinstance(errs, str) else json.dumps(errs)
             err = RuntimeError(f"API-Football error: {msg}")
-            # Rotate to subordinate key if quota/auth and another key remains
             if _is_quota_or_auth_error(err) and self._key_idx + 1 < len(self._keys):
                 self._key_idx += 1
                 self.key = self._keys[self._key_idx]
-                # retry once with next key (no cache write of the failure)
                 return self.get(path, params, use_cache=use_cache, cache_ttl_h=cache_ttl_h)
             raise err
         if use_cache:
@@ -246,7 +236,6 @@ class ApiFootballClient:
         """
         lid = int(league_id)
         preferred = int(season or api_season_year())
-        # Prefer requested, then free-tier safe years (newest first)
         candidates = []
         for y in (preferred, 2024, 2023, 2022):
             if y not in candidates:
@@ -276,7 +265,6 @@ class ApiFootballClient:
             except RuntimeError as e:
                 last_err = e
                 msg = str(e).lower()
-                # Free plan season gate → try older season
                 if "plan" in msg or "season" in msg:
                     continue
                 raise
@@ -288,7 +276,6 @@ class ApiFootballClient:
             else:
                 self._network_standings += 1
             self._standings_seen.add(dedupe_key)
-            # Empty table with plan error in body (some paths return errors without raise)
             errs = payload.get("errors") or {}
             if errs and not (payload.get("response") or []):
                 last_err = RuntimeError(str(errs))
@@ -305,7 +292,7 @@ class ApiFootballClient:
             "standings_network": self._network_standings,
             "standings_cache_hits": self._cache_standings,
             "standings_unique_leagues": len(self._standings_seen),
-            "max_standings_network": self.max_standings,  # 0 = unlimited
+            "max_standings_network": self.max_standings,
             "keys_configured": len(self._keys),
             "key_index": self._key_idx,
             "cache_dir": str(self.cache_dir),
@@ -313,10 +300,7 @@ class ApiFootballClient:
 
 
 def parse_standings_table(payload: dict) -> List[Dict[str, Any]]:
-    """
-    Flatten API-Football standings into full-table team rows.
-    One payload = entire league (all ranks), not a subset of fixture teams.
-    """
+    """Flatten API-Football standings into full-table team rows."""
     rows: List[Dict[str, Any]] = []
     if payload.get("_skipped"):
         return rows
