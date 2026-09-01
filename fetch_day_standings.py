@@ -2,12 +2,18 @@
 """
 Live league standings for focused leagues that have fixtures on a given day.
 
-Design (responsible API use):
-  • Deduplicate by league_id first — six Premier League fixtures → ONE standings call.
-  • That one call returns the FULL table (all ~20 clubs), covering every board team.
-  • Never one request per team or per fixture.
-  • Disk cache (18h) so re-runs cost zero quota for the same league/season.
-  • Merge into standings_latest.json so EUR + Africa tables coexist.
+Primary source (live, free):
+  • EUR  — football-data.co.uk current-season Div CSVs → local full tables
+  • Africa — master_africa_football rolling window → local tables
+
+Optional supplement:
+  • API-Football standings (only useful on paid plans for current season).
+    Free plan is capped at 2022–2024 and is skipped by default unless
+    STANDINGS_ALLOW_API=1.
+
+Design:
+  • One table per unique league/Div (never per team).
+  • Merge into standings_latest.json so EUR + Africa coexist.
 
 Modes:
   --region africa | eur | both
@@ -232,8 +238,7 @@ def main(argv=None) -> int:
 
     client = ApiFootballClient(purpose="standings")
     if not client.available:
-        log.error("API_FOOTBALL_STANDINGS_KEY / API_FOOTBALL_KEY not set")
-        return 1
+        log.info("no API key — local standings only (recommended for live tables)")
 
     day = args.date
     season = api_season_year()
@@ -271,7 +276,41 @@ def main(argv=None) -> int:
         log.info("no focused leagues for %s — nothing to fetch", day)
         new_tables = {}
     else:
-        new_tables = fetch_tables(client, leagues, season)
+        new_tables = {}
+        # --- 1) Local live tables (current season) ---
+        try:
+            from local_standings import build_eur_tables_for_divs, build_africa_tables_from_parquet
+            if args.region in ("eur", "both"):
+                divs = []
+                for meta in leagues.values():
+                    if meta.get("region") == "EUR" and meta.get("div"):
+                        divs.append(meta["div"])
+                if divs:
+                    local_eur = build_eur_tables_for_divs(divs)
+                    new_tables.update(local_eur)
+                    log.info("local EUR tables: %s", list(local_eur.keys()))
+            if args.region in ("africa", "both"):
+                af_path = SAVE / "africa_fixtures_today.json"
+                if af_path.exists():
+                    import json as _json
+                    af_doc = _json.loads(af_path.read_text(encoding="utf-8"))
+                    local_af = build_africa_tables_from_parquet(af_doc.get("fixtures") or [])
+                    new_tables.update(local_af)
+                    log.info("local Africa tables: %s", list(local_af.keys()))
+        except Exception as e:
+            log.error("local standings failed: %s", e)
+
+        # --- 2) Optional API-Football (paid / when allowed) ---
+        allow_api = os.environ.get("STANDINGS_ALLOW_API", "").strip().lower() in ("1", "true", "yes")
+        if allow_api and client.available:
+            api_tables = fetch_tables(client, leagues, season)
+            # only fill gaps — never overwrite a local current table with stale API data
+            for k, v in api_tables.items():
+                if k not in new_tables:
+                    new_tables[k] = v
+            log.info("API standings merged gaps: +%s", len([k for k in api_tables if k not in new_tables]))
+        else:
+            log.info("API standings skipped (free plan not live; set STANDINGS_ALLOW_API=1 to force)")
 
     latest_path = SAVE / "standings_latest.json"
     if args.merge:
