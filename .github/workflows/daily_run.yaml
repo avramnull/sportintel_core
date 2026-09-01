@@ -98,6 +98,10 @@ jobs:
           # Odds: free API-Football often returns empty for Africa; enable only if plan allows
           AFRICA_FETCH_ODDS: "1"
           AFRICA_PRIOR_SHRINK: "0.22"
+          # Live standings for EUR + Africa focused leagues (quota-capped)
+          API_FOOTBALL_MAX_STANDINGS: "12"
+          STANDINGS_STRENGTH: "0.55"
+          SKIP_STANDINGS: "0"
           GITHUB_TOKEN: ${{ secrets.SPORTINTEL_PUSH_TOKEN || secrets.GITHUB_TOKEN }}
           SPORTINTEL_REPO: avramnull/sportintel
           LOG_LEVEL: INFO

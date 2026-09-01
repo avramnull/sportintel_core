@@ -137,6 +137,13 @@ def main():
             "TRAIN_WORKERS": os.environ.get("TRAIN_WORKERS", "3"),
         })
 
+    # 5b. Live standings for EUR leagues with fixtures today (API-Football)
+    if os.environ.get("API_FOOTBALL_KEY", "").strip() and os.environ.get("SKIP_STANDINGS", "").strip() not in ("1", "true", "yes"):
+        log_step(log, "standings", "API-Football live tables for focused EUR leagues")
+        run([sys.executable, "fetch_day_standings.py", "--region", "eur"], check=False)
+    else:
+        log.info("standings step skipped (no API key or SKIP_STANDINGS)")
+
     # 6. Live batch sim
     if SKIP_SIM:
         log.info("SKIP_SIM set — skipping simulations")
@@ -146,6 +153,7 @@ def main():
             "N_SIMULATIONS": str(N_SIMULATIONS),
             "ODDS_BLEND": str(ODDS_BLEND),
             "TODAY_ONLY": "1" if TODAY_ONLY else "0",
+            "STANDINGS_STRENGTH": os.environ.get("STANDINGS_STRENGTH", "0.55"),
         })
 
     # 7. Publish to admin Sim Lab

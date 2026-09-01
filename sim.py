@@ -648,13 +648,16 @@ def agreement_pct(backends_count: int, total_possible: int = 7) -> str:
     return f"{100 * backends_count / max(total_possible, 1):.0f}%"
 
 
-def simulate_match(p_ft, p_ht, p_over25, p_btts, p_ht_over15, n, seed):
+def simulate_match(p_ft, p_ht, p_over25, p_btts, p_ht_over15, n, seed, standings_prior=None):
     """
     Industrial Monte Carlo score engine.
 
     Primary path: discrete Dixon–Coles-adjusted Poisson grid reweighted to match
     target FT / O2.5 / BTTS probabilities (iterative proportional fitting style),
     then sample n scorelines. HT is always a subset of FT.
+
+    Optional standings_prior (from API-Football live tables) scales lambdas and
+    mildly tilts FT / O2.5 / BTTS before the grid is built.
 
     Guarantees:
       - ht goals <= ft goals componentwise
@@ -675,10 +678,26 @@ def simulate_match(p_ft, p_ht, p_over25, p_btts, p_ht_over15, n, seed):
     p_btts = float(np.clip(p_btts, 0.05, 0.95))
     p_ht_over15 = float(np.clip(p_ht_over15 if p_ht_over15 is not None else 0.35, 0.05, 0.95))
 
+    # Live standings tilt on model probs (before lambda seed)
+    _sp = standings_prior or {}
+    if _sp.get("matched"):
+        try:
+            from standings_prior import apply_ft_tilt, apply_scalar_tilt
+            p_ft = apply_ft_tilt(p_ft, _sp.get("ft_tilt") or {})
+            p_over25 = apply_scalar_tilt(p_over25, float(_sp.get("over25_tilt") or 0.0))
+            p_btts = apply_scalar_tilt(p_btts, float(_sp.get("btts_tilt") or 0.0))
+        except Exception:
+            pass
+
     tot = float(np.clip(2.15 + 1.35 * (p_over25 - 0.5) * 2, 1.6, 3.4))
     home_share = float(np.clip(0.38 + 0.28 * (p_ft[0] - p_ft[2]), 0.28, 0.72))
     lam_h = tot * home_share
     lam_a = tot * (1.0 - home_share)
+    if _sp.get("matched"):
+        lam_h *= float(_sp.get("lambda_mult_home") or 1.0)
+        lam_a *= float(_sp.get("lambda_mult_away") or 1.0)
+        lam_h = float(np.clip(lam_h, 0.35, 3.9))
+        lam_a = float(np.clip(lam_a, 0.35, 3.9))
     tau = 0.08  # Dixon–Coles low-score correlation
 
     from math import exp, factorial
@@ -1133,6 +1152,7 @@ def run_one_match(match_cfg: dict, quiet: bool = False, allow_market_only: bool 
     alpha = float(match_cfg.get("odds_blend", 0.30))
     n_sim = int(match_cfg.get("n_simulations", 8000))
     seed = int(match_cfg.get("seed", 42))
+    standings_prior = match_cfg.get("standings_prior")
     p_market = np.array(fair_probs(oh, od, oa))
 
     backends_map = {}
@@ -1162,7 +1182,16 @@ def run_one_match(match_cfg: dict, quiet: bool = False, allow_market_only: bool 
         p_hto = 0.35
         backends_map = {k: ["market"] for k in ("ft_result", "ht_result", "over25", "btts", "ht_over15")}
 
-    report = simulate_match(p_ft, p_ht, p_over, p_btts, p_hto, n_sim, seed)
+    report = simulate_match(p_ft, p_ht, p_over, p_btts, p_hto, n_sim, seed, standings_prior=standings_prior)
+    if standings_prior and standings_prior.get("matched"):
+        report["standings_prior"] = {
+            "matched": True,
+            "signal": standings_prior.get("signal") or {},
+            "home_row": standings_prior.get("home_row"),
+            "away_row": standings_prior.get("away_row"),
+        }
+        if isinstance(model_source, str) and "live-standings" not in model_source:
+            model_source = model_source + " + live-standings"
     # goal_rates optional enrichment matching attached sample
     report.setdefault("goal_rates", {
         "home": float(report["xg"]["home"]),

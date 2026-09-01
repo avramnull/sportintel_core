@@ -90,3 +90,20 @@ Writes:
 Filters world fixtures for that date down to African countries client-side (Kenya, Egypt, Uganda, …).
 Do **not** loop per-league or pull multi-season history on the free key.
 
+
+
+## Live standings (hardcore sim)
+
+After today's fixtures are fetched, unique `league_id`s on the board are probed:
+
+```bash
+API_FOOTBALL_KEY=xxx python fetch_day_standings.py --region africa
+# or EUR Div map:
+API_FOOTBALL_KEY=xxx python fetch_day_standings.py --region eur
+```
+
+Standings priors adjust Dixon–Coles λ and mild FT / O2.5 / BTTS tilts inside
+`sim_africa.simulate_match` and EUR `sim.run_one_match` (`standings_prior` key).
+
+Quota: one fixtures call + ≤ `API_FOOTBALL_MAX_STANDINGS` (default 12) standings calls,
+cached under `daily_football_data/api_football_cache/`.

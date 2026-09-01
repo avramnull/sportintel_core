@@ -111,11 +111,50 @@ def train_for_board(teams: list[str], countries: list[str]):
     run([sys.executable, "-m", "africa.train_africa"], env=env)
 
 
+def load_africa_standings() -> tuple[dict, float]:
+    """Return ({league_id: rows}, strength) from standings_latest or empty."""
+    for cand in (SAVE / "standings_latest.json",):
+        if not cand.exists():
+            continue
+        try:
+            doc = json.loads(cand.read_text(encoding="utf-8"))
+            strength = float(doc.get("strength") or os.environ.get("STANDINGS_STRENGTH", "0.55"))
+            tables = {}
+            for k, block in (doc.get("tables") or {}).items():
+                tables[int(k)] = block.get("rows") or []
+            return tables, strength
+        except Exception:
+            pass
+    return {}, float(os.environ.get("STANDINGS_STRENGTH", "0.55"))
+
+
+def fetch_standings_for_africa(day: str | None = None):
+    """Pull live tables for league_ids present on today's Africa board."""
+    key = os.environ.get("API_FOOTBALL_KEY", "").strip()
+    if not key:
+        log("no API key — skip standings")
+        return
+    if os.environ.get("SKIP_STANDINGS", "").strip() in ("1", "true", "yes"):
+        log("SKIP_STANDINGS")
+        return
+    env = {"API_FOOTBALL_KEY": key}
+    if day:
+        env["FIXTURE_DATE"] = day
+    run([sys.executable, "fetch_day_standings.py", "--region", "africa"], env=env)
+
+
 def sim_reports(doc: dict) -> list[dict]:
     if os.environ.get("SKIP_AFRICA_SIM", "").strip() in ("1", "true", "yes"):
         log("SKIP_AFRICA_SIM")
         return []
     from africa.sim_africa import simulate_match, to_simlab_document
+    from standings_prior import prior_from_league_cache
+
+    tables, strength = load_africa_standings()
+    if tables:
+        log(f"live standings for {len(tables)} Africa leagues (strength={strength})")
+    else:
+        log("no standings bundle — Elo/model only")
 
     SIMS.mkdir(parents=True, exist_ok=True)
     entries = []
@@ -127,8 +166,18 @@ def sim_reports(doc: dict) -> list[dict]:
             continue
         kickoff = (fx.get("date") or "")[:16].replace("T", " ")
         league = fx.get("league") or "Africa"
+        lid = fx.get("league_id")
         try:
-            raw = simulate_match(home, away, country, odds_h=fx.get('odds_h'), odds_d=fx.get('odds_d'), odds_a=fx.get('odds_a'))
+            lid = int(lid) if lid is not None else None
+        except Exception:
+            lid = None
+        sp = prior_from_league_cache(home, away, lid, tables, strength=strength) if lid else None
+        try:
+            raw = simulate_match(
+                home, away, country,
+                odds_h=fx.get("odds_h"), odds_d=fx.get("odds_d"), odds_a=fx.get("odds_a"),
+                standings_prior=sp if (sp and sp.get("matched")) else None,
+            )
         except Exception as e:
             log(f"sim fail {home} vs {away}: {e}")
             continue
@@ -228,6 +277,8 @@ def main():
         log("empty Africa board today")
         merge_index([], doc.get("date") or "")
         return 0
+    # Live standings for league_ids on today's Africa board (quota-capped)
+    fetch_standings_for_africa(doc.get("date"))
     train_for_board(teams, countries)
     entries = sim_reports(doc)
     merge_index(entries, doc.get("date") or datetime.now(timezone.utc).strftime("%Y-%m-%d"))

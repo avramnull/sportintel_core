@@ -442,6 +442,7 @@ def simulate_match(
     odds_d: float | None = None,
     odds_a: float | None = None,
     odds_blend: float | None = None,
+    standings_prior: dict | None = None,
 ) -> dict:
     hist = _load_hist()
     hist_c = hist
@@ -486,6 +487,16 @@ def simulate_match(
     lam_h = base * (1.08 ** gap) * 1.12  # home bump
     lam_a = base * (1.08 ** (-gap)) * 0.95
 
+    # Live league table prior (API-Football standings)
+    _sp = standings_prior or {}
+    if _sp.get("matched"):
+        try:
+            from standings_prior import apply_ft_tilt, apply_scalar_tilt
+            lam_h *= float(_sp.get("lambda_mult_home") or 1.0)
+            lam_a *= float(_sp.get("lambda_mult_away") or 1.0)
+        except Exception:
+            pass
+
     scope_dir, reg, stats = load_scope(country)
     engines = []
     ft = prior_ft.copy()
@@ -516,6 +527,18 @@ def simulate_match(
     if not engines:
         engines.append("league-prior+elo")
 
+    if _sp.get("matched"):
+        try:
+            from standings_prior import apply_ft_tilt, apply_scalar_tilt
+            ft = apply_ft_tilt(ft, _sp.get("ft_tilt") or {})
+            if not isinstance(ft, np.ndarray):
+                ft = np.array([ft["H"], ft["D"], ft["A"]], float)
+            o25 = apply_scalar_tilt(o25, float(_sp.get("over25_tilt") or 0.0))
+            btts = apply_scalar_tilt(btts, float(_sp.get("btts_tilt") or 0.0))
+            engines.append("live-standings")
+        except Exception as e:
+            engines.append(f"standings-skip:{e}")
+
     blend = odds_blend if odds_blend is not None else float(os.environ.get("ODDS_BLEND", "0.20"))
     odds_tuple = None
     if odds_h and odds_d and odds_a:
@@ -532,6 +555,12 @@ def simulate_match(
         "away": away,
         "country": country,
         "engines": engines,
+        "standings_prior": {
+            "matched": bool(_sp.get("matched")),
+            "signal": _sp.get("signal") or {},
+            "home_row": _sp.get("home_row"),
+            "away_row": _sp.get("away_row"),
+        } if _sp else None,
         "model": {
             "ft": {"H": float(ft[0]), "D": float(ft[1]), "A": float(ft[2])},
             "over25": float(o25),

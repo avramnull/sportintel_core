@@ -110,6 +110,17 @@ def main():
     ok, fail = 0, 0
     t0_all = time.time()
 
+    # Live API-Football standings for focused leagues playing today
+    standings_bundle = load_standings_bundle()
+    from api_football_client import FDC_DIV_TO_LEAGUE
+    from standings_prior import prior_from_league_cache
+    _sp_tables = standings_bundle.get("tables") or {}
+    _sp_strength = float(standings_bundle.get("strength") or 0.55)
+    if _sp_tables:
+        print(f"Live standings loaded for {len(_sp_tables)} leagues (strength={_sp_strength})", flush=True)
+    else:
+        print("No live standings bundle — sim uses models+odds only", flush=True)
+
     for i, row in df.iterrows():
         home = str(row["HomeTeam"]).strip()
         away = str(row["AwayTeam"]).strip()
@@ -121,8 +132,11 @@ def main():
         kick = date_str
         if t and t not in ("nan", "None", ""):
             kick = f"{date_str} {t}"
+        div = str(row["Div"]).strip()
+        lid = FDC_DIV_TO_LEAGUE.get(div)
+        sp = prior_from_league_cache(home, away, lid, _sp_tables, strength=_sp_strength) if lid else None
         match_cfg = {
-            "league": str(row["Div"]).strip(),
+            "league": div,
             "home_team": home,
             "away_team": away,
             "match_date": kick,
@@ -132,6 +146,7 @@ def main():
             "n_simulations": N_SIM,
             "seed": SEED + int(i),
             "odds_blend": ODDS_BLEND,
+            "standings_prior": sp if (sp and sp.get("matched")) else None,
         }
         t0 = time.time()
         print(f"  [{ok+fail+1}/{len(df)}] {home} vs {away} …", flush=True)
