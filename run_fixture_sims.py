@@ -99,13 +99,8 @@ def main():
     failures = []
     t0_all = time.time()
 
-    from api_football_client import FDC_DIV_TO_LEAGUE
-    from standings_prior import prior_from_league_cache
-    standings_bundle = load_standings_bundle()
-    tables = standings_bundle.get("tables") or {}
-    strength = float(standings_bundle.get("strength") or 0.55)
-    print(f"Live standings loaded for {len(tables)} leagues" if tables else "No live standings bundle", flush=True)
-
+    # Live standings are intentionally disabled by the daily workflow. Keep the
+    # simulation path independent of a missing/stale optional standings bundle.
     for i, row in df.iterrows():
         home, away = str(row["HomeTeam"]).strip(), str(row["AwayTeam"]).strip()
         teams_seen.update((home, away))
@@ -113,14 +108,11 @@ def main():
         t = row.get("Time") or ""
         kick = f"{date_str} {t}" if t and t not in ("nan", "None", "") else date_str
         div = str(row["Div"]).strip()
-        lid = FDC_DIV_TO_LEAGUE.get(div)
-        sp = prior_from_league_cache(home, away, lid, tables, strength=strength) if lid else None
         cfg = {
             "league": div, "home_team": home, "away_team": away, "match_date": kick,
             "odds_home": float(row["odds_H"]), "odds_draw": float(row["odds_D"]),
             "odds_away": float(row["odds_A"]), "n_simulations": N_SIM,
             "seed": SEED + int(i), "odds_blend": ODDS_BLEND,
-            "standings_prior": sp if (sp and sp.get("matched")) else None,
         }
         print(f"  [{i + 1}/{len(df)}] {home} vs {away} …", flush=True)
         try:
