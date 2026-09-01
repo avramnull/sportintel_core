@@ -11,8 +11,8 @@ xgboost>=2.0
 lightgbm>=4.0
 catboost>=1.2
 
-# CPU-only neural-network backends for GitHub Actions.
-# The runners do not need CUDA; unqualified torch pulls hundreds of MB of
-# NVIDIA CUDA libraries and can exhaust the runner disk before installation.
-torch==2.8.0+cpu --extra-index-url https://download.pytorch.org/whl/cpu
+# Neural-network backends used by the simulator/trainer.
+# PyTorch is installed explicitly from the official CPU wheel index by CI;
+# keeping it out of this requirements file prevents a default PyPI resolver
+# from selecting the CUDA build and exhausting GitHub-hosted runner storage.
 tensorflow-cpu>=2.15,<2.20
