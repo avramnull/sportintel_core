@@ -1,15 +1,12 @@
 #!/usr/bin/env python3
 """
-Full RSSSF Africa domestic scraper — all levels (1st/2nd/3rd/…), men + optional women.
+RSSSF Africa domestic scraper — levels 1 & 2 only (premiere / deuxieme).
 
-Strategy
---------
-1. Parse results-afr.html for every tables*/… season page (all levels).
-2. Expand priority countries by probing year files (e.g. tablesn/nig2015.html …).
-3. Parse every page for Round/date brackets + "Home  n-m  Away" score lines.
-4. Infer Div level from nearest section heading (Premier / First / Second / …).
-
-Respectful: single Session, small delay, identifiable User-Agent.
+Base: https://www.rsssf.org/
+Examples:
+  https://www.rsssf.org/tablesa/alg2026.html#premiere
+  https://www.rsssf.org/tablesa/alg2026.html#deuxieme
+  https://www.rsssf.org/tablesa/ango2027.html#girabola
 """
 from __future__ import annotations
 
@@ -22,42 +19,59 @@ from urllib.parse import urljoin
 
 import requests
 
-RSSSF_AFRICA_INDEX = "http://www.rsssf.com/results-afr.html"
+RSSSF_BASE = "https://www.rsssf.org/"
+RSSSF_AFRICA_INDEX = urljoin(RSSSF_BASE, "results-afr.html")
 USER_AGENT = "sportintel-core/africa-etl (+https://github.com/avramnull/sportintel_core; research)"
 DEFAULT_DELAY = 0.35
 
-# (country_name, url_prefix without year)  e.g. tablesn/nig + 2024 + .html
+# Level-1 / level-2 section anchors & labels (case-insensitive)
+LEVEL1_KEYS = re.compile(
+    r"premiere|premier|premiership|ligue\s*1|liga\s*1|girabola|npfl|"
+    r"first\s*level|division\s*1|super\s*league|botola\s*pro|fkf\s*premier|"
+    r"lig\s*1|serie\s*a\b|top\s*league",
+    re.I,
+)
+LEVEL2_KEYS = re.compile(
+    r"deuxieme|deuxième|second\s*level|ligue\s*2|liga\s*2|division\s*2|"
+    r"nnl|championship|botola\s*2|super\s*league|1st\s*division",
+    re.I,
+)
+SKIP_SECTION = re.compile(
+    r"troisieme|troisième|quatrieme|quatrième|third|fourth|women|wom\b|"
+    r"fémin|cup|coupe|super\s*cup|play.?off",
+    re.I,
+)
+
 COUNTRY_YEAR_PREFIXES: Dict[str, List[str]] = {
     "Nigeria": ["tablesn/nig"],
     "Ghana": ["tablesg/gha", "tablesg/ghana"],
     "Egypt": ["tablese/egy", "tablese/egypt"],
     "Morocco": ["tablesm/mor", "tablesm/moroc"],
     "Algeria": ["tablesa/alg"],
-    "South Africa": ["tabless/saf", "tabless/safr", "tabless/southafr"],
-    "Kenya": ["tablesk/ken", "tablesk/kenya"],
-    "Senegal": ["tabless/sen", "tabless/sene"],
-    "Tunisia": ["tablest/tun", "tablest/tuni"],
-    "Uganda": ["tablesu/uga", "tablesu/ugan"],
+    "South Africa": ["tabless/saf", "tabless/safr"],
+    "Kenya": ["tablesk/ken"],
+    "Senegal": ["tabless/sen"],
+    "Tunisia": ["tablest/tun"],
+    "Uganda": ["tablesu/uga"],
     "Tanzania": ["tablest/tan", "tablest/tanz"],
-    "Zambia": ["tablesz/zam", "tablesz/zamb"],
-    "Ivory Coast": ["tablesc/civ", "tablesi/ivo", "tablesc/cote"],
-    "Cameroon": ["tablesc/cam", "tablesc/camer"],
+    "Zambia": ["tablesz/zam"],
+    "Ivory Coast": ["tablesc/civ", "tablesi/ivo"],
+    "Cameroon": ["tablesc/cam"],
     "Angola": ["tablesa/ango", "tablesa/ang"],
-    "Ethiopia": ["tablese/eth", "tablese/ethi"],
-    "Congo-Kinshasa": ["tablesc/congok", "tablesc/drc", "tablesc/zaire"],
-    "Congo-Brazzaville": ["tablesc/congob", "tablesc/congo"],
-    "Mali": ["tablesm/mali", "tablesm/mal"],
-    "Burkina Faso": ["tablesb/burkf", "tablesb/burk"],
-    "Benin": ["tablesb/benin", "tablesb/ben"],
+    "Ethiopia": ["tablese/eth"],
+    "Mali": ["tablesm/mali"],
+    "Burkina Faso": ["tablesb/burkf"],
+    "Benin": ["tablesb/benin"],
     "Botswana": ["tablesb/bots"],
-    "Rwanda": ["tablesr/rwa", "tablesr/rwan"],
+    "Rwanda": ["tablesr/rwa"],
     "Mozambique": ["tablesm/moz"],
     "Sudan": ["tabless/sud"],
-    "Libya": ["tablesl/lib", "tablesl/liby"],
+    "Libya": ["tablesl/lib"],
     "Guinea": ["tablesg/gui"],
     "Gabon": ["tablesg/gab"],
-    "Namibia": ["tablesn/nam"],
-    "Zimbabwe": ["tablesz/zim", "tablesz/zimb"],
+    "Zimbabwe": ["tablesz/zim"],
+    "Congo": ["tablesc/congo"],
+    "DR Congo": ["tablesc/congok", "tablesc/drc"],
 }
 
 SCORE_LINE = re.compile(
@@ -68,14 +82,6 @@ MONTHS = {
     "jan": 1, "feb": 2, "mar": 3, "apr": 4, "may": 5, "jun": 6,
     "jul": 7, "aug": 8, "sep": 9, "oct": 10, "nov": 11, "dec": 12,
 }
-LEVEL_PATTERNS = [
-    (re.compile(r"premier|premiership|ligue\s*1\b|liga\s*1\b|npfl|first\s*level|division\s*1\b|super\s*league|botola\s*pro\s*1|girabola", re.I), "1"),
-    (re.compile(r"second\s*level|division\s*2\b|ligue\s*2\b|liga\s*2\b|nnl|championship|botola\s*2", re.I), "2"),
-    (re.compile(r"third\s*level|division\s*3\b|ligue\s*3\b", re.I), "3"),
-    (re.compile(r"fourth\s*level|division\s*4\b", re.I), "4"),
-    (re.compile(r"cup|coupe|federation\s*cup|fa\s*cup", re.I), "CUP"),
-    (re.compile(r"women|wom\b|fémin", re.I), "W"),
-]
 
 
 def _session() -> requests.Session:
@@ -84,19 +90,20 @@ def _session() -> requests.Session:
     return s
 
 
-def _strip_tags(html: str) -> str:
+def _strip_keep_sections(html: str) -> str:
+    """Strip tags but keep <a name=...> as section markers."""
     html = re.sub(r"(?is)<script.*?>.*?</script>", " ", html)
     html = re.sub(r"(?is)<style.*?>.*?</style>", " ", html)
-    html = re.sub(r"(?is)<br\s*/?>", "\n", html)
-    html = re.sub(r"(?is)</(p|tr|h[1-6]|div|li)>", "\n", html)
     html = re.sub(r"(?is)<a\s+name=[\"']([^\"']+)[\"'][^>]*>", r"\n§§SECTION:\1\n", html)
+    html = re.sub(r"(?is)<br\s*/?>", "\n", html)
+    html = re.sub(r"(?is)</(p|tr|h[1-6]|div|li|pre)>", "\n", html)
     html = re.sub(r"(?is)<[^>]+>", " ", html)
     html = html.replace("&nbsp;", " ").replace("&amp;", "&").replace("&ndash;", "-")
     html = re.sub(r"[ \t]+", " ", html)
     return html
 
 
-def _parse_rsssf_date(body: str, season_year: Optional[int]) -> Optional[date]:
+def _parse_date(body: str, season_year: Optional[int]) -> Optional[date]:
     body = body.strip()
     m = re.search(
         r"(?P<mon>Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]*\s+"
@@ -125,12 +132,18 @@ def _parse_rsssf_date(body: str, season_year: Optional[int]) -> Optional[date]:
         return None
 
 
-def _infer_level(section: str, page_hint: str = "") -> str:
-    blob = f"{section} {page_hint}"
-    for rx, code in LEVEL_PATTERNS:
-        if rx.search(blob):
-            return code
-    return "1"
+def _level_from_section(section: str) -> Optional[str]:
+    """Return '1', '2', or None (skip)."""
+    if not section:
+        return "1"  # default top of page often L1
+    if SKIP_SECTION.search(section) and not LEVEL1_KEYS.search(section) and not LEVEL2_KEYS.search(section):
+        return None
+    if LEVEL2_KEYS.search(section):
+        return "2"
+    if LEVEL1_KEYS.search(section):
+        return "1"
+    # unknown section after an L1/L2 — keep if we're already in L1/L2 context
+    return None
 
 
 def parse_rsssf_html(
@@ -139,21 +152,19 @@ def parse_rsssf_html(
     country: str,
     season_label: str,
     source_url: str,
-    default_level: str = "1",
 ) -> List[dict]:
-    text = _strip_tags(html)
+    text = _strip_keep_sections(html)
     season_year = None
-    m = re.search(r"(20\d{2}|19\d{2})", season_label or "")
+    m = re.search(r"(20\d{2}|19\d{2})", season_label or source_url or "")
     if m:
         season_year = int(m.group(1))
-        # filename often end-year → treat as season end
-        if season_year and not re.search(r"\d{4}/\d{2,4}", season_label or ""):
+        if season_label and not re.search(r"\d{4}/\d", season_label):
             season_label = f"{season_year - 1}/{season_year}"
 
     rows: List[dict] = []
     current_date: Optional[date] = None
-    section = ""
-    level = default_level
+    section = "premiere"
+    level: Optional[str] = "1"  # pages usually start with top flight
 
     for raw in text.splitlines():
         line = raw.strip()
@@ -161,20 +172,33 @@ def parse_rsssf_html(
             continue
         if line.startswith("§§SECTION:"):
             section = line.split(":", 1)[1].strip()
-            level = _infer_level(section, source_url)
+            lv = _level_from_section(section)
+            # Sub-groups (e.g. 2ce under deuxieme) inherit parent L1/L2
+            if lv is None and level in ("1", "2") and not SKIP_SECTION.search(section):
+                pass  # keep level
+            else:
+                level = lv
             continue
-        # Heading-like lines
         if re.match(r"^(Round|Matchday|Week)\b", line, re.I):
-            section = line
+            # stay in current level
             continue
         if re.search(r"\b(First|Second|Third|Fourth)\s+Level\b|\bPremier\b|\bLigue\s*[123]\b", line, re.I):
             section = line
-            level = _infer_level(line, source_url)
+            level = _level_from_section(line)
+            continue
+
+        if level not in ("1", "2"):
+            # still scan dates so we don't lose calendar if section flips later
+            dm = DATE_BRACKET.search(line)
+            if dm:
+                d = _parse_date(dm.group("body"), season_year)
+                if d:
+                    current_date = d
             continue
 
         dm = DATE_BRACKET.search(line)
         if dm:
-            d = _parse_rsssf_date(dm.group("body"), season_year)
+            d = _parse_date(dm.group("body"), season_year)
             if d:
                 current_date = d
             line = DATE_BRACKET.sub(" ", line).strip()
@@ -188,32 +212,25 @@ def parse_rsssf_html(
         away = re.sub(r"\s+", " ", sm.group("away")).strip()
         if len(home) < 2 or len(away) < 2:
             continue
-        # Standings rows look like: "1.MC Alger 30 20 5 5 41-18 65"
         if re.match(r"^\d+\.", home) or re.match(r"^\d+\.", away):
             continue
-        if "Final Table" in home or "NB:" in home or "Champion" in away:
+        if "Final Table" in home or "NB:" in home:
             continue
-        if re.match(r"^[\d\.\s\-]+$", home) or re.match(r"^[\d\.\s\-]+$", away):
-            continue
-        # Reject table residue: too many bare integers on the line
         nums = re.findall(r"\b\d+\b", line)
-        if len(nums) > 4:  # score uses 2; allow [aet] noise
+        if len(nums) > 4:
             continue
-        # Team names must contain a letter
         if not re.search(r"[A-Za-zÀ-ÿ]", home) or not re.search(r"[A-Za-zÀ-ÿ]", away):
             continue
         hg, ag = int(sm.group("hg")), int(sm.group("ag"))
         if hg > 15 or ag > 15:
             continue
         ftr = "H" if hg > ag else ("A" if hg < ag else "D")
-        div = f"AFR{level}" if level not in ("CUP", "W") else f"AFR{level}"
-        league = section or f"{country} level {level}"
         rows.append({
             "Source": "rsssf",
             "SourceFile": source_url,
             "Country": country,
-            "League": league[:120],
-            "Div": div,
+            "League": f"{country} Level {level}",
+            "Div": f"AFR{level}",
             "Season": season_label or "unknown",
             "Stage": section[:80],
             "Date": current_date.isoformat(),
@@ -237,46 +254,38 @@ def _country_from_path(path: str, surrounding: str = "") -> str:
             key = pref.split("/")[-1]
             if key and key in low:
                 return name
-    # fallback keywords
     for name in COUNTRY_YEAR_PREFIXES:
         if name.lower() in low:
             return name
     return "Unknown"
 
 
-def discover_index_links(index_html: str, base_url: str = RSSSF_AFRICA_INDEX) -> List[Tuple[str, str, str, str]]:
-    """
-    Returns list of (country, season_hint, url, level_hint).
-    Includes all levels (not only first).
-    """
-    out: List[Tuple[str, str, str, str]] = []
+def discover_index_links(index_html: str) -> List[Tuple[str, str, str]]:
+    """(country, season_hint, url) — pages that mention first/second level."""
+    out: List[Tuple[str, str, str]] = []
     for m in re.finditer(r'href=["\']([^"\']+)["\'][^>]*>([^<]*)<', index_html, re.I):
         href, label = m.group(1), m.group(2).strip()
         if "tables" not in href.lower():
             continue
-        if href.lower().startswith("http") and "rsssf.com" not in href.lower():
+        # keep first + second level links; skip women / third+
+        if re.search(r"wom|third|fourth|troisi|quatri", href + label, re.I):
             continue
-        url = urljoin(base_url, href.split("#")[0])
-        if not url.endswith(".html") and ".html" not in url:
+        if not re.search(
+            r"first|second|premier|premiere|deuxieme|girabola|ligue|liga|super",
+            href + " " + label,
+            re.I,
+        ):
+            # still allow generic season pages (contain results for L1/L2)
+            if not re.search(r"tables[a-z]/\w+\d{4}", href, re.I):
+                continue
+        url = urljoin(RSSSF_AFRICA_INDEX, href.split("#")[0])
+        if ".html" not in url:
             continue
-        # season from filename
         sm = re.search(r"(19|20)(\d{2})", Path(url).name)
-        season_hint = ""
-        if sm:
-            y = int(sm.group(1) + sm.group(2))
-            season_hint = f"{y - 1}/{y}"
-        pos = m.start()
-        window = index_html[max(0, pos - 1000):pos + 200]
+        season = f"{int(sm.group(1)+sm.group(2))-1}/{sm.group(1)+sm.group(2)}" if sm else ""
+        window = index_html[max(0, m.start() - 900):m.start() + 120]
         country = _country_from_path(url, window + " " + label)
-        level = _infer_level(label + " " + href, url)
-        if country == "Unknown":
-            # try window country list items
-            for name in COUNTRY_YEAR_PREFIXES:
-                if re.search(re.escape(name), window, re.I):
-                    country = name
-                    break
-        out.append((country, season_hint, url, level))
-
+        out.append((country, season, url))
     seen: Set[str] = set()
     uniq = []
     for item in out:
@@ -289,74 +298,63 @@ def discover_index_links(index_html: str, base_url: str = RSSSF_AFRICA_INDEX) ->
 
 def probe_year_urls(
     session: requests.Session,
-    years: Iterable[int] = range(2005, 2027),
+    years: Iterable[int],
     delay: float = DEFAULT_DELAY,
-) -> List[Tuple[str, str, str, str]]:
-    """Probe year pages; lock onto first working URL prefix per country."""
-    found: List[Tuple[str, str, str, str]] = []
+) -> List[Tuple[str, str, str]]:
+    found: List[Tuple[str, str, str]] = []
     for country, prefixes in COUNTRY_YEAR_PREFIXES.items():
-        working_pref = None
-        for y in sorted(years, reverse=True):  # recent first
-            prefs = [working_pref] if working_pref else prefixes
+        working = None
+        for y in sorted(years, reverse=True):
+            prefs = [working] if working else prefixes
             hit = False
             for pref in prefs:
                 if not pref:
                     continue
-                path = f"{pref}{y}.html"
-                url = urljoin("http://www.rsssf.com/", path)
+                url = urljoin(RSSSF_BASE, f"{pref}{y}.html")
                 try:
-                    rr = session.get(url, timeout=12)
+                    rr = session.get(url, timeout=20)
                     if rr.status_code == 200 and len(rr.content) > 800:
-                        found.append((country, f"{y - 1}/{y}", url, "1"))
-                        working_pref = pref
+                        found.append((country, f"{y-1}/{y}", url))
+                        working = pref
                         hit = True
-                        print(f"[rsssf] found {country} {y}: {url}")
+                        print(f"[rsssf] found {country} {y}")
                         break
                 except Exception:
                     pass
-                time.sleep(delay * 0.25)
-            if not hit and working_pref is None and y < max(years) - 3:
-                # no prefix works for this country recently — skip rest
+                time.sleep(delay * 0.2)
+            if not hit and working is None and y < max(years) - 2:
                 break
     return found
 
 
-def fetch_all_rsssf(
+def fetch_rsssf_levels_1_2(
     *,
-    include_women: bool = False,
-    probe_years: bool = True,
-    year_start: int = 2008,
-    year_end: int = 2026,
+    year_start: int = 2014,
+    year_end: int = 2027,
     delay: float = DEFAULT_DELAY,
     max_pages: Optional[int] = None,
+    probe_years: bool = True,
 ) -> List[dict]:
     s = _session()
-    print(f"[rsssf] GET index {RSSSF_AFRICA_INDEX}")
+    print(f"[rsssf] GET {RSSSF_AFRICA_INDEX}")
     r = s.get(RSSSF_AFRICA_INDEX, timeout=60)
     r.raise_for_status()
     links = discover_index_links(r.text)
     print(f"[rsssf] index links: {len(links)}")
-
     if probe_years:
-        print(f"[rsssf] probing year pages {year_start}–{year_end}…")
-        probed = probe_year_urls(s, years=range(year_start, year_end + 1), delay=delay)
-        print(f"[rsssf] probed hits: {len(probed)}")
-        # merge
-        seen = {u for _, _, u, _ in links}
+        print(f"[rsssf] probing years {year_start}–{year_end}")
+        probed = probe_year_urls(s, range(year_start, year_end + 1), delay=delay)
+        seen = {u for _, _, u in links}
         for item in probed:
             if item[2] not in seen:
                 links.append(item)
                 seen.add(item[2])
-
-    if not include_women:
-        links = [x for x in links if x[3] != "W" and "wom" not in x[2].lower()]
-
+        print(f"[rsssf] after probe: {len(links)} pages")
     if max_pages is not None:
         links = links[:max_pages]
 
-    print(f"[rsssf] pages to fetch: {len(links)}")
     rows: List[dict] = []
-    for i, (country, season, url, level) in enumerate(links, 1):
+    for i, (country, season, url) in enumerate(links, 1):
         try:
             time.sleep(delay)
             rr = s.get(url, timeout=45)
@@ -368,16 +366,19 @@ def fetch_all_rsssf(
                 country=country if country != "Unknown" else _country_from_path(url),
                 season_label=season or "unknown",
                 source_url=url,
-                default_level=level or "1",
             )
             print(f"[rsssf] ({i}/{len(links)}) {country} {season} → {len(part)}  {url}")
             rows.extend(part)
         except Exception as e:
             print(f"[rsssf] fail {url}: {e}")
-    print(f"[rsssf] total raw matches: {len(rows)}")
+    print(f"[rsssf] total L1+L2 matches: {len(rows)}")
     return rows
 
 
-# backward-compatible alias
+# aliases for older imports
+def fetch_all_rsssf(**kwargs) -> List[dict]:
+    return fetch_rsssf_levels_1_2(**kwargs)
+
+
 def fetch_rsssf_priority(session=None, max_pages: int = 80) -> List[dict]:
-    return fetch_all_rsssf(probe_years=True, max_pages=max_pages)
+    return fetch_rsssf_levels_1_2(max_pages=max_pages, probe_years=True)

@@ -28,7 +28,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
 from africa.parse_football_txt import parse_openfootball_tree  # noqa: E402
-from africa.parse_rsssf import fetch_all_rsssf  # noqa: E402
+from africa.parse_rsssf import fetch_rsssf_levels_1_2  # noqa: E402
 
 
 def match_key(row) -> str:
@@ -141,7 +141,7 @@ def main():
     ap.add_argument("--fetch-rsssf", action="store_true", help="Scrape RSSSF Africa (all levels + year probe)")
     ap.add_argument("--rsssf-max-pages", type=int, default=None, help="Cap pages (default: all discovered)")
     ap.add_argument("--rsssf-year-start", type=int, default=2008)
-    ap.add_argument("--rsssf-year-end", type=int, default=2026)
+    ap.add_argument("--rsssf-year-end", type=int, default=2027)
     ap.add_argument("--rsssf-include-women", action="store_true")
     ap.add_argument("--rsssf-delay", type=float, default=0.35)
     ap.add_argument("--out", type=Path, default=ROOT / "master_africa_football.parquet")
@@ -163,10 +163,9 @@ def main():
         print("  git clone --depth 1 https://github.com/openfootball/world.git data/africa_raw/openfootball_world")
 
     if args.fetch_rsssf:
-        print("[rsssf] fetching ALL levels (index + year probe)…")
+        print("[rsssf] fetching RSSSF levels 1–2 only (index + year probe)…")
         try:
-            rrows = fetch_all_rsssf(
-                include_women=args.rsssf_include_women,
+            rrows = fetch_rsssf_levels_1_2(
                 probe_years=True,
                 year_start=args.rsssf_year_start,
                 year_end=args.rsssf_year_end,

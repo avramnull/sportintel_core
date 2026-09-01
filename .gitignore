@@ -50,4 +50,3 @@ daily_football_data/fixtures_*.csv
 # Africa ETL local artifacts
 data/africa_raw/
 master_africa_football.csv
-master_africa_football.parquet
