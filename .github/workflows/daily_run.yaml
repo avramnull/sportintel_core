@@ -17,7 +17,6 @@ on:
       - "train.py"
       - "daily_pipeline.py"
       - "scan_fixture_teams.py"
-      - "api_football_client.py"
       - "tools/**"
       - "africa/**"
   schedule:
@@ -97,6 +96,16 @@ jobs:
             echo "Industrial upgrade already applied"
           fi
 
+      - name: Apply runtime cleanup
+        shell: bash
+        run: |
+          set -euo pipefail
+          if test -f tools/apply_runtime_cleanup.py; then
+            python tools/apply_runtime_cleanup.py
+          else
+            echo "Runtime cleanup already applied"
+          fi
+
       - name: Industrial engine smoke test
         shell: bash
         run: |
@@ -137,40 +146,35 @@ jobs:
           HARD_ATTACK_CV: "0.18"
           HARD_DEFENSE_CV: "0.18"
           HARD_SHARED_CV: "0.10"
-          TRAIN_GLOBAL: "1"
+          TRAIN_GLOBAL: "0"
           SKIP_TRAIN: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.skip_train == 'true' && '1' || '0' }}
           SPORTINTEL_PUSH: "1"
           AFRICA_SEGMENT: "1"
           AFRICA_OPTIONAL: "1"
-          API_FOOTBALL_BACKUP_KEY: ${{ secrets.API_FOOTBALL_BACKUP_KEY }}
-          API_FOOTBALL_KEY: ${{ secrets.API_FOOTBALL_BACKUP_KEY || secrets.API_FOOTBALL_KEY }}
           LIVE_SCORE_API_KEY: ${{ secrets.LIVE_SCORE_API_KEY }}
           LIVE_SCORE_API_SECRET: ${{ secrets.LIVE_SCORE_API_SECRET }}
-          API_FOOTBALL_STANDINGS_KEY: ""
           SKIP_AFRICA_TRAIN: "0"
           SKIP_AFRICA_SIM: "0"
           AFRICA_FETCH_ODDS: "0"
           AFRICA_PRIOR_SHRINK: "0.22"
-          API_FOOTBALL_MAX_STANDINGS: "0"
           STANDINGS_STRENGTH: "0"
           SKIP_STANDINGS: "1"
-          STANDINGS_ALLOW_API: "0"
           ENABLE_LIVE_STANDINGS: "0"
           GITHUB_TOKEN: ${{ secrets.SPORTINTEL_PUSH_TOKEN || secrets.GITHUB_TOKEN }}
           SPORTINTEL_REPO: avramnull/sportintel
           LOG_LEVEL: INFO
         run: python daily_pipeline.py
 
-      - name: Commit generated data, models, and one-time source upgrade
+      - name: Commit generated data, models, and source cleanup
         shell: bash
         run: |
           set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add -A daily_football_data/ master_football_data.parquet football_models/ .gitattributes industrial_sim_engine.py train.py sim.py run_fixture_sims.py africa/ tools/
+          git add -A daily_football_data/ master_football_data.parquet football_models/ .gitattributes industrial_sim_engine.py train.py sim.py run_fixture_sims.py africa/ si_config.py local_standings.py standings_prior.py tools/
           if git diff --cached --quiet; then
             echo "No generated/source changes to commit"
             exit 0
           fi
-          git commit -m "Daily pipeline: industrial-v3 simulation upgrade"
+          git commit -m "Daily pipeline: fixture-team training and Live-score provider"
           git push origin HEAD:main
