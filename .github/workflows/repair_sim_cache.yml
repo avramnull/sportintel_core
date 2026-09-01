@@ -65,10 +65,12 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add sim.py
           rm -f .github/workflows/repair_sim_cache.yml
-          git add .github/workflows/repair_sim_cache.yml
+          git add -u .github/workflows/repair_sim_cache.yml
           if git diff --cached --quiet; then
             echo "No simulator cache changes required"
             exit 0
           fi
           git commit -m "Fix simulator backend cache definitions"
+          git fetch origin main
+          git rebase origin/main
           git push origin HEAD:main
