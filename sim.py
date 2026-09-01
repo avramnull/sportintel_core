@@ -135,6 +135,12 @@ def load_run_targets(run_dir):
 
 
 _PREPROC_CACHE: Dict[Any, Any] = {}
+_XGB_CACHE: Dict[str, Any] = {}
+_LGBM_CACHE: Dict[str, Any] = {}
+_CAT_CACHE: Dict[str, Any] = {}
+_SK_CACHE: Dict[str, Any] = {}
+_TORCH_CACHE: Dict[str, Any] = {}
+_TF_CACHE: Dict[str, Any] = {}
 
 
 def load_preprocessors(run_dir, target_key="ft_result"):
