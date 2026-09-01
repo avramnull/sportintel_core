@@ -12,6 +12,11 @@ on:
       - "requirements.txt"
       - "hard_simulation.py"
       - "run_fixture_sims.py"
+      - "sim.py"
+      - "daily_pipeline.py"
+      - "scan_fixture_teams.py"
+      - "api_football_client.py"
+      - "africa/**"
   schedule:
     - cron: "0 0 * * *"
   workflow_dispatch:
@@ -111,11 +116,9 @@ jobs:
           SKIP_TRAIN: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.skip_train == 'true' && '1' || '0' }}
           SPORTINTEL_PUSH: "1"
           AFRICA_SEGMENT: "1"
-          # Backup API-Football credential is the preferred fixture key.
-          # It is injected from GitHub Secrets and never stored in the repository.
           API_FOOTBALL_BACKUP_KEY: ${{ secrets.API_FOOTBALL_BACKUP_KEY }}
           API_FOOTBALL_KEY: ${{ secrets.API_FOOTBALL_BACKUP_KEY || secrets.API_FOOTBALL_KEY }}
-          # Standings integration is intentionally disabled.
+          # Standings API is fully disabled.
           API_FOOTBALL_STANDINGS_KEY: ""
           SKIP_AFRICA_TRAIN: "0"
           SKIP_AFRICA_SIM: "0"
