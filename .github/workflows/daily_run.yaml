@@ -104,9 +104,10 @@ jobs:
           # 0 = no network cap — still only as many calls as unique leagues on the board.
           API_FOOTBALL_MAX_STANDINGS: "0"
           STANDINGS_STRENGTH: "0.55"
-          SKIP_STANDINGS: "0"
+          SKIP_STANDINGS: "1"
           # Live tables from football-data season CSVs (free). API standings only if paid.
           STANDINGS_ALLOW_API: "0"
+          ENABLE_LIVE_STANDINGS: "0"
           GITHUB_TOKEN: ${{ secrets.SPORTINTEL_PUSH_TOKEN || secrets.GITHUB_TOKEN }}
           SPORTINTEL_REPO: avramnull/sportintel
           LOG_LEVEL: INFO

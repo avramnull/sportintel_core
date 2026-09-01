@@ -137,13 +137,14 @@ def main():
             "TRAIN_WORKERS": os.environ.get("TRAIN_WORKERS", "3"),
         })
 
-    # 5b. Live standings — one FULL table per unique EUR league with fixtures today
-    # (e.g. 6 PL matches → 1 request covering all ~20 clubs). Merges into standings_latest.
-    if os.environ.get("API_FOOTBALL_KEY", "").strip() and os.environ.get("SKIP_STANDINGS", "").strip() not in ("1", "true", "yes"):
-        log_step(log, "standings", "API-Football full tables for unique EUR leagues on board")
+    # 5b. Live standings — DISABLED by default.
+    # Free API-Football tables are stale (≤2024); TheSportsDB free returns only ~5 rows.
+    # football-data local builder remains available via ENABLE_LIVE_STANDINGS=1.
+    if os.environ.get("ENABLE_LIVE_STANDINGS", "").strip().lower() in ("1", "true", "yes") and os.environ.get("SKIP_STANDINGS", "").strip().lower() not in ("1", "true", "yes"):
+        log_step(log, "standings", "live tables for unique EUR leagues on board")
         run([sys.executable, "fetch_day_standings.py", "--region", "eur", "--merge"], check=False)
     else:
-        log.info("standings step skipped (no API key or SKIP_STANDINGS)")
+        log.info("live standings DISABLED (set ENABLE_LIVE_STANDINGS=1 to re-enable)")
 
     # 6. Live batch sim
     if SKIP_SIM:

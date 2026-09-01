@@ -130,17 +130,18 @@ def load_africa_standings() -> tuple[dict, float]:
 
 def fetch_standings_for_africa(day: str | None = None):
     """
-    Pull live FULL tables for unique league_ids on today's Africa board.
-    One league_id → one request (covers every club in that division).
-    Merges into standings_latest so EUR tables from the earlier pipeline step remain.
+    Optional live tables for Africa board. Off unless ENABLE_LIVE_STANDINGS=1.
     """
-    key = os.environ.get("API_FOOTBALL_KEY", "").strip()
-    if not key:
-        log("no API key — skip standings")
+    if os.environ.get("ENABLE_LIVE_STANDINGS", "").strip().lower() not in ("1", "true", "yes"):
+        log("live standings DISABLED")
         return
-    if os.environ.get("SKIP_STANDINGS", "").strip() in ("1", "true", "yes"):
+    if os.environ.get("SKIP_STANDINGS", "").strip().lower() in ("1", "true", "yes"):
         log("SKIP_STANDINGS")
         return
+    key = os.environ.get("API_FOOTBALL_KEY", "").strip() or os.environ.get("API_FOOTBALL_STANDINGS_KEY", "").strip()
+    if not key:
+        log("no API key — local-only path if fetch_day_standings runs")
+        # still allow local africa parquet tables via fetch_day_standings
     env = {
         "API_FOOTBALL_KEY": key,
         "API_FOOTBALL_STANDINGS_KEY": os.environ.get("API_FOOTBALL_STANDINGS_KEY", "").strip() or key,

@@ -119,7 +119,7 @@ def main():
     if _sp_tables:
         print(f"Live standings loaded for {len(_sp_tables)} leagues (strength={_sp_strength})", flush=True)
     else:
-        print("No live standings bundle — sim uses models+odds only", flush=True)
+        print("No live standings bundle — sim uses models+odds+Elo only (standings pipeline off)", flush=True)
 
     for i, row in df.iterrows():
         home = str(row["HomeTeam"]).strip()
