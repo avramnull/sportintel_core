@@ -14,9 +14,9 @@ on:
         type: boolean
         default: false
       max_train_teams:
-        description: "MAX_TRAIN_TEAMS (0 = unlimited; default 12)"
+        description: "Optional explicit training cap; leave 0 for all fixture teams"
         type: string
-        default: "12"
+        default: "0"
 
 jobs:
   daily:
@@ -68,7 +68,10 @@ jobs:
 
       - name: Run full daily pipeline
         env:
-          MAX_TRAIN_TEAMS: ${{ github.event.inputs.max_train_teams || '12' }}
+          # 0 is intentional: scan_fixture_teams.py derives the complete
+          # training set from today's fixtures. An explicit positive value
+          # may be supplied manually when deliberately limiting a run.
+          MAX_TRAIN_TEAMS: ${{ github.event.inputs.max_train_teams || '0' }}
           MIN_TEAM_MATCHES: "25"
           TODAY_ONLY: "1"
           DAILY_LIGHT: "1"
@@ -76,14 +79,14 @@ jobs:
           USE_TENSORFLOW: "1"
           USE_ADABOOST: "0"
           USE_RANDOM_FOREST: "1"
-          MAX_BOOST_ROUNDS: "900"
-          NN_EPOCHS: "45"
+          MAX_BOOST_ROUNDS: "1400"
+          NN_EPOCHS: "60"
           CAPACITY_STEPS: "2"
           DAILY_TARGETS: "ft_result,over25,btts,ht_result"
           TRAIN_WORKERS: "3"
           TRAIN_DIVS: ""
-          N_SIMULATIONS: "3000"
-          ODDS_BLEND: "0.30"
+          N_SIMULATIONS: "8000"
+          ODDS_BLEND: "0.22"
           SKIP_TRAIN: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.skip_train == 'true' && '1' || '0' }}
           SPORTINTEL_PUSH: "1"
           AFRICA_SEGMENT: "1"
@@ -93,6 +96,7 @@ jobs:
           SKIP_AFRICA_SIM: "0"
           AFRICA_FETCH_ODDS: "0"
           AFRICA_PRIOR_SHRINK: "0.22"
+          API_FOOTBALL_MAX_STANDINGS: "0"
           STANDINGS_STRENGTH: "0.55"
           SKIP_STANDINGS: "1"
           STANDINGS_ALLOW_API: "0"
