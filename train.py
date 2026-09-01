@@ -82,15 +82,16 @@ if os.environ.get("MIN_TEAM_MATCHES"):
 if os.environ.get("MAX_BOOST_ROUNDS"):
     CONFIG["max_boost_rounds"] = int(os.environ["MAX_BOOST_ROUNDS"])
 if os.environ.get("DAILY_LIGHT", "").strip() in ("1", "true", "yes"):
-    # Advanced daily training: real capacity, parallel for wall-clock only
-    CONFIG["capacity_growth_steps"] = int(os.environ.get("CAPACITY_STEPS", "1"))
-    CONFIG["max_boost_rounds"] = min(int(os.environ.get("MAX_BOOST_ROUNDS", "900")), 1200)
-    CONFIG["patience_overfit"] = 35
-    CONFIG["nn_epochs"] = int(os.environ.get("NN_EPOCHS", "45"))
-    CONFIG["nn_patience"] = 10
+    # Industrial daily: deeper trees, stronger capacity, still CI-friendly
+    CONFIG["capacity_growth_steps"] = int(os.environ.get("CAPACITY_STEPS", "2"))
+    CONFIG["max_boost_rounds"] = min(int(os.environ.get("MAX_BOOST_ROUNDS", "1400")), 2000)
+    CONFIG["patience_overfit"] = 45
+    CONFIG["nn_epochs"] = int(os.environ.get("NN_EPOCHS", "60"))
+    CONFIG["nn_patience"] = 12
     CONFIG["nn_batch"] = 256
-    CONFIG["nn_hidden"] = [128, 64, 32]  # real depth
-    CONFIG["n_jobs"] = max(1, min(2, (os.cpu_count() or 2)))
+    CONFIG["nn_hidden"] = [192, 96, 48]  # deeper MLP
+    CONFIG["n_jobs"] = max(1, min(3, (os.cpu_count() or 2)))
+    CONFIG["overfit_gap_warn"] = 0.12
     if os.environ.get("USE_ADABOOST", "").strip() not in ("1", "true", "yes"):
         CONFIG["use_adaboost"] = False
     if os.environ.get("USE_RANDOM_FOREST", "").strip() in ("0", "false", "no"):
@@ -145,16 +146,28 @@ if _dt:
     print(f"[train] DAILY_TARGETS restricted to: {list(TARGETS.keys())}")
 
 FEATURE_NUM = [
+    # Market
     "AvgH", "AvgD", "AvgA", "B365H", "B365D", "B365A",
     "LogOddsH", "LogOddsD", "LogOddsA", "ImpH", "ImpD", "ImpA",
     "OddsMargin", "HomeOddsEdge", "AwayOddsEdge",
+    "FairH", "FairD", "FairA", "MarketEntropy",
+    # Calendar
     "Year", "Month", "DayOfWeek", "IsWeekend",
+    # Global form windows
     "HomeFormPts_5", "HomeFormGF_5", "HomeFormGA_5", "HomeFormGD_5",
     "AwayFormPts_5", "AwayFormGF_5", "AwayFormGA_5", "AwayFormGD_5",
     "HomeFormPts_10", "HomeFormGF_10", "HomeFormGA_10", "HomeFormGD_10",
     "AwayFormPts_10", "AwayFormGF_10", "AwayFormGA_10", "AwayFormGD_10",
     "HomeFormPts_20", "AwayFormPts_20",
+    # Venue-specific form
+    "HomeHomePts_5", "HomeHomeGD_5", "AwayAwayPts_5", "AwayAwayGD_5",
+    # Strength / dynamics
+    "EloHome", "EloAway", "EloDiff", "EloExpectHome",
+    "RestHome", "RestAway", "RestDiff",
+    "HomeStreak", "AwayStreak",
+    "HomeFormPts_EW", "AwayFormPts_EW",
     "H2H_HomeWins_5", "H2H_Draws_5", "H2H_AwayWins_5",
+    "H2H_HomeGD_5",
 ]
 
 
@@ -335,9 +348,130 @@ def engineer(df: pd.DataFrame) -> pd.DataFrame:
         else:
             winner = None
         hist[r["PairKey"]].append(winner)
+
     df["H2H_HomeWins_5"] = hw
     df["H2H_Draws_5"] = dr
     df["H2H_AwayWins_5"] = aw
+
+    # ---- Industrial strength layer: Elo, rest, venue form, streaks, EW form ----
+    n = len(df)
+    elo = {}
+    elo_h = np.full(n, 1500.0)
+    elo_a = np.full(n, 1500.0)
+    rest_h = np.full(n, 7.0)
+    rest_a = np.full(n, 7.0)
+    last_date = {}
+    home_home_pts = np.full(n, np.nan)
+    home_home_gd = np.full(n, np.nan)
+    away_away_pts = np.full(n, np.nan)
+    away_away_gd = np.full(n, np.nan)
+    hist_hh_pts = defaultdict(list)
+    hist_hh_gd = defaultdict(list)
+    hist_aa_pts = defaultdict(list)
+    hist_aa_gd = defaultdict(list)
+    streak = defaultdict(int)
+    streak_h = np.zeros(n)
+    streak_a = np.zeros(n)
+    ew_h = np.full(n, np.nan)
+    ew_a = np.full(n, np.nan)
+    hist_pts_ew = defaultdict(list)
+
+    K_ELO = 20.0
+    HOME_ADV = 60.0
+    dates = pd.to_datetime(df["Date"], errors="coerce")
+    fthg = pd.to_numeric(df.get("FTHG"), errors="coerce").fillna(0).to_numpy()
+    ftag = pd.to_numeric(df.get("FTAG"), errors="coerce").fillna(0).to_numpy()
+    ftr = df["FTR"].astype(str).to_numpy()
+    hid_a = df["HomeTeamId"].to_numpy()
+    aid_a = df["AwayTeamId"].to_numpy()
+
+    for i in range(n):
+        hid, aid = int(hid_a[i]), int(aid_a[i])
+        rh = elo.get(hid, 1500.0)
+        ra = elo.get(aid, 1500.0)
+        elo_h[i] = rh
+        elo_a[i] = ra
+        # rest days
+        d = dates.iloc[i]
+        if pd.notna(d):
+            if hid in last_date and pd.notna(last_date[hid]):
+                rest_h[i] = float(min(30, max(0, (d - last_date[hid]).days)))
+            if aid in last_date and pd.notna(last_date[aid]):
+                rest_a[i] = float(min(30, max(0, (d - last_date[aid]).days)))
+            last_date[hid] = d
+            last_date[aid] = d
+        # venue-specific
+        if hist_hh_pts[hid]:
+            home_home_pts[i] = float(np.mean(hist_hh_pts[hid][-5:]))
+            home_home_gd[i] = float(np.mean(hist_hh_gd[hid][-5:]))
+        if hist_aa_pts[aid]:
+            away_away_pts[i] = float(np.mean(hist_aa_pts[aid][-5:]))
+            away_away_gd[i] = float(np.mean(hist_aa_gd[aid][-5:]))
+        streak_h[i] = streak[hid]
+        streak_a[i] = streak[aid]
+        if hist_pts_ew[hid]:
+            w = np.exp(np.linspace(-1.5, 0, len(hist_pts_ew[hid][-10:])))
+            ew_h[i] = float(np.average(hist_pts_ew[hid][-10:], weights=w))
+        if hist_pts_ew[aid]:
+            w = np.exp(np.linspace(-1.5, 0, len(hist_pts_ew[aid][-10:])))
+            ew_a[i] = float(np.average(hist_pts_ew[aid][-10:], weights=w))
+
+        # update after features
+        exp_h = 1.0 / (1.0 + 10 ** ((ra - (rh + HOME_ADV)) / 400.0))
+        score_h = 1.0 if ftr[i] == "H" else (0.5 if ftr[i] == "D" else 0.0)
+        elo[hid] = rh + K_ELO * (score_h - exp_h)
+        elo[aid] = ra + K_ELO * ((1.0 - score_h) - (1.0 - exp_h))
+        pts_h = 3 if ftr[i] == "H" else (1 if ftr[i] == "D" else 0)
+        pts_a = 3 if ftr[i] == "A" else (1 if ftr[i] == "D" else 0)
+        hist_hh_pts[hid].append(pts_h)
+        hist_hh_gd[hid].append(float(fthg[i] - ftag[i]))
+        hist_aa_pts[aid].append(pts_a)
+        hist_aa_gd[aid].append(float(ftag[i] - fthg[i]))
+        hist_pts_ew[hid].append(pts_h)
+        hist_pts_ew[aid].append(pts_a)
+        # streak: +win, -loss, 0 draw resets toward 0
+        if ftr[i] == "H":
+            streak[hid] = streak[hid] + 1 if streak[hid] >= 0 else 1
+            streak[aid] = streak[aid] - 1 if streak[aid] <= 0 else -1
+        elif ftr[i] == "A":
+            streak[aid] = streak[aid] + 1 if streak[aid] >= 0 else 1
+            streak[hid] = streak[hid] - 1 if streak[hid] <= 0 else -1
+        else:
+            streak[hid] = 0
+            streak[aid] = 0
+
+    df["EloHome"] = elo_h
+    df["EloAway"] = elo_a
+    df["EloDiff"] = elo_h - elo_a
+    df["EloExpectHome"] = 1.0 / (1.0 + np.power(10.0, (elo_a - (elo_h + HOME_ADV)) / 400.0))
+    df["RestHome"] = rest_h
+    df["RestAway"] = rest_a
+    df["RestDiff"] = rest_h - rest_a
+    df["HomeHomePts_5"] = home_home_pts
+    df["HomeHomeGD_5"] = home_home_gd
+    df["AwayAwayPts_5"] = away_away_pts
+    df["AwayAwayGD_5"] = away_away_gd
+    df["HomeStreak"] = streak_h
+    df["AwayStreak"] = streak_a
+    df["HomeFormPts_EW"] = ew_h
+    df["AwayFormPts_EW"] = ew_a
+    # market fair probs + entropy
+    if all(c in df.columns for c in ("AvgH", "AvgD", "AvgA")):
+        ih = 1.0 / df["AvgH"].clip(1.01)
+        id_ = 1.0 / df["AvgD"].clip(1.01)
+        ia = 1.0 / df["AvgA"].clip(1.01)
+        s = ih + id_ + ia
+        df["FairH"] = ih / s
+        df["FairD"] = id_ / s
+        df["FairA"] = ia / s
+        p = np.clip(np.column_stack([df["FairH"], df["FairD"], df["FairA"]]), 1e-9, 1)
+        df["MarketEntropy"] = -(p * np.log(p)).sum(axis=1)
+    else:
+        df["FairH"] = df["FairD"] = df["FairA"] = np.nan
+        df["MarketEntropy"] = np.nan
+    # H2H goal diff from same past meetings (approx via form already); set 0 placeholder filled above structure
+    df["H2H_HomeGD_5"] = df.get("H2H_HomeWins_5", 0) - df.get("H2H_AwayWins_5", 0)
+
     return df
 
 

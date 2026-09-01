@@ -213,9 +213,13 @@ def align_hda(p, le_y=None):
 
 def build_live_features(home_id, away_id, div_code, odds_h, odds_d, odds_a,
                         hist_df, feature_names, le_div):
+    """Industrial live feature vector aligned with train.engineer()."""
     now = datetime.utcnow()
     ih, id_, ia = fair_probs(odds_h, odds_d, odds_a)
     imp_sum = ih + id_ + ia
+    p_m = np.clip([ih, id_, ia], 1e-9, 1.0)
+    p_m = p_m / p_m.sum()
+    market_entropy = float(-(p_m * np.log(p_m)).sum())
     row = {
         "AvgH": odds_h, "AvgD": odds_d, "AvgA": odds_a,
         "B365H": odds_h, "B365D": odds_d, "B365A": odds_a,
@@ -224,78 +228,169 @@ def build_live_features(home_id, away_id, div_code, odds_h, odds_d, odds_a,
         "ImpH": implied(odds_h), "ImpD": implied(odds_d), "ImpA": implied(odds_a),
         "OddsMargin": imp_sum - 1.0 if imp_sum else 0.0,
         "HomeOddsEdge": ih, "AwayOddsEdge": ia,
+        "FairH": float(p_m[0]), "FairD": float(p_m[1]), "FairA": float(p_m[2]),
+        "MarketEntropy": market_entropy,
         "Year": now.year, "Month": now.month, "DayOfWeek": now.weekday(),
         "IsWeekend": int(now.weekday() >= 5),
-        "H2H_HomeWins_5": 0, "H2H_Draws_5": 0, "H2H_AwayWins_5": 0,
+        "H2H_HomeWins_5": 0, "H2H_Draws_5": 0, "H2H_AwayWins_5": 0, "H2H_HomeGD_5": 0,
+        "EloHome": 1500.0, "EloAway": 1500.0, "EloDiff": 0.0, "EloExpectHome": 0.5,
+        "RestHome": 7.0, "RestAway": 7.0, "RestDiff": 0.0,
+        "HomeHomePts_5": np.nan, "HomeHomeGD_5": np.nan,
+        "AwayAwayPts_5": np.nan, "AwayAwayGD_5": np.nan,
+        "HomeStreak": 0.0, "AwayStreak": 0.0,
+        "HomeFormPts_EW": np.nan, "AwayFormPts_EW": np.nan,
     }
-    for prefix, tid in [("Home", home_id), ("Away", away_id)]:
+    for prefix in ("Home", "Away"):
         for w in (5, 10, 20):
             row[f"{prefix}FormPts_{w}"] = np.nan
             row[f"{prefix}FormGF_{w}"] = np.nan
             row[f"{prefix}FormGA_{w}"] = np.nan
             row[f"{prefix}FormGD_{w}"] = np.nan
-        if hist_df is not None and len(hist_df) and tid is not None and int(tid) >= 0:
-            # ALL recent matches for this team (home or away) — fixes major form bias
-            mask = (hist_df["HomeTeamId"] == tid) | (hist_df["AwayTeamId"] == tid)
-            sub = hist_df.loc[mask].sort_values("Date").tail(25)
-            if len(sub):
-                is_home = (sub["HomeTeamId"] == tid).to_numpy()
-                ftr = sub["FTR"].astype(str).to_numpy()
-                pts = np.where(
-                    is_home,
-                    np.where(ftr == "H", 3, np.where(ftr == "D", 1, 0)),
-                    np.where(ftr == "A", 3, np.where(ftr == "D", 1, 0)),
-                ).astype(float)
-                gf = np.where(is_home, sub["FTHG"].to_numpy(), sub["FTAG"].to_numpy()).astype(float)
-                ga = np.where(is_home, sub["FTAG"].to_numpy(), sub["FTHG"].to_numpy()).astype(float)
-                for w in (5, 10, 20):
-                    row[f"{prefix}FormPts_{w}"] = float(np.nanmean(pts[-w:]))
-                    row[f"{prefix}FormGF_{w}"] = float(np.nanmean(gf[-w:]))
-                    row[f"{prefix}FormGA_{w}"] = float(np.nanmean(ga[-w:]))
-                    row[f"{prefix}FormGD_{w}"] = row[f"{prefix}FormGF_{w}"] - row[f"{prefix}FormGA_{w}"]
-            # H2H last 5 (once, on Home pass)
-            if prefix == "Home" and away_id is not None and int(away_id) >= 0:
-                h2h = hist_df[
-                    ((hist_df["HomeTeamId"] == tid) & (hist_df["AwayTeamId"] == away_id))
-                    | ((hist_df["HomeTeamId"] == away_id) & (hist_df["AwayTeamId"] == tid))
-                ].sort_values("Date").tail(5)
-                hw = dw = aw = 0
-                for _, m in h2h.iterrows():
-                    if m["HomeTeamId"] == tid:
-                        if m["FTR"] == "H": hw += 1
-                        elif m["FTR"] == "D": dw += 1
-                        else: aw += 1
-                    else:
-                        if m["FTR"] == "A": hw += 1
-                        elif m["FTR"] == "D": dw += 1
-                        else: aw += 1
-                row["H2H_HomeWins_5"] = hw
-                row["H2H_Draws_5"] = dw
-                row["H2H_AwayWins_5"] = aw
+
+    def team_form(tid, prefix):
+        if hist_df is None or not len(hist_df) or tid is None or int(tid) < 0:
+            return
+        mask = (hist_df["HomeTeamId"] == tid) | (hist_df["AwayTeamId"] == tid)
+        sub = hist_df.loc[mask].sort_values("Date").tail(30)
+        if not len(sub):
+            return
+        is_home = (sub["HomeTeamId"] == tid).to_numpy()
+        ftr = sub["FTR"].astype(str).to_numpy()
+        pts = np.where(
+            is_home,
+            np.where(ftr == "H", 3, np.where(ftr == "D", 1, 0)),
+            np.where(ftr == "A", 3, np.where(ftr == "D", 1, 0)),
+        ).astype(float)
+        gf = np.where(is_home, sub["FTHG"].to_numpy(), sub["FTAG"].to_numpy()).astype(float)
+        ga = np.where(is_home, sub["FTAG"].to_numpy(), sub["FTHG"].to_numpy()).astype(float)
+        for w in (5, 10, 20):
+            row[f"{prefix}FormPts_{w}"] = float(np.nanmean(pts[-w:]))
+            row[f"{prefix}FormGF_{w}"] = float(np.nanmean(gf[-w:]))
+            row[f"{prefix}FormGA_{w}"] = float(np.nanmean(ga[-w:]))
+            row[f"{prefix}FormGD_{w}"] = row[f"{prefix}FormGF_{w}"] - row[f"{prefix}FormGA_{w}"]
+        w = np.exp(np.linspace(-1.5, 0, min(10, len(pts))))
+        row[f"{prefix}FormPts_EW"] = float(np.average(pts[-len(w):], weights=w))
+        # streak
+        st = 0
+        for p in pts[::-1]:
+            if p == 3:
+                if st < 0: break
+                st += 1
+            elif p == 0:
+                if st > 0: break
+                st -= 1
+            else:
+                break
+        row[f"{prefix}Streak"] = float(st)
+        # rest
+        last = pd.to_datetime(sub["Date"].iloc[-1], errors="coerce")
+        if pd.notna(last):
+            row[f"Rest{prefix}"] = float(min(30, max(0, (now - last.to_pydatetime().replace(tzinfo=None)).days)))
+
+    team_form(home_id, "Home")
+    team_form(away_id, "Away")
+    row["RestDiff"] = float(row["RestHome"] - row["RestAway"])
+
+    # Venue-specific form
+    if hist_df is not None and len(hist_df) and home_id is not None and int(home_id) >= 0:
+        sub = hist_df.loc[hist_df["HomeTeamId"] == home_id].sort_values("Date").tail(8)
+        if len(sub):
+            ftr = sub["FTR"].astype(str)
+            pts = np.where(ftr == "H", 3, np.where(ftr == "D", 1, 0)).astype(float)
+            gd = (pd.to_numeric(sub["FTHG"], errors="coerce") - pd.to_numeric(sub["FTAG"], errors="coerce")).to_numpy()
+            row["HomeHomePts_5"] = float(np.nanmean(pts[-5:]))
+            row["HomeHomeGD_5"] = float(np.nanmean(gd[-5:]))
+    if hist_df is not None and len(hist_df) and away_id is not None and int(away_id) >= 0:
+        sub = hist_df.loc[hist_df["AwayTeamId"] == away_id].sort_values("Date").tail(8)
+        if len(sub):
+            ftr = sub["FTR"].astype(str)
+            pts = np.where(ftr == "A", 3, np.where(ftr == "D", 1, 0)).astype(float)
+            gd = (pd.to_numeric(sub["FTAG"], errors="coerce") - pd.to_numeric(sub["FTHG"], errors="coerce")).to_numpy()
+            row["AwayAwayPts_5"] = float(np.nanmean(pts[-5:]))
+            row["AwayAwayGD_5"] = float(np.nanmean(gd[-5:]))
+
+    # Lightweight Elo reconstruction from history (last ~400 matches involving either team)
+    if hist_df is not None and len(hist_df):
+        elo = {}
+        K, HOME_ADV = 20.0, 60.0
+        sub = hist_df.sort_values("Date")
+        if home_id is not None or away_id is not None:
+            # limit scan for speed
+            if len(sub) > 8000:
+                sub = sub.tail(8000)
+        for _, r in sub.iterrows():
+            hid = r.get("HomeTeamId"); aid = r.get("AwayTeamId")
+            if pd.isna(hid) or pd.isna(aid):
+                continue
+            hid, aid = int(hid), int(aid)
+            rh, ra = elo.get(hid, 1500.0), elo.get(aid, 1500.0)
+            ftr = str(r.get("FTR", "D"))
+            score_h = 1.0 if ftr == "H" else (0.5 if ftr == "D" else 0.0)
+            exp_h = 1.0 / (1.0 + 10 ** ((ra - (rh + HOME_ADV)) / 400.0))
+            elo[hid] = rh + K * (score_h - exp_h)
+            elo[aid] = ra + K * ((1.0 - score_h) - (1.0 - exp_h))
+        if home_id is not None and int(home_id) >= 0:
+            row["EloHome"] = float(elo.get(int(home_id), 1500.0))
+        if away_id is not None and int(away_id) >= 0:
+            row["EloAway"] = float(elo.get(int(away_id), 1500.0))
+        row["EloDiff"] = float(row["EloHome"] - row["EloAway"])
+        row["EloExpectHome"] = float(1.0 / (1.0 + 10 ** ((row["EloAway"] - (row["EloHome"] + 60.0)) / 400.0)))
+
+    # H2H
+    if hist_df is not None and len(hist_df) and home_id is not None and away_id is not None and int(home_id) >= 0 and int(away_id) >= 0:
+        mask = (
+            ((hist_df["HomeTeamId"] == home_id) & (hist_df["AwayTeamId"] == away_id))
+            | ((hist_df["HomeTeamId"] == away_id) & (hist_df["AwayTeamId"] == home_id))
+        )
+        h2h = hist_df.loc[mask].sort_values("Date").tail(5)
+        hw = dr = aw = 0
+        gd = 0.0
+        for _, r in h2h.iterrows():
+            ftr = str(r.get("FTR", "D"))
+            if int(r["HomeTeamId"]) == int(home_id):
+                if ftr == "H": hw += 1
+                elif ftr == "A": aw += 1
+                else: dr += 1
+                gd += float(r.get("FTHG", 0) or 0) - float(r.get("FTAG", 0) or 0)
+            else:
+                if ftr == "A": hw += 1
+                elif ftr == "H": aw += 1
+                else: dr += 1
+                gd += float(r.get("FTAG", 0) or 0) - float(r.get("FTHG", 0) or 0)
+        row["H2H_HomeWins_5"] = hw
+        row["H2H_Draws_5"] = dr
+        row["H2H_AwayWins_5"] = aw
+        row["H2H_HomeGD_5"] = gd
+
+    # Assemble vector in training feature order
     vals = []
     for name in feature_names:
         if name == "HomeTeamId":
-            vals.append(home_id)
+            vals.append(float(home_id if home_id is not None else -1))
         elif name == "AwayTeamId":
-            vals.append(away_id)
+            vals.append(float(away_id if away_id is not None else -1))
         elif name == "DivEnc":
             try:
-                vals.append(int(le_div.transform([div_code])[0]))
+                if le_div is not None and hasattr(le_div, "transform"):
+                    code = le_div.transform([str(div_code)])[0]
+                elif le_div is not None and hasattr(le_div, "classes_"):
+                    classes = list(le_div.classes_)
+                    code = classes.index(str(div_code)) if str(div_code) in classes else len(classes)
+                else:
+                    code = 0
             except Exception:
-                vals.append(0)
+                code = 0
+            vals.append(float(code))
         else:
-            vals.append(row.get(name, 0.0))
-    return np.nan_to_num(np.array(vals, dtype=np.float64).reshape(1, -1), nan=0.0)
+            v = row.get(name, np.nan)
+            try:
+                vals.append(float(v) if v is not None and not (isinstance(v, float) and np.isnan(v)) else 0.0)
+            except Exception:
+                vals.append(0.0)
+    X = np.asarray(vals, dtype=np.float64).reshape(1, -1)
+    X = np.nan_to_num(X, nan=0.0, posinf=0.0, neginf=0.0)
+    return X
 
-
-# In-memory model caches (avoid reload + TF retracing every fixture)
-_TORCH_CACHE: Dict[str, Any] = {}
-_TF_CACHE: Dict[str, Any] = {}
-_XGB_CACHE: Dict[str, Any] = {}
-_LGBM_CACHE: Dict[str, Any] = {}
-_CAT_CACHE: Dict[str, Any] = {}
-_SK_CACHE: Dict[str, Any] = {}
-_HIST_CACHE: Dict[str, Any] = {}  # parquet history loaded once per process
 
 
 def _predict_torch(path, X):
@@ -459,7 +554,20 @@ def predict_backends(target_key, X_scaled, targets) -> Tuple[Optional[np.ndarray
         return None, []
     max_len = max(len(p) for p in preds)
     aligned = [np.pad(np.asarray(p, float).ravel(), (0, max(0, max_len - len(p))))[:max_len] for p in preds]
-    return np.mean(aligned, axis=0), names
+    # Confidence-weighted ensemble: low-entropy (peaky) backends weigh more;
+    # booster family slightly preferred over shallow trees / NNs when tied.
+    family_w = {"xgb": 1.15, "lgbm": 1.15, "cat": 1.20, "rf": 0.95, "ada": 0.85, "torch": 1.05, "tf": 1.05}
+    weights = []
+    for name, vec in zip(names, aligned):
+        v = np.clip(np.asarray(vec, float), 1e-9, 1.0)
+        v = v / v.sum()
+        ent = float(-(v * np.log(v)).sum())
+        conf = 1.0 / (0.35 + ent)  # sharper → higher weight
+        weights.append(conf * family_w.get(name, 1.0))
+    w = np.asarray(weights, float)
+    w = w / w.sum()
+    stacked = np.vstack(aligned)
+    return (w[:, None] * stacked).sum(axis=0), names
 
 
 def predict_across_runs(target_key, runs, home_id, away_id, div_code, oh, od, oa, hist_df):
@@ -488,8 +596,19 @@ def predict_across_runs(target_key, runs, home_id, away_id, div_code, oh, od, oa
     if not preds:
         return None, []
     max_len = max(len(p) for p in preds)
-    aligned = [np.pad(p, (0, max(0, max_len - len(p))))[:max_len] for p in preds]
-    return np.mean(aligned, axis=0), sorted(set(all_backends))
+    aligned = [np.pad(np.asarray(p, float).ravel(), (0, max(0, max_len - len(p))))[:max_len] for p in preds]
+    # Weight runs by inverse entropy of their probability vectors
+    weights = []
+    for vec in aligned:
+        v = np.clip(np.asarray(vec, float), 1e-9, 1.0)
+        v = v / v.sum()
+        ent = float(-(v * np.log(v)).sum())
+        weights.append(1.0 / (0.35 + ent))
+    w = np.asarray(weights, float)
+    w = w / w.sum()
+    stacked = np.vstack(aligned)
+    return (w[:, None] * stacked).sum(axis=0), sorted(set(all_backends))
+
 
 
 def multi_prob(p, n=3):
@@ -518,7 +637,7 @@ def blend_with_odds(p_model, p_market, alpha):
     b = np.pad(p_market, (0, max(0, n - len(p_market))))[:n]
     a = np.clip(a, 1e-9, None); b = np.clip(b, 1e-9, None)
     a, b = a / a.sum(), b / b.sum()
-    alpha = float(np.clip(alpha, 0.0, 0.45))  # never let market dominate the models
+    alpha = float(np.clip(alpha, 0.0, 0.40))  # industrial: models lead; market is a prior
     out = (1 - alpha) * a + alpha * b
     return out / out.sum()
 
@@ -587,7 +706,7 @@ def simulate_match(p_ft, p_ht, p_over25, p_btts, p_ht_over15, n, seed):
     w /= w.sum()
 
     # Iterative reweight to match market targets (IPF-lite, 8 passes)
-    for _ in range(8):
+    for _ in range(16):
         # FT outcome
         out = np.where(gh > ga, 0, np.where(gh < ga, 2, 1))
         for k in range(3):
