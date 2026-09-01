@@ -107,18 +107,21 @@ jobs:
           DAILY_TARGETS: "ft_result,over25,btts,ht_result"
           TRAIN_WORKERS: "3"
           TRAIN_DIVS: ""
-          N_SIMULATIONS: "8000"
-          ODDS_BLEND: "0.22"
+          N_SIMULATIONS: "12000"
+          ODDS_BLEND: "0.30"
           HARD_SIM: "1"
-          HARD_ATTACK_CV: "0.13"
-          HARD_DEFENSE_CV: "0.13"
-          HARD_SHARED_CV: "0.07"
+          HARD_ATTACK_CV: "0.18"
+          HARD_DEFENSE_CV: "0.18"
+          HARD_SHARED_CV: "0.10"
+          TRAIN_GLOBAL: "1"
           SKIP_TRAIN: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.skip_train == 'true' && '1' || '0' }}
           SPORTINTEL_PUSH: "1"
           AFRICA_SEGMENT: "1"
           AFRICA_OPTIONAL: "1"
           API_FOOTBALL_BACKUP_KEY: ${{ secrets.API_FOOTBALL_BACKUP_KEY }}
           API_FOOTBALL_KEY: ${{ secrets.API_FOOTBALL_BACKUP_KEY || secrets.API_FOOTBALL_KEY }}
+          LIVE_SCORE_API_KEY: ${{ secrets.LIVE_SCORE_API_KEY }}
+          LIVE_SCORE_API_SECRET: ${{ secrets.LIVE_SCORE_API_SECRET }}
           API_FOOTBALL_STANDINGS_KEY: ""
           SKIP_AFRICA_TRAIN: "0"
           SKIP_AFRICA_SIM: "0"
