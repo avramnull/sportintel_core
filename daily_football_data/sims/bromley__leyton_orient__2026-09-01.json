@@ -1,0 +1,578 @@
+{
+  "match": {
+    "league": "E2",
+    "home_team": "Bromley",
+    "away_team": "Leyton Orient",
+    "match_date": "2026-09-01 19:45",
+    "odds_home": 2.57,
+    "odds_draw": 3.1,
+    "odds_away": 2.57,
+    "n_simulations": 8000,
+    "seed": 58,
+    "odds_blend": 0.22
+  },
+  "resolved": {
+    "league": "League One",
+    "div": "E2",
+    "home": "Bromley",
+    "away": "Leyton Orient",
+    "models": "Bromley (home) + Leyton Orient (away)",
+    "match_date": "2026-09-01 19:45"
+  },
+  "report": {
+    "n": 8000,
+    "engine": {
+      "version": "hard-v2",
+      "method": "calibrated-bivariate-poisson+dixon-coles+latent-state",
+      "attack_cv": 0.13,
+      "defense_cv": 0.13,
+      "shared_state_cv": 0.07,
+      "common_goal_rate": 0.08208734813186212,
+      "lambda_home": 1.3371672005191009,
+      "lambda_away": 1.0889329250130073,
+      "target_total_lambda": 2.50818747366397
+    },
+    "ft_model": {
+      "H": 0.42755887620625566,
+      "D": 0.2654353941071275,
+      "A": 0.3070057296866169
+    },
+    "ft_sim": {
+      "H": 0.413125,
+      "D": 0.284625,
+      "A": 0.30225
+    },
+    "ht_model": {
+      "H": 0.3008753384521779,
+      "D": 0.41775478999497884,
+      "A": 0.2813698715528433
+    },
+    "ht_sim": {
+      "H": 0.304875,
+      "D": 0.452,
+      "A": 0.243125
+    },
+    "over25_model": 0.45828537291117233,
+    "over25_sim": 0.4665,
+    "btts_model": 0.5287739331798331,
+    "btts_sim": 0.522375,
+    "ht_over15_model": 0.36457134322779305,
+    "ht_over15_sim": 0.29075,
+    "dc_ft": {
+      "1X": 0.6977500000000001,
+      "X2": 0.586875,
+      "12": 0.7153750000000001
+    },
+    "dc_ht": {
+      "1X": 0.756875,
+      "X2": 0.695125,
+      "12": 0.548
+    },
+    "top_ft": [
+      [
+        "1-1",
+        1036
+      ],
+      [
+        "1-0",
+        865
+      ],
+      [
+        "0-0",
+        710
+      ],
+      [
+        "0-1",
+        701
+      ],
+      [
+        "2-1",
+        676
+      ],
+      [
+        "2-0",
+        576
+      ],
+      [
+        "1-2",
+        559
+      ],
+      [
+        "2-2",
+        429
+      ],
+      [
+        "0-2",
+        380
+      ],
+      [
+        "3-1",
+        303
+      ],
+      [
+        "3-0",
+        244
+      ],
+      [
+        "1-3",
+        193
+      ]
+    ],
+    "top_ht": [
+      [
+        "0-0",
+        2763
+      ],
+      [
+        "1-0",
+        1589
+      ],
+      [
+        "0-1",
+        1322
+      ],
+      [
+        "1-1",
+        792
+      ],
+      [
+        "2-0",
+        440
+      ],
+      [
+        "0-2",
+        310
+      ],
+      [
+        "2-1",
+        239
+      ],
+      [
+        "1-2",
+        199
+      ]
+    ],
+    "top3_ft": [
+      {
+        "score": "1-1",
+        "count": 1036,
+        "pct": 12.9
+      },
+      {
+        "score": "1-0",
+        "count": 865,
+        "pct": 10.8
+      },
+      {
+        "score": "0-0",
+        "count": 710,
+        "pct": 8.9
+      }
+    ],
+    "top3_ht": [
+      {
+        "score": "0-0",
+        "count": 2763,
+        "pct": 34.5
+      },
+      {
+        "score": "1-0",
+        "count": 1589,
+        "pct": 19.9
+      },
+      {
+        "score": "0-1",
+        "count": 1322,
+        "pct": 16.5
+      }
+    ],
+    "top8_ft": [
+      {
+        "score": "1-1",
+        "count": 1036,
+        "pct": 12.9
+      },
+      {
+        "score": "1-0",
+        "count": 865,
+        "pct": 10.8
+      },
+      {
+        "score": "0-0",
+        "count": 710,
+        "pct": 8.9
+      },
+      {
+        "score": "0-1",
+        "count": 701,
+        "pct": 8.8
+      },
+      {
+        "score": "2-1",
+        "count": 676,
+        "pct": 8.4
+      },
+      {
+        "score": "2-0",
+        "count": 576,
+        "pct": 7.2
+      },
+      {
+        "score": "1-2",
+        "count": 559,
+        "pct": 7.0
+      },
+      {
+        "score": "2-2",
+        "count": 429,
+        "pct": 5.4
+      }
+    ],
+    "xg": {
+      "home": 1.403875,
+      "away": 1.16975,
+      "total": 2.573625,
+      "lambda_home": 1.3371672005191009,
+      "lambda_away": 1.0889329250130073
+    },
+    "ht_xg": {
+      "home": 0.583875,
+      "away": 0.492375,
+      "total": 1.07625
+    },
+    "score_consistency": {
+      "ht_leq_ft": 1.0,
+      "ft_vs_model_l1": 0.03837921178574499
+    },
+    "clean_sheet": {
+      "home": 0.31525,
+      "away": 0.251125
+    },
+    "win_to_nil": {
+      "home": 0.2265,
+      "away": 0.162375
+    },
+    "goal_lines": {
+      "0.5": {
+        "over": 0.91125,
+        "under": 0.08875,
+        "push": 0.0
+      },
+      "1.5": {
+        "over": 0.7155,
+        "under": 0.2845,
+        "push": 0.0
+      },
+      "2.5": {
+        "over": 0.4665,
+        "under": 0.5335,
+        "push": 0.0
+      },
+      "3.5": {
+        "over": 0.262,
+        "under": 0.738,
+        "push": 0.0
+      },
+      "4.5": {
+        "over": 0.129125,
+        "under": 0.870875,
+        "push": 0.0
+      }
+    },
+    "asian_handicap": {
+      "home_-0.5": 0.413125,
+      "home_-1.0": {
+        "cover": 0.1925,
+        "push": 0.220625
+      },
+      "home_+0.5": 0.69775,
+      "home_+1.0": {
+        "cover": 0.69775,
+        "push": 0.184125
+      }
+    },
+    "score_matrix_margin": {
+      "home_1_goal": 0.220625,
+      "home_2_plus": 0.1925,
+      "away_1_goal": 0.184125,
+      "away_2_plus": 0.118125,
+      "draw": 0.284625
+    }
+  },
+  "table": [
+    {
+      "Section": "HT Winner",
+      "Selection": "Bromley",
+      "Model%": 30.1,
+      "Sim%": 30.5,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": -0.4
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Draw",
+      "Model%": 41.8,
+      "Sim%": 45.2,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": -3.4
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Leyton Orient",
+      "Model%": 28.1,
+      "Sim%": 24.3,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 3.8
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "1X",
+      "Model%": 75.7,
+      "Sim%": 75.7,
+      "Agree": "6 eng",
+      "Verdict": "YES",
+      "Edge": 0.0
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "X2",
+      "Model%": 69.5,
+      "Sim%": 69.5,
+      "Agree": "6 eng",
+      "Verdict": "YES",
+      "Edge": 0.0
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "12",
+      "Model%": 54.8,
+      "Sim%": 54.8,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 0.0
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Over 1.5",
+      "Model%": 36.5,
+      "Sim%": 29.1,
+      "Agree": "-",
+      "Verdict": "NO",
+      "Edge": 7.4
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Under 1.5",
+      "Model%": 63.5,
+      "Sim%": 70.9,
+      "Agree": "-",
+      "Verdict": "YES",
+      "Edge": -7.4
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Bromley",
+      "Model%": 42.8,
+      "Sim%": 41.3,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 1.4
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Draw",
+      "Model%": 26.5,
+      "Sim%": 28.5,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": -1.9
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Leyton Orient",
+      "Model%": 30.7,
+      "Sim%": 30.2,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 0.5
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "1X",
+      "Model%": 69.8,
+      "Sim%": 69.8,
+      "Agree": "6 eng",
+      "Verdict": "YES",
+      "Edge": 0.0
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 58.7,
+      "Sim%": 58.7,
+      "Agree": "6 eng",
+      "Verdict": "YES",
+      "Edge": 0.0
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "12",
+      "Model%": 71.5,
+      "Sim%": 71.5,
+      "Agree": "6 eng",
+      "Verdict": "YES",
+      "Edge": 0.0
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Over 2.5",
+      "Model%": 45.8,
+      "Sim%": 46.7,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": -0.8
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Under 2.5",
+      "Model%": 54.2,
+      "Sim%": 53.3,
+      "Agree": "6 eng",
+      "Verdict": "YES",
+      "Edge": 0.8
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "Yes",
+      "Model%": 52.9,
+      "Sim%": 52.2,
+      "Agree": "6 eng",
+      "Verdict": "YES",
+      "Edge": 0.6
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 47.1,
+      "Sim%": 47.8,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": -0.6
+    },
+    {
+      "Section": "FT O/U+",
+      "Selection": "Over 1.5",
+      "Model%": 71.5,
+      "Sim%": 71.5,
+      "Agree": "6 eng",
+      "Verdict": "YES",
+      "Edge": 0.0
+    },
+    {
+      "Section": "FT O/U+",
+      "Selection": "Over 3.5",
+      "Model%": 26.2,
+      "Sim%": 26.2,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 0.0
+    },
+    {
+      "Section": "CS",
+      "Selection": "Bromley CS",
+      "Model%": 31.5,
+      "Sim%": 31.5,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 0.0
+    },
+    {
+      "Section": "CS",
+      "Selection": "Leyton Orient CS",
+      "Model%": 25.1,
+      "Sim%": 25.1,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 0.0
+    },
+    {
+      "Section": "WTN",
+      "Selection": "Bromley WTN",
+      "Model%": 22.7,
+      "Sim%": 22.7,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 0.0
+    },
+    {
+      "Section": "WTN",
+      "Selection": "Leyton Orient WTN",
+      "Model%": 16.2,
+      "Sim%": 16.2,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 0.0
+    }
+  ],
+  "locked_tip": {
+    "status": "SECURED LOCK",
+    "section": "HT DC",
+    "selection": "1X",
+    "model": 75.7,
+    "sim": 75.7,
+    "agree": "6 eng",
+    "verdict": "HARD YES"
+  },
+  "backends": {
+    "ft_result": [
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
+    ],
+    "ht_result": [
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
+    ],
+    "over25": [
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
+    ],
+    "btts": [
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
+    ],
+    "ht_over15": []
+  },
+  "generated_at": "2026-09-01T21:29:43.805045Z",
+  "metadata": {
+    "simulation_engine": {
+      "version": "hard-v2",
+      "method": "calibrated-bivariate-poisson+dixon-coles+latent-state",
+      "attack_cv": 0.13,
+      "defense_cv": 0.13,
+      "shared_state_cv": 0.07,
+      "common_goal_rate": 0.08208734813186212,
+      "lambda_home": 1.3371672005191009,
+      "lambda_away": 1.0889329250130073,
+      "target_total_lambda": 2.50818747366397
+    }
+  }
+}

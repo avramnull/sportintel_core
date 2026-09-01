@@ -1,0 +1,578 @@
+{
+  "match": {
+    "league": "E1",
+    "home_team": "Portsmouth",
+    "away_team": "Derby",
+    "match_date": "2026-09-01 19:45",
+    "odds_home": 1.86,
+    "odds_draw": 3.4,
+    "odds_away": 4.0,
+    "n_simulations": 8000,
+    "seed": 46,
+    "odds_blend": 0.22
+  },
+  "resolved": {
+    "league": "Championship",
+    "div": "E1",
+    "home": "Portsmouth",
+    "away": "Derby",
+    "models": "Portsmouth (home) + Derby (away)",
+    "match_date": "2026-09-01 19:45"
+  },
+  "report": {
+    "n": 8000,
+    "engine": {
+      "version": "hard-v2",
+      "method": "calibrated-bivariate-poisson+dixon-coles+latent-state",
+      "attack_cv": 0.13,
+      "defense_cv": 0.13,
+      "shared_state_cv": 0.07,
+      "common_goal_rate": 0.08336117440353559,
+      "lambda_home": 1.5627211978185556,
+      "lambda_away": 1.0837521939560886,
+      "target_total_lambda": 2.7298345661781798
+    },
+    "ft_model": {
+      "H": 0.4796347496059088,
+      "D": 0.2655726262360152,
+      "A": 0.25479262415807613
+    },
+    "ft_sim": {
+      "H": 0.478125,
+      "D": 0.2515,
+      "A": 0.270375
+    },
+    "ht_model": {
+      "H": 0.37713185811403016,
+      "D": 0.3957033574261086,
+      "A": 0.22716478445986127
+    },
+    "ht_sim": {
+      "H": 0.34375,
+      "D": 0.438375,
+      "A": 0.217875
+    },
+    "over25_model": 0.5136554202206924,
+    "over25_sim": 0.537375,
+    "btts_model": 0.5221587787595476,
+    "btts_sim": 0.563375,
+    "ht_over15_model": 0.3784138550551731,
+    "ht_over15_sim": 0.330375,
+    "dc_ft": {
+      "1X": 0.729625,
+      "X2": 0.521875,
+      "12": 0.7484999999999999
+    },
+    "dc_ht": {
+      "1X": 0.782125,
+      "X2": 0.65625,
+      "12": 0.561625
+    },
+    "top_ft": [
+      [
+        "1-1",
+        890
+      ],
+      [
+        "1-0",
+        805
+      ],
+      [
+        "2-1",
+        744
+      ],
+      [
+        "2-0",
+        613
+      ],
+      [
+        "0-1",
+        574
+      ],
+      [
+        "1-2",
+        561
+      ],
+      [
+        "0-0",
+        546
+      ],
+      [
+        "2-2",
+        460
+      ],
+      [
+        "3-1",
+        398
+      ],
+      [
+        "3-0",
+        345
+      ],
+      [
+        "0-2",
+        273
+      ],
+      [
+        "3-2",
+        262
+      ]
+    ],
+    "top_ht": [
+      [
+        "0-0",
+        2562
+      ],
+      [
+        "1-0",
+        1652
+      ],
+      [
+        "0-1",
+        1143
+      ],
+      [
+        "1-1",
+        858
+      ],
+      [
+        "2-0",
+        548
+      ],
+      [
+        "2-1",
+        285
+      ],
+      [
+        "0-2",
+        275
+      ],
+      [
+        "1-2",
+        227
+      ]
+    ],
+    "top3_ft": [
+      {
+        "score": "1-1",
+        "count": 890,
+        "pct": 11.1
+      },
+      {
+        "score": "1-0",
+        "count": 805,
+        "pct": 10.1
+      },
+      {
+        "score": "2-1",
+        "count": 744,
+        "pct": 9.3
+      }
+    ],
+    "top3_ht": [
+      {
+        "score": "0-0",
+        "count": 2562,
+        "pct": 32.0
+      },
+      {
+        "score": "1-0",
+        "count": 1652,
+        "pct": 20.6
+      },
+      {
+        "score": "0-1",
+        "count": 1143,
+        "pct": 14.3
+      }
+    ],
+    "top8_ft": [
+      {
+        "score": "1-1",
+        "count": 890,
+        "pct": 11.1
+      },
+      {
+        "score": "1-0",
+        "count": 805,
+        "pct": 10.1
+      },
+      {
+        "score": "2-1",
+        "count": 744,
+        "pct": 9.3
+      },
+      {
+        "score": "2-0",
+        "count": 613,
+        "pct": 7.7
+      },
+      {
+        "score": "0-1",
+        "count": 574,
+        "pct": 7.2
+      },
+      {
+        "score": "1-2",
+        "count": 561,
+        "pct": 7.0
+      },
+      {
+        "score": "0-0",
+        "count": 546,
+        "pct": 6.8
+      },
+      {
+        "score": "2-2",
+        "count": 460,
+        "pct": 5.8
+      }
+    ],
+    "xg": {
+      "home": 1.640875,
+      "away": 1.18725,
+      "total": 2.828125,
+      "lambda_home": 1.5627211978185556,
+      "lambda_away": 1.0837521939560886
+    },
+    "ht_xg": {
+      "home": 0.690125,
+      "away": 0.4895,
+      "total": 1.179625
+    },
+    "score_consistency": {
+      "ht_leq_ft": 1.0,
+      "ft_vs_model_l1": 0.031164751683847802
+    },
+    "clean_sheet": {
+      "home": 0.31025,
+      "away": 0.194625
+    },
+    "win_to_nil": {
+      "home": 0.242,
+      "away": 0.126375
+    },
+    "goal_lines": {
+      "0.5": {
+        "over": 0.93175,
+        "under": 0.06825,
+        "push": 0.0
+      },
+      "1.5": {
+        "over": 0.759375,
+        "under": 0.240625,
+        "push": 0.0
+      },
+      "2.5": {
+        "over": 0.537375,
+        "under": 0.462625,
+        "push": 0.0
+      },
+      "3.5": {
+        "over": 0.315375,
+        "under": 0.684625,
+        "push": 0.0
+      },
+      "4.5": {
+        "over": 0.1635,
+        "under": 0.8365,
+        "push": 0.0
+      }
+    },
+    "asian_handicap": {
+      "home_-0.5": 0.478125,
+      "home_-1.0": {
+        "cover": 0.245,
+        "push": 0.233125
+      },
+      "home_+0.5": 0.729625,
+      "home_+1.0": {
+        "cover": 0.729625,
+        "push": 0.168125
+      }
+    },
+    "score_matrix_margin": {
+      "home_1_goal": 0.233125,
+      "home_2_plus": 0.245,
+      "away_1_goal": 0.168125,
+      "away_2_plus": 0.10225,
+      "draw": 0.2515
+    }
+  },
+  "table": [
+    {
+      "Section": "HT Winner",
+      "Selection": "Portsmouth",
+      "Model%": 37.7,
+      "Sim%": 34.4,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 3.3
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Draw",
+      "Model%": 39.6,
+      "Sim%": 43.8,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": -4.3
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Derby",
+      "Model%": 22.7,
+      "Sim%": 21.8,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 0.9
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "1X",
+      "Model%": 78.2,
+      "Sim%": 78.2,
+      "Agree": "6 eng",
+      "Verdict": "YES",
+      "Edge": 0.0
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "X2",
+      "Model%": 65.6,
+      "Sim%": 65.6,
+      "Agree": "6 eng",
+      "Verdict": "YES",
+      "Edge": 0.0
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "12",
+      "Model%": 56.2,
+      "Sim%": 56.2,
+      "Agree": "6 eng",
+      "Verdict": "YES",
+      "Edge": 0.0
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Over 1.5",
+      "Model%": 37.8,
+      "Sim%": 33.0,
+      "Agree": "-",
+      "Verdict": "NO",
+      "Edge": 4.8
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Under 1.5",
+      "Model%": 62.2,
+      "Sim%": 67.0,
+      "Agree": "-",
+      "Verdict": "YES",
+      "Edge": -4.8
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Portsmouth",
+      "Model%": 48.0,
+      "Sim%": 47.8,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 0.2
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Draw",
+      "Model%": 26.6,
+      "Sim%": 25.1,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 1.4
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Derby",
+      "Model%": 25.5,
+      "Sim%": 27.0,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": -1.6
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "1X",
+      "Model%": 73.0,
+      "Sim%": 73.0,
+      "Agree": "6 eng",
+      "Verdict": "YES",
+      "Edge": 0.0
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 52.2,
+      "Sim%": 52.2,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 0.0
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "12",
+      "Model%": 74.8,
+      "Sim%": 74.8,
+      "Agree": "6 eng",
+      "Verdict": "YES",
+      "Edge": 0.0
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Over 2.5",
+      "Model%": 51.4,
+      "Sim%": 53.7,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": -2.4
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Under 2.5",
+      "Model%": 48.6,
+      "Sim%": 46.3,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 2.4
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "Yes",
+      "Model%": 52.2,
+      "Sim%": 56.3,
+      "Agree": "6 eng",
+      "Verdict": "YES",
+      "Edge": -4.1
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 47.8,
+      "Sim%": 43.7,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 4.1
+    },
+    {
+      "Section": "FT O/U+",
+      "Selection": "Over 1.5",
+      "Model%": 75.9,
+      "Sim%": 75.9,
+      "Agree": "6 eng",
+      "Verdict": "YES",
+      "Edge": 0.0
+    },
+    {
+      "Section": "FT O/U+",
+      "Selection": "Over 3.5",
+      "Model%": 31.5,
+      "Sim%": 31.5,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 0.0
+    },
+    {
+      "Section": "CS",
+      "Selection": "Portsmouth CS",
+      "Model%": 31.0,
+      "Sim%": 31.0,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 0.0
+    },
+    {
+      "Section": "CS",
+      "Selection": "Derby CS",
+      "Model%": 19.5,
+      "Sim%": 19.5,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 0.0
+    },
+    {
+      "Section": "WTN",
+      "Selection": "Portsmouth WTN",
+      "Model%": 24.2,
+      "Sim%": 24.2,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 0.0
+    },
+    {
+      "Section": "WTN",
+      "Selection": "Derby WTN",
+      "Model%": 12.6,
+      "Sim%": 12.6,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 0.0
+    }
+  ],
+  "locked_tip": {
+    "status": "SECURED LOCK",
+    "section": "HT DC",
+    "selection": "1X",
+    "model": 78.2,
+    "sim": 78.2,
+    "agree": "6 eng",
+    "verdict": "HARD YES"
+  },
+  "backends": {
+    "ft_result": [
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
+    ],
+    "ht_result": [
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
+    ],
+    "over25": [
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
+    ],
+    "btts": [
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
+    ],
+    "ht_over15": []
+  },
+  "generated_at": "2026-09-01T21:29:25.109730Z",
+  "metadata": {
+    "simulation_engine": {
+      "version": "hard-v2",
+      "method": "calibrated-bivariate-poisson+dixon-coles+latent-state",
+      "attack_cv": 0.13,
+      "defense_cv": 0.13,
+      "shared_state_cv": 0.07,
+      "common_goal_rate": 0.08336117440353559,
+      "lambda_home": 1.5627211978185556,
+      "lambda_away": 1.0837521939560886,
+      "target_total_lambda": 2.7298345661781798
+    }
+  }
+}

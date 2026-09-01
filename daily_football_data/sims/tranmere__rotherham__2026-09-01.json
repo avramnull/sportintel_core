@@ -1,0 +1,578 @@
+{
+  "match": {
+    "league": "E3",
+    "home_team": "Tranmere",
+    "away_team": "Rotherham",
+    "match_date": "2026-09-01 19:45",
+    "odds_home": 2.15,
+    "odds_draw": 3.2,
+    "odds_away": 3.2,
+    "n_simulations": 8000,
+    "seed": 80,
+    "odds_blend": 0.22
+  },
+  "resolved": {
+    "league": "League Two",
+    "div": "E3",
+    "home": "Tranmere",
+    "away": "Rotherham",
+    "models": "Tranmere (home) + Rotherham (away)",
+    "match_date": "2026-09-01 19:45"
+  },
+  "report": {
+    "n": 8000,
+    "engine": {
+      "version": "hard-v2",
+      "method": "calibrated-bivariate-poisson+dixon-coles+latent-state",
+      "attack_cv": 0.13,
+      "defense_cv": 0.13,
+      "shared_state_cv": 0.07,
+      "common_goal_rate": 0.45,
+      "lambda_home": 1.26932064054452,
+      "lambda_away": 0.9241276501881015,
+      "target_total_lambda": 2.6434482907326218
+    },
+    "ft_model": {
+      "H": 0.4376587846171598,
+      "D": 0.2980483092168813,
+      "A": 0.264292906165959
+    },
+    "ft_sim": {
+      "H": 0.44425,
+      "D": 0.28225,
+      "A": 0.2735
+    },
+    "ht_model": {
+      "H": 0.3549635926787721,
+      "D": 0.4227925692532127,
+      "A": 0.22224383806801534
+    },
+    "ht_sim": {
+      "H": 0.338125,
+      "D": 0.429875,
+      "A": 0.232
+    },
+    "over25_model": 0.49242238794055726,
+    "over25_sim": 0.5765,
+    "btts_model": 0.4788665638355166,
+    "btts_sim": 0.64275,
+    "ht_over15_model": 0.37310559698513934,
+    "ht_over15_sim": 0.36925,
+    "dc_ft": {
+      "1X": 0.7264999999999999,
+      "X2": 0.55575,
+      "12": 0.71775
+    },
+    "dc_ht": {
+      "1X": 0.768,
+      "X2": 0.661875,
+      "12": 0.570125
+    },
+    "top_ft": [
+      [
+        "1-1",
+        900
+      ],
+      [
+        "2-1",
+        754
+      ],
+      [
+        "1-0",
+        694
+      ],
+      [
+        "0-0",
+        588
+      ],
+      [
+        "1-2",
+        575
+      ],
+      [
+        "2-2",
+        529
+      ],
+      [
+        "0-1",
+        522
+      ],
+      [
+        "2-0",
+        448
+      ],
+      [
+        "3-1",
+        393
+      ],
+      [
+        "3-2",
+        347
+      ],
+      [
+        "2-3",
+        240
+      ],
+      [
+        "0-2",
+        236
+      ]
+    ],
+    "top_ht": [
+      [
+        "0-0",
+        2331
+      ],
+      [
+        "1-0",
+        1513
+      ],
+      [
+        "0-1",
+        1202
+      ],
+      [
+        "1-1",
+        975
+      ],
+      [
+        "2-0",
+        509
+      ],
+      [
+        "2-1",
+        365
+      ],
+      [
+        "0-2",
+        266
+      ],
+      [
+        "1-2",
+        256
+      ]
+    ],
+    "top3_ft": [
+      {
+        "score": "1-1",
+        "count": 900,
+        "pct": 11.2
+      },
+      {
+        "score": "2-1",
+        "count": 754,
+        "pct": 9.4
+      },
+      {
+        "score": "1-0",
+        "count": 694,
+        "pct": 8.7
+      }
+    ],
+    "top3_ht": [
+      {
+        "score": "0-0",
+        "count": 2331,
+        "pct": 29.1
+      },
+      {
+        "score": "1-0",
+        "count": 1513,
+        "pct": 18.9
+      },
+      {
+        "score": "0-1",
+        "count": 1202,
+        "pct": 15.0
+      }
+    ],
+    "top8_ft": [
+      {
+        "score": "1-1",
+        "count": 900,
+        "pct": 11.2
+      },
+      {
+        "score": "2-1",
+        "count": 754,
+        "pct": 9.4
+      },
+      {
+        "score": "1-0",
+        "count": 694,
+        "pct": 8.7
+      },
+      {
+        "score": "0-0",
+        "count": 588,
+        "pct": 7.3
+      },
+      {
+        "score": "1-2",
+        "count": 575,
+        "pct": 7.2
+      },
+      {
+        "score": "2-2",
+        "count": 529,
+        "pct": 6.6
+      },
+      {
+        "score": "0-1",
+        "count": 522,
+        "pct": 6.5
+      },
+      {
+        "score": "2-0",
+        "count": 448,
+        "pct": 5.6
+      }
+    ],
+    "xg": {
+      "home": 1.738,
+      "away": 1.377875,
+      "total": 3.115875,
+      "lambda_home": 1.26932064054452,
+      "lambda_away": 0.9241276501881015
+    },
+    "ht_xg": {
+      "home": 0.73925,
+      "away": 0.562,
+      "total": 1.30125
+    },
+    "score_consistency": {
+      "ht_leq_ft": 1.0,
+      "ft_vs_model_l1": 0.03159661843376249
+    },
+    "clean_sheet": {
+      "home": 0.252125,
+      "away": 0.178625
+    },
+    "win_to_nil": {
+      "home": 0.178625,
+      "away": 0.105125
+    },
+    "goal_lines": {
+      "0.5": {
+        "over": 0.9265,
+        "under": 0.0735,
+        "push": 0.0
+      },
+      "1.5": {
+        "over": 0.7745,
+        "under": 0.2255,
+        "push": 0.0
+      },
+      "2.5": {
+        "over": 0.5765,
+        "under": 0.4235,
+        "push": 0.0
+      },
+      "3.5": {
+        "over": 0.378,
+        "under": 0.622,
+        "push": 0.0
+      },
+      "4.5": {
+        "over": 0.226,
+        "under": 0.774,
+        "push": 0.0
+      }
+    },
+    "asian_handicap": {
+      "home_-0.5": 0.44425,
+      "home_-1.0": {
+        "cover": 0.2055,
+        "push": 0.23875
+      },
+      "home_+0.5": 0.7265,
+      "home_+1.0": {
+        "cover": 0.7265,
+        "push": 0.180625
+      }
+    },
+    "score_matrix_margin": {
+      "home_1_goal": 0.23875,
+      "home_2_plus": 0.2055,
+      "away_1_goal": 0.180625,
+      "away_2_plus": 0.092875,
+      "draw": 0.28225
+    }
+  },
+  "table": [
+    {
+      "Section": "HT Winner",
+      "Selection": "Tranmere",
+      "Model%": 35.5,
+      "Sim%": 33.8,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 1.7
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Draw",
+      "Model%": 42.3,
+      "Sim%": 43.0,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": -0.7
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Rotherham",
+      "Model%": 22.2,
+      "Sim%": 23.2,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": -1.0
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "1X",
+      "Model%": 76.8,
+      "Sim%": 76.8,
+      "Agree": "6 eng",
+      "Verdict": "YES",
+      "Edge": 0.0
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "X2",
+      "Model%": 66.2,
+      "Sim%": 66.2,
+      "Agree": "6 eng",
+      "Verdict": "YES",
+      "Edge": 0.0
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "12",
+      "Model%": 57.0,
+      "Sim%": 57.0,
+      "Agree": "6 eng",
+      "Verdict": "YES",
+      "Edge": 0.0
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Over 1.5",
+      "Model%": 37.3,
+      "Sim%": 36.9,
+      "Agree": "-",
+      "Verdict": "NO",
+      "Edge": 0.4
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Under 1.5",
+      "Model%": 62.7,
+      "Sim%": 63.1,
+      "Agree": "-",
+      "Verdict": "YES",
+      "Edge": -0.4
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Tranmere",
+      "Model%": 43.8,
+      "Sim%": 44.4,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": -0.7
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Draw",
+      "Model%": 29.8,
+      "Sim%": 28.2,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 1.6
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Rotherham",
+      "Model%": 26.4,
+      "Sim%": 27.4,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": -0.9
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "1X",
+      "Model%": 72.6,
+      "Sim%": 72.6,
+      "Agree": "6 eng",
+      "Verdict": "YES",
+      "Edge": 0.0
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 55.6,
+      "Sim%": 55.6,
+      "Agree": "6 eng",
+      "Verdict": "YES",
+      "Edge": 0.0
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "12",
+      "Model%": 71.8,
+      "Sim%": 71.8,
+      "Agree": "6 eng",
+      "Verdict": "YES",
+      "Edge": 0.0
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Over 2.5",
+      "Model%": 49.2,
+      "Sim%": 57.6,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": -8.4
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Under 2.5",
+      "Model%": 50.8,
+      "Sim%": 42.4,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 8.4
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "Yes",
+      "Model%": 47.9,
+      "Sim%": 64.3,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": -16.4
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 52.1,
+      "Sim%": 35.7,
+      "Agree": "6 eng",
+      "Verdict": "YES",
+      "Edge": 16.4
+    },
+    {
+      "Section": "FT O/U+",
+      "Selection": "Over 1.5",
+      "Model%": 77.5,
+      "Sim%": 77.5,
+      "Agree": "6 eng",
+      "Verdict": "YES",
+      "Edge": 0.0
+    },
+    {
+      "Section": "FT O/U+",
+      "Selection": "Over 3.5",
+      "Model%": 37.8,
+      "Sim%": 37.8,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 0.0
+    },
+    {
+      "Section": "CS",
+      "Selection": "Tranmere CS",
+      "Model%": 25.2,
+      "Sim%": 25.2,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 0.0
+    },
+    {
+      "Section": "CS",
+      "Selection": "Rotherham CS",
+      "Model%": 17.9,
+      "Sim%": 17.9,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 0.0
+    },
+    {
+      "Section": "WTN",
+      "Selection": "Tranmere WTN",
+      "Model%": 17.9,
+      "Sim%": 17.9,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 0.0
+    },
+    {
+      "Section": "WTN",
+      "Selection": "Rotherham WTN",
+      "Model%": 10.5,
+      "Sim%": 10.5,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 0.0
+    }
+  ],
+  "locked_tip": {
+    "status": "SECURED LOCK",
+    "section": "FT O/U+",
+    "selection": "Over 1.5",
+    "model": 77.5,
+    "sim": 77.5,
+    "agree": "6 eng",
+    "verdict": "HARD YES"
+  },
+  "backends": {
+    "ft_result": [
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
+    ],
+    "ht_result": [
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
+    ],
+    "over25": [
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
+    ],
+    "btts": [
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
+    ],
+    "ht_over15": []
+  },
+  "generated_at": "2026-09-01T21:30:21.959266Z",
+  "metadata": {
+    "simulation_engine": {
+      "version": "hard-v2",
+      "method": "calibrated-bivariate-poisson+dixon-coles+latent-state",
+      "attack_cv": 0.13,
+      "defense_cv": 0.13,
+      "shared_state_cv": 0.07,
+      "common_goal_rate": 0.45,
+      "lambda_home": 1.26932064054452,
+      "lambda_away": 0.9241276501881015,
+      "target_total_lambda": 2.6434482907326218
+    }
+  }
+}

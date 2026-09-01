@@ -1,0 +1,578 @@
+{
+  "match": {
+    "league": "E3",
+    "home_team": "Northampton",
+    "away_team": "Crawley Town",
+    "match_date": "2026-09-01 19:45",
+    "odds_home": 1.68,
+    "odds_draw": 3.6,
+    "odds_away": 4.5,
+    "n_simulations": 8000,
+    "seed": 76,
+    "odds_blend": 0.22
+  },
+  "resolved": {
+    "league": "League Two",
+    "div": "E3",
+    "home": "Northampton",
+    "away": "Crawley Town",
+    "models": "Northampton (home) + Crawley Town (away)",
+    "match_date": "2026-09-01 19:45"
+  },
+  "report": {
+    "n": 8000,
+    "engine": {
+      "version": "hard-v2",
+      "method": "calibrated-bivariate-poisson+dixon-coles+latent-state",
+      "attack_cv": 0.13,
+      "defense_cv": 0.13,
+      "shared_state_cv": 0.07,
+      "common_goal_rate": 0.08108127552582704,
+      "lambda_home": 1.6262967308889407,
+      "lambda_away": 1.1308486651969052,
+      "target_total_lambda": 2.838226671611673
+    },
+    "ft_model": {
+      "H": 0.4774884349640664,
+      "D": 0.2754094326679355,
+      "A": 0.24710213236799816
+    },
+    "ft_sim": {
+      "H": 0.486125,
+      "D": 0.246375,
+      "A": 0.2675
+    },
+    "ht_model": {
+      "H": 0.34703340135309513,
+      "D": 0.43080865962923787,
+      "A": 0.22215793901766712
+    },
+    "ht_sim": {
+      "H": 0.35525,
+      "D": 0.420625,
+      "A": 0.224125
+    },
+    "over25_model": 0.5396084775456929,
+    "over25_sim": 0.55125,
+    "btts_model": 0.5100932264943181,
+    "btts_sim": 0.576625,
+    "ht_over15_model": 0.3849021193864232,
+    "ht_over15_sim": 0.345125,
+    "dc_ft": {
+      "1X": 0.7324999999999999,
+      "X2": 0.5138750000000001,
+      "12": 0.753625
+    },
+    "dc_ht": {
+      "1X": 0.7758750000000001,
+      "X2": 0.64475,
+      "12": 0.579375
+    },
+    "top_ft": [
+      [
+        "1-1",
+        897
+      ],
+      [
+        "1-0",
+        811
+      ],
+      [
+        "2-1",
+        766
+      ],
+      [
+        "2-0",
+        578
+      ],
+      [
+        "0-1",
+        526
+      ],
+      [
+        "1-2",
+        494
+      ],
+      [
+        "0-0",
+        479
+      ],
+      [
+        "2-2",
+        459
+      ],
+      [
+        "3-1",
+        394
+      ],
+      [
+        "3-0",
+        336
+      ],
+      [
+        "0-2",
+        299
+      ],
+      [
+        "3-2",
+        270
+      ]
+    ],
+    "top_ht": [
+      [
+        "0-0",
+        2416
+      ],
+      [
+        "1-0",
+        1671
+      ],
+      [
+        "0-1",
+        1152
+      ],
+      [
+        "1-1",
+        862
+      ],
+      [
+        "2-0",
+        570
+      ],
+      [
+        "2-1",
+        304
+      ],
+      [
+        "0-2",
+        284
+      ],
+      [
+        "1-2",
+        242
+      ]
+    ],
+    "top3_ft": [
+      {
+        "score": "1-1",
+        "count": 897,
+        "pct": 11.2
+      },
+      {
+        "score": "1-0",
+        "count": 811,
+        "pct": 10.1
+      },
+      {
+        "score": "2-1",
+        "count": 766,
+        "pct": 9.6
+      }
+    ],
+    "top3_ht": [
+      {
+        "score": "0-0",
+        "count": 2416,
+        "pct": 30.2
+      },
+      {
+        "score": "1-0",
+        "count": 1671,
+        "pct": 20.9
+      },
+      {
+        "score": "0-1",
+        "count": 1152,
+        "pct": 14.4
+      }
+    ],
+    "top8_ft": [
+      {
+        "score": "1-1",
+        "count": 897,
+        "pct": 11.2
+      },
+      {
+        "score": "1-0",
+        "count": 811,
+        "pct": 10.1
+      },
+      {
+        "score": "2-1",
+        "count": 766,
+        "pct": 9.6
+      },
+      {
+        "score": "2-0",
+        "count": 578,
+        "pct": 7.2
+      },
+      {
+        "score": "0-1",
+        "count": 526,
+        "pct": 6.6
+      },
+      {
+        "score": "1-2",
+        "count": 494,
+        "pct": 6.2
+      },
+      {
+        "score": "0-0",
+        "count": 479,
+        "pct": 6.0
+      },
+      {
+        "score": "2-2",
+        "count": 459,
+        "pct": 5.7
+      }
+    ],
+    "xg": {
+      "home": 1.698875,
+      "away": 1.224,
+      "total": 2.922875,
+      "lambda_home": 1.6262967308889407,
+      "lambda_away": 1.1308486651969052
+    },
+    "ht_xg": {
+      "home": 0.71725,
+      "away": 0.506625,
+      "total": 1.223875
+    },
+    "score_consistency": {
+      "ht_leq_ft": 1.0,
+      "ft_vs_model_l1": 0.05806886533587091
+    },
+    "clean_sheet": {
+      "home": 0.2995,
+      "away": 0.18375
+    },
+    "win_to_nil": {
+      "home": 0.239625,
+      "away": 0.123875
+    },
+    "goal_lines": {
+      "0.5": {
+        "over": 0.940125,
+        "under": 0.059875,
+        "push": 0.0
+      },
+      "1.5": {
+        "over": 0.773,
+        "under": 0.227,
+        "push": 0.0
+      },
+      "2.5": {
+        "over": 0.55125,
+        "under": 0.44875,
+        "push": 0.0
+      },
+      "3.5": {
+        "over": 0.3375,
+        "under": 0.6625,
+        "push": 0.0
+      },
+      "4.5": {
+        "over": 0.17975,
+        "under": 0.82025,
+        "push": 0.0
+      }
+    },
+    "asian_handicap": {
+      "home_-0.5": 0.486125,
+      "home_-1.0": {
+        "cover": 0.247875,
+        "push": 0.23825
+      },
+      "home_+0.5": 0.7325,
+      "home_+1.0": {
+        "cover": 0.7325,
+        "push": 0.15725
+      }
+    },
+    "score_matrix_margin": {
+      "home_1_goal": 0.23825,
+      "home_2_plus": 0.247875,
+      "away_1_goal": 0.15725,
+      "away_2_plus": 0.11025,
+      "draw": 0.246375
+    }
+  },
+  "table": [
+    {
+      "Section": "HT Winner",
+      "Selection": "Northampton",
+      "Model%": 34.7,
+      "Sim%": 35.5,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": -0.8
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Draw",
+      "Model%": 43.1,
+      "Sim%": 42.1,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 1.0
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Crawley Town",
+      "Model%": 22.2,
+      "Sim%": 22.4,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": -0.2
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "1X",
+      "Model%": 77.6,
+      "Sim%": 77.6,
+      "Agree": "6 eng",
+      "Verdict": "YES",
+      "Edge": 0.0
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "X2",
+      "Model%": 64.5,
+      "Sim%": 64.5,
+      "Agree": "6 eng",
+      "Verdict": "YES",
+      "Edge": 0.0
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "12",
+      "Model%": 57.9,
+      "Sim%": 57.9,
+      "Agree": "6 eng",
+      "Verdict": "YES",
+      "Edge": 0.0
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Over 1.5",
+      "Model%": 38.5,
+      "Sim%": 34.5,
+      "Agree": "-",
+      "Verdict": "NO",
+      "Edge": 4.0
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Under 1.5",
+      "Model%": 61.5,
+      "Sim%": 65.5,
+      "Agree": "-",
+      "Verdict": "YES",
+      "Edge": -4.0
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Northampton",
+      "Model%": 47.7,
+      "Sim%": 48.6,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": -0.9
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Draw",
+      "Model%": 27.5,
+      "Sim%": 24.6,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 2.9
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Crawley Town",
+      "Model%": 24.7,
+      "Sim%": 26.8,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": -2.0
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "1X",
+      "Model%": 73.2,
+      "Sim%": 73.2,
+      "Agree": "6 eng",
+      "Verdict": "YES",
+      "Edge": 0.0
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 51.4,
+      "Sim%": 51.4,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 0.0
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "12",
+      "Model%": 75.4,
+      "Sim%": 75.4,
+      "Agree": "6 eng",
+      "Verdict": "YES",
+      "Edge": 0.0
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Over 2.5",
+      "Model%": 54.0,
+      "Sim%": 55.1,
+      "Agree": "6 eng",
+      "Verdict": "YES",
+      "Edge": -1.2
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Under 2.5",
+      "Model%": 46.0,
+      "Sim%": 44.9,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 1.2
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "Yes",
+      "Model%": 51.0,
+      "Sim%": 57.7,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": -6.7
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 49.0,
+      "Sim%": 42.3,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 6.7
+    },
+    {
+      "Section": "FT O/U+",
+      "Selection": "Over 1.5",
+      "Model%": 77.3,
+      "Sim%": 77.3,
+      "Agree": "6 eng",
+      "Verdict": "YES",
+      "Edge": 0.0
+    },
+    {
+      "Section": "FT O/U+",
+      "Selection": "Over 3.5",
+      "Model%": 33.8,
+      "Sim%": 33.8,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 0.0
+    },
+    {
+      "Section": "CS",
+      "Selection": "Northampton CS",
+      "Model%": 29.9,
+      "Sim%": 29.9,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 0.0
+    },
+    {
+      "Section": "CS",
+      "Selection": "Crawley Town CS",
+      "Model%": 18.4,
+      "Sim%": 18.4,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 0.0
+    },
+    {
+      "Section": "WTN",
+      "Selection": "Northampton WTN",
+      "Model%": 24.0,
+      "Sim%": 24.0,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 0.0
+    },
+    {
+      "Section": "WTN",
+      "Selection": "Crawley Town WTN",
+      "Model%": 12.4,
+      "Sim%": 12.4,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 0.0
+    }
+  ],
+  "locked_tip": {
+    "status": "SECURED LOCK",
+    "section": "HT DC",
+    "selection": "1X",
+    "model": 77.6,
+    "sim": 77.6,
+    "agree": "6 eng",
+    "verdict": "HARD YES"
+  },
+  "backends": {
+    "ft_result": [
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
+    ],
+    "ht_result": [
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
+    ],
+    "over25": [
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
+    ],
+    "btts": [
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
+    ],
+    "ht_over15": []
+  },
+  "generated_at": "2026-09-01T21:30:13.001409Z",
+  "metadata": {
+    "simulation_engine": {
+      "version": "hard-v2",
+      "method": "calibrated-bivariate-poisson+dixon-coles+latent-state",
+      "attack_cv": 0.13,
+      "defense_cv": 0.13,
+      "shared_state_cv": 0.07,
+      "common_goal_rate": 0.08108127552582704,
+      "lambda_home": 1.6262967308889407,
+      "lambda_away": 1.1308486651969052,
+      "target_total_lambda": 2.838226671611673
+    }
+  }
+}

@@ -1,0 +1,578 @@
+{
+  "match": {
+    "league": "E3",
+    "home_team": "Cheltenham",
+    "away_team": "York",
+    "match_date": "2026-09-01 19:45",
+    "odds_home": 3.8,
+    "odds_draw": 3.6,
+    "odds_away": 1.81,
+    "n_simulations": 8000,
+    "seed": 71,
+    "odds_blend": 0.22
+  },
+  "resolved": {
+    "league": "League Two",
+    "div": "E3",
+    "home": "Cheltenham",
+    "away": "York",
+    "models": "Cheltenham (home) + York (away)",
+    "match_date": "2026-09-01 19:45"
+  },
+  "report": {
+    "n": 8000,
+    "engine": {
+      "version": "hard-v2",
+      "method": "calibrated-bivariate-poisson+dixon-coles+latent-state",
+      "attack_cv": 0.13,
+      "defense_cv": 0.13,
+      "shared_state_cv": 0.07,
+      "common_goal_rate": 0.2746919925727719,
+      "lambda_home": 1.0021695095470922,
+      "lambda_away": 1.1760426417616239,
+      "target_total_lambda": 2.452904143881488
+    },
+    "ft_model": {
+      "H": 0.2959520813401238,
+      "D": 0.31714958336445065,
+      "A": 0.3868983352954256
+    },
+    "ft_sim": {
+      "H": 0.300625,
+      "D": 0.2925,
+      "A": 0.406875
+    },
+    "ht_model": {
+      "H": 0.2789735213802339,
+      "D": 0.39886323026113685,
+      "A": 0.32216324835862936
+    },
+    "ht_sim": {
+      "H": 0.246375,
+      "D": 0.45225,
+      "A": 0.301375
+    },
+    "over25_model": 0.44405043941350997,
+    "over25_sim": 0.4895,
+    "btts_model": 0.532931314813013,
+    "btts_sim": 0.556125,
+    "ht_over15_model": 0.36101260985337746,
+    "ht_over15_sim": 0.31275,
+    "dc_ft": {
+      "1X": 0.5931249999999999,
+      "X2": 0.699375,
+      "12": 0.7075
+    },
+    "dc_ht": {
+      "1X": 0.698625,
+      "X2": 0.753625,
+      "12": 0.54775
+    },
+    "top_ft": [
+      [
+        "1-1",
+        967
+      ],
+      [
+        "0-1",
+        865
+      ],
+      [
+        "1-0",
+        738
+      ],
+      [
+        "1-2",
+        710
+      ],
+      [
+        "0-0",
+        695
+      ],
+      [
+        "2-2",
+        515
+      ],
+      [
+        "2-1",
+        506
+      ],
+      [
+        "0-2",
+        481
+      ],
+      [
+        "1-3",
+        350
+      ],
+      [
+        "2-0",
+        338
+      ],
+      [
+        "2-3",
+        231
+      ],
+      [
+        "3-1",
+        215
+      ]
+    ],
+    "top_ht": [
+      [
+        "0-0",
+        2704
+      ],
+      [
+        "0-1",
+        1486
+      ],
+      [
+        "1-0",
+        1308
+      ],
+      [
+        "1-1",
+        823
+      ],
+      [
+        "0-2",
+        441
+      ],
+      [
+        "2-0",
+        308
+      ],
+      [
+        "1-2",
+        299
+      ],
+      [
+        "2-1",
+        238
+      ]
+    ],
+    "top3_ft": [
+      {
+        "score": "1-1",
+        "count": 967,
+        "pct": 12.1
+      },
+      {
+        "score": "0-1",
+        "count": 865,
+        "pct": 10.8
+      },
+      {
+        "score": "1-0",
+        "count": 738,
+        "pct": 9.2
+      }
+    ],
+    "top3_ht": [
+      {
+        "score": "0-0",
+        "count": 2704,
+        "pct": 33.8
+      },
+      {
+        "score": "0-1",
+        "count": 1486,
+        "pct": 18.6
+      },
+      {
+        "score": "1-0",
+        "count": 1308,
+        "pct": 16.4
+      }
+    ],
+    "top8_ft": [
+      {
+        "score": "1-1",
+        "count": 967,
+        "pct": 12.1
+      },
+      {
+        "score": "0-1",
+        "count": 865,
+        "pct": 10.8
+      },
+      {
+        "score": "1-0",
+        "count": 738,
+        "pct": 9.2
+      },
+      {
+        "score": "1-2",
+        "count": 710,
+        "pct": 8.9
+      },
+      {
+        "score": "0-0",
+        "count": 695,
+        "pct": 8.7
+      },
+      {
+        "score": "2-2",
+        "count": 515,
+        "pct": 6.4
+      },
+      {
+        "score": "2-1",
+        "count": 506,
+        "pct": 6.3
+      },
+      {
+        "score": "0-2",
+        "count": 481,
+        "pct": 6.0
+      }
+    ],
+    "xg": {
+      "home": 1.2525,
+      "away": 1.444,
+      "total": 2.6965,
+      "lambda_home": 1.0021695095470922,
+      "lambda_away": 1.1760426417616239
+    },
+    "ht_xg": {
+      "home": 0.525375,
+      "away": 0.61125,
+      "total": 1.136625
+    },
+    "score_consistency": {
+      "ht_leq_ft": 1.0,
+      "ft_vs_model_l1": 0.04929916672890122
+    },
+    "clean_sheet": {
+      "home": 0.243,
+      "away": 0.28775
+    },
+    "win_to_nil": {
+      "home": 0.156125,
+      "away": 0.200875
+    },
+    "goal_lines": {
+      "0.5": {
+        "over": 0.913125,
+        "under": 0.086875,
+        "push": 0.0
+      },
+      "1.5": {
+        "over": 0.71275,
+        "under": 0.28725,
+        "push": 0.0
+      },
+      "2.5": {
+        "over": 0.4895,
+        "under": 0.5105,
+        "push": 0.0
+      },
+      "3.5": {
+        "over": 0.2985,
+        "under": 0.7015,
+        "push": 0.0
+      },
+      "4.5": {
+        "over": 0.15125,
+        "under": 0.84875,
+        "push": 0.0
+      }
+    },
+    "asian_handicap": {
+      "home_-0.5": 0.300625,
+      "home_-1.0": {
+        "cover": 0.11575,
+        "push": 0.184875
+      },
+      "home_+0.5": 0.593125,
+      "home_+1.0": {
+        "cover": 0.593125,
+        "push": 0.233625
+      }
+    },
+    "score_matrix_margin": {
+      "home_1_goal": 0.184875,
+      "home_2_plus": 0.11575,
+      "away_1_goal": 0.233625,
+      "away_2_plus": 0.17325,
+      "draw": 0.2925
+    }
+  },
+  "table": [
+    {
+      "Section": "HT Winner",
+      "Selection": "Cheltenham",
+      "Model%": 27.9,
+      "Sim%": 24.6,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 3.3
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Draw",
+      "Model%": 39.9,
+      "Sim%": 45.2,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": -5.3
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "York",
+      "Model%": 32.2,
+      "Sim%": 30.1,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 2.1
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "1X",
+      "Model%": 69.9,
+      "Sim%": 69.9,
+      "Agree": "6 eng",
+      "Verdict": "YES",
+      "Edge": 0.0
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "X2",
+      "Model%": 75.4,
+      "Sim%": 75.4,
+      "Agree": "6 eng",
+      "Verdict": "YES",
+      "Edge": 0.0
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "12",
+      "Model%": 54.8,
+      "Sim%": 54.8,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 0.0
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Over 1.5",
+      "Model%": 36.1,
+      "Sim%": 31.3,
+      "Agree": "-",
+      "Verdict": "NO",
+      "Edge": 4.8
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Under 1.5",
+      "Model%": 63.9,
+      "Sim%": 68.7,
+      "Agree": "-",
+      "Verdict": "YES",
+      "Edge": -4.8
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Cheltenham",
+      "Model%": 29.6,
+      "Sim%": 30.1,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": -0.5
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Draw",
+      "Model%": 31.7,
+      "Sim%": 29.2,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 2.5
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "York",
+      "Model%": 38.7,
+      "Sim%": 40.7,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": -2.0
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "1X",
+      "Model%": 59.3,
+      "Sim%": 59.3,
+      "Agree": "6 eng",
+      "Verdict": "YES",
+      "Edge": 0.0
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 69.9,
+      "Sim%": 69.9,
+      "Agree": "6 eng",
+      "Verdict": "YES",
+      "Edge": 0.0
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "12",
+      "Model%": 70.8,
+      "Sim%": 70.8,
+      "Agree": "6 eng",
+      "Verdict": "YES",
+      "Edge": 0.0
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Over 2.5",
+      "Model%": 44.4,
+      "Sim%": 48.9,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": -4.5
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Under 2.5",
+      "Model%": 55.6,
+      "Sim%": 51.0,
+      "Agree": "6 eng",
+      "Verdict": "YES",
+      "Edge": 4.5
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "Yes",
+      "Model%": 53.3,
+      "Sim%": 55.6,
+      "Agree": "6 eng",
+      "Verdict": "YES",
+      "Edge": -2.3
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 46.7,
+      "Sim%": 44.4,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 2.3
+    },
+    {
+      "Section": "FT O/U+",
+      "Selection": "Over 1.5",
+      "Model%": 71.3,
+      "Sim%": 71.3,
+      "Agree": "6 eng",
+      "Verdict": "YES",
+      "Edge": 0.0
+    },
+    {
+      "Section": "FT O/U+",
+      "Selection": "Over 3.5",
+      "Model%": 29.8,
+      "Sim%": 29.8,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 0.0
+    },
+    {
+      "Section": "CS",
+      "Selection": "Cheltenham CS",
+      "Model%": 24.3,
+      "Sim%": 24.3,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 0.0
+    },
+    {
+      "Section": "CS",
+      "Selection": "York CS",
+      "Model%": 28.8,
+      "Sim%": 28.8,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 0.0
+    },
+    {
+      "Section": "WTN",
+      "Selection": "Cheltenham WTN",
+      "Model%": 15.6,
+      "Sim%": 15.6,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 0.0
+    },
+    {
+      "Section": "WTN",
+      "Selection": "York WTN",
+      "Model%": 20.1,
+      "Sim%": 20.1,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 0.0
+    }
+  ],
+  "locked_tip": {
+    "status": "SECURED LOCK",
+    "section": "HT DC",
+    "selection": "X2",
+    "model": 75.4,
+    "sim": 75.4,
+    "agree": "6 eng",
+    "verdict": "HARD YES"
+  },
+  "backends": {
+    "ft_result": [
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
+    ],
+    "ht_result": [
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
+    ],
+    "over25": [
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
+    ],
+    "btts": [
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
+    ],
+    "ht_over15": []
+  },
+  "generated_at": "2026-09-01T21:30:01.529033Z",
+  "metadata": {
+    "simulation_engine": {
+      "version": "hard-v2",
+      "method": "calibrated-bivariate-poisson+dixon-coles+latent-state",
+      "attack_cv": 0.13,
+      "defense_cv": 0.13,
+      "shared_state_cv": 0.07,
+      "common_goal_rate": 0.2746919925727719,
+      "lambda_home": 1.0021695095470922,
+      "lambda_away": 1.1760426417616239,
+      "target_total_lambda": 2.452904143881488
+    }
+  }
+}

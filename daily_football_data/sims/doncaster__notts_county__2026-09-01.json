@@ -1,0 +1,578 @@
+{
+  "match": {
+    "league": "E2",
+    "home_team": "Doncaster",
+    "away_team": "Notts County",
+    "match_date": "2026-09-01 19:45",
+    "odds_home": 2.15,
+    "odds_draw": 3.4,
+    "odds_away": 3.0,
+    "n_simulations": 8000,
+    "seed": 59,
+    "odds_blend": 0.22
+  },
+  "resolved": {
+    "league": "League One",
+    "div": "E2",
+    "home": "Doncaster",
+    "away": "Notts County",
+    "models": "Doncaster (home) + Notts County (away)",
+    "match_date": "2026-09-01 19:45"
+  },
+  "report": {
+    "n": 8000,
+    "engine": {
+      "version": "hard-v2",
+      "method": "calibrated-bivariate-poisson+dixon-coles+latent-state",
+      "attack_cv": 0.13,
+      "defense_cv": 0.13,
+      "shared_state_cv": 0.07,
+      "common_goal_rate": 8.433055830592417e-55,
+      "lambda_home": 1.4759219185047192,
+      "lambda_away": 1.2113098565444054,
+      "target_total_lambda": 2.6872317750491246
+    },
+    "ft_model": {
+      "H": 0.4323708388908372,
+      "D": 0.25852240306407803,
+      "A": 0.30910675804508486
+    },
+    "ft_sim": {
+      "H": 0.431625,
+      "D": 0.257875,
+      "A": 0.3105
+    },
+    "ht_model": {
+      "H": 0.2884603646005891,
+      "D": 0.4071600834319338,
+      "A": 0.3043795519674771
+    },
+    "ht_sim": {
+      "H": 0.31575,
+      "D": 0.439375,
+      "A": 0.244875
+    },
+    "over25_model": 0.5032425931059994,
+    "over25_sim": 0.506125,
+    "btts_model": 0.5163375183213041,
+    "btts_sim": 0.533375,
+    "ht_over15_model": 0.37581064827649985,
+    "ht_over15_sim": 0.311375,
+    "dc_ft": {
+      "1X": 0.6895,
+      "X2": 0.5683750000000001,
+      "12": 0.7421249999999999
+    },
+    "dc_ht": {
+      "1X": 0.755125,
+      "X2": 0.68425,
+      "12": 0.5606249999999999
+    },
+    "top_ft": [
+      [
+        "1-1",
+        922
+      ],
+      [
+        "1-0",
+        838
+      ],
+      [
+        "2-1",
+        667
+      ],
+      [
+        "0-1",
+        664
+      ],
+      [
+        "0-0",
+        599
+      ],
+      [
+        "1-2",
+        582
+      ],
+      [
+        "2-0",
+        558
+      ],
+      [
+        "2-2",
+        428
+      ],
+      [
+        "0-2",
+        370
+      ],
+      [
+        "3-1",
+        362
+      ],
+      [
+        "3-0",
+        320
+      ],
+      [
+        "1-3",
+        236
+      ]
+    ],
+    "top_ht": [
+      [
+        "0-0",
+        2612
+      ],
+      [
+        "1-0",
+        1594
+      ],
+      [
+        "0-1",
+        1303
+      ],
+      [
+        "1-1",
+        844
+      ],
+      [
+        "2-0",
+        480
+      ],
+      [
+        "0-2",
+        315
+      ],
+      [
+        "2-1",
+        235
+      ],
+      [
+        "1-2",
+        218
+      ]
+    ],
+    "top3_ft": [
+      {
+        "score": "1-1",
+        "count": 922,
+        "pct": 11.5
+      },
+      {
+        "score": "1-0",
+        "count": 838,
+        "pct": 10.5
+      },
+      {
+        "score": "2-1",
+        "count": 667,
+        "pct": 8.3
+      }
+    ],
+    "top3_ht": [
+      {
+        "score": "0-0",
+        "count": 2612,
+        "pct": 32.6
+      },
+      {
+        "score": "1-0",
+        "count": 1594,
+        "pct": 19.9
+      },
+      {
+        "score": "0-1",
+        "count": 1303,
+        "pct": 16.3
+      }
+    ],
+    "top8_ft": [
+      {
+        "score": "1-1",
+        "count": 922,
+        "pct": 11.5
+      },
+      {
+        "score": "1-0",
+        "count": 838,
+        "pct": 10.5
+      },
+      {
+        "score": "2-1",
+        "count": 667,
+        "pct": 8.3
+      },
+      {
+        "score": "0-1",
+        "count": 664,
+        "pct": 8.3
+      },
+      {
+        "score": "0-0",
+        "count": 599,
+        "pct": 7.5
+      },
+      {
+        "score": "1-2",
+        "count": 582,
+        "pct": 7.3
+      },
+      {
+        "score": "2-0",
+        "count": 558,
+        "pct": 7.0
+      },
+      {
+        "score": "2-2",
+        "count": 428,
+        "pct": 5.3
+      }
+    ],
+    "xg": {
+      "home": 1.484,
+      "away": 1.211,
+      "total": 2.695,
+      "lambda_home": 1.4759219185047192,
+      "lambda_away": 1.2113098565444054
+    },
+    "ht_xg": {
+      "home": 0.62125,
+      "away": 0.507375,
+      "total": 1.128625
+    },
+    "score_consistency": {
+      "ht_leq_ft": 1.0,
+      "ft_vs_model_l1": 0.002786483909830384
+    },
+    "clean_sheet": {
+      "home": 0.30925,
+      "away": 0.23225
+    },
+    "win_to_nil": {
+      "home": 0.234375,
+      "away": 0.157375
+    },
+    "goal_lines": {
+      "0.5": {
+        "over": 0.925125,
+        "under": 0.074875,
+        "push": 0.0
+      },
+      "1.5": {
+        "over": 0.737375,
+        "under": 0.262625,
+        "push": 0.0
+      },
+      "2.5": {
+        "over": 0.506125,
+        "under": 0.493875,
+        "push": 0.0
+      },
+      "3.5": {
+        "over": 0.29,
+        "under": 0.71,
+        "push": 0.0
+      },
+      "4.5": {
+        "over": 0.140125,
+        "under": 0.859875,
+        "push": 0.0
+      }
+    },
+    "asian_handicap": {
+      "home_-0.5": 0.431625,
+      "home_-1.0": {
+        "cover": 0.213875,
+        "push": 0.21775
+      },
+      "home_+0.5": 0.6895,
+      "home_+1.0": {
+        "cover": 0.6895,
+        "push": 0.18125
+      }
+    },
+    "score_matrix_margin": {
+      "home_1_goal": 0.21775,
+      "home_2_plus": 0.213875,
+      "away_1_goal": 0.18125,
+      "away_2_plus": 0.12925,
+      "draw": 0.257875
+    }
+  },
+  "table": [
+    {
+      "Section": "HT Winner",
+      "Selection": "Doncaster",
+      "Model%": 28.8,
+      "Sim%": 31.6,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": -2.7
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Draw",
+      "Model%": 40.7,
+      "Sim%": 43.9,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": -3.2
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Notts County",
+      "Model%": 30.4,
+      "Sim%": 24.5,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 6.0
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "1X",
+      "Model%": 75.5,
+      "Sim%": 75.5,
+      "Agree": "6 eng",
+      "Verdict": "YES",
+      "Edge": 0.0
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "X2",
+      "Model%": 68.4,
+      "Sim%": 68.4,
+      "Agree": "6 eng",
+      "Verdict": "YES",
+      "Edge": 0.0
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "12",
+      "Model%": 56.1,
+      "Sim%": 56.1,
+      "Agree": "6 eng",
+      "Verdict": "YES",
+      "Edge": 0.0
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Over 1.5",
+      "Model%": 37.6,
+      "Sim%": 31.1,
+      "Agree": "-",
+      "Verdict": "NO",
+      "Edge": 6.4
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Under 1.5",
+      "Model%": 62.4,
+      "Sim%": 68.9,
+      "Agree": "-",
+      "Verdict": "YES",
+      "Edge": -6.4
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Doncaster",
+      "Model%": 43.2,
+      "Sim%": 43.2,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 0.1
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Draw",
+      "Model%": 25.9,
+      "Sim%": 25.8,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 0.1
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Notts County",
+      "Model%": 30.9,
+      "Sim%": 31.1,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": -0.1
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "1X",
+      "Model%": 69.0,
+      "Sim%": 69.0,
+      "Agree": "6 eng",
+      "Verdict": "YES",
+      "Edge": 0.0
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 56.8,
+      "Sim%": 56.8,
+      "Agree": "6 eng",
+      "Verdict": "YES",
+      "Edge": 0.0
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "12",
+      "Model%": 74.2,
+      "Sim%": 74.2,
+      "Agree": "6 eng",
+      "Verdict": "YES",
+      "Edge": 0.0
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Over 2.5",
+      "Model%": 50.3,
+      "Sim%": 50.6,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": -0.3
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Under 2.5",
+      "Model%": 49.7,
+      "Sim%": 49.4,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 0.3
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "Yes",
+      "Model%": 51.6,
+      "Sim%": 53.3,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": -1.7
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 48.4,
+      "Sim%": 46.7,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 1.7
+    },
+    {
+      "Section": "FT O/U+",
+      "Selection": "Over 1.5",
+      "Model%": 73.7,
+      "Sim%": 73.7,
+      "Agree": "6 eng",
+      "Verdict": "YES",
+      "Edge": 0.0
+    },
+    {
+      "Section": "FT O/U+",
+      "Selection": "Over 3.5",
+      "Model%": 29.0,
+      "Sim%": 29.0,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 0.0
+    },
+    {
+      "Section": "CS",
+      "Selection": "Doncaster CS",
+      "Model%": 30.9,
+      "Sim%": 30.9,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 0.0
+    },
+    {
+      "Section": "CS",
+      "Selection": "Notts County CS",
+      "Model%": 23.2,
+      "Sim%": 23.2,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 0.0
+    },
+    {
+      "Section": "WTN",
+      "Selection": "Doncaster WTN",
+      "Model%": 23.4,
+      "Sim%": 23.4,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 0.0
+    },
+    {
+      "Section": "WTN",
+      "Selection": "Notts County WTN",
+      "Model%": 15.7,
+      "Sim%": 15.7,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 0.0
+    }
+  ],
+  "locked_tip": {
+    "status": "SECURED LOCK",
+    "section": "HT DC",
+    "selection": "1X",
+    "model": 75.5,
+    "sim": 75.5,
+    "agree": "6 eng",
+    "verdict": "HARD YES"
+  },
+  "backends": {
+    "ft_result": [
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
+    ],
+    "ht_result": [
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
+    ],
+    "over25": [
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
+    ],
+    "btts": [
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
+    ],
+    "ht_over15": []
+  },
+  "generated_at": "2026-09-01T21:29:46.292075Z",
+  "metadata": {
+    "simulation_engine": {
+      "version": "hard-v2",
+      "method": "calibrated-bivariate-poisson+dixon-coles+latent-state",
+      "attack_cv": 0.13,
+      "defense_cv": 0.13,
+      "shared_state_cv": 0.07,
+      "common_goal_rate": 8.433055830592417e-55,
+      "lambda_home": 1.4759219185047192,
+      "lambda_away": 1.2113098565444054,
+      "target_total_lambda": 2.6872317750491246
+    }
+  }
+}

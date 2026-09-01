@@ -1,0 +1,578 @@
+{
+  "match": {
+    "league": "E2",
+    "home_team": "Bradford",
+    "away_team": "Cambridge",
+    "match_date": "2026-09-01 19:45",
+    "odds_home": 1.71,
+    "odds_draw": 3.4,
+    "odds_away": 4.5,
+    "n_simulations": 8000,
+    "seed": 57,
+    "odds_blend": 0.22
+  },
+  "resolved": {
+    "league": "League One",
+    "div": "E2",
+    "home": "Bradford",
+    "away": "Cambridge",
+    "models": "Bradford (home) + Cambridge (away)",
+    "match_date": "2026-09-01 19:45"
+  },
+  "report": {
+    "n": 8000,
+    "engine": {
+      "version": "hard-v2",
+      "method": "calibrated-bivariate-poisson+dixon-coles+latent-state",
+      "attack_cv": 0.13,
+      "defense_cv": 0.13,
+      "shared_state_cv": 0.07,
+      "common_goal_rate": 0.1425850114119256,
+      "lambda_home": 1.5711622783860795,
+      "lambda_away": 0.9867548645006001,
+      "target_total_lambda": 2.700502154298605
+    },
+    "ft_model": {
+      "H": 0.5029253276967557,
+      "D": 0.27316377860492513,
+      "A": 0.22391089369831912
+    },
+    "ft_sim": {
+      "H": 0.506125,
+      "D": 0.249875,
+      "A": 0.244
+    },
+    "ht_model": {
+      "H": 0.3386633699476761,
+      "D": 0.44063002200241375,
+      "A": 0.22070660804991027
+    },
+    "ht_sim": {
+      "H": 0.368125,
+      "D": 0.419375,
+      "A": 0.2125
+    },
+    "over25_model": 0.506498510691034,
+    "over25_sim": 0.5305,
+    "btts_model": 0.5217642520997547,
+    "btts_sim": 0.562625,
+    "ht_over15_model": 0.3766246276727585,
+    "ht_over15_sim": 0.333875,
+    "dc_ft": {
+      "1X": 0.756,
+      "X2": 0.493875,
+      "12": 0.750125
+    },
+    "dc_ht": {
+      "1X": 0.7875,
+      "X2": 0.631875,
+      "12": 0.580625
+    },
+    "top_ft": [
+      [
+        "1-1",
+        886
+      ],
+      [
+        "1-0",
+        848
+      ],
+      [
+        "2-1",
+        761
+      ],
+      [
+        "2-0",
+        654
+      ],
+      [
+        "0-0",
+        575
+      ],
+      [
+        "0-1",
+        539
+      ],
+      [
+        "1-2",
+        483
+      ],
+      [
+        "2-2",
+        419
+      ],
+      [
+        "3-1",
+        416
+      ],
+      [
+        "3-0",
+        328
+      ],
+      [
+        "0-2",
+        254
+      ],
+      [
+        "3-2",
+        235
+      ]
+    ],
+    "top_ht": [
+      [
+        "0-0",
+        2497
+      ],
+      [
+        "1-0",
+        1723
+      ],
+      [
+        "0-1",
+        1109
+      ],
+      [
+        "1-1",
+        786
+      ],
+      [
+        "2-0",
+        625
+      ],
+      [
+        "2-1",
+        297
+      ],
+      [
+        "0-2",
+        245
+      ],
+      [
+        "1-2",
+        232
+      ]
+    ],
+    "top3_ft": [
+      {
+        "score": "1-1",
+        "count": 886,
+        "pct": 11.1
+      },
+      {
+        "score": "1-0",
+        "count": 848,
+        "pct": 10.6
+      },
+      {
+        "score": "2-1",
+        "count": 761,
+        "pct": 9.5
+      }
+    ],
+    "top3_ht": [
+      {
+        "score": "0-0",
+        "count": 2497,
+        "pct": 31.2
+      },
+      {
+        "score": "1-0",
+        "count": 1723,
+        "pct": 21.5
+      },
+      {
+        "score": "0-1",
+        "count": 1109,
+        "pct": 13.9
+      }
+    ],
+    "top8_ft": [
+      {
+        "score": "1-1",
+        "count": 886,
+        "pct": 11.1
+      },
+      {
+        "score": "1-0",
+        "count": 848,
+        "pct": 10.6
+      },
+      {
+        "score": "2-1",
+        "count": 761,
+        "pct": 9.5
+      },
+      {
+        "score": "2-0",
+        "count": 654,
+        "pct": 8.2
+      },
+      {
+        "score": "0-0",
+        "count": 575,
+        "pct": 7.2
+      },
+      {
+        "score": "0-1",
+        "count": 539,
+        "pct": 6.7
+      },
+      {
+        "score": "1-2",
+        "count": 483,
+        "pct": 6.0
+      },
+      {
+        "score": "2-2",
+        "count": 419,
+        "pct": 5.2
+      }
+    ],
+    "xg": {
+      "home": 1.719,
+      "away": 1.147,
+      "total": 2.866,
+      "lambda_home": 1.5711622783860795,
+      "lambda_away": 0.9867548645006001
+    },
+    "ht_xg": {
+      "home": 0.720625,
+      "away": 0.47575,
+      "total": 1.196375
+    },
+    "score_consistency": {
+      "ht_leq_ft": 1.0,
+      "ft_vs_model_l1": 0.04657755720985035
+    },
+    "clean_sheet": {
+      "home": 0.32425,
+      "away": 0.185
+    },
+    "win_to_nil": {
+      "home": 0.252375,
+      "away": 0.113125
+    },
+    "goal_lines": {
+      "0.5": {
+        "over": 0.928125,
+        "under": 0.071875,
+        "push": 0.0
+      },
+      "1.5": {
+        "over": 0.75475,
+        "under": 0.24525,
+        "push": 0.0
+      },
+      "2.5": {
+        "over": 0.5305,
+        "under": 0.4695,
+        "push": 0.0
+      },
+      "3.5": {
+        "over": 0.324375,
+        "under": 0.675625,
+        "push": 0.0
+      },
+      "4.5": {
+        "over": 0.177,
+        "under": 0.823,
+        "push": 0.0
+      }
+    },
+    "asian_handicap": {
+      "home_-0.5": 0.506125,
+      "home_-1.0": {
+        "cover": 0.26725,
+        "push": 0.238875
+      },
+      "home_+0.5": 0.756,
+      "home_+1.0": {
+        "cover": 0.756,
+        "push": 0.1575
+      }
+    },
+    "score_matrix_margin": {
+      "home_1_goal": 0.238875,
+      "home_2_plus": 0.26725,
+      "away_1_goal": 0.1575,
+      "away_2_plus": 0.0865,
+      "draw": 0.249875
+    }
+  },
+  "table": [
+    {
+      "Section": "HT Winner",
+      "Selection": "Bradford",
+      "Model%": 33.9,
+      "Sim%": 36.8,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": -2.9
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Draw",
+      "Model%": 44.1,
+      "Sim%": 41.9,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 2.1
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Cambridge",
+      "Model%": 22.1,
+      "Sim%": 21.2,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 0.8
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "1X",
+      "Model%": 78.8,
+      "Sim%": 78.8,
+      "Agree": "6 eng",
+      "Verdict": "YES",
+      "Edge": 0.0
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "X2",
+      "Model%": 63.2,
+      "Sim%": 63.2,
+      "Agree": "6 eng",
+      "Verdict": "YES",
+      "Edge": 0.0
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "12",
+      "Model%": 58.1,
+      "Sim%": 58.1,
+      "Agree": "6 eng",
+      "Verdict": "YES",
+      "Edge": 0.0
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Over 1.5",
+      "Model%": 37.7,
+      "Sim%": 33.4,
+      "Agree": "-",
+      "Verdict": "NO",
+      "Edge": 4.3
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Under 1.5",
+      "Model%": 62.3,
+      "Sim%": 66.6,
+      "Agree": "-",
+      "Verdict": "YES",
+      "Edge": -4.3
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Bradford",
+      "Model%": 50.3,
+      "Sim%": 50.6,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": -0.3
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Draw",
+      "Model%": 27.3,
+      "Sim%": 25.0,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 2.3
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Cambridge",
+      "Model%": 22.4,
+      "Sim%": 24.4,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": -2.0
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "1X",
+      "Model%": 75.6,
+      "Sim%": 75.6,
+      "Agree": "6 eng",
+      "Verdict": "YES",
+      "Edge": 0.0
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 49.4,
+      "Sim%": 49.4,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 0.0
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "12",
+      "Model%": 75.0,
+      "Sim%": 75.0,
+      "Agree": "6 eng",
+      "Verdict": "YES",
+      "Edge": 0.0
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Over 2.5",
+      "Model%": 50.6,
+      "Sim%": 53.0,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": -2.4
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Under 2.5",
+      "Model%": 49.4,
+      "Sim%": 47.0,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 2.4
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "Yes",
+      "Model%": 52.2,
+      "Sim%": 56.3,
+      "Agree": "6 eng",
+      "Verdict": "YES",
+      "Edge": -4.1
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 47.8,
+      "Sim%": 43.7,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 4.1
+    },
+    {
+      "Section": "FT O/U+",
+      "Selection": "Over 1.5",
+      "Model%": 75.5,
+      "Sim%": 75.5,
+      "Agree": "6 eng",
+      "Verdict": "YES",
+      "Edge": 0.0
+    },
+    {
+      "Section": "FT O/U+",
+      "Selection": "Over 3.5",
+      "Model%": 32.4,
+      "Sim%": 32.4,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 0.0
+    },
+    {
+      "Section": "CS",
+      "Selection": "Bradford CS",
+      "Model%": 32.4,
+      "Sim%": 32.4,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 0.0
+    },
+    {
+      "Section": "CS",
+      "Selection": "Cambridge CS",
+      "Model%": 18.5,
+      "Sim%": 18.5,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 0.0
+    },
+    {
+      "Section": "WTN",
+      "Selection": "Bradford WTN",
+      "Model%": 25.2,
+      "Sim%": 25.2,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 0.0
+    },
+    {
+      "Section": "WTN",
+      "Selection": "Cambridge WTN",
+      "Model%": 11.3,
+      "Sim%": 11.3,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 0.0
+    }
+  ],
+  "locked_tip": {
+    "status": "SECURED LOCK",
+    "section": "HT DC",
+    "selection": "1X",
+    "model": 78.8,
+    "sim": 78.8,
+    "agree": "6 eng",
+    "verdict": "HARD YES"
+  },
+  "backends": {
+    "ft_result": [
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
+    ],
+    "ht_result": [
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
+    ],
+    "over25": [
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
+    ],
+    "btts": [
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
+    ],
+    "ht_over15": []
+  },
+  "generated_at": "2026-09-01T21:29:41.388689Z",
+  "metadata": {
+    "simulation_engine": {
+      "version": "hard-v2",
+      "method": "calibrated-bivariate-poisson+dixon-coles+latent-state",
+      "attack_cv": 0.13,
+      "defense_cv": 0.13,
+      "shared_state_cv": 0.07,
+      "common_goal_rate": 0.1425850114119256,
+      "lambda_home": 1.5711622783860795,
+      "lambda_away": 0.9867548645006001,
+      "target_total_lambda": 2.700502154298605
+    }
+  }
+}

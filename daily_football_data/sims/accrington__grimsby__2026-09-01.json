@@ -1,0 +1,578 @@
+{
+  "match": {
+    "league": "E3",
+    "home_team": "Accrington",
+    "away_team": "Grimsby",
+    "match_date": "2026-09-01 19:45",
+    "odds_home": 3.7,
+    "odds_draw": 3.6,
+    "odds_away": 1.91,
+    "n_simulations": 8000,
+    "seed": 69,
+    "odds_blend": 0.22
+  },
+  "resolved": {
+    "league": "League Two",
+    "div": "E3",
+    "home": "Accrington",
+    "away": "Grimsby",
+    "models": "Accrington (home) + Grimsby (away)",
+    "match_date": "2026-09-01 19:45"
+  },
+  "report": {
+    "n": 8000,
+    "engine": {
+      "version": "hard-v2",
+      "method": "calibrated-bivariate-poisson+dixon-coles+latent-state",
+      "attack_cv": 0.13,
+      "defense_cv": 0.13,
+      "shared_state_cv": 0.07,
+      "common_goal_rate": 0.10065767818120731,
+      "lambda_home": 1.3089679719785041,
+      "lambda_away": 1.2580621075402962,
+      "target_total_lambda": 2.6676877577000075
+    },
+    "ft_model": {
+      "H": 0.37039020483268076,
+      "D": 0.2837542349807388,
+      "A": 0.3458555601865805
+    },
+    "ft_sim": {
+      "H": 0.3765,
+      "D": 0.267125,
+      "A": 0.356375
+    },
+    "ht_model": {
+      "H": 0.3197465097273138,
+      "D": 0.3972707154986563,
+      "A": 0.28298277477402994
+    },
+    "ht_sim": {
+      "H": 0.289875,
+      "D": 0.43375,
+      "A": 0.276375
+    },
+    "over25_model": 0.49842730515318573,
+    "over25_sim": 0.512375,
+    "btts_model": 0.5179966040210504,
+    "btts_sim": 0.560625,
+    "ht_over15_model": 0.37460682628829645,
+    "ht_over15_sim": 0.327,
+    "dc_ft": {
+      "1X": 0.643625,
+      "X2": 0.6234999999999999,
+      "12": 0.7328749999999999
+    },
+    "dc_ht": {
+      "1X": 0.723625,
+      "X2": 0.710125,
+      "12": 0.5662499999999999
+    },
+    "top_ft": [
+      [
+        "1-1",
+        965
+      ],
+      [
+        "1-0",
+        736
+      ],
+      [
+        "0-1",
+        699
+      ],
+      [
+        "2-1",
+        652
+      ],
+      [
+        "0-0",
+        612
+      ],
+      [
+        "1-2",
+        603
+      ],
+      [
+        "0-2",
+        460
+      ],
+      [
+        "2-2",
+        446
+      ],
+      [
+        "2-0",
+        429
+      ],
+      [
+        "3-1",
+        317
+      ],
+      [
+        "1-3",
+        268
+      ],
+      [
+        "3-2",
+        229
+      ]
+    ],
+    "top_ht": [
+      [
+        "0-0",
+        2597
+      ],
+      [
+        "1-0",
+        1410
+      ],
+      [
+        "0-1",
+        1377
+      ],
+      [
+        "1-1",
+        791
+      ],
+      [
+        "2-0",
+        446
+      ],
+      [
+        "0-2",
+        419
+      ],
+      [
+        "2-1",
+        260
+      ],
+      [
+        "1-2",
+        254
+      ]
+    ],
+    "top3_ft": [
+      {
+        "score": "1-1",
+        "count": 965,
+        "pct": 12.1
+      },
+      {
+        "score": "1-0",
+        "count": 736,
+        "pct": 9.2
+      },
+      {
+        "score": "0-1",
+        "count": 699,
+        "pct": 8.7
+      }
+    ],
+    "top3_ht": [
+      {
+        "score": "0-0",
+        "count": 2597,
+        "pct": 32.5
+      },
+      {
+        "score": "1-0",
+        "count": 1410,
+        "pct": 17.6
+      },
+      {
+        "score": "0-1",
+        "count": 1377,
+        "pct": 17.2
+      }
+    ],
+    "top8_ft": [
+      {
+        "score": "1-1",
+        "count": 965,
+        "pct": 12.1
+      },
+      {
+        "score": "1-0",
+        "count": 736,
+        "pct": 9.2
+      },
+      {
+        "score": "0-1",
+        "count": 699,
+        "pct": 8.7
+      },
+      {
+        "score": "2-1",
+        "count": 652,
+        "pct": 8.2
+      },
+      {
+        "score": "0-0",
+        "count": 612,
+        "pct": 7.7
+      },
+      {
+        "score": "1-2",
+        "count": 603,
+        "pct": 7.5
+      },
+      {
+        "score": "0-2",
+        "count": 460,
+        "pct": 5.8
+      },
+      {
+        "score": "2-2",
+        "count": 446,
+        "pct": 5.6
+      }
+    ],
+    "xg": {
+      "home": 1.404125,
+      "away": 1.375375,
+      "total": 2.7795,
+      "lambda_home": 1.3089679719785041,
+      "lambda_away": 1.2580621075402962
+    },
+    "ht_xg": {
+      "home": 0.597875,
+      "away": 0.572875,
+      "total": 1.17075
+    },
+    "score_consistency": {
+      "ht_leq_ft": 1.0,
+      "ft_vs_model_l1": 0.03325846996147758
+    },
+    "clean_sheet": {
+      "home": 0.26025,
+      "away": 0.255625
+    },
+    "win_to_nil": {
+      "home": 0.18375,
+      "away": 0.179125
+    },
+    "goal_lines": {
+      "0.5": {
+        "over": 0.9235,
+        "under": 0.0765,
+        "push": 0.0
+      },
+      "1.5": {
+        "over": 0.744125,
+        "under": 0.255875,
+        "push": 0.0
+      },
+      "2.5": {
+        "over": 0.512375,
+        "under": 0.487625,
+        "push": 0.0
+      },
+      "3.5": {
+        "over": 0.30775,
+        "under": 0.69225,
+        "push": 0.0
+      },
+      "4.5": {
+        "over": 0.16025,
+        "under": 0.83975,
+        "push": 0.0
+      }
+    },
+    "asian_handicap": {
+      "home_-0.5": 0.3765,
+      "home_-1.0": {
+        "cover": 0.165625,
+        "push": 0.210875
+      },
+      "home_+0.5": 0.643625,
+      "home_+1.0": {
+        "cover": 0.643625,
+        "push": 0.195125
+      }
+    },
+    "score_matrix_margin": {
+      "home_1_goal": 0.210875,
+      "home_2_plus": 0.165625,
+      "away_1_goal": 0.195125,
+      "away_2_plus": 0.16125,
+      "draw": 0.267125
+    }
+  },
+  "table": [
+    {
+      "Section": "HT Winner",
+      "Selection": "Accrington",
+      "Model%": 32.0,
+      "Sim%": 29.0,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 3.0
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Draw",
+      "Model%": 39.7,
+      "Sim%": 43.4,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": -3.6
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Grimsby",
+      "Model%": 28.3,
+      "Sim%": 27.6,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 0.7
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "1X",
+      "Model%": 72.4,
+      "Sim%": 72.4,
+      "Agree": "6 eng",
+      "Verdict": "YES",
+      "Edge": 0.0
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "X2",
+      "Model%": 71.0,
+      "Sim%": 71.0,
+      "Agree": "6 eng",
+      "Verdict": "YES",
+      "Edge": 0.0
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "12",
+      "Model%": 56.6,
+      "Sim%": 56.6,
+      "Agree": "6 eng",
+      "Verdict": "YES",
+      "Edge": 0.0
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Over 1.5",
+      "Model%": 37.5,
+      "Sim%": 32.7,
+      "Agree": "-",
+      "Verdict": "NO",
+      "Edge": 4.8
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Under 1.5",
+      "Model%": 62.5,
+      "Sim%": 67.3,
+      "Agree": "-",
+      "Verdict": "YES",
+      "Edge": -4.8
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Accrington",
+      "Model%": 37.0,
+      "Sim%": 37.6,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": -0.6
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Draw",
+      "Model%": 28.4,
+      "Sim%": 26.7,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 1.7
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Grimsby",
+      "Model%": 34.6,
+      "Sim%": 35.6,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": -1.1
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "1X",
+      "Model%": 64.4,
+      "Sim%": 64.4,
+      "Agree": "6 eng",
+      "Verdict": "YES",
+      "Edge": 0.0
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 62.3,
+      "Sim%": 62.3,
+      "Agree": "6 eng",
+      "Verdict": "YES",
+      "Edge": 0.0
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "12",
+      "Model%": 73.3,
+      "Sim%": 73.3,
+      "Agree": "6 eng",
+      "Verdict": "YES",
+      "Edge": 0.0
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Over 2.5",
+      "Model%": 49.8,
+      "Sim%": 51.2,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": -1.4
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Under 2.5",
+      "Model%": 50.2,
+      "Sim%": 48.8,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 1.4
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "Yes",
+      "Model%": 51.8,
+      "Sim%": 56.1,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": -4.3
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 48.2,
+      "Sim%": 43.9,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 4.3
+    },
+    {
+      "Section": "FT O/U+",
+      "Selection": "Over 1.5",
+      "Model%": 74.4,
+      "Sim%": 74.4,
+      "Agree": "6 eng",
+      "Verdict": "YES",
+      "Edge": 0.0
+    },
+    {
+      "Section": "FT O/U+",
+      "Selection": "Over 3.5",
+      "Model%": 30.8,
+      "Sim%": 30.8,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 0.0
+    },
+    {
+      "Section": "CS",
+      "Selection": "Accrington CS",
+      "Model%": 26.0,
+      "Sim%": 26.0,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 0.0
+    },
+    {
+      "Section": "CS",
+      "Selection": "Grimsby CS",
+      "Model%": 25.6,
+      "Sim%": 25.6,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 0.0
+    },
+    {
+      "Section": "WTN",
+      "Selection": "Accrington WTN",
+      "Model%": 18.4,
+      "Sim%": 18.4,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 0.0
+    },
+    {
+      "Section": "WTN",
+      "Selection": "Grimsby WTN",
+      "Model%": 17.9,
+      "Sim%": 17.9,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 0.0
+    }
+  ],
+  "locked_tip": {
+    "status": "SECURED LOCK",
+    "section": "FT O/U+",
+    "selection": "Over 1.5",
+    "model": 74.4,
+    "sim": 74.4,
+    "agree": "6 eng",
+    "verdict": "HARD YES"
+  },
+  "backends": {
+    "ft_result": [
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
+    ],
+    "ht_result": [
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
+    ],
+    "over25": [
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
+    ],
+    "btts": [
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
+    ],
+    "ht_over15": []
+  },
+  "generated_at": "2026-09-01T21:29:57.296566Z",
+  "metadata": {
+    "simulation_engine": {
+      "version": "hard-v2",
+      "method": "calibrated-bivariate-poisson+dixon-coles+latent-state",
+      "attack_cv": 0.13,
+      "defense_cv": 0.13,
+      "shared_state_cv": 0.07,
+      "common_goal_rate": 0.10065767818120731,
+      "lambda_home": 1.3089679719785041,
+      "lambda_away": 1.2580621075402962,
+      "target_total_lambda": 2.6676877577000075
+    }
+  }
+}

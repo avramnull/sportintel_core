@@ -1,0 +1,578 @@
+{
+  "match": {
+    "league": "E2",
+    "home_team": "Wycombe",
+    "away_team": "Sheffield Weds",
+    "match_date": "2026-09-01 19:45",
+    "odds_home": 2.57,
+    "odds_draw": 3.3,
+    "odds_away": 2.45,
+    "n_simulations": 8000,
+    "seed": 63,
+    "odds_blend": 0.22
+  },
+  "resolved": {
+    "league": "League One",
+    "div": "E2",
+    "home": "Wycombe",
+    "away": "Sheffield Weds",
+    "models": "Wycombe (home) + Sheffield Weds (away)",
+    "match_date": "2026-09-01 19:45"
+  },
+  "report": {
+    "n": 8000,
+    "engine": {
+      "version": "hard-v2",
+      "method": "calibrated-bivariate-poisson+dixon-coles+latent-state",
+      "attack_cv": 0.13,
+      "defense_cv": 0.13,
+      "shared_state_cv": 0.07,
+      "common_goal_rate": 0.0863843190502567,
+      "lambda_home": 1.3239377570305626,
+      "lambda_away": 1.2167048140099994,
+      "target_total_lambda": 2.6270268900908187
+    },
+    "ft_model": {
+      "H": 0.3865180237933872,
+      "D": 0.27865025616630495,
+      "A": 0.3348317200403079
+    },
+    "ft_sim": {
+      "H": 0.399625,
+      "D": 0.265375,
+      "A": 0.335
+    },
+    "ht_model": {
+      "H": 0.32103306363019446,
+      "D": 0.3928803724488435,
+      "A": 0.286086563920962
+    },
+    "ht_sim": {
+      "H": 0.300625,
+      "D": 0.43925,
+      "A": 0.260125
+    },
+    "over25_model": 0.4883340245643454,
+    "over25_sim": 0.50475,
+    "btts_model": 0.5173487335827744,
+    "btts_sim": 0.552625,
+    "ht_over15_model": 0.3720835061410863,
+    "ht_over15_sim": 0.316875,
+    "dc_ft": {
+      "1X": 0.665,
+      "X2": 0.6003750000000001,
+      "12": 0.7346250000000001
+    },
+    "dc_ht": {
+      "1X": 0.739875,
+      "X2": 0.699375,
+      "12": 0.56075
+    },
+    "top_ft": [
+      [
+        "1-1",
+        982
+      ],
+      [
+        "1-0",
+        792
+      ],
+      [
+        "2-1",
+        666
+      ],
+      [
+        "0-1",
+        654
+      ],
+      [
+        "1-2",
+        604
+      ],
+      [
+        "0-0",
+        581
+      ],
+      [
+        "2-0",
+        519
+      ],
+      [
+        "2-2",
+        444
+      ],
+      [
+        "0-2",
+        434
+      ],
+      [
+        "3-1",
+        330
+      ],
+      [
+        "1-3",
+        275
+      ],
+      [
+        "3-0",
+        239
+      ]
+    ],
+    "top_ht": [
+      [
+        "0-0",
+        2610
+      ],
+      [
+        "1-0",
+        1498
+      ],
+      [
+        "0-1",
+        1357
+      ],
+      [
+        "1-1",
+        824
+      ],
+      [
+        "2-0",
+        477
+      ],
+      [
+        "0-2",
+        349
+      ],
+      [
+        "2-1",
+        231
+      ],
+      [
+        "1-2",
+        231
+      ]
+    ],
+    "top3_ft": [
+      {
+        "score": "1-1",
+        "count": 982,
+        "pct": 12.3
+      },
+      {
+        "score": "1-0",
+        "count": 792,
+        "pct": 9.9
+      },
+      {
+        "score": "2-1",
+        "count": 666,
+        "pct": 8.3
+      }
+    ],
+    "top3_ht": [
+      {
+        "score": "0-0",
+        "count": 2610,
+        "pct": 32.6
+      },
+      {
+        "score": "1-0",
+        "count": 1498,
+        "pct": 18.7
+      },
+      {
+        "score": "0-1",
+        "count": 1357,
+        "pct": 17.0
+      }
+    ],
+    "top8_ft": [
+      {
+        "score": "1-1",
+        "count": 982,
+        "pct": 12.3
+      },
+      {
+        "score": "1-0",
+        "count": 792,
+        "pct": 9.9
+      },
+      {
+        "score": "2-1",
+        "count": 666,
+        "pct": 8.3
+      },
+      {
+        "score": "0-1",
+        "count": 654,
+        "pct": 8.2
+      },
+      {
+        "score": "1-2",
+        "count": 604,
+        "pct": 7.5
+      },
+      {
+        "score": "0-0",
+        "count": 581,
+        "pct": 7.3
+      },
+      {
+        "score": "2-0",
+        "count": 519,
+        "pct": 6.5
+      },
+      {
+        "score": "2-2",
+        "count": 444,
+        "pct": 5.5
+      }
+    ],
+    "xg": {
+      "home": 1.427875,
+      "away": 1.29575,
+      "total": 2.723625,
+      "lambda_home": 1.3239377570305626,
+      "lambda_away": 1.2167048140099994
+    },
+    "ht_xg": {
+      "home": 0.60325,
+      "away": 0.537125,
+      "total": 1.140375
+    },
+    "score_consistency": {
+      "ht_leq_ft": 1.0,
+      "ft_vs_model_l1": 0.026550512332609855
+    },
+    "clean_sheet": {
+      "home": 0.2805,
+      "away": 0.2395
+    },
+    "win_to_nil": {
+      "home": 0.207875,
+      "away": 0.166875
+    },
+    "goal_lines": {
+      "0.5": {
+        "over": 0.927375,
+        "under": 0.072625,
+        "push": 0.0
+      },
+      "1.5": {
+        "over": 0.746625,
+        "under": 0.253375,
+        "push": 0.0
+      },
+      "2.5": {
+        "over": 0.50475,
+        "under": 0.49525,
+        "push": 0.0
+      },
+      "3.5": {
+        "over": 0.293375,
+        "under": 0.706625,
+        "push": 0.0
+      },
+      "4.5": {
+        "over": 0.1465,
+        "under": 0.8535,
+        "push": 0.0
+      }
+    },
+    "asian_handicap": {
+      "home_-0.5": 0.399625,
+      "home_-1.0": {
+        "cover": 0.1855,
+        "push": 0.214125
+      },
+      "home_+0.5": 0.665,
+      "home_+1.0": {
+        "cover": 0.665,
+        "push": 0.18775
+      }
+    },
+    "score_matrix_margin": {
+      "home_1_goal": 0.214125,
+      "home_2_plus": 0.1855,
+      "away_1_goal": 0.18775,
+      "away_2_plus": 0.14725,
+      "draw": 0.265375
+    }
+  },
+  "table": [
+    {
+      "Section": "HT Winner",
+      "Selection": "Wycombe",
+      "Model%": 32.1,
+      "Sim%": 30.1,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 2.0
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Draw",
+      "Model%": 39.3,
+      "Sim%": 43.9,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": -4.6
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Sheffield Weds",
+      "Model%": 28.6,
+      "Sim%": 26.0,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 2.6
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "1X",
+      "Model%": 74.0,
+      "Sim%": 74.0,
+      "Agree": "6 eng",
+      "Verdict": "YES",
+      "Edge": 0.0
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "X2",
+      "Model%": 69.9,
+      "Sim%": 69.9,
+      "Agree": "6 eng",
+      "Verdict": "YES",
+      "Edge": 0.0
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "12",
+      "Model%": 56.1,
+      "Sim%": 56.1,
+      "Agree": "6 eng",
+      "Verdict": "YES",
+      "Edge": 0.0
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Over 1.5",
+      "Model%": 37.2,
+      "Sim%": 31.7,
+      "Agree": "-",
+      "Verdict": "NO",
+      "Edge": 5.5
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Under 1.5",
+      "Model%": 62.8,
+      "Sim%": 68.3,
+      "Agree": "-",
+      "Verdict": "YES",
+      "Edge": -5.5
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Wycombe",
+      "Model%": 38.7,
+      "Sim%": 40.0,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": -1.3
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Draw",
+      "Model%": 27.9,
+      "Sim%": 26.5,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 1.3
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Sheffield Weds",
+      "Model%": 33.5,
+      "Sim%": 33.5,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": -0.0
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "1X",
+      "Model%": 66.5,
+      "Sim%": 66.5,
+      "Agree": "6 eng",
+      "Verdict": "YES",
+      "Edge": 0.0
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 60.0,
+      "Sim%": 60.0,
+      "Agree": "6 eng",
+      "Verdict": "YES",
+      "Edge": 0.0
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "12",
+      "Model%": 73.5,
+      "Sim%": 73.5,
+      "Agree": "6 eng",
+      "Verdict": "YES",
+      "Edge": 0.0
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Over 2.5",
+      "Model%": 48.8,
+      "Sim%": 50.5,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": -1.6
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Under 2.5",
+      "Model%": 51.2,
+      "Sim%": 49.5,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 1.6
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "Yes",
+      "Model%": 51.7,
+      "Sim%": 55.3,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": -3.5
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 48.3,
+      "Sim%": 44.7,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 3.5
+    },
+    {
+      "Section": "FT O/U+",
+      "Selection": "Over 1.5",
+      "Model%": 74.7,
+      "Sim%": 74.7,
+      "Agree": "6 eng",
+      "Verdict": "YES",
+      "Edge": 0.0
+    },
+    {
+      "Section": "FT O/U+",
+      "Selection": "Over 3.5",
+      "Model%": 29.3,
+      "Sim%": 29.3,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 0.0
+    },
+    {
+      "Section": "CS",
+      "Selection": "Wycombe CS",
+      "Model%": 28.1,
+      "Sim%": 28.1,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 0.0
+    },
+    {
+      "Section": "CS",
+      "Selection": "Sheffield Weds CS",
+      "Model%": 23.9,
+      "Sim%": 23.9,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 0.0
+    },
+    {
+      "Section": "WTN",
+      "Selection": "Wycombe WTN",
+      "Model%": 20.8,
+      "Sim%": 20.8,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 0.0
+    },
+    {
+      "Section": "WTN",
+      "Selection": "Sheffield Weds WTN",
+      "Model%": 16.7,
+      "Sim%": 16.7,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 0.0
+    }
+  ],
+  "locked_tip": {
+    "status": "SECURED LOCK",
+    "section": "FT O/U+",
+    "selection": "Over 1.5",
+    "model": 74.7,
+    "sim": 74.7,
+    "agree": "6 eng",
+    "verdict": "HARD YES"
+  },
+  "backends": {
+    "ft_result": [
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
+    ],
+    "ht_result": [
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
+    ],
+    "over25": [
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
+    ],
+    "btts": [
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
+    ],
+    "ht_over15": []
+  },
+  "generated_at": "2026-09-01T21:29:55.144717Z",
+  "metadata": {
+    "simulation_engine": {
+      "version": "hard-v2",
+      "method": "calibrated-bivariate-poisson+dixon-coles+latent-state",
+      "attack_cv": 0.13,
+      "defense_cv": 0.13,
+      "shared_state_cv": 0.07,
+      "common_goal_rate": 0.0863843190502567,
+      "lambda_home": 1.3239377570305626,
+      "lambda_away": 1.2167048140099994,
+      "target_total_lambda": 2.6270268900908187
+    }
+  }
+}

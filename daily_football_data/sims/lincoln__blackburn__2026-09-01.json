@@ -1,0 +1,578 @@
+{
+  "match": {
+    "league": "E1",
+    "home_team": "Lincoln",
+    "away_team": "Blackburn",
+    "match_date": "2026-09-01 19:45",
+    "odds_home": 2.2,
+    "odds_draw": 3.4,
+    "odds_away": 3.1,
+    "n_simulations": 8000,
+    "seed": 45,
+    "odds_blend": 0.22
+  },
+  "resolved": {
+    "league": "Championship",
+    "div": "E1",
+    "home": "Lincoln",
+    "away": "Blackburn",
+    "models": "Lincoln (home) + Blackburn (away)",
+    "match_date": "2026-09-01 19:45"
+  },
+  "report": {
+    "n": 8000,
+    "engine": {
+      "version": "hard-v2",
+      "method": "calibrated-bivariate-poisson+dixon-coles+latent-state",
+      "attack_cv": 0.13,
+      "defense_cv": 0.13,
+      "shared_state_cv": 0.07,
+      "common_goal_rate": 0.07060644402764857,
+      "lambda_home": 1.3904634428331013,
+      "lambda_away": 1.1257255155752048,
+      "target_total_lambda": 2.5867954024359547
+    },
+    "ft_model": {
+      "H": 0.4284651361721729,
+      "D": 0.2702734154308719,
+      "A": 0.3012614483969551
+    },
+    "ft_sim": {
+      "H": 0.426875,
+      "D": 0.268375,
+      "A": 0.30475
+    },
+    "ht_model": {
+      "H": 0.3318379461623958,
+      "D": 0.41162431959988266,
+      "A": 0.25653773423772164
+    },
+    "ht_sim": {
+      "H": 0.31775,
+      "D": 0.448375,
+      "A": 0.233875
+    },
+    "over25_model": 0.4782504527353834,
+    "over25_sim": 0.49875,
+    "btts_model": 0.5150248676999645,
+    "btts_sim": 0.54775,
+    "ht_over15_model": 0.36956261318384587,
+    "ht_over15_sim": 0.31125,
+    "dc_ft": {
+      "1X": 0.6952499999999999,
+      "X2": 0.573125,
+      "12": 0.731625
+    },
+    "dc_ht": {
+      "1X": 0.766125,
+      "X2": 0.68225,
+      "12": 0.551625
+    },
+    "top_ft": [
+      [
+        "1-1",
+        1015
+      ],
+      [
+        "1-0",
+        805
+      ],
+      [
+        "2-1",
+        705
+      ],
+      [
+        "0-1",
+        651
+      ],
+      [
+        "1-2",
+        616
+      ],
+      [
+        "0-0",
+        601
+      ],
+      [
+        "2-0",
+        589
+      ],
+      [
+        "2-2",
+        419
+      ],
+      [
+        "0-2",
+        349
+      ],
+      [
+        "3-1",
+        340
+      ],
+      [
+        "3-0",
+        289
+      ],
+      [
+        "1-3",
+        238
+      ]
+    ],
+    "top_ht": [
+      [
+        "0-0",
+        2662
+      ],
+      [
+        "1-0",
+        1595
+      ],
+      [
+        "0-1",
+        1253
+      ],
+      [
+        "1-1",
+        838
+      ],
+      [
+        "2-0",
+        471
+      ],
+      [
+        "0-2",
+        310
+      ],
+      [
+        "2-1",
+        262
+      ],
+      [
+        "1-2",
+        202
+      ]
+    ],
+    "top3_ft": [
+      {
+        "score": "1-1",
+        "count": 1015,
+        "pct": 12.7
+      },
+      {
+        "score": "1-0",
+        "count": 805,
+        "pct": 10.1
+      },
+      {
+        "score": "2-1",
+        "count": 705,
+        "pct": 8.8
+      }
+    ],
+    "top3_ht": [
+      {
+        "score": "0-0",
+        "count": 2662,
+        "pct": 33.3
+      },
+      {
+        "score": "1-0",
+        "count": 1595,
+        "pct": 19.9
+      },
+      {
+        "score": "0-1",
+        "count": 1253,
+        "pct": 15.7
+      }
+    ],
+    "top8_ft": [
+      {
+        "score": "1-1",
+        "count": 1015,
+        "pct": 12.7
+      },
+      {
+        "score": "1-0",
+        "count": 805,
+        "pct": 10.1
+      },
+      {
+        "score": "2-1",
+        "count": 705,
+        "pct": 8.8
+      },
+      {
+        "score": "0-1",
+        "count": 651,
+        "pct": 8.1
+      },
+      {
+        "score": "1-2",
+        "count": 616,
+        "pct": 7.7
+      },
+      {
+        "score": "0-0",
+        "count": 601,
+        "pct": 7.5
+      },
+      {
+        "score": "2-0",
+        "count": 589,
+        "pct": 7.4
+      },
+      {
+        "score": "2-2",
+        "count": 419,
+        "pct": 5.2
+      }
+    ],
+    "xg": {
+      "home": 1.478375,
+      "away": 1.205625,
+      "total": 2.684,
+      "lambda_home": 1.3904634428331013,
+      "lambda_away": 1.1257255155752048
+    },
+    "ht_xg": {
+      "home": 0.627375,
+      "away": 0.498875,
+      "total": 1.12625
+    },
+    "score_consistency": {
+      "ht_leq_ft": 1.0,
+      "ft_vs_model_l1": 0.006977103206089741
+    },
+    "clean_sheet": {
+      "home": 0.302875,
+      "away": 0.2245
+    },
+    "win_to_nil": {
+      "home": 0.22775,
+      "away": 0.149375
+    },
+    "goal_lines": {
+      "0.5": {
+        "over": 0.924875,
+        "under": 0.075125,
+        "push": 0.0
+      },
+      "1.5": {
+        "over": 0.742875,
+        "under": 0.257125,
+        "push": 0.0
+      },
+      "2.5": {
+        "over": 0.49875,
+        "under": 0.50125,
+        "push": 0.0
+      },
+      "3.5": {
+        "over": 0.279875,
+        "under": 0.720125,
+        "push": 0.0
+      },
+      "4.5": {
+        "over": 0.138875,
+        "under": 0.861125,
+        "push": 0.0
+      }
+    },
+    "asian_handicap": {
+      "home_-0.5": 0.426875,
+      "home_-1.0": {
+        "cover": 0.208375,
+        "push": 0.2185
+      },
+      "home_+0.5": 0.69525,
+      "home_+1.0": {
+        "cover": 0.69525,
+        "push": 0.1845
+      }
+    },
+    "score_matrix_margin": {
+      "home_1_goal": 0.2185,
+      "home_2_plus": 0.208375,
+      "away_1_goal": 0.1845,
+      "away_2_plus": 0.12025,
+      "draw": 0.268375
+    }
+  },
+  "table": [
+    {
+      "Section": "HT Winner",
+      "Selection": "Lincoln",
+      "Model%": 33.2,
+      "Sim%": 31.8,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 1.4
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Draw",
+      "Model%": 41.2,
+      "Sim%": 44.8,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": -3.7
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Blackburn",
+      "Model%": 25.7,
+      "Sim%": 23.4,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 2.3
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "1X",
+      "Model%": 76.6,
+      "Sim%": 76.6,
+      "Agree": "6 eng",
+      "Verdict": "YES",
+      "Edge": 0.0
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "X2",
+      "Model%": 68.2,
+      "Sim%": 68.2,
+      "Agree": "6 eng",
+      "Verdict": "YES",
+      "Edge": 0.0
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "12",
+      "Model%": 55.2,
+      "Sim%": 55.2,
+      "Agree": "6 eng",
+      "Verdict": "YES",
+      "Edge": 0.0
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Over 1.5",
+      "Model%": 37.0,
+      "Sim%": 31.1,
+      "Agree": "-",
+      "Verdict": "NO",
+      "Edge": 5.8
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Under 1.5",
+      "Model%": 63.0,
+      "Sim%": 68.9,
+      "Agree": "-",
+      "Verdict": "YES",
+      "Edge": -5.8
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Lincoln",
+      "Model%": 42.8,
+      "Sim%": 42.7,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 0.2
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Draw",
+      "Model%": 27.0,
+      "Sim%": 26.8,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 0.2
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Blackburn",
+      "Model%": 30.1,
+      "Sim%": 30.5,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": -0.3
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "1X",
+      "Model%": 69.5,
+      "Sim%": 69.5,
+      "Agree": "6 eng",
+      "Verdict": "YES",
+      "Edge": 0.0
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 57.3,
+      "Sim%": 57.3,
+      "Agree": "6 eng",
+      "Verdict": "YES",
+      "Edge": 0.0
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "12",
+      "Model%": 73.2,
+      "Sim%": 73.2,
+      "Agree": "6 eng",
+      "Verdict": "YES",
+      "Edge": 0.0
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Over 2.5",
+      "Model%": 47.8,
+      "Sim%": 49.9,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": -2.0
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Under 2.5",
+      "Model%": 52.2,
+      "Sim%": 50.1,
+      "Agree": "6 eng",
+      "Verdict": "YES",
+      "Edge": 2.0
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "Yes",
+      "Model%": 51.5,
+      "Sim%": 54.8,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": -3.3
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 48.5,
+      "Sim%": 45.2,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 3.3
+    },
+    {
+      "Section": "FT O/U+",
+      "Selection": "Over 1.5",
+      "Model%": 74.3,
+      "Sim%": 74.3,
+      "Agree": "6 eng",
+      "Verdict": "YES",
+      "Edge": 0.0
+    },
+    {
+      "Section": "FT O/U+",
+      "Selection": "Over 3.5",
+      "Model%": 28.0,
+      "Sim%": 28.0,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 0.0
+    },
+    {
+      "Section": "CS",
+      "Selection": "Lincoln CS",
+      "Model%": 30.3,
+      "Sim%": 30.3,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 0.0
+    },
+    {
+      "Section": "CS",
+      "Selection": "Blackburn CS",
+      "Model%": 22.4,
+      "Sim%": 22.4,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 0.0
+    },
+    {
+      "Section": "WTN",
+      "Selection": "Lincoln WTN",
+      "Model%": 22.8,
+      "Sim%": 22.8,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 0.0
+    },
+    {
+      "Section": "WTN",
+      "Selection": "Blackburn WTN",
+      "Model%": 14.9,
+      "Sim%": 14.9,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 0.0
+    }
+  ],
+  "locked_tip": {
+    "status": "SECURED LOCK",
+    "section": "HT DC",
+    "selection": "1X",
+    "model": 76.6,
+    "sim": 76.6,
+    "agree": "6 eng",
+    "verdict": "HARD YES"
+  },
+  "backends": {
+    "ft_result": [
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
+    ],
+    "ht_result": [
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
+    ],
+    "over25": [
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
+    ],
+    "btts": [
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
+    ],
+    "ht_over15": []
+  },
+  "generated_at": "2026-09-01T21:29:22.881172Z",
+  "metadata": {
+    "simulation_engine": {
+      "version": "hard-v2",
+      "method": "calibrated-bivariate-poisson+dixon-coles+latent-state",
+      "attack_cv": 0.13,
+      "defense_cv": 0.13,
+      "shared_state_cv": 0.07,
+      "common_goal_rate": 0.07060644402764857,
+      "lambda_home": 1.3904634428331013,
+      "lambda_away": 1.1257255155752048,
+      "target_total_lambda": 2.5867954024359547
+    }
+  }
+}

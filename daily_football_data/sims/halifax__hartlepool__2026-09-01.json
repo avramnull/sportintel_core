@@ -4,11 +4,11 @@
     "home_team": "Halifax",
     "away_team": "Hartlepool",
     "match_date": "2026-09-01 19:45",
-    "odds_home": 2.45,
+    "odds_home": 2.5,
     "odds_draw": 3.4,
-    "odds_away": 2.55,
+    "odds_away": 2.5,
     "n_simulations": 8000,
-    "seed": 250,
+    "seed": 81,
     "odds_blend": 0.22
   },
   "resolved": {
@@ -21,190 +21,186 @@
   },
   "report": {
     "n": 8000,
+    "engine": {
+      "version": "hard-v2",
+      "method": "calibrated-bivariate-poisson+dixon-coles+latent-state",
+      "attack_cv": 0.13,
+      "defense_cv": 0.13,
+      "shared_state_cv": 0.07,
+      "common_goal_rate": 0.3484419025845792,
+      "lambda_home": 1.221653607919382,
+      "lambda_away": 1.1375931233235852,
+      "target_total_lambda": 2.7076886338275465
+    },
     "ft_model": {
-      "H": 0.3420475319926874,
-      "D": 0.31912248628884826,
-      "A": 0.33882998171846435
+      "H": 0.36786327055817913,
+      "D": 0.3068516747582158,
+      "A": 0.32528505468360513
     },
     "ft_sim": {
-      "H": 0.342625,
-      "D": 0.325875,
-      "A": 0.3315
+      "H": 0.38225,
+      "D": 0.280875,
+      "A": 0.336875
     },
     "ht_model": {
-      "H": 0.3333333333333333,
-      "D": 0.3333333333333333,
-      "A": 0.3333333333333333
+      "H": 0.3397245467070652,
+      "D": 0.39830896177442127,
+      "A": 0.2619664915185136
     },
     "ht_sim": {
-      "H": 0.262,
-      "D": 0.461,
-      "A": 0.277
+      "H": 0.298875,
+      "D": 0.43,
+      "A": 0.271125
     },
-    "over25_model": 0.5,
-    "over25_sim": 0.492625,
-    "btts_model": 0.5,
-    "btts_sim": 0.500125,
-    "ht_over15_model": 0.375,
-    "ht_over15_sim": 0.29425,
+    "over25_model": 0.5082570671399211,
+    "over25_sim": 0.56825,
+    "btts_model": 0.5912880478953115,
+    "btts_sim": 0.62575,
+    "ht_over15_model": 0.3770642667849803,
+    "ht_over15_sim": 0.35875,
     "dc_ft": {
-      "1X": 0.6611700182815357,
-      "X2": 0.6579524680073126,
-      "12": 0.6808775137111518
+      "1X": 0.663125,
+      "X2": 0.61775,
+      "12": 0.719125
     },
     "dc_ht": {
-      "1X": 0.6666666666666666,
-      "X2": 0.6666666666666666,
-      "12": 0.6666666666666666
+      "1X": 0.7288749999999999,
+      "X2": 0.701125,
+      "12": 0.5700000000000001
     },
     "top_ft": [
       [
-        "0-0",
-        1007
-      ],
-      [
-        "1-0",
-        896
-      ],
-      [
         "1-1",
-        886
+        899
       ],
       [
         "2-1",
-        797
+        675
       ],
       [
-        "1-2",
-        633
-      ],
-      [
-        "2-2",
-        627
+        "1-0",
+        667
       ],
       [
         "0-1",
         598
       ],
       [
-        "0-3",
-        403
+        "1-2",
+        595
       ],
       [
-        "0-2",
-        357
+        "2-2",
+        570
+      ],
+      [
+        "0-0",
+        568
       ],
       [
         "2-0",
-        315
+        387
+      ],
+      [
+        "3-2",
+        339
+      ],
+      [
+        "0-2",
+        335
+      ],
+      [
+        "3-1",
+        300
       ],
       [
         "1-3",
-        249
-      ],
-      [
-        "3-0",
-        222
+        280
       ]
     ],
     "top_ht": [
       [
         "0-0",
-        3014
+        2413
       ],
       [
         "1-0",
-        1323
+        1413
       ],
       [
         "0-1",
-        1309
+        1304
       ],
       [
         "1-1",
-        602
-      ],
-      [
-        "0-2",
-        485
+        902
       ],
       [
         "2-0",
         424
       ],
       [
+        "0-2",
+        367
+      ],
+      [
         "2-1",
-        196
+        331
       ],
       [
         "1-2",
-        186
+        300
       ]
     ],
     "top3_ft": [
       {
-        "score": "0-0",
-        "count": 1007,
-        "pct": 12.6
-      },
-      {
-        "score": "1-0",
-        "count": 896,
+        "score": "1-1",
+        "count": 899,
         "pct": 11.2
       },
       {
-        "score": "1-1",
-        "count": 886,
-        "pct": 11.1
+        "score": "2-1",
+        "count": 675,
+        "pct": 8.4
+      },
+      {
+        "score": "1-0",
+        "count": 667,
+        "pct": 8.3
       }
     ],
     "top3_ht": [
       {
         "score": "0-0",
-        "count": 3014,
-        "pct": 37.7
+        "count": 2413,
+        "pct": 30.2
       },
       {
         "score": "1-0",
-        "count": 1323,
-        "pct": 16.5
+        "count": 1413,
+        "pct": 17.7
       },
       {
         "score": "0-1",
-        "count": 1309,
-        "pct": 16.4
+        "count": 1304,
+        "pct": 16.3
       }
     ],
     "top8_ft": [
       {
-        "score": "0-0",
-        "count": 1007,
-        "pct": 12.6
-      },
-      {
-        "score": "1-0",
-        "count": 896,
+        "score": "1-1",
+        "count": 899,
         "pct": 11.2
       },
       {
-        "score": "1-1",
-        "count": 886,
-        "pct": 11.1
-      },
-      {
         "score": "2-1",
-        "count": 797,
-        "pct": 10.0
+        "count": 675,
+        "pct": 8.4
       },
       {
-        "score": "1-2",
-        "count": 633,
-        "pct": 7.9
-      },
-      {
-        "score": "2-2",
-        "count": 627,
-        "pct": 7.8
+        "score": "1-0",
+        "count": 667,
+        "pct": 8.3
       },
       {
         "score": "0-1",
@@ -212,300 +208,311 @@
         "pct": 7.5
       },
       {
-        "score": "0-3",
-        "count": 403,
-        "pct": 5.0
+        "score": "1-2",
+        "count": 595,
+        "pct": 7.4
+      },
+      {
+        "score": "2-2",
+        "count": 570,
+        "pct": 7.1
+      },
+      {
+        "score": "0-0",
+        "count": 568,
+        "pct": 7.1
+      },
+      {
+        "score": "2-0",
+        "count": 387,
+        "pct": 4.8
       }
     ],
     "xg": {
-      "home": 1.15025,
-      "away": 1.257875,
-      "total": 2.408125,
-      "lambda_home": 0.8189369652650822,
-      "lambda_away": 1.3310630347349175
+      "home": 1.567875,
+      "away": 1.48425,
+      "total": 3.052125,
+      "lambda_home": 1.221653607919382,
+      "lambda_away": 1.1375931233235852
     },
     "ht_xg": {
-      "home": 0.508,
-      "away": 0.555625,
-      "total": 1.063625
+      "home": 0.656125,
+      "away": 0.6155,
+      "total": 1.271625
     },
     "score_consistency": {
       "ht_leq_ft": 1.0,
-      "ft_vs_model_l1": 0.014659963436928714
+      "ft_vs_model_l1": 0.05195334951643149
     },
     "clean_sheet": {
-      "home": 0.310875,
-      "away": 0.314875
+      "home": 0.2335,
+      "away": 0.21175
     },
     "win_to_nil": {
-      "home": 0.185,
-      "away": 0.189
+      "home": 0.1625,
+      "away": 0.14075
     },
     "goal_lines": {
       "0.5": {
-        "over": 0.874125,
-        "under": 0.125875,
+        "over": 0.929,
+        "under": 0.071,
         "push": 0.0
       },
       "1.5": {
-        "over": 0.687375,
-        "under": 0.312625,
+        "over": 0.770875,
+        "under": 0.229125,
         "push": 0.0
       },
       "2.5": {
-        "over": 0.492625,
-        "under": 0.507375,
+        "over": 0.56825,
+        "under": 0.43175,
         "push": 0.0
       },
       "3.5": {
-        "over": 0.23575,
-        "under": 0.76425,
+        "over": 0.368875,
+        "under": 0.631125,
         "push": 0.0
       },
       "4.5": {
-        "over": 0.08025,
-        "under": 0.91975,
+        "over": 0.213875,
+        "under": 0.786125,
         "push": 0.0
       }
     },
     "asian_handicap": {
-      "home_-0.5": 0.342625,
+      "home_-0.5": 0.38225,
       "home_-1.0": {
-        "cover": 0.111625,
-        "push": 0.231
+        "cover": 0.163,
+        "push": 0.21925
       },
-      "home_+0.5": 0.6685,
+      "home_+0.5": 0.663125,
       "home_+1.0": {
-        "cover": 0.6685,
-        "push": 0.166
+        "cover": 0.663125,
+        "push": 0.195125
       }
     },
     "score_matrix_margin": {
-      "home_1_goal": 0.231,
-      "home_2_plus": 0.111625,
-      "away_1_goal": 0.166,
-      "away_2_plus": 0.1655,
-      "draw": 0.325875
-    },
-    "goal_rates": {
-      "home": 1.15025,
-      "away": 1.257875
+      "home_1_goal": 0.21925,
+      "home_2_plus": 0.163,
+      "away_1_goal": 0.195125,
+      "away_2_plus": 0.14175,
+      "draw": 0.280875
     }
   },
   "table": [
     {
       "Section": "HT Winner",
       "Selection": "Halifax",
-      "Model%": 33.3,
-      "Sim%": 26.2,
-      "Agree": "-",
+      "Model%": 34.0,
+      "Sim%": 29.9,
+      "Agree": "6 eng",
       "Verdict": "NO",
-      "Edge": 7.1
+      "Edge": 4.1
     },
     {
       "Section": "HT Winner",
       "Selection": "Draw",
-      "Model%": 33.3,
-      "Sim%": 46.1,
-      "Agree": "-",
+      "Model%": 39.8,
+      "Sim%": 43.0,
+      "Agree": "6 eng",
       "Verdict": "NO",
-      "Edge": -12.8
+      "Edge": -3.2
     },
     {
       "Section": "HT Winner",
       "Selection": "Hartlepool",
-      "Model%": 33.3,
-      "Sim%": 27.7,
-      "Agree": "-",
+      "Model%": 26.2,
+      "Sim%": 27.1,
+      "Agree": "6 eng",
       "Verdict": "NO",
-      "Edge": 5.6
+      "Edge": -0.9
     },
     {
       "Section": "HT DC",
       "Selection": "1X",
-      "Model%": 66.7,
-      "Sim%": 72.3,
-      "Agree": "-",
+      "Model%": 72.9,
+      "Sim%": 72.9,
+      "Agree": "6 eng",
       "Verdict": "YES",
-      "Edge": -5.6
+      "Edge": 0.0
     },
     {
       "Section": "HT DC",
       "Selection": "X2",
-      "Model%": 66.7,
-      "Sim%": 73.8,
-      "Agree": "-",
+      "Model%": 70.1,
+      "Sim%": 70.1,
+      "Agree": "6 eng",
       "Verdict": "YES",
-      "Edge": -7.1
+      "Edge": 0.0
     },
     {
       "Section": "HT DC",
       "Selection": "12",
-      "Model%": 66.7,
-      "Sim%": 53.9,
-      "Agree": "-",
+      "Model%": 57.0,
+      "Sim%": 57.0,
+      "Agree": "6 eng",
       "Verdict": "YES",
-      "Edge": 12.8
+      "Edge": 0.0
     },
     {
       "Section": "HT O/U",
       "Selection": "Over 1.5",
-      "Model%": 37.5,
-      "Sim%": 29.4,
+      "Model%": 37.7,
+      "Sim%": 35.9,
       "Agree": "-",
       "Verdict": "NO",
-      "Edge": 8.1
+      "Edge": 1.8
     },
     {
       "Section": "HT O/U",
       "Selection": "Under 1.5",
-      "Model%": 62.5,
-      "Sim%": 70.6,
+      "Model%": 62.3,
+      "Sim%": 64.1,
       "Agree": "-",
       "Verdict": "YES",
-      "Edge": -8.1
+      "Edge": -1.8
     },
     {
       "Section": "FT Winner",
       "Selection": "Halifax",
-      "Model%": 34.2,
-      "Sim%": 34.3,
-      "Agree": "-",
+      "Model%": 36.8,
+      "Sim%": 38.2,
+      "Agree": "6 eng",
       "Verdict": "NO",
-      "Edge": -0.1
+      "Edge": -1.4
     },
     {
       "Section": "FT Winner",
       "Selection": "Draw",
-      "Model%": 31.9,
-      "Sim%": 32.6,
-      "Agree": "-",
+      "Model%": 30.7,
+      "Sim%": 28.1,
+      "Agree": "6 eng",
       "Verdict": "NO",
-      "Edge": -0.7
+      "Edge": 2.6
     },
     {
       "Section": "FT Winner",
       "Selection": "Hartlepool",
-      "Model%": 33.9,
-      "Sim%": 33.1,
-      "Agree": "-",
+      "Model%": 32.5,
+      "Sim%": 33.7,
+      "Agree": "6 eng",
       "Verdict": "NO",
-      "Edge": 0.7
+      "Edge": -1.2
     },
     {
       "Section": "FT DC",
       "Selection": "1X",
-      "Model%": 66.1,
-      "Sim%": 66.9,
-      "Agree": "-",
+      "Model%": 66.3,
+      "Sim%": 66.3,
+      "Agree": "6 eng",
       "Verdict": "YES",
-      "Edge": -0.7
+      "Edge": 0.0
     },
     {
       "Section": "FT DC",
       "Selection": "X2",
-      "Model%": 65.8,
-      "Sim%": 65.7,
-      "Agree": "-",
+      "Model%": 61.8,
+      "Sim%": 61.8,
+      "Agree": "6 eng",
       "Verdict": "YES",
-      "Edge": 0.1
+      "Edge": 0.0
     },
     {
       "Section": "FT DC",
       "Selection": "12",
-      "Model%": 68.1,
-      "Sim%": 67.4,
-      "Agree": "-",
+      "Model%": 71.9,
+      "Sim%": 71.9,
+      "Agree": "6 eng",
       "Verdict": "YES",
-      "Edge": 0.7
+      "Edge": 0.0
     },
     {
       "Section": "FT O/U",
       "Selection": "Over 2.5",
-      "Model%": 50.0,
-      "Sim%": 49.3,
-      "Agree": "-",
+      "Model%": 50.8,
+      "Sim%": 56.8,
+      "Agree": "6 eng",
       "Verdict": "NO",
-      "Edge": 0.7
+      "Edge": -6.0
     },
     {
       "Section": "FT O/U",
       "Selection": "Under 2.5",
-      "Model%": 50.0,
-      "Sim%": 50.7,
-      "Agree": "-",
+      "Model%": 49.2,
+      "Sim%": 43.2,
+      "Agree": "6 eng",
       "Verdict": "NO",
-      "Edge": -0.7
+      "Edge": 6.0
     },
     {
       "Section": "BTTS",
       "Selection": "Yes",
-      "Model%": 50.0,
-      "Sim%": 50.0,
-      "Agree": "-",
-      "Verdict": "NO",
-      "Edge": -0.0
+      "Model%": 59.1,
+      "Sim%": 62.6,
+      "Agree": "6 eng",
+      "Verdict": "YES",
+      "Edge": -3.4
     },
     {
       "Section": "BTTS",
       "Selection": "No",
-      "Model%": 50.0,
-      "Sim%": 50.0,
-      "Agree": "-",
+      "Model%": 40.9,
+      "Sim%": 37.4,
+      "Agree": "6 eng",
       "Verdict": "NO",
-      "Edge": 0.0
+      "Edge": 3.4
     },
     {
       "Section": "FT O/U+",
       "Selection": "Over 1.5",
-      "Model%": 68.7,
-      "Sim%": 68.7,
-      "Agree": "-",
+      "Model%": 77.1,
+      "Sim%": 77.1,
+      "Agree": "6 eng",
       "Verdict": "YES",
       "Edge": 0.0
     },
     {
       "Section": "FT O/U+",
       "Selection": "Over 3.5",
-      "Model%": 23.6,
-      "Sim%": 23.6,
-      "Agree": "-",
+      "Model%": 36.9,
+      "Sim%": 36.9,
+      "Agree": "6 eng",
       "Verdict": "NO",
       "Edge": 0.0
     },
     {
       "Section": "CS",
       "Selection": "Halifax CS",
-      "Model%": 31.1,
-      "Sim%": 31.1,
-      "Agree": "-",
+      "Model%": 23.4,
+      "Sim%": 23.4,
+      "Agree": "6 eng",
       "Verdict": "NO",
       "Edge": 0.0
     },
     {
       "Section": "CS",
       "Selection": "Hartlepool CS",
-      "Model%": 31.5,
-      "Sim%": 31.5,
-      "Agree": "-",
+      "Model%": 21.2,
+      "Sim%": 21.2,
+      "Agree": "6 eng",
       "Verdict": "NO",
       "Edge": 0.0
     },
     {
       "Section": "WTN",
       "Selection": "Halifax WTN",
-      "Model%": 18.5,
-      "Sim%": 18.5,
-      "Agree": "-",
+      "Model%": 16.2,
+      "Sim%": 16.2,
+      "Agree": "6 eng",
       "Verdict": "NO",
       "Edge": 0.0
     },
     {
       "Section": "WTN",
       "Selection": "Hartlepool WTN",
-      "Model%": 18.9,
-      "Sim%": 18.9,
-      "Agree": "-",
+      "Model%": 14.1,
+      "Sim%": 14.1,
+      "Agree": "6 eng",
       "Verdict": "NO",
       "Edge": 0.0
     }
@@ -514,17 +521,58 @@
     "status": "SECURED LOCK",
     "section": "FT O/U+",
     "selection": "Over 1.5",
-    "model": 68.7,
-    "sim": 68.7,
-    "agree": "-",
+    "model": 77.1,
+    "sim": 77.1,
+    "agree": "6 eng",
     "verdict": "HARD YES"
   },
   "backends": {
-    "ft_result": [],
-    "ht_result": [],
-    "over25": [],
-    "btts": [],
+    "ft_result": [
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
+    ],
+    "ht_result": [
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
+    ],
+    "over25": [
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
+    ],
+    "btts": [
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
+    ],
     "ht_over15": []
   },
-  "generated_at": "2026-09-01T07:31:20.094589Z"
+  "generated_at": "2026-09-01T21:30:24.108396Z",
+  "metadata": {
+    "simulation_engine": {
+      "version": "hard-v2",
+      "method": "calibrated-bivariate-poisson+dixon-coles+latent-state",
+      "attack_cv": 0.13,
+      "defense_cv": 0.13,
+      "shared_state_cv": 0.07,
+      "common_goal_rate": 0.3484419025845792,
+      "lambda_home": 1.221653607919382,
+      "lambda_away": 1.1375931233235852,
+      "target_total_lambda": 2.7076886338275465
+    }
+  }
 }
