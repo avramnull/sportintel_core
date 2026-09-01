@@ -31,6 +31,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent
 sys.path.insert(0, str(ROOT))
 
+import si_config  # noqa: F401,E402 — loads .env (API_FOOTBALL_KEY)
+
 from api_football_client import (  # noqa: E402
     ApiFootballClient,
     FDC_DIV_TO_LEAGUE,

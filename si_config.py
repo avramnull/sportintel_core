@@ -14,6 +14,27 @@ from typing import Optional, Tuple
 
 ROOT = Path(__file__).resolve().parent
 SAVE_DIR = ROOT / "daily_football_data"
+
+
+def _load_dotenv(path: Optional[Path] = None) -> None:
+    """Minimal .env loader (no dependency). Never overrides existing env."""
+    env_path = path or (ROOT / ".env")
+    if not env_path.is_file():
+        return
+    try:
+        for line in env_path.read_text(encoding="utf-8").splitlines():
+            line = line.strip()
+            if not line or line.startswith("#") or "=" not in line:
+                continue
+            k, _, v = line.partition("=")
+            k, v = k.strip(), v.strip().strip('"').strip("'")
+            if k and k not in os.environ:
+                os.environ[k] = v
+    except Exception:
+        pass
+
+
+_load_dotenv()
 SIMS_DIR = SAVE_DIR / "sims"
 PARQUET_PATH = ROOT / "master_football_data.parquet"
 MODELS_DIR = ROOT / "football_models"
@@ -97,3 +118,7 @@ GITHUB_TOKEN = (
 # Logging
 LOG_LEVEL = _env("LOG_LEVEL", "INFO").upper()
 LOG_JSON = _env_bool("LOG_JSON", False)
+
+
+# API-Football (fixtures + standings only — see api_football_client / fetch_day_standings)
+API_FOOTBALL_KEY = _env("API_FOOTBALL_KEY")

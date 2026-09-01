@@ -89,9 +89,15 @@ def fetch_odds_for_fixtures(key: str, fixture_ids: list, delay: float = 0.35) ->
 
 
 def main() -> int:
+    # Load local .env if present (never committed)
+    sys.path.insert(0, str(ROOT))
+    try:
+        import si_config  # noqa: F401 — loads .env
+    except Exception:
+        pass
     key = os.environ.get("API_FOOTBALL_KEY", "").strip()
     if not key:
-        print("ERROR: set API_FOOTBALL_KEY", file=sys.stderr)
+        print("ERROR: set API_FOOTBALL_KEY (or put it in .env)", file=sys.stderr)
         return 2
 
     day = os.environ.get("FIXTURE_DATE", "").strip() or datetime.now(timezone.utc).strftime("%Y-%m-%d")
@@ -121,7 +127,19 @@ def main() -> int:
     r.raise_for_status()
     payload = r.json()
     if payload.get("errors"):
-        print(f"API errors: {payload['errors']}", file=sys.stderr)
+        errs = payload["errors"]
+        print(f"API errors: {errs}", file=sys.stderr)
+        # Write empty board so pipeline can continue without crashing on suspended/quota
+        doc = {
+            "fetched_at": datetime.now(timezone.utc).isoformat(),
+            "date": day,
+            "total_world": 0,
+            "total_africa": 0,
+            "fixtures": [],
+            "api_errors": errs,
+        }
+        out.write_text(json.dumps(doc, indent=2, ensure_ascii=False), encoding="utf-8")
+        out.with_suffix(".csv").write_text("", encoding="utf-8")
         return 1
 
     africa_rows = []

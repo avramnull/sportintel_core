@@ -159,6 +159,12 @@ class ApiFootballClient:
             self._req_count += 1
         r.raise_for_status()
         payload = r.json()
+        # API-Football often returns HTTP 200 with errors: {access: "..."} when suspended/quota
+        errs = payload.get("errors")
+        if errs:
+            # Don't cache hard failures
+            msg = errs if isinstance(errs, str) else json.dumps(errs)
+            raise RuntimeError(f"API-Football error: {msg}")
         if use_cache:
             try:
                 cache_path.write_text(json.dumps(payload), encoding="utf-8")
