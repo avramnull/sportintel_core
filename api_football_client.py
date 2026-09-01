@@ -196,40 +196,66 @@ class ApiFootballClient:
         """
         Full league table for one league_id (covers every club in that division).
 
-        Dedupes in-process: second call for the same league_id returns the same
-        payload without another network hit. Cache hits never burn the network budget.
+        Free plans often only expose seasons 2022–2024. We try the preferred
+        season first, then fall back (2024 → 2023 → 2022) without extra calls
+        when the response is already cached.
+
+        Dedupes in-process per (league_id, season). Cache hits never burn budget.
         """
         lid = int(league_id)
-        season = int(season or api_season_year())
-        dedupe_key = (lid, season)
+        preferred = int(season or api_season_year())
+        # Prefer requested, then free-tier safe years (newest first)
+        candidates = []
+        for y in (preferred, 2024, 2023, 2022):
+            if y not in candidates:
+                candidates.append(y)
 
-        # Soft network budget: only live HTTP standings count (0 = unlimited)
-        if (
-            self.max_standings > 0
-            and self._network_standings >= self.max_standings
-            and dedupe_key not in self._standings_seen
-        ):
-            return {
-                "response": [],
-                "errors": {"quota": "max network standings reached"},
-                "_skipped": True,
-                "_from_cache": False,
-            }
-
-        payload, from_cache = self.get(
-            "standings",
-            {"league": lid, "season": season},
-            use_cache=True,
-            cache_ttl_h=18.0,
-        )
-        payload = dict(payload)
-        payload["_from_cache"] = from_cache
-        if from_cache:
-            self._cache_standings += 1
-        else:
-            self._network_standings += 1
-        self._standings_seen.add(dedupe_key)
-        return payload
+        last_err = None
+        for season_try in candidates:
+            dedupe_key = (lid, season_try)
+            if (
+                self.max_standings > 0
+                and self._network_standings >= self.max_standings
+                and dedupe_key not in self._standings_seen
+            ):
+                return {
+                    "response": [],
+                    "errors": {"quota": "max network standings reached"},
+                    "_skipped": True,
+                    "_from_cache": False,
+                }
+            try:
+                payload, from_cache = self.get(
+                    "standings",
+                    {"league": lid, "season": season_try},
+                    use_cache=True,
+                    cache_ttl_h=18.0,
+                )
+            except RuntimeError as e:
+                last_err = e
+                msg = str(e).lower()
+                # Free plan season gate → try older season
+                if "plan" in msg or "season" in msg:
+                    continue
+                raise
+            payload = dict(payload)
+            payload["_from_cache"] = from_cache
+            payload["_season_used"] = season_try
+            if from_cache:
+                self._cache_standings += 1
+            else:
+                self._network_standings += 1
+            self._standings_seen.add(dedupe_key)
+            # Empty table with plan error in body (some paths return errors without raise)
+            errs = payload.get("errors") or {}
+            if errs and not (payload.get("response") or []):
+                last_err = RuntimeError(str(errs))
+                if "plan" in str(errs).lower() or "season" in str(errs).lower():
+                    continue
+            return payload
+        if last_err:
+            raise last_err
+        return {"response": [], "errors": {"standings": "no season available"}, "_skipped": True}
 
     def stats(self) -> dict:
         return {
