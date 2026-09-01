@@ -128,7 +128,7 @@ def sim_reports(doc: dict) -> list[dict]:
         kickoff = (fx.get("date") or "")[:16].replace("T", " ")
         league = fx.get("league") or "Africa"
         try:
-            raw = simulate_match(home, away, country)
+            raw = simulate_match(home, away, country, odds_h=fx.get('odds_h'), odds_d=fx.get('odds_d'), odds_a=fx.get('odds_a'))
         except Exception as e:
             log(f"sim fail {home} vs {away}: {e}")
             continue
@@ -150,10 +150,14 @@ def sim_reports(doc: dict) -> list[dict]:
             "home": home,
             "away": away,
             "fixture": f"{home} vs {away}",
-            "odds": "—",
-            "odds_h": None,
-            "odds_d": None,
-            "odds_a": None,
+            "odds": (
+                f"{fx.get('odds_h')}/{fx.get('odds_d')}/{fx.get('odds_a')}"
+                if fx.get("odds_h") and fx.get("odds_d") and fx.get("odds_a")
+                else "—"
+            ),
+            "odds_h": fx.get("odds_h"),
+            "odds_d": fx.get("odds_d"),
+            "odds_a": fx.get("odds_a"),
             "models": payload["resolved"]["models"],
             "ft_h": round(100 * float(ft["H"]), 1),
             "ft_d": round(100 * float(ft["D"]), 1),

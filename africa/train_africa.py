@@ -29,7 +29,7 @@ CONFIG = {
     "min_matches": int(os.environ.get("MIN_TEAM_MATCHES", "25")),
     "val_fraction": 0.15,
     "seed": 42,
-    "max_boost_rounds": int(os.environ.get("MAX_BOOST_ROUNDS", "800")),
+    "max_boost_rounds": int(os.environ.get("MAX_BOOST_ROUNDS", "1200")),
     "use_xgboost": os.environ.get("USE_XGBOOST", "1") not in ("0", "false"),
     "use_lightgbm": os.environ.get("USE_LIGHTGBM", "1") not in ("0", "false"),
     "use_catboost": os.environ.get("USE_CATBOOST", "1") not in ("0", "false"),
@@ -163,7 +163,7 @@ def train_backends(Xtr, ytr, Xva, yva, task: str, out_dir: Path, target_key: str
             import pickle
             from sklearn.ensemble import RandomForestClassifier
             model = RandomForestClassifier(
-                n_estimators=400, max_depth=12, min_samples_leaf=5,
+                n_estimators=600, max_depth=14, min_samples_leaf=5,
                 random_state=seed, n_jobs=-1,
             )
             model.fit(Xtr, ytr)

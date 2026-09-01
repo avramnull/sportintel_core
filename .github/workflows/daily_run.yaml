@@ -95,6 +95,9 @@ jobs:
           API_FOOTBALL_KEY: ${{ secrets.API_FOOTBALL_KEY }}
           SKIP_AFRICA_TRAIN: "0"
           SKIP_AFRICA_SIM: "0"
+          # Odds: free API-Football often returns empty for Africa; enable only if plan allows
+          AFRICA_FETCH_ODDS: "1"
+          AFRICA_PRIOR_SHRINK: "0.22"
           GITHUB_TOKEN: ${{ secrets.SPORTINTEL_PUSH_TOKEN || secrets.GITHUB_TOKEN }}
           SPORTINTEL_REPO: avramnull/sportintel
           LOG_LEVEL: INFO

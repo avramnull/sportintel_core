@@ -41,6 +41,53 @@ AFRICA = {
 }
 
 
+
+def fetch_odds_for_fixtures(key: str, fixture_ids: list, delay: float = 0.35) -> dict:
+    """
+    Best-effort odds pull. Free plan often returns empty for African / current seasons.
+    Returns {fixture_id: {H, D, A, bookmaker}} — only when Match Winner exists.
+    Uses 1 request per fixture; call only for today's board (small N).
+    """
+    import time
+    out = {}
+    if not fixture_ids:
+        return out
+    # Cap to protect quota (max 15 odds calls per run)
+    ids = list(dict.fromkeys(fixture_ids))[:15]
+    for fid in ids:
+        try:
+            r = requests.get(
+                f"{API}/odds",
+                params={"fixture": fid},
+                headers={"x-apisports-key": key, "Accept": "application/json"},
+                timeout=30,
+            )
+            if r.status_code != 200:
+                continue
+            payload = r.json()
+            for block in payload.get("response") or []:
+                for bm in block.get("bookmakers") or []:
+                    for bet in bm.get("bets") or []:
+                        name = (bet.get("name") or "").lower()
+                        if name not in ("match winner", "1x2", "full time result"):
+                            continue
+                        vals = {str(v.get("value")).lower(): float(v.get("odd"))
+                                for v in (bet.get("values") or []) if v.get("odd")}
+                        # map Home/Draw/Away
+                        h = vals.get("home") or vals.get("1")
+                        d = vals.get("draw") or vals.get("x")
+                        a = vals.get("away") or vals.get("2")
+                        if h and d and a:
+                            out[int(fid)] = {"H": h, "D": d, "A": a, "bookmaker": bm.get("name")}
+                            break
+                    if int(fid) in out:
+                        break
+        except Exception:
+            pass
+        time.sleep(delay)
+    return out
+
+
 def main() -> int:
     key = os.environ.get("API_FOOTBALL_KEY", "").strip()
     if not key:
@@ -108,6 +155,27 @@ def main() -> int:
             "ht_away": ((score.get("halftime") or {}).get("away")),
             "source": "api-football",
         })
+
+    # Optional odds (AFRICA_FETCH_ODDS=1). Free tier often has none for AF boards.
+    if os.environ.get("AFRICA_FETCH_ODDS", "").strip() in ("1", "true", "yes") and africa_rows:
+        ids = [r["fixture_id"] for r in africa_rows if r.get("fixture_id")]
+        print(f"[api-football] odds pull for {min(len(ids),15)} fixtures (quota-sensitive)")
+        odds_map = fetch_odds_for_fixtures(key, ids)
+        for r in africa_rows:
+            o = odds_map.get(int(r["fixture_id"])) if r.get("fixture_id") else None
+            if o:
+                r["odds_h"], r["odds_d"], r["odds_a"] = o["H"], o["D"], o["A"]
+                r["odds_book"] = o.get("bookmaker")
+            else:
+                r.setdefault("odds_h", None)
+                r.setdefault("odds_d", None)
+                r.setdefault("odds_a", None)
+        print(f"[api-football] odds found for {sum(1 for r in africa_rows if r.get('odds_h'))}/{len(africa_rows)}")
+    else:
+        for r in africa_rows:
+            r.setdefault("odds_h", None)
+            r.setdefault("odds_d", None)
+            r.setdefault("odds_a", None)
 
     doc = {
         "fetched_at": datetime.now(timezone.utc).isoformat(),

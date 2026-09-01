@@ -203,35 +203,73 @@ def load_scope(country: Optional[str] = None):
     return None, None, None
 
 
-def simulate_scores(ft: np.ndarray, o25: float, btts: float, n: int = N_SIM, max_goals: int = 7) -> dict:
-    """Independent Poisson seeds reweighted (IPF-lite) to match FT / O25 / BTTS."""
-    # map FT H/D/A
+def simulate_scores(
+    ft: np.ndarray,
+    o25: float,
+    btts: float,
+    n: int = N_SIM,
+    max_goals: int = 8,
+    *,
+    lam_h: float | None = None,
+    lam_a: float | None = None,
+    rho: float = -0.08,
+    odds_ft: tuple | None = None,
+    odds_blend: float = 0.0,
+) -> dict:
+    """Industrial score engine: Poisson seeds + Dixon–Coles rho + multi-target IPF."""
     if len(ft) >= 3:
         p_h, p_d, p_a = float(ft[0]), float(ft[1]), float(ft[2])
     else:
         p_h = p_d = p_a = 1 / 3
-    s = p_h + p_d + p_a
+    s = max(p_h + p_d + p_a, 1e-12)
     p_h, p_d, p_a = p_h / s, p_d / s, p_a / s
 
-    # seed lambdas from rough identity
-    # E[home goals] higher if p_h high
-    lam_h = 0.9 + 1.4 * p_h + 0.3 * p_d
-    lam_a = 0.9 + 1.4 * p_a + 0.3 * p_d
-    rng = np.random.default_rng(42)
-    gh = rng.poisson(lam_h, size=n)
-    ga = rng.poisson(lam_a, size=n)
-    gh = np.clip(gh, 0, max_goals)
-    ga = np.clip(ga, 0, max_goals)
+    # Optional market prior blend on FT
+    if odds_ft and odds_blend > 0:
+        oh, od, oa = odds_ft
+        if oh and od and oa and min(oh, od, oa) > 1.01:
+            ih, id_, ia = 1 / oh, 1 / od, 1 / oa
+            z = ih + id_ + ia
+            mh, md, ma = ih / z, id_ / z, ia / z
+            a = float(np.clip(odds_blend, 0, 0.45))
+            p_h = (1 - a) * p_h + a * mh
+            p_d = (1 - a) * p_d + a * md
+            p_a = (1 - a) * p_a + a * ma
+            s = p_h + p_d + p_a
+            p_h, p_d, p_a = p_h / s, p_d / s, p_a / s
 
-    # build discrete grid and IPF toward targets
+    # Expected goals: Elo/form-informed lambdas if provided, else from FT identity
+    if lam_h is None:
+        lam_h = 0.85 + 1.55 * p_h + 0.35 * p_d
+    if lam_a is None:
+        lam_a = 0.85 + 1.55 * p_a + 0.35 * p_d
+    lam_h = float(np.clip(lam_h, 0.35, 3.8))
+    lam_a = float(np.clip(lam_a, 0.35, 3.8))
+
+    # Build Dixon–Coles-adjusted probability grid
+    from math import exp, factorial
+
+    def pois(k, lam):
+        return exp(-lam) * (lam ** k) / factorial(k)
+
+    def dc_tau(i, j, lh, la, r):
+        if i == 0 and j == 0:
+            return 1 - lh * la * r
+        if i == 0 and j == 1:
+            return 1 + lh * r
+        if i == 1 and j == 0:
+            return 1 + la * r
+        if i == 1 and j == 1:
+            return 1 - r
+        return 1.0
+
     grid = np.zeros((max_goals + 1, max_goals + 1), dtype=float)
-    for i in range(n):
-        grid[gh[i], ga[i]] += 1.0
+    for i in range(max_goals + 1):
+        for j in range(max_goals + 1):
+            grid[i, j] = pois(i, lam_h) * pois(j, lam_a) * max(1e-12, dc_tau(i, j, lam_h, lam_a, rho))
     grid /= grid.sum()
 
     def margins(g):
-        ft_h = np.tril(g, -1).sum()  # home goals > away → wait: grid[h,a]
-        # home win: h > a
         ph = sum(g[i, j] for i in range(max_goals + 1) for j in range(max_goals + 1) if i > j)
         pd_ = sum(g[i, i] for i in range(max_goals + 1))
         pa = sum(g[i, j] for i in range(max_goals + 1) for j in range(max_goals + 1) if i < j)
@@ -239,9 +277,9 @@ def simulate_scores(ft: np.ndarray, o25: float, btts: float, n: int = N_SIM, max
         bttsp = sum(g[i, j] for i in range(1, max_goals + 1) for j in range(1, max_goals + 1))
         return ph, pd_, pa, o25p, bttsp
 
-    for _ in range(16):
+    # IPF toward FT / O25 / BTTS (24 passes)
+    for _ in range(24):
         ph, pd_, pa, o25p, bttsp = margins(grid)
-        # scale cells by FT
         for i in range(max_goals + 1):
             for j in range(max_goals + 1):
                 if i > j and ph > 1e-12:
@@ -252,32 +290,26 @@ def simulate_scores(ft: np.ndarray, o25: float, btts: float, n: int = N_SIM, max
                     grid[i, j] *= p_a / pa
         grid /= grid.sum()
         ph, pd_, pa, o25p, bttsp = margins(grid)
-        # O25
-        over = np.zeros_like(grid); under = np.zeros_like(grid)
+        over = np.zeros_like(grid)
+        under = np.zeros_like(grid)
         for i in range(max_goals + 1):
             for j in range(max_goals + 1):
-                if i + j >= 3:
-                    over[i, j] = grid[i, j]
-                else:
-                    under[i, j] = grid[i, j]
+                (over if i + j >= 3 else under)[i, j] = grid[i, j]
         so, su = over.sum(), under.sum()
         if so > 1e-12 and su > 1e-12:
             grid = over * (o25 / so) + under * ((1 - o25) / su)
             grid /= grid.sum()
-        # BTTS
-        yes = np.zeros_like(grid); no = np.zeros_like(grid)
+        yes = np.zeros_like(grid)
+        no = np.zeros_like(grid)
         for i in range(max_goals + 1):
             for j in range(max_goals + 1):
-                if i > 0 and j > 0:
-                    yes[i, j] = grid[i, j]
-                else:
-                    no[i, j] = grid[i, j]
+                (yes if i > 0 and j > 0 else no)[i, j] = grid[i, j]
         sy, sn = yes.sum(), no.sum()
         if sy > 1e-12 and sn > 1e-12:
             grid = yes * (btts / sy) + no * ((1 - btts) / sn)
             grid /= grid.sum()
 
-    # sample final
+    rng = np.random.default_rng(42)
     flat = grid.ravel()
     idx = rng.choice(flat.size, size=n, p=flat)
     hs = idx // (max_goals + 1)
@@ -287,47 +319,126 @@ def simulate_scores(ft: np.ndarray, o25: float, btts: float, n: int = N_SIM, max
         "D": float(np.mean(hs == aws)),
         "A": float(np.mean(hs < aws)),
     }
-    top = {}
-    for i in range(max_goals + 1):
-        for j in range(max_goals + 1):
-            top[f"{i}-{j}"] = float(grid[i, j])
+    top = {f"{i}-{j}": float(grid[i, j]) for i in range(max_goals + 1) for j in range(max_goals + 1)}
     top_sorted = dict(sorted(top.items(), key=lambda kv: -kv[1])[:12])
+    # goal lines
+    tot = hs + aws
     return {
         "ft_sim": ft_sim,
-        "over25_sim": float(np.mean(hs + aws >= 3)),
+        "over25_sim": float(np.mean(tot >= 3)),
         "btts_sim": float(np.mean((hs > 0) & (aws > 0))),
-        "xg": {"home": float(hs.mean()), "away": float(aws.mean()), "total": float((hs + aws).mean())},
+        "xg": {
+            "home": float(hs.mean()),
+            "away": float(aws.mean()),
+            "total": float(tot.mean()),
+            "lambda_home": lam_h,
+            "lambda_away": lam_a,
+        },
         "score_matrix_top": top_sorted,
         "cs_home": float(np.mean(aws == 0)),
         "cs_away": float(np.mean(hs == 0)),
+        "goal_line_sim": {
+            "1.5": float(np.mean(tot >= 2)),
+            "2.5": float(np.mean(tot >= 3)),
+            "3.5": float(np.mean(tot >= 4)),
+        },
+        "rho": rho,
     }
 
 
-def simulate_match(home: str, away: str, country: Optional[str] = None) -> dict:
+
+def simulate_match(
+    home: str,
+    away: str,
+    country: Optional[str] = None,
+    *,
+    odds_h: float | None = None,
+    odds_d: float | None = None,
+    odds_a: float | None = None,
+    odds_blend: float | None = None,
+) -> dict:
     hist = _load_hist()
+    hist_c = hist
     if country and hist is not None and "Country" in hist.columns:
-        hist_c = hist[hist["Country"] == country]
-        if len(hist_c) >= 50:
-            hist = hist_c
-    X, feats = build_feature_row(home, away, hist)
+        sub = hist[hist["Country"] == country]
+        if len(sub) >= 40:
+            hist_c = sub
+
+    # League priors from history (industrial base rates)
+    prior_ft = np.array([0.42, 0.28, 0.30])
+    prior_o25, prior_btts = 0.45, 0.48
+    if hist_c is not None and len(hist_c) >= 30:
+        ftr = hist_c["FTR"].astype(str).str.upper()
+        prior_ft = np.array([
+            float((ftr == "H").mean()),
+            float((ftr == "D").mean()),
+            float((ftr == "A").mean()),
+        ])
+        if prior_ft.sum() > 0:
+            prior_ft = prior_ft / prior_ft.sum()
+        if "Over2_5" in hist_c.columns:
+            prior_o25 = float(pd.to_numeric(hist_c["Over2_5"], errors="coerce").mean() or prior_o25)
+        else:
+            prior_o25 = float(((hist_c["FTHG"] + hist_c["FTAG"]) > 2.5).mean())
+        if "BTTS" in hist_c.columns:
+            prior_btts = float(pd.to_numeric(hist_c["BTTS"], errors="coerce").mean() or prior_btts)
+        else:
+            prior_btts = float(((hist_c["FTHG"] > 0) & (hist_c["FTAG"] > 0)).mean())
+
+    X, feats = build_feature_row(home, away, hist_c)
+    # Elo-based lambdas from feature row
+    try:
+        elo_h = float(X[0, feats.index("EloHome")])
+        elo_a = float(X[0, feats.index("EloAway")])
+    except Exception:
+        elo_h, elo_a = 1500.0, 1500.0
+    # convert Elo gap to expected goals (home advantage ~0.25)
+    gap = (elo_h - elo_a) / 400.0
+    base = 1.15
+    lam_h = base * (1.08 ** gap) * 1.12  # home bump
+    lam_a = base * (1.08 ** (-gap)) * 0.95
+
     scope_dir, reg, stats = load_scope(country)
     engines = []
-    ft = np.array([1 / 3, 1 / 3, 1 / 3])
-    o25 = 0.48
-    btts = 0.48
+    ft = prior_ft.copy()
+    o25 = prior_o25
+    btts = prior_btts
     if reg and stats:
         Xs = _scale(X, stats)
         targets = reg.get("targets", {})
         p_ft = _predict_paths(targets.get("ft_result", {}), Xs, "ft_result")
         p_o = _predict_paths(targets.get("over25", {}), Xs, "over25")
         p_b = _predict_paths(targets.get("btts", {}), Xs, "btts")
+        # Shrink model toward league prior (stabilizes thin Africa samples)
+        shrink = float(os.environ.get("AFRICA_PRIOR_SHRINK", "0.25"))
         if p_ft is not None and len(p_ft) >= 3:
-            ft = p_ft[:3]; ft = ft / ft.sum(); engines.append("ft_result")
+            p_ft = np.asarray(p_ft[:3], float)
+            p_ft = p_ft / p_ft.sum()
+            ft = (1 - shrink) * p_ft + shrink * prior_ft
+            ft = ft / ft.sum()
+            engines.append("ft_result")
         if p_o is not None:
-            o25 = float(p_o[-1] if len(p_o) > 1 else p_o[0]); engines.append("over25")
+            o25 = float(p_o[-1] if len(p_o) > 1 else p_o[0])
+            o25 = (1 - shrink) * o25 + shrink * prior_o25
+            engines.append("over25")
         if p_b is not None:
-            btts = float(p_b[-1] if len(p_b) > 1 else p_b[0]); engines.append("btts")
-    sim = simulate_scores(ft, o25, btts, n=N_SIM)
+            btts = float(p_b[-1] if len(p_b) > 1 else p_b[0])
+            btts = (1 - shrink) * btts + shrink * prior_btts
+            engines.append("btts")
+    if not engines:
+        engines.append("league-prior+elo")
+
+    blend = odds_blend if odds_blend is not None else float(os.environ.get("ODDS_BLEND", "0.20"))
+    odds_tuple = None
+    if odds_h and odds_d and odds_a:
+        odds_tuple = (float(odds_h), float(odds_d), float(odds_a))
+        engines.append("odds-blend")
+
+    sim = simulate_scores(
+        ft, o25, btts, n=N_SIM,
+        lam_h=lam_h, lam_a=lam_a, rho=-0.10,
+        odds_ft=odds_tuple, odds_blend=blend if odds_tuple else 0.0,
+    )
     return {
         "home": home,
         "away": away,
@@ -337,10 +448,14 @@ def simulate_match(home: str, away: str, country: Optional[str] = None) -> dict:
             "ft": {"H": float(ft[0]), "D": float(ft[1]), "A": float(ft[2])},
             "over25": float(o25),
             "btts": float(btts),
+            "prior_ft": {"H": float(prior_ft[0]), "D": float(prior_ft[1]), "A": float(prior_ft[2])},
+            "lambda_seed": {"home": lam_h, "away": lam_a},
         },
+        "odds": {"H": odds_h, "D": odds_d, "A": odds_a} if odds_tuple else None,
         "sim": sim,
         "scope": str(scope_dir) if scope_dir else None,
     }
+
 
 
 def main():
@@ -448,9 +563,12 @@ def to_simlab_document(rep: dict, fx: dict | None = None, n_sim: int = N_SIM) ->
         "clean_sheet": {"home": cs_h, "away": cs_a},
         "win_to_nil": {"home": ph * cs_h, "away": pa * cs_a},
         "goal_lines": {
-            "1.5": {"over": min(0.95, o25_s + 0.22), "under": max(0.05, 1 - (o25_s + 0.22))},
-            "2.5": {"over": o25_s, "under": 1 - o25_s},
-            "3.5": {"over": max(0.05, o25_s - 0.18), "under": min(0.95, 1 - (o25_s - 0.18))},
+            "1.5": {"over": float((sim.get("goal_line_sim") or {}).get("1.5", min(0.95, o25_s + 0.22))),
+                    "under": 1 - float((sim.get("goal_line_sim") or {}).get("1.5", min(0.95, o25_s + 0.22)))},
+            "2.5": {"over": float((sim.get("goal_line_sim") or {}).get("2.5", o25_s)),
+                    "under": 1 - float((sim.get("goal_line_sim") or {}).get("2.5", o25_s))},
+            "3.5": {"over": float((sim.get("goal_line_sim") or {}).get("3.5", max(0.05, o25_s - 0.18))),
+                    "under": 1 - float((sim.get("goal_line_sim") or {}).get("3.5", max(0.05, o25_s - 0.18)))},
         },
         "score_consistency": {"ft_vs_model_l1": round(
             abs(ph - float(ft_m.get("H", ph))) + abs(pd_ - float(ft_m.get("D", pd_))) + abs(pa - float(ft_m.get("A", pa))),
@@ -486,7 +604,13 @@ def to_simlab_document(rep: dict, fx: dict | None = None, n_sim: int = N_SIM) ->
             "away": away,
             "kickoff": kickoff,
             "league": league_label,
-            "odds": "—",
+            "odds": (
+                f"{rep.get('odds',{}).get('H')}/{rep.get('odds',{}).get('D')}/{rep.get('odds',{}).get('A')}"
+                if rep.get("odds") else "—"
+            ),
+            "odds_h": (rep.get("odds") or {}).get("H"),
+            "odds_d": (rep.get("odds") or {}).get("D"),
+            "odds_a": (rep.get("odds") or {}).get("A"),
             "country": country,
         },
         "resolved": {"models": ",".join(rep.get("engines") or []) or "africa"},
