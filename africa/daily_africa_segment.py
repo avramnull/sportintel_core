@@ -43,15 +43,16 @@ def clean_master():
 
 
 def fetch_fixtures() -> Path:
-    """Fetch the authoritative daily board; API access failure is fatal."""
+    """Fetch the authoritative daily board; never use standings credentials."""
+    backup = os.environ.get("API_FOOTBALL_BACKUP_KEY", "").strip()
     key = os.environ.get("API_FOOTBALL_KEY", "").strip()
-    secondary = os.environ.get("API_FOOTBALL_STANDINGS_KEY", "").strip()
-    if not key and not secondary:
-        raise SystemExit("Africa fixtures require API_FOOTBALL_KEY or API_FOOTBALL_STANDINGS_KEY")
+    if not backup and not key:
+        raise SystemExit("Africa fixtures require API_FOOTBALL_BACKUP_KEY or API_FOOTBALL_KEY")
     out = SAVE / "africa_fixtures_today.json"
     run([sys.executable, "-m", "africa.fetch_today_fixtures"], env={
+        "API_FOOTBALL_BACKUP_KEY": backup,
         "API_FOOTBALL_KEY": key,
-        "API_FOOTBALL_STANDINGS_KEY": secondary,
+        "API_FOOTBALL_STANDINGS_KEY": "",
         "AFRICA_FIXTURES_OUT": str(out),
     })
     if not out.exists():
@@ -63,6 +64,34 @@ def fetch_fixtures() -> Path:
     if doc.get("ok") is not True:
         raise SystemExit("Africa fixture document is not marked ok; refusing downstream work")
     return out
+
+
+def disable_africa_publication(reason: str):
+    """Remove stale Africa rows from the public index when today's board is unavailable."""
+    SIMS.mkdir(parents=True, exist_ok=True)
+    idx_path = SIMS / "index.json"
+    try:
+        idx = json.loads(idx_path.read_text(encoding="utf-8")) if idx_path.exists() else {}
+    except (OSError, json.JSONDecodeError):
+        idx = {}
+    sims = [s for s in (idx.get("sims") or []) if s.get("region") != "Africa"]
+    idx.update({
+        "generated_at": datetime.now(timezone.utc).isoformat(),
+        "n_ok": len(sims),
+        "n_africa": 0,
+        "africa_status": "unavailable",
+        "africa_status_reason": reason[:500],
+        "sims": sims,
+    })
+    idx_path.write_text(json.dumps(idx, indent=2), encoding="utf-8")
+    status = {
+        "ok": False,
+        "status": "unavailable",
+        "checked_at": datetime.now(timezone.utc).isoformat(),
+        "reason": reason,
+    }
+    (SAVE / "africa_segment_last.json").write_text(json.dumps(status, indent=2), encoding="utf-8")
+    log(f"Africa publication disabled for this run: {reason}")
 
 
 def teams_from_fixtures(doc: dict) -> tuple[list[str], list[str]]:
@@ -201,7 +230,15 @@ def merge_index(africa_entries: list[dict], feed_date: str):
 def main():
     log("=== Africa daily segment ===")
     clean_master()
-    fx_path = fetch_fixtures()
+    try:
+        fx_path = fetch_fixtures()
+    except SystemExit as exc:
+        if os.environ.get("AFRICA_OPTIONAL", "").strip().lower() in ("1", "true", "yes"):
+            reason = str(exc)
+            disable_africa_publication(reason)
+            log("AFRICA_OPTIONAL=1 — continuing main pipeline without Africa")
+            return 0
+        raise
     doc = json.loads(fx_path.read_text(encoding="utf-8"))
     teams, countries = teams_from_fixtures(doc)
     log(f"board: {len(doc.get('fixtures') or [])} fixtures | {len(teams)} teams | countries={countries}")
@@ -213,7 +250,7 @@ def main():
     train_for_board(teams, countries)
     entries = sim_reports(doc)
     merge_index(entries, doc.get("date") or datetime.now(timezone.utc).strftime("%Y-%m-%d"))
-    summary = {"date": doc.get("date"), "n_fixtures": len(doc.get("fixtures") or []), "n_sim_ok": len(entries), "countries": countries, "teams": teams}
+    summary = {"ok": True, "status": "complete", "date": doc.get("date"), "n_fixtures": len(doc.get("fixtures") or []), "n_sim_ok": len(entries), "countries": countries, "teams": teams}
     (SAVE / "africa_segment_last.json").write_text(json.dumps(summary, indent=2), encoding="utf-8")
     log("=== Africa segment done ===")
     return 0
