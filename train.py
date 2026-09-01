@@ -749,7 +749,8 @@ def train_pytorch(Xtr, ytr, Xva, yva, task, n_classes, out_path):
             layers = []
             prev = in_dim
             for h in hidden:
-                layers += [nn.Linear(prev, h), nn.BatchNorm1d(h), nn.ReLU(), nn.Dropout(0.25)]
+                # LayerNorm is robust to batch size 1 (BatchNorm1d requires >1 in train mode)
+                layers += [nn.Linear(prev, h), nn.LayerNorm(h), nn.ReLU(), nn.Dropout(0.25)]
                 prev = h
             layers.append(nn.Linear(prev, out_dim))
             self.net = nn.Sequential(*layers)
@@ -762,7 +763,14 @@ def train_pytorch(Xtr, ytr, Xva, yva, task, n_classes, out_path):
     sched = torch.optim.lr_scheduler.ReduceLROnPlateau(opt, patience=4, factor=0.5)
     crit = nn.CrossEntropyLoss() if task == "multiclass" else nn.BCEWithLogitsLoss()
 
-    loader = DataLoader(TensorDataset(Xtr_t, ytr_t), batch_size=CONFIG["nn_batch"], shuffle=True)
+    n_samples = len(Xtr_t)
+    bs = CONFIG["nn_batch"]
+    if n_samples < bs:
+        bs = max(2, n_samples // 2) if n_samples >= 4 else max(1, n_samples)
+    drop_last = n_samples > bs
+    loader = DataLoader(TensorDataset(Xtr_t, ytr_t), batch_size=bs, shuffle=True, drop_last=drop_last)
+    if len(loader) == 0:
+        raise ValueError(f"too few samples for pytorch ({n_samples}) with batch={bs}")
     best_state, best_val, patience = None, float("inf"), 0
 
     for epoch in range(CONFIG["nn_epochs"]):
@@ -821,7 +829,7 @@ def train_tensorflow(Xtr, ytr, Xva, yva, task, n_classes, out_path):
     x = inputs
     for h in hidden:
         x = layers.Dense(h, activation="relu")(x)
-        x = layers.BatchNormalization()(x)
+        x = layers.LayerNormalization()(x)
         x = layers.Dropout(0.25)(x)
     if task == "multiclass":
         outputs = layers.Dense(n_classes, activation="softmax")(x)

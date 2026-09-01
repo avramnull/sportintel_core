@@ -409,7 +409,7 @@ def _predict_torch(path, X):
                 layers = []
                 prev = in_dim
                 for h in hidden:
-                    layers += [nn.Linear(prev, h), nn.BatchNorm1d(h), nn.ReLU(), nn.Dropout(0.0)]
+                    layers += [nn.Linear(prev, h), nn.LayerNorm(h), nn.ReLU(), nn.Dropout(0.0)]
                     prev = h
                 layers.append(nn.Linear(prev, out_dim))
                 self.net = nn.Sequential(*layers)
