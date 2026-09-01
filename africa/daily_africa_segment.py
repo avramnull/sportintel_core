@@ -115,7 +115,7 @@ def sim_reports(doc: dict) -> list[dict]:
     if os.environ.get("SKIP_AFRICA_SIM", "").strip() in ("1", "true", "yes"):
         log("SKIP_AFRICA_SIM")
         return []
-    from africa.sim_africa import simulate_match  # local import after train
+    from africa.sim_africa import simulate_match, to_simlab_document
 
     SIMS.mkdir(parents=True, exist_ok=True)
     entries = []
@@ -128,43 +128,24 @@ def sim_reports(doc: dict) -> list[dict]:
         kickoff = (fx.get("date") or "")[:16].replace("T", " ")
         league = fx.get("league") or "Africa"
         try:
-            rep = simulate_match(home, away, country)
+            raw = simulate_match(home, away, country)
         except Exception as e:
             log(f"sim fail {home} vs {away}: {e}")
             continue
-        model = rep.get("model") or {}
-        sim = rep.get("sim") or {}
-        ft = model.get("ft") or {}
-        ft_sim = sim.get("ft_sim") or {}
+        payload = to_simlab_document(raw, fx=fx)
         sid = "africa_" + slug(home, away, (kickoff or "na")[:10])
         fname = f"{sid}.json"
-        # Sim Lab compatible payload
-        body = {
-            "id": sid,
-            "region": "Africa",
-            "generated_at": datetime.now(timezone.utc).isoformat(),
-            "fixture": {
-                "home": home,
-                "away": away,
-                "country": country,
-                "league": league,
-                "kickoff": kickoff,
-                "api_fixture_id": fx.get("fixture_id"),
-                "status": fx.get("status"),
-            },
-            "engines": rep.get("engines") or [],
-            "model": model,
-            "sim": sim,
-            "report": rep,
-        }
-        (SIMS / fname).write_text(json.dumps(body, indent=2, ensure_ascii=False), encoding="utf-8")
-        top = list((sim.get("score_matrix_top") or {}).items())
+        payload["id"] = sid
+        (SIMS / fname).write_text(json.dumps(payload, indent=2, ensure_ascii=False), encoding="utf-8")
+        rep = payload["report"]
+        ft = rep["ft_sim"]
+        top = rep.get("top_ft") or []
         entries.append({
             "id": sid,
             "file": fname,
             "region": "Africa",
             "kickoff": kickoff,
-            "league": f"{country} — {league}" if country else league,
+            "league": payload["match"]["league"],
             "div": "AFR",
             "home": home,
             "away": away,
@@ -173,31 +154,29 @@ def sim_reports(doc: dict) -> list[dict]:
             "odds_h": None,
             "odds_d": None,
             "odds_a": None,
-            "models": ",".join(rep.get("engines") or []) or "africa-global",
-            "ft_h": round(100 * float(ft_sim.get("H", ft.get("H", 0))), 1),
-            "ft_d": round(100 * float(ft_sim.get("D", ft.get("D", 0))), 1),
-            "ft_a": round(100 * float(ft_sim.get("A", ft.get("A", 0))), 1),
-            "over25": round(100 * float(sim.get("over25_sim", model.get("over25", 0))), 1),
-            "btts": round(100 * float(sim.get("btts_sim", model.get("btts", 0))), 1),
-            "cs_top": (top[0][0] if top else "—"),
-            "cs_second": (top[1][0] if len(top) > 1 else "—"),
-            "xg_h": round(float((sim.get("xg") or {}).get("home", 0)), 3),
-            "xg_a": round(float((sim.get("xg") or {}).get("away", 0)), 3),
-            "xg_total": round(float((sim.get("xg") or {}).get("total", 0)), 3),
-            "cs_home": sim.get("cs_home"),
-            "cs_away": sim.get("cs_away"),
-            "locked_status": "AFRICA",
-            "locked_section": "FT",
-            "locked_selection": max(
-                [("Home", ft_sim.get("H", 0)), ("Draw", ft_sim.get("D", 0)), ("Away", ft_sim.get("A", 0))],
-                key=lambda x: x[1],
-            )[0],
-            "locked_model": None,
-            "locked_sim": None,
-            "locked_verdict": "—",
+            "models": payload["resolved"]["models"],
+            "ft_h": round(100 * float(ft["H"]), 1),
+            "ft_d": round(100 * float(ft["D"]), 1),
+            "ft_a": round(100 * float(ft["A"]), 1),
+            "over25": round(100 * float(rep["over25_sim"]), 1),
+            "btts": round(100 * float(rep["btts_sim"]), 1),
+            "cs_top": top[0][0] if top else "—",
+            "cs_second": top[1][0] if len(top) > 1 else "—",
+            "xg_h": round(float(rep["xg"]["home"]), 3),
+            "xg_a": round(float(rep["xg"]["away"]), 3),
+            "xg_total": round(float(rep["xg"]["total"]), 3),
+            "cs_home": rep["clean_sheet"]["home"],
+            "cs_away": rep["clean_sheet"]["away"],
+            "locked_status": payload["locked_tip"]["status"],
+            "locked_section": payload["locked_tip"]["section"],
+            "locked_selection": payload["locked_tip"]["selection"],
+            "locked_model": payload["locked_tip"]["model"],
+            "locked_sim": payload["locked_tip"]["sim"],
+            "locked_verdict": payload["locked_tip"]["verdict"],
         })
-        log(f"sim OK {sid}")
+        log(f"sim OK {sid} FT {entries[-1]['ft_h']}/{entries[-1]['ft_d']}/{entries[-1]['ft_a']}")
     return entries
+
 
 
 def merge_index(africa_entries: list[dict], feed_date: str):

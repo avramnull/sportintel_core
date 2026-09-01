@@ -373,3 +373,124 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+def to_simlab_document(rep: dict, fx: dict | None = None, n_sim: int = N_SIM) -> dict:
+    """Flatten Africa sim output into EU Sim Lab report schema (admin openSimDetail)."""
+    fx = fx or {}
+    model = rep.get("model") or {}
+    sim = rep.get("sim") or {}
+    ft_m = model.get("ft") or {}
+    ft_s = sim.get("ft_sim") or ft_m
+    o25_m = float(model.get("over25", 0.5))
+    o25_s = float(sim.get("over25_sim", o25_m))
+    btts_m = float(model.get("btts", 0.5))
+    btts_s = float(sim.get("btts_sim", btts_m))
+    xg = sim.get("xg") or {"home": 0.0, "away": 0.0, "total": 0.0}
+    ph, pd_, pa = float(ft_s.get("H", 0)), float(ft_s.get("D", 0)), float(ft_s.get("A", 0))
+    top_map = sim.get("score_matrix_top") or {}
+    top_ft = []
+    for score, pct in top_map.items():
+        # pct is probability 0-1 → approximate count
+        top_ft.append([score, int(round(float(pct) * n_sim))])
+    top_ft = sorted(top_ft, key=lambda x: -x[1])[:12]
+
+    def pct100(x):
+        return round(100.0 * float(x), 1)
+
+    def verdict(model_p, sim_p, thresh=55.0):
+        mp, sp = pct100(model_p), pct100(sim_p)
+        edge = round(sp - mp, 1)
+        yes = sp >= thresh and mp >= (thresh - 5)
+        return mp, sp, edge, "YES" if yes else ("LEAN" if sp >= 50 else "—")
+
+    table = []
+    for section, selection, mp, sp in [
+        ("FT", "Home", ft_m.get("H", ph), ph),
+        ("FT", "Draw", ft_m.get("D", pd_), pd_),
+        ("FT", "Away", ft_m.get("A", pa), pa),
+        ("O/U", "Over 2.5", o25_m, o25_s),
+        ("O/U", "Under 2.5", 1 - o25_m, 1 - o25_s),
+        ("BTTS", "Yes", btts_m, btts_s),
+        ("BTTS", "No", 1 - btts_m, 1 - btts_s),
+        ("DC", "1X", float(ft_m.get("H", 0)) + float(ft_m.get("D", 0)), ph + pd_),
+        ("DC", "X2", float(ft_m.get("A", 0)) + float(ft_m.get("D", 0)), pa + pd_),
+        ("DC", "12", float(ft_m.get("H", 0)) + float(ft_m.get("A", 0)), ph + pa),
+    ]:
+        mp100, sp100, edge, verd = verdict(mp, sp, 55.0 if section != "FT" or selection != "Draw" else 40.0)
+        table.append({
+            "Section": section,
+            "Selection": selection,
+            "Model%": mp100,
+            "Sim%": sp100,
+            "Agree": "Y" if abs(edge) < 5 else "N",
+            "Edge": edge,
+            "Verdict": verd,
+        })
+
+    cs_h = float(sim.get("cs_home") or 0)
+    cs_a = float(sim.get("cs_away") or 0)
+    report = {
+        "ft_model": {"H": float(ft_m.get("H", 0)), "D": float(ft_m.get("D", 0)), "A": float(ft_m.get("A", 0))},
+        "ft_sim": {"H": ph, "D": pd_, "A": pa},
+        "ht_model": {"H": None, "D": None, "A": None},
+        "ht_sim": {"H": None, "D": None, "A": None},
+        "over25_model": o25_m,
+        "over25_sim": o25_s,
+        "btts_model": btts_m,
+        "btts_sim": btts_s,
+        "xg": {"home": float(xg.get("home", 0)), "away": float(xg.get("away", 0)), "total": float(xg.get("total", 0))},
+        "dc_ft": {"1X": ph + pd_, "X2": pa + pd_, "12": ph + pa},
+        "dc_ht": {},
+        "top_ft": top_ft,
+        "top_ht": [],
+        "top3_ft": [{"score": s, "count": c, "pct": round(100 * c / max(n_sim, 1), 1)} for s, c in top_ft[:3]],
+        "clean_sheet": {"home": cs_h, "away": cs_a},
+        "win_to_nil": {"home": ph * cs_h, "away": pa * cs_a},
+        "goal_lines": {
+            "1.5": {"over": min(0.95, o25_s + 0.22), "under": max(0.05, 1 - (o25_s + 0.22))},
+            "2.5": {"over": o25_s, "under": 1 - o25_s},
+            "3.5": {"over": max(0.05, o25_s - 0.18), "under": min(0.95, 1 - (o25_s - 0.18))},
+        },
+        "score_consistency": {"ft_vs_model_l1": round(
+            abs(ph - float(ft_m.get("H", ph))) + abs(pd_ - float(ft_m.get("D", pd_))) + abs(pa - float(ft_m.get("A", pa))),
+            4,
+        )},
+        "region": "Africa",
+        "engines": rep.get("engines") or [],
+    }
+
+    home = (fx.get("home") or rep.get("home") or "").strip()
+    away = (fx.get("away") or rep.get("away") or "").strip()
+    kickoff = (fx.get("date") or fx.get("kickoff") or "")[:16].replace("T", " ")
+    league = fx.get("league") or ""
+    country = fx.get("country") or rep.get("country") or ""
+    league_label = f"{country} — {league}" if country and league else (league or country or "Africa")
+
+    # pick locked tip from strongest FT sim
+    best = max([("Home", ph), ("Draw", pd_), ("Away", pa)], key=lambda x: x[1])
+    locked = {
+        "status": "AFRICA BOARD",
+        "section": "FT",
+        "selection": best[0],
+        "model": pct100(ft_m.get({"Home": "H", "Draw": "D", "Away": "A"}[best[0]], best[1])),
+        "sim": pct100(best[1]),
+        "verdict": "LEAN" if best[1] >= 0.4 else "—",
+    }
+
+    return {
+        "id": None,  # filled by caller
+        "region": "Africa",
+        "match": {
+            "home": home,
+            "away": away,
+            "kickoff": kickoff,
+            "league": league_label,
+            "odds": "—",
+            "country": country,
+        },
+        "resolved": {"models": ",".join(rep.get("engines") or []) or "africa"},
+        "locked_tip": locked,
+        "report": report,
+        "table": table,
+    }
