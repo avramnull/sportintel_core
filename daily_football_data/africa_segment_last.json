@@ -1,0 +1,39 @@
+{
+  "date": "2026-09-01",
+  "n_fixtures": 12,
+  "n_sim_ok": 12,
+  "countries": [
+    "Kenya",
+    "Uganda",
+    "Egypt",
+    "Angola",
+    "Tanzania",
+    "Botswana"
+  ],
+  "teams": [
+    "Migori Youth",
+    "Police",
+    "Nairobi United",
+    "KCB",
+    "Ulinzi Stars",
+    "Tusker",
+    "GOR Mahia",
+    "Murang'a SEAL",
+    "Entebbe UPPC",
+    "UPDF",
+    "NEC",
+    "Lugazi",
+    "El Geish",
+    "Masr",
+    "Ghazl El Mehalla",
+    "Enppi",
+    "1\u00ba de Agosto",
+    "Interclube",
+    "Singida Black Stars",
+    "Namungo",
+    "Wadi Degla",
+    "Olympic El Qanah",
+    "Enesia",
+    "Galaxy"
+  ]
+}

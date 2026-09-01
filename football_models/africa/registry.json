@@ -1,0 +1,362 @@
+{
+  "GLOBAL": {
+    "scope": "GLOBAL",
+    "n": 77067,
+    "n_train": 65506,
+    "n_val": 11561,
+    "features": [
+      "Year",
+      "Month",
+      "DayOfWeek",
+      "IsWeekend",
+      "HomeFormPts_5",
+      "AwayFormPts_5",
+      "HomeFormGD_5",
+      "AwayFormGD_5",
+      "HomeFormPts_10",
+      "AwayFormPts_10",
+      "HomeFormGD_10",
+      "AwayFormGD_10",
+      "EloHome",
+      "EloAway",
+      "EloDiff",
+      "HomeTeamId",
+      "AwayTeamId"
+    ],
+    "targets": {
+      "ft_result": {
+        "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/GLOBAL/models/xgb_ft_result.json",
+        "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/GLOBAL/models/lgbm_ft_result.txt",
+        "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/GLOBAL/models/cat_ft_result.cbm",
+        "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/GLOBAL/models/rf_ft_result.pkl"
+      },
+      "over25": {
+        "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/GLOBAL/models/xgb_over25.json",
+        "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/GLOBAL/models/lgbm_over25.txt",
+        "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/GLOBAL/models/cat_over25.cbm",
+        "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/GLOBAL/models/rf_over25.pkl"
+      },
+      "btts": {
+        "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/GLOBAL/models/xgb_btts.json",
+        "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/GLOBAL/models/lgbm_btts.txt",
+        "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/GLOBAL/models/cat_btts.cbm",
+        "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/GLOBAL/models/rf_btts.pkl"
+      }
+    },
+    "countries": [
+      "African Football League",
+      "Algeria",
+      "Angola",
+      "Benin",
+      "Botswana",
+      "Burkina Faso",
+      "CAF",
+      "Cameroon",
+      "Egypt",
+      "Ethiopia",
+      "Gabon",
+      "Ghana",
+      "Ivory Coast",
+      "Kenya",
+      "Libya",
+      "Mali",
+      "Morocco",
+      "Mozambique",
+      "Nigeria",
+      "Senegal",
+      "South Africa",
+      "Tanzania",
+      "Tunisia",
+      "Uganda",
+      "Zambia"
+    ]
+  },
+  "Kenya": {
+    "scope": "country_Kenya",
+    "n": 1696,
+    "n_train": 1441,
+    "n_val": 255,
+    "features": [
+      "Year",
+      "Month",
+      "DayOfWeek",
+      "IsWeekend",
+      "HomeFormPts_5",
+      "AwayFormPts_5",
+      "HomeFormGD_5",
+      "AwayFormGD_5",
+      "HomeFormPts_10",
+      "AwayFormPts_10",
+      "HomeFormGD_10",
+      "AwayFormGD_10",
+      "EloHome",
+      "EloAway",
+      "EloDiff",
+      "HomeTeamId",
+      "AwayTeamId"
+    ],
+    "targets": {
+      "ft_result": {
+        "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/country_Kenya/models/xgb_ft_result.json",
+        "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/country_Kenya/models/lgbm_ft_result.txt",
+        "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/country_Kenya/models/cat_ft_result.cbm",
+        "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/country_Kenya/models/rf_ft_result.pkl"
+      },
+      "over25": {
+        "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/country_Kenya/models/xgb_over25.json",
+        "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/country_Kenya/models/lgbm_over25.txt",
+        "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/country_Kenya/models/cat_over25.cbm",
+        "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/country_Kenya/models/rf_over25.pkl"
+      },
+      "btts": {
+        "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/country_Kenya/models/xgb_btts.json",
+        "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/country_Kenya/models/lgbm_btts.txt",
+        "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/country_Kenya/models/cat_btts.cbm",
+        "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/country_Kenya/models/rf_btts.pkl"
+      }
+    },
+    "countries": [
+      "Kenya"
+    ]
+  },
+  "Uganda": {
+    "scope": "country_Uganda",
+    "n": 941,
+    "n_train": 799,
+    "n_val": 142,
+    "features": [
+      "Year",
+      "Month",
+      "DayOfWeek",
+      "IsWeekend",
+      "HomeFormPts_5",
+      "AwayFormPts_5",
+      "HomeFormGD_5",
+      "AwayFormGD_5",
+      "HomeFormPts_10",
+      "AwayFormPts_10",
+      "HomeFormGD_10",
+      "AwayFormGD_10",
+      "EloHome",
+      "EloAway",
+      "EloDiff",
+      "HomeTeamId",
+      "AwayTeamId"
+    ],
+    "targets": {
+      "ft_result": {
+        "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/country_Uganda/models/xgb_ft_result.json",
+        "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/country_Uganda/models/lgbm_ft_result.txt",
+        "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/country_Uganda/models/cat_ft_result.cbm",
+        "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/country_Uganda/models/rf_ft_result.pkl"
+      },
+      "over25": {
+        "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/country_Uganda/models/xgb_over25.json",
+        "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/country_Uganda/models/lgbm_over25.txt",
+        "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/country_Uganda/models/cat_over25.cbm",
+        "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/country_Uganda/models/rf_over25.pkl"
+      },
+      "btts": {
+        "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/country_Uganda/models/xgb_btts.json",
+        "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/country_Uganda/models/lgbm_btts.txt",
+        "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/country_Uganda/models/cat_btts.cbm",
+        "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/country_Uganda/models/rf_btts.pkl"
+      }
+    },
+    "countries": [
+      "Uganda"
+    ]
+  },
+  "Egypt": {
+    "scope": "country_Egypt",
+    "n": 3193,
+    "n_train": 2714,
+    "n_val": 479,
+    "features": [
+      "Year",
+      "Month",
+      "DayOfWeek",
+      "IsWeekend",
+      "HomeFormPts_5",
+      "AwayFormPts_5",
+      "HomeFormGD_5",
+      "AwayFormGD_5",
+      "HomeFormPts_10",
+      "AwayFormPts_10",
+      "HomeFormGD_10",
+      "AwayFormGD_10",
+      "EloHome",
+      "EloAway",
+      "EloDiff",
+      "HomeTeamId",
+      "AwayTeamId"
+    ],
+    "targets": {
+      "ft_result": {
+        "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/country_Egypt/models/xgb_ft_result.json",
+        "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/country_Egypt/models/lgbm_ft_result.txt",
+        "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/country_Egypt/models/cat_ft_result.cbm",
+        "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/country_Egypt/models/rf_ft_result.pkl"
+      },
+      "over25": {
+        "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/country_Egypt/models/xgb_over25.json",
+        "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/country_Egypt/models/lgbm_over25.txt",
+        "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/country_Egypt/models/cat_over25.cbm",
+        "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/country_Egypt/models/rf_over25.pkl"
+      },
+      "btts": {
+        "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/country_Egypt/models/xgb_btts.json",
+        "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/country_Egypt/models/lgbm_btts.txt",
+        "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/country_Egypt/models/cat_btts.cbm",
+        "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/country_Egypt/models/rf_btts.pkl"
+      }
+    },
+    "countries": [
+      "Egypt"
+    ]
+  },
+  "Angola": {
+    "scope": "country_Angola",
+    "n": 7189,
+    "n_train": 6110,
+    "n_val": 1079,
+    "features": [
+      "Year",
+      "Month",
+      "DayOfWeek",
+      "IsWeekend",
+      "HomeFormPts_5",
+      "AwayFormPts_5",
+      "HomeFormGD_5",
+      "AwayFormGD_5",
+      "HomeFormPts_10",
+      "AwayFormPts_10",
+      "HomeFormGD_10",
+      "AwayFormGD_10",
+      "EloHome",
+      "EloAway",
+      "EloDiff",
+      "HomeTeamId",
+      "AwayTeamId"
+    ],
+    "targets": {
+      "ft_result": {
+        "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/country_Angola/models/xgb_ft_result.json",
+        "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/country_Angola/models/lgbm_ft_result.txt",
+        "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/country_Angola/models/cat_ft_result.cbm",
+        "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/country_Angola/models/rf_ft_result.pkl"
+      },
+      "over25": {
+        "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/country_Angola/models/xgb_over25.json",
+        "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/country_Angola/models/lgbm_over25.txt",
+        "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/country_Angola/models/cat_over25.cbm",
+        "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/country_Angola/models/rf_over25.pkl"
+      },
+      "btts": {
+        "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/country_Angola/models/xgb_btts.json",
+        "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/country_Angola/models/lgbm_btts.txt",
+        "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/country_Angola/models/cat_btts.cbm",
+        "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/country_Angola/models/rf_btts.pkl"
+      }
+    },
+    "countries": [
+      "Angola"
+    ]
+  },
+  "Tanzania": {
+    "scope": "country_Tanzania",
+    "n": 3734,
+    "n_train": 3173,
+    "n_val": 561,
+    "features": [
+      "Year",
+      "Month",
+      "DayOfWeek",
+      "IsWeekend",
+      "HomeFormPts_5",
+      "AwayFormPts_5",
+      "HomeFormGD_5",
+      "AwayFormGD_5",
+      "HomeFormPts_10",
+      "AwayFormPts_10",
+      "HomeFormGD_10",
+      "AwayFormGD_10",
+      "EloHome",
+      "EloAway",
+      "EloDiff",
+      "HomeTeamId",
+      "AwayTeamId"
+    ],
+    "targets": {
+      "ft_result": {
+        "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/country_Tanzania/models/xgb_ft_result.json",
+        "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/country_Tanzania/models/lgbm_ft_result.txt",
+        "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/country_Tanzania/models/cat_ft_result.cbm",
+        "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/country_Tanzania/models/rf_ft_result.pkl"
+      },
+      "over25": {
+        "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/country_Tanzania/models/xgb_over25.json",
+        "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/country_Tanzania/models/lgbm_over25.txt",
+        "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/country_Tanzania/models/cat_over25.cbm",
+        "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/country_Tanzania/models/rf_over25.pkl"
+      },
+      "btts": {
+        "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/country_Tanzania/models/xgb_btts.json",
+        "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/country_Tanzania/models/lgbm_btts.txt",
+        "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/country_Tanzania/models/cat_btts.cbm",
+        "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/country_Tanzania/models/rf_btts.pkl"
+      }
+    },
+    "countries": [
+      "Tanzania"
+    ]
+  },
+  "Botswana": {
+    "scope": "country_Botswana",
+    "n": 1603,
+    "n_train": 1362,
+    "n_val": 241,
+    "features": [
+      "Year",
+      "Month",
+      "DayOfWeek",
+      "IsWeekend",
+      "HomeFormPts_5",
+      "AwayFormPts_5",
+      "HomeFormGD_5",
+      "AwayFormGD_5",
+      "HomeFormPts_10",
+      "AwayFormPts_10",
+      "HomeFormGD_10",
+      "AwayFormGD_10",
+      "EloHome",
+      "EloAway",
+      "EloDiff",
+      "HomeTeamId",
+      "AwayTeamId"
+    ],
+    "targets": {
+      "ft_result": {
+        "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/country_Botswana/models/xgb_ft_result.json",
+        "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/country_Botswana/models/lgbm_ft_result.txt",
+        "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/country_Botswana/models/cat_ft_result.cbm",
+        "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/country_Botswana/models/rf_ft_result.pkl"
+      },
+      "over25": {
+        "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/country_Botswana/models/xgb_over25.json",
+        "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/country_Botswana/models/lgbm_over25.txt",
+        "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/country_Botswana/models/cat_over25.cbm",
+        "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/country_Botswana/models/rf_over25.pkl"
+      },
+      "btts": {
+        "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/country_Botswana/models/xgb_btts.json",
+        "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/country_Botswana/models/lgbm_btts.txt",
+        "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/country_Botswana/models/cat_btts.cbm",
+        "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/country_Botswana/models/rf_btts.pkl"
+      }
+    },
+    "countries": [
+      "Botswana"
+    ]
+  }
+}

@@ -599,7 +599,7 @@ parameters:
 [num_iterations: 1400]
 [learning_rate: 0.03]
 [num_leaves: 96]
-[num_threads: 3]
+[num_threads: 2]
 [seed: 42]
 [deterministic: 0]
 [force_col_wise: 1]
