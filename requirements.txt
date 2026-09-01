@@ -7,12 +7,11 @@ scikit-learn>=1.3,<2
 python-dateutil>=2.8
 
 # Production gradient-boosting backends
-xgboost>=2.0
+# CI installs the CPU-only XGBoost wheel separately because generic XGBoost
+# can pull a large NCCL package on CPU-only runners.
 lightgbm>=4.0
 catboost>=1.2
 
-# Neural-network backends used by the simulator/trainer.
-# PyTorch is installed explicitly from the official CPU wheel index by CI;
-# keeping it out of this requirements file prevents a default PyPI resolver
-# from selecting the CUDA build and exhausting GitHub-hosted runner storage.
+# Neural-network backend used by the simulator/trainer.
+# CI installs CPU-only PyTorch explicitly from the official wheel index.
 tensorflow-cpu>=2.15,<2.20
