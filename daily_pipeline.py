@@ -84,20 +84,24 @@ def main():
     )
     log.info("=" * 64)
 
-    # 1. Latest results
+    # 1. Latest results (soft-fail + local fallback inside scraper)
     log_step(log, "scrape_results", "fetching Latest_Results.csv")
-    run([sys.executable, "scraper.py"], env={"FOOTBALL_SEASON": sc})
+    rc = run([sys.executable, "scraper.py"], env={"FOOTBALL_SEASON": sc}, check=False)
+    if rc != 0:
+        log.warning("scraper.py exited %s — continuing if local results exist", rc)
 
     # 2. Parquet upsert
     log_step(log, "upsert_parquet", "merging results into master parquet")
     run([sys.executable, "daily_update_parquet.py"], env={
         "FOOTBALL_SEASON": sc,
         "FOOTBALL_SEASON_LABEL": sl,
-    })
+    }, check=False)
 
-    # 3. Fixtures
+    # 3. Fixtures (soft-fail + local fallback)
     log_step(log, "scrape_fixtures", "fetching fixtures.csv")
-    run([sys.executable, "scraper_fixtures.py"])
+    rc = run([sys.executable, "scraper_fixtures.py"], check=False)
+    if rc != 0:
+        log.warning("scraper_fixtures.py exited %s — continuing if local fixtures exist", rc)
 
     # 4. Team scan + mapping
     log_step(log, "scan_teams", "building train focus list")

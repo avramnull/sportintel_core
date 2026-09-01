@@ -36,6 +36,7 @@ Shared config / logging:
 | Bare publish / token handling | Central `GITHUB_TOKEN` resolution; no token echo |
 | No health checks | `python -m tools.smoke_test [--quick]` |
 | Weak User-Agent on scrapers | Explicit sportintel UA + stable `*_latest.csv` copies |
+| football-data.co.uk timeouts | Industrial `si_http` (retries, 150s read, backoff) + local CSV fallback |
 | Empty / sparse README | This document |
 
 ## Master parquet
