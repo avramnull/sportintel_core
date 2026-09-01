@@ -12,6 +12,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 import os
 import pickle
 from pathlib import Path
@@ -32,6 +33,71 @@ FEATURE_NUM = [
     "EloHome", "EloAway", "EloDiff",
 ]
 FEATURE_ID = ["HomeTeamId", "AwayTeamId"]
+
+
+def _resolve_model_path(path_str: str) -> Path:
+    """Resolve registry paths that may be runner-absolute or relative."""
+    p = Path(path_str)
+    if p.exists():
+        return p
+    s = str(path_str).replace("\\", "/")
+    if "football_models/africa/" in s:
+        tail = s.split("football_models/africa/")[-1]
+        cand = MODELS_ROOT / tail
+        if cand.exists():
+            return cand
+    cand = MODELS_ROOT / s
+    if cand.exists():
+        return cand
+    # country_X/models/file
+    name = Path(s).name
+    hits = list(MODELS_ROOT.rglob(name))
+    if len(hits) == 1:
+        return hits[0]
+    if hits:
+        # prefer matching parent folder fragments
+        for h in hits:
+            if any(part in str(h) for part in Path(s).parts[-3:]):
+                return h
+        return hits[0]
+    return p
+
+
+def _norm_name(s: str) -> str:
+    s = (s or "").lower().strip()
+    s = re.sub(r"[^a-z0-9]+", " ", s)
+    s = re.sub(r"\b(fc|sc|ac|cf|afc|united|city|town|the)\b", " ", s)
+    return re.sub(r"\s+", " ", s).strip()
+
+
+def _resolve_team_name(name: str, hist) -> str:
+    if hist is None or not len(hist) or not name:
+        return name
+    teams = sorted(set(hist["HomeTeam"].astype(str)) | set(hist["AwayTeam"].astype(str)))
+    if name in teams:
+        return name
+    n = _norm_name(name)
+    norms = {_norm_name(t): t for t in teams}
+    if n in norms:
+        return norms[n]
+    n_toks = set(n.split())
+    best, best_score = name, 0.0
+    for t in teams:
+        tn = _norm_name(t)
+        if not tn:
+            continue
+        if n in tn or tn in n:
+            score = min(len(n), len(tn)) / max(len(n), len(tn), 1)
+            if score > best_score:
+                best, best_score = t, score
+            continue
+        t_toks = set(tn.split())
+        if n_toks and t_toks:
+            score = len(n_toks & t_toks) / max(len(n_toks | t_toks), 1)
+            if score > best_score:
+                best, best_score = t, score
+    return best if best_score >= 0.45 else name
+
 
 
 def _load_hist() -> Optional[pd.DataFrame]:
@@ -134,10 +200,10 @@ def _scale(X: np.ndarray, stats: dict) -> np.ndarray:
 
 def _predict_paths(paths: dict, X: np.ndarray, target: str) -> Optional[np.ndarray]:
     preds = []
-    if "xgboost" in paths and Path(paths["xgboost"]).exists():
+    if "xgboost" in paths and _resolve_model_path(paths["xgboost"]).exists():
         try:
             import xgboost as xgb
-            m = xgb.Booster(); m.load_model(paths["xgboost"])
+            m = xgb.Booster(); m.load_model(str(_resolve_model_path(paths["xgboost"])))
             p = np.asarray(m.predict(xgb.DMatrix(X)))
             if p.ndim == 1:
                 preds.append(np.array([1 - p[0], p[0]]))
@@ -145,10 +211,10 @@ def _predict_paths(paths: dict, X: np.ndarray, target: str) -> Optional[np.ndarr
                 preds.append(p[0])
         except Exception as e:
             print(f"  [warn] xgb: {e}")
-    if "lightgbm" in paths and Path(paths["lightgbm"]).exists():
+    if "lightgbm" in paths and _resolve_model_path(paths["lightgbm"]).exists():
         try:
             import lightgbm as lgb
-            m = lgb.Booster(model_file=paths["lightgbm"])
+            m = lgb.Booster(model_file=str(_resolve_model_path(paths["lightgbm"])))
             p = np.asarray(m.predict(X)).ravel()
             if target == "ft_result" and p.size >= 3:
                 preds.append(p[:3])
@@ -159,16 +225,16 @@ def _predict_paths(paths: dict, X: np.ndarray, target: str) -> Optional[np.ndarr
 
         except Exception as e:
             print(f"  [warn] lgbm: {e}")
-    if "catboost" in paths and Path(paths["catboost"]).exists():
+    if "catboost" in paths and _resolve_model_path(paths["catboost"]).exists():
         try:
             from catboost import CatBoostClassifier
-            m = CatBoostClassifier(); m.load_model(paths["catboost"])
+            m = CatBoostClassifier(); m.load_model(str(_resolve_model_path(paths["catboost"])))
             preds.append(m.predict_proba(X)[0])
         except Exception as e:
             print(f"  [warn] cat: {e}")
-    if "random_forest" in paths and Path(paths["random_forest"]).exists():
+    if "random_forest" in paths and _resolve_model_path(paths["random_forest"]).exists():
         try:
-            with open(paths["random_forest"], "rb") as f:
+            with open(_resolve_model_path(paths["random_forest"]), "rb") as f:
                 m = pickle.load(f)
             preds.append(m.predict_proba(X)[0])
         except Exception as e:
@@ -385,6 +451,8 @@ def simulate_match(
         else:
             prior_btts = float(((hist_c["FTHG"] > 0) & (hist_c["FTAG"] > 0)).mean())
 
+    home = _resolve_team_name(home, hist_c)
+    away = _resolve_team_name(away, hist_c)
     X, feats = build_feature_row(home, away, hist_c)
     # Elo-based lambdas from feature row
     try:
@@ -585,16 +653,45 @@ def to_simlab_document(rep: dict, fx: dict | None = None, n_sim: int = N_SIM) ->
     country = fx.get("country") or rep.get("country") or ""
     league_label = f"{country} — {league}" if country and league else (league or country or "Africa")
 
-    # pick locked tip from strongest FT sim
-    best = max([("Home", ph), ("Draw", pd_), ("Away", pa)], key=lambda x: x[1])
+    # Honest lock: only when a market clears a real threshold (no forced FT Home)
+    candidates = []
+    # FT 1X2 — need clear favorite
+    for label, key, val in [("Home", "H", ph), ("Draw", "D", pd_), ("Away", "A", pa)]:
+        candidates.append(("FT", label, float(ft_m.get(key, val)), float(val), 0.48 if label != "Draw" else 0.36))
+    candidates.append(("O/U", "Over 2.5", o25_m, o25_s, 0.55))
+    candidates.append(("O/U", "Under 2.5", 1 - o25_m, 1 - o25_s, 0.55))
+    candidates.append(("BTTS", "Yes", btts_m, btts_s, 0.55))
+    candidates.append(("BTTS", "No", 1 - btts_m, 1 - btts_s, 0.55))
+    gl = sim.get("goal_line_sim") or {}
+    if gl.get("1.5") is not None:
+        candidates.append(("O/U", "Over 1.5", float(gl["1.5"]), float(gl["1.5"]), 0.62))
+        candidates.append(("O/U", "Under 1.5", 1 - float(gl["1.5"]), 1 - float(gl["1.5"]), 0.55))
+
     locked = {
-        "status": "AFRICA BOARD",
-        "section": "FT",
-        "selection": best[0],
-        "model": pct100(ft_m.get({"Home": "H", "Draw": "D", "Away": "A"}[best[0]], best[1])),
-        "sim": pct100(best[1]),
-        "verdict": "LEAN" if best[1] >= 0.4 else "—",
+        "status": "NO LOCK",
+        "section": "—",
+        "selection": "—",
+        "model": None,
+        "sim": None,
+        "verdict": "—",
     }
+    ranked = []
+    for sec, sel, mp, sp, thr in candidates:
+        if sp >= thr and mp >= (thr - 0.08):
+            edge = sp - mp
+            ranked.append((sp, edge, sec, sel, mp))
+    if ranked:
+        ranked.sort(key=lambda x: (x[0], x[1]), reverse=True)
+        sp, edge, sec, sel, mp = ranked[0]
+        verdict = "HARD YES" if sp >= 0.62 else ("YES" if sp >= 0.55 else "LEAN")
+        locked = {
+            "status": "AFRICA LOCK" if verdict in ("HARD YES", "YES") else "AFRICA LEAN",
+            "section": sec,
+            "selection": sel,
+            "model": pct100(mp),
+            "sim": pct100(sp),
+            "verdict": verdict,
+        }
 
     return {
         "id": None,  # filled by caller

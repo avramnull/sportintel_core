@@ -268,3 +268,15 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+def _rel_model_path(p: Path) -> str:
+    """Store paths relative to MODELS_ROOT so registries work outside the runner."""
+    p = Path(p).resolve()
+    try:
+        return str(p.relative_to(MODELS_ROOT.resolve()))
+    except Exception:
+        try:
+            return str(p.relative_to(ROOT.resolve()))
+        except Exception:
+            return p.name
