@@ -46,3 +46,8 @@ venv/
 daily_football_data/results_*.csv
 daily_football_data/fixtures_*.csv
 !daily_football_data/.gitkeep
+
+# Africa ETL local artifacts
+data/africa_raw/
+master_africa_football.csv
+master_africa_football.parquet
