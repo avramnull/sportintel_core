@@ -389,8 +389,27 @@ def simulate_scores(
     top_sorted = dict(sorted(top.items(), key=lambda kv: -kv[1])[:12])
     # goal lines
     tot = hs + aws
+    # Half-time grid (~45% intensity)
+    ht_lh, ht_la = max(0.15, 0.45 * lam_h), max(0.15, 0.45 * lam_a)
+    ht_grid = np.zeros((5, 5), dtype=float)
+    for i in range(5):
+        for j in range(5):
+            ht_grid[i, j] = pois(i, ht_lh) * pois(j, ht_la) * max(1e-12, dc_tau(i, j, ht_lh, ht_la, rho * 0.7))
+    ht_grid /= max(ht_grid.sum(), 1e-12)
+    ht_idx = rng.choice(25, size=n, p=ht_grid.ravel())
+    hth = np.minimum(ht_idx // 5, hs)
+    hta = np.minimum(ht_idx % 5, aws)
+    ht_top = dict(sorted(
+        {f"{i}-{j}": float(ht_grid[i, j]) for i in range(5) for j in range(5)}.items(),
+        key=lambda kv: -kv[1]
+    )[:10])
     return {
         "ft_sim": ft_sim,
+        "ht_sim": {
+            "H": float(np.mean(hth > hta)),
+            "D": float(np.mean(hth == hta)),
+            "A": float(np.mean(hth < hta)),
+        },
         "over25_sim": float(np.mean(tot >= 3)),
         "btts_sim": float(np.mean((hs > 0) & (aws > 0))),
         "xg": {
@@ -401,6 +420,7 @@ def simulate_scores(
             "lambda_away": lam_a,
         },
         "score_matrix_top": top_sorted,
+        "score_matrix_top_ht": ht_top,
         "cs_home": float(np.mean(aws == 0)),
         "cs_away": float(np.mean(hs == 0)),
         "goal_line_sim": {
@@ -616,8 +636,8 @@ def to_simlab_document(rep: dict, fx: dict | None = None, n_sim: int = N_SIM) ->
     report = {
         "ft_model": {"H": float(ft_m.get("H", 0)), "D": float(ft_m.get("D", 0)), "A": float(ft_m.get("A", 0))},
         "ft_sim": {"H": ph, "D": pd_, "A": pa},
-        "ht_model": {"H": None, "D": None, "A": None},
-        "ht_sim": {"H": None, "D": None, "A": None},
+        "ht_model": sim.get("ht_sim") or {"H": None, "D": None, "A": None},
+        "ht_sim": sim.get("ht_sim") or {"H": None, "D": None, "A": None},
         "over25_model": o25_m,
         "over25_sim": o25_s,
         "btts_model": btts_m,
@@ -626,7 +646,10 @@ def to_simlab_document(rep: dict, fx: dict | None = None, n_sim: int = N_SIM) ->
         "dc_ft": {"1X": ph + pd_, "X2": pa + pd_, "12": ph + pa},
         "dc_ht": {},
         "top_ft": top_ft,
-        "top_ht": [],
+        "top_ht": [
+            [s, int(round(float(p) * n_sim))]
+            for s, p in list((sim.get("score_matrix_top_ht") or {}).items())[:10]
+        ],
         "top3_ft": [{"score": s, "count": c, "pct": round(100 * c / max(n_sim, 1), 1)} for s, c in top_ft[:3]],
         "clean_sheet": {"home": cs_h, "away": cs_a},
         "win_to_nil": {"home": ph * cs_h, "away": pa * cs_a},
@@ -685,7 +708,7 @@ def to_simlab_document(rep: dict, fx: dict | None = None, n_sim: int = N_SIM) ->
         sp, edge, sec, sel, mp = ranked[0]
         verdict = "HARD YES" if sp >= 0.62 else ("YES" if sp >= 0.55 else "LEAN")
         locked = {
-            "status": "AFRICA LOCK" if verdict in ("HARD YES", "YES") else "AFRICA LEAN",
+            "status": "SECURED LOCK" if verdict in ("HARD YES", "YES") else ("STRONG LEAN" if verdict == "LEAN" else "NO LOCK"),
             "section": sec,
             "selection": sel,
             "model": pct100(mp),

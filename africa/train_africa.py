@@ -29,7 +29,7 @@ CONFIG = {
     "min_matches": int(os.environ.get("MIN_TEAM_MATCHES", "25")),
     "val_fraction": 0.15,
     "seed": 42,
-    "max_boost_rounds": int(os.environ.get("MAX_BOOST_ROUNDS", "1200")),
+    "max_boost_rounds": int(os.environ.get("MAX_BOOST_ROUNDS", "1500")),
     "use_xgboost": os.environ.get("USE_XGBOOST", "1") not in ("0", "false"),
     "use_lightgbm": os.environ.get("USE_LIGHTGBM", "1") not in ("0", "false"),
     "use_catboost": os.environ.get("USE_CATBOOST", "1") not in ("0", "false"),
