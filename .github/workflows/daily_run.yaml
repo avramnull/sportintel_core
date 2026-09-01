@@ -86,6 +86,19 @@ jobs:
       - name: Health check
         run: python -m tools.smoke_test --quick
 
+      - name: Validate API-Football backup credential is configured
+        env:
+          API_FOOTBALL_BACKUP_KEY: ${{ secrets.API_FOOTBALL_BACKUP_KEY }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ -z "${API_FOOTBALL_BACKUP_KEY:-}" ]; then
+            echo "ERROR: API_FOOTBALL_BACKUP_KEY is not configured in repository secrets."
+            echo "The suspended API_FOOTBALL_KEY is intentionally no longer used by this workflow."
+            exit 1
+          fi
+          echo "API-Football backup credential is configured (value withheld)."
+
       - name: Run full daily pipeline
         env:
           # 0 is intentional: scan_fixture_teams.py derives the complete
@@ -114,8 +127,9 @@ jobs:
           SKIP_TRAIN: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.skip_train == 'true' && '1' || '0' }}
           SPORTINTEL_PUSH: "1"
           AFRICA_SEGMENT: "1"
-          API_FOOTBALL_KEY: ${{ secrets.API_FOOTBALL_KEY }}
-          API_FOOTBALL_STANDINGS_KEY: ${{ secrets.API_FOOTBALL_STANDINGS_KEY }}
+          # Backup key is now the ONLY API-Football credential exposed to the job.
+          API_FOOTBALL_KEY: ${{ secrets.API_FOOTBALL_BACKUP_KEY }}
+          API_FOOTBALL_STANDINGS_KEY: ${{ secrets.API_FOOTBALL_BACKUP_KEY }}
           SKIP_AFRICA_TRAIN: "0"
           SKIP_AFRICA_SIM: "0"
           AFRICA_FETCH_ODDS: "0"
