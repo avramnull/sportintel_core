@@ -30,7 +30,8 @@ def _load_dotenv(path: Optional[Path] = None) -> None:
             k, v = k.strip(), v.strip().strip('"').strip("'")
             if k and k not in os.environ:
                 os.environ[k] = v
-    except Exception:
+    except OSError:
+        # Local .env is convenience-only; configuration from the process wins.
         pass
 
 
@@ -53,24 +54,20 @@ def _env_bool(name: str, default: bool = False) -> bool:
 def _env_int(name: str, default: int) -> int:
     try:
         return int(_env(name, str(default)) or default)
-    except ValueError:
+    except (TypeError, ValueError):
         return default
 
 
 def _env_float(name: str, default: float) -> float:
     try:
         return float(_env(name, str(default)) or default)
-    except ValueError:
+    except (TypeError, ValueError):
         return default
 
 
 def infer_season(today: Optional[date] = None) -> Tuple[str, str]:
-    """
-    football-data.co.uk season codes are YY{YY+1} of the *start* year.
-    European seasons run ~Aug–May. Before July we still belong to the previous season.
-    """
+    """Infer the football-data.co.uk season from the UTC calendar date."""
     d = today or datetime.now(timezone.utc).date()
-    # If calendar month >= 7 (July), new season has started / is starting
     start_year = d.year if d.month >= 7 else d.year - 1
     end_year = start_year + 1
     code = f"{start_year % 100:02d}{end_year % 100:02d}"
@@ -94,8 +91,9 @@ def season_label() -> str:
     return label
 
 
-# Pipeline caps / behaviour
-MAX_TRAIN_TEAMS = _env_int("MAX_TRAIN_TEAMS", 0)
+# Production defaults. Zero is reserved for explicit "unlimited" behaviour;
+# daily CI uses a finite cap to prevent an unexpectedly huge training run.
+MAX_TRAIN_TEAMS = _env_int("MAX_TRAIN_TEAMS", 12)
 MIN_TEAM_MATCHES = _env_int("MIN_TEAM_MATCHES", 25)
 N_SIMULATIONS = _env_int("N_SIMULATIONS", 3000)
 ODDS_BLEND = _env_float("ODDS_BLEND", 0.30)
@@ -119,7 +117,6 @@ GITHUB_TOKEN = (
 LOG_LEVEL = _env("LOG_LEVEL", "INFO").upper()
 LOG_JSON = _env_bool("LOG_JSON", False)
 
-
-# API-Football (fixtures + standings only — see api_football_client / fetch_day_standings)
+# API-Football (fixtures + optional standings).
 API_FOOTBALL_KEY = _env("API_FOOTBALL_KEY")
-API_FOOTBALL_STANDINGS_KEY = _env("API_FOOTBALL_STANDINGS_KEY")  # league tables (2nd key)
+API_FOOTBALL_STANDINGS_KEY = _env("API_FOOTBALL_STANDINGS_KEY")
