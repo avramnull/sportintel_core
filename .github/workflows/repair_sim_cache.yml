@@ -57,16 +57,18 @@ jobs:
           python -m py_compile sim.py
           echo "Simulator cache source validation: OK"
 
-      - name: Commit repair
+      - name: Commit repair and remove one-time workflow
         shell: bash
         run: |
           set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add sim.py
+          rm -f .github/workflows/repair_sim_cache.yml
+          git add .github/workflows/repair_sim_cache.yml
           if git diff --cached --quiet; then
             echo "No simulator cache changes required"
             exit 0
           fi
-          git commit -m "Fix undefined simulator backend caches"
+          git commit -m "Fix simulator backend cache definitions"
           git push origin HEAD:main
