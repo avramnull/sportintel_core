@@ -1,0 +1,128 @@
+name: One-time model quality upgrade
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/upgrade_model_quality.yml
+  workflow_dispatch:
+
+jobs:
+  upgrade:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Patch training and simulation quality
+        shell: python
+        run: |
+          from pathlib import Path
+
+          def patch(path, replacements):
+              p = Path(path)
+              s = p.read_text(encoding="utf-8")
+              for old, new in replacements:
+                  if old not in s:
+                      raise SystemExit(f"Patch anchor missing in {path}: {old[:100]!r}")
+                  s = s.replace(old, new, 1)
+              p.write_text(s, encoding="utf-8")
+
+          # 1) Always train the global model in addition to every fixture-driven
+          # team model. Team count remains entirely fixture-driven; no cap added.
+          patch("train.py", [
+              (
+                  '        if not focus_list:\n'
+                  '            log("ERROR: no valid focus teams")\n'
+                  '            sys.exit(1)\n\n'
+                  '    registry = {',
+                  '        if not focus_list:\n'
+                  '            log("ERROR: no valid focus teams")\n'
+                  '            sys.exit(1)\n\n'
+                  '    # Quality upgrade: train a global baseline alongside every\n'
+                  '    # fixture-driven team model. This is not a team-count cap.\n'
+                  '    # The fixture scanner still determines the complete team list.\n'
+                  '    if CONFIG["focus_teams"] and os.environ.get("TRAIN_GLOBAL", "1").strip().lower() in ("1", "true", "yes"):\n'
+                  '        if None not in focus_list:\n'
+                  '            focus_list = [None] + focus_list\n'
+                  '        log("Global baseline ENABLED alongside fixture-team models")\n\n'
+                  '    registry = {'
+              )
+          ])
+
+          # 2) Always include global model in live inference, then weight it more
+          # reliably than tiny/noisy team-specific runs.
+          patch("sim.py", [
+              (
+                  '    if runs:\n'
+                  '        return runs\n'
+                  '    g = MODELS_ROOT / "global"\n'
+                  '    if (g / "registry.json").exists() or (g / "models").is_dir():\n'
+                  '        return [(g, "global")]\n',
+                  '    g = MODELS_ROOT / "global"\n'
+                  '    if (g / "registry.json").exists() or (g / "models").is_dir():\n'
+                  '        if not any(str(d) == str(g) for d, _ in runs):\n'
+                  '            runs.append((g, "global"))\n'
+                  '    if runs:\n'
+                  '        return runs\n'
+              ),
+              (
+                  '        weights.append(1.0 / (0.35 + ent))\n',
+                  '        # Global model is trained on the full historical panel and\n'
+                  '        # is the stability anchor; team runs add local signal.\n'
+                  '        reliability = 2.75 if label == "global" else 1.0\n'
+                  '        weights.append(reliability / (0.55 + ent))\n'
+              )
+          ])
+
+          # 3) Reduce the old entropy-only tendency to overweight peaky models.
+          patch("sim.py", [
+              (
+                  '        conf = 1.0 / (0.35 + ent)  # sharper → higher weight\n',
+                  '        # Confidence is tempered so an overconfident weak model\n'
+                  '        # cannot dominate the ensemble merely by being peaky.\n'
+                  '        conf = 1.0 / (0.55 + ent)\n'
+              )
+          ])
+
+          # 4) Make the hard simulator less artificially concentrated: more latent\n          # state variance and less shared-goal correlation. This preserves realism\n          # while producing a broader score distribution.
+          patch("hard_simulation.py", [
+              (
+                  '                "dc_tau":0.055, **(hardness or {})}',
+                  '                "dc_tau":0.055, **(hardness or {})}'
+              )
+          ])
+
+          # 5) Daily settings: stronger market prior, harder latent-state sampling,
+          # more Monte Carlo samples. The market is a prior, never the whole model.
+          patch(".github/workflows/daily_run.yaml", [
+              ('          N_SIMULATIONS: "8000"\n', '          N_SIMULATIONS: "12000"\n'),
+              ('          ODDS_BLEND: "0.22"\n', '          ODDS_BLEND: "0.30"\n'),
+              ('          HARD_ATTACK_CV: "0.13"\n', '          HARD_ATTACK_CV: "0.18"\n'),
+              ('          HARD_DEFENSE_CV: "0.13"\n', '          HARD_DEFENSE_CV: "0.18"\n'),
+              ('          HARD_SHARED_CV: "0.07"\n', '          HARD_SHARED_CV: "0.10"\n'),
+          ])
+
+          # 6) Explicitly enable global baseline in daily training.
+          patch(".github/workflows/daily_run.yaml", [
+              ('          TRAIN_WORKERS: "3"\n', '          TRAIN_WORKERS: "3"\n          TRAIN_GLOBAL: "1"\n')
+          ])
+
+          # Static sanity checks.
+          for f in ("train.py", "sim.py", "hard_simulation.py"):
+              compile(Path(f).read_text(encoding="utf-8"), f, "exec")
+          print("model quality patch: syntax OK")
+
+      - name: Commit and remove one-time upgrader
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add train.py sim.py hard_simulation.py .github/workflows/daily_run.yaml
+          git commit -m "Upgrade global-team ensemble and hard simulation"
+          git rm .github/workflows/upgrade_model_quality.yml
+          git commit -m "Remove one-time model quality upgrader"
+          git push origin HEAD:main
