@@ -1,57 +1,74 @@
-# Africa domestic football ETL
+# Africa domestic football — ETL, train, sim
 
-Build a clean **`master_africa_football.parquet`** from free public sources:
+Industrial path for African leagues using **free** public sources.
 
-1. **[openfootball/world](https://github.com/openfootball/world)** (`africa/`) — primary  
-2. **[RSSSF Africa domestic](http://www.rsssf.com/results-afr.html)** — optional fill-in  
-
-## Quick start
+## 1. Build master parquet
 
 ```bash
-# 1) Clone openfootball world (one-time / refresh)
 mkdir -p data/africa_raw
 git clone --depth 1 https://github.com/openfootball/world.git data/africa_raw/openfootball_world
 
-# 2) Build master (openfootball only)
+# Openfootball only
 python -m africa.build_master_africa_parquet \
   --openfootball-root data/africa_raw/openfootball_world \
   --out master_africa_football.parquet
 
-# 3) Optional: also pull RSSSF first-level pages (slower, network)
+# + full RSSSF (all levels, year probe 2014–2026)
 python -m africa.build_master_africa_parquet \
   --openfootball-root data/africa_raw/openfootball_world \
   --fetch-rsssf \
-  --rsssf-max-pages 60 \
+  --rsssf-year-start 2014 \
+  --rsssf-year-end 2026 \
   --out master_africa_football.parquet
 ```
 
-## Output schema (core columns)
+Sources:
+- **openfootball/world** `africa/` — clean Football.TXT (primary)
+- **RSSSF** `results-afr.html` + year pages — all levels (1st/2nd/3rd/cup), not only top flight
 
-| Column | Notes |
-|--------|--------|
-| `Source` | `openfootball` or `rsssf` |
-| `Country`, `League`, `Div`, `Season` | League identity |
-| `Date`, `Time`, `HomeTeam`, `AwayTeam` | Fixture |
-| `FTHG`, `FTAG`, `FTR` | Full-time result |
-| `HTHG`, `HTAG` | Half-time when present in Football.TXT |
-| `TotalGoals`, `Over2_5`, `BTTS`, `HomeWin`, … | Targets |
-| `HomeTeamId`, `AwayTeamId` | Stable within Africa corpus |
-| `HomeFormPts_5/10`, `EloHome`, `EloDiff`, … | Leak-free features |
+Features: form, Elo, calendar, team IDs, O2.5 / BTTS targets.  
+Separate from European `master_football_data.parquet` (no free African odds).
 
-Dedupe key: `Div|YYYY-MM-DD|home|away` (openfootball preferred over RSSSF).
+## 2. Train
 
-## Coverage (openfootball snapshot)
+```bash
+# Requires xgboost / lightgbm / catboost / sklearn as available
+AFRICA_PARQUET=master_africa_football.parquet \
+FOCUS_COUNTRIES=Nigeria,Ghana,Egypt,Morocco,Kenya,Algeria \
+MIN_TEAM_MATCHES=40 \
+MAX_BOOST_ROUNDS=800 \
+python -m africa.train_africa
+```
 
-Typically **~14k** matches across Nigeria (largest), Ghana, Egypt, Morocco, Algeria, Kenya, Uganda, Tanzania, Zambia, South Africa, CAF CL, etc.  
-Nigeria NPFL/NNL dominates historical depth.
+Writes `football_models/africa/GLOBAL/` and `football_models/africa/country_*/`  
+Targets: `ft_result`, `over25`, `btts` (no odds features).
 
-## Design notes
+## 3. Simulate
 
-- **No book odds** in free Africa dumps — train result / O2.5 / BTTS without market blend until odds exist.
-- Keep **separate** from European `master_football_data.parquet` so null odds do not pollute EU models.
-- Team map written to `football_models/mappings/africa_team2id.json`.
+```bash
+python -m africa.sim_africa \
+  --home "Kano Pillars FC" \
+  --away "Enyimba FC" \
+  --country Nigeria
 
-## Next (optional)
+# batch
+python -m africa.sim_africa --fixtures africa_fixtures.csv --out africa_sim.json
+```
 
-- Wire `train.py` with `AFRICA=1` + this parquet path  
-- Daily scraper refresh of openfootball clone in CI  
+Confidence-weighted ensemble + IPF score grid (FT / O2.5 / BTTS aligned).
+
+## Modules
+
+| File | Role |
+|------|------|
+| `parse_football_txt.py` | openfootball parser |
+| `parse_rsssf.py` | full RSSSF scraper (all levels + year probe) |
+| `build_master_africa_parquet.py` | merge, dedupe, features |
+| `train_africa.py` | Africa model training |
+| `sim_africa.py` | Africa match simulation |
+
+## Notes
+
+- RSSSF HTML is messy; standings rows are filtered out. Lower divisions and cups are kept when scorelines parse cleanly.
+- Network timeouts to rsssf.com can happen from some hosts — re-run `--fetch-rsssf` locally.
+- Openfootball alone already yields ~14k matches (Nigeria-heavy).

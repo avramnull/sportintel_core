@@ -28,7 +28,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
 from africa.parse_football_txt import parse_openfootball_tree  # noqa: E402
-from africa.parse_rsssf import fetch_rsssf_priority  # noqa: E402
+from africa.parse_rsssf import fetch_all_rsssf  # noqa: E402
 
 
 def match_key(row) -> str:
@@ -138,8 +138,12 @@ def feature_engineer(df: pd.DataFrame) -> pd.DataFrame:
 def main():
     ap = argparse.ArgumentParser(description="Build master_africa_football.parquet")
     ap.add_argument("--openfootball-root", type=Path, default=ROOT / "data" / "africa_raw" / "openfootball_world")
-    ap.add_argument("--fetch-rsssf", action="store_true", help="Also scrape RSSSF first-level pages")
-    ap.add_argument("--rsssf-max-pages", type=int, default=60)
+    ap.add_argument("--fetch-rsssf", action="store_true", help="Scrape RSSSF Africa (all levels + year probe)")
+    ap.add_argument("--rsssf-max-pages", type=int, default=None, help="Cap pages (default: all discovered)")
+    ap.add_argument("--rsssf-year-start", type=int, default=2008)
+    ap.add_argument("--rsssf-year-end", type=int, default=2026)
+    ap.add_argument("--rsssf-include-women", action="store_true")
+    ap.add_argument("--rsssf-delay", type=float, default=0.35)
     ap.add_argument("--out", type=Path, default=ROOT / "master_africa_football.parquet")
     ap.add_argument("--csv-out", type=Path, default=None, help="Optional CSV export")
     args = ap.parse_args()
@@ -159,9 +163,16 @@ def main():
         print("  git clone --depth 1 https://github.com/openfootball/world.git data/africa_raw/openfootball_world")
 
     if args.fetch_rsssf:
-        print("[rsssf] fetching priority first-level pages…")
+        print("[rsssf] fetching ALL levels (index + year probe)…")
         try:
-            rrows = fetch_rsssf_priority(max_pages=args.rsssf_max_pages)
+            rrows = fetch_all_rsssf(
+                include_women=args.rsssf_include_women,
+                probe_years=True,
+                year_start=args.rsssf_year_start,
+                year_end=args.rsssf_year_end,
+                delay=args.rsssf_delay,
+                max_pages=args.rsssf_max_pages,
+            )
             print(f"[rsssf] {len(rrows)} raw matches")
             if rrows:
                 frames.append(pd.DataFrame(rrows))
