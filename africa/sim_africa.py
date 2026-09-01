@@ -149,12 +149,14 @@ def _predict_paths(paths: dict, X: np.ndarray, target: str) -> Optional[np.ndarr
         try:
             import lightgbm as lgb
             m = lgb.Booster(model_file=paths["lightgbm"])
-            p = np.asarray(m.predict(X))
-            if np.ndim(p) == 1 or (hasattr(p, "shape") and p.shape[-1] == 1):
-                p = np.asarray(p).ravel()
-                preds.append(np.array([1 - p[0], p[0]]))
+            p = np.asarray(m.predict(X)).ravel()
+            if target == "ft_result" and p.size >= 3:
+                preds.append(p[:3])
+            elif p.size == 1:
+                preds.append(np.array([1 - float(p[0]), float(p[0])]))
             else:
-                preds.append(np.asarray(p).reshape(-1)[:3] if target == "ft_result" else np.asarray(p).ravel())
+                preds.append(p)
+
         except Exception as e:
             print(f"  [warn] lgbm: {e}")
     if "catboost" in paths and Path(paths["catboost"]).exists():
