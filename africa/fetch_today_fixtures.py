@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
-"""
-Fetch TODAY's African fixtures only — API-Football (api-sports v3).
+"""Fetch TODAY's African fixtures with provider failover.
 
-Quota-safe design:
-  • Exactly ONE fixtures request per configured fixture key: GET /fixtures?date=YYYY-MM-DD
-  • Filter to African countries client-side
-  • No per-league loops and no historical-season requests
+Primary: API-Football (backup fixture key first, then primary fixture key).
+Fallback: Live-score API using LIVE_SCORE_API_KEY/SECRET.
+Standings credentials are never used for fixtures.
 
-Authentication/access failures are fatal. The caller must never interpret an
-API failure as an empty fixture board, because doing so can publish stale sims.
+Authentication/access failures do not become an empty fixture board. If the
+primary provider fails, the fallback is attempted; if every provider fails,
+this command returns non-zero and writes an explicit ok=false document so the
+pipeline cannot publish stale Africa simulations.
 """
 from __future__ import annotations
 
@@ -38,7 +38,7 @@ AFRICA = {
 
 
 def _keys() -> list[str]:
-    """Return fixture credentials in backup-first order; standings key is never used."""
+    """Return API-Football fixture credentials in backup-first order; standings key is never used."""
     backup = os.environ.get("API_FOOTBALL_BACKUP_KEY", "").strip()
     primary = os.environ.get("API_FOOTBALL_KEY", "").strip()
     out = []
@@ -56,7 +56,7 @@ def _keys() -> list[str]:
 
 
 def fetch_odds_for_fixtures(key: str, fixture_ids: list, delay: float = 0.35) -> dict:
-    """Best-effort odds pull for today's board; odds are optional."""
+    """Best-effort API-Football odds pull for today's board; odds are optional."""
     import time
     out = {}
     ids = list(dict.fromkeys(fixture_ids))[:15]
@@ -129,6 +129,23 @@ def _fetch_fixture_payload(day: str, keys: list[str]) -> tuple[dict, str]:
     )
 
 
+def _fetch_live_score_fallback(day: str) -> tuple[list[dict], dict]:
+    """Fetch today's African fixtures from Live-score API as provider fallback."""
+    sys.path.insert(0, str(Path(__file__).resolve().parent))
+    from live_score_api_fixtures import fetch_africa_fixtures
+    return fetch_africa_fixtures(day)
+
+
+def _write_csv(rows: list[dict], csv_path: Path) -> None:
+    if rows:
+        with open(csv_path, "w", newline="", encoding="utf-8") as f:
+            w = csv.DictWriter(f, fieldnames=list(rows[0].keys()))
+            w.writeheader()
+            w.writerows(rows)
+    else:
+        csv_path.write_text("", encoding="utf-8")
+
+
 def main() -> int:
     sys.path.insert(0, str(ROOT))
     try:
@@ -136,107 +153,123 @@ def main() -> int:
     except Exception:
         pass
 
-    keys = _keys()
-    if not keys:
-        print("ERROR: set API_FOOTBALL_BACKUP_KEY and/or API_FOOTBALL_KEY", file=sys.stderr)
-        return 2
-
     day = os.environ.get("FIXTURE_DATE", "").strip() or datetime.now(timezone.utc).strftime("%Y-%m-%d")
     out = Path(os.environ.get(
         "AFRICA_FIXTURES_OUT",
         str(ROOT / "daily_football_data" / "africa_fixtures_today.json"),
     ))
     out.parent.mkdir(parents=True, exist_ok=True)
+    csv_path = out.with_suffix(".csv")
 
+    # Provider 1: API-Football.
+    keys = _keys()
+    if keys:
+        try:
+            payload, key = _fetch_fixture_payload(day, keys)
+            africa_rows = []
+            for x in payload.get("response") or []:
+                country = ((x.get("league") or {}).get("country") or "").strip()
+                if country not in AFRICA:
+                    continue
+                fx = x.get("fixture") or {}
+                lg = x.get("league") or {}
+                teams = x.get("teams") or {}
+                goals = x.get("goals") or {}
+                score = x.get("score") or {}
+                africa_rows.append({
+                    "fixture_id": fx.get("id"),
+                    "date": (fx.get("date") or "")[:19],
+                    "timestamp": fx.get("timestamp"),
+                    "status": (fx.get("status") or {}).get("short"),
+                    "elapsed": (fx.get("status") or {}).get("elapsed"),
+                    "country": country,
+                    "league_id": lg.get("id"),
+                    "league": lg.get("name"),
+                    "season": lg.get("season"),
+                    "round": lg.get("round"),
+                    "home": (teams.get("home") or {}).get("name"),
+                    "away": (teams.get("away") or {}).get("name"),
+                    "home_id": (teams.get("home") or {}).get("id"),
+                    "away_id": (teams.get("away") or {}).get("id"),
+                    "goals_home": goals.get("home"),
+                    "goals_away": goals.get("away"),
+                    "ht_home": (score.get("halftime") or {}).get("home"),
+                    "ht_away": (score.get("halftime") or {}).get("away"),
+                    "source": "api-football",
+                })
+
+            if os.environ.get("AFRICA_FETCH_ODDS", "").strip().lower() in ("1", "true", "yes") and africa_rows:
+                ids = [r["fixture_id"] for r in africa_rows if r.get("fixture_id")]
+                print(f"[api-football] odds pull for {min(len(ids), 15)} fixtures (quota-sensitive)")
+                odds_map = fetch_odds_for_fixtures(key, ids)
+                for r in africa_rows:
+                    o = odds_map.get(int(r["fixture_id"])) if r.get("fixture_id") else None
+                    r["odds_h"] = o.get("H") if o else None
+                    r["odds_d"] = o.get("D") if o else None
+                    r["odds_a"] = o.get("A") if o else None
+                    r["odds_book"] = o.get("bookmaker") if o else None
+            else:
+                for r in africa_rows:
+                    r.update({"odds_h": None, "odds_d": None, "odds_a": None})
+
+            doc = {
+                "fetched_at": datetime.now(timezone.utc).isoformat(),
+                "date": day,
+                "provider": "api-football",
+                "total_world": payload.get("results"),
+                "total_africa": len(africa_rows),
+                "fixtures": africa_rows,
+                "ok": True,
+            }
+            out.write_text(json.dumps(doc, indent=2, ensure_ascii=False), encoding="utf-8")
+            _write_csv(africa_rows, csv_path)
+            print(f"[ok] Africa fixtures {day}: {len(africa_rows)} (world total {payload.get('results')})")
+            for row in africa_rows:
+                print(f"  {row['date']} | {row['country']} {row['league']} | {row['home']} vs {row['away']} | {row['status']}")
+            print(f"[ok] provider=api-football wrote {out}")
+            return 0
+        except RuntimeError as exc:
+            print(f"[warn] API-Football Africa provider unavailable: {exc}", file=sys.stderr, flush=True)
+    else:
+        print("[warn] API-Football fixture credentials unavailable; trying Live-score API", file=sys.stderr, flush=True)
+
+    # Provider 2: Live-score API. Credentials are separate from API-Football and
+    # are never treated as standings credentials.
     try:
-        payload, key = _fetch_fixture_payload(day, keys)
-    except RuntimeError as exc:
-        print(f"FATAL: {exc}", file=sys.stderr)
+        africa_rows, meta = _fetch_live_score_fallback(day)
         doc = {
             "fetched_at": datetime.now(timezone.utc).isoformat(),
             "date": day,
+            "provider": "live-score-api",
+            "total_world": meta.get("raw_fixtures"),
+            "total_africa": len(africa_rows),
+            "fixtures": africa_rows,
+            "ok": True,
+            "fallback": True,
+        }
+        out.write_text(json.dumps(doc, indent=2, ensure_ascii=False), encoding="utf-8")
+        _write_csv(africa_rows, csv_path)
+        print(f"[ok] Africa fixtures {day}: {len(africa_rows)} via Live-score API fallback")
+        for row in africa_rows:
+            print(f"  {row['date']} | {row['country']} {row['league']} | {row['home']} vs {row['away']} | {row['status']}")
+        print(f"[ok] provider=live-score-api wrote {out}")
+        return 0
+    except Exception as exc:
+        error = f"All African fixture providers failed. API-Football unavailable and Live-score API fallback failed: {exc}"
+        print(f"FATAL: {error}", file=sys.stderr)
+        doc = {
+            "fetched_at": datetime.now(timezone.utc).isoformat(),
+            "date": day,
+            "provider": None,
             "total_world": None,
             "total_africa": None,
             "fixtures": [],
-            "api_errors": [str(exc)],
+            "api_errors": [error],
             "ok": False,
         }
         out.write_text(json.dumps(doc, indent=2, ensure_ascii=False), encoding="utf-8")
-        out.with_suffix(".csv").write_text("", encoding="utf-8")
-        return 1
-
-    africa_rows = []
-    for x in payload.get("response") or []:
-        country = ((x.get("league") or {}).get("country") or "").strip()
-        if country not in AFRICA:
-            continue
-        fx = x.get("fixture") or {}
-        lg = x.get("league") or {}
-        teams = x.get("teams") or {}
-        goals = x.get("goals") or {}
-        score = x.get("score") or {}
-        africa_rows.append({
-            "fixture_id": fx.get("id"),
-            "date": (fx.get("date") or "")[:19],
-            "timestamp": fx.get("timestamp"),
-            "status": (fx.get("status") or {}).get("short"),
-            "elapsed": (fx.get("status") or {}).get("elapsed"),
-            "country": country,
-            "league_id": lg.get("id"),
-            "league": lg.get("name"),
-            "season": lg.get("season"),
-            "round": lg.get("round"),
-            "home": (teams.get("home") or {}).get("name"),
-            "away": (teams.get("away") or {}).get("name"),
-            "home_id": (teams.get("home") or {}).get("id"),
-            "away_id": (teams.get("away") or {}).get("id"),
-            "goals_home": goals.get("home"),
-            "goals_away": goals.get("away"),
-            "ht_home": (score.get("halftime") or {}).get("home"),
-            "ht_away": (score.get("halftime") or {}).get("away"),
-            "source": "api-football",
-        })
-
-    if os.environ.get("AFRICA_FETCH_ODDS", "").strip().lower() in ("1", "true", "yes") and africa_rows:
-        ids = [r["fixture_id"] for r in africa_rows if r.get("fixture_id")]
-        print(f"[api-football] odds pull for {min(len(ids), 15)} fixtures (quota-sensitive)")
-        odds_map = fetch_odds_for_fixtures(key, ids)
-        for r in africa_rows:
-            o = odds_map.get(int(r["fixture_id"])) if r.get("fixture_id") else None
-            r["odds_h"] = o.get("H") if o else None
-            r["odds_d"] = o.get("D") if o else None
-            r["odds_a"] = o.get("A") if o else None
-            r["odds_book"] = o.get("bookmaker") if o else None
-        print(f"[api-football] odds found for {sum(1 for r in africa_rows if r.get('odds_h'))}/{len(africa_rows)}")
-    else:
-        for r in africa_rows:
-            r.update({"odds_h": None, "odds_d": None, "odds_a": None})
-
-    doc = {
-        "fetched_at": datetime.now(timezone.utc).isoformat(),
-        "date": day,
-        "total_world": payload.get("results"),
-        "total_africa": len(africa_rows),
-        "fixtures": africa_rows,
-        "ok": True,
-    }
-    out.write_text(json.dumps(doc, indent=2, ensure_ascii=False), encoding="utf-8")
-
-    csv_path = out.with_suffix(".csv")
-    if africa_rows:
-        with open(csv_path, "w", newline="", encoding="utf-8") as f:
-            w = csv.DictWriter(f, fieldnames=list(africa_rows[0].keys()))
-            w.writeheader()
-            w.writerows(africa_rows)
-    else:
         csv_path.write_text("", encoding="utf-8")
-
-    print(f"[ok] Africa fixtures {day}: {len(africa_rows)} (world total {payload.get('results')})")
-    for row in africa_rows:
-        print(f"  {row['date']} | {row['country']} {row['league']} | {row['home']} vs {row['away']} | {row['status']}")
-    print(f"[ok] wrote {out}")
-    print(f"[ok] wrote {csv_path}")
-    return 0
+        return 1
 
 
 if __name__ == "__main__":
