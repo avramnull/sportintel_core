@@ -1,0 +1,81 @@
+name: One-time fix — initialize simulator backend caches
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/fix_sim_caches.yml"
+  workflow_dispatch:
+
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Patch simulator cache declarations
+        shell: python
+        run: |
+          from pathlib import Path
+
+          p = Path("sim.py")
+          text = p.read_text(encoding="utf-8")
+
+          required = '''_PREPROC_CACHE: Dict[Any, Any] = {}
+_XGB_CACHE: Dict[str, Any] = {}
+_LGBM_CACHE: Dict[str, Any] = {}
+_CAT_CACHE: Dict[str, Any] = {}
+_SK_CACHE: Dict[str, Any] = {}
+_TORCH_CACHE: Dict[str, Any] = {}
+_TF_CACHE: Dict[str, Any] = {}
+'''
+
+          names = (
+              "_XGB_CACHE", "_LGBM_CACHE", "_CAT_CACHE",
+              "_SK_CACHE", "_TORCH_CACHE", "_TF_CACHE",
+          )
+
+          missing = [name for name in names if name not in text]
+          if missing:
+              marker = '_PREPROC_CACHE: Dict[Any, Any] = {}'
+              if marker not in text:
+                  raise SystemExit("sim.py is missing _PREPROC_CACHE marker; refusing an unsafe blind edit")
+              text = text.replace(marker, required.rstrip(), 1)
+              p.write_text(text, encoding="utf-8")
+              print("Initialized simulator caches:", ", ".join(missing))
+          else:
+              print("All simulator backend caches already defined")
+
+      - name: Validate simulator module
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m py_compile sim.py
+          python - <<'PY'
+          import sim
+          caches = ["_XGB_CACHE", "_LGBM_CACHE", "_CAT_CACHE", "_SK_CACHE", "_TORCH_CACHE", "_TF_CACHE"]
+          for name in caches:
+              value = getattr(sim, name, None)
+              assert isinstance(value, dict), f"{name} is not a dict"
+          print("Simulator cache validation: OK")
+          PY
+
+      - name: Commit fix and remove one-time workflow
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add sim.py
+          git rm .github/workflows/fix_sim_caches.yml
+          if git diff --cached --quiet; then
+            echo "No changes required"
+            exit 0
+          fi
+          git commit -m "Fix undefined simulator backend caches"
+          git push origin HEAD:main
