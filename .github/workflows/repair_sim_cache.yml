@@ -55,6 +55,7 @@ jobs:
           PY
 
           python -m py_compile sim.py
+          rm -rf __pycache__ tools/__pycache__
           echo "Simulator cache source validation: OK"
 
       - name: Commit repair and remove one-time workflow
@@ -72,5 +73,6 @@ jobs:
           fi
           git commit -m "Fix simulator backend cache definitions"
           git fetch origin main
-          git rebase origin/main
+          git reset --soft origin/main
+          git commit -m "Fix simulator backend cache definitions"
           git push origin HEAD:main
