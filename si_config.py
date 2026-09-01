@@ -31,7 +31,6 @@ def _load_dotenv(path: Optional[Path] = None) -> None:
             if k and k not in os.environ:
                 os.environ[k] = v
     except OSError:
-        # Local .env is convenience-only; configuration from the process wins.
         pass
 
 
@@ -47,8 +46,7 @@ def _env(name: str, default: str = "") -> str:
 
 
 def _env_bool(name: str, default: bool = False) -> bool:
-    v = _env(name, "1" if default else "0").lower()
-    return v in ("1", "true", "yes", "on")
+    return _env(name, "1" if default else "0").lower() in ("1", "true", "yes", "on")
 
 
 def _env_int(name: str, default: int) -> int:
@@ -70,34 +68,30 @@ def infer_season(today: Optional[date] = None) -> Tuple[str, str]:
     d = today or datetime.now(timezone.utc).date()
     start_year = d.year if d.month >= 7 else d.year - 1
     end_year = start_year + 1
-    code = f"{start_year % 100:02d}{end_year % 100:02d}"
-    label = f"{start_year}/{end_year}"
-    return code, label
+    return f"{start_year % 100:02d}{end_year % 100:02d}", f"{start_year}/{end_year}"
 
 
 def season_code() -> str:
     explicit = _env("FOOTBALL_SEASON")
     if explicit:
         return explicit
-    code, _ = infer_season()
-    return code
+    return infer_season()[0]
 
 
 def season_label() -> str:
     explicit = _env("FOOTBALL_SEASON_LABEL")
     if explicit:
         return explicit
-    _, label = infer_season()
-    return label
+    return infer_season()[1]
 
 
-# Production defaults. Zero is reserved for explicit "unlimited" behaviour;
-# daily CI uses a finite cap to prevent an unexpectedly huge training run.
-MAX_TRAIN_TEAMS = _env_int("MAX_TRAIN_TEAMS", 12)
+# Training is intentionally fixture-driven: 0 means no artificial team cap.
+# The pipeline decides how many teams actually need training from today's fixtures.
+MAX_TRAIN_TEAMS = _env_int("MAX_TRAIN_TEAMS", 0)
 MIN_TEAM_MATCHES = _env_int("MIN_TEAM_MATCHES", 25)
 N_SIMULATIONS = _env_int("N_SIMULATIONS", 3000)
 ODDS_BLEND = _env_float("ODDS_BLEND", 0.30)
-MAX_FIXTURES = _env_int("MAX_FIXTURES", 0)  # 0 = all
+MAX_FIXTURES = _env_int("MAX_FIXTURES", 0)
 TODAY_ONLY = _env_bool("TODAY_ONLY", True)
 DAILY_LIGHT = _env_bool("DAILY_LIGHT", True)
 SKIP_TRAIN = _env_bool("SKIP_TRAIN", False)
@@ -106,17 +100,10 @@ SPORTINTEL_PUSH = _env_bool("SPORTINTEL_PUSH", False)
 TRAIN_WORKERS = _env_int("TRAIN_WORKERS", 3)
 
 SPORTINTEL_REPO = _env("SPORTINTEL_REPO", "avramnull/sportintel")
-GITHUB_TOKEN = (
-    _env("GITHUB_TOKEN")
-    or _env("GH_TOKEN")
-    or _env("SPORTINTEL_TOKEN")
-    or _env("SPORTINTEL_PUSH_TOKEN")
-)
+GITHUB_TOKEN = _env("GITHUB_TOKEN") or _env("GH_TOKEN") or _env("SPORTINTEL_TOKEN") or _env("SPORTINTEL_PUSH_TOKEN")
 
-# Logging
 LOG_LEVEL = _env("LOG_LEVEL", "INFO").upper()
 LOG_JSON = _env_bool("LOG_JSON", False)
 
-# API-Football (fixtures + optional standings).
 API_FOOTBALL_KEY = _env("API_FOOTBALL_KEY")
 API_FOOTBALL_STANDINGS_KEY = _env("API_FOOTBALL_STANDINGS_KEY")
