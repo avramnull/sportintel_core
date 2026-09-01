@@ -3,7 +3,7 @@
 Fetch TODAY's African fixtures only — API-Football (api-sports v3).
 
 Quota-safe design:
-  • Exactly ONE fixtures request per key: GET /fixtures?date=YYYY-MM-DD
+  • Exactly ONE fixtures request per configured fixture key: GET /fixtures?date=YYYY-MM-DD
   • Filter to African countries client-side
   • No per-league loops and no historical-season requests
 
@@ -38,15 +38,21 @@ AFRICA = {
 
 
 def _keys() -> list[str]:
+    """Return fixture credentials in backup-first order; standings key is never used."""
+    backup = os.environ.get("API_FOOTBALL_BACKUP_KEY", "").strip()
+    primary = os.environ.get("API_FOOTBALL_KEY", "").strip()
+    out = []
+    for key in (backup, primary):
+        if key and key not in out:
+            out.append(key)
+    if out:
+        return out
     try:
         sys.path.insert(0, str(ROOT))
         from api_football_client import key_pool
         return key_pool()
     except Exception:
-        return list(dict.fromkeys(k for k in (
-            os.environ.get("API_FOOTBALL_KEY", "").strip(),
-            os.environ.get("API_FOOTBALL_STANDINGS_KEY", "").strip(),
-        ) if k))
+        return []
 
 
 def fetch_odds_for_fixtures(key: str, fixture_ids: list, delay: float = 0.35) -> dict:
@@ -93,12 +99,12 @@ def fetch_odds_for_fixtures(key: str, fixture_ids: list, delay: float = 0.35) ->
 
 def _fetch_fixture_payload(day: str, keys: list[str]) -> tuple[dict, str]:
     if not keys:
-        raise RuntimeError("No API-Football key configured")
+        raise RuntimeError("No API-Football fixture key configured")
 
     last_error = "unknown API error"
     for idx, key in enumerate(keys, start=1):
         try:
-            print(f"[api-football] fixtures?date={day} (key {idx}/{len(keys)})", flush=True)
+            print(f"[api-football] fixtures?date={day} (fixture key {idx}/{len(keys)})", flush=True)
             r = requests.get(
                 f"{API}/fixtures",
                 params={"date": day},
@@ -110,15 +116,15 @@ def _fetch_fixture_payload(day: str, keys: list[str]) -> tuple[dict, str]:
             errs = payload.get("errors")
             if errs:
                 last_error = str(errs)
-                print(f"API errors (key {idx}): {errs}", file=sys.stderr, flush=True)
+                print(f"API errors (fixture key {idx}): {errs}", file=sys.stderr, flush=True)
                 continue
             return payload, key
         except (requests.RequestException, ValueError) as exc:
             last_error = str(exc)
-            print(f"API request failed (key {idx}): {exc}", file=sys.stderr, flush=True)
+            print(f"API request failed (fixture key {idx}): {exc}", file=sys.stderr, flush=True)
 
     raise RuntimeError(
-        "API-Football fixtures unavailable after trying all configured keys: "
+        "API-Football fixtures unavailable after trying all configured fixture keys: "
         + last_error
     )
 
@@ -132,7 +138,7 @@ def main() -> int:
 
     keys = _keys()
     if not keys:
-        print("ERROR: set API_FOOTBALL_KEY and/or API_FOOTBALL_STANDINGS_KEY", file=sys.stderr)
+        print("ERROR: set API_FOOTBALL_BACKUP_KEY and/or API_FOOTBALL_KEY", file=sys.stderr)
         return 2
 
     day = os.environ.get("FIXTURE_DATE", "").strip() or datetime.now(timezone.utc).strftime("%Y-%m-%d")
@@ -146,7 +152,6 @@ def main() -> int:
         payload, key = _fetch_fixture_payload(day, keys)
     except RuntimeError as exc:
         print(f"FATAL: {exc}", file=sys.stderr)
-        # Write explicit failure state for diagnostics, never an empty-success board.
         doc = {
             "fetched_at": datetime.now(timezone.utc).isoformat(),
             "date": day,
