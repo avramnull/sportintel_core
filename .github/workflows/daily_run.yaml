@@ -118,7 +118,7 @@ jobs:
           AFRICA_SEGMENT: "1"
           API_FOOTBALL_BACKUP_KEY: ${{ secrets.API_FOOTBALL_BACKUP_KEY }}
           API_FOOTBALL_KEY: ${{ secrets.API_FOOTBALL_BACKUP_KEY || secrets.API_FOOTBALL_KEY }}
-          # Standings API is fully disabled.
+          # Standings API remains fully disabled; fixture authentication is separate.
           API_FOOTBALL_STANDINGS_KEY: ""
           SKIP_AFRICA_TRAIN: "0"
           SKIP_AFRICA_SIM: "0"
