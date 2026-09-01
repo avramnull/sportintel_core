@@ -5,6 +5,11 @@ concurrency:
   cancel-in-progress: true
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/daily_run.yaml"
+      - "requirements.txt"
   schedule:
     - cron: "0 0 * * *"
   workflow_dispatch:
@@ -54,16 +59,16 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-          # Do not restore a multi-GB pip cache on this data/model-heavy job.
-          # Fresh dependency resolution is safer and leaves disk for training.
+          # Deliberately no pip cache: the old cache restored ~1.5 GB and
+          # consumed disk needed by the model stack and training artifacts.
 
       - name: Install dependencies
         shell: bash
         run: |
           set -euo pipefail
           python -m pip install --upgrade pip
-          # CPU-only wheels: this runner has no CUDA workload. Installing the
-          # generic GPU builds caused multi-GB CUDA/NCCL downloads and disk failures.
+          # CPU-only wheels: this runner has no CUDA workload. Generic GPU
+          # wheels pulled multi-GB CUDA/NCCL dependencies and exhausted disk.
           python -m pip install --no-cache-dir --index-url https://download.pytorch.org/whl/cpu "torch>=2.8"
           python -m pip install --no-cache-dir "xgboost-cpu>=3.2"
           python -m pip install --no-cache-dir -r requirements.txt
