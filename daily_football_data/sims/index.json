@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-01T04:20:33.817432+00:00",
+  "generated_at": "2026-09-01T07:16:02.535186+00:00",
   "feed_date": "2026-09-01",
   "source": "https://www.football-data.co.uk/fixtures.csv",
   "n_ok": 1,
@@ -84,7 +84,7 @@
       ],
       "goal_line_25_over": 0.492625,
       "ft_vs_model_l1": 0.014659963436928714,
-      "generated_at": "2026-09-01T04:20:33.816451Z"
+      "generated_at": "2026-09-01T07:16:02.534034Z"
     }
   ]
 }
