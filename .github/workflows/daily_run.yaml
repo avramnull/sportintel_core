@@ -6,8 +6,8 @@ concurrency:
 
 on:
   schedule:
-    # ~19:00 WAT (18:00 UTC) — after most European kickoffs / results settle
-    - cron: "0 18 * * *"
+    # 01:00 WAT = 00:00 UTC (West Africa Time = UTC+1)
+    - cron: "0 0 * * *"
   workflow_dispatch:
     inputs:
       skip_train:
@@ -15,14 +15,15 @@ on:
         type: boolean
         default: false
       max_train_teams:
-        description: "Override MAX_TRAIN_TEAMS (0 = skip train focus)"
+        description: "MAX_TRAIN_TEAMS (0 = all teams with fixtures today — default)"
         type: string
-        default: "12"
+        default: "0"
 
 jobs:
   daily:
     runs-on: ubuntu-latest
-    timeout-minutes: 360
+    # All-fixture training can be long on busy match days
+    timeout-minutes: 480
     permissions:
       contents: write
     steps:
@@ -70,8 +71,8 @@ jobs:
 
       - name: Run full daily pipeline
         env:
-          # Season auto-inferred if unset; override only when needed
-          MAX_TRAIN_TEAMS: ${{ github.event.inputs.max_train_teams || '12' }}
+          # 0 = train every unique team with fixtures that day (scan_fixture_teams)
+          MAX_TRAIN_TEAMS: ${{ github.event.inputs.max_train_teams || '0' }}
           MIN_TEAM_MATCHES: "25"
           TODAY_ONLY: "1"
           DAILY_LIGHT: "1"

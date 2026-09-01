@@ -74,7 +74,7 @@ def season_label() -> str:
 
 
 # Pipeline caps / behaviour
-MAX_TRAIN_TEAMS = _env_int("MAX_TRAIN_TEAMS", 12)
+MAX_TRAIN_TEAMS = _env_int("MAX_TRAIN_TEAMS", 0)
 MIN_TEAM_MATCHES = _env_int("MIN_TEAM_MATCHES", 25)
 N_SIMULATIONS = _env_int("N_SIMULATIONS", 3000)
 ODDS_BLEND = _env_float("ODDS_BLEND", 0.30)
