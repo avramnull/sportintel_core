@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-01T02:49:22.569439+00:00",
+  "generated_at": "2026-09-01T04:18:03.809270+00:00",
   "max_train": 2,
   "train_all_fixtures": true,
   "min_matches": 25,
@@ -11,8 +11,8 @@
     "Hartlepool"
   ],
   "scores": {
-    "Halifax": 45.0,
-    "Hartlepool": 45.0
+    "Halifax": 65.0,
+    "Hartlepool": 65.0
   },
   "note": "Pass to train.py via FOCUS_TEAMS env (comma-separated)"
 }

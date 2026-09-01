@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-09-01T02:53:24.141428+00:00",
+  "generated_at": "2026-09-01T04:20:33.817432+00:00",
   "feed_date": "2026-09-01",
   "source": "https://www.football-data.co.uk/fixtures.csv",
   "n_ok": 1,
   "n_fail": 0,
-  "n_simulations_each": 3000,
+  "n_simulations_each": 8000,
   "sims": [
     {
       "id": "halifax__hartlepool__2026-09-01",
@@ -20,71 +20,71 @@
       "odds_d": 3.4,
       "odds_a": 2.55,
       "models": "Halifax (home) + Hartlepool (away)",
-      "ft_h": 40.5,
-      "ft_d": 25.9,
-      "ft_a": 33.6,
-      "over25": 50.4,
-      "btts": 49.5,
-      "cs_top": "1-0 (375)",
-      "cs_second": "2-1 (338)",
-      "xg_h": 1.2356666666666667,
-      "xg_a": 1.225,
+      "ft_h": 34.3,
+      "ft_d": 32.6,
+      "ft_a": 33.1,
+      "over25": 49.3,
+      "btts": 50.0,
+      "cs_top": "0-0 (1007)",
+      "cs_second": "1-0 (896)",
+      "xg_h": 1.15025,
+      "xg_a": 1.257875,
       "locked_status": "SECURED LOCK",
-      "locked_section": "FT DC",
-      "locked_selection": "12",
-      "locked_model": 73.5,
-      "locked_sim": 74.1,
+      "locked_section": "FT O/U+",
+      "locked_selection": "Over 1.5",
+      "locked_model": 68.7,
+      "locked_sim": 68.7,
       "locked_verdict": "HARD YES",
-      "xg_total": 2.4606666666666666,
-      "lambda_h": 0.863604420297315,
-      "lambda_a": 1.3116829313850997,
-      "cs_home": 0.31566666666666665,
-      "cs_away": 0.28633333333333333,
+      "xg_total": 2.408125,
+      "lambda_h": 0.8189369652650822,
+      "lambda_a": 1.3310630347349175,
+      "cs_home": 0.310875,
+      "cs_away": 0.314875,
       "top8_ft": [
         {
-          "score": "1-0",
-          "count": 375,
-          "pct": 12.5
-        },
-        {
-          "score": "2-1",
-          "count": 338,
-          "pct": 11.3
-        },
-        {
           "score": "0-0",
-          "count": 290,
-          "pct": 9.7
+          "count": 1007,
+          "pct": 12.6
+        },
+        {
+          "score": "1-0",
+          "count": 896,
+          "pct": 11.2
         },
         {
           "score": "1-1",
-          "count": 290,
-          "pct": 9.7
+          "count": 886,
+          "pct": 11.1
         },
         {
-          "score": "0-1",
-          "count": 249,
-          "pct": 8.3
+          "score": "2-1",
+          "count": 797,
+          "pct": 10.0
         },
         {
           "score": "1-2",
-          "count": 246,
-          "pct": 8.2
+          "count": 633,
+          "pct": 7.9
         },
         {
           "score": "2-2",
-          "count": 176,
-          "pct": 5.9
+          "count": 627,
+          "pct": 7.8
         },
         {
-          "score": "2-0",
-          "count": 162,
-          "pct": 5.4
+          "score": "0-1",
+          "count": 598,
+          "pct": 7.5
+        },
+        {
+          "score": "0-3",
+          "count": 403,
+          "pct": 5.0
         }
       ],
-      "goal_line_25_over": 0.5036666666666667,
-      "ft_vs_model_l1": 0.014075039124216482,
-      "generated_at": "2026-09-01T02:53:24.140393Z"
+      "goal_line_25_over": 0.492625,
+      "ft_vs_model_l1": 0.014659963436928714,
+      "generated_at": "2026-09-01T04:20:33.816451Z"
     }
   ]
 }
