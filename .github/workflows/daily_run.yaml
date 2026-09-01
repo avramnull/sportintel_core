@@ -6,7 +6,6 @@ concurrency:
 
 on:
   schedule:
-    # 01:00 WAT = 00:00 UTC (West Africa Time = UTC+1)
     - cron: "0 0 * * *"
   workflow_dispatch:
     inputs:
@@ -15,64 +14,61 @@ on:
         type: boolean
         default: false
       max_train_teams:
-        description: "MAX_TRAIN_TEAMS (0 = all teams with fixtures today — default)"
+        description: "MAX_TRAIN_TEAMS (0 = unlimited; default 12)"
         type: string
-        default: "0"
+        default: "12"
 
 jobs:
   daily:
     runs-on: ubuntu-latest
-    # All-fixture training can be long on busy match days
     timeout-minutes: 480
     permissions:
       contents: write
+
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
         with:
           lfs: true
           fetch-depth: 0
-          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Ensure Git LFS files
+        shell: bash
         run: |
           set -euo pipefail
           git lfs install
           git lfs pull
-          ls -lh master_football_data.parquet || true
+          test -f master_football_data.parquet
           if head -1 master_football_data.parquet 2>/dev/null | grep -q "git-lfs"; then
-            echo "ERROR: parquet still LFS pointer — cannot train/sim"
+            echo "ERROR: parquet is still an LFS pointer"
             exit 1
           fi
-          SIZE=$(stat -c%s master_football_data.parquet 2>/dev/null || echo 0)
-          if [ "$SIZE" -lt 2000000 ]; then
-            echo "ERROR: parquet too small (${SIZE} bytes) — LFS pull likely failed"
+          size=$(stat -c%s master_football_data.parquet)
+          if [ "$size" -lt 2000000 ]; then
+            echo "ERROR: parquet too small (${size} bytes)"
             exit 1
           fi
-          echo "Parquet OK: ${SIZE} bytes"
+          echo "Parquet OK: ${size} bytes"
 
-      - uses: actions/setup-python@v5
+      - name: Set up Python
+        uses: actions/setup-python@v5
         with:
           python-version: "3.11"
           cache: pip
 
-      - name: Install core dependencies
+      - name: Install dependencies
+        shell: bash
         run: |
           set -euo pipefail
           python -m pip install --upgrade pip
-          pip install -r requirements.txt
-          # Boosters — required for production models; fail job if missing
-          pip install "xgboost>=2.0" "lightgbm>=4.0" "catboost>=1.2"
-          # Optional neural nets (best-effort; train continues without them)
-          pip install torch --index-url https://download.pytorch.org/whl/cpu || echo "WARN: torch unavailable"
-          pip install "tensorflow>=2.15" || echo "WARN: tensorflow unavailable"
+          python -m pip install -r requirements.txt
 
-      - name: Health check (imports + parquet schema)
+      - name: Health check
         run: python -m tools.smoke_test --quick
 
       - name: Run full daily pipeline
         env:
-          # 0 = train every unique team with fixtures that day (scan_fixture_teams)
-          MAX_TRAIN_TEAMS: ${{ github.event.inputs.max_train_teams || '0' }}
+          MAX_TRAIN_TEAMS: ${{ github.event.inputs.max_train_teams || '12' }}
           MIN_TEAM_MATCHES: "25"
           TODAY_ONLY: "1"
           DAILY_LIGHT: "1"
@@ -80,32 +76,25 @@ jobs:
           USE_TENSORFLOW: "1"
           USE_ADABOOST: "0"
           USE_RANDOM_FOREST: "1"
-          MAX_BOOST_ROUNDS: "1400"
-          NN_EPOCHS: "60"
+          MAX_BOOST_ROUNDS: "900"
+          NN_EPOCHS: "45"
           CAPACITY_STEPS: "2"
           DAILY_TARGETS: "ft_result,over25,btts,ht_result"
           TRAIN_WORKERS: "3"
           TRAIN_DIVS: ""
-          N_SIMULATIONS: "8000"
-          ODDS_BLEND: "0.22"
+          N_SIMULATIONS: "3000"
+          ODDS_BLEND: "0.30"
           SKIP_TRAIN: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.skip_train == 'true' && '1' || '0' }}
           SPORTINTEL_PUSH: "1"
-          # Africa board: 1 API-Football request/day (store key as repo secret)
           AFRICA_SEGMENT: "1"
           API_FOOTBALL_KEY: ${{ secrets.API_FOOTBALL_KEY }}
-          # 2nd key for league standings only (falls back to API_FOOTBALL_KEY if unset)
           API_FOOTBALL_STANDINGS_KEY: ${{ secrets.API_FOOTBALL_STANDINGS_KEY }}
           SKIP_AFRICA_TRAIN: "0"
           SKIP_AFRICA_SIM: "0"
-          # Odds disabled — only two live API uses: Africa fixtures (1x) + standings (1x per unique league)
           AFRICA_FETCH_ODDS: "0"
           AFRICA_PRIOR_SHRINK: "0.22"
-          # Live standings: ONE full table per unique league_id (never per team).
-          # 0 = no network cap — still only as many calls as unique leagues on the board.
-          API_FOOTBALL_MAX_STANDINGS: "0"
           STANDINGS_STRENGTH: "0.55"
           SKIP_STANDINGS: "1"
-          # Live tables from football-data season CSVs (free). API standings only if paid.
           STANDINGS_ALLOW_API: "0"
           ENABLE_LIVE_STANDINGS: "0"
           GITHUB_TOKEN: ${{ secrets.SPORTINTEL_PUSH_TOKEN || secrets.GITHUB_TOKEN }}
@@ -113,24 +102,16 @@ jobs:
           LOG_LEVEL: INFO
         run: python daily_pipeline.py
 
-      - name: Commit core data + models
+      - name: Commit generated data and models
+        shell: bash
         run: |
           set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git fetch origin main
-          git add daily_football_data/ master_football_data.parquet football_models/ .gitattributes || true
-          if git diff --staged --quiet; then
-            echo "No core changes to commit"
+          git add daily_football_data/ master_football_data.parquet football_models/ .gitattributes
+          if git diff --cached --quiet; then
+            echo "No generated changes to commit"
             exit 0
           fi
           git commit -m "Daily pipeline: $(date -u +%Y-%m-%dT%H:%MZ)"
-          if ! git pull --rebase origin main; then
-            echo "Rebase failed — merging with preference for this run's artifacts"
-            git rebase --abort 2>/dev/null || true
-            git pull origin main --no-rebase --allow-unrelated-histories || true
-            git checkout --ours football_models daily_football_data master_football_data.parquet 2>/dev/null || true
-            git add daily_football_data/ master_football_data.parquet football_models/ .gitattributes || true
-            git commit -m "Daily pipeline merge: $(date -u +%Y-%m-%dT%H:%MZ)" || true
-          fi
           git push origin HEAD:main
