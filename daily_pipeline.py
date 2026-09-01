@@ -8,7 +8,8 @@ Daily end-to-end pipeline:
   4. Scan fixtures → accurate team mapping + train focus list
   5. Batch train focus teams (DAILY_LIGHT, capped)
   6. Batch sim.py over fixtures (odds + models)
-  7. Optionally publish sims → sportintel Sim Lab (if SPORTINTEL_PUSH=1)
+  7. Optional Africa segment (AFRICA_SEGMENT=1): today fixtures → train → sim
+  8. Optionally publish sims → sportintel Sim Lab (if SPORTINTEL_PUSH=1)
 
 Season codes are auto-inferred from calendar date unless FOOTBALL_SEASON /
 FOOTBALL_SEASON_LABEL are set. See si_config.py.
@@ -148,6 +149,13 @@ def main():
         })
 
     # 7. Publish to admin Sim Lab
+    # --- Africa segment (optional; 1 API-Football call for today's board) ---
+    if os.environ.get("AFRICA_SEGMENT", "").strip() in ("1", "true", "yes"):
+        log_step(log, "africa", "fixtures → train board teams → Sim Lab reports")
+        run([sys.executable, "-m", "africa.daily_africa_segment"], check=False)
+    else:
+        log.info("AFRICA_SEGMENT not set — skip Africa board")
+
     if SPORTINTEL_PUSH:
         log_step(log, "publish", "pushing sims to sportintel admin")
         run([sys.executable, "publish_sims_to_admin.py"])

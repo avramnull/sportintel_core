@@ -90,6 +90,11 @@ jobs:
           ODDS_BLEND: "0.22"
           SKIP_TRAIN: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.skip_train == 'true' && '1' || '0' }}
           SPORTINTEL_PUSH: "1"
+          # Africa board: 1 API-Football request/day (store key as repo secret)
+          AFRICA_SEGMENT: "1"
+          API_FOOTBALL_KEY: ${{ secrets.API_FOOTBALL_KEY }}
+          SKIP_AFRICA_TRAIN: "0"
+          SKIP_AFRICA_SIM: "0"
           GITHUB_TOKEN: ${{ secrets.SPORTINTEL_PUSH_TOKEN || secrets.GITHUB_TOKEN }}
           SPORTINTEL_REPO: avramnull/sportintel
           LOG_LEVEL: INFO
