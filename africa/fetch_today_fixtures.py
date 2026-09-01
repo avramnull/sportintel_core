@@ -95,10 +95,18 @@ def main() -> int:
         import si_config  # noqa: F401 — loads .env
     except Exception:
         pass
-    key = os.environ.get("API_FOOTBALL_KEY", "").strip()
-    if not key:
-        print("ERROR: set API_FOOTBALL_KEY (or put it in .env)", file=sys.stderr)
+    try:
+        from api_football_client import key_pool
+        keys = key_pool()
+    except Exception:
+        keys = [k for k in (
+            os.environ.get("API_FOOTBALL_KEY", "").strip(),
+            os.environ.get("API_FOOTBALL_STANDINGS_KEY", "").strip(),
+        ) if k]
+    if not keys:
+        print("ERROR: set API_FOOTBALL_KEY and/or API_FOOTBALL_STANDINGS_KEY", file=sys.stderr)
         return 2
+    key = keys[0]
 
     day = os.environ.get("FIXTURE_DATE", "").strip() or datetime.now(timezone.utc).strftime("%Y-%m-%d")
     out = Path(os.environ.get(
@@ -129,18 +137,32 @@ def main() -> int:
     if payload.get("errors"):
         errs = payload["errors"]
         print(f"API errors: {errs}", file=sys.stderr)
-        # Write empty board so pipeline can continue without crashing on suspended/quota
-        doc = {
-            "fetched_at": datetime.now(timezone.utc).isoformat(),
-            "date": day,
-            "total_world": 0,
-            "total_africa": 0,
-            "fixtures": [],
-            "api_errors": errs,
-        }
-        out.write_text(json.dumps(doc, indent=2, ensure_ascii=False), encoding="utf-8")
-        out.with_suffix(".csv").write_text("", encoding="utf-8")
-        return 1
+        # Fail over to subordinate key once
+        if len(keys) > 1 and key == keys[0]:
+            key = keys[1]
+            print("[api-football] retrying fixtures with subordinate key", flush=True)
+            r = requests.get(
+                f"{API}/fixtures",
+                params={"date": day},
+                headers={"x-apisports-key": key, "Accept": "application/json"},
+                timeout=45,
+            )
+            r.raise_for_status()
+            payload = r.json()
+        if payload.get("errors"):
+            errs = payload["errors"]
+            print(f"API errors (after failover): {errs}", file=sys.stderr)
+            doc = {
+                "fetched_at": datetime.now(timezone.utc).isoformat(),
+                "date": day,
+                "total_world": 0,
+                "total_africa": 0,
+                "fixtures": [],
+                "api_errors": errs,
+            }
+            out.write_text(json.dumps(doc, indent=2, ensure_ascii=False), encoding="utf-8")
+            out.with_suffix(".csv").write_text("", encoding="utf-8")
+            return 1
 
     africa_rows = []
     for x in payload.get("response") or []:

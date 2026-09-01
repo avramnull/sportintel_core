@@ -66,17 +66,43 @@ def api_season_year(as_of: Optional[datetime] = None) -> int:
     return d.year if d.month >= 7 else d.year - 1
 
 
-def resolve_api_key(purpose: str = "fixtures") -> str:
+def key_pool() -> List[str]:
     """
-    purpose:
-      fixtures  → API_FOOTBALL_KEY
-      standings → API_FOOTBALL_STANDINGS_KEY, else API_FOOTBALL_KEY
+    Ordered keys: primary fixtures key first, 2nd key subordinate for failover.
+    Deduped. Either key can serve fixtures or standings when the other is exhausted.
     """
     primary = (os.environ.get("API_FOOTBALL_KEY") or "").strip()
-    standings = (os.environ.get("API_FOOTBALL_STANDINGS_KEY") or "").strip()
+    secondary = (os.environ.get("API_FOOTBALL_STANDINGS_KEY") or "").strip()
+    out: List[str] = []
+    for k in (primary, secondary):
+        if k and k not in out:
+            out.append(k)
+    return out
+
+
+def resolve_api_key(purpose: str = "fixtures") -> str:
+    """
+    Preferred key for purpose, with cross-fallback:
+      fixtures  → primary, else secondary
+      standings → secondary, else primary
+    """
+    pool = key_pool()
+    if not pool:
+        return ""
+    primary = (os.environ.get("API_FOOTBALL_KEY") or "").strip()
+    secondary = (os.environ.get("API_FOOTBALL_STANDINGS_KEY") or "").strip()
     if purpose == "standings":
-        return standings or primary
-    return primary
+        return secondary or primary or pool[0]
+    return primary or secondary or pool[0]
+
+
+def _is_quota_or_auth_error(exc: BaseException) -> bool:
+    msg = str(exc).lower()
+    needles = (
+        "quota", "rate", "limit", "429", "suspended", "missing application key",
+        "invalid", "token", "unauthorized", "forbidden", "access",
+    )
+    return any(n in msg for n in needles)
 
 
 class ApiFootballClient:
@@ -91,7 +117,13 @@ class ApiFootballClient:
         min_interval: Optional[float] = None,
     ):
         self.purpose = purpose
-        self.key = (key or resolve_api_key(purpose) or "").strip()
+        self._keys = [key] if key else key_pool()
+        self._key_idx = 0
+        # purpose-preferred key first in rotation
+        preferred = resolve_api_key(purpose)
+        if preferred and preferred in self._keys:
+            self._keys = [preferred] + [k for k in self._keys if k != preferred]
+        self.key = (self._keys[0] if self._keys else "") or ""
         self.base = (base or os.environ.get("API_FOOTBALL_BASE") or DEFAULT_BASE).rstrip("/")
         self.cache_dir = Path(
             cache_dir
@@ -172,14 +204,24 @@ class ApiFootballClient:
             r = requests.get(url, params=params, headers=self._headers(), timeout=35)
             self._last_req = time.time()
             self._req_count += 1
+        if r.status_code == 429 and self._key_idx + 1 < len(self._keys):
+            self._key_idx += 1
+            self.key = self._keys[self._key_idx]
+            return self.get(path, params, use_cache=use_cache, cache_ttl_h=cache_ttl_h)
         r.raise_for_status()
         payload = r.json()
         # API-Football often returns HTTP 200 with errors: {access: "..."} when suspended/quota
         errs = payload.get("errors")
         if errs:
-            # Don't cache hard failures
             msg = errs if isinstance(errs, str) else json.dumps(errs)
-            raise RuntimeError(f"API-Football error: {msg}")
+            err = RuntimeError(f"API-Football error: {msg}")
+            # Rotate to subordinate key if quota/auth and another key remains
+            if _is_quota_or_auth_error(err) and self._key_idx + 1 < len(self._keys):
+                self._key_idx += 1
+                self.key = self._keys[self._key_idx]
+                # retry once with next key (no cache write of the failure)
+                return self.get(path, params, use_cache=use_cache, cache_ttl_h=cache_ttl_h)
+            raise err
         if use_cache:
             try:
                 cache_path.write_text(json.dumps(payload), encoding="utf-8")
@@ -264,6 +306,8 @@ class ApiFootballClient:
             "standings_cache_hits": self._cache_standings,
             "standings_unique_leagues": len(self._standings_seen),
             "max_standings_network": self.max_standings,  # 0 = unlimited
+            "keys_configured": len(self._keys),
+            "key_index": self._key_idx,
             "cache_dir": str(self.cache_dir),
         }
 
