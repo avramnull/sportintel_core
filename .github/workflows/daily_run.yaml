@@ -116,6 +116,7 @@ jobs:
           SKIP_TRAIN: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.skip_train == 'true' && '1' || '0' }}
           SPORTINTEL_PUSH: "1"
           AFRICA_SEGMENT: "1"
+          AFRICA_OPTIONAL: "1"
           API_FOOTBALL_BACKUP_KEY: ${{ secrets.API_FOOTBALL_BACKUP_KEY }}
           API_FOOTBALL_KEY: ${{ secrets.API_FOOTBALL_BACKUP_KEY || secrets.API_FOOTBALL_KEY }}
           API_FOOTBALL_STANDINGS_KEY: ""
