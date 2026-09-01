@@ -3,15 +3,20 @@
 Portable API-Football (api-sports v3) client — quota-aware.
 
 Endpoints used:
-  GET /fixtures?date=YYYY-MM-DD
+  GET /fixtures?date=YYYY-MM-DD     (1 call for the whole day board)
   GET /standings?league={id}&season={year}
+      → returns the FULL league table once (e.g. all ~20 Premier League sides).
+      One league_id = one request, no matter how many fixture teams share that league.
 
 Env:
   API_FOOTBALL_KEY   required
   API_FOOTBALL_BASE  optional (default https://v3.football.api-sports.io)
-  API_FOOTBALL_CACHE_DIR  optional disk cache (default daily_football_data/api_football_cache)
-  API_FOOTBALL_MAX_STANDINGS  max standings league pulls per process (default 12)
-  API_FOOTBALL_MIN_INTERVAL_SEC  polite delay between requests (default 0.35)
+  API_FOOTBALL_CACHE_DIR  optional (default daily_football_data/api_football_cache)
+  API_FOOTBALL_MAX_STANDINGS
+      max *network* standings pulls this process may perform.
+      0 = no cap (fetch every unique league that has fixtures today).
+      Default 0 — one full table per unique league is already minimal.
+  API_FOOTBALL_MIN_INTERVAL_SEC  polite delay between live requests (default 0.40)
 
 Never logs the key. Safe to import from EUR and Africa pipelines.
 """
@@ -22,7 +27,7 @@ import os
 import time
 from datetime import datetime, timezone
 from pathlib import Path
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict, List, Optional, Tuple
 
 import requests
 
@@ -54,8 +59,9 @@ FDC_DIV_TO_LEAGUE: Dict[str, int] = {
     "G1": 197,  # Super League Greece
 }
 
-# Season year for API-Football = start calendar year of the campaign
+
 def api_season_year(as_of: Optional[datetime] = None) -> int:
+    """API-Football season = campaign start calendar year (Jul–Jun)."""
     d = (as_of or datetime.now(timezone.utc)).date()
     return d.year if d.month >= 7 else d.year - 1
 
@@ -78,19 +84,26 @@ class ApiFootballClient:
             or DEFAULT_CACHE
         )
         self.cache_dir.mkdir(parents=True, exist_ok=True)
-        self.max_standings = int(
+        # 0 = unlimited unique leagues (still one request per league, never per team)
+        raw_max = (
             max_standings
             if max_standings is not None
-            else os.environ.get("API_FOOTBALL_MAX_STANDINGS", "12")
+            else os.environ.get("API_FOOTBALL_MAX_STANDINGS", "0")
         )
+        try:
+            self.max_standings = int(raw_max)
+        except (TypeError, ValueError):
+            self.max_standings = 0
         self.min_interval = float(
             min_interval
             if min_interval is not None
-            else os.environ.get("API_FOOTBALL_MIN_INTERVAL_SEC", "0.35")
+            else os.environ.get("API_FOOTBALL_MIN_INTERVAL_SEC", "0.40")
         )
         self._last_req = 0.0
-        self._standings_calls = 0
+        self._network_standings = 0  # only live HTTP standings calls
+        self._cache_standings = 0
         self._req_count = 0
+        self._standings_seen: set = set()  # league_id already resolved this process
 
     @property
     def available(self) -> bool:
@@ -104,11 +117,24 @@ class ApiFootballClient:
         if gap > 0:
             time.sleep(gap)
 
-    def get(self, path: str, params: Optional[dict] = None, *, use_cache: bool = True, cache_ttl_h: float = 18.0) -> dict:
+    def get(
+        self,
+        path: str,
+        params: Optional[dict] = None,
+        *,
+        use_cache: bool = True,
+        cache_ttl_h: float = 18.0,
+    ) -> Tuple[dict, bool]:
+        """
+        Returns (payload, from_cache).
+        from_cache=True means no network quota was spent.
+        """
         if not self.key:
             raise RuntimeError("API_FOOTBALL_KEY not set")
         params = dict(params or {})
-        cache_key = path.strip("/").replace("/", "_") + "_" + "_".join(f"{k}-{v}" for k, v in sorted(params.items()))
+        cache_key = path.strip("/").replace("/", "_") + "_" + "_".join(
+            f"{k}-{v}" for k, v in sorted(params.items())
+        )
         cache_key = "".join(c if c.isalnum() or c in "-_." else "_" for c in cache_key)[:180]
         cache_path = self.cache_dir / f"{cache_key}.json"
 
@@ -116,7 +142,7 @@ class ApiFootballClient:
             age_h = (time.time() - cache_path.stat().st_mtime) / 3600.0
             if age_h <= cache_ttl_h:
                 try:
-                    return json.loads(cache_path.read_text(encoding="utf-8"))
+                    return json.loads(cache_path.read_text(encoding="utf-8")), True
                 except Exception:
                     pass
 
@@ -126,8 +152,7 @@ class ApiFootballClient:
         self._last_req = time.time()
         self._req_count += 1
         if r.status_code == 429:
-            # brief backoff once
-            time.sleep(2.5)
+            time.sleep(3.0)
             self._throttle()
             r = requests.get(url, params=params, headers=self._headers(), timeout=35)
             self._last_req = time.time()
@@ -139,49 +164,77 @@ class ApiFootballClient:
                 cache_path.write_text(json.dumps(payload), encoding="utf-8")
             except Exception:
                 pass
-        return payload
+        return payload, False
 
     def fixtures_by_date(self, day: str) -> dict:
         """One request: all fixtures for YYYY-MM-DD."""
-        return self.get("fixtures", {"date": day}, use_cache=True, cache_ttl_h=6.0)
+        payload, _ = self.get("fixtures", {"date": day}, use_cache=True, cache_ttl_h=6.0)
+        return payload
 
     def standings(self, league_id: int, season: Optional[int] = None) -> dict:
-        if self._standings_calls >= self.max_standings:
-            return {"response": [], "errors": {"quota": "max_standings reached"}, "_skipped": True}
-        season = season or api_season_year()
-        payload = self.get(
+        """
+        Full league table for one league_id (covers every club in that division).
+
+        Dedupes in-process: second call for the same league_id returns the same
+        payload without another network hit. Cache hits never burn the network budget.
+        """
+        lid = int(league_id)
+        season = int(season or api_season_year())
+        dedupe_key = (lid, season)
+
+        # Soft network budget: only live HTTP standings count (0 = unlimited)
+        if (
+            self.max_standings > 0
+            and self._network_standings >= self.max_standings
+            and dedupe_key not in self._standings_seen
+        ):
+            return {
+                "response": [],
+                "errors": {"quota": "max network standings reached"},
+                "_skipped": True,
+                "_from_cache": False,
+            }
+
+        payload, from_cache = self.get(
             "standings",
-            {"league": int(league_id), "season": int(season)},
+            {"league": lid, "season": season},
             use_cache=True,
             cache_ttl_h=18.0,
         )
-        # only count network-ish usage when not purely from long-lived cache empty skip
-        if not payload.get("_skipped"):
-            self._standings_calls += 1
+        payload = dict(payload)
+        payload["_from_cache"] = from_cache
+        if from_cache:
+            self._cache_standings += 1
+        else:
+            self._network_standings += 1
+        self._standings_seen.add(dedupe_key)
         return payload
 
     def stats(self) -> dict:
         return {
-            "requests": self._req_count,
-            "standings_calls": self._standings_calls,
-            "max_standings": self.max_standings,
+            "requests_network": self._req_count,
+            "standings_network": self._network_standings,
+            "standings_cache_hits": self._cache_standings,
+            "standings_unique_leagues": len(self._standings_seen),
+            "max_standings_network": self.max_standings,  # 0 = unlimited
             "cache_dir": str(self.cache_dir),
         }
 
 
 def parse_standings_table(payload: dict) -> List[Dict[str, Any]]:
     """
-    Flatten API-Football standings response into team rows:
-      team_id, team, rank, points, played, won, draw, lost, gf, ga, gd, form, league_id, league, season
+    Flatten API-Football standings into full-table team rows.
+    One payload = entire league (all ranks), not a subset of fixture teams.
     """
     rows: List[Dict[str, Any]] = []
+    if payload.get("_skipped"):
+        return rows
     for block in payload.get("response") or []:
         league = block.get("league") or {}
         league_id = league.get("id")
         league_name = league.get("name")
         season = league.get("season")
         groups = league.get("standings") or []
-        # standings is list of groups (each group is list of team rows)
         for group in groups:
             if not isinstance(group, list):
                 continue
@@ -219,7 +272,6 @@ def team_lookup(rows: List[Dict[str, Any]]) -> Dict[str, Dict[str, Any]]:
             continue
         key = _norm(name)
         out.setdefault(key, r)
-        # also raw
         out.setdefault(name.lower(), r)
     return out
 

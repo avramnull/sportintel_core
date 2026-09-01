@@ -137,10 +137,11 @@ def main():
             "TRAIN_WORKERS": os.environ.get("TRAIN_WORKERS", "3"),
         })
 
-    # 5b. Live standings for EUR leagues with fixtures today (API-Football)
+    # 5b. Live standings — one FULL table per unique EUR league with fixtures today
+    # (e.g. 6 PL matches → 1 request covering all ~20 clubs). Merges into standings_latest.
     if os.environ.get("API_FOOTBALL_KEY", "").strip() and os.environ.get("SKIP_STANDINGS", "").strip() not in ("1", "true", "yes"):
-        log_step(log, "standings", "API-Football live tables for focused EUR leagues")
-        run([sys.executable, "fetch_day_standings.py", "--region", "eur"], check=False)
+        log_step(log, "standings", "API-Football full tables for unique EUR leagues on board")
+        run([sys.executable, "fetch_day_standings.py", "--region", "eur", "--merge"], check=False)
     else:
         log.info("standings step skipped (no API key or SKIP_STANDINGS)")
 

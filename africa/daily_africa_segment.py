@@ -129,7 +129,11 @@ def load_africa_standings() -> tuple[dict, float]:
 
 
 def fetch_standings_for_africa(day: str | None = None):
-    """Pull live tables for league_ids present on today's Africa board."""
+    """
+    Pull live FULL tables for unique league_ids on today's Africa board.
+    One league_id → one request (covers every club in that division).
+    Merges into standings_latest so EUR tables from the earlier pipeline step remain.
+    """
     key = os.environ.get("API_FOOTBALL_KEY", "").strip()
     if not key:
         log("no API key — skip standings")
@@ -137,10 +141,17 @@ def fetch_standings_for_africa(day: str | None = None):
     if os.environ.get("SKIP_STANDINGS", "").strip() in ("1", "true", "yes"):
         log("SKIP_STANDINGS")
         return
-    env = {"API_FOOTBALL_KEY": key}
+    env = {
+        "API_FOOTBALL_KEY": key,
+        "API_FOOTBALL_MAX_STANDINGS": os.environ.get("API_FOOTBALL_MAX_STANDINGS", "0"),
+        "STANDINGS_STRENGTH": os.environ.get("STANDINGS_STRENGTH", "0.55"),
+    }
     if day:
         env["FIXTURE_DATE"] = day
-    run([sys.executable, "fetch_day_standings.py", "--region", "africa"], env=env)
+    run(
+        [sys.executable, "fetch_day_standings.py", "--region", "africa", "--merge"],
+        env=env,
+    )
 
 
 def sim_reports(doc: dict) -> list[dict]:
@@ -277,7 +288,7 @@ def main():
         log("empty Africa board today")
         merge_index([], doc.get("date") or "")
         return 0
-    # Live standings for league_ids on today's Africa board (quota-capped)
+    # Unique league_ids on board → one full table each (merge with EUR standings_latest)
     fetch_standings_for_africa(doc.get("date"))
     train_for_board(teams, countries)
     entries = sim_reports(doc)
