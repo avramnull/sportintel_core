@@ -122,3 +122,4 @@ LOG_JSON = _env_bool("LOG_JSON", False)
 
 # API-Football (fixtures + standings only — see api_football_client / fetch_day_standings)
 API_FOOTBALL_KEY = _env("API_FOOTBALL_KEY")
+API_FOOTBALL_STANDINGS_KEY = _env("API_FOOTBALL_STANDINGS_KEY")  # league tables (2nd key)

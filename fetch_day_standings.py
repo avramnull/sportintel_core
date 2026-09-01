@@ -15,7 +15,7 @@ Modes:
   --merge / --no-merge  (default: merge into existing standings_latest)
 
 Env:
-  API_FOOTBALL_KEY
+  API_FOOTBALL_STANDINGS_KEY  (preferred) or API_FOOTBALL_KEY
   API_FOOTBALL_MAX_STANDINGS  0 = no network cap (default); else max live standings pulls
   STANDINGS_STRENGTH          stored for sim consumers (default 0.55)
 """
@@ -230,9 +230,9 @@ def main(argv=None) -> int:
     )
     args = p.parse_args(argv)
 
-    client = ApiFootballClient()
+    client = ApiFootballClient(purpose="standings")
     if not client.available:
-        log.error("API_FOOTBALL_KEY not set")
+        log.error("API_FOOTBALL_STANDINGS_KEY / API_FOOTBALL_KEY not set")
         return 1
 
     day = args.date

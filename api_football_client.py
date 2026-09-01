@@ -9,14 +9,14 @@ Endpoints used:
       One league_id = one request, no matter how many fixture teams share that league.
 
 Env:
-  API_FOOTBALL_KEY   required
-  API_FOOTBALL_BASE  optional (default https://v3.football.api-sports.io)
-  API_FOOTBALL_CACHE_DIR  optional (default daily_football_data/api_football_cache)
+  API_FOOTBALL_KEY              primary key (Africa fixtures; also standings fallback)
+  API_FOOTBALL_STANDINGS_KEY    optional 2nd key used only for league standings
+  API_FOOTBALL_BASE             optional (default https://v3.football.api-sports.io)
+  API_FOOTBALL_CACHE_DIR        optional (default daily_football_data/api_football_cache)
   API_FOOTBALL_MAX_STANDINGS
       max *network* standings pulls this process may perform.
       0 = no cap (fetch every unique league that has fixtures today).
-      Default 0 — one full table per unique league is already minimal.
-  API_FOOTBALL_MIN_INTERVAL_SEC  polite delay between live requests (default 0.40)
+  API_FOOTBALL_MIN_INTERVAL_SEC polite delay between live requests (default 0.40)
 
 Never logs the key. Safe to import from EUR and Africa pipelines.
 """
@@ -66,17 +66,32 @@ def api_season_year(as_of: Optional[datetime] = None) -> int:
     return d.year if d.month >= 7 else d.year - 1
 
 
+def resolve_api_key(purpose: str = "fixtures") -> str:
+    """
+    purpose:
+      fixtures  → API_FOOTBALL_KEY
+      standings → API_FOOTBALL_STANDINGS_KEY, else API_FOOTBALL_KEY
+    """
+    primary = (os.environ.get("API_FOOTBALL_KEY") or "").strip()
+    standings = (os.environ.get("API_FOOTBALL_STANDINGS_KEY") or "").strip()
+    if purpose == "standings":
+        return standings or primary
+    return primary
+
+
 class ApiFootballClient:
     def __init__(
         self,
         key: Optional[str] = None,
         *,
+        purpose: str = "fixtures",
         base: Optional[str] = None,
         cache_dir: Optional[Path] = None,
         max_standings: Optional[int] = None,
         min_interval: Optional[float] = None,
     ):
-        self.key = (key or os.environ.get("API_FOOTBALL_KEY") or "").strip()
+        self.purpose = purpose
+        self.key = (key or resolve_api_key(purpose) or "").strip()
         self.base = (base or os.environ.get("API_FOOTBALL_BASE") or DEFAULT_BASE).rstrip("/")
         self.cache_dir = Path(
             cache_dir
@@ -130,7 +145,7 @@ class ApiFootballClient:
         from_cache=True means no network quota was spent.
         """
         if not self.key:
-            raise RuntimeError("API_FOOTBALL_KEY not set")
+            raise RuntimeError("API_FOOTBALL_KEY / API_FOOTBALL_STANDINGS_KEY not set")
         params = dict(params or {})
         cache_key = path.strip("/").replace("/", "_") + "_" + "_".join(
             f"{k}-{v}" for k, v in sorted(params.items())

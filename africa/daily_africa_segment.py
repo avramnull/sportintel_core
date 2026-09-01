@@ -143,6 +143,7 @@ def fetch_standings_for_africa(day: str | None = None):
         return
     env = {
         "API_FOOTBALL_KEY": key,
+        "API_FOOTBALL_STANDINGS_KEY": os.environ.get("API_FOOTBALL_STANDINGS_KEY", "").strip() or key,
         "API_FOOTBALL_MAX_STANDINGS": os.environ.get("API_FOOTBALL_MAX_STANDINGS", "0"),
         "STANDINGS_STRENGTH": os.environ.get("STANDINGS_STRENGTH", "0.55"),
     }
