@@ -10,12 +10,15 @@ on:
     paths:
       - ".github/workflows/daily_run.yaml"
       - "requirements.txt"
+      - "industrial_sim_engine.py"
       - "hard_simulation.py"
       - "run_fixture_sims.py"
       - "sim.py"
+      - "train.py"
       - "daily_pipeline.py"
       - "scan_fixture_teams.py"
       - "api_football_client.py"
+      - "tools/**"
       - "africa/**"
   schedule:
     - cron: "0 0 * * *"
@@ -25,10 +28,6 @@ on:
         description: "Skip training (re-sim + publish only)"
         type: boolean
         default: false
-      max_train_teams:
-        description: "Optional explicit training cap; leave 0 for all fixture teams"
-        type: string
-        default: "0"
 
 jobs:
   daily:
@@ -85,7 +84,31 @@ jobs:
           r = simulate_hard([.34,.32,.34],[.30,.40,.30],.50,.50,.30,1000,42)
           assert r["score_consistency"]["ht_leq_ft"] == 1.0
           assert sum(r["ft_sim"].values()) > .999
-          print("hard-v2 smoke: OK", r["top3_ft"])
+          print("hard-v2 compatibility smoke: OK", r["top3_ft"])
+          PY
+
+      - name: Apply one-time industrial model upgrade
+        shell: bash
+        run: |
+          set -euo pipefail
+          if test -f tools/apply_industrial_upgrade.py; then
+            python tools/apply_industrial_upgrade.py
+          else
+            echo "Industrial upgrade already applied"
+          fi
+
+      - name: Industrial engine smoke test
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from industrial_sim_engine import simulate_industrial
+          r = simulate_industrial([.34,.33,.33],[.30,.40,.30],.50,.50,.30,12000,42)
+          assert r["engine"]["version"] == "industrial-v3"
+          assert r["score_consistency"]["ht_leq_ft"] == 1.0
+          assert abs(sum(r["ft_sim"].values()) - 1.0) < 1e-6
+          assert 0.0 < r["distribution_diagnostics"]["top1_mass"] < 0.20
+          print("industrial-v3 smoke: OK", r["top3_ft"], r["distribution_diagnostics"])
           PY
 
       - name: Health check
@@ -93,7 +116,8 @@ jobs:
 
       - name: Run full daily pipeline
         env:
-          MAX_TRAIN_TEAMS: ${{ github.event.inputs.max_train_teams || '0' }}
+          MAX_TRAIN_TEAMS: "0"
+          MAX_FIXTURES: "0"
           MIN_TEAM_MATCHES: "25"
           TODAY_ONLY: "1"
           DAILY_LIGHT: "1"
@@ -101,15 +125,15 @@ jobs:
           USE_TENSORFLOW: "1"
           USE_ADABOOST: "0"
           USE_RANDOM_FOREST: "1"
-          MAX_BOOST_ROUNDS: "1400"
-          NN_EPOCHS: "60"
-          CAPACITY_STEPS: "2"
+          MAX_BOOST_ROUNDS: "1800"
+          NN_EPOCHS: "70"
+          CAPACITY_STEPS: "3"
           DAILY_TARGETS: "ft_result,over25,btts,ht_result"
           TRAIN_WORKERS: "3"
-          TRAIN_DIVS: ""
-          N_SIMULATIONS: "12000"
+          N_SIMULATIONS: "120000"
           ODDS_BLEND: "0.30"
           HARD_SIM: "1"
+          INDUSTRIAL_SIM: "1"
           HARD_ATTACK_CV: "0.18"
           HARD_DEFENSE_CV: "0.18"
           HARD_SHARED_CV: "0.10"
@@ -137,16 +161,16 @@ jobs:
           LOG_LEVEL: INFO
         run: python daily_pipeline.py
 
-      - name: Commit generated data and models
+      - name: Commit generated data, models, and one-time source upgrade
         shell: bash
         run: |
           set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add daily_football_data/ master_football_data.parquet football_models/ .gitattributes
+          git add -A daily_football_data/ master_football_data.parquet football_models/ .gitattributes industrial_sim_engine.py train.py sim.py run_fixture_sims.py africa/ tools/
           if git diff --cached --quiet; then
-            echo "No generated changes to commit"
+            echo "No generated/source changes to commit"
             exit 0
           fi
-          git commit -m "Daily pipeline: $(date -u +%Y-%m-%dT%H:%MZ)"
+          git commit -m "Daily pipeline: industrial-v3 simulation upgrade"
           git push origin HEAD:main
