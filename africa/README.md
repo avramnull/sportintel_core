@@ -72,3 +72,21 @@ Confidence-weighted ensemble + IPF score grid (FT / O2.5 / BTTS aligned).
 - RSSSF HTML is messy; standings rows are filtered out. Lower divisions and cups are kept when scorelines parse cleanly.
 - Network timeouts to rsssf.com can happen from some hosts — re-run `--fetch-rsssf` locally.
 - Openfootball alone already yields ~14k matches (Nigeria-heavy).
+
+## Today's fixtures (API-Football, 1 request)
+
+Free plan is ~100 req/day. This path uses **exactly one** call:
+
+```bash
+export API_FOOTBALL_KEY=your_key_here
+python -m africa.fetch_today_fixtures
+# optional: FIXTURE_DATE=2026-09-01
+```
+
+Writes:
+- `daily_football_data/africa_fixtures_today.json`
+- `daily_football_data/africa_fixtures_today.csv`
+
+Filters world fixtures for that date down to African countries client-side (Kenya, Egypt, Uganda, …).
+Do **not** loop per-league or pull multi-season history on the free key.
+
