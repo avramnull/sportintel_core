@@ -53,15 +53,28 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.11"
-          cache: pip
+          python-version: "3.12"
+          # Do not restore a multi-GB pip cache on this data/model-heavy job.
+          # Fresh dependency resolution is safer and leaves disk for training.
 
       - name: Install dependencies
         shell: bash
         run: |
           set -euo pipefail
           python -m pip install --upgrade pip
-          python -m pip install -r requirements.txt
+          # CPU-only wheels: this runner has no CUDA workload. Installing the
+          # generic GPU builds caused multi-GB CUDA/NCCL downloads and disk failures.
+          python -m pip install --no-cache-dir --index-url https://download.pytorch.org/whl/cpu "torch>=2.8"
+          python -m pip install --no-cache-dir "xgboost-cpu>=3.2"
+          python -m pip install --no-cache-dir -r requirements.txt
+          python - <<'PY'
+          import torch
+          import xgboost
+          import tensorflow as tf
+          print("torch:", torch.__version__, "cuda_available:", torch.cuda.is_available())
+          print("xgboost:", xgboost.__version__)
+          print("tensorflow:", tf.__version__)
+          PY
 
       - name: Health check
         run: python -m tools.smoke_test --quick
@@ -69,8 +82,8 @@ jobs:
       - name: Run full daily pipeline
         env:
           # 0 is intentional: scan_fixture_teams.py derives the complete
-          # training set from today's fixtures. An explicit positive value
-          # may be supplied manually when deliberately limiting a run.
+          # training set from today's fixtures. A positive value is only an
+          # explicit manual override.
           MAX_TRAIN_TEAMS: ${{ github.event.inputs.max_train_teams || '0' }}
           MIN_TEAM_MATCHES: "25"
           TODAY_ONLY: "1"
