@@ -1,38 +1,18 @@
 {
-  "generated_at": "2026-08-31T22:10:45.840069+00:00",
-  "max_train": 12,
-  "train_all_fixtures": false,
+  "generated_at": "2026-09-01T02:49:22.569439+00:00",
+  "max_train": 2,
+  "train_all_fixtures": true,
   "min_matches": 25,
   "retrain_existing": true,
   "today_only": true,
-  "focus_date": "2026-08-31",
+  "focus_date": "2026-09-01",
   "focus_teams": [
-    "Aston Villa",
-    "Arsenal",
-    "Lecce",
-    "Roma",
-    "Atalanta",
-    "Bologna",
-    "Osasuna",
-    "Getafe",
-    "Barcelona",
-    "Vallecano",
-    "Benfica",
-    "Estoril"
+    "Halifax",
+    "Hartlepool"
   ],
   "scores": {
-    "Aston Villa": 150.0,
-    "Arsenal": 150.0,
-    "Lecce": 145.0,
-    "Roma": 145.0,
-    "Atalanta": 145.0,
-    "Bologna": 145.0,
-    "Osasuna": 145.0,
-    "Getafe": 145.0,
-    "Barcelona": 145.0,
-    "Vallecano": 145.0,
-    "Benfica": 120.0,
-    "Estoril": 120.0
+    "Halifax": 45.0,
+    "Hartlepool": 45.0
   },
   "note": "Pass to train.py via FOCUS_TEAMS env (comma-separated)"
 }

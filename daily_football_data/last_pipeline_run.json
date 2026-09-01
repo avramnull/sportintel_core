@@ -1,21 +1,11 @@
 {
-  "started": "2026-08-31T22:09:50.519516+00:00",
-  "finished": "2026-08-31T22:18:29.850213+00:00",
+  "started": "2026-09-01T02:48:33.607771+00:00",
+  "finished": "2026-09-01T02:53:26.770311+00:00",
   "season_code": "2627",
   "season_label": "2026/2027",
   "focus_teams": [
-    "Aston Villa",
-    "Arsenal",
-    "Lecce",
-    "Roma",
-    "Atalanta",
-    "Bologna",
-    "Osasuna",
-    "Getafe",
-    "Barcelona",
-    "Vallecano",
-    "Benfica",
-    "Estoril"
+    "Halifax",
+    "Hartlepool"
   ],
   "sims_index": "/home/runner/work/sportintel_core/sportintel_core/daily_football_data/sims/index.json"
 }
