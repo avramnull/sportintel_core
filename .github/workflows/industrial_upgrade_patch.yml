@@ -1,0 +1,496 @@
+name: One-time industrial simulation upgrade
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/industrial_upgrade_patch.yml"
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 1
+
+      - name: Apply industrial upgrade
+        shell: bash
+        run: |
+          set -euo pipefail
+          cat > industrial_sim_engine.py <<'PY'
+          #!/usr/bin/env python3
+          """Industrial football score simulator.
+
+          Uses a bivariate-Poisson/Dixon-Coles base, a three-regime scoring
+          mixture for tail risk, maximum-entropy calibration to the model
+          markets, and a conditional half-time generator.  The calibration
+          layer is deliberately soft: it shrinks model targets toward the
+          structural score distribution instead of forcing Monte Carlo quotas.
+          """
+          from __future__ import annotations
+
+          from collections import Counter
+          from math import exp, factorial
+          from typing import Any
+
+          import numpy as np
+          try:
+              from scipy.optimize import minimize, brentq
+              from scipy.special import gammaln
+          except Exception:  # pragma: no cover
+              minimize = None
+              brentq = None
+              gammaln = None
+
+          ENGINE_VERSION = "industrial-v3"
+
+          def _norm(p):
+              p = np.asarray(p, dtype=float).ravel()
+              if p.size == 0:
+                  return np.array([1/3, 1/3, 1/3], dtype=float)
+              p = np.nan_to_num(p, nan=1/max(len(p), 1), posinf=0.0, neginf=0.0)
+              p = np.clip(p, 1e-9, None)
+              return p / p.sum()
+
+          def _pois(k, lam):
+              return exp(-lam) * (lam ** int(k)) / factorial(int(k))
+
+          def _dc_tau(h, a, lh, la, rho):
+              if h == 0 and a == 0:
+                  return max(1.0 - lh * la * rho, 0.02)
+              if h == 0 and a == 1:
+                  return max(1.0 + lh * rho, 0.02)
+              if h == 1 and a == 0:
+                  return max(1.0 + la * rho, 0.02)
+              if h == 1 and a == 1:
+                  return max(1.0 - rho, 0.02)
+              return 1.0
+
+          def _poisson_grid(lh, la, common, rho=0.055, max_g=9):
+              pmf = np.zeros((max_g + 1, max_g + 1), dtype=float)
+              if gammaln is None:
+                  for h in range(max_g + 1):
+                      for a in range(max_g + 1):
+                          s = 0.0
+                          for z in range(min(h, a) + 1):
+                              s += _pois(z, common) * _pois(h-z, lh) * _pois(a-z, la)
+                          pmf[h, a] = s * _dc_tau(h, a, lh, la, rho)
+              else:
+                  h, a = np.indices(pmf.shape)
+                  for z in range(max_g + 1):
+                      valid = (h >= z) & (a >= z)
+                      hz = h - z
+                      az = a - z
+                      lz = -common + z * np.log(max(common, 1e-12)) - gammaln(z + 1.0)
+                      lp = lz - lh + hz * np.log(max(lh, 1e-12)) - gammaln(hz + 1.0)
+                      lp += -la + az * np.log(max(la, 1e-12)) - gammaln(az + 1.0)
+                      pmf += np.where(valid, np.exp(lp), 0.0)
+                  pmf[0, 0] *= max(1.0 - lh * la * rho, 0.02)
+                  pmf[0, 1] *= max(1.0 + lh * rho, 0.02)
+                  pmf[1, 0] *= max(1.0 + la * rho, 0.02)
+                  pmf[1, 1] *= max(1.0 - rho, 0.02)
+              pmf = np.clip(pmf, 0.0, None)
+              return pmf / max(pmf.sum(), 1e-15)
+
+          def _stats(pmf):
+              h, a = np.indices(pmf.shape)
+              out = np.where(h > a, 0, np.where(h < a, 2, 1))
+              total = h + a
+              ft = np.array([(pmf[out == k]).sum() for k in range(3)], dtype=float)
+              return ft, float(pmf[total >= 3].sum()), float(pmf[(h > 0) & (a > 0)].sum()), float((pmf * h).sum()), float((pmf * a).sum())
+
+          def _solve_rates(p_ft, p_over, p_btts, rho=0.055):
+              p_ft = _norm(p_ft)[:3]
+              p_over = float(np.clip(p_over, 0.06, 0.94))
+              p_btts = float(np.clip(p_btts, 0.06, 0.94))
+              if brentq is not None:
+                  try:
+                      total = brentq(lambda t: 1.0 - exp(-t) * (1.0 + t + t*t/2.0) - p_over, 0.25, 5.5)
+                  except Exception:
+                      total = float(np.clip(2.35 + 2.8 * (p_over - 0.5), 0.55, 4.8))
+              else:
+                  total = float(np.clip(2.35 + 2.8 * (p_over - 0.5), 0.55, 4.8))
+              share = float(np.clip(0.50 + 0.48 * (p_ft[0] - p_ft[2]), 0.16, 0.84))
+              x0 = np.array([np.log(max(total * share, 0.15)), np.log(max(total * (1-share), 0.15)), np.log(0.22)], dtype=float)
+
+              def objective(x):
+                  lh, la = np.exp(x[:2])
+                  common = (1.0 / (1.0 + np.exp(-x[2]))) * min(lh, la) * 0.55
+                  common = float(np.clip(common, 0.0, min(lh, la) * 0.45))
+                  s = _stats(_poisson_grid(lh, la, common, rho=rho))
+                  return float(9.0 * np.sum((s[0] - p_ft)**2) + 3.0 * (s[1] - p_over)**2 + 2.0 * (s[2] - p_btts)**2 + 0.001 * np.sum(x*x))
+
+              x = x0
+              if minimize is not None:
+                  try:
+                      res = minimize(objective, x0, method="Nelder-Mead", options={"maxiter": 90, "xatol": 1e-3, "fatol": 1e-6})
+                      if np.isfinite(res.fun):
+                          x = res.x
+                  except Exception:
+                      pass
+              lh, la = np.exp(x[:2])
+              common = (1.0 / (1.0 + np.exp(-x[2]))) * min(lh, la) * 0.55
+              common = float(np.clip(common, 0.0, min(lh, la) * 0.45))
+              return float(np.clip(lh, 0.12, 5.0)), float(np.clip(la, 0.12, 5.0)), common, float(total)
+
+          def _three_regime_grid(lh, la, common, rho):
+              # Quiet/tactical, base, and open/high-variance regimes.
+              parts = (
+                  (0.18, 0.72),
+                  (0.60, 1.00),
+                  (0.22, 1.32),
+              )
+              q = np.zeros((10, 10), dtype=float)
+              for weight, scale in parts:
+                  q += weight * _poisson_grid(lh * scale, la * scale, common * scale, rho=rho)
+              return q / max(q.sum(), 1e-15)
+
+          def _soft_calibrate(pmf, p_ft, p_over, p_btts, strength=0.84):
+              h, a = np.indices(pmf.shape)
+              out = np.where(h > a, 0, np.where(h < a, 2, 1))
+              over = (h + a) >= 3
+              btts = (h > 0) & (a > 0)
+              base_ft, base_over, base_btts, _, _ = _stats(pmf)
+              target_ft = _norm(strength * _norm(p_ft)[:3] + (1-strength) * base_ft)
+              target_over = float(np.clip(strength * p_over + (1-strength) * base_over, 0.05, 0.95))
+              target_btts = float(np.clip(strength * p_btts + (1-strength) * base_btts, 0.05, 0.95))
+
+              def objective(beta):
+                  logits = beta[0] * (out == 0) + beta[1] * (out == 1) + beta[2] * over + beta[3] * btts
+                  q = pmf * np.exp(np.clip(logits, -10.0, 10.0))
+                  q /= max(q.sum(), 1e-15)
+                  ft, ov, bt, _, _ = _stats(q)
+                  return float(8.0*np.sum((ft-target_ft)**2) + 3.0*(ov-target_over)**2 + 2.0*(bt-target_btts)**2 + 0.01*np.sum(beta*beta))
+
+              beta = np.zeros(4, dtype=float)
+              if minimize is not None:
+                  try:
+                      res = minimize(objective, beta, method="BFGS", options={"maxiter": 80, "gtol": 1e-5})
+                      if np.all(np.isfinite(res.x)):
+                          beta = res.x
+                  except Exception:
+                      pass
+              beta = np.clip(beta, -2.5, 2.5)
+              logits = beta[0] * (out == 0) + beta[1] * (out == 1) + beta[2] * over + beta[3] * btts
+              q = pmf * np.exp(np.clip(logits, -10.0, 10.0))
+              q /= max(q.sum(), 1e-15)
+              return q, {"ft": target_ft, "over25": target_over, "btts": target_btts, "beta": beta.tolist()}
+
+          def _flatten_sample(rng, pmf, n):
+              flat = pmf.ravel()
+              idx = rng.choice(flat.size, size=int(n), p=flat)
+              return np.column_stack(np.unravel_index(idx, pmf.shape)).astype(np.int16)
+
+          def _ht_from_ft(rng, scores, p_ht, p_ht_over15):
+              p_ht = _norm(p_ht)[:3]
+              out = np.zeros_like(scores, dtype=np.int16)
+              # Beta-binomial share creates match-to-match tempo uncertainty while
+              # preserving the hard physical constraint HT goals <= FT goals.
+              base = float(np.clip(0.39 + 0.18 * (p_ht_over15 - 0.5), 0.28, 0.56))
+              concentration = 18.0
+              alpha = max(base * concentration, 1.0)
+              beta = max((1-base) * concentration, 1.0)
+              shares = rng.beta(alpha, beta, size=len(scores))
+              for i, (hg, ag) in enumerate(scores):
+                  if hg:
+                      qh = np.clip(shares[i] + 0.06 * (p_ht[0] - p_ht[2]), 0.18, 0.72)
+                      out[i, 0] = rng.binomial(int(hg), qh)
+                  if ag:
+                      qa = np.clip(shares[i] + 0.06 * (p_ht[2] - p_ht[0]), 0.18, 0.72)
+                      out[i, 1] = rng.binomial(int(ag), qa)
+              return out
+
+          def _line_probs(total, line):
+              return {"over": float(np.mean(total > line)), "under": float(np.mean(total < line)), "push": float(np.mean(total == line))}
+
+          def simulate_industrial(p_ft, p_ht, p_over25, p_btts, p_ht_over15, n, seed, standings_prior=None):
+              p_ft = _norm(p_ft)[:3]
+              p_ht = _norm(p_ht if p_ht is not None else [0.30, 0.40, 0.30])[:3]
+              p_over25 = float(np.clip(p_over25, 0.05, 0.95))
+              p_btts = float(np.clip(p_btts, 0.05, 0.95))
+              p_ht_over15 = float(np.clip(p_ht_over15 if p_ht_over15 is not None else 0.30, 0.05, 0.95))
+              rng = np.random.default_rng(int(seed))
+              rho = float(np.clip(0.055, -0.12, 0.12))
+              sp = standings_prior or {}
+              if sp.get("matched"):
+                  try:
+                      from standings_prior import apply_ft_tilt, apply_scalar_tilt
+                      p_ft = apply_ft_tilt(p_ft, sp.get("ft_tilt") or {})
+                      p_over25 = apply_scalar_tilt(p_over25, float(sp.get("over25_tilt") or 0.0))
+                      p_btts = apply_scalar_tilt(p_btts, float(sp.get("btts_tilt") or 0.0))
+                  except Exception:
+                      pass
+
+              lh, la, common, total_target = _solve_rates(p_ft, p_over25, p_btts, rho=rho)
+              base = _three_regime_grid(lh, la, common, rho)
+              calibrated, cal = _soft_calibrate(base, p_ft, p_over25, p_btts, strength=0.84)
+              scores = _flatten_sample(rng, calibrated, int(n))
+              ht_scores = _ht_from_ft(rng, scores, p_ht, p_ht_over15)
+              total = scores.sum(axis=1).astype(float)
+              diff = scores[:, 0].astype(float) - scores[:, 1].astype(float)
+              ft_sim = {"H": float(np.mean(diff > 0)), "D": float(np.mean(diff == 0)), "A": float(np.mean(diff < 0))}
+              ht_diff = ht_scores[:, 0].astype(float) - ht_scores[:, 1].astype(float)
+              ht_sim = {"H": float(np.mean(ht_diff > 0)), "D": float(np.mean(ht_diff == 0)), "A": float(np.mean(ht_diff < 0))}
+              top = Counter(map(tuple, scores.tolist())).most_common(12)
+              top_ht = Counter(map(tuple, ht_scores.tolist())).most_common(8)
+
+              def top_pct(items, k):
+                  return [{"score": f"{h}-{a}", "count": int(c), "pct": round(100*c/max(len(scores),1),1)} for (h,a),c in items[:k]]
+
+              flat = calibrated.ravel()
+              entropy = float(-(flat[flat > 0] * np.log(flat[flat > 0])).sum())
+              top1 = float(top[0][1] / max(len(scores),1)) if top else 0.0
+              top3 = float(sum(c for _,c in top[:3]) / max(len(scores),1))
+              tail4 = float(np.mean(total >= 4))
+              sim_ft = np.array([ft_sim["H"], ft_sim["D"], ft_sim["A"]])
+              model_ft = _norm(p_ft)[:3]
+
+              return {
+                  "n": int(n),
+                  "engine": {
+                      "version": ENGINE_VERSION,
+                      "method": "bivariate-poisson+dixon-coles+three-regime+maximum-entropy-calibration+beta-binomial-HT",
+                      "rho": rho,
+                      "lambda_home": lh,
+                      "lambda_away": la,
+                      "common_goal_rate": common,
+                      "target_total_lambda": total_target,
+                      "calibration_strength": 0.84,
+                      "calibration_beta": cal["beta"],
+                      "dispersion_regimes": [0.72, 1.0, 1.32],
+                  },
+                  "ft_model": {"H": float(p_ft[0]), "D": float(p_ft[1]), "A": float(p_ft[2])},
+                  "ft_sim": ft_sim,
+                  "ht_model": {"H": float(p_ht[0]), "D": float(p_ht[1]), "A": float(p_ht[2])},
+                  "ht_sim": ht_sim,
+                  "over25_model": p_over25,
+                  "over25_sim": float(np.mean(total >= 3)),
+                  "btts_model": p_btts,
+                  "btts_sim": float(np.mean((scores[:,0] > 0) & (scores[:,1] > 0))),
+                  "ht_over15_model": p_ht_over15,
+                  "ht_over15_sim": float(np.mean(ht_scores.sum(axis=1) >= 2)),
+                  "dc_ft": {"1X": ft_sim["H"]+ft_sim["D"], "X2": ft_sim["D"]+ft_sim["A"], "12": ft_sim["H"]+ft_sim["A"]},
+                  "dc_ht": {"1X": ht_sim["H"]+ht_sim["D"], "X2": ht_sim["D"]+ht_sim["A"], "12": ht_sim["H"]+ht_sim["A"]},
+                  "top_ft": [(f"{h}-{a}", int(c)) for (h,a),c in top],
+                  "top_ht": [(f"{h}-{a}", int(c)) for (h,a),c in top_ht],
+                  "top3_ft": top_pct(top,3),
+                  "top3_ht": top_pct(top_ht,3),
+                  "top8_ft": top_pct(top,8),
+                  "xg": {"home": float(scores[:,0].mean()), "away": float(scores[:,1].mean()), "total": float(total.mean()), "lambda_home": lh, "lambda_away": la},
+                  "ht_xg": {"home": float(ht_scores[:,0].mean()), "away": float(ht_scores[:,1].mean()), "total": float(ht_scores.sum(axis=1).mean())},
+                  "score_consistency": {
+                      "ht_leq_ft": float(np.mean((ht_scores[:,0] <= scores[:,0]) & (ht_scores[:,1] <= scores[:,1]))),
+                      "ft_vs_model_l1": float(np.abs(sim_ft-model_ft).sum()),
+                      "over25_abs_error": float(abs(float(np.mean(total >= 3)) - p_over25)),
+                      "btts_abs_error": float(abs(float(np.mean((scores[:,0] > 0) & (scores[:,1] > 0))) - p_btts)),
+                  },
+                  "distribution_diagnostics": {
+                      "score_entropy": entropy,
+                      "top1_mass": top1,
+                      "top3_mass": top3,
+                      "tail_4plus": tail4,
+                      "score_cells": int(calibrated.size),
+                  },
+                  "clean_sheet": {"home": float(np.mean(scores[:,1] == 0)), "away": float(np.mean(scores[:,0] == 0))},
+                  "win_to_nil": {"home": float(np.mean((diff > 0) & (scores[:,1] == 0))), "away": float(np.mean((diff < 0) & (scores[:,0] == 0)))},
+                  "goal_lines": {str(x): _line_probs(total, x) for x in (0.5,1.5,2.5,3.5,4.5)},
+                  "asian_handicap": {
+                      "home_-0.5": float(np.mean(diff > 0)),
+                      "home_-1.0": {"cover": float(np.mean(diff > 1)), "push": float(np.mean(diff == 1))},
+                      "home_+0.5": float(np.mean(diff > -1)),
+                      "home_+1.0": {"cover": float(np.mean(diff > -1)), "push": float(np.mean(diff == -1))},
+                  },
+                  "score_matrix_margin": {
+                      "home_1_goal": float(np.mean(diff == 1)), "home_2_plus": float(np.mean(diff >= 2)),
+                      "away_1_goal": float(np.mean(diff == -1)), "away_2_plus": float(np.mean(diff <= -2)), "draw": float(np.mean(diff == 0)),
+                  },
+              }
+          PY
+
+          python - <<'PY'
+          from pathlib import Path
+
+          def replace_once(path, old, new):
+              p = Path(path)
+              s = p.read_text(encoding="utf-8")
+              if old not in s:
+                  raise SystemExit(f"Missing anchor in {path}: {old[:160]!r}")
+              p.write_text(s.replace(old, new, 1), encoding="utf-8")
+
+          # Always train a global full-history anchor alongside every fixture team.
+          replace_once(
+              "train.py",
+              '''        if not focus_list:\n            log("ERROR: no valid focus teams")\n            sys.exit(1)\n\n    registry = {''',
+              '''        if not focus_list:\n            log("ERROR: no valid focus teams")\n            sys.exit(1)\n\n    # Global anchor is always trained alongside fixture-driven teams.\n    # This adds stability without imposing any team-count cap.\n    if os.environ.get("TRAIN_GLOBAL", "1").strip().lower() in ("1", "true", "yes"):\n        focus_list = [None] + [x for x in focus_list if x is not None]\n        log("Global baseline ENABLED alongside fixture-team models")\n\n    registry = {'''
+          )
+
+          # Simulator always includes the global run, and global gets a modest stability premium.
+          replace_once(
+              "sim.py",
+              '''    if runs:\n        return runs\n    g = MODELS_ROOT / "global"\n    if (g / "registry.json").exists() or (g / "models").is_dir():\n        return [(g, "global")]\n''',
+              '''    g = MODELS_ROOT / "global"\n    if (g / "registry.json").exists() or (g / "models").is_dir():\n        if not any(str(d) == str(g) for d, _ in runs):\n            runs.append((g, "global"))\n    if runs:\n        return runs\n'''
+          )
+          replace_once(
+              "sim.py",
+              '''        conf = 1.0 / (0.35 + ent)  # sharper → higher weight\n        weights.append(conf * family_w.get(name, 1.0))''',
+              '''        conf = 1.0 / (0.55 + ent)\n        weights.append(conf * family_w.get(name, 1.0))'''
+          )
+          replace_once(
+              "sim.py",
+              '''        weights.append(1.0 / (0.35 + ent))''',
+              '''        reliability = 2.50 if label == "global" else 1.00\n        weights.append(reliability / (0.55 + ent))'''
+          )
+          replace_once(
+              "sim.py",
+              '''    candidates = [r for r in rows if r["Verdict"] == "YES" and r["Model%"] >= 55]''',
+              '''    candidates = [r for r in rows if r["Verdict"] == "YES" and r["Model%"] >= 60]'''
+          )
+          replace_once(
+              "sim.py",
+              '''    locked = top["Model%"] >= 58 and abs(top["Model%"] - top["Sim%"]) <= 12''',
+              '''    engine_count = len([x for x in str(top.get("Agree", "")).split() if x.endswith("eng")])\n    locked = top["Model%"] >= 72 and abs(top["Model%"] - top["Sim%"]) <= 6 and engine_count >= 3'''
+          )
+          replace_once(
+              "sim.py",
+              '''        if is_dc(top):\n            locked = top["Model%"] >= 75 and abs(top["Model%"] - top["Sim%"] <= 10\n        else:\n            locked = top["Model%"] >= 62 and abs(top["Model%"] - top["Sim%"] <= 10\n''',
+              '''        engine_count = len([x for x in str(top.get("Agree", "")).split() if x.endswith("eng")])\n        if is_dc(top):\n            locked = top["Model%"] >= 80 and abs(top["Model%"] - top["Sim%"] <= 6 and engine_count >= 3\n        else:\n            locked = top["Model%"] >= 72 and abs(top["Model%"] - top["Sim%"] <= 6 and engine_count >= 3\n'''
+          ) if False else None
+
+          # Fix the verbose lock block with an exact current anchor.
+          old = '''        if is_dc(top):\n            locked = top["Model%"] >= 75 and abs(top["Model%"] - top["Sim%"] <= 10\n        else:\n            locked = top["Model%"] >= 62 and abs(top["Model%"] - top["Sim%"] <= 10\n'''
+          if old in Path("sim.py").read_text(encoding="utf-8"):
+              replace_once("sim.py", old, '''        engine_count = len([x for x in str(top.get("Agree", "")).split() if x.endswith("eng")])\n        if is_dc(top):\n            locked = top["Model%"] >= 80 and abs(top["Model%"] - top["Sim%"] <= 6 and engine_count >= 3\n        else:\n            locked = top["Model%"] >= 72 and abs(top["Model%"] - top["Sim%"] <= 6 and engine_count >= 3\n''')
+          else:
+              old2 = '''        if is_dc(top):\n            locked = top["Model%"] >= 75 and abs(top["Model%"] - top["Sim%"] <= 10\n        else:\n            locked = top["Model%"] >= 62 and abs(top["Model%"] - top["Sim%"] <= 10\n'''
+
+          # Replace the exact known block from current sim.py if still present.
+          current = Path("sim.py").read_text(encoding="utf-8")
+          exact = '''        if is_dc(top):\n            locked = top["Model%"] >= 75 and abs(top["Model%"] - top["Sim%"] <= 10\n        else:\n            locked = top["Model%"] >= 62 and abs(top["Model%"] - top["Sim%"] <= 10\n'''
+          if exact in current:
+              replace_once("sim.py", exact, '''        engine_count = len([x for x in str(top.get("Agree", "")).split() if x.endswith("eng")])\n        if is_dc(top):\n            locked = top["Model%"] >= 80 and abs(top["Model%"] - top["Sim%"] <= 6 and engine_count >= 3\n        else:\n            locked = top["Model%"] >= 72 and abs(top["Model%"] - top["Sim%"] <= 6 and engine_count >= 3\n''')
+
+          # Daily simulator uses the industrial-v3 engine and 10x Monte Carlo volume.
+          replace_once(
+              "run_fixture_sims.py",
+              'from hard_simulation import simulate_hard\n',
+              'from industrial_sim_engine import simulate_industrial\n'
+          )
+          replace_once(
+              "run_fixture_sims.py",
+              'N_SIM = int(os.environ.get("N_SIMULATIONS", "8000"))',
+              'N_SIM = int(os.environ.get("N_SIMULATIONS", "120000"))'
+          )
+          replace_once(
+              "run_fixture_sims.py",
+              'HARD_ATTACK_CV = float(os.environ.get("HARD_ATTACK_CV", "0.13"))\nHARD_DEFENSE_CV = float(os.environ.get("HARD_DEFENSE_CV", "0.13"))\nHARD_SHARED_CV = float(os.environ.get("HARD_SHARED_CV", "0.07"))\n',
+              'HARD_ATTACK_CV = float(os.environ.get("HARD_ATTACK_CV", "0.18"))\nHARD_DEFENSE_CV = float(os.environ.get("HARD_DEFENSE_CV", "0.18"))\nHARD_SHARED_CV = float(os.environ.get("HARD_SHARED_CV", "0.10"))\n'
+          )
+          start = '    hard = simulate_hard(\n'
+          if start in Path("run_fixture_sims.py").read_text(encoding="utf-8"):
+              old_block = '''    hard = simulate_hard(\n        vals(rep.get("ft_model"), {"H":1/3,"D":1/3,"A":1/3}),\n        vals(rep.get("ht_model"), {"H":.30,"D":.40,"A":.30}),\n        rep.get("over25_model", .50), rep.get("btts_model", .50), rep.get("ht_over15_model", .30),\n        N_SIM, seed, standings_prior=rep.get("standings_prior"),\n        hardness={"attack_cv":HARD_ATTACK_CV,"defense_cv":HARD_DEFENSE_CV,"shared_cv":HARD_SHARED_CV})\n'''
+              new_block = '''    hard = simulate_industrial(\n        vals(rep.get("ft_model"), {"H":1/3,"D":1/3,"A":1/3}),\n        vals(rep.get("ht_model"), {"H":.30,"D":.40,"A":.30}),\n        rep.get("over25_model", .50), rep.get("btts_model", .50), rep.get("ht_over15_model", .30),\n        N_SIM, seed, standings_prior=rep.get("standings_prior"))\n'''
+              replace_once("run_fixture_sims.py", old_block, new_block)
+          replace_once(
+              "run_fixture_sims.py",
+              '"simulation_engine":"hard-v2" if HARD_SIM else "sim-v1"',
+              '"simulation_engine":"industrial-v3" if HARD_SIM else "sim-v1"'
+          )
+
+          # Live-score API response mapping: use calendar fixture id, scheduled time,
+          # federation/competition objects, and validate the documented envelope.
+          replace_once(
+              "africa/live_score_api_fixtures.py",
+              'from datetime import datetime, timezone\nfrom typing import Any\n',
+              'from datetime import datetime, timezone\nfrom typing import Any\nfrom urllib.parse import parse_qs, urlparse\n'
+          )
+          replace_once(
+              "africa/live_score_api_fixtures.py",
+              '''            payload = r.json()\n            if payload.get("success") is False:\n                raise RuntimeError(str(payload.get("error") or "Live-score API returned success=false"))\n            data = payload.get("data") or {}\n            batch = data.get("fixtures") or []\n''',
+              '''            payload = r.json()\n            if payload.get("success") is not True:\n                raise RuntimeError(str(payload.get("error") or "Live-score API returned success=false"))\n            data = payload.get("data") or {}\n            if not isinstance(data, dict):\n                raise RuntimeError("Live-score API data is not an object")\n            batch = data.get("fixtures") or []\n            if not isinstance(batch, list):\n                raise RuntimeError("Live-score API data.fixtures is not a list")\n'''
+          )
+          replace_once(
+              "africa/live_score_api_fixtures.py",
+              '''                from urllib.parse import parse_qs, urlparse\n                qs = parse_qs(urlparse(str(nxt)).query)\n''',
+              '''                qs = parse_qs(urlparse(str(nxt)).query)\n'''
+          )
+          replace_once(
+              "africa/live_score_api_fixtures.py",
+              '''        fid = x.get("id")\n        try:\n            fixture_id = int(fid)\n        except (TypeError, ValueError):\n            continue\n''',
+              '''        # Calendar fixtures use `id` as the scheduled fixture identifier.\n        # Live-score match responses later expose a separate match `id` plus\n        # `fixture_id`; keep the fixture id stable across both stages.\n        fid = x.get("id") if x.get("id") is not None else x.get("fixture_id")\n        try:\n            fixture_id = int(fid)\n        except (TypeError, ValueError):\n            continue\n'''
+          )
+          replace_once(
+              "africa/live_score_api_fixtures.py",
+              '''        out.append({\n            "fixture_id": fixture_id,\n            "date": str(x.get("date") or ""),\n            "timestamp": None,\n            "status": "NS",\n            "elapsed": None,\n            "country": str(country.get("name") or federation.get("name") or "CAF"),\n            "league_id": competition.get("id"),\n            "league": competition.get("name"),\n            "season": None,\n            "round": x.get("round"),\n''',
+              '''        scheduled = str(x.get("scheduled") or x.get("time") or "").strip()\n        if scheduled:\n            scheduled = scheduled[:8]\n            fixture_date = f"{day}T{scheduled}"\n        else:\n            fixture_date = day\n        try:\n            ts = int(datetime.fromisoformat(fixture_date.replace("Z", "+00:00")).replace(tzinfo=timezone.utc).timestamp())\n        except Exception:\n            ts = None\n        odds_h, odds_d, odds_a = odds.get("1"), odds.get("X"), odds.get("2")\n        def _odd(v):\n            try:\n                v = float(v)\n                return v if v > 1.0 else None\n            except (TypeError, ValueError):\n                return None\n        out.append({\n            "fixture_id": fixture_id,\n            "date": fixture_date,\n            "timestamp": ts,\n            "status": "NS",\n            "elapsed": None,\n            "country": str(country.get("name") or federation.get("name") or "CAF"),\n            "federation": str(federation.get("name") or "CAF"),\n            "league_id": competition.get("id"),\n            "league": competition.get("name"),\n            "season": None,\n            "round": x.get("round"),\n'''
+          )
+          replace_once(
+              "africa/live_score_api_fixtures.py",
+              '''            "odds_h": odds.get("1"),\n            "odds_d": odds.get("X"),\n            "odds_a": odds.get("2"),\n''',
+              '''            "odds_h": _odd(odds_h),\n            "odds_d": _odd(odds_d),\n            "odds_a": _odd(odds_a),\n'''
+          )
+          replace_once(
+              "africa/live_score_api_fixtures.py",
+              '''            "source": "live-score-api",\n        })\n''',
+              '''            "source": "live-score-api",\n            "provider": "live-score-api",\n            "schema_version": "africa-fixture-v2",\n        })\n'''
+          )
+
+          # Africa segment must allow Live-score-only operation when API-Football is suspended.
+          replace_once(
+              "africa/daily_africa_segment.py",
+              '''    backup = os.environ.get("API_FOOTBALL_BACKUP_KEY", "").strip()\n    key = os.environ.get("API_FOOTBALL_KEY", "").strip()\n    if not backup and not key:\n        raise SystemExit("Africa fixtures require API_FOOTBALL_BACKUP_KEY or API_FOOTBALL_KEY")\n''',
+              '''    backup = os.environ.get("API_FOOTBALL_BACKUP_KEY", "").strip()\n    key = os.environ.get("API_FOOTBALL_KEY", "").strip()\n    live_key = os.environ.get("LIVE_SCORE_API_KEY", "").strip()\n    live_secret = os.environ.get("LIVE_SCORE_API_SECRET", "").strip()\n    if not (backup or key or (live_key and live_secret)):\n        raise SystemExit("Africa fixtures require API-Football fixture credentials or LIVE_SCORE_API_KEY/LIVE_SCORE_API_SECRET")\n'''
+          )
+          replace_once(
+              "africa/daily_africa_segment.py",
+              '''        "API_FOOTBALL_KEY": key,\n        "API_FOOTBALL_STANDINGS_KEY": "",\n        "AFRICA_FIXTURES_OUT": str(out),\n''',
+              '''        "API_FOOTBALL_KEY": key,\n        "LIVE_SCORE_API_KEY": live_key,\n        "LIVE_SCORE_API_SECRET": live_secret,\n        "API_FOOTBALL_STANDINGS_KEY": "",\n        "AFRICA_FIXTURES_OUT": str(out),\n'''
+          )
+          replace_once(
+              "africa/daily_africa_segment.py",
+              '''    fetch_standings_for_africa(doc.get("date"))\n    train_for_board(teams, countries)\n''',
+              '''    # Standings are deliberately disabled by the main workflow.\n    fetch_standings_for_africa(doc.get("date"))\n    train_for_board(teams, countries)\n'''
+          )
+
+          # Workflow: no training cap input; unlimited fixture-driven teams, 120k sims,
+          # and explicit Live-score credentials. Standings remain disabled.
+          replace_once(
+              ".github/workflows/daily_run.yaml",
+              '''      - name: Run full daily pipeline\n        env:\n          MAX_TRAIN_TEAMS: ${{ github.event.inputs.max_train_teams || '0' }}\n''',
+              '''      - name: Run full daily pipeline\n        env:\n          MAX_TRAIN_TEAMS: "0"\n          MAX_FIXTURES: "0"\n'''
+          )
+          replace_once(
+              ".github/workflows/daily_run.yaml",
+              '          N_SIMULATIONS: "12000"',
+              '          N_SIMULATIONS: "120000"'
+          )
+          replace_once(
+              ".github/workflows/daily_run.yaml",
+              '          HARD_SIM: "1"\n          HARD_ATTACK_CV: "0.18"\n          HARD_DEFENSE_CV: "0.18"\n          HARD_SHARED_CV: "0.10"',
+              '          HARD_SIM: "1"\n          HARD_ATTACK_CV: "0.18"\n          HARD_DEFENSE_CV: "0.18"\n          HARD_SHARED_CV: "0.10"\n          INDUSTRIAL_SIM: "1"'
+          )
+          # Remove the workflow-dispatch training-cap input block completely.
+          text = Path(".github/workflows/daily_run.yaml").read_text(encoding="utf-8")
+          old = '''  workflow_dispatch:\n    inputs:\n      skip_train:\n        description: "Skip training (re-sim + publish only)"\n        type: boolean\n        default: false\n      max_train_teams:\n        description: "Optional explicit training cap; leave 0 for all fixture teams"\n        type: string\n        default: "0"\n'''
+          new = '''  workflow_dispatch:\n    inputs:\n      skip_train:\n        description: "Skip training (re-sim + publish only)"\n        type: boolean\n        default: false\n'''
+          if old in text:
+              Path(".github/workflows/daily_run.yaml").write_text(text.replace(old, new, 1), encoding="utf-8")
+
+          for f in ["industrial_sim_engine.py", "train.py", "sim.py", "run_fixture_sims.py", "africa/live_score_api_fixtures.py", "africa/daily_africa_segment.py"]:
+              compile(Path(f).read_text(encoding="utf-8"), f, "exec")
+          print("industrial upgrade syntax: OK")
+          PY
+
+      - name: Commit source upgrade
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add industrial_sim_engine.py train.py sim.py run_fixture_sims.py africa/live_score_api_fixtures.py africa/daily_africa_segment.py .github/workflows/daily_run.yaml
+          git diff --cached --quiet && { echo "No changes"; exit 0; }
+          git commit -m "Upgrade simulation engine and Africa fixture mapping"
+          git push origin HEAD:main
