@@ -14,3 +14,6 @@ jinja2>=3.1
 networkx>=3.0
 sympy>=1.13.3
 typing-extensions>=4.10
+
+# CPU-only TensorFlow for the optional neural target models.
+tensorflow-cpu>=2.18,<3
