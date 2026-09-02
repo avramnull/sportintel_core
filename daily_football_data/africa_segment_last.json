@@ -1,6 +1,37 @@
 {
-  "ok": false,
-  "status": "unavailable",
-  "checked_at": "2026-09-01T21:30:29.730040+00:00",
-  "reason": "Command failed (1): /opt/hostedtoolcache/Python/3.12.14/x64/bin/python -m africa.fetch_today_fixtures"
+  "ok": true,
+  "status": "complete",
+  "date": "2026-09-02",
+  "n_fixtures": 10,
+  "n_sim_ok": 10,
+  "countries": [
+    "Kenya",
+    "South Africa",
+    "Zimbabwe",
+    "Uganda",
+    "Egypt",
+    "Botswana"
+  ],
+  "teams": [
+    "Posta Rangers",
+    "Shabana FC",
+    "Cape Town City FC",
+    "Leicesterford",
+    "Scotland Mabvuku",
+    "Platinum",
+    "Blacks Power",
+    "Police FC",
+    "AFC Leopards",
+    "Bandari",
+    "El Gouna FC",
+    "Al Mokawloon Al Arab",
+    "Ceramica Cleopatra",
+    "Future FC",
+    "Abo Qir Semad",
+    "Al-Ittihad Al-Sakandary",
+    "Tafic FC",
+    "Gaborone United",
+    "Mamelodi Sundowns FC",
+    "Milford"
+  ]
 }

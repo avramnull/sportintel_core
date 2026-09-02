@@ -1,0 +1,578 @@
+{
+  "match": {
+    "league": "SC0",
+    "home_team": "Kilmarnock",
+    "away_team": "St Mirren",
+    "match_date": "2026-09-02 19:45",
+    "odds_home": 2.75,
+    "odds_draw": 3.4,
+    "odds_away": 2.4,
+    "n_simulations": 120000,
+    "seed": 85,
+    "odds_blend": 0.3
+  },
+  "resolved": {
+    "league": "Scottish Premiership",
+    "div": "SC0",
+    "home": "Kilmarnock",
+    "away": "St Mirren",
+    "models": "Kilmarnock (home) + St Mirren (away)",
+    "match_date": "2026-09-02 19:45"
+  },
+  "report": {
+    "n": 120000,
+    "engine": {
+      "version": "hard-v2",
+      "method": "calibrated-bivariate-poisson+dixon-coles+latent-state",
+      "attack_cv": 0.18,
+      "defense_cv": 0.18,
+      "shared_state_cv": 0.1,
+      "common_goal_rate": 6.278347695597836e-41,
+      "lambda_home": 1.3163855141110758,
+      "lambda_away": 1.1953989184727676,
+      "target_total_lambda": 2.5117844325838434
+    },
+    "ft_model": {
+      "H": 0.4019338780466381,
+      "D": 0.2531873807406553,
+      "A": 0.34487874121270656
+    },
+    "ft_sim": {
+      "H": 0.39431666666666665,
+      "D": 0.26893333333333336,
+      "A": 0.33675
+    },
+    "ht_model": {
+      "H": 0.3193457756827231,
+      "D": 0.4022555992507829,
+      "A": 0.27839862506649415
+    },
+    "ht_sim": {
+      "H": 0.28989166666666666,
+      "D": 0.45435,
+      "A": 0.2557583333333333
+    },
+    "over25_model": 0.4592061933499534,
+    "over25_sim": 0.455775,
+    "btts_model": 0.47585507493478546,
+    "btts_sim": 0.498275,
+    "ht_over15_model": 0.36480154833748835,
+    "ht_over15_sim": 0.2826416666666667,
+    "dc_ft": {
+      "1X": 0.66325,
+      "X2": 0.6056833333333334,
+      "12": 0.7310666666666666
+    },
+    "dc_ht": {
+      "1X": 0.7442416666666667,
+      "X2": 0.7101083333333333,
+      "12": 0.54565
+    },
+    "top_ft": [
+      [
+        "1-1",
+        14826
+      ],
+      [
+        "1-0",
+        12976
+      ],
+      [
+        "0-1",
+        11795
+      ],
+      [
+        "0-0",
+        10433
+      ],
+      [
+        "2-1",
+        9520
+      ],
+      [
+        "1-2",
+        8656
+      ],
+      [
+        "2-0",
+        8258
+      ],
+      [
+        "0-2",
+        7019
+      ],
+      [
+        "2-2",
+        5792
+      ],
+      [
+        "3-1",
+        4442
+      ],
+      [
+        "3-0",
+        3757
+      ],
+      [
+        "1-3",
+        3614
+      ]
+    ],
+    "top_ht": [
+      [
+        "0-0",
+        42432
+      ],
+      [
+        "1-0",
+        22913
+      ],
+      [
+        "0-1",
+        20738
+      ],
+      [
+        "1-1",
+        11269
+      ],
+      [
+        "2-0",
+        6424
+      ],
+      [
+        "0-2",
+        5294
+      ],
+      [
+        "2-1",
+        3178
+      ],
+      [
+        "1-2",
+        2870
+      ]
+    ],
+    "top3_ft": [
+      {
+        "score": "1-1",
+        "count": 14826,
+        "pct": 12.4
+      },
+      {
+        "score": "1-0",
+        "count": 12976,
+        "pct": 10.8
+      },
+      {
+        "score": "0-1",
+        "count": 11795,
+        "pct": 9.8
+      }
+    ],
+    "top3_ht": [
+      {
+        "score": "0-0",
+        "count": 42432,
+        "pct": 35.4
+      },
+      {
+        "score": "1-0",
+        "count": 22913,
+        "pct": 19.1
+      },
+      {
+        "score": "0-1",
+        "count": 20738,
+        "pct": 17.3
+      }
+    ],
+    "top8_ft": [
+      {
+        "score": "1-1",
+        "count": 14826,
+        "pct": 12.4
+      },
+      {
+        "score": "1-0",
+        "count": 12976,
+        "pct": 10.8
+      },
+      {
+        "score": "0-1",
+        "count": 11795,
+        "pct": 9.8
+      },
+      {
+        "score": "0-0",
+        "count": 10433,
+        "pct": 8.7
+      },
+      {
+        "score": "2-1",
+        "count": 9520,
+        "pct": 7.9
+      },
+      {
+        "score": "1-2",
+        "count": 8656,
+        "pct": 7.2
+      },
+      {
+        "score": "2-0",
+        "count": 8258,
+        "pct": 6.9
+      },
+      {
+        "score": "0-2",
+        "count": 7019,
+        "pct": 5.8
+      }
+    ],
+    "xg": {
+      "home": 1.3172083333333333,
+      "away": 1.1951333333333334,
+      "total": 2.5123416666666665,
+      "lambda_home": 1.3163855141110758,
+      "lambda_away": 1.1953989184727676
+    },
+    "ht_xg": {
+      "home": 0.5501416666666666,
+      "away": 0.4992,
+      "total": 1.0493416666666666
+    },
+    "score_consistency": {
+      "ht_leq_ft": 1.0,
+      "ft_vs_model_l1": 0.031491905185356106
+    },
+    "clean_sheet": {
+      "home": 0.31061666666666665,
+      "away": 0.27805
+    },
+    "win_to_nil": {
+      "home": 0.223675,
+      "away": 0.19110833333333332
+    },
+    "goal_lines": {
+      "0.5": {
+        "over": 0.9130583333333333,
+        "under": 0.08694166666666667,
+        "push": 0.0
+      },
+      "1.5": {
+        "over": 0.7066333333333333,
+        "under": 0.29336666666666666,
+        "push": 0.0
+      },
+      "2.5": {
+        "over": 0.455775,
+        "under": 0.544225,
+        "push": 0.0
+      },
+      "3.5": {
+        "over": 0.24889166666666668,
+        "under": 0.7511083333333334,
+        "push": 0.0
+      },
+      "4.5": {
+        "over": 0.11469166666666666,
+        "under": 0.8853083333333334,
+        "push": 0.0
+      }
+    },
+    "asian_handicap": {
+      "home_-0.5": 0.39431666666666665,
+      "home_-1.0": {
+        "cover": 0.18150833333333333,
+        "push": 0.21280833333333332
+      },
+      "home_+0.5": 0.66325,
+      "home_+1.0": {
+        "cover": 0.66325,
+        "push": 0.19220833333333334
+      }
+    },
+    "score_matrix_margin": {
+      "home_1_goal": 0.21280833333333332,
+      "home_2_plus": 0.18150833333333333,
+      "away_1_goal": 0.19220833333333334,
+      "away_2_plus": 0.14454166666666668,
+      "draw": 0.26893333333333336
+    }
+  },
+  "table": [
+    {
+      "Section": "HT Winner",
+      "Selection": "Kilmarnock",
+      "Model%": 31.9,
+      "Sim%": 29.0,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 2.9
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Draw",
+      "Model%": 40.2,
+      "Sim%": 45.4,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": -5.2
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "St Mirren",
+      "Model%": 27.8,
+      "Sim%": 25.6,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 2.3
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "1X",
+      "Model%": 74.4,
+      "Sim%": 74.4,
+      "Agree": "6 eng",
+      "Verdict": "YES",
+      "Edge": 0.0
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "X2",
+      "Model%": 71.0,
+      "Sim%": 71.0,
+      "Agree": "6 eng",
+      "Verdict": "YES",
+      "Edge": 0.0
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "12",
+      "Model%": 54.6,
+      "Sim%": 54.6,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 0.0
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Over 1.5",
+      "Model%": 36.5,
+      "Sim%": 28.3,
+      "Agree": "-",
+      "Verdict": "NO",
+      "Edge": 8.2
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Under 1.5",
+      "Model%": 63.5,
+      "Sim%": 71.7,
+      "Agree": "-",
+      "Verdict": "YES",
+      "Edge": -8.2
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Kilmarnock",
+      "Model%": 40.2,
+      "Sim%": 39.4,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 0.8
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Draw",
+      "Model%": 25.3,
+      "Sim%": 26.9,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": -1.6
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "St Mirren",
+      "Model%": 34.5,
+      "Sim%": 33.7,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 0.8
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "1X",
+      "Model%": 66.3,
+      "Sim%": 66.3,
+      "Agree": "6 eng",
+      "Verdict": "YES",
+      "Edge": 0.0
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 60.6,
+      "Sim%": 60.6,
+      "Agree": "6 eng",
+      "Verdict": "YES",
+      "Edge": 0.0
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "12",
+      "Model%": 73.1,
+      "Sim%": 73.1,
+      "Agree": "6 eng",
+      "Verdict": "YES",
+      "Edge": 0.0
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Over 2.5",
+      "Model%": 45.9,
+      "Sim%": 45.6,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 0.3
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Under 2.5",
+      "Model%": 54.1,
+      "Sim%": 54.4,
+      "Agree": "6 eng",
+      "Verdict": "YES",
+      "Edge": -0.3
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "Yes",
+      "Model%": 47.6,
+      "Sim%": 49.8,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": -2.2
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 52.4,
+      "Sim%": 50.2,
+      "Agree": "6 eng",
+      "Verdict": "YES",
+      "Edge": 2.2
+    },
+    {
+      "Section": "FT O/U+",
+      "Selection": "Over 1.5",
+      "Model%": 70.7,
+      "Sim%": 70.7,
+      "Agree": "6 eng",
+      "Verdict": "YES",
+      "Edge": 0.0
+    },
+    {
+      "Section": "FT O/U+",
+      "Selection": "Over 3.5",
+      "Model%": 24.9,
+      "Sim%": 24.9,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 0.0
+    },
+    {
+      "Section": "CS",
+      "Selection": "Kilmarnock CS",
+      "Model%": 31.1,
+      "Sim%": 31.1,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 0.0
+    },
+    {
+      "Section": "CS",
+      "Selection": "St Mirren CS",
+      "Model%": 27.8,
+      "Sim%": 27.8,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 0.0
+    },
+    {
+      "Section": "WTN",
+      "Selection": "Kilmarnock WTN",
+      "Model%": 22.4,
+      "Sim%": 22.4,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 0.0
+    },
+    {
+      "Section": "WTN",
+      "Selection": "St Mirren WTN",
+      "Model%": 19.1,
+      "Sim%": 19.1,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 0.0
+    }
+  ],
+  "locked_tip": {
+    "status": "SECURED LOCK",
+    "section": "HT DC",
+    "selection": "1X",
+    "model": 74.4,
+    "sim": 74.4,
+    "agree": "6 eng",
+    "verdict": "HARD YES"
+  },
+  "backends": {
+    "ft_result": [
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
+    ],
+    "ht_result": [
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
+    ],
+    "over25": [
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
+    ],
+    "btts": [
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
+    ],
+    "ht_over15": []
+  },
+  "generated_at": "2026-09-02T10:34:04.666380Z",
+  "metadata": {
+    "simulation_engine": {
+      "version": "hard-v2",
+      "method": "calibrated-bivariate-poisson+dixon-coles+latent-state",
+      "attack_cv": 0.18,
+      "defense_cv": 0.18,
+      "shared_state_cv": 0.1,
+      "common_goal_rate": 6.278347695597836e-41,
+      "lambda_home": 1.3163855141110758,
+      "lambda_away": 1.1953989184727676,
+      "target_total_lambda": 2.5117844325838434
+    }
+  }
+}

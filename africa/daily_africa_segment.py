@@ -59,6 +59,8 @@ def fetch_fixtures() -> Path:
     return out
 
 
+
+
 def disable_africa_publication(reason: str):
     """Remove stale Africa rows from the public index when today's board is unavailable."""
     SIMS.mkdir(parents=True, exist_ok=True)

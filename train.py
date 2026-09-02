@@ -942,8 +942,16 @@ def _train_team_job(args):
     models_dir.mkdir(parents=True, exist_ok=True)
     preproc_dir.mkdir(parents=True, exist_ok=True)
 
-    split = int(len(run_df) * (1 - CONFIG["val_fraction"]))
-    split = max(30, min(split, len(run_df) - 20))
+    # Keep the normal validation fraction for large teams, but guarantee the
+    # minimum validation rows required by prepare_xy. This prevents legitimate
+    # fixture teams with 25+ historical matches from aborting the whole run.
+    requested_val = int(len(run_df) * CONFIG["val_fraction"])
+    min_val = 25
+    val_size = max(min_val, requested_val)
+    split = len(run_df) - val_size
+    if split < 30:
+        log(f"    SKIP (insufficient rows for train/validation split: {len(run_df)})")
+        return run_name, {"team": focus, "skipped": True, "n": len(run_df), "reason": "insufficient_train_validation_rows"}
     train_df, val_df = run_df.iloc[:split], run_df.iloc[split:]
     log(f"    split train={len(train_df)} val={len(val_df)}")
 
@@ -1064,7 +1072,7 @@ def main():
     labeled = df.dropna(subset=["FTR"]).sort_values("Date")
     log(f"Labeled matches: {len(labeled)}")
 
-    focus_list: List[Optional[str]] = [None]
+    focus_list: List[Optional[str]] = []
     if CONFIG["focus_teams"]:
         focus_list = []
         for raw in CONFIG["focus_teams"]:

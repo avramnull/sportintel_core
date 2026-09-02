@@ -1,0 +1,11 @@
+fixture_id,date,timestamp,status,elapsed,country,league_id,league,season,round,home,away,home_id,away_id,goals_home,goals_away,ht_home,ht_away,odds_h,odds_d,odds_a,odds_book,source
+1897448,2026-09-02,,NS,,Kenya,37,Premier League,,1,Posta Rangers,Shabana FC,2359,4029,,,,,,,,live-score-api,live-score-api
+1895443,2026-09-02,,NS,,South Africa,327,1st Division,,2,Cape Town City FC,Leicesterford,1037,8369,,,,,1.57,3.2,5.5,live-score-api,live-score-api
+1895586,2026-09-02,,NS,,Zimbabwe,85,Premier Soccer League,,28,Scotland Mabvuku,Platinum,8249,2950,,,,,,,,live-score-api,live-score-api
+1897015,2026-09-02,,NS,,Uganda,81,Super League,,2,Blacks Power,Police FC,7569,2980,,,,,,,,live-score-api,live-score-api
+1897450,2026-09-02,,NS,,Kenya,37,Premier League,,1,AFC Leopards,Bandari,2254,2336,,,,,,,,live-score-api,live-score-api
+1895124,2026-09-02,,NS,,Egypt,36,Premier League,,3,El Gouna FC,Al Mokawloon Al Arab,2362,100,,,,,2.78,2.66,2.82,live-score-api,live-score-api
+1895125,2026-09-02,,NS,,Egypt,36,Premier League,,3,Ceramica Cleopatra,Future FC,6592,6699,,,,,2.05,2.96,3.75,live-score-api,live-score-api
+1895126,2026-09-02,,NS,,Egypt,36,Premier League,,3,Abo Qir Semad,Al-Ittihad Al-Sakandary,5610,115,,,,,,,,live-score-api,live-score-api
+1896548,2026-09-02,,NS,,Botswana,456,Premier League,,2,Tafic FC,Gaborone United,7967,7962,,,,,,,,live-score-api,live-score-api
+1884633,2026-09-02,,NS,,South Africa,41,Premier League,,Regular Season,Mamelodi Sundowns FC,Milford,1034,7834,,,,,,,,live-score-api,live-score-api

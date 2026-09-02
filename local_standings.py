@@ -2,14 +2,23 @@
 """
 Live league tables from free football-data.co.uk season results.
 
-Why: API-Football free plan only exposes standings seasons 2022–2024 — useless
+Why: external provider free plan only exposes standings seasons 2022–2024 — useless
 for current-season priors. football-data publishes full current-season CSVs
 (e.g. mmz4281/2627/E0.csv) with every played match → we build the table ourselves.
 
-One table per Div / league. Same row schema as API-Football parse_standings_table
+One table per Div / league. Same row schema as external provider parse_standings_table
 so standings_prior.py works unchanged.
 """
 from __future__ import annotations
+
+# Internal competition mapping retained for local standings compatibility.
+FDC_DIV_TO_LEAGUE = {
+    "E0": 39, "E1": 40, "E2": 41, "E3": 42, "EC": 43,
+    "SC0": 179, "SC1": 180, "D1": 78, "D2": 79,
+    "SP1": 140, "SP2": 141, "I1": 135, "I2": 136,
+    "F1": 61, "F2": 62, "F1": 61, "F2": 62, "N1": 88, "B1": 144, "P1": 94,
+    "T1": 203, "G1": 197,
+}
 
 import os
 from collections import defaultdict
@@ -24,8 +33,7 @@ ROOT = Path(__file__).resolve().parent
 SAVE = ROOT / "daily_football_data"
 USER_AGENT = "sportintel-core/1.0 (+https://github.com/avramnull/sportintel_core)"
 
-# Div codes we map to API league ids (same as api_football_client.FDC_DIV_TO_LEAGUE)
-from api_football_client import FDC_DIV_TO_LEAGUE  # noqa: E402
+# Div codes we map to API league ids (same as external provider_client.FDC_DIV_TO_LEAGUE)
 from si_config import season_code  # noqa: E402
 
 

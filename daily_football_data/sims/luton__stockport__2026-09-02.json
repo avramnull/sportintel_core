@@ -1,0 +1,578 @@
+{
+  "match": {
+    "league": "E2",
+    "home_team": "Luton",
+    "away_team": "Stockport",
+    "match_date": "2026-09-02 19:45",
+    "odds_home": 2.15,
+    "odds_draw": 3.4,
+    "odds_away": 3.1,
+    "n_simulations": 120000,
+    "seed": 66,
+    "odds_blend": 0.3
+  },
+  "resolved": {
+    "league": "League One",
+    "div": "E2",
+    "home": "Luton",
+    "away": "Stockport",
+    "models": "Luton (home) + Stockport (away)",
+    "match_date": "2026-09-02 19:45"
+  },
+  "report": {
+    "n": 120000,
+    "engine": {
+      "version": "hard-v2",
+      "method": "calibrated-bivariate-poisson+dixon-coles+latent-state",
+      "attack_cv": 0.18,
+      "defense_cv": 0.18,
+      "shared_state_cv": 0.1,
+      "common_goal_rate": 0.14620049502482627,
+      "lambda_home": 1.2886910283484394,
+      "lambda_away": 1.0606107344140365,
+      "target_total_lambda": 2.4955022577873023
+    },
+    "ft_model": {
+      "H": 0.4134945106146237,
+      "D": 0.28673280271688584,
+      "A": 0.29977268666849044
+    },
+    "ft_sim": {
+      "H": 0.41496666666666665,
+      "D": 0.277125,
+      "A": 0.30790833333333334
+    },
+    "ht_model": {
+      "H": 0.3343727621482147,
+      "D": 0.4034853299974779,
+      "A": 0.2621419078543074
+    },
+    "ht_sim": {
+      "H": 0.306875,
+      "D": 0.45255833333333334,
+      "A": 0.24056666666666668
+    },
+    "over25_model": 0.4550326251493297,
+    "over25_sim": 0.47975,
+    "btts_model": 0.5243874813564208,
+    "btts_sim": 0.5345416666666667,
+    "ht_over15_model": 0.36375815628733243,
+    "ht_over15_sim": 0.301675,
+    "dc_ft": {
+      "1X": 0.6920916666666667,
+      "X2": 0.5850333333333333,
+      "12": 0.7228749999999999
+    },
+    "dc_ht": {
+      "1X": 0.7594333333333334,
+      "X2": 0.693125,
+      "12": 0.5474416666666667
+    },
+    "top_ft": [
+      [
+        "1-1",
+        14509
+      ],
+      [
+        "1-0",
+        12920
+      ],
+      [
+        "0-0",
+        10745
+      ],
+      [
+        "0-1",
+        10575
+      ],
+      [
+        "2-1",
+        10046
+      ],
+      [
+        "1-2",
+        8392
+      ],
+      [
+        "2-0",
+        8069
+      ],
+      [
+        "2-2",
+        6223
+      ],
+      [
+        "0-2",
+        5612
+      ],
+      [
+        "3-1",
+        4722
+      ],
+      [
+        "3-0",
+        3523
+      ],
+      [
+        "3-2",
+        3371
+      ]
+    ],
+    "top_ht": [
+      [
+        "0-0",
+        41421
+      ],
+      [
+        "1-0",
+        23180
+      ],
+      [
+        "0-1",
+        19198
+      ],
+      [
+        "1-1",
+        11792
+      ],
+      [
+        "2-0",
+        6857
+      ],
+      [
+        "0-2",
+        4648
+      ],
+      [
+        "2-1",
+        3849
+      ],
+      [
+        "1-2",
+        3214
+      ]
+    ],
+    "top3_ft": [
+      {
+        "score": "1-1",
+        "count": 14509,
+        "pct": 12.1
+      },
+      {
+        "score": "1-0",
+        "count": 12920,
+        "pct": 10.8
+      },
+      {
+        "score": "0-0",
+        "count": 10745,
+        "pct": 9.0
+      }
+    ],
+    "top3_ht": [
+      {
+        "score": "0-0",
+        "count": 41421,
+        "pct": 34.5
+      },
+      {
+        "score": "1-0",
+        "count": 23180,
+        "pct": 19.3
+      },
+      {
+        "score": "0-1",
+        "count": 19198,
+        "pct": 16.0
+      }
+    ],
+    "top8_ft": [
+      {
+        "score": "1-1",
+        "count": 14509,
+        "pct": 12.1
+      },
+      {
+        "score": "1-0",
+        "count": 12920,
+        "pct": 10.8
+      },
+      {
+        "score": "0-0",
+        "count": 10745,
+        "pct": 9.0
+      },
+      {
+        "score": "0-1",
+        "count": 10575,
+        "pct": 8.8
+      },
+      {
+        "score": "2-1",
+        "count": 10046,
+        "pct": 8.4
+      },
+      {
+        "score": "1-2",
+        "count": 8392,
+        "pct": 7.0
+      },
+      {
+        "score": "2-0",
+        "count": 8069,
+        "pct": 6.7
+      },
+      {
+        "score": "2-2",
+        "count": 6223,
+        "pct": 5.2
+      }
+    ],
+    "xg": {
+      "home": 1.4327666666666667,
+      "away": 1.2106666666666666,
+      "total": 2.6434333333333333,
+      "lambda_home": 1.2886910283484394,
+      "lambda_away": 1.0606107344140365
+    },
+    "ht_xg": {
+      "home": 0.602875,
+      "away": 0.501275,
+      "total": 1.10415
+    },
+    "score_consistency": {
+      "ht_leq_ft": 1.0,
+      "ft_vs_model_l1": 0.019215605433771654
+    },
+    "clean_sheet": {
+      "home": 0.30764166666666665,
+      "away": 0.24735833333333335
+    },
+    "win_to_nil": {
+      "home": 0.2181,
+      "away": 0.15781666666666666
+    },
+    "goal_lines": {
+      "0.5": {
+        "over": 0.9104583333333334,
+        "under": 0.08954166666666667,
+        "push": 0.0
+      },
+      "1.5": {
+        "over": 0.7146666666666667,
+        "under": 0.2853333333333333,
+        "push": 0.0
+      },
+      "2.5": {
+        "over": 0.47975,
+        "under": 0.52025,
+        "push": 0.0
+      },
+      "3.5": {
+        "over": 0.2803833333333333,
+        "under": 0.7196166666666667,
+        "push": 0.0
+      },
+      "4.5": {
+        "over": 0.146275,
+        "under": 0.853725,
+        "push": 0.0
+      }
+    },
+    "asian_handicap": {
+      "home_-0.5": 0.41496666666666665,
+      "home_-1.0": {
+        "cover": 0.189325,
+        "push": 0.22564166666666666
+      },
+      "home_+0.5": 0.6920916666666667,
+      "home_+1.0": {
+        "cover": 0.6920916666666667,
+        "push": 0.18673333333333333
+      }
+    },
+    "score_matrix_margin": {
+      "home_1_goal": 0.22564166666666666,
+      "home_2_plus": 0.189325,
+      "away_1_goal": 0.18673333333333333,
+      "away_2_plus": 0.121175,
+      "draw": 0.277125
+    }
+  },
+  "table": [
+    {
+      "Section": "HT Winner",
+      "Selection": "Luton",
+      "Model%": 33.4,
+      "Sim%": 30.7,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 2.7
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Draw",
+      "Model%": 40.3,
+      "Sim%": 45.3,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": -4.9
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Stockport",
+      "Model%": 26.2,
+      "Sim%": 24.1,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 2.2
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "1X",
+      "Model%": 75.9,
+      "Sim%": 75.9,
+      "Agree": "6 eng",
+      "Verdict": "YES",
+      "Edge": 0.0
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "X2",
+      "Model%": 69.3,
+      "Sim%": 69.3,
+      "Agree": "6 eng",
+      "Verdict": "YES",
+      "Edge": 0.0
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "12",
+      "Model%": 54.7,
+      "Sim%": 54.7,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 0.0
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Over 1.5",
+      "Model%": 36.4,
+      "Sim%": 30.2,
+      "Agree": "-",
+      "Verdict": "NO",
+      "Edge": 6.2
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Under 1.5",
+      "Model%": 63.6,
+      "Sim%": 69.8,
+      "Agree": "-",
+      "Verdict": "YES",
+      "Edge": -6.2
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Luton",
+      "Model%": 41.3,
+      "Sim%": 41.5,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": -0.1
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Draw",
+      "Model%": 28.7,
+      "Sim%": 27.7,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 1.0
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Stockport",
+      "Model%": 30.0,
+      "Sim%": 30.8,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": -0.8
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "1X",
+      "Model%": 69.2,
+      "Sim%": 69.2,
+      "Agree": "6 eng",
+      "Verdict": "YES",
+      "Edge": 0.0
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 58.5,
+      "Sim%": 58.5,
+      "Agree": "6 eng",
+      "Verdict": "YES",
+      "Edge": 0.0
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "12",
+      "Model%": 72.3,
+      "Sim%": 72.3,
+      "Agree": "6 eng",
+      "Verdict": "YES",
+      "Edge": 0.0
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Over 2.5",
+      "Model%": 45.5,
+      "Sim%": 48.0,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": -2.5
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Under 2.5",
+      "Model%": 54.5,
+      "Sim%": 52.0,
+      "Agree": "6 eng",
+      "Verdict": "YES",
+      "Edge": 2.5
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "Yes",
+      "Model%": 52.4,
+      "Sim%": 53.5,
+      "Agree": "6 eng",
+      "Verdict": "YES",
+      "Edge": -1.0
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 47.6,
+      "Sim%": 46.5,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 1.0
+    },
+    {
+      "Section": "FT O/U+",
+      "Selection": "Over 1.5",
+      "Model%": 71.5,
+      "Sim%": 71.5,
+      "Agree": "6 eng",
+      "Verdict": "YES",
+      "Edge": 0.0
+    },
+    {
+      "Section": "FT O/U+",
+      "Selection": "Over 3.5",
+      "Model%": 28.0,
+      "Sim%": 28.0,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 0.0
+    },
+    {
+      "Section": "CS",
+      "Selection": "Luton CS",
+      "Model%": 30.8,
+      "Sim%": 30.8,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 0.0
+    },
+    {
+      "Section": "CS",
+      "Selection": "Stockport CS",
+      "Model%": 24.7,
+      "Sim%": 24.7,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 0.0
+    },
+    {
+      "Section": "WTN",
+      "Selection": "Luton WTN",
+      "Model%": 21.8,
+      "Sim%": 21.8,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 0.0
+    },
+    {
+      "Section": "WTN",
+      "Selection": "Stockport WTN",
+      "Model%": 15.8,
+      "Sim%": 15.8,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 0.0
+    }
+  ],
+  "locked_tip": {
+    "status": "SECURED LOCK",
+    "section": "HT DC",
+    "selection": "1X",
+    "model": 75.9,
+    "sim": 75.9,
+    "agree": "6 eng",
+    "verdict": "HARD YES"
+  },
+  "backends": {
+    "ft_result": [
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
+    ],
+    "ht_result": [
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
+    ],
+    "over25": [
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
+    ],
+    "btts": [
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
+    ],
+    "ht_over15": []
+  },
+  "generated_at": "2026-09-02T10:33:35.328185Z",
+  "metadata": {
+    "simulation_engine": {
+      "version": "hard-v2",
+      "method": "calibrated-bivariate-poisson+dixon-coles+latent-state",
+      "attack_cv": 0.18,
+      "defense_cv": 0.18,
+      "shared_state_cv": 0.1,
+      "common_goal_rate": 0.14620049502482627,
+      "lambda_home": 1.2886910283484394,
+      "lambda_away": 1.0606107344140365,
+      "target_total_lambda": 2.4955022577873023
+    }
+  }
+}

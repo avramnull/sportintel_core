@@ -1,0 +1,578 @@
+{
+  "match": {
+    "league": "E1",
+    "home_team": "Millwall",
+    "away_team": "Wrexham",
+    "match_date": "2026-09-02 19:45",
+    "odds_home": 2.2,
+    "odds_draw": 3.25,
+    "odds_away": 3.25,
+    "n_simulations": 120000,
+    "seed": 53,
+    "odds_blend": 0.3
+  },
+  "resolved": {
+    "league": "Championship",
+    "div": "E1",
+    "home": "Millwall",
+    "away": "Wrexham",
+    "models": "Millwall (home) + Wrexham (away)",
+    "match_date": "2026-09-02 19:45"
+  },
+  "report": {
+    "n": 120000,
+    "engine": {
+      "version": "hard-v2",
+      "method": "calibrated-bivariate-poisson+dixon-coles+latent-state",
+      "attack_cv": 0.18,
+      "defense_cv": 0.18,
+      "shared_state_cv": 0.1,
+      "common_goal_rate": 0.09499260621911615,
+      "lambda_home": 1.4158932824568393,
+      "lambda_away": 1.076054691940692,
+      "target_total_lambda": 2.5869405806166474
+    },
+    "ft_model": {
+      "H": 0.4445621426713303,
+      "D": 0.27522474943894215,
+      "A": 0.28021310788972753
+    },
+    "ft_sim": {
+      "H": 0.443025,
+      "D": 0.2673333333333333,
+      "A": 0.2896416666666667
+    },
+    "ht_model": {
+      "H": 0.34923398976942593,
+      "D": 0.40794478358933,
+      "A": 0.24282122664124403
+    },
+    "ht_sim": {
+      "H": 0.32421666666666665,
+      "D": 0.44498333333333334,
+      "A": 0.2308
+    },
+    "over25_model": 0.4782870086280998,
+    "over25_sim": 0.488725,
+    "btts_model": 0.5130758482793583,
+    "btts_sim": 0.5316416666666667,
+    "ht_over15_model": 0.369571752157025,
+    "ht_over15_sim": 0.30606666666666665,
+    "dc_ft": {
+      "1X": 0.7103583333333333,
+      "X2": 0.556975,
+      "12": 0.7326666666666667
+    },
+    "dc_ht": {
+      "1X": 0.7692,
+      "X2": 0.6757833333333334,
+      "12": 0.5550166666666667
+    },
+    "top_ft": [
+      [
+        "1-1",
+        14181
+      ],
+      [
+        "1-0",
+        12804
+      ],
+      [
+        "2-1",
+        10307
+      ],
+      [
+        "0-1",
+        10032
+      ],
+      [
+        "0-0",
+        9941
+      ],
+      [
+        "2-0",
+        9082
+      ],
+      [
+        "1-2",
+        7992
+      ],
+      [
+        "2-2",
+        6225
+      ],
+      [
+        "0-2",
+        5313
+      ],
+      [
+        "3-1",
+        5152
+      ],
+      [
+        "3-0",
+        4126
+      ],
+      [
+        "3-2",
+        3348
+      ]
+    ],
+    "top_ht": [
+      [
+        "0-0",
+        40545
+      ],
+      [
+        "1-0",
+        24129
+      ],
+      [
+        "0-1",
+        18598
+      ],
+      [
+        "1-1",
+        11817
+      ],
+      [
+        "2-0",
+        7476
+      ],
+      [
+        "0-2",
+        4510
+      ],
+      [
+        "2-1",
+        3887
+      ],
+      [
+        "1-2",
+        2922
+      ]
+    ],
+    "top3_ft": [
+      {
+        "score": "1-1",
+        "count": 14181,
+        "pct": 11.8
+      },
+      {
+        "score": "1-0",
+        "count": 12804,
+        "pct": 10.7
+      },
+      {
+        "score": "2-1",
+        "count": 10307,
+        "pct": 8.6
+      }
+    ],
+    "top3_ht": [
+      {
+        "score": "0-0",
+        "count": 40545,
+        "pct": 33.8
+      },
+      {
+        "score": "1-0",
+        "count": 24129,
+        "pct": 20.1
+      },
+      {
+        "score": "0-1",
+        "count": 18598,
+        "pct": 15.5
+      }
+    ],
+    "top8_ft": [
+      {
+        "score": "1-1",
+        "count": 14181,
+        "pct": 11.8
+      },
+      {
+        "score": "1-0",
+        "count": 12804,
+        "pct": 10.7
+      },
+      {
+        "score": "2-1",
+        "count": 10307,
+        "pct": 8.6
+      },
+      {
+        "score": "0-1",
+        "count": 10032,
+        "pct": 8.4
+      },
+      {
+        "score": "0-0",
+        "count": 9941,
+        "pct": 8.3
+      },
+      {
+        "score": "2-0",
+        "count": 9082,
+        "pct": 7.6
+      },
+      {
+        "score": "1-2",
+        "count": 7992,
+        "pct": 6.7
+      },
+      {
+        "score": "2-2",
+        "count": 6225,
+        "pct": 5.2
+      }
+    ],
+    "xg": {
+      "home": 1.5035166666666666,
+      "away": 1.172375,
+      "total": 2.675891666666667,
+      "lambda_home": 1.4158932824568393,
+      "lambda_away": 1.076054691940692
+    },
+    "ht_xg": {
+      "home": 0.630575,
+      "away": 0.4857166666666667,
+      "total": 1.1162916666666667
+    },
+    "score_consistency": {
+      "ht_leq_ft": 1.0,
+      "ft_vs_model_l1": 0.01885711755387831
+    },
+    "clean_sheet": {
+      "home": 0.31798333333333334,
+      "away": 0.23321666666666666
+    },
+    "win_to_nil": {
+      "home": 0.23514166666666667,
+      "away": 0.150375
+    },
+    "goal_lines": {
+      "0.5": {
+        "over": 0.9171583333333333,
+        "under": 0.08284166666666666,
+        "push": 0.0
+      },
+      "1.5": {
+        "over": 0.7268583333333334,
+        "under": 0.27314166666666667,
+        "push": 0.0
+      },
+      "2.5": {
+        "over": 0.488725,
+        "under": 0.511275,
+        "push": 0.0
+      },
+      "3.5": {
+        "over": 0.28545,
+        "under": 0.71455,
+        "push": 0.0
+      },
+      "4.5": {
+        "over": 0.14679166666666665,
+        "under": 0.8532083333333333,
+        "push": 0.0
+      }
+    },
+    "asian_handicap": {
+      "home_-0.5": 0.443025,
+      "home_-1.0": {
+        "cover": 0.21663333333333334,
+        "push": 0.22639166666666666
+      },
+      "home_+0.5": 0.7103583333333333,
+      "home_+1.0": {
+        "cover": 0.7103583333333333,
+        "push": 0.17583333333333334
+      }
+    },
+    "score_matrix_margin": {
+      "home_1_goal": 0.22639166666666666,
+      "home_2_plus": 0.21663333333333334,
+      "away_1_goal": 0.17583333333333334,
+      "away_2_plus": 0.11380833333333333,
+      "draw": 0.2673333333333333
+    }
+  },
+  "table": [
+    {
+      "Section": "HT Winner",
+      "Selection": "Millwall",
+      "Model%": 34.9,
+      "Sim%": 32.4,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 2.5
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Draw",
+      "Model%": 40.8,
+      "Sim%": 44.5,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": -3.7
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Wrexham",
+      "Model%": 24.3,
+      "Sim%": 23.1,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 1.2
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "1X",
+      "Model%": 76.9,
+      "Sim%": 76.9,
+      "Agree": "6 eng",
+      "Verdict": "YES",
+      "Edge": 0.0
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "X2",
+      "Model%": 67.6,
+      "Sim%": 67.6,
+      "Agree": "6 eng",
+      "Verdict": "YES",
+      "Edge": 0.0
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "12",
+      "Model%": 55.5,
+      "Sim%": 55.5,
+      "Agree": "6 eng",
+      "Verdict": "YES",
+      "Edge": 0.0
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Over 1.5",
+      "Model%": 37.0,
+      "Sim%": 30.6,
+      "Agree": "-",
+      "Verdict": "NO",
+      "Edge": 6.4
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Under 1.5",
+      "Model%": 63.0,
+      "Sim%": 69.4,
+      "Agree": "-",
+      "Verdict": "YES",
+      "Edge": -6.4
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Millwall",
+      "Model%": 44.5,
+      "Sim%": 44.3,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 0.2
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Draw",
+      "Model%": 27.5,
+      "Sim%": 26.7,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 0.8
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Wrexham",
+      "Model%": 28.0,
+      "Sim%": 29.0,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": -0.9
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "1X",
+      "Model%": 71.0,
+      "Sim%": 71.0,
+      "Agree": "6 eng",
+      "Verdict": "YES",
+      "Edge": 0.0
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 55.7,
+      "Sim%": 55.7,
+      "Agree": "6 eng",
+      "Verdict": "YES",
+      "Edge": 0.0
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "12",
+      "Model%": 73.3,
+      "Sim%": 73.3,
+      "Agree": "6 eng",
+      "Verdict": "YES",
+      "Edge": 0.0
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Over 2.5",
+      "Model%": 47.8,
+      "Sim%": 48.9,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": -1.0
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Under 2.5",
+      "Model%": 52.2,
+      "Sim%": 51.1,
+      "Agree": "6 eng",
+      "Verdict": "YES",
+      "Edge": 1.0
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "Yes",
+      "Model%": 51.3,
+      "Sim%": 53.2,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": -1.9
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 48.7,
+      "Sim%": 46.8,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 1.9
+    },
+    {
+      "Section": "FT O/U+",
+      "Selection": "Over 1.5",
+      "Model%": 72.7,
+      "Sim%": 72.7,
+      "Agree": "6 eng",
+      "Verdict": "YES",
+      "Edge": 0.0
+    },
+    {
+      "Section": "FT O/U+",
+      "Selection": "Over 3.5",
+      "Model%": 28.5,
+      "Sim%": 28.5,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 0.0
+    },
+    {
+      "Section": "CS",
+      "Selection": "Millwall CS",
+      "Model%": 31.8,
+      "Sim%": 31.8,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 0.0
+    },
+    {
+      "Section": "CS",
+      "Selection": "Wrexham CS",
+      "Model%": 23.3,
+      "Sim%": 23.3,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 0.0
+    },
+    {
+      "Section": "WTN",
+      "Selection": "Millwall WTN",
+      "Model%": 23.5,
+      "Sim%": 23.5,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 0.0
+    },
+    {
+      "Section": "WTN",
+      "Selection": "Wrexham WTN",
+      "Model%": 15.0,
+      "Sim%": 15.0,
+      "Agree": "6 eng",
+      "Verdict": "NO",
+      "Edge": 0.0
+    }
+  ],
+  "locked_tip": {
+    "status": "SECURED LOCK",
+    "section": "HT DC",
+    "selection": "1X",
+    "model": 76.9,
+    "sim": 76.9,
+    "agree": "6 eng",
+    "verdict": "HARD YES"
+  },
+  "backends": {
+    "ft_result": [
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
+    ],
+    "ht_result": [
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
+    ],
+    "over25": [
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
+    ],
+    "btts": [
+      "cat",
+      "lgbm",
+      "rf",
+      "tf",
+      "torch",
+      "xgb"
+    ],
+    "ht_over15": []
+  },
+  "generated_at": "2026-09-02T10:32:59.129890Z",
+  "metadata": {
+    "simulation_engine": {
+      "version": "hard-v2",
+      "method": "calibrated-bivariate-poisson+dixon-coles+latent-state",
+      "attack_cv": 0.18,
+      "defense_cv": 0.18,
+      "shared_state_cv": 0.1,
+      "common_goal_rate": 0.09499260621911615,
+      "lambda_home": 1.4158932824568393,
+      "lambda_away": 1.076054691940692,
+      "target_total_lambda": 2.5869405806166474
+    }
+  }
+}

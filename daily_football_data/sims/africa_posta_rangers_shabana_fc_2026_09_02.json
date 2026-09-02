@@ -1,0 +1,295 @@
+{
+  "id": "africa_posta_rangers_shabana_fc_2026_09_02",
+  "region": "Africa",
+  "match": {
+    "home": "Posta Rangers",
+    "away": "Shabana FC",
+    "kickoff": "2026-09-02",
+    "league": "Kenya — Premier League",
+    "odds": "—",
+    "odds_h": null,
+    "odds_d": null,
+    "odds_a": null,
+    "country": "Kenya"
+  },
+  "resolved": {
+    "models": "ft_result,over25,btts"
+  },
+  "locked_tip": {
+    "status": "SECURED LOCK",
+    "section": "O/U",
+    "selection": "Under 2.5",
+    "model": 73.2,
+    "sim": 73.3,
+    "verdict": "HARD YES"
+  },
+  "report": {
+    "ft_model": {
+      "H": 0.2890107124839235,
+      "D": 0.42833914032096554,
+      "A": 0.282650147195111
+    },
+    "ft_sim": {
+      "H": 0.28941666666666666,
+      "D": 0.4283,
+      "A": 0.28228333333333333
+    },
+    "ht_model": {
+      "H": 0.21498333333333333,
+      "D": 0.6041,
+      "A": 0.18091666666666667
+    },
+    "ht_sim": {
+      "H": 0.21498333333333333,
+      "D": 0.6041,
+      "A": 0.18091666666666667
+    },
+    "over25_model": 0.26775848995394536,
+    "over25_sim": 0.2668,
+    "btts_model": 0.4816043955274203,
+    "btts_sim": 0.4822166666666667,
+    "xg": {
+      "home": 1.0287083333333333,
+      "away": 0.9945083333333333,
+      "total": 2.023216666666667
+    },
+    "dc_ft": {
+      "1X": 0.7177166666666667,
+      "X2": 0.7105833333333333,
+      "12": 0.5717
+    },
+    "dc_ht": {},
+    "top_ft": [
+      [
+        "1-1",
+        29843
+      ],
+      [
+        "0-0",
+        16494
+      ],
+      [
+        "0-1",
+        12662
+      ],
+      [
+        "1-0",
+        12154
+      ],
+      [
+        "2-0",
+        8692
+      ],
+      [
+        "0-2",
+        8024
+      ],
+      [
+        "1-2",
+        6166
+      ],
+      [
+        "2-1",
+        5808
+      ],
+      [
+        "2-2",
+        4324
+      ],
+      [
+        "3-1",
+        2463
+      ],
+      [
+        "1-3",
+        2274
+      ],
+      [
+        "3-0",
+        1670
+      ]
+    ],
+    "top_ht": [
+      [
+        "0-0",
+        41993
+      ],
+      [
+        "1-0",
+        22748
+      ],
+      [
+        "0-1",
+        19673
+      ],
+      [
+        "1-1",
+        12553
+      ],
+      [
+        "2-0",
+        6746
+      ],
+      [
+        "0-2",
+        5101
+      ],
+      [
+        "2-1",
+        3358
+      ],
+      [
+        "1-2",
+        2920
+      ],
+      [
+        "3-0",
+        1287
+      ],
+      [
+        "0-3",
+        846
+      ]
+    ],
+    "top3_ft": [
+      {
+        "score": "1-1",
+        "count": 29843,
+        "pct": 24.9
+      },
+      {
+        "score": "0-0",
+        "count": 16494,
+        "pct": 13.7
+      },
+      {
+        "score": "0-1",
+        "count": 12662,
+        "pct": 10.6
+      }
+    ],
+    "clean_sheet": {
+      "home": 0.3305916666666667,
+      "away": 0.3237083333333333
+    },
+    "win_to_nil": {
+      "home": 0.09567873819444445,
+      "away": 0.0913774673611111
+    },
+    "goal_lines": {
+      "1.5": {
+        "over": 0.6569166666666667,
+        "under": 0.3430833333333333
+      },
+      "2.5": {
+        "over": 0.2668,
+        "under": 0.7332000000000001
+      },
+      "3.5": {
+        "over": 0.14300833333333332,
+        "under": 0.8569916666666667
+      }
+    },
+    "score_consistency": {
+      "ft_vs_model_l1": 0.0008
+    },
+    "region": "Africa",
+    "engines": [
+      "ft_result",
+      "over25",
+      "btts"
+    ]
+  },
+  "table": [
+    {
+      "Section": "FT",
+      "Selection": "Home",
+      "Model%": 28.9,
+      "Sim%": 28.9,
+      "Agree": "Y",
+      "Edge": 0.0,
+      "Verdict": "—"
+    },
+    {
+      "Section": "FT",
+      "Selection": "Draw",
+      "Model%": 42.8,
+      "Sim%": 42.8,
+      "Agree": "Y",
+      "Edge": 0.0,
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT",
+      "Selection": "Away",
+      "Model%": 28.3,
+      "Sim%": 28.2,
+      "Agree": "Y",
+      "Edge": -0.1,
+      "Verdict": "—"
+    },
+    {
+      "Section": "O/U",
+      "Selection": "Over 2.5",
+      "Model%": 26.8,
+      "Sim%": 26.7,
+      "Agree": "Y",
+      "Edge": -0.1,
+      "Verdict": "—"
+    },
+    {
+      "Section": "O/U",
+      "Selection": "Under 2.5",
+      "Model%": 73.2,
+      "Sim%": 73.3,
+      "Agree": "Y",
+      "Edge": 0.1,
+      "Verdict": "YES"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "Yes",
+      "Model%": 48.2,
+      "Sim%": 48.2,
+      "Agree": "Y",
+      "Edge": 0.0,
+      "Verdict": "—"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 51.8,
+      "Sim%": 51.8,
+      "Agree": "Y",
+      "Edge": 0.0,
+      "Verdict": "LEAN"
+    },
+    {
+      "Section": "DC",
+      "Selection": "1X",
+      "Model%": 71.7,
+      "Sim%": 71.8,
+      "Agree": "Y",
+      "Edge": 0.1,
+      "Verdict": "YES"
+    },
+    {
+      "Section": "DC",
+      "Selection": "X2",
+      "Model%": 71.1,
+      "Sim%": 71.1,
+      "Agree": "Y",
+      "Edge": 0.0,
+      "Verdict": "YES"
+    },
+    {
+      "Section": "DC",
+      "Selection": "12",
+      "Model%": 57.2,
+      "Sim%": 57.2,
+      "Agree": "Y",
+      "Edge": 0.0,
+      "Verdict": "YES"
+    }
+  ]
+}

@@ -24,22 +24,22 @@
   ],
   "targets": {
     "ft_result": {
-      "xgboost": "country_Egypt/models/xgb_ft_result.json",
-      "lightgbm": "country_Egypt/models/lgbm_ft_result.txt",
-      "catboost": "country_Egypt/models/cat_ft_result.cbm",
-      "random_forest": "country_Egypt/models/rf_ft_result.pkl"
+      "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/country_Egypt/models/xgb_ft_result.json",
+      "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/country_Egypt/models/lgbm_ft_result.txt",
+      "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/country_Egypt/models/cat_ft_result.cbm",
+      "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/country_Egypt/models/rf_ft_result.pkl"
     },
     "over25": {
-      "xgboost": "country_Egypt/models/xgb_over25.json",
-      "lightgbm": "country_Egypt/models/lgbm_over25.txt",
-      "catboost": "country_Egypt/models/cat_over25.cbm",
-      "random_forest": "country_Egypt/models/rf_over25.pkl"
+      "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/country_Egypt/models/xgb_over25.json",
+      "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/country_Egypt/models/lgbm_over25.txt",
+      "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/country_Egypt/models/cat_over25.cbm",
+      "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/country_Egypt/models/rf_over25.pkl"
     },
     "btts": {
-      "xgboost": "country_Egypt/models/xgb_btts.json",
-      "lightgbm": "country_Egypt/models/lgbm_btts.txt",
-      "catboost": "country_Egypt/models/cat_btts.cbm",
-      "random_forest": "country_Egypt/models/rf_btts.pkl"
+      "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/country_Egypt/models/xgb_btts.json",
+      "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/country_Egypt/models/lgbm_btts.txt",
+      "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/country_Egypt/models/cat_btts.cbm",
+      "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/country_Egypt/models/rf_btts.pkl"
     }
   },
   "countries": [

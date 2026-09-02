@@ -105,11 +105,8 @@ def collect_run_dirs(home_canon, away_canon, strict: bool = True):
             runs.append((d, f"{canon} ({label})"))
     if runs:
         return runs
-    g = MODELS_ROOT / "global"
-    if (g / "registry.json").exists() or (g / "models").is_dir():
-        return [(g, "global")]
     if strict:
-        raise SystemExit(f"No models for {home_canon}/{away_canon} and no global/")
+        raise SystemExit(f"No fixture-team models for {home_canon}/{away_canon}")
     return []
 
 
@@ -662,7 +659,7 @@ def simulate_match(p_ft, p_ht, p_over25, p_btts, p_ht_over15, n, seed, standings
     target FT / O2.5 / BTTS probabilities (iterative proportional fitting style),
     then sample n scorelines. HT is always a subset of FT.
 
-    Optional standings_prior (from API-Football live tables) scales lambdas and
+    Optional standings_prior from the local standings layer scales lambdas and
     mildly tilts FT / O2.5 / BTTS before the grid is built.
 
     Guarantees:

@@ -2,7 +2,7 @@
 """
 Live league standings → industrial simulation priors.
 
-Takes API-Football (or compatible) table rows and produces:
+Takes external provider (or compatible) table rows and produces:
   - rank / PPG / GD-per-game gap between home and away
   - lambda multipliers and FT probability tilt
   - optional form-string score (W/D/L sequence)
@@ -11,11 +11,28 @@ Used by EUR `sim.run_one_match` and Africa `sim_africa.simulate_match`.
 """
 from __future__ import annotations
 
+
+def _norm(x):
+    return " ".join(str(x or "").strip().lower().split())
+
+
+def team_lookup(team_rows, name=None):
+    rows = team_rows or []
+    lookup = {}
+    for row in rows:
+        if not isinstance(row, dict):
+            continue
+        key = _norm(row.get("team", row.get("name", "")))
+        if key:
+            lookup[key] = row
+    if name is None:
+        return lookup
+    return lookup.get(_norm(name))
+
+
 import math
 import re
 from typing import Any, Dict, Optional, Tuple
-
-from api_football_client import _norm, team_lookup
 
 
 def form_score(form: str, n: int = 5) -> float:
