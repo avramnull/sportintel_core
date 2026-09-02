@@ -53,6 +53,8 @@ def patch_sim(s: str) -> str:
 
 
 def write_live_score_modules() -> None:
+    # These are compatibility fallbacks only. The workflow restores the
+    # committed hardened client immediately after this migration runs.
     write("africa/live_score_api_fixtures.py", '''
 #!/usr/bin/env python3
 from __future__ import annotations
@@ -117,6 +119,24 @@ def _request(params: dict):
         return json.load(r)
 
 
+def _next_page(value, current):
+    if not value:
+        return None
+    text = str(value).strip()
+    try:
+        return int(text)
+    except ValueError:
+        pass
+    from urllib.parse import parse_qs, urlparse
+    try:
+        values = parse_qs(urlparse(text).query).get("page")
+        if values:
+            return int(values[0])
+    except (TypeError, ValueError):
+        pass
+    return current + 1
+
+
 def fetch_fixtures(day: str | None = None):
     day = day or date.today().isoformat()
     cached = _load_cache(day)
@@ -124,14 +144,16 @@ def fetch_fixtures(day: str | None = None):
         return cached
     pages = []
     page = 1
-    while page <= MAX_REQUESTS:
+    seen_pages = set()
+    while page not in seen_pages and len(pages) < MAX_REQUESTS:
+        seen_pages.add(page)
         payload = _request({"date": day, "page": page})
         pages.append(payload)
-        fixtures = payload.get("data", {}).get("fixtures", []) if isinstance(payload, dict) else []
-        nxt = payload.get("data", {}).get("next_page") if isinstance(payload, dict) else None
-        if not fixtures or not nxt:
+        data = payload.get("data", {}) if isinstance(payload, dict) else {}
+        nxt = _next_page(data.get("next_page"), page)
+        if nxt is None:
             break
-        page = int(nxt)
+        page = nxt
     merged = []
     seen = set()
     for payload in pages:
@@ -152,6 +174,11 @@ def fetch_fixtures(day: str | None = None):
     return merged
 
 
+def fetch_africa_fixtures(day: str | None = None):
+    rows = fetch_fixtures(day)
+    return rows, {"provider": "live-score-api", "date": day or date.today().isoformat(), "raw_fixtures": len(rows), "africa_fixtures": len(rows), "requests_used": None}
+
+
 if __name__ == "__main__":
     print(json.dumps(fetch_fixtures(), ensure_ascii=False))
 ''')
@@ -159,22 +186,53 @@ if __name__ == "__main__":
 #!/usr/bin/env python3
 from __future__ import annotations
 
-from live_score_api_fixtures import fetch_fixtures
+import csv
+import json
+import os
+import sys
+from datetime import datetime, timezone
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
 
 
-def fetch_today_fixtures():
-    return fetch_fixtures()
+def _fetch(day: str):
+    sys.path.insert(0, str(Path(__file__).resolve().parent))
+    from live_score_api_fixtures import fetch_africa_fixtures
+    return fetch_africa_fixtures(day)
+
+
+def main() -> int:
+    day = os.environ.get("FIXTURE_DATE", "").strip() or datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    out = Path(os.environ.get("AFRICA_FIXTURES_OUT", str(ROOT / "daily_football_data" / "africa_fixtures_today.json")))
+    out.parent.mkdir(parents=True, exist_ok=True)
+    try:
+        rows, meta = _fetch(day)
+        doc = {"fetched_at": datetime.now(timezone.utc).isoformat(), "date": day, "provider": "live-score-api", "total_world": meta.get("raw_fixtures"), "total_africa": len(rows), "fixtures": rows, "ok": True, "schema_version": "africa-fixture-v2"}
+        out.write_text(json.dumps(doc, indent=2, ensure_ascii=False), encoding="utf-8")
+        with out.with_suffix(".csv").open("w", newline="", encoding="utf-8") as f:
+            if rows:
+                writer = csv.DictWriter(f, fieldnames=list(rows[0].keys()))
+                writer.writeheader(); writer.writerows(rows)
+        print(f"[ok] Africa fixtures {day}: {len(rows)} via Live-score API")
+        return 0
+    except Exception as exc:
+        out.write_text(json.dumps({"fetched_at": datetime.now(timezone.utc).isoformat(), "date": day, "provider": "live-score-api", "fixtures": [], "api_errors": [str(exc)], "ok": False, "schema_version": "africa-fixture-v2"}, indent=2), encoding="utf-8")
+        return 1
 
 
 if __name__ == "__main__":
-    print(fetch_today_fixtures())
+    raise SystemExit(main())
 ''')
 
 
 def patch_africa_segment(s: str) -> str:
+    # Keep the segment contract stable: fetch_today_fixtures writes the
+    # validated board document. Do not import a nonexistent fetch_fixtures
+    # symbol from the hardened client.
     s = re.sub(
-        r"def fetch_fixtures\(.*?(?=\n\s*def fetch_standings_for_africa|\n\s*def [A-Za-z_])",
-        '''def fetch_fixtures(*args, **kwargs):\n    from .live_score_api_fixtures import fetch_fixtures as live_score_fetch\n    return live_score_fetch()\n\n''',
+        r"def fetch_fixtures\(\)\s*->\s*Path:.*?(?=\n\s*def disable_africa_publication)",
+        '''def fetch_fixtures() -> Path:\n    """Fetch today's authoritative African board from Live-score API only."""\n    out = SAVE / "africa_fixtures_today.json"\n    rc = run([sys.executable, "-m", "africa.fetch_today_fixtures"], env={\n        "AFRICA_FIXTURES_OUT": str(out),\n    }, check=False)\n    if rc != 0 or not out.exists():\n        raise SystemExit("Africa fixture fetch produced no valid fixture document")\n    try:\n        doc = json.loads(out.read_text(encoding="utf-8"))\n    except (OSError, json.JSONDecodeError) as exc:\n        raise SystemExit(f"Invalid Africa fixture document: {exc}") from exc\n    if doc.get("ok") is not True:\n        raise SystemExit("Africa fixture document is not marked ok; refusing downstream work")\n    return out\n\n''',
         s,
         flags=re.S,
     )
@@ -186,7 +244,6 @@ def patch_africa_segment(s: str) -> str:
     )
     s = re.sub(r"(?im)^.*(?:API_FOOTBALL|api_football|api-football).*$\n?", "", s)
     s = s.replace("api-fdc", "live-score-api")
-    s = s.replace("fdc", "live-score-api")
     return s
 
 
@@ -194,8 +251,6 @@ def patch_standings_helpers() -> None:
     p = ROOT / "local_standings.py"
     if p.exists():
         s = p.read_text(encoding="utf-8")
-        # Remove any provider import that supplies this legacy mapping, even if
-        # a previous normalization pass renamed the module.
         s = re.sub(r"^\s*from\s+[^\n]+\s+import\s+FDC_DIV_TO_LEAGUE[^\n]*$\n?", "", s, flags=re.M)
         if "FDC_DIV_TO_LEAGUE =" not in s:
             marker = "from __future__ import annotations\n"
