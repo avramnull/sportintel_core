@@ -99,8 +99,6 @@ jobs:
           if not p.exists():
               raise SystemExit("migration helper missing")
           s = p.read_text(encoding="utf-8")
-          # The helper must never prepend executable code before a future import.
-          # Repair the known legacy mapping insertion in-place before executing it.
           pat = re.compile(r"^(?P<indent>\s*)s = (?P<lit>'FDC_DIV_TO_LEAGUE = .*?') \\+ s$", re.M)
           m = pat.search(s)
           if m:
@@ -127,6 +125,23 @@ jobs:
           else
             echo "Final migration already applied"
           fi
+
+      - name: Restore committed Live-score client
+        shell: bash
+        run: |
+          set -euo pipefail
+          # The final migration validates source compatibility but must not
+          # replace the hardened, quota-safe Live-score implementation.
+          git checkout -- africa/live_score_api_fixtures.py africa/fetch_today_fixtures.py
+          python -m py_compile africa/live_score_api_fixtures.py africa/fetch_today_fixtures.py
+          echo "Committed Live-score client restored and compiled"
+
+      - name: Normalize daily runtime
+        shell: bash
+        run: |
+          set -euo pipefail
+          python tools/normalize_daily_runtime.py
+          python -m py_compile train.py africa/live_score_api_fixtures.py africa/fetch_today_fixtures.py
 
       - name: Industrial engine smoke test
         shell: bash
