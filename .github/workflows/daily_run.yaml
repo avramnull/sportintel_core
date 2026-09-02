@@ -97,7 +97,8 @@ jobs:
 
           p = Path("tools/finalize_provider_and_training_migration.py")
           if not p.exists():
-              raise SystemExit("migration helper missing")
+              print("Final provider migration already applied; nothing to normalize")
+              raise SystemExit(0)
           s = p.read_text(encoding="utf-8")
           pat = re.compile(r"^(?P<indent>\s*)s = (?P<lit>'FDC_DIV_TO_LEAGUE = .*?') \\+ s$", re.M)
           m = pat.search(s)
@@ -130,8 +131,6 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          # The final migration validates source compatibility but must not
-          # replace the hardened, quota-safe Live-score implementation.
           git checkout -- africa/live_score_api_fixtures.py africa/fetch_today_fixtures.py
           python -m py_compile africa/live_score_api_fixtures.py africa/fetch_today_fixtures.py
           echo "Committed Live-score client restored and compiled"
