@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 from __future__ import annotations
 
-import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -51,7 +50,7 @@ def patch_fixture_sim_engine() -> None:
         raise RuntimeError("run_fixture_sims engine call anchor not found")
 
     old_index = '"simulation_engine":"hard-v2" if HARD_SIM else "sim-v1"'
-    new_index = '"simulation_engine":((payload.get("report") or {}).get("engine") or {}).get("version", "unknown") if HARD_SIM else "sim-v1"'
+    new_index = '"simulation_engine":("industrial-v3" if os.environ.get("INDUSTRIAL_SIM", "1").strip().lower() in ("1", "true", "yes", "on") else "hard-v2") if HARD_SIM else "sim-v1"'
     if old_index in s:
         s = s.replace(old_index, new_index, 1)
     p.write_text(s, encoding="utf-8")
