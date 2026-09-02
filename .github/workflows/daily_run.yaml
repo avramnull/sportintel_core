@@ -86,6 +86,38 @@ jobs:
           print("hard-v2 compatibility smoke: OK", r["top3_ft"])
           PY
 
+      - name: Normalize migration helper
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import ast
+          import re
+          from pathlib import Path
+
+          p = Path("tools/finalize_provider_and_training_migration.py")
+          if not p.exists():
+              raise SystemExit("migration helper missing")
+          s = p.read_text(encoding="utf-8")
+          # The helper must never prepend executable code before a future import.
+          # Repair the known legacy mapping insertion in-place before executing it.
+          pat = re.compile(r"^(?P<indent>\s*)s = (?P<lit>'FDC_DIV_TO_LEAGUE = .*?') \\+ s$", re.M)
+          m = pat.search(s)
+          if m:
+              mapping = ast.literal_eval(m.group("lit"))
+              indent = m.group("indent")
+              replacement = (
+                  f'{indent}if "FDC_DIV_TO_LEAGUE = {{" not in s:\n'
+                  f'{indent}    marker = "from __future__ import annotations\\n"\n'
+                  f'{indent}    s = s.replace(marker, marker + "\\n" + {mapping!r} + "\\n", 1)'
+              )
+              s = s[:m.start()] + replacement + s[m.end():]
+              p.write_text(s, encoding="utf-8")
+              print("Migration helper normalized")
+          else:
+              print("Migration helper already normalized")
+          PY
+
       - name: Finalize provider and training migration
         shell: bash
         run: |
