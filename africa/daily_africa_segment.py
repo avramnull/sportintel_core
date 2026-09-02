@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Africa daily segment: fixture board → training → simulations → Sim Lab index."""
+"""Africa daily segment: Live-score fixture board → training → simulations → Sim Lab index."""
 from __future__ import annotations
 
 import json
@@ -43,16 +43,9 @@ def clean_master():
 
 
 def fetch_fixtures() -> Path:
-    """Fetch the authoritative daily board; never use standings credentials."""
-    backup = os.environ.get("API_FOOTBALL_BACKUP_KEY", "").strip()
-    key = os.environ.get("API_FOOTBALL_KEY", "").strip()
-    if not backup and not key:
-        raise SystemExit("Africa fixtures require API_FOOTBALL_BACKUP_KEY or API_FOOTBALL_KEY")
+    """Fetch today's authoritative African board from Live-score API only."""
     out = SAVE / "africa_fixtures_today.json"
     run([sys.executable, "-m", "africa.fetch_today_fixtures"], env={
-        "API_FOOTBALL_BACKUP_KEY": backup,
-        "API_FOOTBALL_KEY": key,
-        "API_FOOTBALL_STANDINGS_KEY": "",
         "AFRICA_FIXTURES_OUT": str(out),
     })
     if not out.exists():
@@ -84,12 +77,7 @@ def disable_africa_publication(reason: str):
         "sims": sims,
     })
     idx_path.write_text(json.dumps(idx, indent=2), encoding="utf-8")
-    status = {
-        "ok": False,
-        "status": "unavailable",
-        "checked_at": datetime.now(timezone.utc).isoformat(),
-        "reason": reason,
-    }
+    status = {"ok": False, "status": "unavailable", "checked_at": datetime.now(timezone.utc).isoformat(), "reason": reason}
     (SAVE / "africa_segment_last.json").write_text(json.dumps(status, indent=2), encoding="utf-8")
     log(f"Africa publication disabled for this run: {reason}")
 
@@ -136,25 +124,6 @@ def load_africa_standings() -> tuple[dict, float]:
         except (OSError, json.JSONDecodeError, TypeError, ValueError):
             pass
     return {}, float(os.environ.get("STANDINGS_STRENGTH", "0.55"))
-
-
-def fetch_standings_for_africa(day: str | None = None):
-    if os.environ.get("ENABLE_LIVE_STANDINGS", "").strip().lower() not in ("1", "true", "yes"):
-        log("live standings DISABLED")
-        return
-    if os.environ.get("SKIP_STANDINGS", "").strip().lower() in ("1", "true", "yes"):
-        log("SKIP_STANDINGS")
-        return
-    key = os.environ.get("API_FOOTBALL_KEY", "").strip() or os.environ.get("API_FOOTBALL_STANDINGS_KEY", "").strip()
-    env = {
-        "API_FOOTBALL_KEY": key,
-        "API_FOOTBALL_STANDINGS_KEY": os.environ.get("API_FOOTBALL_STANDINGS_KEY", "").strip() or key,
-        "API_FOOTBALL_MAX_STANDINGS": os.environ.get("API_FOOTBALL_MAX_STANDINGS", "0"),
-        "STANDINGS_STRENGTH": os.environ.get("STANDINGS_STRENGTH", "0.55"),
-    }
-    if day:
-        env["FIXTURE_DATE"] = day
-    run([sys.executable, "fetch_day_standings.py", "--region", "africa", "--merge"], env=env)
 
 
 def sim_reports(doc: dict) -> list[dict]:
@@ -222,7 +191,7 @@ def merge_index(africa_entries: list[dict], feed_date: str):
     merged = existing + africa_entries
     generated = datetime.now(timezone.utc).isoformat()
     idx.update({"generated_at": generated, "feed_date": feed_date, "n_ok": len(merged), "n_africa": len(africa_entries), "sims": merged})
-    (SIMS / "index_africa.json").write_text(json.dumps({"generated_at": generated, "feed_date": feed_date, "source": "api-football (Africa filter)", "n_ok": len(africa_entries), "sims": africa_entries}, indent=2), encoding="utf-8")
+    (SIMS / "index_africa.json").write_text(json.dumps({"generated_at": generated, "feed_date": feed_date, "source": "live-score-api", "n_ok": len(africa_entries), "sims": africa_entries}, indent=2), encoding="utf-8")
     idx_path.write_text(json.dumps(idx, indent=2), encoding="utf-8")
     log(f"index merged: total={len(merged)} africa={len(africa_entries)}")
 
@@ -246,7 +215,6 @@ def main():
         log("empty Africa board today")
         merge_index([], doc.get("date") or "")
         return 0
-    fetch_standings_for_africa(doc.get("date"))
     train_for_board(teams, countries)
     entries = sim_reports(doc)
     merge_index(entries, doc.get("date") or datetime.now(timezone.utc).strftime("%Y-%m-%d"))
