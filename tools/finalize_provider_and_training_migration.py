@@ -29,8 +29,6 @@ def patch_file(rel: str, fn) -> None:
 
 def patch_train(s: str) -> str:
     s = s.replace("focus_list: List[Optional[str]] = [None]", "focus_list: List[Optional[str]] = []")
-    # Daily production must not inject a global model. Remove the optional
-    # global branch when present; offline train_global() may remain defined.
     s = re.sub(
         r"\n\s*if\s+os\.environ\.get\(\"TRAIN_GLOBAL\".*?(?=\n\s*(?:focus_list|for\s+target|results\s*=))",
         "\n",
@@ -41,8 +39,6 @@ def patch_train(s: str) -> str:
 
 
 def patch_sim(s: str) -> str:
-    # Remove the global-model fallback from production inference. Daily
-    # inference is fixture-team-only; there is no global model fallback.
     s = re.sub(
         r"\n\s*g\s*=\s*MODELS_ROOT\s*/\s*\"global\".*?\n\s*if\s+strict:\s*\n\s*raise SystemExit\(f\"No models for \{home_canon\}/\{away_canon\} and no global/\"\)",
         "\n    if strict:\n        raise SystemExit(f\"No fixture-team models for {home_canon}/{away_canon}\")",
@@ -198,10 +194,12 @@ def patch_standings_helpers() -> None:
     p = ROOT / "local_standings.py"
     if p.exists():
         s = p.read_text(encoding="utf-8")
-        s = re.sub(r"^from api_football_client import FDC_DIV_TO_LEAGUE\s*$\n?", "", s, flags=re.M)
+        # Remove any provider import that supplies this legacy mapping, even if
+        # a previous normalization pass renamed the module.
+        s = re.sub(r"^\s*from\s+[^\n]+\s+import\s+FDC_DIV_TO_LEAGUE[^\n]*$\n?", "", s, flags=re.M)
         if "FDC_DIV_TO_LEAGUE =" not in s:
             marker = "from __future__ import annotations\n"
-            mapping = '''\n# Internal legacy competition mapping retained for local standings compatibility.\nFDC_DIV_TO_LEAGUE = {\n    "E0": 39, "E1": 40, "E2": 41, "E3": 42, "EC": 43,\n    "SC0": 179, "SC1": 180, "D1": 78, "D2": 79,\n    "SP1": 140, "SP2": 141, "I1": 135, "I2": 136,\n    "F1": 61, "F2": 62, "N1": 88, "B1": 144, "P1": 94,\n    "T1": 203, "G1": 197,\n}\n'''
+            mapping = '''\n# Internal competition mapping retained for local standings compatibility.\nFDC_DIV_TO_LEAGUE = {\n    "E0": 39, "E1": 40, "E2": 41, "E3": 42, "EC": 43,\n    "SC0": 179, "SC1": 180, "D1": 78, "D2": 79,\n    "SP1": 140, "SP2": 141, "I1": 135, "I2": 136,\n    "F1": 61, "F2": 62, "N1": 88, "B1": 144, "P1": 94,\n    "T1": 203, "G1": 197,\n}\n'''
             if marker in s:
                 s = s.replace(marker, marker + mapping, 1)
             else:
@@ -213,7 +211,7 @@ def patch_standings_helpers() -> None:
     p = ROOT / "standings_prior.py"
     if p.exists():
         s = p.read_text(encoding="utf-8")
-        s = re.sub(r"^from api_football_client import _norm, team_lookup\s*$\n?", "", s, flags=re.M)
+        s = re.sub(r"^\s*from\s+[^\n]+\s+import\s+_norm\s*,\s*team_lookup[^\n]*$\n?", "", s, flags=re.M)
         if "def _norm(" not in s:
             helper = '''\n\ndef _norm(x):\n    return " ".join(str(x or "").strip().lower().split())\n\n\ndef team_lookup(team_rows, name):\n    target = _norm(name)\n    for row in team_rows or []:\n        if _norm(row.get("team", row.get("name", ""))) == target:\n            return row\n    return None\n\n'''
             idx = s.find("\n", s.find("from __future__ import annotations"))
