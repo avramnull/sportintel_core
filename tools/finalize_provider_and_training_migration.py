@@ -254,7 +254,7 @@ def patch_standings_helpers() -> None:
         s = re.sub(r"^\s*from\s+[^\n]+\s+import\s+FDC_DIV_TO_LEAGUE[^\n]*$\n?", "", s, flags=re.M)
         if "FDC_DIV_TO_LEAGUE =" not in s:
             marker = "from __future__ import annotations\n"
-            mapping = '''\n# Internal competition mapping retained for local standings compatibility.\nFDC_DIV_TO_LEAGUE = {\n    "E0": 39, "E1": 40, "E2": 41, "E3": 42, "EC": 43,\n    "SC0": 179, "SC1": 180, "D1": 78, "D2": 79,\n    "SP1": 140, "SP2": 141, "I1": 135, "I2": 136,\n    "F1": 61, "F2": 62, "N1": 88, "B1": 144, "P1": 94,\n    "T1": 203, "G1": 197,\n}\n'''
+            mapping = '''\n# Internal competition mapping retained for local standings compatibility.\nFDC_DIV_TO_LEAGUE = {\n    "E0": 39, "E1": 40, "E2": 41, "E3": 42, "EC": 43,\n    "SC0": 179, "SC1": 180, "D1": 78, "D2": 79,\n    "SP1": 140, "SP2": 141, "I1": 135, "I2": 136,\n    "F1": 61, "F2": 62, "F1": 61, "F2": 62, "N1": 88, "B1": 144, "P1": 94,\n    "T1": 203, "G1": 197,\n}\n'''
             if marker in s:
                 s = s.replace(marker, marker + mapping, 1)
             else:
@@ -267,9 +267,15 @@ def patch_standings_helpers() -> None:
     if p.exists():
         s = p.read_text(encoding="utf-8")
         s = re.sub(r"^\s*from\s+[^\n]+\s+import\s+_norm\s*,\s*team_lookup[^\n]*$\n?", "", s, flags=re.M)
+        # standings_prior calls team_lookup(table_rows) to build a normalized
+        # lookup map. Keep an optional name argument for compatibility with
+        # any older callers that requested a single row.
+        helper = '''\n\ndef _norm(x):\n    return " ".join(str(x or "").strip().lower().split())\n\n\ndef team_lookup(team_rows, name=None):\n    rows = team_rows or []\n    lookup = {}\n    for row in rows:\n        if not isinstance(row, dict):\n            continue\n        key = _norm(row.get("team", row.get("name", "")))\n        if key:\n            lookup[key] = row\n    if name is None:\n        return lookup\n    return lookup.get(_norm(name))\n\n'''
+        # Replace an existing generated helper, or insert it after future imports.
+        s = re.sub(r"\n\ndef _norm\(x\):.*?\n\ndef form_score", "\n" + helper + "\ndef form_score", s, flags=re.S)
         if "def _norm(" not in s:
-            helper = '''\n\ndef _norm(x):\n    return " ".join(str(x or "").strip().lower().split())\n\n\ndef team_lookup(team_rows, name):\n    target = _norm(name)\n    for row in team_rows or []:\n        if _norm(row.get("team", row.get("name", ""))) == target:\n            return row\n    return None\n\n'''
-            idx = s.find("\n", s.find("from __future__ import annotations"))
+            marker = "from __future__ import annotations\n"
+            idx = s.find("\n", s.find(marker))
             s = s[:idx + 1] + helper + s[idx + 1:] if idx >= 0 else helper + s
         s = re.sub(r"(?i)api[-_ ]football", "external provider", s)
         p.write_text(s, encoding="utf-8")
