@@ -29,10 +29,10 @@ def patch_file(rel: str, fn) -> None:
 
 def patch_train(s: str) -> str:
     s = s.replace("focus_list: List[Optional[str]] = [None]", "focus_list: List[Optional[str]] = []")
-    # Daily production must not inject a global model. Remove only the optional
-    # global branch if it is present; leave train_global available for offline use.
+    # Daily production must not inject a global model. Remove the optional
+    # global branch when present; offline train_global() may remain defined.
     s = re.sub(
-        r"\n\s*if\s+os\.environ\.get\(\"TRAIN_GLOBAL\".*?\n(?=\s*(?:focus_list|for\s+target|results\s*=))",
+        r"\n\s*if\s+os\.environ\.get\(\"TRAIN_GLOBAL\".*?(?=\n\s*(?:focus_list|for\s+target|results\s*=))",
         "\n",
         s,
         flags=re.S,
@@ -41,16 +41,22 @@ def patch_train(s: str) -> str:
 
 
 def patch_sim(s: str) -> str:
-    # Remove global-model loading/fallback blocks and global reliability weighting.
-    s = re.sub(r"\n\s*global_model\s*=.*?(?=\n\s*(?:models|team_models|if|for|return))", "\n", s, flags=re.S)
-    s = re.sub(r"\n\s*if\s+global_model.*?(?=\n\s*(?:#|if|for|return))", "\n", s, flags=re.S)
-    s = s.replace("global model", "fixture-team model")
-    s = re.sub(r"\n\s*global_reliability\s*=.*", "", s)
-    s = s.replace("global reliability", "fixture-team reliability")
+    # Remove the global-model fallback from production inference. Daily
+    # inference is fixture-team-only; there is no global model fallback.
+    s = re.sub(
+        r"\n\s*g\s*=\s*MODELS_ROOT\s*/\s*\"global\".*?\n\s*if\s+strict:\s*\n\s*raise SystemExit\(f\"No models for \{home_canon\}/\{away_canon\} and no global/\"\)",
+        "\n    if strict:\n        raise SystemExit(f\"No fixture-team models for {home_canon}/{away_canon}\")",
+        s,
+        flags=re.S,
+    )
+    s = s.replace("Optional standings_prior (from API-Football live tables)", "Optional standings_prior from the local standings layer")
+    s = s.replace("API-Football", "external provider")
+    s = s.replace("api-football", "external provider")
+    s = s.replace("API_FOOTBALL", "EXTERNAL_PROVIDER")
     return s
 
 
-def patch_fetch_today() -> None:
+def write_live_score_modules() -> None:
     write("africa/live_score_api_fixtures.py", '''
 #!/usr/bin/env python3
 from __future__ import annotations
@@ -182,39 +188,39 @@ def patch_africa_segment(s: str) -> str:
         s,
         flags=re.S,
     )
-    s = re.sub(r"api[-_]football", "live-score-api", s, flags=re.I)
-    s = re.sub(r"API_FOOTBALL_[A-Z0-9_]+", "", s)
+    s = re.sub(r"(?im)^.*(?:API_FOOTBALL|api_football|api-football).*$\n?", "", s)
+    s = s.replace("api-fdc", "live-score-api")
+    s = s.replace("fdc", "live-score-api")
     return s
 
 
 def patch_standings_helpers() -> None:
-    def local(s: str) -> str:
-        s = re.sub(r"^\s*from api_football_client import FDC_DIV_TO_LEAGUE\s*$", "", s, flags=re.M)
+    p = ROOT / "local_standings.py"
+    if p.exists():
+        s = p.read_text(encoding="utf-8")
+        s = re.sub(r"^from api_football_client import FDC_DIV_TO_LEAGUE\s*$\n?", "", s, flags=re.M)
         if "FDC_DIV_TO_LEAGUE =" not in s:
-            mapping = '''FDC_DIV_TO_LEAGUE = {\n    "E0": 39, "E1": 40, "E2": 41, "E3": 42, "EC": 43,\n    "SC0": 179, "SC1": 180, "D1": 78, "D2": 79,\n    "SP1": 140, "SP2": 141, "I1": 135, "I2": 136,\n    "F1": 61, "F2": 62, "N1": 88, "B1": 144, "P1": 94,\n    "T1": 203, "G1": 197,\n}\n'''
-            lines = s.splitlines(True)
-            idx = 0
-            while idx < len(lines) and (lines[idx].startswith("#!") or lines[idx].startswith("#") or not lines[idx].strip()):
-                idx += 1
-            if idx < len(lines) and lines[idx].startswith("from __future__ import"):
-                idx += 1
-            s = "".join(lines[:idx]) + "\n" + mapping + "\n" + "".join(lines[idx:])
-        return s.replace("API-Football", "fixture provider")
-
-    patch_file("local_standings.py", local)
-
-    def prior(s: str) -> str:
-        s = re.sub(r"^\s*from api_football_client import _norm, team_lookup\s*$", "", s, flags=re.M)
-        if "def _norm(" not in s:
-            helper = '''\ndef _norm(x):\n    return " ".join(str(x or "").strip().lower().split())\n\ndef team_lookup(rows, name):\n    target = _norm(name)\n    for row in rows:\n        if _norm(row.get("team") or row.get("name")) == target:\n            return row\n    return None\n\n'''
             marker = "from __future__ import annotations\n"
+            mapping = '''\n# Internal legacy competition mapping retained for local standings compatibility.\nFDC_DIV_TO_LEAGUE = {\n    "E0": 39, "E1": 40, "E2": 41, "E3": 42, "EC": 43,\n    "SC0": 179, "SC1": 180, "D1": 78, "D2": 79,\n    "SP1": 140, "SP2": 141, "I1": 135, "I2": 136,\n    "F1": 61, "F2": 62, "N1": 88, "B1": 144, "P1": 94,\n    "T1": 203, "G1": 197,\n}\n'''
             if marker in s:
-                s = s.replace(marker, marker + helper, 1)
+                s = s.replace(marker, marker + mapping, 1)
             else:
-                s = helper + s
-        return s.replace("API-Football", "fixture provider")
+                s = mapping + s
+        s = re.sub(r"(?i)api[-_ ]football", "external provider", s)
+        p.write_text(s, encoding="utf-8")
+        print("patched local_standings.py")
 
-    patch_file("standings_prior.py", prior)
+    p = ROOT / "standings_prior.py"
+    if p.exists():
+        s = p.read_text(encoding="utf-8")
+        s = re.sub(r"^from api_football_client import _norm, team_lookup\s*$\n?", "", s, flags=re.M)
+        if "def _norm(" not in s:
+            helper = '''\n\ndef _norm(x):\n    return " ".join(str(x or "").strip().lower().split())\n\n\ndef team_lookup(team_rows, name):\n    target = _norm(name)\n    for row in team_rows or []:\n        if _norm(row.get("team", row.get("name", ""))) == target:\n            return row\n    return None\n\n'''
+            idx = s.find("\n", s.find("from __future__ import annotations"))
+            s = s[:idx + 1] + helper + s[idx + 1:] if idx >= 0 else helper + s
+        s = re.sub(r"(?i)api[-_ ]football", "external provider", s)
+        p.write_text(s, encoding="utf-8")
+        print("patched standings_prior.py")
 
 
 def scrub_config() -> None:
@@ -222,17 +228,16 @@ def scrub_config() -> None:
         p = ROOT / rel
         if not p.exists():
             continue
-        s = p.read_text(encoding="utf-8")
-        s = "\n".join(line for line in s.splitlines() if "API_FOOTBALL" not in line and "api-football" not in line.lower()) + "\n"
-        p.write_text(s, encoding="utf-8")
+        lines = p.read_text(encoding="utf-8").splitlines()
+        lines = [x for x in lines if not re.search(r"API_FOOTBALL|api[-_]football", x, re.I)]
+        p.write_text("\n".join(lines).rstrip() + "\n", encoding="utf-8")
         print(f"scrubbed {rel}")
 
 
 def main() -> None:
-    patch_train((ROOT / "train.py").read_text(encoding="utf-8"))
     patch_file("train.py", patch_train)
     patch_file("sim.py", patch_sim)
-    patch_fetch_today()
+    write_live_score_modules()
     patch_file("africa/daily_africa_segment.py", patch_africa_segment)
     patch_standings_helpers()
     scrub_config()
@@ -249,21 +254,25 @@ def main() -> None:
         print("deleted football_models/global")
 
     forbidden = re.compile(r"API_FOOTBALL|api_football_client|api-football", re.I)
-    files = ["train.py", "sim.py", "daily_pipeline.py", "local_standings.py", "standings_prior.py", "si_config.py", ".env.example", "africa/daily_africa_segment.py", "africa/fetch_today_fixtures.py", "africa/live_score_api_fixtures.py"]
+    files = [
+        "train.py", "sim.py", "daily_pipeline.py", "local_standings.py",
+        "standings_prior.py", "si_config.py", ".env.example",
+        "africa/daily_africa_segment.py", "africa/fetch_today_fixtures.py",
+        "africa/live_score_api_fixtures.py",
+    ]
     for rel in files:
         p = ROOT / rel
         if p.exists() and forbidden.search(p.read_text(encoding="utf-8")):
-            raise RuntimeError(f"forbidden API-Football reference remains in {rel}")
+            raise RuntimeError(f"forbidden provider reference remains in {rel}")
 
     import py_compile
     for rel in files + ["industrial_sim_engine.py", "run_fixture_sims.py"]:
         p = ROOT / rel
         if p.exists():
             py_compile.compile(str(p), doraise=True)
-    print("provider/training migration validation: OK")
 
-    me = Path(__file__)
-    me.unlink()
+    print("provider/training migration validation: OK")
+    Path(__file__).unlink()
     print("final migration complete; helper self-deleted")
 
 
