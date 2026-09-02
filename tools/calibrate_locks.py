@@ -21,7 +21,6 @@ def _calibrate(raw_pct: float, section: str) -> float:
     baseline = 1.0 / 3.0 if str(section).upper() == "FT" else 0.5
     # The industrial simulator is explicitly conditioned on the model targets.
     # Model/sim agreement therefore cannot be counted as independent evidence.
-    # Shrink toward the market base rate before permitting a secured lock.
     return (baseline + 0.62 * (p - baseline)) * 100.0
 
 
@@ -97,7 +96,9 @@ def main() -> None:
     if not SIMS_DIR.exists():
         print("No sims directory; nothing to calibrate")
         return
+
     changed = 0
+    by_file = {}
     for path in sorted(SIMS_DIR.glob("*.json")):
         if path.name == "index.json":
             continue
@@ -109,6 +110,35 @@ def main() -> None:
         if calibrate(payload):
             path.write_text(json.dumps(payload, indent=2), encoding="utf-8")
             changed += 1
+            by_file[path.name] = payload.get("locked_tip") or {}
+
+    # Keep the batch index consistent with the individual reports; the admin
+    # publisher can consume either representation.
+    index_path = SIMS_DIR / "index.json"
+    if index_path.exists():
+        try:
+            index = json.loads(index_path.read_text(encoding="utf-8"))
+            for item in index.get("sims") or []:
+                tip = by_file.get(str(item.get("file") or ""))
+                if tip is None:
+                    continue
+                item["locked_status"] = tip.get("status")
+                item["locked_section"] = tip.get("section")
+                item["locked_selection"] = tip.get("selection")
+                item["locked_model"] = tip.get("model")
+                item["locked_sim"] = tip.get("sim")
+                item["locked_verdict"] = tip.get("verdict")
+                item["locked_confidence"] = tip.get("confidence")
+            index["lock_calibration"] = {
+                "version": "lock-calibration-v1",
+                "model_only": True,
+                "simulation_agreement_counted_as_independent": False,
+                "updated_reports": changed,
+            }
+            index_path.write_text(json.dumps(index, indent=2), encoding="utf-8")
+        except Exception as exc:
+            raise SystemExit(f"Could not update sims/index.json: {exc}") from exc
+
     print(f"Lock calibration: updated {changed} simulation reports")
 
 
