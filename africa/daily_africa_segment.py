@@ -45,11 +45,11 @@ def clean_master():
 def fetch_fixtures() -> Path:
     """Fetch today's authoritative African board from Live-score API only."""
     out = SAVE / "africa_fixtures_today.json"
-    run([sys.executable, "-m", "africa.fetch_today_fixtures"], env={
+    rc = run([sys.executable, "-m", "africa.fetch_today_fixtures"], env={
         "AFRICA_FIXTURES_OUT": str(out),
-    })
-    if not out.exists():
-        raise SystemExit("Africa fixture fetch produced no fixture document")
+    }, check=False)
+    if rc != 0 or not out.exists():
+        raise SystemExit("Africa fixture fetch produced no valid fixture document")
     try:
         doc = json.loads(out.read_text(encoding="utf-8"))
     except (OSError, json.JSONDecodeError) as exc:
@@ -219,7 +219,7 @@ def main():
     entries = sim_reports(doc)
     merge_index(entries, doc.get("date") or datetime.now(timezone.utc).strftime("%Y-%m-%d"))
     summary = {"ok": True, "status": "complete", "date": doc.get("date"), "n_fixtures": len(doc.get("fixtures") or []), "n_sim_ok": len(entries), "countries": countries, "teams": teams}
-    (SAVE / "africa_segment_last.json").write_text(json.dumps(summary, indent=2), encoding="utf-8")
+    (SAVE / "africa_segment_last.json").write_text(json.dumps(summary, indent=2, ensure_ascii=False), encoding="utf-8")
     log("=== Africa segment done ===")
     return 0
 
