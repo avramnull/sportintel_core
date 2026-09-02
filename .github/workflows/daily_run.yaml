@@ -2,7 +2,7 @@ name: Daily pipeline — results → train → sim → Sim Lab
 
 concurrency:
   group: daily-pipeline
-  cancel-in-progress: true
+  cancel-in-progress: ${{ github.actor != 'github-actions[bot]' }}
 
 on:
   push:
@@ -30,6 +30,7 @@ on:
 
 jobs:
   daily:
+    if: github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
     timeout-minutes: 480
     permissions:
@@ -236,5 +237,5 @@ jobs:
             echo "No generated/source changes to commit"
             exit 0
           fi
-          git commit -m "Daily pipeline: fixture-team training and Live-score provider"
+          git commit -m "Daily pipeline: fixture-team training and Live-score provider [skip ci]"
           git push origin HEAD:main
