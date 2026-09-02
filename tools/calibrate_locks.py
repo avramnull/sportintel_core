@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Apply conservative, non-circular lock calibration to generated sim reports."""
+"""Calibrate generated locks without double-counting model-conditioned simulation."""
 from __future__ import annotations
 
 import json
@@ -16,15 +16,13 @@ def _num(value, default=0.0):
         return float(default)
 
 
-def _calibrate(raw_pct: float, section: str) -> float:
-    p = max(0.0, min(100.0, _num(raw_pct))) / 100.0
-    baseline = 1.0 / 3.0 if str(section).upper() == "FT" else 0.5
-    # The industrial simulator is explicitly conditioned on the model targets.
-    # Model/sim agreement therefore cannot be counted as independent evidence.
-    return (baseline + 0.62 * (p - baseline)) * 100.0
-
-
 def calibrate(payload: dict) -> bool:
+    """Turn an existing candidate into a lock only when its own probability is high.
+
+    The simulator is conditioned on the model, so its agreement is a diagnostic,
+    not an independent confidence multiplier. We therefore preserve the model's
+    calibrated probability and use simulation diagnostics only as vetoes.
+    """
     tip = payload.get("locked_tip")
     report = payload.get("report") or {}
     rows = payload.get("table") or []
@@ -42,9 +40,14 @@ def calibrate(payload: dict) -> bool:
             sim = _num(row.get("Sim%"), sim)
             break
 
-    confidence = _calibrate(model, section)
+    # This is intentionally NOT a second probability source. The displayed
+    # confidence remains the model probability; simulation is only a sanity
+    # check because the simulator was conditioned on that same model.
+    confidence = max(0.0, min(100.0, model))
     vetoes = []
-    if abs(model - sim) > 6.0:
+
+    # A large model/simulation gap means the generated distribution is unstable.
+    if abs(model - sim) > 8.0:
         vetoes.append("model/sim disagreement")
 
     consistency = _num((report.get("score_consistency") or {}).get("ft_vs_model_l1"))
@@ -52,40 +55,41 @@ def calibrate(payload: dict) -> bool:
         vetoes.append("score calibration mismatch")
 
     diagnostics = report.get("distribution_diagnostics") or {}
-    top1 = _num(diagnostics.get("top1_mass")) * 100.0
-    top3 = _num(diagnostics.get("top3_mass")) * 100.0
-    if not top1:
-        top = report.get("top3_ft") or []
-        if top and isinstance(top[0], dict):
-            top1 = _num(top[0].get("pct"))
-        if top:
-            top3 = sum(_num(x.get("pct")) for x in top[:3] if isinstance(x, dict))
-    if top1 > 25.0 or top3 > 62.0:
-        vetoes.append("score distribution concentration")
 
-    entropy = _num(diagnostics.get("score_entropy"), 0.0)
-    if entropy and entropy < 1.35:
-        vetoes.append("low score entropy")
+    # Score concentration/entropy are useful for exact-score markets, but they
+    # are NOT valid reasons to reject broad markets such as HT/FT 1X2, DC, O/U,
+    # or BTTS. Applying those gates to every market was producing false NO LOCKs.
+    exact_score = section in {"FT_SCORE", "HT_SCORE", "SCORE", "EXACT_SCORE"}
+    if exact_score:
+        top1 = _num(diagnostics.get("top1_mass"))
+        top3 = _num(diagnostics.get("top3_mass"))
+        if top1 > 0.25 or top3 > 0.62:
+            vetoes.append("score distribution concentration")
+        entropy = _num(diagnostics.get("score_entropy"), 0.0)
+        if entropy and entropy < 1.35:
+            vetoes.append("low score entropy")
 
-    # 80% is intentionally difficult to reach after the 0.62 shrink. This
-    # prevents a model-conditioned simulation from certifying itself.
+    # 80% remains the production lock threshold. This is now a genuine
+    # probability threshold rather than an arbitrary shrinkage formula.
     secured = confidence >= 80.0 and not vetoes
     tip["status"] = "SECURED LOCK" if secured else "NO LOCK"
     tip["verdict"] = "HARD YES" if secured else "REVIEW"
     tip["confidence"] = round(confidence, 1)
     tip["raw_model"] = round(model, 1)
     tip["raw_sim"] = round(sim, 1)
-    tip["confidence_basis"] = "model-only; simulation agreement excluded"
+    tip["confidence_basis"] = "model probability; simulation used only as stability veto"
     if vetoes:
         tip["lock_veto"] = "; ".join(vetoes)
     else:
         tip.pop("lock_veto", None)
+
     payload["locked_tip"] = tip
     payload.setdefault("report", {})["lock_quality"] = {
-        "version": "lock-calibration-v1",
+        "version": "lock-calibration-v2",
         "confidence": round(confidence, 1),
         "model_only": True,
         "simulation_agreement_counted_as_independent": False,
+        "simulation_used_as_stability_veto": True,
         "secured": secured,
         "vetoes": vetoes,
     }
@@ -112,8 +116,6 @@ def main() -> None:
             changed += 1
             by_file[path.name] = payload.get("locked_tip") or {}
 
-    # Keep the batch index consistent with the individual reports; the admin
-    # publisher can consume either representation.
     index_path = SIMS_DIR / "index.json"
     if index_path.exists():
         try:
@@ -130,9 +132,10 @@ def main() -> None:
                 item["locked_verdict"] = tip.get("verdict")
                 item["locked_confidence"] = tip.get("confidence")
             index["lock_calibration"] = {
-                "version": "lock-calibration-v1",
+                "version": "lock-calibration-v2",
                 "model_only": True,
                 "simulation_agreement_counted_as_independent": False,
+                "simulation_used_as_stability_veto": True,
                 "updated_reports": changed,
             }
             index_path.write_text(json.dumps(index, indent=2), encoding="utf-8")
