@@ -1,0 +1,32 @@
+name: Simulation contract gate
+
+on:
+  pull_request:
+    paths:
+      - "industrial_sim_engine.py"
+      - "run_fixture_sims.py"
+      - "tools/test_simulation_contract.py"
+  push:
+    branches: [main]
+    paths:
+      - "industrial_sim_engine.py"
+      - "run_fixture_sims.py"
+      - "tools/test_simulation_contract.py"
+
+jobs:
+  contract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Install numeric runtime
+        run: python -m pip install --no-cache-dir "numpy==1.26.4" "scipy>=1.11,<2"
+      - name: Compile simulation runtime
+        run: python -m py_compile industrial_sim_engine.py hard_simulation.py sim.py run_fixture_sims.py tools/test_simulation_contract.py
+      - name: Run deterministic contract tests
+        run: python tools/test_simulation_contract.py
