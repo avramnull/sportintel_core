@@ -1,0 +1,308 @@
+{
+  "id": "africa_es_setif_ben_aknoun_2026_09_03",
+  "region": "Africa",
+  "match": {
+    "home": "ES Setif",
+    "away": "Ben Aknoun",
+    "kickoff": "2026-09-03",
+    "league": "Algeria \u2014 Ligue 1",
+    "odds": "\u2014",
+    "odds_h": null,
+    "odds_d": null,
+    "odds_a": null,
+    "country": "Algeria"
+  },
+  "resolved": {
+    "models": "ft_result,over25,btts"
+  },
+  "locked_tip": {
+    "status": "NO LOCK",
+    "section": "O/U",
+    "selection": "Over 1.5",
+    "model": 67.4,
+    "sim": 67.4,
+    "verdict": "REVIEW",
+    "confidence": 67.4,
+    "raw_model": 67.4,
+    "raw_sim": 67.4,
+    "confidence_basis": "model probability; simulation used only as stability veto"
+  },
+  "report": {
+    "ft_model": {
+      "H": 0.6140064729782164,
+      "D": 0.23069507616414292,
+      "A": 0.15529845085764077
+    },
+    "ft_sim": {
+      "H": 0.6147666666666667,
+      "D": 0.22962,
+      "A": 0.15561333333333333
+    },
+    "ht_model": {
+      "H": 0.28874,
+      "D": 0.58928,
+      "A": 0.12198
+    },
+    "ht_sim": {
+      "H": 0.28874,
+      "D": 0.58928,
+      "A": 0.12198
+    },
+    "over25_model": 0.4539585399560156,
+    "over25_sim": 0.4538,
+    "btts_model": 0.37567986375142093,
+    "btts_sim": 0.37556666666666666,
+    "xg": {
+      "home": 1.61818,
+      "away": 0.7474666666666666,
+      "total": 2.3656466666666667
+    },
+    "dc_ft": {
+      "1X": 0.8443866666666666,
+      "X2": 0.3852333333333333,
+      "12": 0.7703800000000001
+    },
+    "dc_ht": {},
+    "top_ft": [
+      [
+        "1-0",
+        24815
+      ],
+      [
+        "2-0",
+        17923
+      ],
+      [
+        "0-0",
+        17090
+      ],
+      [
+        "2-1",
+        15431
+      ],
+      [
+        "3-0",
+        13138
+      ],
+      [
+        "1-1",
+        10679
+      ],
+      [
+        "0-1",
+        7004
+      ],
+      [
+        "3-1",
+        6618
+      ],
+      [
+        "2-2",
+        5838
+      ],
+      [
+        "1-2",
+        4452
+      ],
+      [
+        "0-2",
+        4396
+      ],
+      [
+        "4-0",
+        4226
+      ]
+    ],
+    "top_ht": [
+      [
+        "0-0",
+        52445
+      ],
+      [
+        "1-0",
+        28743
+      ],
+      [
+        "0-1",
+        24282
+      ],
+      [
+        "1-1",
+        15677
+      ],
+      [
+        "2-0",
+        8617
+      ],
+      [
+        "0-2",
+        6228
+      ],
+      [
+        "2-1",
+        4241
+      ],
+      [
+        "1-2",
+        3606
+      ],
+      [
+        "3-0",
+        1663
+      ],
+      [
+        "2-2",
+        1044
+      ]
+    ],
+    "top3_ft": [
+      {
+        "score": "1-0",
+        "count": 24815,
+        "pct": 16.5
+      },
+      {
+        "score": "2-0",
+        "count": 17923,
+        "pct": 11.9
+      },
+      {
+        "score": "0-0",
+        "count": 17090,
+        "pct": 11.4
+      }
+    ],
+    "clean_sheet": {
+      "home": 0.5237733333333333,
+      "away": 0.2139
+    },
+    "win_to_nil": {
+      "home": 0.3219983862222222,
+      "away": 0.033285692
+    },
+    "goal_lines": {
+      "1.5": {
+        "over": 0.6743933333333333,
+        "under": 0.3256066666666667
+      },
+      "2.5": {
+        "over": 0.4538,
+        "under": 0.5462
+      },
+      "3.5": {
+        "over": 0.2161,
+        "under": 0.7839
+      }
+    },
+    "score_consistency": {
+      "ft_vs_model_l1": 0.0022
+    },
+    "region": "Africa",
+    "engines": [
+      "ft_result",
+      "over25",
+      "btts"
+    ],
+    "lock_quality": {
+      "version": "lock-calibration-v2",
+      "confidence": 67.4,
+      "model_only": true,
+      "simulation_agreement_counted_as_independent": false,
+      "simulation_used_as_stability_veto": true,
+      "secured": false,
+      "vetoes": []
+    }
+  },
+  "table": [
+    {
+      "Section": "FT",
+      "Selection": "Home",
+      "Model%": 61.4,
+      "Sim%": 61.5,
+      "Agree": "Y",
+      "Edge": 0.1,
+      "Verdict": "YES"
+    },
+    {
+      "Section": "FT",
+      "Selection": "Draw",
+      "Model%": 23.1,
+      "Sim%": 23.0,
+      "Agree": "Y",
+      "Edge": -0.1,
+      "Verdict": "\u2014"
+    },
+    {
+      "Section": "FT",
+      "Selection": "Away",
+      "Model%": 15.5,
+      "Sim%": 15.6,
+      "Agree": "Y",
+      "Edge": 0.1,
+      "Verdict": "\u2014"
+    },
+    {
+      "Section": "O/U",
+      "Selection": "Over 2.5",
+      "Model%": 45.4,
+      "Sim%": 45.4,
+      "Agree": "Y",
+      "Edge": 0.0,
+      "Verdict": "\u2014"
+    },
+    {
+      "Section": "O/U",
+      "Selection": "Under 2.5",
+      "Model%": 54.6,
+      "Sim%": 54.6,
+      "Agree": "Y",
+      "Edge": 0.0,
+      "Verdict": "LEAN"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "Yes",
+      "Model%": 37.6,
+      "Sim%": 37.6,
+      "Agree": "Y",
+      "Edge": 0.0,
+      "Verdict": "\u2014"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 62.4,
+      "Sim%": 62.4,
+      "Agree": "Y",
+      "Edge": 0.0,
+      "Verdict": "YES"
+    },
+    {
+      "Section": "DC",
+      "Selection": "1X",
+      "Model%": 84.5,
+      "Sim%": 84.4,
+      "Agree": "Y",
+      "Edge": -0.1,
+      "Verdict": "YES"
+    },
+    {
+      "Section": "DC",
+      "Selection": "X2",
+      "Model%": 38.6,
+      "Sim%": 38.5,
+      "Agree": "Y",
+      "Edge": -0.1,
+      "Verdict": "\u2014"
+    },
+    {
+      "Section": "DC",
+      "Selection": "12",
+      "Model%": 76.9,
+      "Sim%": 77.0,
+      "Agree": "Y",
+      "Edge": 0.1,
+      "Verdict": "YES"
+    }
+  ]
+}

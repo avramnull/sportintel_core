@@ -1,0 +1,612 @@
+{
+  "match": {
+    "league": "SC0",
+    "home_team": "Hibernian",
+    "away_team": "Hearts",
+    "match_date": "2026-09-03 19:45",
+    "odds_home": 2.45,
+    "odds_draw": 3.5,
+    "odds_away": 2.65,
+    "n_simulations": 150000,
+    "seed": 88,
+    "odds_blend": 0.28
+  },
+  "resolved": {
+    "league": "Scottish Premiership",
+    "div": "SC0",
+    "home": "Hibernian",
+    "away": "Hearts",
+    "models": "Hibernian (home)",
+    "match_date": "2026-09-03 19:45"
+  },
+  "report": {
+    "n": 150000,
+    "engine": {
+      "version": "industrial-v4",
+      "method": "bivariate-poisson+dixon-coles+five-regime+soft-maxent-calibration+correlated-beta-binomial-HT",
+      "rho": 0.052,
+      "lambda_home": 1.0424463387870087,
+      "lambda_away": 1.0132166483665352,
+      "common_goal_rate": 0.19901274439530814,
+      "target_total_lambda": 2.5087602380354093,
+      "calibration_strength": 0.8,
+      "calibration_beta": [
+        -0.001698290783330709,
+        0.052020570726460595,
+        0.13176729944418838,
+        -0.14458280069682536
+      ],
+      "dispersion_regimes": [
+        0.68,
+        0.85,
+        1.0,
+        1.18,
+        1.4
+      ]
+    },
+    "ft_model": {
+      "H": 0.36034230453775956,
+      "D": 0.2942544435983728,
+      "A": 0.3454032518638677
+    },
+    "ft_sim": {
+      "H": 0.35814,
+      "D": 0.29398,
+      "A": 0.34788
+    },
+    "ht_model": {
+      "H": 0.25391111561513463,
+      "D": 0.4877529436453737,
+      "A": 0.2583359407394918
+    },
+    "ht_sim": {
+      "H": 0.24628,
+      "D": 0.514,
+      "A": 0.23972
+    },
+    "over25_model": 0.4584320454475415,
+    "over25_sim": 0.4472,
+    "btts_model": 0.4818054175092077,
+    "btts_sim": 0.5026333333333334,
+    "ht_over15_model": 0.36460801136188536,
+    "ht_over15_sim": 0.24324,
+    "dc_ft": {
+      "1X": 0.65212,
+      "X2": 0.6418600000000001,
+      "12": 0.7060200000000001
+    },
+    "dc_ht": {
+      "1X": 0.7602800000000001,
+      "X2": 0.75372,
+      "12": 0.486
+    },
+    "top_ft": [
+      [
+        "0-0",
+        16941
+      ],
+      [
+        "1-0",
+        16822
+      ],
+      [
+        "1-1",
+        16621
+      ],
+      [
+        "0-1",
+        16613
+      ],
+      [
+        "2-1",
+        11421
+      ],
+      [
+        "1-2",
+        11168
+      ],
+      [
+        "2-2",
+        8147
+      ],
+      [
+        "2-0",
+        8144
+      ],
+      [
+        "0-2",
+        7779
+      ],
+      [
+        "3-1",
+        4526
+      ],
+      [
+        "1-3",
+        4511
+      ],
+      [
+        "3-2",
+        3579
+      ]
+    ],
+    "top_ht": [
+      [
+        "0-0",
+        63281
+      ],
+      [
+        "1-0",
+        25470
+      ],
+      [
+        "0-1",
+        24763
+      ],
+      [
+        "1-1",
+        12586
+      ],
+      [
+        "2-0",
+        5671
+      ],
+      [
+        "0-2",
+        5608
+      ],
+      [
+        "2-1",
+        3520
+      ],
+      [
+        "1-2",
+        3459
+      ]
+    ],
+    "top3_ft": [
+      {
+        "score": "0-0",
+        "count": 16941,
+        "pct": 11.3
+      },
+      {
+        "score": "1-0",
+        "count": 16822,
+        "pct": 11.2
+      },
+      {
+        "score": "1-1",
+        "count": 16621,
+        "pct": 11.1
+      }
+    ],
+    "top3_ht": [
+      {
+        "score": "0-0",
+        "count": 63281,
+        "pct": 42.2
+      },
+      {
+        "score": "1-0",
+        "count": 25470,
+        "pct": 17.0
+      },
+      {
+        "score": "0-1",
+        "count": 24763,
+        "pct": 16.5
+      }
+    ],
+    "top8_ft": [
+      {
+        "score": "0-0",
+        "count": 16941,
+        "pct": 11.3
+      },
+      {
+        "score": "1-0",
+        "count": 16822,
+        "pct": 11.2
+      },
+      {
+        "score": "1-1",
+        "count": 16621,
+        "pct": 11.1
+      },
+      {
+        "score": "0-1",
+        "count": 16613,
+        "pct": 11.1
+      },
+      {
+        "score": "2-1",
+        "count": 11421,
+        "pct": 7.6
+      },
+      {
+        "score": "1-2",
+        "count": 11168,
+        "pct": 7.4
+      },
+      {
+        "score": "2-2",
+        "count": 8147,
+        "pct": 5.4
+      },
+      {
+        "score": "2-0",
+        "count": 8144,
+        "pct": 5.4
+      }
+    ],
+    "xg": {
+      "home": 1.2553666666666667,
+      "away": 1.23116,
+      "total": 2.4865266666666668,
+      "lambda_home": 1.0424463387870087,
+      "lambda_away": 1.0132166483665352
+    },
+    "ht_xg": {
+      "home": 0.47345333333333334,
+      "away": 0.46466,
+      "total": 0.9381133333333334
+    },
+    "score_consistency": {
+      "ht_leq_ft": 1.0,
+      "ft_vs_model_l1": 0.004953496272264601,
+      "over25_abs_error": 0.011232045447541528,
+      "btts_abs_error": 0.020827915824125687
+    },
+    "distribution_diagnostics": {
+      "score_entropy": 2.880754050867105,
+      "top1_mass": 0.11294,
+      "top3_mass": 0.3358933333333333,
+      "tail_4plus": 0.25528,
+      "score_cells": 121
+    },
+    "clean_sheet": {
+      "home": 0.3085466666666667,
+      "away": 0.30176
+    },
+    "win_to_nil": {
+      "home": 0.19560666666666668,
+      "away": 0.18882
+    },
+    "goal_lines": {
+      "0.5": {
+        "over": 0.88706,
+        "under": 0.11294,
+        "push": 0.0
+      },
+      "1.5": {
+        "over": 0.66416,
+        "under": 0.33584,
+        "push": 0.0
+      },
+      "2.5": {
+        "over": 0.4472,
+        "under": 0.5528,
+        "push": 0.0
+      },
+      "3.5": {
+        "over": 0.25528,
+        "under": 0.74472,
+        "push": 0.0
+      },
+      "4.5": {
+        "over": 0.12976,
+        "under": 0.87024,
+        "push": 0.0
+      }
+    },
+    "asian_handicap": {
+      "home_-0.5": 0.35814,
+      "home_-1.0": {
+        "cover": 0.14034666666666668,
+        "push": 0.21779333333333334
+      },
+      "home_+0.5": 0.65212,
+      "home_+1.0": {
+        "cover": 0.65212,
+        "push": 0.21495333333333333
+      }
+    },
+    "score_matrix_margin": {
+      "home_1_goal": 0.21779333333333334,
+      "home_2_plus": 0.14034666666666668,
+      "away_1_goal": 0.21495333333333333,
+      "away_2_plus": 0.13292666666666667,
+      "draw": 0.29398
+    },
+    "lock_quality": {
+      "version": "lock-calibration-v2",
+      "confidence": 76.0,
+      "model_only": true,
+      "simulation_agreement_counted_as_independent": false,
+      "simulation_used_as_stability_veto": true,
+      "secured": false,
+      "vetoes": []
+    }
+  },
+  "table": [
+    {
+      "Section": "HT Winner",
+      "Selection": "Hibernian",
+      "Model%": 25.4,
+      "Sim%": 24.6,
+      "Agree": "3 eng",
+      "Verdict": "NO",
+      "Edge": 0.8
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Draw",
+      "Model%": 48.8,
+      "Sim%": 51.4,
+      "Agree": "3 eng",
+      "Verdict": "NO",
+      "Edge": -2.6
+    },
+    {
+      "Section": "HT Winner",
+      "Selection": "Hearts",
+      "Model%": 25.8,
+      "Sim%": 24.0,
+      "Agree": "3 eng",
+      "Verdict": "NO",
+      "Edge": 1.9
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "1X",
+      "Model%": 76.0,
+      "Sim%": 76.0,
+      "Agree": "3 eng",
+      "Verdict": "YES",
+      "Edge": 0.0
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "X2",
+      "Model%": 75.4,
+      "Sim%": 75.4,
+      "Agree": "3 eng",
+      "Verdict": "YES",
+      "Edge": 0.0
+    },
+    {
+      "Section": "HT DC",
+      "Selection": "12",
+      "Model%": 48.6,
+      "Sim%": 48.6,
+      "Agree": "3 eng",
+      "Verdict": "NO",
+      "Edge": 0.0
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Over 1.5",
+      "Model%": 36.5,
+      "Sim%": 24.3,
+      "Agree": "-",
+      "Verdict": "NO",
+      "Edge": 12.1
+    },
+    {
+      "Section": "HT O/U",
+      "Selection": "Under 1.5",
+      "Model%": 63.5,
+      "Sim%": 75.7,
+      "Agree": "-",
+      "Verdict": "YES",
+      "Edge": -12.1
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Hibernian",
+      "Model%": 36.0,
+      "Sim%": 35.8,
+      "Agree": "3 eng",
+      "Verdict": "NO",
+      "Edge": 0.2
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Draw",
+      "Model%": 29.4,
+      "Sim%": 29.4,
+      "Agree": "3 eng",
+      "Verdict": "NO",
+      "Edge": 0.0
+    },
+    {
+      "Section": "FT Winner",
+      "Selection": "Hearts",
+      "Model%": 34.5,
+      "Sim%": 34.8,
+      "Agree": "3 eng",
+      "Verdict": "NO",
+      "Edge": -0.2
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "1X",
+      "Model%": 65.2,
+      "Sim%": 65.2,
+      "Agree": "3 eng",
+      "Verdict": "YES",
+      "Edge": 0.0
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "X2",
+      "Model%": 64.2,
+      "Sim%": 64.2,
+      "Agree": "3 eng",
+      "Verdict": "YES",
+      "Edge": 0.0
+    },
+    {
+      "Section": "FT DC",
+      "Selection": "12",
+      "Model%": 70.6,
+      "Sim%": 70.6,
+      "Agree": "3 eng",
+      "Verdict": "YES",
+      "Edge": 0.0
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Over 2.5",
+      "Model%": 45.8,
+      "Sim%": 44.7,
+      "Agree": "3 eng",
+      "Verdict": "NO",
+      "Edge": 1.1
+    },
+    {
+      "Section": "FT O/U",
+      "Selection": "Under 2.5",
+      "Model%": 54.2,
+      "Sim%": 55.3,
+      "Agree": "3 eng",
+      "Verdict": "YES",
+      "Edge": -1.1
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "Yes",
+      "Model%": 48.2,
+      "Sim%": 50.3,
+      "Agree": "3 eng",
+      "Verdict": "NO",
+      "Edge": -2.1
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 51.8,
+      "Sim%": 49.7,
+      "Agree": "3 eng",
+      "Verdict": "NO",
+      "Edge": 2.1
+    },
+    {
+      "Section": "FT O/U+",
+      "Selection": "Over 1.5",
+      "Model%": 66.4,
+      "Sim%": 66.4,
+      "Agree": "3 eng",
+      "Verdict": "YES",
+      "Edge": 0.0
+    },
+    {
+      "Section": "FT O/U+",
+      "Selection": "Over 3.5",
+      "Model%": 25.5,
+      "Sim%": 25.5,
+      "Agree": "3 eng",
+      "Verdict": "NO",
+      "Edge": 0.0
+    },
+    {
+      "Section": "CS",
+      "Selection": "Hibernian CS",
+      "Model%": 30.9,
+      "Sim%": 30.9,
+      "Agree": "3 eng",
+      "Verdict": "NO",
+      "Edge": 0.0
+    },
+    {
+      "Section": "CS",
+      "Selection": "Hearts CS",
+      "Model%": 30.2,
+      "Sim%": 30.2,
+      "Agree": "3 eng",
+      "Verdict": "NO",
+      "Edge": 0.0
+    },
+    {
+      "Section": "WTN",
+      "Selection": "Hibernian WTN",
+      "Model%": 19.6,
+      "Sim%": 19.6,
+      "Agree": "3 eng",
+      "Verdict": "NO",
+      "Edge": 0.0
+    },
+    {
+      "Section": "WTN",
+      "Selection": "Hearts WTN",
+      "Model%": 18.9,
+      "Sim%": 18.9,
+      "Agree": "3 eng",
+      "Verdict": "NO",
+      "Edge": 0.0
+    }
+  ],
+  "locked_tip": {
+    "status": "NO LOCK",
+    "section": "HT DC",
+    "selection": "1X",
+    "model": 76.0,
+    "sim": 76.0,
+    "agree": "3 eng",
+    "verdict": "REVIEW",
+    "confidence": 76.0,
+    "raw_model": 76.0,
+    "raw_sim": 76.0,
+    "confidence_basis": "model probability; simulation used only as stability veto"
+  },
+  "backends": {
+    "ft_result": [
+      "rf",
+      "tf",
+      "xgb"
+    ],
+    "ht_result": [
+      "rf",
+      "tf",
+      "xgb"
+    ],
+    "over25": [
+      "rf",
+      "tf",
+      "xgb"
+    ],
+    "btts": [
+      "rf",
+      "tf",
+      "xgb"
+    ],
+    "ht_over15": []
+  },
+  "generated_at": "2026-09-03T07:59:32.848069Z",
+  "metadata": {
+    "simulation_engine": {
+      "version": "industrial-v4",
+      "method": "bivariate-poisson+dixon-coles+five-regime+soft-maxent-calibration+correlated-beta-binomial-HT",
+      "rho": 0.052,
+      "lambda_home": 1.0424463387870087,
+      "lambda_away": 1.0132166483665352,
+      "common_goal_rate": 0.19901274439530814,
+      "target_total_lambda": 2.5087602380354093,
+      "calibration_strength": 0.8,
+      "calibration_beta": [
+        -0.001698290783330709,
+        0.052020570726460595,
+        0.13176729944418838,
+        -0.14458280069682536
+      ],
+      "dispersion_regimes": [
+        0.68,
+        0.85,
+        1.0,
+        1.18,
+        1.4
+      ]
+    }
+  }
+}

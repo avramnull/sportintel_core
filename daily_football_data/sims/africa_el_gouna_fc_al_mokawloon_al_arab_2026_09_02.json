@@ -5,7 +5,7 @@
     "home": "El Gouna FC",
     "away": "Al Mokawloon Al Arab",
     "kickoff": "2026-09-02",
-    "league": "Egypt — Premier League",
+    "league": "Egypt \u2014 Premier League",
     "odds": "2.78/2.66/2.82",
     "odds_h": 2.78,
     "odds_d": 2.66,
@@ -16,12 +16,17 @@
     "models": "ft_result,over25,btts,odds-blend"
   },
   "locked_tip": {
-    "status": "SECURED LOCK",
+    "status": "NO LOCK",
     "section": "O/U",
     "selection": "Over 1.5",
     "model": 71.6,
     "sim": 71.6,
-    "verdict": "HARD YES"
+    "verdict": "REVIEW",
+    "confidence": 71.6,
+    "raw_model": 71.6,
+    "raw_sim": 71.6,
+    "confidence_basis": "model probability; simulation used only as stability veto",
+    "lock_veto": "score calibration mismatch"
   },
   "report": {
     "ft_model": {
@@ -199,7 +204,18 @@
       "over25",
       "btts",
       "odds-blend"
-    ]
+    ],
+    "lock_quality": {
+      "version": "lock-calibration-v2",
+      "confidence": 71.6,
+      "model_only": true,
+      "simulation_agreement_counted_as_independent": false,
+      "simulation_used_as_stability_veto": true,
+      "secured": false,
+      "vetoes": [
+        "score calibration mismatch"
+      ]
+    }
   },
   "table": [
     {
@@ -209,7 +225,7 @@
       "Sim%": 48.1,
       "Agree": "N",
       "Edge": -6.5,
-      "Verdict": "—"
+      "Verdict": "\u2014"
     },
     {
       "Section": "FT",
@@ -218,7 +234,7 @@
       "Sim%": 27.8,
       "Agree": "Y",
       "Edge": 2.6,
-      "Verdict": "—"
+      "Verdict": "\u2014"
     },
     {
       "Section": "FT",
@@ -227,7 +243,7 @@
       "Sim%": 24.0,
       "Agree": "Y",
       "Edge": 3.8,
-      "Verdict": "—"
+      "Verdict": "\u2014"
     },
     {
       "Section": "O/U",
@@ -236,7 +252,7 @@
       "Sim%": 48.5,
       "Agree": "Y",
       "Edge": 0.1,
-      "Verdict": "—"
+      "Verdict": "\u2014"
     },
     {
       "Section": "O/U",
@@ -254,7 +270,7 @@
       "Sim%": 48.5,
       "Agree": "Y",
       "Edge": 0.1,
-      "Verdict": "—"
+      "Verdict": "\u2014"
     },
     {
       "Section": "BTTS",

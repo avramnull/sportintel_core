@@ -5,7 +5,7 @@
     "home": "Ceramica Cleopatra",
     "away": "Future FC",
     "kickoff": "2026-09-02",
-    "league": "Egypt — Premier League",
+    "league": "Egypt \u2014 Premier League",
     "odds": "2.05/2.96/3.75",
     "odds_h": 2.05,
     "odds_d": 2.96,
@@ -16,12 +16,16 @@
     "models": "ft_result,over25,btts,odds-blend"
   },
   "locked_tip": {
-    "status": "SECURED LOCK",
+    "status": "NO LOCK",
     "section": "O/U",
     "selection": "Over 1.5",
     "model": 66.9,
     "sim": 66.9,
-    "verdict": "HARD YES"
+    "verdict": "REVIEW",
+    "confidence": 66.9,
+    "raw_model": 66.9,
+    "raw_sim": 66.9,
+    "confidence_basis": "model probability; simulation used only as stability veto"
   },
   "report": {
     "ft_model": {
@@ -199,7 +203,16 @@
       "over25",
       "btts",
       "odds-blend"
-    ]
+    ],
+    "lock_quality": {
+      "version": "lock-calibration-v2",
+      "confidence": 66.9,
+      "model_only": true,
+      "simulation_agreement_counted_as_independent": false,
+      "simulation_used_as_stability_veto": true,
+      "secured": false,
+      "vetoes": []
+    }
   },
   "table": [
     {
@@ -209,7 +222,7 @@
       "Sim%": 43.3,
       "Agree": "Y",
       "Edge": 0.6,
-      "Verdict": "—"
+      "Verdict": "\u2014"
     },
     {
       "Section": "FT",
@@ -218,7 +231,7 @@
       "Sim%": 29.0,
       "Agree": "Y",
       "Edge": 0.8,
-      "Verdict": "—"
+      "Verdict": "\u2014"
     },
     {
       "Section": "FT",
@@ -227,7 +240,7 @@
       "Sim%": 27.7,
       "Agree": "Y",
       "Edge": -1.3,
-      "Verdict": "—"
+      "Verdict": "\u2014"
     },
     {
       "Section": "O/U",
@@ -236,7 +249,7 @@
       "Sim%": 41.5,
       "Agree": "Y",
       "Edge": 0.1,
-      "Verdict": "—"
+      "Verdict": "\u2014"
     },
     {
       "Section": "O/U",
@@ -254,7 +267,7 @@
       "Sim%": 42.7,
       "Agree": "Y",
       "Edge": 0.2,
-      "Verdict": "—"
+      "Verdict": "\u2014"
     },
     {
       "Section": "BTTS",

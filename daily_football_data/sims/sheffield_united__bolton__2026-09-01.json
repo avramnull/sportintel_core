@@ -297,6 +297,15 @@
       "away_1_goal": 0.143625,
       "away_2_plus": 0.08075,
       "draw": 0.243125
+    },
+    "lock_quality": {
+      "version": "lock-calibration-v2",
+      "confidence": 81.2,
+      "model_only": true,
+      "simulation_agreement_counted_as_independent": false,
+      "simulation_used_as_stability_veto": true,
+      "secured": true,
+      "vetoes": []
     }
   },
   "table": [
@@ -524,7 +533,11 @@
     "model": 81.2,
     "sim": 81.2,
     "agree": "6 eng",
-    "verdict": "HARD YES"
+    "verdict": "HARD YES",
+    "confidence": 81.2,
+    "raw_model": 81.2,
+    "raw_sim": 81.2,
+    "confidence_basis": "model probability; simulation used only as stability veto"
   },
   "backends": {
     "ft_result": [

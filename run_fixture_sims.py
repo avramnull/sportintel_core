@@ -15,6 +15,7 @@ os.environ.setdefault("TF_CPP_MIN_LOG_LEVEL", "3")
 os.environ.setdefault("TF_ENABLE_ONEDNN_OPTS", "0")
 import sim as sim_mod
 from hard_simulation import simulate_hard
+from industrial_sim_engine import simulate_industrial
 N_SIM = int(os.environ.get("N_SIMULATIONS", "8000"))
 ODDS_BLEND = float(os.environ.get("ODDS_BLEND", "0.30"))
 SEED = 42
@@ -71,12 +72,17 @@ def _apply_hard_engine(payload: dict, seed: int) -> dict:
     rep = payload.get("report") or {}
     def vals(d, default):
         return list((d or default).values())
-    hard = simulate_hard(
+    args = (
         vals(rep.get("ft_model"), {"H":1/3,"D":1/3,"A":1/3}),
         vals(rep.get("ht_model"), {"H":.30,"D":.40,"A":.30}),
         rep.get("over25_model", .50), rep.get("btts_model", .50), rep.get("ht_over15_model", .30),
-        N_SIM, seed, standings_prior=rep.get("standings_prior"),
-        hardness={"attack_cv":HARD_ATTACK_CV,"defense_cv":HARD_DEFENSE_CV,"shared_cv":HARD_SHARED_CV})
+        N_SIM, seed,
+    )
+    if os.environ.get("INDUSTRIAL_SIM", "1").strip().lower() in ("1", "true", "yes", "on"):
+        hard = simulate_industrial(*args, standings_prior=rep.get("standings_prior"))
+    else:
+        hard = simulate_hard(*args, standings_prior=rep.get("standings_prior"),
+                             hardness={"attack_cv":HARD_ATTACK_CV,"defense_cv":HARD_DEFENSE_CV,"shared_cv":HARD_SHARED_CV})
     for key in ("ft_model","ht_model","over25_model","btts_model","ht_over15_model"):
         if key in rep:
             hard[key] = rep[key]
@@ -134,7 +140,7 @@ def main():
           "xg_total":(rep.get("xg") or {}).get("total"),"lambda_h":(rep.get("xg") or {}).get("lambda_home"),"lambda_a":(rep.get("xg") or {}).get("lambda_away"),"cs_home":(rep.get("clean_sheet") or {}).get("home"),"cs_away":(rep.get("clean_sheet") or {}).get("away"),
           "top8_ft":rep.get("top8_ft") or rep.get("top3_ft"),"goal_line_25_over":((rep.get("goal_lines") or {}).get("2.5") or {}).get("over"),"ft_vs_model_l1":(rep.get("score_consistency") or {}).get("ft_vs_model_l1"),"generated_at":payload.get("generated_at")})
     today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
-    index_payload={"generated_at":datetime.now(timezone.utc).isoformat(),"feed_date":today,"source":"https://www.football-data.co.uk/fixtures.csv","n_ok":len(index),"n_fail":len(failures),"failures":failures,"n_simulations_each":N_SIM,"simulation_engine":"hard-v2" if HARD_SIM else "sim-v1","sims":index}
+    index_payload={"generated_at":datetime.now(timezone.utc).isoformat(),"feed_date":today,"source":"https://www.football-data.co.uk/fixtures.csv","n_ok":len(index),"n_fail":len(failures),"failures":failures,"n_simulations_each":N_SIM,"simulation_engine":("industrial-v3" if os.environ.get("INDUSTRIAL_SIM", "1").strip().lower() in ("1", "true", "yes", "on") else "hard-v2") if HARD_SIM else "sim-v1","sims":index}
     (SIMS_DIR/"index.json").write_text(json.dumps(index_payload,indent=2),encoding="utf-8")
     (SAVE_DIR/"fixtures_teams.json").write_text(json.dumps({"generated_at":index_payload["generated_at"],"teams":sorted(teams_seen),"n_teams":len(teams_seen)},indent=2),encoding="utf-8")
     elapsed=time.time()-t0_all

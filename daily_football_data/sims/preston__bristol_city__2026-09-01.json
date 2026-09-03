@@ -297,6 +297,15 @@
       "away_1_goal": 0.196625,
       "away_2_plus": 0.158875,
       "draw": 0.270875
+    },
+    "lock_quality": {
+      "version": "lock-calibration-v2",
+      "confidence": 75.0,
+      "model_only": true,
+      "simulation_agreement_counted_as_independent": false,
+      "simulation_used_as_stability_veto": true,
+      "secured": false,
+      "vetoes": []
     }
   },
   "table": [
@@ -518,13 +527,17 @@
     }
   ],
   "locked_tip": {
-    "status": "SECURED LOCK",
+    "status": "NO LOCK",
     "section": "FT O/U+",
     "selection": "Over 1.5",
     "model": 75.0,
     "sim": 75.0,
     "agree": "6 eng",
-    "verdict": "HARD YES"
+    "verdict": "REVIEW",
+    "confidence": 75.0,
+    "raw_model": 75.0,
+    "raw_sim": 75.0,
+    "confidence_basis": "model probability; simulation used only as stability veto"
   },
   "backends": {
     "ft_result": [

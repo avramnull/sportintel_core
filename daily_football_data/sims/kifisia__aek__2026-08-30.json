@@ -163,6 +163,15 @@
     "goal_rates": {
       "home": 0.426,
       "away": 1.67
+    },
+    "lock_quality": {
+      "version": "lock-calibration-v2",
+      "confidence": 85.1,
+      "model_only": true,
+      "simulation_agreement_counted_as_independent": false,
+      "simulation_used_as_stability_veto": true,
+      "secured": true,
+      "vetoes": []
     }
   },
   "table": [
@@ -318,7 +327,11 @@
     "model": 85.1,
     "sim": 92.9,
     "agree": "6 eng",
-    "verdict": "HARD YES"
+    "verdict": "HARD YES",
+    "confidence": 85.1,
+    "raw_model": 85.1,
+    "raw_sim": 92.9,
+    "confidence_basis": "model probability; simulation used only as stability veto"
   },
   "backends": {
     "ft_result": [

@@ -5,8 +5,8 @@
     "home": "Mamelodi Sundowns FC",
     "away": "Milford",
     "kickoff": "2026-09-02",
-    "league": "South Africa — Premier League",
-    "odds": "—",
+    "league": "South Africa \u2014 Premier League",
+    "odds": "\u2014",
     "odds_h": null,
     "odds_d": null,
     "odds_a": null,
@@ -16,12 +16,16 @@
     "models": "ft_result,over25,btts"
   },
   "locked_tip": {
-    "status": "SECURED LOCK",
+    "status": "NO LOCK",
     "section": "O/U",
     "selection": "Over 1.5",
     "model": 69.4,
     "sim": 69.4,
-    "verdict": "HARD YES"
+    "verdict": "REVIEW",
+    "confidence": 69.4,
+    "raw_model": 69.4,
+    "raw_sim": 69.4,
+    "confidence_basis": "model probability; simulation used only as stability veto"
   },
   "report": {
     "ft_model": {
@@ -198,7 +202,16 @@
       "ft_result",
       "over25",
       "btts"
-    ]
+    ],
+    "lock_quality": {
+      "version": "lock-calibration-v2",
+      "confidence": 69.4,
+      "model_only": true,
+      "simulation_agreement_counted_as_independent": false,
+      "simulation_used_as_stability_veto": true,
+      "secured": false,
+      "vetoes": []
+    }
   },
   "table": [
     {
@@ -217,7 +230,7 @@
       "Sim%": 21.2,
       "Agree": "Y",
       "Edge": -0.2,
-      "Verdict": "—"
+      "Verdict": "\u2014"
     },
     {
       "Section": "FT",
@@ -226,7 +239,7 @@
       "Sim%": 18.0,
       "Agree": "Y",
       "Edge": -0.2,
-      "Verdict": "—"
+      "Verdict": "\u2014"
     },
     {
       "Section": "O/U",
@@ -235,7 +248,7 @@
       "Sim%": 49.1,
       "Agree": "Y",
       "Edge": 0.0,
-      "Verdict": "—"
+      "Verdict": "\u2014"
     },
     {
       "Section": "O/U",
@@ -253,7 +266,7 @@
       "Sim%": 37.7,
       "Agree": "Y",
       "Edge": -0.1,
-      "Verdict": "—"
+      "Verdict": "\u2014"
     },
     {
       "Section": "BTTS",
@@ -280,7 +293,7 @@
       "Sim%": 39.3,
       "Agree": "Y",
       "Edge": -0.3,
-      "Verdict": "—"
+      "Verdict": "\u2014"
     },
     {
       "Section": "DC",

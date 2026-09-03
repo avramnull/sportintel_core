@@ -163,6 +163,17 @@
     "goal_rates": {
       "home": 0.6266666666666667,
       "away": 1.7733333333333334
+    },
+    "lock_quality": {
+      "version": "lock-calibration-v2",
+      "confidence": 77.5,
+      "model_only": true,
+      "simulation_agreement_counted_as_independent": false,
+      "simulation_used_as_stability_veto": true,
+      "secured": false,
+      "vetoes": [
+        "model/sim disagreement"
+      ]
     }
   },
   "table": [
@@ -312,13 +323,18 @@
     }
   ],
   "locked_tip": {
-    "status": "SECURED LOCK",
+    "status": "NO LOCK",
     "section": "FT DC",
     "selection": "X2",
     "model": 77.5,
     "sim": 88.4,
     "agree": "6 eng",
-    "verdict": "HARD YES"
+    "verdict": "REVIEW",
+    "confidence": 77.5,
+    "raw_model": 77.5,
+    "raw_sim": 88.4,
+    "confidence_basis": "model probability; simulation used only as stability veto",
+    "lock_veto": "model/sim disagreement"
   },
   "backends": {
     "ft_result": [
