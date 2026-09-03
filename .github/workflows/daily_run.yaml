@@ -77,13 +77,15 @@ jobs:
           set -euo pipefail
           python -m pip install --no-cache-dir --no-compile --upgrade pip
           python -m pip install --no-cache-dir --no-compile --prefer-binary "torch==2.8.0+cpu" --index-url https://download.pytorch.org/whl/cpu --no-deps
-          python -m pip install --no-cache-dir --no-compile --prefer-binary -r requirements.txt "xgboost-cpu>=3.2"
+          python -m pip install --no-cache-dir --no-compile --prefer-binary -r requirements.txt "xgboost-cpu>=3.2" "lightgbm>=4.5,<5" "catboost>=1.2,<2"
           df -h /
           python - <<'PY'
-          import scipy, torch, xgboost
+          import scipy, torch, xgboost, lightgbm, catboost
           print("scipy:", scipy.__version__)
           print("torch:", torch.__version__, "cuda_available:", torch.cuda.is_available())
           print("xgboost:", xgboost.__version__)
+          print("lightgbm:", lightgbm.__version__)
+          print("catboost:", catboost.__version__)
           import tensorflow as tf
           print("tensorflow:", tf.__version__)
           assert not torch.cuda.is_available()
@@ -121,8 +123,8 @@ jobs:
           TODAY_ONLY: "1"
           DAILY_LIGHT: "1"
           USE_XGBOOST: "1"
-          USE_LIGHTGBM: "0"
-          USE_CATBOOST: "0"
+          USE_LIGHTGBM: "1"
+          USE_CATBOOST: "1"
           USE_PYTORCH: "1"
           USE_TENSORFLOW: "1"
           USE_ADABOOST: "0"
