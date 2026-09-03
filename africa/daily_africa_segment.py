@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Africa daily segment: Live-score fixture board → training → simulations → Sim Lab index."""
+"""Africa daily segment: live-score fixture board → team-specific training → simulation."""
 from __future__ import annotations
 import json, os, re, subprocess, sys
 from datetime import datetime, timezone
@@ -45,7 +45,12 @@ def train_for_board(teams,countries):
     master=ROOT/"master_africa_football.parquet"
     if not master.exists(): master=ROOT/"master_africa_football.csv"
     if not master.exists(): raise SystemExit("No Africa master dataset available for board training")
-    run([sys.executable,"-m","africa.train_africa"],env={"AFRICA_PARQUET":str(master),"FOCUS_COUNTRIES":",".join(countries),"MIN_TEAM_MATCHES":os.environ.get("MIN_TEAM_MATCHES","30"),"MAX_BOOST_ROUNDS":os.environ.get("MAX_BOOST_ROUNDS","600")})
+    run([sys.executable,"-m","africa.train_africa_teams"],env={
+        "AFRICA_PARQUET":str(master),
+        "FOCUS_TEAMS":",".join(teams),
+        "MIN_TEAM_MATCHES":os.environ.get("MIN_TEAM_MATCHES","25"),
+        "MAX_BOOST_ROUNDS":os.environ.get("AFRICA_MAX_BOOST_ROUNDS",os.environ.get("MAX_BOOST_ROUNDS","600")),
+    })
     run([sys.executable,"-m","africa.repair_model_metadata"])
 
 def load_africa_standings():
