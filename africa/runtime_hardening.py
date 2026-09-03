@@ -15,7 +15,9 @@ FEATURE_ID=["HomeTeamId","AwayTeamId"]
 _ORIGINAL_SIMULATE_SCORES=engine.simulate_scores
 _ORIGINAL_PREDICT_PATHS=engine._predict_paths
 
+
 def _slug(name): return re.sub(r"[^a-z0-9]+","_",str(name).lower()).strip("_")[:100]
+
 
 def _safe_resolve(name,hist):
     ids,aliases=load_ids(),load_aliases(); canon,_=resolve(str(name or ""),ids,aliases)
@@ -24,6 +26,7 @@ def _safe_resolve(name,hist):
         exact={str(t).lower():str(t) for t in set(hist["HomeTeam"].astype(str))|set(hist["AwayTeam"].astype(str))}
         if canon.lower() in exact: return exact[canon.lower()]
     return canon
+
 
 def _team_form_elo(hist,team,as_of=None):
     out={f"FormPts_{w}":np.nan for w in (5,10,20)}; out.update({f"FormGD_{w}":np.nan for w in (5,10,20)}); out.update({"Elo":1500.0,"TeamId":-1,"Rest":7.0})
@@ -50,10 +53,12 @@ def _team_form_elo(hist,team,as_of=None):
         if pd.notna(d) and pd.notna(last): out["Rest"]=float(np.clip((d-last).days,0,60))
     return out
 
+
 def _build_feature_row(home,away,hist,now=None):
     now=now or datetime.utcnow(); home=_safe_resolve(home,hist); away=_safe_resolve(away,hist); hf,af=_team_form_elo(hist,home,now),_team_form_elo(hist,away,now)
     row={"Year":now.year,"Month":now.month,"DayOfWeek":now.weekday(),"IsWeekend":int(now.weekday()>=5),"HomeFormPts_5":hf["FormPts_5"],"AwayFormPts_5":af["FormPts_5"],"HomeFormGD_5":hf["FormGD_5"],"AwayFormGD_5":af["FormGD_5"],"HomeFormPts_10":hf["FormPts_10"],"AwayFormPts_10":af["FormPts_10"],"HomeFormGD_10":hf["FormGD_10"],"AwayFormGD_10":af["FormGD_10"],"HomeFormPts_20":hf["FormPts_20"],"AwayFormPts_20":af["FormPts_20"],"HomeFormGD_20":hf["FormGD_20"],"AwayFormGD_20":af["FormGD_20"],"EloHome":hf["Elo"],"EloAway":af["Elo"],"EloDiff":hf["Elo"]-af["Elo"],"RestHome":hf["Rest"],"RestAway":af["Rest"],"RestDiff":hf["Rest"]-af["Rest"],"HomeTeamId":float(hf["TeamId"]),"AwayTeamId":float(af["TeamId"])}
     feats=FEATURE_NUM+FEATURE_ID; return np.array([[float(row.get(c,0.0)) if pd.notna(row.get(c,0.0)) else 0.0 for c in feats]],dtype=np.float64),feats
+
 
 def _seeded_simulate_scores(seed):
     def wrapped(*args,**kwargs):
@@ -62,10 +67,33 @@ def _seeded_simulate_scores(seed):
         finally: np.random.default_rng=old
     return wrapped
 
+
+def _fallback_registry(name, reason):
+    """Neutral in-memory registry: safe prior only, never a fabricated team prediction."""
+    feats=FEATURE_NUM+FEATURE_ID
+    return {
+        "scope":f"team_{_slug(name)}",
+        "team":name,
+        "fallback":True,
+        "fallback_reason":str(reason)[:500],
+        "features":feats,
+        "targets":{},
+    }, {"features":feats,"mean":{c:0.0 for c in feats},"std":{c:1.0 for c in feats},"classes":["H","D","A"]}
+
+
 def _load_team_registry(name):
     root=Path(engine.MODELS_ROOT); ids,aliases=load_ids(),load_aliases(); canon,_=resolve(str(name or ""),ids,aliases); d=root/f"team_{_slug(canon)}"; rp=d/"registry.json"; sp=d/"preprocessors"/"feature_stats.json"
-    if not rp.exists() or not sp.exists(): raise RuntimeError(f"Missing Africa team model: {canon}")
-    return json.loads(rp.read_text(encoding="utf-8")),json.loads(sp.read_text(encoding="utf-8"))
+    if not rp.exists() or not sp.exists():
+        return _fallback_registry(canon, "team registry or feature stats missing")
+    try:
+        return json.loads(rp.read_text(encoding="utf-8")),json.loads(sp.read_text(encoding="utf-8"))
+    except (OSError,json.JSONDecodeError) as exc:
+        return _fallback_registry(canon, f"invalid team model metadata: {exc}")
+
+
+def _neutral_target(target):
+    return np.array([1.0/3.0,1.0/3.0,1.0/3.0]) if target in {"ft_result","ht_result"} else np.array([0.5,0.5])
+
 
 def simulate_match(*args,match_date=None,seed=None,**kwargs):
     engine._resolve_team_name=_safe_resolve; engine._team_form_elo=_team_form_elo; engine.build_feature_row=_build_feature_row
@@ -73,12 +101,15 @@ def simulate_match(*args,match_date=None,seed=None,**kwargs):
     hist=engine._load_hist(); home_c=_safe_resolve(home,hist); away_c=_safe_resolve(away,hist)
     home_reg,home_stats=_load_team_registry(home_c); away_reg,away_stats=_load_team_registry(away_c)
     def team_predict(_paths,X,target):
-        ph=_ORIGINAL_PREDICT_PATHS(home_reg.get("targets",{}).get(target,{}),X,target)
-        pa=_ORIGINAL_PREDICT_PATHS(away_reg.get("targets",{}).get(target,{}),X,target)
-        if ph is None or pa is None: raise RuntimeError(f"Incomplete Africa team ensemble for {home_c} vs {away_c}: {target}")
-        ph=np.asarray(ph,float); pa=np.asarray(pa,float); n=max(len(ph),len(pa)); ph=np.pad(ph,(0,n-len(ph))); pa=np.pad(pa,(0,n-len(pa))); p=(ph+pa)/2.0; return p/p.sum()
+        ph=_ORIGINAL_PREDICT_PATHS(home_reg.get("targets",{}).get(target,{}),X,target) if home_reg.get("targets",{}).get(target) else None
+        pa=_ORIGINAL_PREDICT_PATHS(away_reg.get("targets",{}).get(target,{}),X,target) if away_reg.get("targets",{}).get(target) else None
+        if ph is None and pa is None:
+            return _neutral_target(target)
+        if ph is None: ph=_neutral_target(target)
+        if pa is None: pa=_neutral_target(target)
+        ph=np.asarray(ph,float); pa=np.asarray(pa,float); n=max(len(ph),len(pa)); ph=np.pad(ph,(0,n-len(ph))); pa=np.pad(pa,(0,n-len(pa))); p=(ph+pa)/2.0; s=float(p.sum()); return p/s if s>0 else _neutral_target(target)
     def team_stats(_ignored=None):
-        # Both team registries use the same feature schema; fail closed if they diverge.
+        # Both team registries use the same feature schema; fallback stats are identical by construction.
         if home_stats.get("features")!=away_stats.get("features"): raise RuntimeError(f"Africa feature schema mismatch: {home_c} vs {away_c}")
         return None,home_reg,home_stats
     engine._predict_paths=team_predict
