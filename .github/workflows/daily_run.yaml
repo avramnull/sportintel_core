@@ -1,0 +1,179 @@
+name: Daily pipeline — results → train → sim → Sim Lab
+
+concurrency:
+  group: daily-pipeline
+  cancel-in-progress: false
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/daily_run.yaml"
+      - "requirements.txt"
+      - "industrial_sim_engine.py"
+      - "hard_simulation.py"
+      - "run_fixture_sims.py"
+      - "sim.py"
+      - "train.py"
+      - "daily_pipeline.py"
+      - "scan_fixture_teams.py"
+      - "tools/**"
+      - "africa/**"
+  schedule:
+    - cron: "0 0 * * *"
+  workflow_dispatch:
+    inputs:
+      skip_train:
+        description: "Skip training (re-sim + publish only)"
+        type: boolean
+        default: false
+
+jobs:
+  daily:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 480
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout repository (shallow, no automatic LFS)
+        uses: actions/checkout@v5
+        with:
+          lfs: false
+          fetch-depth: 1
+          token: ${{ secrets.SPORTINTEL_PUSH_TOKEN || secrets.GITHUB_TOKEN }}
+
+      - name: Restore only required LFS inputs
+        shell: bash
+        run: |
+          set -euo pipefail
+          git lfs install
+          git lfs pull --include="master_football_data.parquet" --exclude=""
+          test -f master_football_data.parquet
+          if head -1 master_football_data.parquet 2>/dev/null | grep -q "git-lfs"; then exit 1; fi
+          size=$(stat -c%s master_football_data.parquet)
+          test "$size" -ge 2000000
+          echo "Primary parquet OK: ${size} bytes"
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: Free runner disk before dependency install
+        shell: bash
+        run: |
+          set -euo pipefail
+          sudo rm -rf /usr/local/lib/android /usr/local/share/powershell /usr/share/dotnet /opt/ghc || true
+          sudo apt-get clean || true
+          sudo rm -rf /var/lib/apt/lists/*
+          rm -rf ~/.cache/pip /tmp/pip-* /tmp/pip-unpack-* /tmp/pip-build-* || true
+          echo "Disk before dependency install:"
+          df -h /
+
+      - name: Install dependencies
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m pip install --no-cache-dir --no-compile --upgrade pip
+          python -m pip install --no-cache-dir --no-compile --prefer-binary "torch==2.8.0+cpu" --index-url https://download.pytorch.org/whl/cpu --no-deps
+          python -m pip install --no-cache-dir --no-compile --prefer-binary -r requirements.txt "xgboost-cpu>=3.2"
+          df -h /
+          python - <<'PY'
+          import scipy, torch, xgboost
+          print("scipy:", scipy.__version__)
+          print("torch:", torch.__version__, "cuda_available:", torch.cuda.is_available())
+          print("xgboost:", xgboost.__version__)
+          import tensorflow as tf
+          print("tensorflow:", tf.__version__)
+          assert not torch.cuda.is_available()
+          PY
+
+      - name: Normalize daily runtime
+        shell: bash
+        run: |
+          set -euo pipefail
+          python tools/normalize_daily_runtime.py
+          python -m py_compile train.py africa/live_score_api_fixtures.py africa/fetch_today_fixtures.py
+
+      - name: Industrial engine smoke test
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from industrial_sim_engine import simulate_industrial
+          r = simulate_industrial([.34,.33,.33],[.30,.40,.30],.50,.50,.30,12000,42)
+          assert r["engine"]["version"] == "industrial-v4"
+          assert r["score_consistency"]["ht_leq_ft"] == 1.0
+          assert abs(sum(r["ft_sim"].values()) - 1.0) < 1e-6
+          assert 0.0 < r["distribution_diagnostics"]["top1_mass"] < 0.22
+          print("industrial-v4 smoke: OK")
+          PY
+
+      - name: Health check
+        run: python -m tools.smoke_test --quick
+
+      - name: Run full daily pipeline
+        env:
+          MAX_TRAIN_TEAMS: "0"
+          MAX_FIXTURES: "0"
+          MIN_TEAM_MATCHES: "25"
+          TODAY_ONLY: "1"
+          DAILY_LIGHT: "1"
+          USE_XGBOOST: "1"
+          USE_LIGHTGBM: "0"
+          USE_CATBOOST: "0"
+          USE_PYTORCH: "1"
+          USE_TENSORFLOW: "1"
+          USE_ADABOOST: "0"
+          USE_RANDOM_FOREST: "1"
+          MAX_BOOST_ROUNDS: "1800"
+          NN_EPOCHS: "70"
+          CAPACITY_STEPS: "3"
+          DAILY_TARGETS: "ft_result,over25,btts,ht_result"
+          TRAIN_WORKERS: "3"
+          N_SIMULATIONS: "150000"
+          ODDS_BLEND: "0.28"
+          HARD_SIM: "1"
+          INDUSTRIAL_SIM: "1"
+          HARD_ATTACK_CV: "0.16"
+          HARD_DEFENSE_CV: "0.16"
+          HARD_SHARED_CV: "0.09"
+          TRAIN_GLOBAL: "0"
+          SKIP_TRAIN: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.skip_train == 'true' && '1' || '0' }}
+          SPORTINTEL_PUSH: "1"
+          AFRICA_SEGMENT: "1"
+          AFRICA_OPTIONAL: "1"
+          LIVE_SCORE_API_KEY: ${{ secrets.LIVE_SCORE_API_KEY }}
+          LIVE_SCORE_API_SECRET: ${{ secrets.LIVE_SCORE_API_SECRET }}
+          SKIP_AFRICA_TRAIN: "0"
+          SKIP_AFRICA_SIM: "0"
+          AFRICA_FETCH_ODDS: "0"
+          AFRICA_PRIOR_SHRINK: "0.22"
+          STANDINGS_STRENGTH: "0"
+          SKIP_STANDINGS: "1"
+          ENABLE_LIVE_STANDINGS: "0"
+          GITHUB_TOKEN: ${{ secrets.SPORTINTEL_PUSH_TOKEN || secrets.GITHUB_TOKEN }}
+          SPORTINTEL_REPO: avramnull/sportintel
+          LOG_LEVEL: INFO
+        run: python daily_pipeline.py
+
+      - name: Commit generated data and models
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git lfs install
+          git add -A daily_football_data/ master_football_data.parquet football_models/ .gitattributes industrial_sim_engine.py hard_simulation.py train.py sim.py run_fixture_sims.py africa/ si_config.py local_standings.py standings_prior.py tools/ || true
+          if git diff --cached --quiet; then echo "No generated/source changes to commit"; exit 0; fi
+          git commit -m "Daily pipeline: fixture-team training and Live-score provider [skip ci]"
+          git fetch --depth=1 origin main
+          git rebase origin/main
+          for attempt in 1 2 3; do
+            if git push origin HEAD:main; then echo "Push succeeded on attempt ${attempt}"; exit 0; fi
+            git fetch --depth=1 origin main
+            git rebase origin/main || { git rebase --abort || true; exit 1; }
+            sleep 3
+          done
+          exit 1
