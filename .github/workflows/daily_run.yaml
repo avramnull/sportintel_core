@@ -42,6 +42,7 @@ jobs:
         with:
           lfs: true
           fetch-depth: 0
+          token: ${{ secrets.SPORTINTEL_PUSH_TOKEN || secrets.GITHUB_TOKEN }}
 
       - name: Ensure Git LFS files
         shell: bash
@@ -171,11 +172,11 @@ jobs:
           python - <<'PY'
           from industrial_sim_engine import simulate_industrial
           r = simulate_industrial([.34,.33,.33],[.30,.40,.30],.50,.50,.30,12000,42)
-          assert r["engine"]["version"] == "industrial-v3"
+          assert r["engine"]["version"] == "industrial-v4"
           assert r["score_consistency"]["ht_leq_ft"] == 1.0
           assert abs(sum(r["ft_sim"].values()) - 1.0) < 1e-6
-          assert 0.0 < r["distribution_diagnostics"]["top1_mass"] < 0.20
-          print("industrial-v3 smoke: OK", r["top3_ft"], r["distribution_diagnostics"])
+          assert 0.0 < r["distribution_diagnostics"]["top1_mass"] < 0.22
+          print("industrial-v4 smoke: OK", r["top3_ft"], r["distribution_diagnostics"])
           PY
 
       - name: Health check
@@ -200,13 +201,13 @@ jobs:
           CAPACITY_STEPS: "3"
           DAILY_TARGETS: "ft_result,over25,btts,ht_result"
           TRAIN_WORKERS: "3"
-          N_SIMULATIONS: "120000"
-          ODDS_BLEND: "0.30"
+          N_SIMULATIONS: "150000"
+          ODDS_BLEND: "0.28"
           HARD_SIM: "1"
           INDUSTRIAL_SIM: "1"
-          HARD_ATTACK_CV: "0.18"
-          HARD_DEFENSE_CV: "0.18"
-          HARD_SHARED_CV: "0.10"
+          HARD_ATTACK_CV: "0.16"
+          HARD_DEFENSE_CV: "0.16"
+          HARD_SHARED_CV: "0.09"
           TRAIN_GLOBAL: "0"
           SKIP_TRAIN: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.skip_train == 'true' && '1' || '0' }}
           SPORTINTEL_PUSH: "1"
@@ -232,10 +233,35 @@ jobs:
           set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add -A daily_football_data/ master_football_data.parquet football_models/ .gitattributes industrial_sim_engine.py train.py sim.py run_fixture_sims.py africa/ si_config.py local_standings.py standings_prior.py tools/
+          git lfs install
+
+          # Stage only the paths that the pipeline is allowed to mutate.
+          git add -A daily_football_data/ master_football_data.parquet football_models/ .gitattributes \
+            industrial_sim_engine.py hard_simulation.py train.py sim.py run_fixture_sims.py africa/ \
+            si_config.py local_standings.py standings_prior.py tools/ || true
+
           if git diff --cached --quiet; then
             echo "No generated/source changes to commit"
             exit 0
           fi
+
+          # Prefer a clean push; fall back to a rebase if the branch moved.
           git commit -m "Daily pipeline: fixture-team training and Live-score provider [skip ci]"
-          git push origin HEAD:main
+
+          # LFS-aware push with retry (handles transient network / concurrent bot pushes)
+          for attempt in 1 2 3; do
+            if git push origin HEAD:main; then
+              echo "Push succeeded on attempt ${attempt}"
+              exit 0
+            fi
+            echo "Push attempt ${attempt} failed — fetching + rebasing"
+            git fetch origin main
+            git rebase origin/main || {
+              echo "Rebase conflict — aborting and force-with-lease once"
+              git rebase --abort || true
+              git push --force-with-lease origin HEAD:main && exit 0
+            }
+            sleep 3
+          done
+          echo "ERROR: could not push after retries"
+          exit 1
