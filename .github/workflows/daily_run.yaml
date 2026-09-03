@@ -96,7 +96,7 @@ jobs:
         run: |
           set -euo pipefail
           python tools/normalize_daily_runtime.py
-          python -m py_compile train.py africa/live_score_api_fixtures.py africa/fetch_today_fixtures.py
+          python -m py_compile train.py africa/live_score_api_fixtures.py africa/fetch_today_fixtures.py africa/train_africa_teams.py africa/runtime_hardening.py africa/repair_model_metadata.py
 
       - name: Industrial engine smoke test
         shell: bash
@@ -130,6 +130,7 @@ jobs:
           USE_ADABOOST: "0"
           USE_RANDOM_FOREST: "1"
           MAX_BOOST_ROUNDS: "1800"
+          AFRICA_MAX_BOOST_ROUNDS: "600"
           NN_EPOCHS: "70"
           CAPACITY_STEPS: "3"
           DAILY_TARGETS: "ft_result,over25,btts,ht_result"
