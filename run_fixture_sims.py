@@ -17,7 +17,7 @@ import sim as sim_mod
 from hard_simulation import simulate_hard
 from industrial_sim_engine import simulate_industrial
 
-# sim.py historically referenced this cache before declaring it.  Initialising
+# sim.py historically referenced this cache before declaring it. Initialising
 # it here prevents the exception from silently disabling the historical-form
 # feature layer for batch runs.
 if not hasattr(sim_mod, "_HIST_CACHE"):
@@ -86,7 +86,6 @@ def _with_match_clock(match_date: str):
 
     Training/live features include calendar and rest-day values. Using the
     runner's current UTC date for a future fixture introduces leakage/drift.
-    The wrapper keeps generated_at on the real clock by restoring immediately.
     """
     raw = str(match_date or "").strip()
     parsed = pd.to_datetime(raw, errors="coerce")
@@ -213,6 +212,9 @@ def main():
             payload = sim_mod.run_one_match(cfg, quiet=True, allow_market_only=True)
             if not isinstance(payload,dict) or "resolved" not in payload or "report" not in payload:
                 raise ValueError("simulation returned an invalid report payload")
+            # run_one_match timestamps with its feature clock; replace that
+            # diagnostic timestamp with the real generation time before publish.
+            payload["generated_at"] = datetime.now(timezone.utc).isoformat()
             if HARD_SIM:
                 payload = _apply_hard_engine(payload, SEED+int(i))
                 rows = sim_mod.build_table_rows(payload["report"], payload.get("backends") or {}, payload["resolved"]["home"], payload["resolved"]["away"])
