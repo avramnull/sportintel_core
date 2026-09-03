@@ -171,12 +171,23 @@ jobs:
           git add -A daily_football_data/ master_football_data.parquet football_models/ .gitattributes industrial_sim_engine.py hard_simulation.py train.py sim.py run_fixture_sims.py africa/ si_config.py local_standings.py standings_prior.py tools/ || true
           if git diff --cached --quiet; then echo "No generated/source changes to commit"; exit 0; fi
           git commit -m "Daily pipeline: fixture-team training and Live-score provider [skip ci]"
+
+          # Git LFS can re-materialize a tracked file after commit. Normalize
+          # the worktree before fetch/rebase so rebase never sees stray
+          # unstaged changes and aborts the publish step.
+          git reset --hard HEAD
+          git clean -fd || true
+          git lfs checkout || true
           git fetch --depth=1 origin main
           git rebase origin/main
+
           for attempt in 1 2 3; do
             if git push origin HEAD:main; then echo "Push succeeded on attempt ${attempt}"; exit 0; fi
             git fetch --depth=1 origin main
-            git rebase origin/main || { git rebase --abort || true; exit 1; }
+            git reset --hard HEAD
+            git clean -fd || true
+            git lfs checkout || true
+            if ! git rebase origin/main; then git rebase --abort || true; fi
             sleep 3
           done
           exit 1
