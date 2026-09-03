@@ -16,7 +16,7 @@
     "div": "B1",
     "home": "Gent",
     "away": "Oud-Heverlee Leuven",
-    "models": "Gent (home)",
+    "models": "Gent (home) + Oud-Heverlee Leuven (away)",
     "match_date": "2026-09-03 19:30"
   },
   "report": {
@@ -25,16 +25,16 @@
       "version": "industrial-v4",
       "method": "bivariate-poisson+dixon-coles+five-regime+soft-maxent-calibration+correlated-beta-binomial-HT",
       "rho": 0.052,
-      "lambda_home": 1.3840322842489967,
-      "lambda_away": 0.7439416281568888,
-      "common_goal_rate": 0.3347432926095881,
-      "target_total_lambda": 2.84009668913102,
+      "lambda_home": 1.577696316749689,
+      "lambda_away": 0.794282491707817,
+      "common_goal_rate": 0.20972252167063757,
+      "target_total_lambda": 2.813987477093909,
       "calibration_strength": 0.8,
       "calibration_beta": [
-        0.03275887744359544,
-        0.139253879909808,
-        0.1351970194397149,
-        -0.08148505632837966
+        -0.013680121686764376,
+        0.045937232716524744,
+        0.11198373763850945,
+        -0.10997959733753383
       ],
       "dispersion_regimes": [
         0.68,
@@ -45,283 +45,283 @@
       ]
     },
     "ft_model": {
-      "H": 0.5213157144173606,
-      "D": 0.2883018094632304,
-      "A": 0.1903824761194091
+      "H": 0.5621576975983619,
+      "D": 0.24700753727282562,
+      "A": 0.19083476512881253
     },
     "ft_sim": {
-      "H": 0.52264,
-      "D": 0.28344,
-      "A": 0.19392
+      "H": 0.5632866666666667,
+      "D": 0.24553333333333333,
+      "A": 0.19118
     },
     "ht_model": {
-      "H": 0.301191262053213,
-      "D": 0.4625972235856562,
-      "A": 0.23621151436113078
+      "H": 0.3541849631912647,
+      "D": 0.448064952691103,
+      "A": 0.19775008411763223
     },
     "ht_sim": {
-      "H": 0.3494466666666667,
-      "D": 0.47486,
-      "A": 0.17569333333333334
+      "H": 0.37612666666666666,
+      "D": 0.46285333333333334,
+      "A": 0.16102
     },
-    "over25_model": 0.54004919846776,
-    "over25_sim": 0.5274933333333334,
-    "btts_model": 0.5540017112622319,
-    "btts_sim": 0.56594,
-    "ht_over15_model": 0.38501229961694,
-    "ht_over15_sim": 0.29578,
+    "over25_model": 0.5338739063224498,
+    "over25_sim": 0.5241466666666666,
+    "btts_model": 0.5153919103567638,
+    "btts_sim": 0.52856,
+    "ht_over15_model": 0.38346847658061245,
+    "ht_over15_sim": 0.29508666666666666,
     "dc_ft": {
-      "1X": 0.80608,
-      "X2": 0.47736,
-      "12": 0.71656
+      "1X": 0.8088200000000001,
+      "X2": 0.4367133333333333,
+      "12": 0.7544666666666667
     },
     "dc_ht": {
-      "1X": 0.8243066666666667,
-      "X2": 0.6505533333333333,
-      "12": 0.52514
+      "1X": 0.8389800000000001,
+      "X2": 0.6238733333333333,
+      "12": 0.5371466666666667
     },
     "top_ft": [
       [
         "1-0",
-        17414
+        18284
       ],
       [
         "1-1",
-        15793
+        14319
       ],
       [
         "2-1",
-        14571
-      ],
-      [
-        "0-0",
-        14112
+        14148
       ],
       [
         "2-0",
-        11080
+        13295
+      ],
+      [
+        "0-0",
+        12234
       ],
       [
         "0-1",
-        9415
-      ],
-      [
-        "2-2",
-        9225
+        9800
       ],
       [
         "3-1",
-        8325
-      ],
-      [
-        "1-2",
-        7518
+        8640
       ],
       [
         "3-0",
-        5944
+        7811
+      ],
+      [
+        "2-2",
+        7807
+      ],
+      [
+        "1-2",
+        7166
       ],
       [
         "3-2",
-        5619
+        5038
       ],
       [
         "4-1",
-        3404
+        3906
       ]
     ],
     "top_ht": [
       [
         "0-0",
-        55772
+        55123
       ],
       [
         "1-0",
-        31512
+        33471
       ],
       [
         "0-1",
-        18349
+        17143
       ],
       [
         "1-1",
-        13747
+        12927
       ],
       [
         "2-0",
-        9882
+        11584
       ],
       [
         "2-1",
-        5572
+        5250
       ],
       [
         "0-2",
-        3296
+        3094
       ],
       [
-        "1-2",
-        3217
+        "3-0",
+        2849
       ]
     ],
     "top3_ft": [
       {
         "score": "1-0",
-        "count": 17414,
-        "pct": 11.6
+        "count": 18284,
+        "pct": 12.2
       },
       {
         "score": "1-1",
-        "count": 15793,
-        "pct": 10.5
+        "count": 14319,
+        "pct": 9.5
       },
       {
         "score": "2-1",
-        "count": 14571,
-        "pct": 9.7
+        "count": 14148,
+        "pct": 9.4
       }
     ],
     "top3_ht": [
       {
         "score": "0-0",
-        "count": 55772,
-        "pct": 37.2
+        "count": 55123,
+        "pct": 36.7
       },
       {
         "score": "1-0",
-        "count": 31512,
-        "pct": 21.0
+        "count": 33471,
+        "pct": 22.3
       },
       {
         "score": "0-1",
-        "count": 18349,
-        "pct": 12.2
+        "count": 17143,
+        "pct": 11.4
       }
     ],
     "top8_ft": [
       {
         "score": "1-0",
-        "count": 17414,
-        "pct": 11.6
+        "count": 18284,
+        "pct": 12.2
       },
       {
         "score": "1-1",
-        "count": 15793,
-        "pct": 10.5
+        "count": 14319,
+        "pct": 9.5
       },
       {
         "score": "2-1",
-        "count": 14571,
-        "pct": 9.7
-      },
-      {
-        "score": "0-0",
-        "count": 14112,
+        "count": 14148,
         "pct": 9.4
       },
       {
         "score": "2-0",
-        "count": 11080,
-        "pct": 7.4
+        "count": 13295,
+        "pct": 8.9
+      },
+      {
+        "score": "0-0",
+        "count": 12234,
+        "pct": 8.2
       },
       {
         "score": "0-1",
-        "count": 9415,
-        "pct": 6.3
-      },
-      {
-        "score": "2-2",
-        "count": 9225,
-        "pct": 6.2
+        "count": 9800,
+        "pct": 6.5
       },
       {
         "score": "3-1",
-        "count": 8325,
-        "pct": 5.5
+        "count": 8640,
+        "pct": 5.8
+      },
+      {
+        "score": "3-0",
+        "count": 7811,
+        "pct": 5.2
       }
     ],
     "xg": {
-      "home": 1.76924,
-      "away": 1.0976666666666666,
-      "total": 2.8669066666666665,
-      "lambda_home": 1.3840322842489967,
-      "lambda_away": 0.7439416281568888
+      "home": 1.823,
+      "away": 1.0128333333333333,
+      "total": 2.8358333333333334,
+      "lambda_home": 1.577696316749689,
+      "lambda_away": 0.794282491707817
     },
     "ht_xg": {
-      "home": 0.6809266666666667,
-      "away": 0.41574666666666665,
-      "total": 1.0966733333333334
+      "home": 0.7110066666666667,
+      "away": 0.37848,
+      "total": 1.0894866666666667
     },
     "score_consistency": {
       "ht_leq_ft": 1.0,
-      "ft_vs_model_l1": 0.009723618926460731,
-      "over25_abs_error": 0.012555865134426636,
-      "btts_abs_error": 0.011938288737768143
+      "ft_vs_model_l1": 0.0029484078789845936,
+      "over25_abs_error": 0.009727239655783149,
+      "btts_abs_error": 0.013168089643236236
     },
     "distribution_diagnostics": {
-      "score_entropy": 2.984788912506304,
-      "top1_mass": 0.11609333333333334,
-      "top3_mass": 0.31852,
-      "tail_4plus": 0.3347733333333333,
+      "score_entropy": 2.987209391708091,
+      "top1_mass": 0.12189333333333334,
+      "top3_mass": 0.31167333333333336,
+      "tail_4plus": 0.32347333333333333,
       "score_cells": 121
     },
     "clean_sheet": {
-      "home": 0.34369333333333335,
-      "away": 0.18444666666666668
+      "home": 0.37512666666666666,
+      "away": 0.17787333333333333
     },
     "win_to_nil": {
-      "home": 0.24961333333333333,
-      "away": 0.09036666666666666
+      "home": 0.29356666666666664,
+      "away": 0.09631333333333333
     },
     "goal_lines": {
       "0.5": {
-        "over": 0.90592,
-        "under": 0.09408,
+        "over": 0.91844,
+        "under": 0.08156,
         "push": 0.0
       },
       "1.5": {
-        "over": 0.72706,
-        "under": 0.27294,
+        "over": 0.7312133333333334,
+        "under": 0.2687866666666667,
         "push": 0.0
       },
       "2.5": {
-        "over": 0.5274933333333334,
-        "under": 0.4725066666666667,
+        "over": 0.5241466666666666,
+        "under": 0.47585333333333335,
         "push": 0.0
       },
       "3.5": {
-        "over": 0.3347733333333333,
-        "under": 0.6652266666666666,
+        "over": 0.32347333333333333,
+        "under": 0.6765266666666667,
         "push": 0.0
       },
       "4.5": {
-        "over": 0.18632,
-        "under": 0.81368,
+        "over": 0.17716,
+        "under": 0.82284,
         "push": 0.0
       }
     },
     "asian_handicap": {
-      "home_-0.5": 0.52264,
+      "home_-0.5": 0.5632866666666667,
       "home_-1.0": {
-        "cover": 0.26019333333333333,
-        "push": 0.26244666666666666
+        "cover": 0.30442,
+        "push": 0.2588666666666667
       },
-      "home_+0.5": 0.80608,
+      "home_+0.5": 0.80882,
       "home_+1.0": {
-        "cover": 0.80608,
-        "push": 0.13796666666666665
+        "cover": 0.80882,
+        "push": 0.13462
       }
     },
     "score_matrix_margin": {
-      "home_1_goal": 0.26244666666666666,
-      "home_2_plus": 0.26019333333333333,
-      "away_1_goal": 0.13796666666666665,
-      "away_2_plus": 0.055953333333333334,
-      "draw": 0.28344
+      "home_1_goal": 0.2588666666666667,
+      "home_2_plus": 0.30442,
+      "away_1_goal": 0.13462,
+      "away_2_plus": 0.05656,
+      "draw": 0.24553333333333333
     },
     "lock_quality": {
       "version": "lock-calibration-v2",
-      "confidence": 82.4,
+      "confidence": 83.9,
       "model_only": true,
       "simulation_agreement_counted_as_independent": false,
       "simulation_used_as_stability_veto": true,
@@ -333,216 +333,216 @@
     {
       "Section": "HT Winner",
       "Selection": "Gent",
-      "Model%": 30.1,
-      "Sim%": 34.9,
-      "Agree": "3 eng",
+      "Model%": 35.4,
+      "Sim%": 37.6,
+      "Agree": "4 eng",
       "Verdict": "NO",
-      "Edge": -4.8
+      "Edge": -2.2
     },
     {
       "Section": "HT Winner",
       "Selection": "Draw",
-      "Model%": 46.3,
-      "Sim%": 47.5,
-      "Agree": "3 eng",
+      "Model%": 44.8,
+      "Sim%": 46.3,
+      "Agree": "4 eng",
       "Verdict": "NO",
-      "Edge": -1.2
+      "Edge": -1.5
     },
     {
       "Section": "HT Winner",
       "Selection": "Oud-Heverlee Leuven",
-      "Model%": 23.6,
-      "Sim%": 17.6,
-      "Agree": "3 eng",
+      "Model%": 19.8,
+      "Sim%": 16.1,
+      "Agree": "4 eng",
       "Verdict": "NO",
-      "Edge": 6.1
+      "Edge": 3.7
     },
     {
       "Section": "HT DC",
       "Selection": "1X",
-      "Model%": 82.4,
-      "Sim%": 82.4,
-      "Agree": "3 eng",
+      "Model%": 83.9,
+      "Sim%": 83.9,
+      "Agree": "4 eng",
       "Verdict": "YES",
       "Edge": 0.0
     },
     {
       "Section": "HT DC",
       "Selection": "X2",
-      "Model%": 65.1,
-      "Sim%": 65.1,
-      "Agree": "3 eng",
+      "Model%": 62.4,
+      "Sim%": 62.4,
+      "Agree": "4 eng",
       "Verdict": "YES",
       "Edge": 0.0
     },
     {
       "Section": "HT DC",
       "Selection": "12",
-      "Model%": 52.5,
-      "Sim%": 52.5,
-      "Agree": "3 eng",
+      "Model%": 53.7,
+      "Sim%": 53.7,
+      "Agree": "4 eng",
       "Verdict": "NO",
       "Edge": 0.0
     },
     {
       "Section": "HT O/U",
       "Selection": "Over 1.5",
-      "Model%": 38.5,
-      "Sim%": 29.6,
+      "Model%": 38.3,
+      "Sim%": 29.5,
       "Agree": "-",
       "Verdict": "NO",
-      "Edge": 8.9
+      "Edge": 8.8
     },
     {
       "Section": "HT O/U",
       "Selection": "Under 1.5",
-      "Model%": 61.5,
-      "Sim%": 70.4,
+      "Model%": 61.7,
+      "Sim%": 70.5,
       "Agree": "-",
       "Verdict": "YES",
-      "Edge": -8.9
+      "Edge": -8.8
     },
     {
       "Section": "FT Winner",
       "Selection": "Gent",
-      "Model%": 52.1,
-      "Sim%": 52.3,
-      "Agree": "3 eng",
+      "Model%": 56.2,
+      "Sim%": 56.3,
+      "Agree": "4 eng",
       "Verdict": "YES",
       "Edge": -0.1
     },
     {
       "Section": "FT Winner",
       "Selection": "Draw",
-      "Model%": 28.8,
-      "Sim%": 28.3,
-      "Agree": "3 eng",
+      "Model%": 24.7,
+      "Sim%": 24.6,
+      "Agree": "4 eng",
       "Verdict": "NO",
-      "Edge": 0.5
+      "Edge": 0.1
     },
     {
       "Section": "FT Winner",
       "Selection": "Oud-Heverlee Leuven",
-      "Model%": 19.0,
-      "Sim%": 19.4,
-      "Agree": "3 eng",
+      "Model%": 19.1,
+      "Sim%": 19.1,
+      "Agree": "4 eng",
       "Verdict": "NO",
-      "Edge": -0.4
+      "Edge": -0.0
     },
     {
       "Section": "FT DC",
       "Selection": "1X",
-      "Model%": 80.6,
-      "Sim%": 80.6,
-      "Agree": "3 eng",
+      "Model%": 80.9,
+      "Sim%": 80.9,
+      "Agree": "4 eng",
       "Verdict": "YES",
       "Edge": 0.0
     },
     {
       "Section": "FT DC",
       "Selection": "X2",
-      "Model%": 47.7,
-      "Sim%": 47.7,
-      "Agree": "3 eng",
+      "Model%": 43.7,
+      "Sim%": 43.7,
+      "Agree": "4 eng",
       "Verdict": "NO",
       "Edge": 0.0
     },
     {
       "Section": "FT DC",
       "Selection": "12",
-      "Model%": 71.7,
-      "Sim%": 71.7,
-      "Agree": "3 eng",
+      "Model%": 75.4,
+      "Sim%": 75.4,
+      "Agree": "4 eng",
       "Verdict": "YES",
       "Edge": 0.0
     },
     {
       "Section": "FT O/U",
       "Selection": "Over 2.5",
-      "Model%": 54.0,
-      "Sim%": 52.7,
-      "Agree": "3 eng",
+      "Model%": 53.4,
+      "Sim%": 52.4,
+      "Agree": "4 eng",
       "Verdict": "YES",
-      "Edge": 1.3
+      "Edge": 1.0
     },
     {
       "Section": "FT O/U",
       "Selection": "Under 2.5",
-      "Model%": 46.0,
-      "Sim%": 47.3,
-      "Agree": "3 eng",
+      "Model%": 46.6,
+      "Sim%": 47.6,
+      "Agree": "4 eng",
+      "Verdict": "NO",
+      "Edge": -1.0
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "Yes",
+      "Model%": 51.5,
+      "Sim%": 52.9,
+      "Agree": "4 eng",
       "Verdict": "NO",
       "Edge": -1.3
     },
     {
       "Section": "BTTS",
-      "Selection": "Yes",
-      "Model%": 55.4,
-      "Sim%": 56.6,
-      "Agree": "3 eng",
-      "Verdict": "YES",
-      "Edge": -1.2
-    },
-    {
-      "Section": "BTTS",
       "Selection": "No",
-      "Model%": 44.6,
-      "Sim%": 43.4,
-      "Agree": "3 eng",
+      "Model%": 48.5,
+      "Sim%": 47.1,
+      "Agree": "4 eng",
       "Verdict": "NO",
-      "Edge": 1.2
+      "Edge": 1.3
     },
     {
       "Section": "FT O/U+",
       "Selection": "Over 1.5",
-      "Model%": 72.7,
-      "Sim%": 72.7,
-      "Agree": "3 eng",
+      "Model%": 73.1,
+      "Sim%": 73.1,
+      "Agree": "4 eng",
       "Verdict": "YES",
       "Edge": 0.0
     },
     {
       "Section": "FT O/U+",
       "Selection": "Over 3.5",
-      "Model%": 33.5,
-      "Sim%": 33.5,
-      "Agree": "3 eng",
+      "Model%": 32.3,
+      "Sim%": 32.3,
+      "Agree": "4 eng",
       "Verdict": "NO",
       "Edge": 0.0
     },
     {
       "Section": "CS",
       "Selection": "Gent CS",
-      "Model%": 34.4,
-      "Sim%": 34.4,
-      "Agree": "3 eng",
+      "Model%": 37.5,
+      "Sim%": 37.5,
+      "Agree": "4 eng",
       "Verdict": "NO",
       "Edge": 0.0
     },
     {
       "Section": "CS",
       "Selection": "Oud-Heverlee Leuven CS",
-      "Model%": 18.4,
-      "Sim%": 18.4,
-      "Agree": "3 eng",
+      "Model%": 17.8,
+      "Sim%": 17.8,
+      "Agree": "4 eng",
       "Verdict": "NO",
       "Edge": 0.0
     },
     {
       "Section": "WTN",
       "Selection": "Gent WTN",
-      "Model%": 25.0,
-      "Sim%": 25.0,
-      "Agree": "3 eng",
+      "Model%": 29.4,
+      "Sim%": 29.4,
+      "Agree": "4 eng",
       "Verdict": "NO",
       "Edge": 0.0
     },
     {
       "Section": "WTN",
       "Selection": "Oud-Heverlee Leuven WTN",
-      "Model%": 9.0,
-      "Sim%": 9.0,
-      "Agree": "3 eng",
+      "Model%": 9.6,
+      "Sim%": 9.6,
+      "Agree": "4 eng",
       "Verdict": "NO",
       "Edge": 0.0
     }
@@ -551,54 +551,58 @@
     "status": "SECURED LOCK",
     "section": "HT DC",
     "selection": "1X",
-    "model": 82.4,
-    "sim": 82.4,
-    "agree": "3 eng",
+    "model": 83.9,
+    "sim": 83.9,
+    "agree": "4 eng",
     "verdict": "HARD YES",
-    "confidence": 82.4,
-    "raw_model": 82.4,
-    "raw_sim": 82.4,
+    "confidence": 83.9,
+    "raw_model": 83.9,
+    "raw_sim": 83.9,
     "confidence_basis": "model probability; simulation used only as stability veto"
   },
   "backends": {
     "ft_result": [
       "rf",
       "tf",
+      "torch",
       "xgb"
     ],
     "ht_result": [
       "rf",
       "tf",
+      "torch",
       "xgb"
     ],
     "over25": [
       "rf",
       "tf",
+      "torch",
       "xgb"
     ],
     "btts": [
       "rf",
       "tf",
+      "torch",
       "xgb"
     ],
     "ht_over15": []
   },
-  "generated_at": "2026-09-03T07:59:19.347751Z",
+  "generated_at": "2026-09-03T16:47:15.524723+00:00",
   "metadata": {
     "simulation_engine": {
       "version": "industrial-v4",
       "method": "bivariate-poisson+dixon-coles+five-regime+soft-maxent-calibration+correlated-beta-binomial-HT",
       "rho": 0.052,
-      "lambda_home": 1.3840322842489967,
-      "lambda_away": 0.7439416281568888,
-      "common_goal_rate": 0.3347432926095881,
-      "target_total_lambda": 2.84009668913102,
+      "lambda_home": 1.577696316749689,
+      "lambda_away": 0.794282491707817,
+      "common_goal_rate": 0.20972252167063757,
+      "target_total_lambda": 2.813987477093909,
       "calibration_strength": 0.8,
       "calibration_beta": [
-        0.03275887744359544,
-        0.139253879909808,
-        0.1351970194397149,
-        -0.08148505632837966
+        -0.013680121686764376,
+        0.045937232716524744,
+        0.11198373763850945,
+        -0.10997959733753383
       ],
       "dispersion_regimes": [
         0.68,
@@ -607,6 +611,17 @@
         1.18,
         1.4
       ]
+    },
+    "validation": {
+      "ok": true,
+      "version": "simulation-contract-v1",
+      "n": 150000,
+      "ft_sum": 1.0,
+      "ht_sum": 1.0,
+      "ht_subset_ft": 1.0,
+      "ft_l1": 0.0029484078789845936,
+      "over25_abs_error": 0.009727239655783149,
+      "btts_abs_error": 0.013168089643236236
     }
   }
 }

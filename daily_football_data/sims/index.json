@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-09-03T08:02:58.228035+00:00",
+  "generated_at": "2026-09-03T16:50:54.101307+00:00",
   "feed_date": "2026-09-03",
   "source": "https://www.football-data.co.uk/fixtures.csv",
   "n_ok": 9,
   "n_fail": 0,
   "failures": [],
   "n_simulations_each": 150000,
-  "simulation_engine": "industrial-v3",
+  "simulation_engine": "industrial-v4",
   "sims": [
     {
       "id": "anderlecht__kortrijk__2026-09-03",
@@ -21,73 +21,76 @@
       "odds_h": 1.48,
       "odds_d": 4.2,
       "odds_a": 5.5,
-      "models": "Anderlecht (home)",
-      "ft_h": 54.3,
-      "ft_d": 27.0,
-      "ft_a": 18.7,
-      "over25": 55.3,
-      "btts": 56.5,
-      "cs_top": "1-0 (16752)",
-      "cs_second": "2-1 (14496)",
-      "xg_h": 1.8593066666666667,
-      "xg_a": 1.10636,
+      "models": "Anderlecht (home) + Kortrijk (away)",
+      "ft_h": 57.1,
+      "ft_d": 22.1,
+      "ft_a": 20.8,
+      "over25": 58.4,
+      "btts": 54.4,
+      "cs_top": "1-0 (15443)",
+      "cs_second": "2-1 (13690)",
+      "xg_h": 1.96106,
+      "xg_a": 1.0970666666666666,
       "locked_status": "SECURED LOCK",
       "locked_section": "HT DC",
       "locked_selection": "1X",
-      "locked_model": 83.2,
-      "locked_sim": 83.2,
+      "locked_model": 83.4,
+      "locked_sim": 83.4,
       "locked_verdict": "HARD YES",
-      "xg_total": 2.9656666666666665,
-      "lambda_h": 1.4747169294432354,
-      "lambda_a": 0.758753969278192,
-      "cs_home": 0.3481,
-      "cs_away": 0.17446666666666666,
+      "xg_total": 3.058126666666667,
+      "lambda_h": 1.8034144264568317,
+      "lambda_a": 0.9773621888356803,
+      "cs_home": 0.35622,
+      "cs_away": 0.16156,
       "top8_ft": [
         {
           "score": "1-0",
-          "count": 16752,
-          "pct": 11.2
+          "count": 15443,
+          "pct": 10.3
         },
         {
           "score": "2-1",
-          "count": 14496,
-          "pct": 9.7
-        },
-        {
-          "score": "1-1",
-          "count": 14001,
-          "pct": 9.3
-        },
-        {
-          "score": "0-0",
-          "count": 13183,
-          "pct": 8.8
+          "count": 13690,
+          "pct": 9.1
         },
         {
           "score": "2-0",
-          "count": 11373,
-          "pct": 7.6
+          "count": 12503,
+          "pct": 8.3
         },
         {
-          "score": "2-2",
-          "count": 9609,
-          "pct": 6.4
+          "score": "1-1",
+          "count": 12297,
+          "pct": 8.2
+        },
+        {
+          "score": "3-0",
+          "count": 9463,
+          "pct": 6.3
+        },
+        {
+          "score": "0-0",
+          "count": 9337,
+          "pct": 6.2
         },
         {
           "score": "0-1",
-          "count": 8759,
-          "pct": 5.8
+          "count": 8981,
+          "pct": 6.0
         },
         {
-          "score": "3-1",
-          "count": 8396,
-          "pct": 5.6
+          "score": "2-2",
+          "count": 8587,
+          "pct": 5.7
         }
       ],
-      "goal_line_25_over": 0.5528533333333333,
-      "ft_vs_model_l1": 0.015738858830697616,
-      "generated_at": "2026-09-03T07:59:11.805497Z",
-      "locked_confidence": 83.2
+      "goal_line_25_over": 0.5837666666666667,
+      "ft_vs_model_l1": 0.005304645729641261,
+      "generated_at": "2026-09-03T16:47:05.008668+00:00",
+      "simulation_engine": "industrial-v4",
+      "simulation_method": "bivariate-poisson+dixon-coles+five-regime+soft-maxent-calibration+correlated-beta-binomial-HT",
+      "validation_ok": true,
+      "locked_confidence": 83.4
     },
     {
       "id": "gent__oud-heverlee_leuven__2026-09-03",
@@ -102,73 +105,76 @@
       "odds_h": 1.62,
       "odds_d": 3.7,
       "odds_a": 5.0,
-      "models": "Gent (home)",
-      "ft_h": 52.3,
-      "ft_d": 28.3,
-      "ft_a": 19.4,
-      "over25": 52.7,
-      "btts": 56.6,
-      "cs_top": "1-0 (17414)",
-      "cs_second": "1-1 (15793)",
-      "xg_h": 1.76924,
-      "xg_a": 1.0976666666666666,
+      "models": "Gent (home) + Oud-Heverlee Leuven (away)",
+      "ft_h": 56.3,
+      "ft_d": 24.6,
+      "ft_a": 19.1,
+      "over25": 52.4,
+      "btts": 52.9,
+      "cs_top": "1-0 (18284)",
+      "cs_second": "1-1 (14319)",
+      "xg_h": 1.823,
+      "xg_a": 1.0128333333333333,
       "locked_status": "SECURED LOCK",
       "locked_section": "HT DC",
       "locked_selection": "1X",
-      "locked_model": 82.4,
-      "locked_sim": 82.4,
+      "locked_model": 83.9,
+      "locked_sim": 83.9,
       "locked_verdict": "HARD YES",
-      "xg_total": 2.8669066666666665,
-      "lambda_h": 1.3840322842489967,
-      "lambda_a": 0.7439416281568888,
-      "cs_home": 0.34369333333333335,
-      "cs_away": 0.18444666666666668,
+      "xg_total": 2.8358333333333334,
+      "lambda_h": 1.577696316749689,
+      "lambda_a": 0.794282491707817,
+      "cs_home": 0.37512666666666666,
+      "cs_away": 0.17787333333333333,
       "top8_ft": [
         {
           "score": "1-0",
-          "count": 17414,
-          "pct": 11.6
+          "count": 18284,
+          "pct": 12.2
         },
         {
           "score": "1-1",
-          "count": 15793,
-          "pct": 10.5
+          "count": 14319,
+          "pct": 9.5
         },
         {
           "score": "2-1",
-          "count": 14571,
-          "pct": 9.7
-        },
-        {
-          "score": "0-0",
-          "count": 14112,
+          "count": 14148,
           "pct": 9.4
         },
         {
           "score": "2-0",
-          "count": 11080,
-          "pct": 7.4
+          "count": 13295,
+          "pct": 8.9
+        },
+        {
+          "score": "0-0",
+          "count": 12234,
+          "pct": 8.2
         },
         {
           "score": "0-1",
-          "count": 9415,
-          "pct": 6.3
-        },
-        {
-          "score": "2-2",
-          "count": 9225,
-          "pct": 6.2
+          "count": 9800,
+          "pct": 6.5
         },
         {
           "score": "3-1",
-          "count": 8325,
-          "pct": 5.5
+          "count": 8640,
+          "pct": 5.8
+        },
+        {
+          "score": "3-0",
+          "count": 7811,
+          "pct": 5.2
         }
       ],
-      "goal_line_25_over": 0.5274933333333334,
-      "ft_vs_model_l1": 0.009723618926460731,
-      "generated_at": "2026-09-03T07:59:19.347751Z",
-      "locked_confidence": 82.4
+      "goal_line_25_over": 0.5241466666666666,
+      "ft_vs_model_l1": 0.0029484078789845936,
+      "generated_at": "2026-09-03T16:47:15.524723+00:00",
+      "simulation_engine": "industrial-v4",
+      "simulation_method": "bivariate-poisson+dixon-coles+five-regime+soft-maxent-calibration+correlated-beta-binomial-HT",
+      "validation_ok": true,
+      "locked_confidence": 83.9
     },
     {
       "id": "toulouse__lille__2026-09-03",
@@ -183,73 +189,76 @@
       "odds_h": 3.25,
       "odds_d": 3.25,
       "odds_a": 2.15,
-      "models": "market-only (no models for Toulouse / Lille)",
-      "ft_h": 28.6,
-      "ft_d": 28.2,
-      "ft_a": 43.2,
-      "over25": 44.6,
-      "btts": 47.8,
-      "cs_top": "0-1 (18846)",
-      "cs_second": "0-0 (16983)",
-      "xg_h": 1.0787,
-      "xg_a": 1.3815133333333334,
+      "models": "Toulouse (home) + Lille (away)",
+      "ft_h": 30.6,
+      "ft_d": 30.7,
+      "ft_a": 38.7,
+      "over25": 45.4,
+      "btts": 52.0,
+      "cs_top": "0-0 (17503)",
+      "cs_second": "0-1 (17423)",
+      "xg_h": 1.1882266666666668,
+      "xg_a": 1.34458,
       "locked_status": "NO LOCK",
       "locked_section": "HT DC",
       "locked_selection": "X2",
-      "locked_model": 79.3,
-      "locked_sim": 79.3,
+      "locked_model": 77.7,
+      "locked_sim": 77.7,
       "locked_verdict": "REVIEW",
-      "xg_total": 2.4602133333333334,
-      "lambda_h": 0.9206656343382142,
-      "lambda_a": 1.210406362854657,
-      "cs_home": 0.2741133333333333,
-      "cs_away": 0.36100666666666664,
+      "xg_total": 2.5328066666666667,
+      "lambda_h": 0.8868002566080289,
+      "lambda_a": 1.0380409745944066,
+      "cs_home": 0.27632666666666666,
+      "cs_away": 0.31993333333333335,
       "top8_ft": [
         {
-          "score": "0-1",
-          "count": 18846,
-          "pct": 12.6
+          "score": "0-0",
+          "count": 17503,
+          "pct": 11.7
         },
         {
-          "score": "0-0",
-          "count": 16983,
-          "pct": 11.3
+          "score": "0-1",
+          "count": 17423,
+          "pct": 11.6
         },
         {
           "score": "1-1",
-          "count": 15353,
-          "pct": 10.2
+          "count": 17099,
+          "pct": 11.4
         },
         {
           "score": "1-0",
-          "count": 14907,
-          "pct": 9.9
+          "count": 15106,
+          "pct": 10.1
         },
         {
           "score": "1-2",
-          "count": 12469,
-          "pct": 8.3
-        },
-        {
-          "score": "0-2",
-          "count": 10827,
-          "pct": 7.2
+          "count": 12275,
+          "pct": 8.2
         },
         {
           "score": "2-1",
-          "count": 9441,
-          "pct": 6.3
+          "count": 10409,
+          "pct": 6.9
         },
         {
           "score": "2-2",
-          "count": 7801,
-          "pct": 5.2
+          "count": 8671,
+          "pct": 5.8
+        },
+        {
+          "score": "0-2",
+          "count": 8575,
+          "pct": 5.7
         }
       ],
-      "goal_line_25_over": 0.44560666666666665,
-      "ft_vs_model_l1": 0.005789757174392951,
-      "generated_at": "2026-09-03T07:59:25.686512Z",
-      "locked_confidence": 79.3
+      "goal_line_25_over": 0.45397333333333334,
+      "ft_vs_model_l1": 0.0014735236332013013,
+      "generated_at": "2026-09-03T16:47:26.069048+00:00",
+      "simulation_engine": "industrial-v4",
+      "simulation_method": "bivariate-poisson+dixon-coles+five-regime+soft-maxent-calibration+correlated-beta-binomial-HT",
+      "validation_ok": true,
+      "locked_confidence": 77.7
     },
     {
       "id": "hibernian__hearts__2026-09-03",
@@ -264,73 +273,76 @@
       "odds_h": 2.45,
       "odds_d": 3.5,
       "odds_a": 2.65,
-      "models": "Hibernian (home)",
-      "ft_h": 35.8,
-      "ft_d": 29.4,
-      "ft_a": 34.8,
-      "over25": 44.7,
-      "btts": 50.3,
-      "cs_top": "0-0 (16941)",
-      "cs_second": "1-0 (16822)",
-      "xg_h": 1.2553666666666667,
-      "xg_a": 1.23116,
+      "models": "Hibernian (home) + Hearts (away)",
+      "ft_h": 38.5,
+      "ft_d": 27.0,
+      "ft_a": 34.5,
+      "over25": 47.7,
+      "btts": 52.0,
+      "cs_top": "1-1 (16329)",
+      "cs_second": "1-0 (16166)",
+      "xg_h": 1.3546533333333333,
+      "xg_a": 1.2680466666666668,
       "locked_status": "NO LOCK",
       "locked_section": "HT DC",
       "locked_selection": "1X",
-      "locked_model": 76.0,
-      "locked_sim": 76.0,
+      "locked_model": 75.6,
+      "locked_sim": 75.6,
       "locked_verdict": "REVIEW",
-      "xg_total": 2.4865266666666668,
-      "lambda_h": 1.0424463387870087,
-      "lambda_a": 1.0132166483665352,
-      "cs_home": 0.3085466666666667,
-      "cs_away": 0.30176,
+      "xg_total": 2.6227,
+      "lambda_h": 1.2056148069676411,
+      "lambda_a": 1.1147619198748135,
+      "cs_home": 0.29628,
+      "cs_away": 0.27366,
       "top8_ft": [
         {
-          "score": "0-0",
-          "count": 16941,
-          "pct": 11.3
+          "score": "1-1",
+          "count": 16329,
+          "pct": 10.9
         },
         {
           "score": "1-0",
-          "count": 16822,
-          "pct": 11.2
-        },
-        {
-          "score": "1-1",
-          "count": 16621,
-          "pct": 11.1
+          "count": 16166,
+          "pct": 10.8
         },
         {
           "score": "0-1",
-          "count": 16613,
-          "pct": 11.1
+          "count": 15353,
+          "pct": 10.2
+        },
+        {
+          "score": "0-0",
+          "count": 13527,
+          "pct": 9.0
         },
         {
           "score": "2-1",
-          "count": 11421,
-          "pct": 7.6
+          "count": 11872,
+          "pct": 7.9
         },
         {
           "score": "1-2",
-          "count": 11168,
-          "pct": 7.4
-        },
-        {
-          "score": "2-2",
-          "count": 8147,
-          "pct": 5.4
+          "count": 10973,
+          "pct": 7.3
         },
         {
           "score": "2-0",
-          "count": 8144,
-          "pct": 5.4
+          "count": 9105,
+          "pct": 6.1
+        },
+        {
+          "score": "2-2",
+          "count": 8180,
+          "pct": 5.5
         }
       ],
-      "goal_line_25_over": 0.4472,
-      "ft_vs_model_l1": 0.004953496272264601,
-      "generated_at": "2026-09-03T07:59:32.848069Z",
-      "locked_confidence": 76.0
+      "goal_line_25_over": 0.47722,
+      "ft_vs_model_l1": 0.004731402822059916,
+      "generated_at": "2026-09-03T16:47:36.855273+00:00",
+      "simulation_engine": "industrial-v4",
+      "simulation_method": "bivariate-poisson+dixon-coles+five-regime+soft-maxent-calibration+correlated-beta-binomial-HT",
+      "validation_ok": true,
+      "locked_confidence": 75.6
     },
     {
       "id": "sociedad__celta__2026-09-03",
@@ -345,73 +357,76 @@
       "odds_h": 1.95,
       "odds_d": 3.6,
       "odds_a": 3.8,
-      "models": "Celta Vigo (away)",
-      "ft_h": 47.9,
-      "ft_d": 25.7,
-      "ft_a": 26.3,
-      "over25": 49.3,
-      "btts": 51.6,
-      "cs_top": "1-0 (17970)",
-      "cs_second": "1-1 (15242)",
-      "xg_h": 1.5732533333333334,
-      "xg_a": 1.10996,
-      "locked_status": "SECURED LOCK",
+      "models": "Real Sociedad (home) + Celta Vigo (away)",
+      "ft_h": 47.0,
+      "ft_d": 26.5,
+      "ft_a": 26.5,
+      "over25": 51.6,
+      "btts": 56.6,
+      "cs_top": "1-0 (16795)",
+      "cs_second": "1-1 (16446)",
+      "xg_h": 1.6331,
+      "xg_a": 1.20748,
+      "locked_status": "NO LOCK",
       "locked_section": "HT DC",
       "locked_selection": "1X",
-      "locked_model": 80.5,
-      "locked_sim": 80.5,
-      "locked_verdict": "HARD YES",
-      "xg_total": 2.6832133333333332,
-      "lambda_h": 1.4144803902093213,
-      "lambda_a": 0.9629438401303357,
-      "cs_home": 0.34467333333333333,
-      "cs_away": 0.22557333333333332,
+      "locked_model": 79.6,
+      "locked_sim": 79.6,
+      "locked_verdict": "REVIEW",
+      "xg_total": 2.84058,
+      "lambda_h": 1.3683309198194586,
+      "lambda_a": 0.9486142970186578,
+      "cs_home": 0.30627333333333334,
+      "cs_away": 0.20584666666666668,
       "top8_ft": [
         {
           "score": "1-0",
-          "count": 17970,
-          "pct": 12.0
+          "count": 16795,
+          "pct": 11.2
         },
         {
           "score": "1-1",
-          "count": 15242,
-          "pct": 10.2
+          "count": 16446,
+          "pct": 11.0
         },
         {
           "score": "2-1",
-          "count": 13092,
-          "pct": 8.7
-        },
-        {
-          "score": "0-0",
-          "count": 12923,
-          "pct": 8.6
+          "count": 13564,
+          "pct": 9.0
         },
         {
           "score": "0-1",
-          "count": 12828,
-          "pct": 8.6
+          "count": 12010,
+          "pct": 8.0
+        },
+        {
+          "score": "0-0",
+          "count": 11663,
+          "pct": 7.8
         },
         {
           "score": "2-0",
-          "count": 11565,
-          "pct": 7.7
+          "count": 10493,
+          "pct": 7.0
         },
         {
           "score": "1-2",
-          "count": 8975,
-          "pct": 6.0
+          "count": 9285,
+          "pct": 6.2
         },
         {
           "score": "2-2",
-          "count": 8088,
-          "pct": 5.4
+          "count": 8506,
+          "pct": 5.7
         }
       ],
-      "goal_line_25_over": 0.49316666666666664,
-      "ft_vs_model_l1": 0.0017960772417920934,
-      "generated_at": "2026-09-03T07:59:40.056574Z",
-      "locked_confidence": 80.5
+      "goal_line_25_over": 0.5162133333333333,
+      "ft_vs_model_l1": 0.0028536273891798802,
+      "generated_at": "2026-09-03T16:47:47.368013+00:00",
+      "simulation_engine": "industrial-v4",
+      "simulation_method": "bivariate-poisson+dixon-coles+five-regime+soft-maxent-calibration+correlated-beta-binomial-HT",
+      "validation_ok": true,
+      "locked_confidence": 79.6
     },
     {
       "id": "africa_al_ahly_smouha_sc_2026_09_03",
