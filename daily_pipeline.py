@@ -87,7 +87,6 @@ def main():
     log_step(log, "scan_teams", "building fixture-driven training focus list")
     run([sys.executable, "scan_fixture_teams.py"], env={
         "TODAY_ONLY": "1" if TODAY_ONLY else "0",
-        # 0 means ALL unique teams from today's fixtures; no artificial cap.
         "MAX_TRAIN_TEAMS": str(MAX_TRAIN_TEAMS),
         "MIN_TEAM_MATCHES": str(MIN_TEAM_MATCHES),
         "TRAIN_DIVS": os.environ.get("TRAIN_DIVS", ""),
@@ -137,6 +136,12 @@ def main():
         run([sys.executable, "-m", "africa.daily_africa_segment"])
     else:
         log.info("AFRICA_SEGMENT not set — skip Africa board")
+
+    # One final, deterministic security pass runs after both regions have
+    # written their reports. It replaces legacy weak locks and normalizes the
+    # CS/HT-CS sections before anything is published.
+    log_step(log, "security", "enforcing core lock + single CS/HT-CS contract")
+    run([sys.executable, "tools/enforce_security_contract.py"])
 
     if SPORTINTEL_PUSH:
         log_step(log, "publish", "pushing sims to sportintel admin")
