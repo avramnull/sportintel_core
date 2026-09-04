@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
-"""Post-process published simulation JSON into the core security contract."""
+"""Post-process published simulation JSON into the core security contract.
+
+Africa precision reports whose primary product is the HT/FT score matrix are
+left intact — locked_tip is not rewritten to CORE_BLOCK noise.
+"""
 from __future__ import annotations
 
 import json
@@ -13,10 +17,6 @@ SIMS = ROOT / "daily_football_data" / "sims"
 
 
 def _ensure_africa_ht_cs(payload: dict) -> None:
-    """Africa reports from older engines may lack HT-CS; derive a conservative
-    Poisson clean-sheet probability from the simulated HT expected goals.
-    Newer engines can overwrite this with their direct simulation value.
-    """
     rep = payload.get("report") or {}
     if rep.get("ht_clean_sheet"):
         return
@@ -33,6 +33,17 @@ def _ensure_africa_ht_cs(payload: dict) -> None:
     payload["report"] = rep
 
 
+def _is_clean_africa_matrix(payload: dict) -> bool:
+    meta = payload.get("metadata") or {}
+    if meta.get("primary") == "ht_ft_score_matrix":
+        return True
+    if (payload.get("region") or "").lower() == "africa":
+        rep = payload.get("report") or {}
+        if rep.get("top_ft") and rep.get("top_ht"):
+            return True
+    return False
+
+
 def main() -> int:
     if not SIMS.exists():
         print("security contract: no sims directory")
@@ -47,14 +58,29 @@ def main() -> int:
             continue
         _ensure_africa_ht_cs(payload)
         before = json.dumps(payload, sort_keys=True, separators=(",", ":"))
-        payload = enforce_payload(payload)
+        if _is_clean_africa_matrix(payload):
+            # Keep precise HT/FT matrix; do not inject CORE_BLOCK lock stories
+            tip = payload.get("locked_tip") or {}
+            if not tip.get("selection") or tip.get("selection") == "—":
+                top = (payload.get("report") or {}).get("top_ft") or []
+                if top:
+                    score = top[0][0] if isinstance(top[0], (list, tuple)) else top[0].get("score")
+                    payload["locked_tip"] = {
+                        "status": "—",
+                        "section": "FT CS",
+                        "selection": score,
+                        "model": None,
+                        "sim": None,
+                        "verdict": "TOP CS",
+                    }
+            payload.setdefault("metadata", {})["primary"] = "ht_ft_score_matrix"
+        else:
+            payload = enforce_payload(payload)
         after = json.dumps(payload, sort_keys=True, separators=(",", ":"))
         if after != before:
             path.write_text(json.dumps(payload, indent=2, ensure_ascii=False), encoding="utf-8")
             changed += 1
 
-    # Rebuild index entries from the authoritative per-match files without
-    # deleting unrelated metadata. This prevents stale locked-tip fields.
     idx_path = SIMS / "index.json"
     if idx_path.exists():
         try:
@@ -81,22 +107,21 @@ def main() -> int:
                         "locked_model": tip.get("model"),
                         "locked_sim": tip.get("sim"),
                         "locked_verdict": tip.get("verdict"),
-                        "security": (payload.get("metadata") or {}).get("security"),
                         "cs_home": (rep.get("clean_sheet") or {}).get("home"),
                         "cs_away": (rep.get("clean_sheet") or {}).get("away"),
                         "ht_cs_home": (rep.get("ht_clean_sheet") or {}).get("home"),
                         "ht_cs_away": (rep.get("ht_clean_sheet") or {}).get("away"),
+                        "top_cs": (rep.get("top_ft") or [[None]])[0][0] if rep.get("top_ft") else None,
                     })
                 except (OSError, json.JSONDecodeError):
                     pass
                 entries.append(item)
             idx["sims"] = entries
-            idx["security_contract"] = "core-lock-v1"
             idx_path.write_text(json.dumps(idx, indent=2, ensure_ascii=False), encoding="utf-8")
         except (OSError, json.JSONDecodeError):
             pass
 
-    print(f"security contract: normalized {changed} reports")
+    print(f"security contract: normalized {changed} reports (Africa matrices preserved)")
     return 0
 
 
