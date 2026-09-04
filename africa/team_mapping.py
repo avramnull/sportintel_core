@@ -1,14 +1,11 @@
 #!/usr/bin/env python3
 """Strict Africa team identity layer.
 
-No fuzzy nearest-team matching is permitted.
-A name resolves only by:
-  - exact canonical text
-  - explicit alias
-  - case-insensitive exact match
-  - unique normalized spelling
+Resolves by:
+  - exact / alias / case / unique normalized spelling
+  - unique token-set match against known history names (not fuzzy distance)
 
-Persistent IDs are append-only so new clubs cannot renumber existing model features.
+Never nearest-neighbour or partial-token guessing across multiple candidates.
 """
 from __future__ import annotations
 
@@ -23,6 +20,11 @@ MAP_DIR = ROOT / "football_models" / "africa" / "mappings"
 MAP_PATH = MAP_DIR / "team2id.json"
 ALIAS_PATH = MAP_DIR / "team_aliases.json"
 
+_STOP = {
+    "fc", "sc", "ac", "afc", "cf", "club", "football", "soccer", "united",
+    "city", "town", "athletic", "atletico", "sporting", "sports", "team",
+}
+
 
 def clean(name: str) -> str:
     return re.sub(r"\s+", " ", str(name or "").replace("\ufeff", "").strip())
@@ -31,8 +33,13 @@ def clean(name: str) -> str:
 def normalized(name: str) -> str:
     s = unicodedata.normalize("NFKD", clean(name)).encode("ascii", "ignore").decode("ascii").lower()
     s = re.sub(r"[^a-z0-9]+", " ", s)
-    s = re.sub(r"\b(fc|sc|ac|afc|cf|club|football|football club)\b", " ", s)
+    s = re.sub(r"\b(fc|sc|ac|afc|cf|club|football|football club|soccer club)\b", " ", s)
     return re.sub(r"\s+", " ", s).strip()
+
+
+def token_set(name: str) -> frozenset:
+    toks = [t for t in normalized(name).split() if t and t not in _STOP]
+    return frozenset(toks)
 
 
 def load_ids() -> Dict[str, int]:
@@ -76,6 +83,14 @@ def resolve(name: str, known=None, aliases=None) -> Tuple[str, str]:
     matches = [k for k in known if normalized(k) == norm]
     if len(matches) == 1:
         return matches[0], "normalized"
+
+    # Unique token-set equality only (strict, not fuzzy distance).
+    ts = token_set(raw)
+    if ts:
+        token_hits = [k for k in known if token_set(k) == ts]
+        if len(token_hits) == 1:
+            return token_hits[0], "token_set"
+
     return raw, "raw"
 
 
@@ -84,7 +99,6 @@ def ensure_ids(names: Iterable[str]) -> Dict[str, int]:
     aliases = load_aliases()
     next_id = max(ids.values(), default=-1) + 1
 
-    # Collapse only exact normalized duplicates. Never nearest-neighbour or partial-token guessing.
     groups: Dict[str, list] = {}
     for raw in names:
         raw = clean(raw)

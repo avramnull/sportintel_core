@@ -1,5 +1,11 @@
 #!/usr/bin/env python3
-"""Fixture-driven Africa training: only teams on today's fixture board get scopes."""
+"""Fixture-driven Africa training: only teams on today's fixture board get scopes.
+
+- Resolve Live-score names onto historical master names (strict).
+- Do NOT write empty-target "harmless" models that later present as market-only.
+  Missing history → skip scope; sim uses league prior from precision engine.
+- Softer chronological split so 40–80 match teams can still train FT/O25/BTTS.
+"""
 from __future__ import annotations
 
 import json
@@ -38,32 +44,6 @@ def _purge_stale_scopes() -> None:
     log("purged stale pooled Africa scopes")
 
 
-def _write_fallback_scope(team: str, reason: str) -> None:
-    """Write a neutral, non-predictive scope so one weak/missing team cannot crash the board."""
-    run = MODEL_ROOT / f"team_{_slug(team)}"
-    pre = run / "preprocessors"
-    models = run / "models"
-    pre.mkdir(parents=True, exist_ok=True)
-    models.mkdir(parents=True, exist_ok=True)
-    feats = FEATURE_NUM + FEATURE_ID
-    stats = {"features": feats, "mean": [0.0] * len(feats), "std": [1.0] * len(feats), "classes": ["H", "D", "A"]}
-    (pre / "feature_stats.json").write_text(json.dumps(stats, indent=2), encoding="utf-8")
-    reg = {
-        "scope": f"team_{_slug(team)}",
-        "team": team,
-        "fallback": True,
-        "fallback_reason": str(reason)[:500],
-        "n": 0,
-        "n_train": 0,
-        "n_val": 0,
-        "features": feats,
-        "targets": {t: {} for t in TARGETS},
-        "countries": [],
-    }
-    (run / "registry.json").write_text(json.dumps(reg, indent=2), encoding="utf-8")
-    log(f"created harmless fallback for {team}: {reason}")
-
-
 def main() -> int:
     requested = _requested_teams()
     if not requested:
@@ -84,37 +64,56 @@ def main() -> int:
     raw = raw.sort_values(["Date", "HomeTeam", "AwayTeam"]).reset_index(drop=True)
     engineered = engineer(raw)
 
+    # Re-resolve fixture names against the full historical name set
+    hist_names = sorted(set(raw["HomeTeam"].astype(str)) | set(raw["AwayTeam"].astype(str)))
+    hist_ids = {n: i for i, n in enumerate(hist_names)}
+
     canonical: list[str] = []
+    unresolved: list[str] = []
     for name in requested:
-        canon, _ = resolve(name, ids, aliases)
-        if canon not in ids:
-            # The fixture is still valid; retain its canonical spelling and use a neutral fallback.
-            canon = str(name).strip()
+        canon, how = resolve(name, hist_ids, aliases)
+        if how == "raw":
+            unresolved.append(name)
+            log(f"UNRESOLVED fixture name (no history match): {name!r}")
+            continue
         if canon not in canonical:
             canonical.append(canon)
+            if how != "exact":
+                log(f"mapped fixture {name!r} -> {canon!r} via {how}")
 
-    # IMPORTANT: canonical is derived exclusively from FOCUS_TEAMS, which is populated from
-    # today's fixture report. Never expand this list to all historical teams/countries.
     min_matches = int(os.environ.get("MIN_TEAM_MATCHES", "25"))
+    # Africa often has 40–90 rows; require enough for a minimal chronological split.
+    min_split_rows = int(os.environ.get("AFRICA_MIN_SPLIT_ROWS", "40"))
     trained: list[str] = []
+    skipped: list[str] = []
+
     for team in canonical:
         mask = (engineered["HomeTeam"] == team) | (engineered["AwayTeam"] == team)
         team_df = engineered.loc[mask].copy()
-        if len(team_df) < min_matches:
-            _write_fallback_scope(team, f"insufficient historical support: {len(team_df)} matches (<{min_matches})")
-            trained.append(team)
+        n = len(team_df)
+        if n < min_matches:
+            log(f"SKIP {team}: only {n} matches (<{min_matches}) — no empty fallback model")
+            skipped.append(team)
+            continue
+        if n < min_split_rows:
+            log(f"SKIP {team}: {n} matches but <{min_split_rows} for train/val split — no empty fallback")
+            skipped.append(team)
             continue
         scope = f"team_{_slug(team)}"
-        log(f"training {team}: matches={len(team_df)} -> {scope}")
+        log(f"training {team}: matches={n} -> {scope}")
         try:
             train_scope(team_df, scope, MODEL_ROOT)
             trained.append(team)
         except Exception as exc:
-            log(f"training {team} failed safely: {exc}")
-            _write_fallback_scope(team, f"training failure: {exc}")
-            trained.append(team)
+            log(f"training {team} FAILED: {exc} — no empty fallback")
+            skipped.append(team)
 
-    log(f"training complete: {len(trained)} fixture teams only; no pooled fallback")
+    log(
+        f"training complete: trained={len(trained)} skipped={len(skipped)} "
+        f"unresolved={len(unresolved)} (no empty-target models written)"
+    )
+    if unresolved:
+        log("unresolved names: " + ", ".join(unresolved[:30]))
     return 0
 
 
