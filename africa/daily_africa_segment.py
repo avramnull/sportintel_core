@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Africa daily segment: live-score fixture board → team-specific training → simulation."""
+"""Africa daily segment: live-score fixture board → team-specific training → precision simulation."""
 from __future__ import annotations
 import json, os, re, subprocess, sys
 from datetime import datetime, timezone
@@ -63,7 +63,7 @@ def load_africa_standings():
 
 def sim_reports(doc):
     if os.environ.get("SKIP_AFRICA_SIM","").lower() in ("1","true","yes"): return []
-    from africa.runtime_hardening import simulate_match
+    from africa.precision_runtime import simulate_match
     from africa.sim_africa import to_simlab_document
     from standings_prior import prior_from_league_cache
     tables,strength=load_africa_standings(); SIMS.mkdir(parents=True,exist_ok=True); entries=[]; fixtures=doc.get("fixtures") or []
