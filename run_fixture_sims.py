@@ -1,5 +1,12 @@
 #!/usr/bin/env python3
-"""Run the complete fixture slate through the calibrated hard simulation engine."""
+"""Run the complete fixture slate through the calibrated precision simulation engine.
+
+Sim Lab product for every match:
+  - fixed_ft_cs  : single most likely full-time score (count + pct)
+  - fixed_ht_cs  : single most likely half-time score (count + pct)
+  - top_ft / top_ht matrices for detail
+No lock stories, no multi-market noise as the primary tip.
+"""
 from __future__ import annotations
 import json, os, re, sys, time
 from datetime import datetime, timezone
@@ -17,9 +24,6 @@ import sim as sim_mod
 from hard_simulation import simulate_hard
 from industrial_sim_engine import simulate_industrial
 
-# sim.py historically referenced this cache before declaring it. Initialising
-# it here prevents the exception from silently disabling the historical-form
-# feature layer for batch runs.
 if not hasattr(sim_mod, "_HIST_CACHE"):
     sim_mod._HIST_CACHE = {}
 
@@ -82,11 +86,6 @@ def _filter_run_day(df: pd.DataFrame) -> pd.DataFrame:
 
 
 def _with_match_clock(match_date: str):
-    """Temporarily make sim.py's feature clock match the fixture date.
-
-    Training/live features include calendar and rest-day values. Using the
-    runner's current UTC date for a future fixture introduces leakage/drift.
-    """
     raw = str(match_date or "").strip()
     parsed = pd.to_datetime(raw, errors="coerce")
     if pd.isna(parsed):
@@ -131,8 +130,49 @@ def _apply_hard_engine(payload: dict, seed: int) -> dict:
     return payload
 
 
+def _fixed_cs(report: dict) -> tuple:
+    """One fixed FT CS and one fixed HT CS from the precision matrix."""
+    n = int(report.get("n") or N_SIM)
+    top_ft = report.get("top_ft") or []
+    top_ht = report.get("top_ht") or []
+
+    def parse(items):
+        if not items:
+            return None
+        it = items[0]
+        if isinstance(it, (list, tuple)) and len(it) >= 2:
+            score, count = str(it[0]), int(it[1])
+        elif isinstance(it, dict):
+            score, count = str(it.get("score")), int(it.get("count") or 0)
+        else:
+            return None
+        pct = round(100.0 * count / max(n, 1), 2)
+        return {"score": score, "count": count, "pct": pct}
+
+    ft = parse(top_ft)
+    ht = parse(top_ht)
+    report["fixed_ft_cs"] = ft
+    report["fixed_ht_cs"] = ht
+    return ft, ht
+
+
+def _clean_locked_tip(ft_cs, ht_cs) -> dict:
+    """Single tip only: the fixed FT correct score."""
+    if not ft_cs:
+        return {"status": "—", "section": "FT CS", "selection": "—", "model": None, "sim": None, "verdict": "—"}
+    return {
+        "status": "FIXED CS",
+        "section": "FT CS",
+        "selection": ft_cs["score"],
+        "model": None,
+        "sim": ft_cs["pct"],
+        "verdict": "TOP CS",
+        "ht_cs": (ht_cs or {}).get("score"),
+        "ht_cs_pct": (ht_cs or {}).get("pct"),
+    }
+
+
 def _validate_report(payload: dict) -> None:
-    """Reject numerically broken reports before they reach Sim Lab."""
     rep = payload.get("report") or {}
     engine = rep.get("engine") or {}
     if not engine.get("version"):
@@ -169,9 +209,12 @@ def _validate_report(payload: dict) -> None:
     if not np.isfinite(xgv).all() or any(v < 0 for v in xgv):
         raise ValueError("invalid xG/lambda values")
 
+    if not rep.get("fixed_ft_cs") or not rep.get("fixed_ht_cs"):
+        raise ValueError("fixed_ft_cs / fixed_ht_cs missing")
+
     payload.setdefault("metadata", {})["validation"] = {
         "ok": True,
-        "version": "simulation-contract-v1",
+        "version": "simulation-contract-v2-fixed-cs",
         "n": n,
         "ft_sum": round(sum(ft), 10),
         "ht_sum": round(sum(ht), 10),
@@ -179,7 +222,10 @@ def _validate_report(payload: dict) -> None:
         "ft_l1": float(consistency.get("ft_vs_model_l1", 0.0)),
         "over25_abs_error": float(consistency.get("over25_abs_error", 0.0)),
         "btts_abs_error": float(consistency.get("btts_abs_error", 0.0)),
+        "fixed_ft_cs": rep["fixed_ft_cs"]["score"],
+        "fixed_ht_cs": rep["fixed_ht_cs"]["score"],
     }
+    payload["metadata"]["primary"] = "ht_ft_score_matrix"
 
 
 def main():
@@ -212,14 +258,12 @@ def main():
             payload = sim_mod.run_one_match(cfg, quiet=True, allow_market_only=True)
             if not isinstance(payload,dict) or "resolved" not in payload or "report" not in payload:
                 raise ValueError("simulation returned an invalid report payload")
-            # run_one_match timestamps with its feature clock; replace that
-            # diagnostic timestamp with the real generation time before publish.
             payload["generated_at"] = datetime.now(timezone.utc).isoformat()
             if HARD_SIM:
                 payload = _apply_hard_engine(payload, SEED+int(i))
-                rows = sim_mod.build_table_rows(payload["report"], payload.get("backends") or {}, payload["resolved"]["home"], payload["resolved"]["away"])
-                payload["table"] = rows
-                payload["locked_tip"] = sim_mod._locked_tip_silent(rows, payload["report"])
+            ft_cs, ht_cs = _fixed_cs(payload["report"])
+            payload["locked_tip"] = _clean_locked_tip(ft_cs, ht_cs)
+            payload["table"] = []  # no multi-market noise table
             _validate_report(payload)
         except Exception as exc:
             failures.append({"fixture":f"{home} vs {away}","error":str(exc)})
@@ -230,20 +274,44 @@ def main():
         key = slug_key(home, away, date_str)
         (SIMS_DIR/f"{key}.json").write_text(json.dumps(payload,indent=2),encoding="utf-8")
         tip, rep = payload.get("locked_tip") or {}, payload.get("report") or {}
-        ft = rep.get("ft_sim") or rep.get("ft_model") or {}; top_ft = rep.get("top_ft") or []
+        ft = rep.get("ft_sim") or rep.get("ft_model") or {}
+        top_ft = rep.get("top_ft") or []
         engine = rep.get("engine") or {}
-        index.append({"id":key,"file":f"{key}.json","kickoff":kick,"league":payload["resolved"]["league"],"div":payload["resolved"]["div"],
-          "home":payload["resolved"]["home"],"away":payload["resolved"]["away"],"fixture":f"{payload['resolved']['home']} vs {payload['resolved']['away']}",
-          "odds":f"{cfg['odds_home']:.2f} / {cfg['odds_draw']:.2f} / {cfg['odds_away']:.2f}","odds_h":cfg["odds_home"],"odds_d":cfg["odds_draw"],"odds_a":cfg["odds_away"],"models":payload["resolved"]["models"],
-          "ft_h":_pct(ft.get("H",0)),"ft_d":_pct(ft.get("D",0)),"ft_a":_pct(ft.get("A",0)),"over25":_pct(_first_present(rep.get("over25_sim"),rep.get("over25_model"))),"btts":_pct(_first_present(rep.get("btts_sim"),rep.get("btts_model"))),
-          "cs_top":f"{top_ft[0][0]} ({top_ft[0][1]})" if top_ft else "","cs_second":f"{top_ft[1][0]} ({top_ft[1][1]})" if len(top_ft)>1 else "","xg_h":(rep.get("xg") or {}).get("home"),"xg_a":(rep.get("xg") or {}).get("away"),
-          "locked_status":tip.get("status"),"locked_section":tip.get("section"),"locked_selection":tip.get("selection"),"locked_model":tip.get("model"),"locked_sim":tip.get("sim"),"locked_verdict":tip.get("verdict"),
-          "xg_total":(rep.get("xg") or {}).get("total"),"lambda_h":(rep.get("xg") or {}).get("lambda_home"),"lambda_a":(rep.get("xg") or {}).get("lambda_away"),"cs_home":(rep.get("clean_sheet") or {}).get("home"),"cs_away":(rep.get("clean_sheet") or {}).get("away"),
-          "top8_ft":rep.get("top8_ft") or rep.get("top3_ft"),"goal_line_25_over":((rep.get("goal_lines") or {}).get("2.5") or {}).get("over"),"ft_vs_model_l1":(rep.get("score_consistency") or {}).get("ft_vs_model_l1"),"generated_at":payload.get("generated_at"),
-          "simulation_engine":engine.get("version"),"simulation_method":engine.get("method"),"validation_ok":(payload.get("metadata") or {}).get("validation",{}).get("ok",False)})
+        index.append({
+            "id":key,"file":f"{key}.json","region":"EUR",
+            "kickoff":kick,"league":payload["resolved"]["league"],"div":payload["resolved"]["div"],
+            "home":payload["resolved"]["home"],"away":payload["resolved"]["away"],
+            "fixture":f"{payload['resolved']['home']} vs {payload['resolved']['away']}",
+            "odds":f"{cfg['odds_home']:.2f} / {cfg['odds_draw']:.2f} / {cfg['odds_away']:.2f}",
+            "odds_h":cfg["odds_home"],"odds_d":cfg["odds_draw"],"odds_a":cfg["odds_away"],
+            "models":payload["resolved"]["models"],
+            "ft_h":_pct(ft.get("H",0)),"ft_d":_pct(ft.get("D",0)),"ft_a":_pct(ft.get("A",0)),
+            "over25":_pct(_first_present(rep.get("over25_sim"),rep.get("over25_model"))),
+            "btts":_pct(_first_present(rep.get("btts_sim"),rep.get("btts_model"))),
+            "fixed_ft_cs": (rep.get("fixed_ft_cs") or {}).get("score"),
+            "fixed_ft_cs_pct": (rep.get("fixed_ft_cs") or {}).get("pct"),
+            "fixed_ht_cs": (rep.get("fixed_ht_cs") or {}).get("score"),
+            "fixed_ht_cs_pct": (rep.get("fixed_ht_cs") or {}).get("pct"),
+            "cs_top":f"{top_ft[0][0]} ({top_ft[0][1]})" if top_ft else "",
+            "xg_h":(rep.get("xg") or {}).get("home"),"xg_a":(rep.get("xg") or {}).get("away"),
+            "xg_total":(rep.get("xg") or {}).get("total"),
+            "locked_status":tip.get("status"),"locked_section":tip.get("section"),
+            "locked_selection":tip.get("selection"),"locked_sim":tip.get("sim"),
+            "locked_verdict":tip.get("verdict"),
+            "simulation_engine":engine.get("version"),
+            "validation_ok":(payload.get("metadata") or {}).get("validation",{}).get("ok",False),
+            "generated_at":payload.get("generated_at"),
+        })
     today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
-    engine_version = "industrial-v4" if os.environ.get("INDUSTRIAL_SIM", "1").strip().lower() in ("1", "true", "yes", "on") else "hard-v2"
-    index_payload={"generated_at":datetime.now(timezone.utc).isoformat(),"feed_date":today,"source":"https://www.football-data.co.uk/fixtures.csv","n_ok":len(index),"n_fail":len(failures),"failures":failures,"n_simulations_each":N_SIM,"simulation_engine":engine_version,"sims":index}
+    engine_version = "precision-v5" if os.environ.get("INDUSTRIAL_SIM", "1").strip().lower() in ("1", "true", "yes", "on") else "hard-v2"
+    index_payload={
+        "generated_at":datetime.now(timezone.utc).isoformat(),
+        "feed_date":today,
+        "source":"https://www.football-data.co.uk/fixtures.csv",
+        "n_ok":len(index),"n_fail":len(failures),"failures":failures,
+        "n_simulations_each":N_SIM,"simulation_engine":engine_version,
+        "primary":"ht_ft_score_matrix","sims":index,
+    }
     (SIMS_DIR/"index.json").write_text(json.dumps(index_payload,indent=2),encoding="utf-8")
     (SAVE_DIR/"fixtures_teams.json").write_text(json.dumps({"generated_at":index_payload["generated_at"],"teams":sorted(teams_seen),"n_teams":len(teams_seen)},indent=2),encoding="utf-8")
     elapsed=time.time()-t0_all
