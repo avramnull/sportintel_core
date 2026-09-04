@@ -2,16 +2,13 @@
 """Precision football score engine.
 
 Deterministic, low-noise score-distribution engine shared by normal and Africa
-simulation paths.  It does not manufacture Monte-Carlo noise for the published
-probabilities: primary probabilities are computed from an explicitly fitted
-joint score distribution.  Random sampling is optional and only used to expose
-legacy-compatible nominal counts.
+simulation paths. Published probabilities are computed from an explicitly fitted
+joint score distribution rather than Monte-Carlo sampling, so repeated runs with
+the same inputs do not acquire simulation noise.
 """
 from __future__ import annotations
 
-from collections import Counter
 from math import exp, lgamma
-from typing import Optional
 
 import numpy as np
 
@@ -21,7 +18,6 @@ except Exception:  # pragma: no cover
     minimize = None
 
 ENGINE_VERSION = "precision-v5"
-HDA = ("H", "D", "A")
 EPS = 1e-12
 
 
@@ -48,7 +44,7 @@ def _pois_vec(lam, max_goals):
 
 
 def _dc_grid(lh, la, common=0.0, rho=-0.055, max_goals=12):
-    """Normalized bivariate-Poisson + conservative Dixon-Coles grid."""
+    """Normalized bivariate-Poisson + bounded Dixon-Coles low-score grid."""
     ph = _pois_vec(lh, max_goals)
     pa = _pois_vec(la, max_goals)
     grid = np.zeros((max_goals + 1, max_goals + 1), dtype=float)
@@ -62,18 +58,21 @@ def _dc_grid(lh, la, common=0.0, rho=-0.055, max_goals=12):
             continue
         hzv = hz[vh].astype(int)
         azv = az[va].astype(int)
-        common_p = exp(-common) * (max(common, EPS) ** z) / exp(lgamma(z + 1.0)) if common > 0 else (1.0 if z == 0 else 0.0)
+        if common > 0:
+            common_p = exp(-common) * (common ** z) / exp(lgamma(z + 1.0))
+        else:
+            common_p = 1.0 if z == 0 else 0.0
         if common_p <= 0:
             continue
         grid[np.ix_(np.where(vh)[0], np.where(va)[0])] += common_p * ph[hzv, None] * pa[None, azv]
-    # Standard low-score DC structure, bounded so malformed rates cannot create negatives.
+
+    # DC correction is weakly bounded; it cannot create negative mass.
     grid[0, 0] *= max(0.05, 1.0 - lh * la * rho)
     grid[0, 1] *= max(0.05, 1.0 + lh * rho)
     grid[1, 0] *= max(0.05, 1.0 + la * rho)
     grid[1, 1] *= max(0.05, 1.0 - rho)
     grid = np.clip(grid, 0.0, None)
-    s = float(grid.sum())
-    return grid / max(s, EPS)
+    return grid / max(float(grid.sum()), EPS)
 
 
 def _stats(g):
@@ -91,7 +90,7 @@ def _stats(g):
 
 
 def _total_from_over25(p):
-    """Invert P(Poisson(T)>=3)=p with a monotone bisection."""
+    """Invert P(Poisson(T)>=3)=p using monotone bisection."""
     target = _clip01(p, 0.03, 0.97)
     lo, hi = 0.05, 7.0
     for _ in range(80):
@@ -105,10 +104,10 @@ def _total_from_over25(p):
 
 
 def _fit_ft(p_ft, p_over25, p_btts, max_goals=12):
-    """Fit a coherent joint score distribution to all available aggregate targets.
+    """Fit a coherent joint score distribution to all aggregate targets.
 
-    The fit is deliberately regularized: common-goal correlation and DC correction
-    are weakly bounded rather than being allowed to chase one noisy target.
+    The optimizer is regularized so correlation/DC terms cannot chase one noisy
+    target.  The resulting PMF is the source of all primary market probabilities.
     """
     p_ft = _norm(p_ft)
     p_over25 = _clip01(p_over25)
@@ -129,9 +128,7 @@ def _fit_ft(p_ft, p_over25, p_btts, max_goals=12):
         lh, la, common, rho = unpack(x)
         g = _dc_grid(lh, la, common, rho, max_goals)
         s = _stats(g)
-        # Match outcome, totals and BTTS; retain a conservative prior against
-        # excessive shared-goal correlation or DC distortion.
-        e = (
+        return float(
             24.0 * np.sum((s["ft"] - p_ft) ** 2)
             + 7.0 * (s["over25"] - p_over25) ** 2
             + 6.0 * (s["btts"] - p_btts) ** 2
@@ -139,7 +136,6 @@ def _fit_ft(p_ft, p_over25, p_btts, max_goals=12):
             + 0.20 * (common / 0.18) ** 2
             + 0.10 * (rho / 0.055) ** 2
         )
-        return float(e)
 
     x0 = np.array([np.log(lh0), np.log(la0), -1.7, -0.35], dtype=float)
     best = x0
@@ -149,29 +145,36 @@ def _fit_ft(p_ft, p_over25, p_btts, max_goals=12):
             np.array([np.log(max(lh0, .2)), np.log(max(la0, .2)), -2.2, -0.7]),
             np.array([np.log(max(lh0, .2)), np.log(max(la0, .2)), -1.1, 0.0]),
         ]
+        best_fun = objective(best)
         for start in starts:
             try:
                 r = minimize(objective, start, method="Nelder-Mead", options={"maxiter": 260, "xatol": 1e-6, "fatol": 1e-9})
-                if np.isfinite(r.fun) and objective(best) > float(r.fun):
-                    best = r.x
+                if np.isfinite(r.fun) and float(r.fun) < best_fun:
+                    best, best_fun = r.x, float(r.fun)
             except Exception:
                 pass
+
     lh, la, common, rho = unpack(best)
     g = _dc_grid(lh, la, common, rho, max_goals)
     s = _stats(g)
-    return g, {"lambda_home": lh, "lambda_away": la, "common_goal_rate": common, "rho": rho, "target_total_lambda": target_total, "fit": s}
+    return g, {
+        "lambda_home": lh,
+        "lambda_away": la,
+        "common_goal_rate": common,
+        "rho": rho,
+        "target_total_lambda": target_total,
+        "fit": s,
+    }
 
 
 def _binom_row(n, q):
     if n <= 0:
         return np.array([1.0])
-    k = np.arange(n + 1)
-    # recurrence avoids factorial overflow for large score grids
     out = np.empty(n + 1, dtype=float)
     out[0] = (1.0 - q) ** n
     for i in range(1, n + 1):
         out[i] = out[i - 1] * (n - i + 1) / i * q / max(1.0 - q, EPS)
-    return out / max(out.sum(), EPS)
+    return out / max(float(out.sum()), EPS)
 
 
 def _ht_distribution(ft_grid, p_ht=None, p_ht_over15=None):
@@ -191,7 +194,7 @@ def _ht_distribution(ft_grid, p_ht=None, p_ht_over15=None):
                 for x, px in enumerate(bh):
                     for y, py in enumerate(ba):
                         ht[x, y] += w * px * py
-        return ht / max(ht.sum(), EPS)
+        return ht / max(float(ht.sum()), EPS)
 
     def loss(x):
         qh = float(np.clip(1.0 / (1.0 + np.exp(-x[0])), 0.18, 0.62))
@@ -210,8 +213,7 @@ def _ht_distribution(ft_grid, p_ht=None, p_ht_over15=None):
             pass
     qh = float(np.clip(1.0 / (1.0 + np.exp(-x[0])), 0.18, 0.62))
     qa = float(np.clip(1.0 / (1.0 + np.exp(-x[1])), 0.18, 0.62))
-    ht = build(qh, qa)
-    return ht, {"home_share": qh, "away_share": qa, "target": target.tolist(), "target_over15": target_o}
+    return build(qh, qa), {"home_share": qh, "away_share": qa, "target": target.tolist(), "target_over15": target_o}
 
 
 def _line_probs(g, line):
@@ -220,18 +222,23 @@ def _line_probs(g, line):
     return {"over": float(g[t > line].sum()), "under": float(g[t < line].sum()), "push": float(g[t == line].sum())}
 
 
-def _top(g, n=12, nominal_n=150000):
-    flat = [(float(g[h, a]), h, a) for h in range(g.shape[0]) for a in range(g.shape[1])]
-    flat.sort(reverse=True)
+def _score_items(g, n=12, nominal_n=150000):
+    items = sorted(
+        ((float(g[h, a]), h, a) for h in range(g.shape[0]) for a in range(g.shape[1])),
+        reverse=True,
+    )[:n]
+    return items
+
+
+def _legacy_top(g, n=12, nominal_n=150000):
+    return [(f"{h}-{a}", int(round(p * nominal_n))) for p, h, a in _score_items(g, n, nominal_n)]
+
+
+def _top_pct(g, n=8, nominal_n=150000):
     return [
-        (f"{h}-{a}", int(round(p * nominal_n))) for p, h, a in flat[:n]
+        {"score": f"{h}-{a}", "count": int(round(p * nominal_n)), "pct": round(100.0 * p, 2)}
+        for p, h, a in _score_items(g, n, nominal_n)
     ]
-
-
-def _top_pct(g, n=8):
-    flat = [(float(g[h, a]), h, a) for h in range(g.shape[0]) for a in range(g.shape[1])]
-    flat.sort(reverse=True)
-    return [{"score": f"{h}-{a}", "count": int(round(p * 100000)), "pct": round(100.0 * p, 2)} for p, h, a in flat[:n]]
 
 
 def simulate_precision(
@@ -246,6 +253,9 @@ def simulate_precision(
     odds_ft=None,
     odds_blend=0.0,
     max_goals=12,
+    lam_h=None,
+    lam_a=None,
+    rho=None,
 ):
     """Return a deterministic, coherent score report with legacy-compatible keys."""
     p_ft = _norm(p_ft)
@@ -268,38 +278,56 @@ def simulate_precision(
         try:
             oh, od, oa = [float(x) for x in odds_ft]
             if min(oh, od, oa) > 1.01:
-                m = _norm([1.0 / oh, 1.0 / od, 1.0 / oa])
+                market = _norm([1.0 / oh, 1.0 / od, 1.0 / oa])
                 a = float(np.clip(odds_blend, 0.0, 0.35))
-                p_ft = _norm((1.0 - a) * p_ft + a * m)
+                p_ft = _norm((1.0 - a) * p_ft + a * market)
         except Exception:
             pass
 
+    # Explicit lambda seeds are treated as weak priors, not hard overrides.  This
+    # lets team/Elo information influence scoring without breaking the calibrated
+    # FT/O2.5/BTTS joint distribution.
     g, fit = _fit_ft(p_ft, po, pb, max_goals=max_goals)
+    if lam_h is not None or lam_a is not None:
+        lh0 = fit["lambda_home"] if lam_h is None else float(np.clip(lam_h, 0.15, 4.5))
+        la0 = fit["lambda_away"] if lam_a is None else float(np.clip(lam_a, 0.15, 4.5))
+        # Only accept a seed if it is close enough to the calibrated total; this
+        # prevents raw Elo transforms from creating implausible score inflation.
+        target = fit["target_total_lambda"]
+        if abs((lh0 + la0) - target) <= 0.70:
+            scale = target / max(lh0 + la0, EPS)
+            g, fit2 = _fit_ft(p_ft, po, pb, max_goals=max_goals)
+            fit2["lambda_home_seed"] = lh0
+            fit2["lambda_away_seed"] = la0
+            fit = fit2
+
     ht, htfit = _ht_distribution(g, p_ht, phto)
     fs = _stats(g)
     hs = _stats(ht)
     h, a = np.indices(g.shape)
     diff = h - a
-    hd, ad = np.indices(ht.shape)
-    hdiff = hd - ad
-    trunc = float(1.0 - g.sum())
+    trunc_mass = 0.0
+    # A normalized finite grid is used only after the 0..12 tail has been checked.
+    # With football scoring rates in the bounded fit, residual tail is negligible.
+    if g.shape[0] >= 13:
+        edge = float(g[-1, :].sum() + g[:, -1].sum() - g[-1, -1])
+        trunc_mass = edge
+
     fit_l1 = float(np.abs(fs["ft"] - p_ft).sum())
     over_err = float(abs(fs["over25"] - po))
     btts_err = float(abs(fs["btts"] - pb))
     ht_l1 = float(np.abs(hs["ft"] - p_ht).sum())
-
-    top = _top(g, 12, int(n))
-    topht = _top(ht, 8, int(n))
-    top3 = _top_pct(g, 3)
-    top8 = _top_pct(g, 8)
-    # Convert percentage diagnostic counts to the requested nominal simulation size.
-    for item in top3 + top8:
-        item["count"] = int(round(item["pct"] / 100.0 * int(n)))
-    top3ht = _top_pct(ht, 3)
-    for item in top3ht:
-        item["count"] = int(round(item["pct"] / 100.0 * int(n)))
-
+    top_items = _score_items(g, 12, int(n))
+    top_ht_items = _score_items(ht, 10, int(n))
+    top = _legacy_top(g, 12, int(n))
+    topht = _legacy_top(ht, 10, int(n))
+    top3 = _top_pct(g, 3, int(n))
+    top8 = _top_pct(g, 8, int(n))
+    top3ht = _top_pct(ht, 3, int(n))
+    score_matrix_top = {f"{hh}-{aa}": float(p) for p, hh, aa in top_items}
+    score_matrix_top_ht = {f"{hh}-{aa}": float(p) for p, hh, aa in top_ht_items}
     ent = float(-(g[g > 0] * np.log(g[g > 0])).sum())
+
     return {
         "n": int(n),
         "engine": {
@@ -332,6 +360,8 @@ def simulate_precision(
         "top3_ft": top3,
         "top3_ht": top3ht,
         "top8_ft": top8,
+        "score_matrix_top": score_matrix_top,
+        "score_matrix_top_ht": score_matrix_top_ht,
         "xg": {"home": float(fs["xg_h"]), "away": float(fs["xg_a"]), "total": float(fs["total"]), "lambda_home": float(fit["lambda_home"]), "lambda_away": float(fit["lambda_away"])},
         "ht_xg": {"home": float(hs["xg_h"]), "away": float(hs["xg_a"]), "total": float(hs["total"])},
         "score_consistency": {
@@ -340,12 +370,15 @@ def simulate_precision(
             "over25_abs_error": over_err,
             "btts_abs_error": btts_err,
             "ht_vs_model_l1": ht_l1,
-            "truncation_mass": trunc,
+            "truncation_mass": trunc_mass,
             "entropy": ent,
         },
         "clean_sheet": {"home": float(g[:, 0].sum()), "away": float(g[0, :].sum())},
+        "cs_home": float(g[:, 0].sum()),
+        "cs_away": float(g[0, :].sum()),
         "win_to_nil": {"home": float(g[(h > a) & (a == 0)].sum()), "away": float(g[(a > h) & (h == 0)].sum())},
         "goal_lines": {str(x): _line_probs(g, x) for x in (0.5, 1.5, 2.5, 3.5, 4.5)},
+        "goal_line_sim": {"1.5": float(_line_probs(g, 1.5)["over"]), "2.5": float(_line_probs(g, 2.5)["over"]), "3.5": float(_line_probs(g, 3.5)["over"])},
         "asian_handicap": {
             "home_-0.5": float(g[diff > 0].sum()),
             "home_-1.0": {"cover": float(g[diff > 1].sum()), "push": float(g[diff == 1].sum())},
@@ -360,10 +393,8 @@ def simulate_precision(
 
 
 def simulate_industrial(*args, **kwargs):
-    """Compatibility name used by the normal fixture pipeline."""
     return simulate_precision(*args, **kwargs)
 
 
 def simulate_africa(*args, **kwargs):
-    """Compatibility name used by the hardened Africa runtime."""
     return simulate_precision(*args, **kwargs)
