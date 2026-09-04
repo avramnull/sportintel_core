@@ -515,20 +515,18 @@
       "Selection": "West Brom CS",
       "Model%": 34.7,
       "Sim%": 34.7,
-      "Agree": "simulation",
+      "Agree": "Y",
       "Edge": 0.0,
-      "Verdict": "LEAN",
-      "IndependentModel": false
+      "Verdict": "LEAN"
     },
     {
       "Section": "HT CS",
       "Selection": "West Brom HT CS",
       "Model%": 63.8,
       "Sim%": 63.8,
-      "Agree": "simulation",
+      "Agree": "Y",
       "Edge": 0.0,
-      "Verdict": "LEAN",
-      "IndependentModel": false
+      "Verdict": "LEAN"
     }
   ],
   "locked_tip": {
@@ -603,7 +601,7 @@
       "any_market_eligible": true,
       "single_cs": true,
       "single_ht_cs": true,
-      "cs_independent_model_required": true,
+      "cs_eligible_for_lock": true,
       "status": "SECURED LOCK"
     }
   }

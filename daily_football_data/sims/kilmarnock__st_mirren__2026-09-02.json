@@ -515,20 +515,18 @@
       "Selection": "Kilmarnock CS",
       "Model%": 31.1,
       "Sim%": 31.1,
-      "Agree": "simulation",
+      "Agree": "Y",
       "Edge": 0.0,
-      "Verdict": "LEAN",
-      "IndependentModel": false
+      "Verdict": "LEAN"
     },
     {
       "Section": "HT CS",
       "Selection": "Kilmarnock HT CS",
       "Model%": 60.7,
       "Sim%": 60.7,
-      "Agree": "simulation",
+      "Agree": "Y",
       "Edge": 0.0,
-      "Verdict": "LEAN",
-      "IndependentModel": false
+      "Verdict": "LEAN"
     }
   ],
   "locked_tip": {
@@ -601,7 +599,7 @@
       "any_market_eligible": true,
       "single_cs": true,
       "single_ht_cs": true,
-      "cs_independent_model_required": true,
+      "cs_eligible_for_lock": true,
       "status": "NO LOCK"
     }
   }

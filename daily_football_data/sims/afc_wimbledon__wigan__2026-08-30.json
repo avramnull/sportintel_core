@@ -166,7 +166,7 @@
     },
     "lock_quality": {
       "version": "lock-calibration-v3",
-      "confidence": 0.0,
+      "confidence": 78.1,
       "model_only": true,
       "fixed_cs_preserved": false,
       "secured": false,
@@ -327,23 +327,24 @@
       "Selection": "Wigan HT CS",
       "Model%": 78.1,
       "Sim%": 78.1,
-      "Agree": "simulation",
+      "Agree": "Y",
       "Edge": 0.0,
-      "Verdict": "LEAN",
-      "IndependentModel": false
+      "Verdict": "LEAN"
     }
   ],
   "locked_tip": {
     "status": "NO LOCK",
-    "section": "\u2014",
-    "selection": "\u2014",
-    "model": null,
-    "sim": null,
+    "section": "HT CS",
+    "selection": "Wigan HT CS",
+    "model": 78.1,
+    "sim": 78.1,
+    "agree": "Y",
     "verdict": "REVIEW",
-    "security": "CORE_BLOCK",
-    "confidence": 0.0,
-    "raw_model": 0.0,
-    "raw_sim": 0.0,
+    "security": "CORE_LOCKED",
+    "security_score": 0.8357,
+    "confidence": 78.1,
+    "raw_model": 78.1,
+    "raw_sim": 78.1,
     "confidence_basis": "model probability; simulation used only as stability veto"
   },
   "backends": {
@@ -394,8 +395,8 @@
       "any_market_eligible": true,
       "single_cs": true,
       "single_ht_cs": true,
-      "cs_independent_model_required": true,
-      "status": "NO LOCK"
+      "cs_eligible_for_lock": true,
+      "status": "SECURED LOCK"
     }
   }
 }

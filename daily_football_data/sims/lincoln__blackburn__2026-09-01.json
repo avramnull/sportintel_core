@@ -515,20 +515,18 @@
       "Selection": "Lincoln CS",
       "Model%": 30.3,
       "Sim%": 30.3,
-      "Agree": "simulation",
+      "Agree": "Y",
       "Edge": 0.0,
-      "Verdict": "LEAN",
-      "IndependentModel": false
+      "Verdict": "LEAN"
     },
     {
       "Section": "HT CS",
       "Selection": "Lincoln HT CS",
       "Model%": 60.7,
       "Sim%": 60.7,
-      "Agree": "simulation",
+      "Agree": "Y",
       "Edge": 0.0,
-      "Verdict": "LEAN",
-      "IndependentModel": false
+      "Verdict": "LEAN"
     }
   ],
   "locked_tip": {
@@ -601,7 +599,7 @@
       "any_market_eligible": true,
       "single_cs": true,
       "single_ht_cs": true,
-      "cs_independent_model_required": true,
+      "cs_eligible_for_lock": true,
       "status": "NO LOCK"
     }
   }

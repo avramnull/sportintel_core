@@ -137,7 +137,7 @@
       "any_market_eligible": true,
       "single_cs": true,
       "single_ht_cs": true,
-      "cs_independent_model_required": true,
+      "cs_eligible_for_lock": true,
       "status": "NO LOCK"
     }
   }

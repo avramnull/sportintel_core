@@ -166,10 +166,10 @@
     },
     "lock_quality": {
       "version": "lock-calibration-v3",
-      "confidence": 0.0,
+      "confidence": 84.3,
       "model_only": true,
       "fixed_cs_preserved": false,
-      "secured": false,
+      "secured": true,
       "vetoes": []
     },
     "ht_clean_sheet": {
@@ -327,23 +327,24 @@
       "Selection": "Manchester City HT CS",
       "Model%": 84.3,
       "Sim%": 84.3,
-      "Agree": "simulation",
+      "Agree": "Y",
       "Edge": 0.0,
-      "Verdict": "LEAN",
-      "IndependentModel": false
+      "Verdict": "LEAN"
     }
   ],
   "locked_tip": {
-    "status": "NO LOCK",
-    "section": "\u2014",
-    "selection": "\u2014",
-    "model": null,
-    "sim": null,
-    "verdict": "REVIEW",
-    "security": "CORE_BLOCK",
-    "confidence": 0.0,
-    "raw_model": 0.0,
-    "raw_sim": 0.0,
+    "status": "SECURED LOCK",
+    "section": "HT CS",
+    "selection": "Manchester City HT CS",
+    "model": 84.3,
+    "sim": 84.3,
+    "agree": "Y",
+    "verdict": "HARD YES",
+    "security": "CORE_LOCKED",
+    "security_score": 0.8822,
+    "confidence": 84.3,
+    "raw_model": 84.3,
+    "raw_sim": 84.3,
     "confidence_basis": "model probability; simulation used only as stability veto"
   },
   "backends": {
@@ -391,8 +392,8 @@
       "any_market_eligible": true,
       "single_cs": true,
       "single_ht_cs": true,
-      "cs_independent_model_required": true,
-      "status": "NO LOCK"
+      "cs_eligible_for_lock": true,
+      "status": "SECURED LOCK"
     }
   }
 }

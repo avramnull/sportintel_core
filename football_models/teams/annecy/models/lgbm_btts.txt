@@ -1,0 +1,163 @@
+tree
+version=v4
+num_class=1
+num_tree_per_iteration=1
+label_index=0
+max_feature_idx=62
+objective=binary sigmoid:1
+feature_names=Column_0 Column_1 Column_2 Column_3 Column_4 Column_5 Column_6 Column_7 Column_8 Column_9 Column_10 Column_11 Column_12 Column_13 Column_14 Column_15 Column_16 Column_17 Column_18 Column_19 Column_20 Column_21 Column_22 Column_23 Column_24 Column_25 Column_26 Column_27 Column_28 Column_29 Column_30 Column_31 Column_32 Column_33 Column_34 Column_35 Column_36 Column_37 Column_38 Column_39 Column_40 Column_41 Column_42 Column_43 Column_44 Column_45 Column_46 Column_47 Column_48 Column_49 Column_50 Column_51 Column_52 Column_53 Column_54 Column_55 Column_56 Column_57 Column_58 Column_59 Column_60 Column_61 Column_62
+feature_infos=[-1.4867457675559879:4.4642730813359455] [-1.4453892946883324:3.7855053327571349] [-1.5899910294959467:3.3967371120344643] [-1.4607820042512762:4.4197371188351982] [-1.4550271642086838:4.5011038620846433] [-1.6507335656619422:2.9530599933189046] [-1.9637929506514382:3.3027501246047088] [-1.5791005102572298:3.4687400463784837] [-2.2677879469577937:2.5995462333348667] [-2.3944371177618202:2.463726765068921] [-3.1738690007466657:1.7160869537282482] [-1.9228861140210685:3.1138082256464914] [-1.2641305699336727:2.9338213417184309] [-2.3868446578187457:2.4536780736762127] [-1.9262959387122842:3.1371297143638217] [-2.3868446578187457:2.4536780736762127] [-3.200472904559132:1.7680412071053555] [-1.9262959387122842:3.1371297143638217] [-3.8689797141541367:0.80982756053130522] [-1.5137782526345964:1.1392351798175591] [-1.5756697722399742:1.4682377423145212] [-2.5904318694344033:0.72563302366686611] [-0.89917219613257204:1.1121340320587076] [-2.3776654492244886:3.1501086539717842] [-2.559111743505341:2.8050712661185635] [-2.0890816964896906:2.5452448159493781] [-2.6314801037917159:2.7975443821863388] [-2.1860342783661491:2.0573875531570729] [-2.2340396789003427:3.1889029019619852] [-1.9564308327854436:4.9235600108694086] [-3.5816487249025366:2.4780674696976948] [-2.4102823043914454:2.5121884476391374] [-3.2164411382952758:2.0382556840979027] [-2.5812139685174058:2.3393658618235276] [-2.5829673911656692:2.0854913571280367] [-2.6976596785561475:2.2217563237713795] [-1.891073225893291:2.9369111005231887] [-2.381786132896683:6.2341287046857605] [-4.5689491623017346:2.4689089582918506] [-3.1549570797516262:2.1917992303694103] [-3.663667141156675:2.5913005818166157] [-2.0653357306599869:2.3474050428489939] [-3.7543776593542635:2.3171996055831872] [-1.9447480996635504:2.4445897388962252] [-1.6363923629776438:2.6031181067716975] [-3.2558373242608356:2.7893203991648736] [-2.3428816580113616:3.0387895129004563] [-2.7259383777253352:1.8447650183990754] [-2.7713732702589629:1.7565056108677359] [-1.024606901612414:4.2125263705490337] [-0.94589747094548438:3.7939162753861453] none [-3.0785005472452958:3.2882280784444888] [-4.66127319636586:2.382428522586995] [-2.5337491307780118:2.4352584697787969] [-2.540970405877875:2.2625170138748141] [-0.6128938256886679:3.1082472588496728] [-0.62150309284878125:2.9003477666276458] [-0.77820923695713318:2.0977814213627073] [-1.8999055448578783:2.964310458543316] [17:763] [17:763] none
+tree_sizes=564
+
+Tree=0
+num_leaves=4
+num_cat=0
+split_feature=45 44 4
+split_gain=5.08737 3.10895 2.87432
+threshold=0.044516313963214343 -1.0000000180025095e-35 -0.35616876630964694
+decision_type=2 2 2
+left_child=2 -2 -1
+right_child=1 -3 -4
+leaf_value=-0.0037846300049979957 0.021647940395028518 0.05098443261124791 0.024212112488098316
+leaf_weight=4.9993079900741577 5.2492733895778656 5.2492733895778638 5.7492041885852831
+leaf_count=20 21 21 23
+internal_value=0.0235305 0.0374145 0.0099298
+internal_weight=21.2471 10.4985 10.7485
+internal_count=85 42 43
+is_linear=0
+shrinkage=1
+
+
+end of trees
+
+feature_importances:
+Column_4=1
+Column_44=1
+Column_45=1
+
+parameters:
+[boosting: gbdt]
+[objective: binary]
+[metric: binary_logloss]
+[tree_learner: serial]
+[device_type: cpu]
+[data_sample_strategy: bagging]
+[data: ]
+[valid: ]
+[num_iterations: 1800]
+[learning_rate: 0.03]
+[num_leaves: 96]
+[num_threads: 2]
+[seed: 42]
+[deterministic: 0]
+[force_col_wise: 1]
+[force_row_wise: 0]
+[histogram_pool_size: -1]
+[max_depth: 10]
+[min_data_in_leaf: 20]
+[min_sum_hessian_in_leaf: 0.001]
+[bagging_fraction: 0.85]
+[pos_bagging_fraction: 1]
+[neg_bagging_fraction: 1]
+[bagging_freq: 0]
+[bagging_seed: 400]
+[bagging_by_query: 0]
+[feature_fraction: 0.8]
+[feature_fraction_bynode: 1]
+[feature_fraction_seed: 30056]
+[extra_trees: 0]
+[extra_seed: 12879]
+[early_stopping_round: 0]
+[early_stopping_min_delta: 0]
+[first_metric_only: 0]
+[max_delta_step: 0]
+[lambda_l1: 0.2]
+[lambda_l2: 1.5]
+[linear_lambda: 0]
+[min_gain_to_split: 0]
+[drop_rate: 0.1]
+[max_drop: 50]
+[skip_drop: 0.5]
+[xgboost_dart_mode: 0]
+[uniform_drop: 0]
+[drop_seed: 17869]
+[top_rate: 0.2]
+[other_rate: 0.1]
+[min_data_per_group: 100]
+[max_cat_threshold: 32]
+[cat_l2: 10]
+[cat_smooth: 10]
+[max_cat_to_onehot: 4]
+[top_k: 20]
+[monotone_constraints: ]
+[monotone_constraints_method: basic]
+[monotone_penalty: 0]
+[feature_contri: ]
+[forcedsplits_filename: ]
+[refit_decay_rate: 0.9]
+[cegb_tradeoff: 1]
+[cegb_penalty_split: 0]
+[cegb_penalty_feature_lazy: ]
+[cegb_penalty_feature_coupled: ]
+[path_smooth: 0]
+[interaction_constraints: ]
+[verbosity: -1]
+[saved_feature_importance_type: 0]
+[use_quantized_grad: 0]
+[num_grad_quant_bins: 4]
+[quant_train_renew_leaf: 0]
+[stochastic_rounding: 1]
+[linear_tree: 0]
+[max_bin: 255]
+[max_bin_by_feature: ]
+[min_data_in_bin: 3]
+[bin_construct_sample_cnt: 200000]
+[data_random_seed: 175]
+[is_enable_sparse: 1]
+[enable_bundle: 1]
+[use_missing: 1]
+[zero_as_missing: 0]
+[feature_pre_filter: 1]
+[pre_partition: 0]
+[two_round: 0]
+[header: 0]
+[label_column: ]
+[weight_column: ]
+[group_column: ]
+[ignore_column: ]
+[categorical_feature: ]
+[forcedbins_filename: ]
+[precise_float_parser: 0]
+[parser_config_file: ]
+[objective_seed: 16083]
+[num_class: 1]
+[is_unbalance: 0]
+[scale_pos_weight: 1]
+[sigmoid: 1]
+[boost_from_average: 1]
+[reg_sqrt: 0]
+[alpha: 0.9]
+[fair_c: 1]
+[poisson_max_delta_step: 0.7]
+[tweedie_variance_power: 1.5]
+[lambdarank_truncation_level: 30]
+[lambdarank_norm: 1]
+[label_gain: ]
+[lambdarank_position_bias_regularization: 0]
+[eval_at: ]
+[multi_error_top_k: 1]
+[auc_mu_weights: ]
+[num_machines: 1]
+[local_listen_port: 12400]
+[time_out: 120]
+[machine_list_filename: ]
+[machines: ]
+[gpu_platform_id: -1]
+[gpu_device_id: -1]
+[gpu_device_id_list: ]
+[gpu_use_dp: 0]
+[num_gpu: 1]
+
+end of parameters
+
+pandas_categorical:null

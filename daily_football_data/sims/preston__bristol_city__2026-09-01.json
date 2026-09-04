@@ -515,20 +515,18 @@
       "Selection": "Preston CS",
       "Model%": 26.0,
       "Sim%": 26.0,
-      "Agree": "simulation",
+      "Agree": "Y",
       "Edge": 0.0,
-      "Verdict": "LEAN",
-      "IndependentModel": false
+      "Verdict": "LEAN"
     },
     {
       "Section": "HT CS",
       "Selection": "Preston HT CS",
       "Model%": 56.5,
       "Sim%": 56.5,
-      "Agree": "simulation",
+      "Agree": "Y",
       "Edge": 0.0,
-      "Verdict": "LEAN",
-      "IndependentModel": false
+      "Verdict": "LEAN"
     }
   ],
   "locked_tip": {
@@ -601,7 +599,7 @@
       "any_market_eligible": true,
       "single_cs": true,
       "single_ht_cs": true,
-      "cs_independent_model_required": true,
+      "cs_eligible_for_lock": true,
       "status": "NO LOCK"
     }
   }

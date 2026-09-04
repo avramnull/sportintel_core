@@ -515,20 +515,18 @@
       "Selection": "Port Vale CS",
       "Model%": 27.3,
       "Sim%": 27.3,
-      "Agree": "simulation",
+      "Agree": "Y",
       "Edge": 0.0,
-      "Verdict": "LEAN",
-      "IndependentModel": false
+      "Verdict": "LEAN"
     },
     {
       "Section": "HT CS",
       "Selection": "Port Vale HT CS",
       "Model%": 56.8,
       "Sim%": 56.8,
-      "Agree": "simulation",
+      "Agree": "Y",
       "Edge": 0.0,
-      "Verdict": "LEAN",
-      "IndependentModel": false
+      "Verdict": "LEAN"
     }
   ],
   "locked_tip": {
@@ -601,7 +599,7 @@
       "any_market_eligible": true,
       "single_cs": true,
       "single_ht_cs": true,
-      "cs_independent_model_required": true,
+      "cs_eligible_for_lock": true,
       "status": "NO LOCK"
     }
   }
