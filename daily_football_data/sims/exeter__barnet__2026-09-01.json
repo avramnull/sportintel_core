@@ -300,12 +300,16 @@
     },
     "lock_quality": {
       "version": "lock-calibration-v2",
-      "confidence": 74.6,
+      "confidence": 0.0,
       "model_only": true,
       "simulation_agreement_counted_as_independent": false,
       "simulation_used_as_stability_veto": true,
       "secured": false,
       "vetoes": []
+    },
+    "ht_clean_sheet": {
+      "home": 0.5692844828156667,
+      "away": 0.5780326060786919
     }
   },
   "table": [
@@ -490,24 +494,6 @@
       "Edge": 0.0
     },
     {
-      "Section": "CS",
-      "Selection": "Exeter CS",
-      "Model%": 26.1,
-      "Sim%": 26.1,
-      "Agree": "6 eng",
-      "Verdict": "NO",
-      "Edge": 0.0
-    },
-    {
-      "Section": "CS",
-      "Selection": "Barnet CS",
-      "Model%": 27.0,
-      "Sim%": 27.0,
-      "Agree": "6 eng",
-      "Verdict": "NO",
-      "Edge": 0.0
-    },
-    {
       "Section": "WTN",
       "Selection": "Exeter WTN",
       "Model%": 19.4,
@@ -524,19 +510,39 @@
       "Agree": "6 eng",
       "Verdict": "NO",
       "Edge": 0.0
+    },
+    {
+      "Section": "CS",
+      "Selection": "Barnet CS",
+      "Model%": 27.0,
+      "Sim%": 27.0,
+      "Agree": "simulation",
+      "Edge": 0.0,
+      "Verdict": "LEAN",
+      "IndependentModel": false
+    },
+    {
+      "Section": "HT CS",
+      "Selection": "Barnet HT CS",
+      "Model%": 57.8,
+      "Sim%": 57.8,
+      "Agree": "simulation",
+      "Edge": 0.0,
+      "Verdict": "LEAN",
+      "IndependentModel": false
     }
   ],
   "locked_tip": {
     "status": "NO LOCK",
-    "section": "FT DC",
-    "selection": "12",
-    "model": 74.6,
-    "sim": 74.6,
-    "agree": "6 eng",
+    "section": "\u2014",
+    "selection": "\u2014",
+    "model": null,
+    "sim": null,
     "verdict": "REVIEW",
-    "confidence": 74.6,
-    "raw_model": 74.6,
-    "raw_sim": 74.6,
+    "security": "CORE_BLOCK",
+    "confidence": 0.0,
+    "raw_model": 0.0,
+    "raw_sim": 0.0,
     "confidence_basis": "model probability; simulation used only as stability veto"
   },
   "backends": {
@@ -586,6 +592,18 @@
       "lambda_home": 1.3187340866032355,
       "lambda_away": 1.3632401735757564,
       "target_total_lambda": 2.681974260178992
+    },
+    "security": {
+      "version": "core-lock-v1",
+      "min_model": 0.78,
+      "min_sim": 0.78,
+      "max_model_sim_gap": 0.06,
+      "healthy_simulation_required": true,
+      "any_market_eligible": true,
+      "single_cs": true,
+      "single_ht_cs": true,
+      "cs_independent_model_required": true,
+      "status": "NO LOCK"
     }
   }
 }

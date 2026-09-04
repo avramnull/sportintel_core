@@ -22,306 +22,343 @@
   "report": {
     "n": 150000,
     "engine": {
-      "version": "industrial-v4",
-      "method": "bivariate-poisson+dixon-coles+five-regime+soft-maxent-calibration+correlated-beta-binomial-HT",
-      "rho": 0.052,
-      "lambda_home": 0.8868002566080289,
-      "lambda_away": 1.0380409745944066,
-      "common_goal_rate": 0.2870635469794065,
-      "target_total_lambda": 2.5351247225946802,
-      "calibration_strength": 0.8,
-      "calibration_beta": [
-        0.0015584100778427241,
-        0.0475701738003757,
-        0.11000093774803871,
-        -0.1116045427090473
-      ],
-      "dispersion_regimes": [
-        0.68,
-        0.85,
-        1.0,
-        1.18,
-        1.4
-      ]
+      "version": "precision-v5",
+      "method": "deterministic-hierarchical-bivariate-poisson+dixon-coles+joint-target-fit+exact-HT-conditional",
+      "probability_mode": "exact_distribution_no_monte_carlo_noise",
+      "lambda_home": 1.0265067191569588,
+      "lambda_away": 1.211486191888507,
+      "common_goal_rate": 0.017353159203959554,
+      "rho": -0.0055611083918540374,
+      "target_total_lambda": 2.308675326271498,
+      "ht_home_share": 0.62,
+      "ht_away_share": 0.5738569497069511,
+      "max_goals": 12
     },
     "ft_model": {
-      "H": 0.30574759548265545,
-      "D": 0.307870095149934,
-      "A": 0.3863823093674106
+      "H": 0.29934131006621445,
+      "D": 0.3067076061003795,
+      "A": 0.393951083833406
     },
     "ft_sim": {
-      "H": 0.3059733333333333,
-      "D": 0.3071333333333333,
-      "A": 0.3868933333333333
+      "H": 0.30975161105061877,
+      "D": 0.2881951760194167,
+      "A": 0.40205321292996454
     },
     "ht_model": {
-      "H": 0.2807285111664548,
-      "D": 0.4404495889789212,
-      "A": 0.2788218998546239
+      "H": 0.2778107290232812,
+      "D": 0.4278902145973012,
+      "A": 0.29429905637941767
     },
     "ht_sim": {
-      "H": 0.22256666666666666,
-      "D": 0.5146533333333333,
-      "A": 0.26278
+      "H": 0.28553787859713836,
+      "D": 0.3934960219327371,
+      "A": 0.3209660994701247
     },
-    "over25_model": 0.4651647649940169,
-    "over25_sim": 0.45397333333333334,
-    "btts_model": 0.5064609711048701,
-    "btts_sim": 0.5204266666666667,
-    "ht_over15_model": 0.36629119124850423,
-    "ht_over15_sim": 0.25044,
+    "over25_model": 0.40626042534929274,
+    "over25_sim": 0.3961698563736431,
+    "btts_model": 0.4725976758558368,
+    "btts_sim": 0.46084269986370746,
+    "ht_over15_model": 0.3515651063373232,
+    "ht_over15_sim": 0.15581150057364157,
     "dc_ft": {
-      "1X": 0.6131066666666667,
-      "X2": 0.6940266666666666,
-      "12": 0.6928666666666666
+      "1X": 0.5979467870700355,
+      "X2": 0.6902483889493812,
+      "12": 0.7118048239805833
     },
     "dc_ht": {
-      "1X": 0.73722,
-      "X2": 0.7774333333333333,
-      "12": 0.4853466666666667
+      "1X": 0.6790339005298754,
+      "X2": 0.7144621214028618,
+      "12": 0.6065039780672631
     },
     "top_ft": [
       [
-        "0-0",
-        17503
+        "1-1",
+        19939
       ],
       [
         "0-1",
-        17423
-      ],
-      [
-        "1-1",
-        17099
+        18942
       ],
       [
         "1-0",
-        15106
+        16034
+      ],
+      [
+        "0-0",
+        15834
       ],
       [
         "1-2",
-        12275
-      ],
-      [
-        "2-1",
-        10409
-      ],
-      [
-        "2-2",
-        8671
+        12177
       ],
       [
         "0-2",
-        8575
+        11540
+      ],
+      [
+        "2-1",
+        10317
       ],
       [
         "2-0",
-        6198
+        8285
+      ],
+      [
+        "2-2",
+        6422
       ],
       [
         "1-3",
-        5222
+        4984
       ],
       [
-        "2-3",
-        4065
+        "0-3",
+        4660
       ],
       [
         "3-1",
-        3707
+        3578
       ]
     ],
     "top_ht": [
       [
         "0-0",
-        62744
+        39073
       ],
       [
         "0-1",
-        26467
+        27246
       ],
       [
         "1-0",
-        23223
+        24983
       ],
       [
         "1-1",
-        13107
+        17770
       ],
       [
         "0-2",
-        6333
+        9536
       ],
       [
         "2-0",
-        4732
+        8020
       ],
       [
         "1-2",
-        3970
+        6281
       ],
       [
         "2-1",
-        3542
+        5760
+      ],
+      [
+        "0-3",
+        2222
+      ],
+      [
+        "2-2",
+        2068
       ]
     ],
     "top3_ft": [
       {
-        "score": "0-0",
-        "count": 17503,
-        "pct": 11.7
+        "score": "1-1",
+        "count": 19939,
+        "pct": 13.29
       },
       {
         "score": "0-1",
-        "count": 17423,
-        "pct": 11.6
+        "count": 18942,
+        "pct": 12.63
       },
       {
-        "score": "1-1",
-        "count": 17099,
-        "pct": 11.4
+        "score": "1-0",
+        "count": 16034,
+        "pct": 10.69
       }
     ],
     "top3_ht": [
       {
         "score": "0-0",
-        "count": 62744,
-        "pct": 41.8
+        "count": 39073,
+        "pct": 26.05
       },
       {
         "score": "0-1",
-        "count": 26467,
-        "pct": 17.6
+        "count": 27246,
+        "pct": 18.16
       },
       {
         "score": "1-0",
-        "count": 23223,
-        "pct": 15.5
+        "count": 24983,
+        "pct": 16.66
       }
     ],
     "top8_ft": [
       {
-        "score": "0-0",
-        "count": 17503,
-        "pct": 11.7
+        "score": "1-1",
+        "count": 19939,
+        "pct": 13.29
       },
       {
         "score": "0-1",
-        "count": 17423,
-        "pct": 11.6
-      },
-      {
-        "score": "1-1",
-        "count": 17099,
-        "pct": 11.4
+        "count": 18942,
+        "pct": 12.63
       },
       {
         "score": "1-0",
-        "count": 15106,
-        "pct": 10.1
+        "count": 16034,
+        "pct": 10.69
+      },
+      {
+        "score": "0-0",
+        "count": 15834,
+        "pct": 10.56
       },
       {
         "score": "1-2",
-        "count": 12275,
-        "pct": 8.2
-      },
-      {
-        "score": "2-1",
-        "count": 10409,
-        "pct": 6.9
-      },
-      {
-        "score": "2-2",
-        "count": 8671,
-        "pct": 5.8
+        "count": 12177,
+        "pct": 8.12
       },
       {
         "score": "0-2",
-        "count": 8575,
-        "pct": 5.7
+        "count": 11540,
+        "pct": 7.69
+      },
+      {
+        "score": "2-1",
+        "count": 10317,
+        "pct": 6.88
+      },
+      {
+        "score": "2-0",
+        "count": 8285,
+        "pct": 5.52
       }
     ],
+    "score_matrix_top": {
+      "1-1": 0.13292853958080295,
+      "0-1": 0.1262825788610536,
+      "1-0": 0.10689003462862855,
+      "0-0": 0.10556122068222859,
+      "1-2": 0.08117722961031174,
+      "0-2": 0.07693397906664727,
+      "2-1": 0.06878243614781622,
+      "2-0": 0.055233790806995836,
+      "2-2": 0.04281147235734883,
+      "1-3": 0.033226713451864356,
+      "0-3": 0.03106815110876085,
+      "3-1": 0.023854704543676598
+    },
+    "score_matrix_top_ht": {
+      "0-0": 0.2604849857266885,
+      "0-1": 0.18164281066113816,
+      "1-0": 0.16655414023414025,
+      "1-1": 0.11846865370375241,
+      "0-2": 0.06357390199074696,
+      "2-0": 0.053464007109892395,
+      "1-2": 0.041875140936451456,
+      "2-1": 0.038401448005235525,
+      "0-3": 0.01481280177409706,
+      "2-2": 0.013786292339422064
+    },
     "xg": {
-      "home": 1.1882266666666668,
-      "away": 1.34458,
-      "total": 2.5328066666666667,
-      "lambda_home": 0.8868002566080289,
-      "lambda_away": 1.0380409745944066
+      "home": 1.0438594332211424,
+      "away": 1.2288370270059696,
+      "total": 2.2726964602271122,
+      "lambda_home": 1.0265067191569588,
+      "lambda_away": 1.211486191888507
     },
     "ht_xg": {
-      "home": 0.4499666666666667,
-      "away": 0.5093133333333333,
-      "total": 0.95928
+      "home": 0.6471928485971086,
+      "away": 0.7051766680046041,
+      "total": 1.3523695166017127
     },
     "score_consistency": {
       "ht_leq_ft": 1.0,
-      "ft_vs_model_l1": 0.0014735236332013013,
-      "over25_abs_error": 0.011191431660683537,
-      "btts_abs_error": 0.01396569556179661
-    },
-    "distribution_diagnostics": {
-      "score_entropy": 2.8840134562900808,
-      "top1_mass": 0.11668666666666666,
-      "top3_mass": 0.3468333333333333,
-      "tail_4plus": 0.26657333333333333,
-      "score_cells": 121
+      "ft_vs_model_l1": 0.03702486016192569,
+      "over25_abs_error": 0.010090568975649639,
+      "btts_abs_error": 0.011754975992129324,
+      "ht_vs_model_l1": 0.06878838532912834,
+      "truncation_mass": 8.47338809622691e-09,
+      "entropy": 2.7531212769351345
     },
     "clean_sheet": {
-      "home": 0.27632666666666666,
-      "away": 0.31993333333333335
+      "home": 0.2926290633635538,
+      "away": 0.3520894574549671
     },
+    "cs_home": 0.2926290633635538,
+    "cs_away": 0.3520894574549671,
     "win_to_nil": {
-      "home": 0.15964,
-      "away": 0.20324666666666666
+      "home": 0.18706784268132517,
+      "away": 0.2465282367727386
     },
     "goal_lines": {
       "0.5": {
-        "over": 0.8833133333333333,
-        "under": 0.11668666666666666,
+        "over": 0.8944387793177713,
+        "under": 0.10556122068222859,
         "push": 0.0
       },
       "1.5": {
-        "over": 0.6664533333333333,
-        "under": 0.33354666666666666,
+        "over": 0.6612661658280892,
+        "under": 0.3387338341719107,
         "push": 0.0
       },
       "2.5": {
-        "over": 0.45397333333333334,
-        "under": 0.5460266666666667,
+        "over": 0.3961698563736431,
+        "under": 0.6038301436263568,
         "push": 0.0
       },
       "3.5": {
-        "over": 0.26657333333333333,
-        "under": 0.7334266666666667,
+        "over": 0.19624275371079059,
+        "under": 0.8037572462892092,
         "push": 0.0
       },
       "4.5": {
-        "over": 0.1402,
-        "under": 0.8598,
+        "over": 0.08209014337475237,
+        "under": 0.9179098566252475,
         "push": 0.0
       }
     },
+    "goal_line_sim": {
+      "1.5": 0.6612661658280892,
+      "2.5": 0.3961698563736431,
+      "3.5": 0.19624275371079059
+    },
     "asian_handicap": {
-      "home_-0.5": 0.3059733333333333,
+      "home_-0.5": 0.30975161105061877,
       "home_-1.0": {
-        "cover": 0.10538666666666667,
-        "push": 0.20058666666666666
+        "cover": 0.11722222551228695,
+        "push": 0.1925293855383319
       },
-      "home_+0.5": 0.6131066666666667,
+      "home_+0.5": 0.5979467870700353,
       "home_+1.0": {
-        "cover": 0.6131066666666667,
-        "push": 0.23283333333333334
+        "cover": 0.5979467870700353,
+        "push": 0.227354387913222
       }
     },
     "score_matrix_margin": {
-      "home_1_goal": 0.20058666666666666,
-      "home_2_plus": 0.10538666666666667,
-      "away_1_goal": 0.23283333333333334,
-      "away_2_plus": 0.15406,
-      "draw": 0.3071333333333333
+      "home_1_goal": 0.1925293855383319,
+      "home_2_plus": 0.11722222551228695,
+      "away_1_goal": 0.227354387913222,
+      "away_2_plus": 0.17469882501674242,
+      "draw": 0.2881951760194167
+    },
+    "distribution_diagnostics": {
+      "top1_mass": 0.1329,
+      "top3_mass": 0.3661,
+      "tail_mass_at_12": 8.47338809622691e-09,
+      "monte_carlo_noise": 0.0
+    },
+    "ht_clean_sheet": {
+      "home": 0.4940212887907716,
+      "away": 0.5235132971078408
     },
     "lock_quality": {
       "version": "lock-calibration-v2",
-      "confidence": 77.7,
+      "confidence": 0.0,
       "model_only": true,
       "simulation_agreement_counted_as_independent": false,
       "simulation_used_as_stability_veto": true,
@@ -333,253 +370,263 @@
     {
       "Section": "HT Winner",
       "Selection": "Toulouse",
-      "Model%": 28.1,
-      "Sim%": 22.3,
-      "Agree": "4 eng",
+      "Model%": 27.8,
+      "Sim%": 28.6,
+      "Agree": "6 eng",
       "Verdict": "NO",
-      "Edge": 5.8
+      "Edge": -0.8
     },
     {
       "Section": "HT Winner",
       "Selection": "Draw",
-      "Model%": 44.0,
-      "Sim%": 51.5,
-      "Agree": "4 eng",
+      "Model%": 42.8,
+      "Sim%": 39.3,
+      "Agree": "6 eng",
       "Verdict": "NO",
-      "Edge": -7.4
+      "Edge": 3.4
     },
     {
       "Section": "HT Winner",
       "Selection": "Lille",
-      "Model%": 27.9,
-      "Sim%": 26.3,
-      "Agree": "4 eng",
+      "Model%": 29.4,
+      "Sim%": 32.1,
+      "Agree": "6 eng",
       "Verdict": "NO",
-      "Edge": 1.6
+      "Edge": -2.7
     },
     {
       "Section": "HT DC",
       "Selection": "1X",
-      "Model%": 73.7,
-      "Sim%": 73.7,
-      "Agree": "4 eng",
+      "Model%": 67.9,
+      "Sim%": 67.9,
+      "Agree": "6 eng",
       "Verdict": "YES",
       "Edge": 0.0
     },
     {
       "Section": "HT DC",
       "Selection": "X2",
-      "Model%": 77.7,
-      "Sim%": 77.7,
-      "Agree": "4 eng",
+      "Model%": 71.4,
+      "Sim%": 71.4,
+      "Agree": "6 eng",
       "Verdict": "YES",
       "Edge": 0.0
     },
     {
       "Section": "HT DC",
       "Selection": "12",
-      "Model%": 48.5,
-      "Sim%": 48.5,
-      "Agree": "4 eng",
-      "Verdict": "NO",
+      "Model%": 60.7,
+      "Sim%": 60.7,
+      "Agree": "6 eng",
+      "Verdict": "YES",
       "Edge": 0.0
     },
     {
       "Section": "HT O/U",
       "Selection": "Over 1.5",
-      "Model%": 36.6,
-      "Sim%": 25.0,
+      "Model%": 35.2,
+      "Sim%": 15.6,
       "Agree": "-",
       "Verdict": "NO",
-      "Edge": 11.6
+      "Edge": 19.6
     },
     {
       "Section": "HT O/U",
       "Selection": "Under 1.5",
-      "Model%": 63.4,
-      "Sim%": 75.0,
+      "Model%": 64.8,
+      "Sim%": 84.4,
       "Agree": "-",
       "Verdict": "YES",
-      "Edge": -11.6
+      "Edge": -19.6
     },
     {
       "Section": "FT Winner",
       "Selection": "Toulouse",
-      "Model%": 30.6,
-      "Sim%": 30.6,
-      "Agree": "4 eng",
+      "Model%": 29.9,
+      "Sim%": 31.0,
+      "Agree": "6 eng",
       "Verdict": "NO",
-      "Edge": -0.0
+      "Edge": -1.0
     },
     {
       "Section": "FT Winner",
       "Selection": "Draw",
-      "Model%": 30.8,
-      "Sim%": 30.7,
-      "Agree": "4 eng",
+      "Model%": 30.7,
+      "Sim%": 28.8,
+      "Agree": "6 eng",
       "Verdict": "NO",
-      "Edge": 0.1
+      "Edge": 1.9
     },
     {
       "Section": "FT Winner",
       "Selection": "Lille",
-      "Model%": 38.6,
-      "Sim%": 38.7,
-      "Agree": "4 eng",
+      "Model%": 39.4,
+      "Sim%": 40.2,
+      "Agree": "6 eng",
       "Verdict": "NO",
-      "Edge": -0.1
+      "Edge": -0.8
     },
     {
       "Section": "FT DC",
       "Selection": "1X",
-      "Model%": 61.3,
-      "Sim%": 61.3,
-      "Agree": "4 eng",
+      "Model%": 59.8,
+      "Sim%": 59.8,
+      "Agree": "6 eng",
       "Verdict": "YES",
       "Edge": 0.0
     },
     {
       "Section": "FT DC",
       "Selection": "X2",
-      "Model%": 69.4,
-      "Sim%": 69.4,
-      "Agree": "4 eng",
+      "Model%": 69.0,
+      "Sim%": 69.0,
+      "Agree": "6 eng",
       "Verdict": "YES",
       "Edge": 0.0
     },
     {
       "Section": "FT DC",
       "Selection": "12",
-      "Model%": 69.3,
-      "Sim%": 69.3,
-      "Agree": "4 eng",
+      "Model%": 71.2,
+      "Sim%": 71.2,
+      "Agree": "6 eng",
       "Verdict": "YES",
       "Edge": 0.0
     },
     {
       "Section": "FT O/U",
       "Selection": "Over 2.5",
-      "Model%": 46.5,
-      "Sim%": 45.4,
-      "Agree": "4 eng",
+      "Model%": 40.6,
+      "Sim%": 39.6,
+      "Agree": "6 eng",
       "Verdict": "NO",
-      "Edge": 1.1
+      "Edge": 1.0
     },
     {
       "Section": "FT O/U",
       "Selection": "Under 2.5",
-      "Model%": 53.5,
-      "Sim%": 54.6,
-      "Agree": "4 eng",
+      "Model%": 59.4,
+      "Sim%": 60.4,
+      "Agree": "6 eng",
       "Verdict": "YES",
-      "Edge": -1.1
+      "Edge": -1.0
     },
     {
       "Section": "BTTS",
       "Selection": "Yes",
-      "Model%": 50.6,
-      "Sim%": 52.0,
-      "Agree": "4 eng",
+      "Model%": 47.3,
+      "Sim%": 46.1,
+      "Agree": "6 eng",
       "Verdict": "NO",
-      "Edge": -1.4
+      "Edge": 1.2
     },
     {
       "Section": "BTTS",
       "Selection": "No",
-      "Model%": 49.4,
-      "Sim%": 48.0,
-      "Agree": "4 eng",
-      "Verdict": "NO",
-      "Edge": 1.4
+      "Model%": 52.7,
+      "Sim%": 53.9,
+      "Agree": "6 eng",
+      "Verdict": "YES",
+      "Edge": -1.2
     },
     {
       "Section": "FT O/U+",
       "Selection": "Over 1.5",
-      "Model%": 66.6,
-      "Sim%": 66.6,
-      "Agree": "4 eng",
+      "Model%": 66.1,
+      "Sim%": 66.1,
+      "Agree": "6 eng",
       "Verdict": "YES",
       "Edge": 0.0
     },
     {
       "Section": "FT O/U+",
       "Selection": "Over 3.5",
-      "Model%": 26.7,
-      "Sim%": 26.7,
-      "Agree": "4 eng",
-      "Verdict": "NO",
-      "Edge": 0.0
-    },
-    {
-      "Section": "CS",
-      "Selection": "Toulouse CS",
-      "Model%": 27.6,
-      "Sim%": 27.6,
-      "Agree": "4 eng",
-      "Verdict": "NO",
-      "Edge": 0.0
-    },
-    {
-      "Section": "CS",
-      "Selection": "Lille CS",
-      "Model%": 32.0,
-      "Sim%": 32.0,
-      "Agree": "4 eng",
+      "Model%": 19.6,
+      "Sim%": 19.6,
+      "Agree": "6 eng",
       "Verdict": "NO",
       "Edge": 0.0
     },
     {
       "Section": "WTN",
       "Selection": "Toulouse WTN",
-      "Model%": 16.0,
-      "Sim%": 16.0,
-      "Agree": "4 eng",
+      "Model%": 18.7,
+      "Sim%": 18.7,
+      "Agree": "6 eng",
       "Verdict": "NO",
       "Edge": 0.0
     },
     {
       "Section": "WTN",
       "Selection": "Lille WTN",
-      "Model%": 20.3,
-      "Sim%": 20.3,
-      "Agree": "4 eng",
+      "Model%": 24.7,
+      "Sim%": 24.7,
+      "Agree": "6 eng",
       "Verdict": "NO",
       "Edge": 0.0
+    },
+    {
+      "Section": "CS",
+      "Selection": "Lille CS",
+      "Model%": 35.2,
+      "Sim%": 35.2,
+      "Agree": "simulation",
+      "Edge": 0.0,
+      "Verdict": "LEAN",
+      "IndependentModel": false
+    },
+    {
+      "Section": "HT CS",
+      "Selection": "Lille HT CS",
+      "Model%": 52.4,
+      "Sim%": 52.4,
+      "Agree": "simulation",
+      "Edge": 0.0,
+      "Verdict": "LEAN",
+      "IndependentModel": false
     }
   ],
   "locked_tip": {
     "status": "NO LOCK",
-    "section": "HT DC",
-    "selection": "X2",
-    "model": 77.7,
-    "sim": 77.7,
-    "agree": "4 eng",
+    "section": "\u2014",
+    "selection": "\u2014",
+    "model": null,
+    "sim": null,
     "verdict": "REVIEW",
-    "confidence": 77.7,
-    "raw_model": 77.7,
-    "raw_sim": 77.7,
+    "security": "CORE_BLOCK",
+    "confidence": 0.0,
+    "raw_model": 0.0,
+    "raw_sim": 0.0,
     "confidence_basis": "model probability; simulation used only as stability veto"
   },
   "backends": {
     "ft_result": [
+      "cat",
+      "lgbm",
       "rf",
       "tf",
       "torch",
       "xgb"
     ],
     "ht_result": [
+      "cat",
+      "lgbm",
       "rf",
       "tf",
       "torch",
       "xgb"
     ],
     "over25": [
+      "cat",
+      "lgbm",
       "rf",
       "tf",
       "torch",
       "xgb"
     ],
     "btts": [
+      "cat",
+      "lgbm",
       "rf",
       "tf",
       "torch",
@@ -587,30 +634,20 @@
     ],
     "ht_over15": []
   },
-  "generated_at": "2026-09-03T16:47:26.069048+00:00",
+  "generated_at": "2026-09-04T00:49:08.067923+00:00",
   "metadata": {
     "simulation_engine": {
-      "version": "industrial-v4",
-      "method": "bivariate-poisson+dixon-coles+five-regime+soft-maxent-calibration+correlated-beta-binomial-HT",
-      "rho": 0.052,
-      "lambda_home": 0.8868002566080289,
-      "lambda_away": 1.0380409745944066,
-      "common_goal_rate": 0.2870635469794065,
-      "target_total_lambda": 2.5351247225946802,
-      "calibration_strength": 0.8,
-      "calibration_beta": [
-        0.0015584100778427241,
-        0.0475701738003757,
-        0.11000093774803871,
-        -0.1116045427090473
-      ],
-      "dispersion_regimes": [
-        0.68,
-        0.85,
-        1.0,
-        1.18,
-        1.4
-      ]
+      "version": "precision-v5",
+      "method": "deterministic-hierarchical-bivariate-poisson+dixon-coles+joint-target-fit+exact-HT-conditional",
+      "probability_mode": "exact_distribution_no_monte_carlo_noise",
+      "lambda_home": 1.0265067191569588,
+      "lambda_away": 1.211486191888507,
+      "common_goal_rate": 0.017353159203959554,
+      "rho": -0.0055611083918540374,
+      "target_total_lambda": 2.308675326271498,
+      "ht_home_share": 0.62,
+      "ht_away_share": 0.5738569497069511,
+      "max_goals": 12
     },
     "validation": {
       "ok": true,
@@ -619,9 +656,21 @@
       "ft_sum": 1.0,
       "ht_sum": 1.0,
       "ht_subset_ft": 1.0,
-      "ft_l1": 0.0014735236332013013,
-      "over25_abs_error": 0.011191431660683537,
-      "btts_abs_error": 0.01396569556179661
+      "ft_l1": 0.03702486016192569,
+      "over25_abs_error": 0.010090568975649639,
+      "btts_abs_error": 0.011754975992129324
+    },
+    "security": {
+      "version": "core-lock-v1",
+      "min_model": 0.78,
+      "min_sim": 0.78,
+      "max_model_sim_gap": 0.06,
+      "healthy_simulation_required": true,
+      "any_market_eligible": true,
+      "single_cs": true,
+      "single_ht_cs": true,
+      "cs_independent_model_required": true,
+      "status": "NO LOCK"
     }
   }
 }

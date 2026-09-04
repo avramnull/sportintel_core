@@ -1,0 +1,43 @@
+{
+  "scope": "team_herentals",
+  "team": "Herentals",
+  "fallback": true,
+  "fallback_reason": "insufficient historical support: 24 matches (<25)",
+  "n": 0,
+  "n_train": 0,
+  "n_val": 0,
+  "features": [
+    "Year",
+    "Month",
+    "DayOfWeek",
+    "IsWeekend",
+    "HomeFormPts_5",
+    "AwayFormPts_5",
+    "HomeFormGD_5",
+    "AwayFormGD_5",
+    "HomeFormPts_10",
+    "AwayFormPts_10",
+    "HomeFormGD_10",
+    "AwayFormGD_10",
+    "HomeFormPts_20",
+    "AwayFormPts_20",
+    "HomeFormGD_20",
+    "AwayFormGD_20",
+    "EloHome",
+    "EloAway",
+    "EloDiff",
+    "RestHome",
+    "RestAway",
+    "RestDiff",
+    "HomeTeamId",
+    "AwayTeamId"
+  ],
+  "targets": {
+    "ft_result": {},
+    "ht_result": {},
+    "over25": {},
+    "btts": {},
+    "ht_over15": {}
+  },
+  "countries": []
+}

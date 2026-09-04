@@ -300,12 +300,16 @@
     },
     "lock_quality": {
       "version": "lock-calibration-v2",
-      "confidence": 76.9,
+      "confidence": 0.0,
       "model_only": true,
       "simulation_agreement_counted_as_independent": false,
       "simulation_used_as_stability_veto": true,
       "secured": false,
       "vetoes": []
+    },
+    "ht_clean_sheet": {
+      "home": 0.6152561051832997,
+      "away": 0.5322856487485277
     }
   },
   "table": [
@@ -490,24 +494,6 @@
       "Edge": 0.0
     },
     {
-      "Section": "CS",
-      "Selection": "Millwall CS",
-      "Model%": 31.8,
-      "Sim%": 31.8,
-      "Agree": "6 eng",
-      "Verdict": "NO",
-      "Edge": 0.0
-    },
-    {
-      "Section": "CS",
-      "Selection": "Wrexham CS",
-      "Model%": 23.3,
-      "Sim%": 23.3,
-      "Agree": "6 eng",
-      "Verdict": "NO",
-      "Edge": 0.0
-    },
-    {
       "Section": "WTN",
       "Selection": "Millwall WTN",
       "Model%": 23.5,
@@ -524,19 +510,39 @@
       "Agree": "6 eng",
       "Verdict": "NO",
       "Edge": 0.0
+    },
+    {
+      "Section": "CS",
+      "Selection": "Millwall CS",
+      "Model%": 31.8,
+      "Sim%": 31.8,
+      "Agree": "simulation",
+      "Edge": 0.0,
+      "Verdict": "LEAN",
+      "IndependentModel": false
+    },
+    {
+      "Section": "HT CS",
+      "Selection": "Millwall HT CS",
+      "Model%": 61.5,
+      "Sim%": 61.5,
+      "Agree": "simulation",
+      "Edge": 0.0,
+      "Verdict": "LEAN",
+      "IndependentModel": false
     }
   ],
   "locked_tip": {
     "status": "NO LOCK",
-    "section": "HT DC",
-    "selection": "1X",
-    "model": 76.9,
-    "sim": 76.9,
-    "agree": "6 eng",
+    "section": "\u2014",
+    "selection": "\u2014",
+    "model": null,
+    "sim": null,
     "verdict": "REVIEW",
-    "confidence": 76.9,
-    "raw_model": 76.9,
-    "raw_sim": 76.9,
+    "security": "CORE_BLOCK",
+    "confidence": 0.0,
+    "raw_model": 0.0,
+    "raw_sim": 0.0,
     "confidence_basis": "model probability; simulation used only as stability veto"
   },
   "backends": {
@@ -586,6 +592,18 @@
       "lambda_home": 1.4158932824568393,
       "lambda_away": 1.076054691940692,
       "target_total_lambda": 2.5869405806166474
+    },
+    "security": {
+      "version": "core-lock-v1",
+      "min_model": 0.78,
+      "min_sim": 0.78,
+      "max_model_sim_gap": 0.06,
+      "healthy_simulation_required": true,
+      "any_market_eligible": true,
+      "single_cs": true,
+      "single_ht_cs": true,
+      "cs_independent_model_required": true,
+      "status": "NO LOCK"
     }
   }
 }

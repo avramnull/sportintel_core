@@ -172,6 +172,10 @@
       "simulation_used_as_stability_veto": true,
       "secured": false,
       "vetoes": []
+    },
+    "ht_clean_sheet": {
+      "home": 0.6656441903015212,
+      "away": 0.5794553509760534
     }
   },
   "table": [
@@ -318,6 +322,16 @@
       "Sim%": 55.7,
       "Agree": "6 eng",
       "Verdict": "NO"
+    },
+    {
+      "Section": "HT CS",
+      "Selection": "Cordoba HT CS",
+      "Model%": 66.6,
+      "Sim%": 66.6,
+      "Agree": "simulation",
+      "Edge": 0.0,
+      "Verdict": "LEAN",
+      "IndependentModel": false
     }
   ],
   "locked_tip": {
@@ -328,6 +342,8 @@
     "sim": 82.4,
     "agree": "6 eng",
     "verdict": "REVIEW",
+    "security": "CORE_LOCKED",
+    "security_score": 0.7909,
     "confidence": 79.0,
     "raw_model": 79.0,
     "raw_sim": 82.4,
@@ -370,5 +386,19 @@
   },
   "generated_at": "2026-08-30T23:33:38.765217Z",
   "hda_aligned": true,
-  "hda_aligned_at": "2026-08-31T04:17:43.816045+00:00"
+  "hda_aligned_at": "2026-08-31T04:17:43.816045+00:00",
+  "metadata": {
+    "security": {
+      "version": "core-lock-v1",
+      "min_model": 0.78,
+      "min_sim": 0.78,
+      "max_model_sim_gap": 0.06,
+      "healthy_simulation_required": true,
+      "any_market_eligible": true,
+      "single_cs": true,
+      "single_ht_cs": true,
+      "cs_independent_model_required": true,
+      "status": "SECURED LOCK"
+    }
+  }
 }

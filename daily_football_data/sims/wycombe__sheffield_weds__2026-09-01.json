@@ -300,12 +300,16 @@
     },
     "lock_quality": {
       "version": "lock-calibration-v2",
-      "confidence": 74.7,
+      "confidence": 0.0,
       "model_only": true,
       "simulation_agreement_counted_as_independent": false,
       "simulation_used_as_stability_veto": true,
       "secured": false,
       "vetoes": []
+    },
+    "ht_clean_sheet": {
+      "home": 0.5844260642985263,
+      "away": 0.5470308935507778
     }
   },
   "table": [
@@ -490,24 +494,6 @@
       "Edge": 0.0
     },
     {
-      "Section": "CS",
-      "Selection": "Wycombe CS",
-      "Model%": 28.1,
-      "Sim%": 28.1,
-      "Agree": "6 eng",
-      "Verdict": "NO",
-      "Edge": 0.0
-    },
-    {
-      "Section": "CS",
-      "Selection": "Sheffield Weds CS",
-      "Model%": 23.9,
-      "Sim%": 23.9,
-      "Agree": "6 eng",
-      "Verdict": "NO",
-      "Edge": 0.0
-    },
-    {
       "Section": "WTN",
       "Selection": "Wycombe WTN",
       "Model%": 20.8,
@@ -524,19 +510,39 @@
       "Agree": "6 eng",
       "Verdict": "NO",
       "Edge": 0.0
+    },
+    {
+      "Section": "CS",
+      "Selection": "Wycombe CS",
+      "Model%": 28.1,
+      "Sim%": 28.1,
+      "Agree": "simulation",
+      "Edge": 0.0,
+      "Verdict": "LEAN",
+      "IndependentModel": false
+    },
+    {
+      "Section": "HT CS",
+      "Selection": "Wycombe HT CS",
+      "Model%": 58.4,
+      "Sim%": 58.4,
+      "Agree": "simulation",
+      "Edge": 0.0,
+      "Verdict": "LEAN",
+      "IndependentModel": false
     }
   ],
   "locked_tip": {
     "status": "NO LOCK",
-    "section": "FT O/U+",
-    "selection": "Over 1.5",
-    "model": 74.7,
-    "sim": 74.7,
-    "agree": "6 eng",
+    "section": "\u2014",
+    "selection": "\u2014",
+    "model": null,
+    "sim": null,
     "verdict": "REVIEW",
-    "confidence": 74.7,
-    "raw_model": 74.7,
-    "raw_sim": 74.7,
+    "security": "CORE_BLOCK",
+    "confidence": 0.0,
+    "raw_model": 0.0,
+    "raw_sim": 0.0,
     "confidence_basis": "model probability; simulation used only as stability veto"
   },
   "backends": {
@@ -586,6 +592,18 @@
       "lambda_home": 1.3239377570305626,
       "lambda_away": 1.2167048140099994,
       "target_total_lambda": 2.6270268900908187
+    },
+    "security": {
+      "version": "core-lock-v1",
+      "min_model": 0.78,
+      "min_sim": 0.78,
+      "max_model_sim_gap": 0.06,
+      "healthy_simulation_required": true,
+      "any_market_eligible": true,
+      "single_cs": true,
+      "single_ht_cs": true,
+      "cs_independent_model_required": true,
+      "status": "NO LOCK"
     }
   }
 }

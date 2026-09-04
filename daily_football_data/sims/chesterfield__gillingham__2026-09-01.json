@@ -306,6 +306,10 @@
       "simulation_used_as_stability_veto": true,
       "secured": false,
       "vetoes": []
+    },
+    "ht_clean_sheet": {
+      "home": 0.6527898655755532,
+      "away": 0.5108777265970613
     }
   },
   "table": [
@@ -490,24 +494,6 @@
       "Edge": 0.0
     },
     {
-      "Section": "CS",
-      "Selection": "Chesterfield CS",
-      "Model%": 35.2,
-      "Sim%": 35.2,
-      "Agree": "6 eng",
-      "Verdict": "NO",
-      "Edge": 0.0
-    },
-    {
-      "Section": "CS",
-      "Selection": "Gillingham CS",
-      "Model%": 21.4,
-      "Sim%": 21.4,
-      "Agree": "6 eng",
-      "Verdict": "NO",
-      "Edge": 0.0
-    },
-    {
       "Section": "WTN",
       "Selection": "Chesterfield WTN",
       "Model%": 26.5,
@@ -524,6 +510,26 @@
       "Agree": "6 eng",
       "Verdict": "NO",
       "Edge": 0.0
+    },
+    {
+      "Section": "CS",
+      "Selection": "Chesterfield CS",
+      "Model%": 35.2,
+      "Sim%": 35.2,
+      "Agree": "simulation",
+      "Edge": 0.0,
+      "Verdict": "LEAN",
+      "IndependentModel": false
+    },
+    {
+      "Section": "HT CS",
+      "Selection": "Chesterfield HT CS",
+      "Model%": 65.3,
+      "Sim%": 65.3,
+      "Agree": "simulation",
+      "Edge": 0.0,
+      "Verdict": "LEAN",
+      "IndependentModel": false
     }
   ],
   "locked_tip": {
@@ -534,6 +540,8 @@
     "sim": 79.9,
     "agree": "6 eng",
     "verdict": "REVIEW",
+    "security": "CORE_LOCKED",
+    "security_score": 0.8493,
     "confidence": 79.9,
     "raw_model": 79.9,
     "raw_sim": 79.9,
@@ -586,6 +594,18 @@
       "lambda_home": 1.4472736029290674,
       "lambda_away": 0.9077705025205656,
       "target_total_lambda": 2.48773748060383
+    },
+    "security": {
+      "version": "core-lock-v1",
+      "min_model": 0.78,
+      "min_sim": 0.78,
+      "max_model_sim_gap": 0.06,
+      "healthy_simulation_required": true,
+      "any_market_eligible": true,
+      "single_cs": true,
+      "single_ht_cs": true,
+      "cs_independent_model_required": true,
+      "status": "SECURED LOCK"
     }
   }
 }

@@ -300,12 +300,16 @@
     },
     "lock_quality": {
       "version": "lock-calibration-v2",
-      "confidence": 76.9,
+      "confidence": 0.0,
       "model_only": true,
       "simulation_agreement_counted_as_independent": false,
       "simulation_used_as_stability_veto": true,
       "secured": false,
       "vetoes": []
+    },
+    "ht_clean_sheet": {
+      "home": 0.5190007244291385,
+      "away": 0.5829133877719056
     }
   },
   "table": [
@@ -490,24 +494,6 @@
       "Edge": 0.0
     },
     {
-      "Section": "CS",
-      "Selection": "St Truiden CS",
-      "Model%": 21.7,
-      "Sim%": 21.7,
-      "Agree": "6 eng",
-      "Verdict": "NO",
-      "Edge": 0.0
-    },
-    {
-      "Section": "CS",
-      "Selection": "St. Gilloise CS",
-      "Model%": 28.5,
-      "Sim%": 28.5,
-      "Agree": "6 eng",
-      "Verdict": "NO",
-      "Edge": 0.0
-    },
-    {
       "Section": "WTN",
       "Selection": "St Truiden WTN",
       "Model%": 15.5,
@@ -524,19 +510,39 @@
       "Agree": "6 eng",
       "Verdict": "NO",
       "Edge": 0.0
+    },
+    {
+      "Section": "CS",
+      "Selection": "St. Gilloise CS",
+      "Model%": 28.5,
+      "Sim%": 28.5,
+      "Agree": "simulation",
+      "Edge": 0.0,
+      "Verdict": "LEAN",
+      "IndependentModel": false
+    },
+    {
+      "Section": "HT CS",
+      "Selection": "St. Gilloise HT CS",
+      "Model%": 58.3,
+      "Sim%": 58.3,
+      "Agree": "simulation",
+      "Edge": 0.0,
+      "Verdict": "LEAN",
+      "IndependentModel": false
     }
   ],
   "locked_tip": {
     "status": "NO LOCK",
-    "section": "FT O/U+",
-    "selection": "Over 1.5",
-    "model": 76.9,
-    "sim": 76.9,
-    "agree": "6 eng",
+    "section": "\u2014",
+    "selection": "\u2014",
+    "model": null,
+    "sim": null,
     "verdict": "REVIEW",
-    "confidence": 76.9,
-    "raw_model": 76.9,
-    "raw_sim": 76.9,
+    "security": "CORE_BLOCK",
+    "confidence": 0.0,
+    "raw_model": 0.0,
+    "raw_sim": 0.0,
     "confidence_basis": "model probability; simulation used only as stability veto"
   },
   "backends": {
@@ -586,6 +592,18 @@
       "lambda_home": 1.2901402733195484,
       "lambda_away": 1.567444460959682,
       "target_total_lambda": 2.8575847342792304
+    },
+    "security": {
+      "version": "core-lock-v1",
+      "min_model": 0.78,
+      "min_sim": 0.78,
+      "max_model_sim_gap": 0.06,
+      "healthy_simulation_required": true,
+      "any_market_eligible": true,
+      "single_cs": true,
+      "single_ht_cs": true,
+      "cs_independent_model_required": true,
+      "status": "NO LOCK"
     }
   }
 }

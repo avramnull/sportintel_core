@@ -166,12 +166,16 @@
     },
     "lock_quality": {
       "version": "lock-calibration-v2",
-      "confidence": 85.9,
+      "confidence": 84.0,
       "model_only": true,
       "simulation_agreement_counted_as_independent": false,
       "simulation_used_as_stability_veto": true,
       "secured": true,
       "vetoes": []
+    },
+    "ht_clean_sheet": {
+      "home": 0.6098757689590218,
+      "away": 0.2924022079518808
     }
   },
   "table": [
@@ -318,19 +322,31 @@
       "Sim%": 33.5,
       "Agree": "4 eng",
       "Verdict": "NO"
+    },
+    {
+      "Section": "HT CS",
+      "Selection": "Bayern Munich HT CS",
+      "Model%": 61.0,
+      "Sim%": 61.0,
+      "Agree": "simulation",
+      "Edge": 0.0,
+      "Verdict": "LEAN",
+      "IndependentModel": false
     }
   ],
   "locked_tip": {
     "status": "SECURED LOCK",
     "section": "FT DC",
-    "selection": "1X",
-    "model": 85.9,
-    "sim": 81.5,
+    "selection": "12",
+    "model": 84.0,
+    "sim": 86.6,
     "agree": "4 eng",
     "verdict": "HARD YES",
-    "confidence": 85.9,
-    "raw_model": 85.9,
-    "raw_sim": 81.5,
+    "security": "CORE_LOCKED",
+    "security_score": 0.8406,
+    "confidence": 84.0,
+    "raw_model": 84.0,
+    "raw_sim": 86.6,
     "confidence_basis": "model probability; simulation used only as stability veto"
   },
   "backends": {
@@ -367,5 +383,19 @@
   },
   "generated_at": "2026-08-30T11:30:24.755781Z",
   "hda_aligned": true,
-  "hda_aligned_at": "2026-08-31T04:17:38.967917+00:00"
+  "hda_aligned_at": "2026-08-31T04:17:38.967917+00:00",
+  "metadata": {
+    "security": {
+      "version": "core-lock-v1",
+      "min_model": 0.78,
+      "min_sim": 0.78,
+      "max_model_sim_gap": 0.06,
+      "healthy_simulation_required": true,
+      "any_market_eligible": true,
+      "single_cs": true,
+      "single_ht_cs": true,
+      "cs_independent_model_required": true,
+      "status": "SECURED LOCK"
+    }
+  }
 }

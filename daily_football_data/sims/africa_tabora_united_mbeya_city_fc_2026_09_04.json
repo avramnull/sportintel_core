@@ -1,0 +1,333 @@
+{
+  "id": "africa_tabora_united_mbeya_city_fc_2026_09_04",
+  "region": "Africa",
+  "match": {
+    "home": "Tabora United",
+    "away": "Mbeya City FC",
+    "kickoff": "2026-09-04",
+    "league": "Tanzania \u2014 Premier League",
+    "odds": "\u2014",
+    "odds_h": null,
+    "odds_d": null,
+    "odds_a": null,
+    "country": "Tanzania"
+  },
+  "resolved": {
+    "models": "ft_result,over25,btts"
+  },
+  "locked_tip": {
+    "status": "NO LOCK",
+    "section": "\u2014",
+    "selection": "\u2014",
+    "model": null,
+    "sim": null,
+    "verdict": "REVIEW",
+    "security": "CORE_BLOCK",
+    "confidence": 0.0,
+    "raw_model": 0.0,
+    "raw_sim": 0.0,
+    "confidence_basis": "model probability; simulation used only as stability veto"
+  },
+  "report": {
+    "ft_model": {
+      "H": 0.36021960364220673,
+      "D": 0.3226888055704339,
+      "A": 0.3170915907873594
+    },
+    "ft_sim": {
+      "H": 0.38118666737602425,
+      "D": 0.27882106621762404,
+      "A": 0.33999226640635155
+    },
+    "ht_model": {
+      "H": 0.3364384857549479,
+      "D": 0.3698704628326171,
+      "A": 0.29369105141243496
+    },
+    "ht_sim": {
+      "H": 0.3364384857549479,
+      "D": 0.3698704628326171,
+      "A": 0.29369105141243496
+    },
+    "over25_model": 0.4719550080342796,
+    "over25_sim": 0.4474353797726586,
+    "btts_model": 0.47990894483128016,
+    "btts_sim": 0.5070652392952798,
+    "xg": {
+      "home": 1.2784948338017703,
+      "away": 1.1934288915051272,
+      "total": 2.4719237253068975
+    },
+    "dc_ft": {
+      "1X": 0.6600077335936483,
+      "X2": 0.6188133326239755,
+      "12": 0.7211789337823757
+    },
+    "dc_ht": {},
+    "top_ft": [
+      [
+        "1-1",
+        19579
+      ],
+      [
+        "1-0",
+        16071
+      ],
+      [
+        "0-1",
+        14959
+      ],
+      [
+        "0-0",
+        13302
+      ],
+      [
+        "2-1",
+        12319
+      ],
+      [
+        "1-2",
+        11478
+      ],
+      [
+        "2-0",
+        10157
+      ],
+      [
+        "0-2",
+        8818
+      ],
+      [
+        "2-2",
+        7463
+      ],
+      [
+        "3-1",
+        5227
+      ],
+      [
+        "1-3",
+        4538
+      ],
+      [
+        "3-0",
+        4220
+      ]
+    ],
+    "top_ht": [
+      [
+        "0-0",
+        33532
+      ],
+      [
+        "1-0",
+        26028
+      ],
+      [
+        "0-1",
+        23596
+      ],
+      [
+        "1-1",
+        18974
+      ],
+      [
+        "2-0",
+        10192
+      ],
+      [
+        "0-2",
+        8382
+      ],
+      [
+        "2-1",
+        7529
+      ],
+      [
+        "1-2",
+        6828
+      ],
+      [
+        "2-2",
+        2778
+      ],
+      [
+        "3-0",
+        2652
+      ]
+    ],
+    "top3_ft": [
+      {
+        "score": "1-1",
+        "count": 19579,
+        "pct": 13.1
+      },
+      {
+        "score": "1-0",
+        "count": 16071,
+        "pct": 10.7
+      },
+      {
+        "score": "0-1",
+        "count": 14959,
+        "pct": 10.0
+      }
+    ],
+    "clean_sheet": {
+      "home": 0.303167807182144,
+      "away": 0.2784441991073822
+    },
+    "win_to_nil": {
+      "home": 0.11556352607545857,
+      "away": 0.09466887432222029
+    },
+    "goal_lines": {
+      "1.5": {
+        "over": 0.7044608954393364,
+        "under": 0.29553910456066357
+      },
+      "2.5": {
+        "over": 0.4474353797726586,
+        "under": 0.5525646202273413
+      },
+      "3.5": {
+        "over": 0.23789811429594587,
+        "under": 0.7621018857040541
+      }
+    },
+    "score_consistency": {
+      "ft_vs_model_l1": 0.0877
+    },
+    "region": "Africa",
+    "engines": [
+      "ft_result",
+      "over25",
+      "btts"
+    ],
+    "lock_quality": {
+      "version": "lock-calibration-v2",
+      "confidence": 0.0,
+      "model_only": true,
+      "simulation_agreement_counted_as_independent": false,
+      "simulation_used_as_stability_veto": true,
+      "secured": false,
+      "vetoes": []
+    }
+  },
+  "table": [
+    {
+      "Section": "FT",
+      "Selection": "Home",
+      "Model%": 36.0,
+      "Sim%": 38.1,
+      "Agree": "Y",
+      "Edge": 2.1,
+      "Verdict": "\u2014"
+    },
+    {
+      "Section": "FT",
+      "Selection": "Draw",
+      "Model%": 32.3,
+      "Sim%": 27.9,
+      "Agree": "Y",
+      "Edge": -4.4,
+      "Verdict": "\u2014"
+    },
+    {
+      "Section": "FT",
+      "Selection": "Away",
+      "Model%": 31.7,
+      "Sim%": 34.0,
+      "Agree": "Y",
+      "Edge": 2.3,
+      "Verdict": "\u2014"
+    },
+    {
+      "Section": "O/U",
+      "Selection": "Over 2.5",
+      "Model%": 47.2,
+      "Sim%": 44.7,
+      "Agree": "Y",
+      "Edge": -2.5,
+      "Verdict": "\u2014"
+    },
+    {
+      "Section": "O/U",
+      "Selection": "Under 2.5",
+      "Model%": 52.8,
+      "Sim%": 55.3,
+      "Agree": "Y",
+      "Edge": 2.5,
+      "Verdict": "YES"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "Yes",
+      "Model%": 48.0,
+      "Sim%": 50.7,
+      "Agree": "Y",
+      "Edge": 2.7,
+      "Verdict": "LEAN"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 52.0,
+      "Sim%": 49.3,
+      "Agree": "Y",
+      "Edge": -2.7,
+      "Verdict": "\u2014"
+    },
+    {
+      "Section": "DC",
+      "Selection": "1X",
+      "Model%": 68.3,
+      "Sim%": 66.0,
+      "Agree": "Y",
+      "Edge": -2.3,
+      "Verdict": "YES"
+    },
+    {
+      "Section": "DC",
+      "Selection": "X2",
+      "Model%": 64.0,
+      "Sim%": 61.9,
+      "Agree": "Y",
+      "Edge": -2.1,
+      "Verdict": "YES"
+    },
+    {
+      "Section": "DC",
+      "Selection": "12",
+      "Model%": 67.7,
+      "Sim%": 72.1,
+      "Agree": "Y",
+      "Edge": 4.4,
+      "Verdict": "YES"
+    },
+    {
+      "Section": "CS",
+      "Selection": "Tabora United CS",
+      "Model%": 30.3,
+      "Sim%": 30.3,
+      "Agree": "simulation",
+      "Edge": 0.0,
+      "Verdict": "LEAN",
+      "IndependentModel": false
+    }
+  ],
+  "metadata": {
+    "security": {
+      "version": "core-lock-v1",
+      "min_model": 0.78,
+      "min_sim": 0.78,
+      "max_model_sim_gap": 0.06,
+      "healthy_simulation_required": true,
+      "any_market_eligible": true,
+      "single_cs": true,
+      "single_ht_cs": true,
+      "cs_independent_model_required": true,
+      "status": "NO LOCK"
+    }
+  }
+}

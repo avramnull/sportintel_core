@@ -293,12 +293,16 @@
     },
     "lock_quality": {
       "version": "lock-calibration-v2",
-      "confidence": 75.8,
+      "confidence": 0.0,
       "model_only": true,
       "simulation_agreement_counted_as_independent": false,
       "simulation_used_as_stability_veto": true,
       "secured": false,
       "vetoes": []
+    },
+    "ht_clean_sheet": {
+      "home": 0.5482630987723047,
+      "away": 0.6592406302004438
     }
   },
   "table": [
@@ -483,24 +487,6 @@
       "Edge": 0.0
     },
     {
-      "Section": "CS",
-      "Selection": "Woking CS",
-      "Model%": 27.8,
-      "Sim%": 27.8,
-      "Agree": "6 eng",
-      "Verdict": "NO",
-      "Edge": 0.0
-    },
-    {
-      "Section": "CS",
-      "Selection": "Southend CS",
-      "Model%": 32.4,
-      "Sim%": 32.4,
-      "Agree": "6 eng",
-      "Verdict": "NO",
-      "Edge": 0.0
-    },
-    {
       "Section": "WTN",
       "Selection": "Woking WTN",
       "Model%": 18.9,
@@ -517,19 +503,39 @@
       "Agree": "6 eng",
       "Verdict": "NO",
       "Edge": 0.0
+    },
+    {
+      "Section": "CS",
+      "Selection": "Southend CS",
+      "Model%": 32.4,
+      "Sim%": 32.4,
+      "Agree": "simulation",
+      "Edge": 0.0,
+      "Verdict": "LEAN",
+      "IndependentModel": false
+    },
+    {
+      "Section": "HT CS",
+      "Selection": "Southend HT CS",
+      "Model%": 65.9,
+      "Sim%": 65.9,
+      "Agree": "simulation",
+      "Edge": 0.0,
+      "Verdict": "LEAN",
+      "IndependentModel": false
     }
   ],
   "locked_tip": {
     "status": "NO LOCK",
-    "section": "FT DC",
-    "selection": "12",
-    "model": 75.8,
-    "sim": 76.1,
-    "agree": "6 eng",
+    "section": "\u2014",
+    "selection": "\u2014",
+    "model": null,
+    "sim": null,
     "verdict": "REVIEW",
-    "confidence": 75.8,
-    "raw_model": 75.8,
-    "raw_sim": 76.1,
+    "security": "CORE_BLOCK",
+    "confidence": 0.0,
+    "raw_model": 0.0,
+    "raw_sim": 0.0,
     "confidence_basis": "model probability; simulation used only as stability veto"
   },
   "backends": {
@@ -567,5 +573,19 @@
     ],
     "ht_over15": []
   },
-  "generated_at": "2026-08-31T22:18:23.365040Z"
+  "generated_at": "2026-08-31T22:18:23.365040Z",
+  "metadata": {
+    "security": {
+      "version": "core-lock-v1",
+      "min_model": 0.78,
+      "min_sim": 0.78,
+      "max_model_sim_gap": 0.06,
+      "healthy_simulation_required": true,
+      "any_market_eligible": true,
+      "single_cs": true,
+      "single_ht_cs": true,
+      "cs_independent_model_required": true,
+      "status": "NO LOCK"
+    }
+  }
 }

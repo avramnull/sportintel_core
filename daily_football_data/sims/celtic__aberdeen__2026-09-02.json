@@ -306,6 +306,10 @@
       "simulation_used_as_stability_veto": true,
       "secured": true,
       "vetoes": []
+    },
+    "ht_clean_sheet": {
+      "home": 0.7184446106683047,
+      "away": 0.44974478569686166
     }
   },
   "table": [
@@ -490,24 +494,6 @@
       "Edge": 0.0
     },
     {
-      "Section": "CS",
-      "Selection": "Celtic CS",
-      "Model%": 45.0,
-      "Sim%": 45.0,
-      "Agree": "6 eng",
-      "Verdict": "YES",
-      "Edge": 0.0
-    },
-    {
-      "Section": "CS",
-      "Selection": "Aberdeen CS",
-      "Model%": 16.3,
-      "Sim%": 16.3,
-      "Agree": "6 eng",
-      "Verdict": "NO",
-      "Edge": 0.0
-    },
-    {
       "Section": "WTN",
       "Selection": "Celtic WTN",
       "Model%": 37.6,
@@ -524,6 +510,26 @@
       "Agree": "6 eng",
       "Verdict": "NO",
       "Edge": 0.0
+    },
+    {
+      "Section": "CS",
+      "Selection": "Celtic CS",
+      "Model%": 45.0,
+      "Sim%": 45.0,
+      "Agree": "simulation",
+      "Edge": 0.0,
+      "Verdict": "LEAN",
+      "IndependentModel": false
+    },
+    {
+      "Section": "HT CS",
+      "Selection": "Celtic HT CS",
+      "Model%": 71.8,
+      "Sim%": 71.8,
+      "Agree": "simulation",
+      "Edge": 0.0,
+      "Verdict": "LEAN",
+      "IndependentModel": false
     }
   ],
   "locked_tip": {
@@ -534,6 +540,8 @@
     "sim": 85.6,
     "agree": "6 eng",
     "verdict": "HARD YES",
+    "security": "CORE_LOCKED",
+    "security_score": 0.892,
     "confidence": 85.6,
     "raw_model": 85.6,
     "raw_sim": 85.6,
@@ -586,6 +594,18 @@
       "lambda_home": 1.8847190637362161,
       "lambda_away": 0.8119126614044518,
       "target_total_lambda": 2.696631725140668
+    },
+    "security": {
+      "version": "core-lock-v1",
+      "min_model": 0.78,
+      "min_sim": 0.78,
+      "max_model_sim_gap": 0.06,
+      "healthy_simulation_required": true,
+      "any_market_eligible": true,
+      "single_cs": true,
+      "single_ht_cs": true,
+      "cs_independent_model_required": true,
+      "status": "SECURED LOCK"
     }
   }
 }

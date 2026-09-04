@@ -293,12 +293,16 @@
     },
     "lock_quality": {
       "version": "lock-calibration-v2",
-      "confidence": 77.6,
+      "confidence": 0.0,
       "model_only": true,
       "simulation_agreement_counted_as_independent": false,
       "simulation_used_as_stability_veto": true,
       "secured": false,
       "vetoes": []
+    },
+    "ht_clean_sheet": {
+      "home": 0.5141021317649737,
+      "away": 0.726633297834058
     }
   },
   "table": [
@@ -483,24 +487,6 @@
       "Edge": 0.0
     },
     {
-      "Section": "CS",
-      "Selection": "Levadeiakos CS",
-      "Model%": 27.2,
-      "Sim%": 27.2,
-      "Agree": "6 eng",
-      "Verdict": "NO",
-      "Edge": 0.0
-    },
-    {
-      "Section": "CS",
-      "Selection": "Panathinaikos CS",
-      "Model%": 48.5,
-      "Sim%": 48.5,
-      "Agree": "6 eng",
-      "Verdict": "YES",
-      "Edge": 0.0
-    },
-    {
       "Section": "WTN",
       "Selection": "Levadeiakos WTN",
       "Model%": 13.1,
@@ -517,19 +503,39 @@
       "Agree": "6 eng",
       "Verdict": "NO",
       "Edge": 0.0
+    },
+    {
+      "Section": "CS",
+      "Selection": "Panathinaikos CS",
+      "Model%": 48.5,
+      "Sim%": 48.5,
+      "Agree": "simulation",
+      "Edge": 0.0,
+      "Verdict": "LEAN",
+      "IndependentModel": false
+    },
+    {
+      "Section": "HT CS",
+      "Selection": "Panathinaikos HT CS",
+      "Model%": 72.7,
+      "Sim%": 72.7,
+      "Agree": "simulation",
+      "Edge": 0.0,
+      "Verdict": "LEAN",
+      "IndependentModel": false
     }
   ],
   "locked_tip": {
     "status": "NO LOCK",
-    "section": "FT DC",
-    "selection": "X2",
-    "model": 77.6,
-    "sim": 78.4,
-    "agree": "6 eng",
+    "section": "\u2014",
+    "selection": "\u2014",
+    "model": null,
+    "sim": null,
     "verdict": "REVIEW",
-    "confidence": 77.6,
-    "raw_model": 77.6,
-    "raw_sim": 78.4,
+    "security": "CORE_BLOCK",
+    "confidence": 0.0,
+    "raw_model": 0.0,
+    "raw_sim": 0.0,
     "confidence_basis": "model probability; simulation used only as stability veto"
   },
   "backends": {
@@ -567,5 +573,19 @@
     ],
     "ht_over15": []
   },
-  "generated_at": "2026-08-31T22:17:54.885510Z"
+  "generated_at": "2026-08-31T22:17:54.885510Z",
+  "metadata": {
+    "security": {
+      "version": "core-lock-v1",
+      "min_model": 0.78,
+      "min_sim": 0.78,
+      "max_model_sim_gap": 0.06,
+      "healthy_simulation_required": true,
+      "any_market_eligible": true,
+      "single_cs": true,
+      "single_ht_cs": true,
+      "cs_independent_model_required": true,
+      "status": "NO LOCK"
+    }
+  }
 }

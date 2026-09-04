@@ -16,15 +16,18 @@
     "models": "ft_result,over25,btts,odds-blend"
   },
   "locked_tip": {
-    "status": "NO LOCK",
-    "section": "O/U",
-    "selection": "Over 1.5",
-    "model": 69.4,
-    "sim": 69.4,
-    "verdict": "REVIEW",
-    "confidence": 69.4,
-    "raw_model": 69.4,
-    "raw_sim": 69.4,
+    "status": "SECURED LOCK",
+    "section": "DC",
+    "selection": "1X",
+    "model": 85.2,
+    "sim": 85.9,
+    "agree": "Y",
+    "verdict": "HARD YES",
+    "security": "CORE_LOCKED",
+    "security_score": 0.8784,
+    "confidence": 85.2,
+    "raw_model": 85.2,
+    "raw_sim": 85.9,
     "confidence_basis": "model probability; simulation used only as stability veto"
   },
   "report": {
@@ -206,11 +209,11 @@
     ],
     "lock_quality": {
       "version": "lock-calibration-v2",
-      "confidence": 69.4,
+      "confidence": 85.2,
       "model_only": true,
       "simulation_agreement_counted_as_independent": false,
       "simulation_used_as_stability_veto": true,
-      "secured": false,
+      "secured": true,
       "vetoes": []
     }
   },
@@ -304,6 +307,30 @@
       "Agree": "Y",
       "Edge": -0.1,
       "Verdict": "YES"
+    },
+    {
+      "Section": "CS",
+      "Selection": "Al Ahly CS",
+      "Model%": 53.4,
+      "Sim%": 53.4,
+      "Agree": "simulation",
+      "Edge": 0.0,
+      "Verdict": "LEAN",
+      "IndependentModel": false
     }
-  ]
+  ],
+  "metadata": {
+    "security": {
+      "version": "core-lock-v1",
+      "min_model": 0.78,
+      "min_sim": 0.78,
+      "max_model_sim_gap": 0.06,
+      "healthy_simulation_required": true,
+      "any_market_eligible": true,
+      "single_cs": true,
+      "single_ht_cs": true,
+      "cs_independent_model_required": true,
+      "status": "SECURED LOCK"
+    }
+  }
 }

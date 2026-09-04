@@ -17,14 +17,15 @@
   },
   "locked_tip": {
     "status": "NO LOCK",
-    "section": "O/U",
-    "selection": "Under 2.5",
-    "model": 73.2,
-    "sim": 73.3,
+    "section": "\u2014",
+    "selection": "\u2014",
+    "model": null,
+    "sim": null,
     "verdict": "REVIEW",
-    "confidence": 73.2,
-    "raw_model": 73.2,
-    "raw_sim": 73.3,
+    "security": "CORE_BLOCK",
+    "confidence": 0.0,
+    "raw_model": 0.0,
+    "raw_sim": 0.0,
     "confidence_basis": "model probability; simulation used only as stability veto"
   },
   "report": {
@@ -205,7 +206,7 @@
     ],
     "lock_quality": {
       "version": "lock-calibration-v2",
-      "confidence": 73.2,
+      "confidence": 0.0,
       "model_only": true,
       "simulation_agreement_counted_as_independent": false,
       "simulation_used_as_stability_veto": true,
@@ -303,6 +304,30 @@
       "Agree": "Y",
       "Edge": 0.0,
       "Verdict": "YES"
+    },
+    {
+      "Section": "CS",
+      "Selection": "Posta Rangers CS",
+      "Model%": 33.1,
+      "Sim%": 33.1,
+      "Agree": "simulation",
+      "Edge": 0.0,
+      "Verdict": "LEAN",
+      "IndependentModel": false
     }
-  ]
+  ],
+  "metadata": {
+    "security": {
+      "version": "core-lock-v1",
+      "min_model": 0.78,
+      "min_sim": 0.78,
+      "max_model_sim_gap": 0.06,
+      "healthy_simulation_required": true,
+      "any_market_eligible": true,
+      "single_cs": true,
+      "single_ht_cs": true,
+      "cs_independent_model_required": true,
+      "status": "NO LOCK"
+    }
+  }
 }

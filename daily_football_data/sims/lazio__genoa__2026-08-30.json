@@ -172,6 +172,10 @@
       "simulation_used_as_stability_veto": true,
       "secured": true,
       "vetoes": []
+    },
+    "ht_clean_sheet": {
+      "home": 0.7283307551257017,
+      "away": 0.6142622447335806
     }
   },
   "table": [
@@ -318,6 +322,16 @@
       "Sim%": 65.7,
       "Agree": "6 eng",
       "Verdict": "NO"
+    },
+    {
+      "Section": "HT CS",
+      "Selection": "Lazio HT CS",
+      "Model%": 72.8,
+      "Sim%": 72.8,
+      "Agree": "simulation",
+      "Edge": 0.0,
+      "Verdict": "LEAN",
+      "IndependentModel": false
     }
   ],
   "locked_tip": {
@@ -328,6 +342,8 @@
     "sim": 85.0,
     "agree": "6 eng",
     "verdict": "HARD YES",
+    "security": "CORE_LOCKED",
+    "security_score": 0.7878,
     "confidence": 80.6,
     "raw_model": 80.6,
     "raw_sim": 85.0,
@@ -370,5 +386,19 @@
   },
   "generated_at": "2026-08-30T23:33:03.481231Z",
   "hda_aligned": true,
-  "hda_aligned_at": "2026-08-31T04:17:53.552718+00:00"
+  "hda_aligned_at": "2026-08-31T04:17:53.552718+00:00",
+  "metadata": {
+    "security": {
+      "version": "core-lock-v1",
+      "min_model": 0.78,
+      "min_sim": 0.78,
+      "max_model_sim_gap": 0.06,
+      "healthy_simulation_required": true,
+      "any_market_eligible": true,
+      "single_cs": true,
+      "single_ht_cs": true,
+      "cs_independent_model_required": true,
+      "status": "SECURED LOCK"
+    }
+  }
 }

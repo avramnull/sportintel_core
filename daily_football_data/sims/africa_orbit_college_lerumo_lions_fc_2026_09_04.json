@@ -1,0 +1,333 @@
+{
+  "id": "africa_orbit_college_lerumo_lions_fc_2026_09_04",
+  "region": "Africa",
+  "match": {
+    "home": "Orbit College",
+    "away": "Lerumo Lions FC",
+    "kickoff": "2026-09-04",
+    "league": "South Africa \u2014 1st Division",
+    "odds": "\u2014",
+    "odds_h": null,
+    "odds_d": null,
+    "odds_a": null,
+    "country": "South Africa"
+  },
+  "resolved": {
+    "models": "ft_result,over25,btts"
+  },
+  "locked_tip": {
+    "status": "NO LOCK",
+    "section": "\u2014",
+    "selection": "\u2014",
+    "model": null,
+    "sim": null,
+    "verdict": "REVIEW",
+    "security": "CORE_BLOCK",
+    "confidence": 0.0,
+    "raw_model": 0.0,
+    "raw_sim": 0.0,
+    "confidence_basis": "model probability; simulation used only as stability veto"
+  },
+  "report": {
+    "ft_model": {
+      "H": 0.3553236459709379,
+      "D": 0.31347424042272126,
+      "A": 0.33120211360634083
+    },
+    "ft_sim": {
+      "H": 0.3736129807426554,
+      "D": 0.27601425283425857,
+      "A": 0.35037276642308623
+    },
+    "ht_model": {
+      "H": 0.3390320018523055,
+      "D": 0.371409349650505,
+      "A": 0.2895586484971896
+    },
+    "ht_sim": {
+      "H": 0.3390320018523055,
+      "D": 0.371409349650505,
+      "A": 0.2895586484971896
+    },
+    "over25_model": 0.48764861294583883,
+    "over25_sim": 0.45432415376828894,
+    "btts_model": 0.4832892998678996,
+    "btts_sim": 0.5119123556096149,
+    "xg": {
+      "home": 1.2730545749028401,
+      "away": 1.2247503340196277,
+      "total": 2.497804908922468
+    },
+    "dc_ft": {
+      "1X": 0.649627233576914,
+      "X2": 0.6263870192573449,
+      "12": 0.7239857471657416
+    },
+    "dc_ht": {},
+    "top_ft": [
+      [
+        "1-1",
+        19456
+      ],
+      [
+        "1-0",
+        15603
+      ],
+      [
+        "0-1",
+        14991
+      ],
+      [
+        "0-0",
+        12855
+      ],
+      [
+        "2-1",
+        12215
+      ],
+      [
+        "1-2",
+        11742
+      ],
+      [
+        "2-0",
+        9848
+      ],
+      [
+        "0-2",
+        9099
+      ],
+      [
+        "2-2",
+        7572
+      ],
+      [
+        "3-1",
+        5163
+      ],
+      [
+        "1-3",
+        4771
+      ],
+      [
+        "3-0",
+        4093
+      ]
+    ],
+    "top_ht": [
+      [
+        "0-0",
+        34029
+      ],
+      [
+        "1-0",
+        26422
+      ],
+      [
+        "0-1",
+        23573
+      ],
+      [
+        "1-1",
+        18825
+      ],
+      [
+        "2-0",
+        10331
+      ],
+      [
+        "0-2",
+        8228
+      ],
+      [
+        "2-1",
+        7438
+      ],
+      [
+        "1-2",
+        6638
+      ],
+      [
+        "3-0",
+        2686
+      ],
+      [
+        "2-2",
+        2676
+      ]
+    ],
+    "top3_ft": [
+      {
+        "score": "1-1",
+        "count": 19456,
+        "pct": 13.0
+      },
+      {
+        "score": "1-0",
+        "count": 15603,
+        "pct": 10.4
+      },
+      {
+        "score": "0-1",
+        "count": 14991,
+        "pct": 10.0
+      }
+    ],
+    "clean_sheet": {
+      "home": 0.2938230824496174,
+      "away": 0.27996721616027026
+    },
+    "win_to_nil": {
+      "home": 0.10977611764499656,
+      "away": 0.09809288803384407
+    },
+    "goal_lines": {
+      "1.5": {
+        "over": 0.7103421533999942,
+        "under": 0.2896578466000058
+      },
+      "2.5": {
+        "over": 0.45432415376828894,
+        "under": 0.5456758462317111
+      },
+      "3.5": {
+        "over": 0.24307609833536084,
+        "under": 0.7569239016646392
+      }
+    },
+    "score_consistency": {
+      "ft_vs_model_l1": 0.0749
+    },
+    "region": "Africa",
+    "engines": [
+      "ft_result",
+      "over25",
+      "btts"
+    ],
+    "lock_quality": {
+      "version": "lock-calibration-v2",
+      "confidence": 0.0,
+      "model_only": true,
+      "simulation_agreement_counted_as_independent": false,
+      "simulation_used_as_stability_veto": true,
+      "secured": false,
+      "vetoes": []
+    }
+  },
+  "table": [
+    {
+      "Section": "FT",
+      "Selection": "Home",
+      "Model%": 35.5,
+      "Sim%": 37.4,
+      "Agree": "Y",
+      "Edge": 1.9,
+      "Verdict": "\u2014"
+    },
+    {
+      "Section": "FT",
+      "Selection": "Draw",
+      "Model%": 31.3,
+      "Sim%": 27.6,
+      "Agree": "Y",
+      "Edge": -3.7,
+      "Verdict": "\u2014"
+    },
+    {
+      "Section": "FT",
+      "Selection": "Away",
+      "Model%": 33.1,
+      "Sim%": 35.0,
+      "Agree": "Y",
+      "Edge": 1.9,
+      "Verdict": "\u2014"
+    },
+    {
+      "Section": "O/U",
+      "Selection": "Over 2.5",
+      "Model%": 48.8,
+      "Sim%": 45.4,
+      "Agree": "Y",
+      "Edge": -3.4,
+      "Verdict": "\u2014"
+    },
+    {
+      "Section": "O/U",
+      "Selection": "Under 2.5",
+      "Model%": 51.2,
+      "Sim%": 54.6,
+      "Agree": "Y",
+      "Edge": 3.4,
+      "Verdict": "LEAN"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "Yes",
+      "Model%": 48.3,
+      "Sim%": 51.2,
+      "Agree": "Y",
+      "Edge": 2.9,
+      "Verdict": "LEAN"
+    },
+    {
+      "Section": "BTTS",
+      "Selection": "No",
+      "Model%": 51.7,
+      "Sim%": 48.8,
+      "Agree": "Y",
+      "Edge": -2.9,
+      "Verdict": "\u2014"
+    },
+    {
+      "Section": "DC",
+      "Selection": "1X",
+      "Model%": 66.9,
+      "Sim%": 65.0,
+      "Agree": "Y",
+      "Edge": -1.9,
+      "Verdict": "YES"
+    },
+    {
+      "Section": "DC",
+      "Selection": "X2",
+      "Model%": 64.5,
+      "Sim%": 62.6,
+      "Agree": "Y",
+      "Edge": -1.9,
+      "Verdict": "YES"
+    },
+    {
+      "Section": "DC",
+      "Selection": "12",
+      "Model%": 68.7,
+      "Sim%": 72.4,
+      "Agree": "Y",
+      "Edge": 3.7,
+      "Verdict": "YES"
+    },
+    {
+      "Section": "CS",
+      "Selection": "Orbit College CS",
+      "Model%": 29.4,
+      "Sim%": 29.4,
+      "Agree": "simulation",
+      "Edge": 0.0,
+      "Verdict": "LEAN",
+      "IndependentModel": false
+    }
+  ],
+  "metadata": {
+    "security": {
+      "version": "core-lock-v1",
+      "min_model": 0.78,
+      "min_sim": 0.78,
+      "max_model_sim_gap": 0.06,
+      "healthy_simulation_required": true,
+      "any_market_eligible": true,
+      "single_cs": true,
+      "single_ht_cs": true,
+      "cs_independent_model_required": true,
+      "status": "NO LOCK"
+    }
+  }
+}

@@ -1,18 +1,18 @@
 {
-  "started": "2026-09-03T16:37:31.300248+00:00",
-  "finished": "2026-09-03T16:50:56.794748+00:00",
+  "started": "2026-09-04T00:40:11.401959+00:00",
+  "finished": "2026-09-04T01:01:59.750792+00:00",
   "season_code": "2627",
   "season_label": "2026/2027",
   "focus_teams": [
-    "Celta Vigo",
     "Real Sociedad",
+    "Celta Vigo",
     "Toulouse",
     "Lille",
     "Anderlecht",
-    "Gent",
-    "Hibernian",
     "Kortrijk",
+    "Gent",
     "Oud-Heverlee Leuven",
+    "Hibernian",
     "Hearts"
   ],
   "sims_index": "/home/runner/work/sportintel_core/sportintel_core/daily_football_data/sims/index.json"

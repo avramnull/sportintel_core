@@ -166,12 +166,16 @@
     },
     "lock_quality": {
       "version": "lock-calibration-v2",
-      "confidence": 82.2,
+      "confidence": 81.1,
       "model_only": true,
       "simulation_agreement_counted_as_independent": false,
       "simulation_used_as_stability_veto": true,
       "secured": true,
       "vetoes": []
+    },
+    "ht_clean_sheet": {
+      "home": 0.6565542194484236,
+      "away": 0.39668014624174686
     }
   },
   "table": [
@@ -318,19 +322,31 @@
       "Sim%": 42.6,
       "Agree": "4 eng",
       "Verdict": "NO"
+    },
+    {
+      "Section": "HT CS",
+      "Selection": "RB Leipzig HT CS",
+      "Model%": 65.7,
+      "Sim%": 65.7,
+      "Agree": "simulation",
+      "Edge": 0.0,
+      "Verdict": "LEAN",
+      "IndependentModel": false
     }
   ],
   "locked_tip": {
     "status": "SECURED LOCK",
-    "section": "FT DC",
+    "section": "HT DC",
     "selection": "1X",
-    "model": 82.2,
-    "sim": 75.3,
+    "model": 81.1,
+    "sim": 84.9,
     "agree": "4 eng",
     "verdict": "HARD YES",
-    "confidence": 82.2,
-    "raw_model": 82.2,
-    "raw_sim": 75.3,
+    "security": "CORE_LOCKED",
+    "security_score": 0.8006,
+    "confidence": 81.1,
+    "raw_model": 81.1,
+    "raw_sim": 84.9,
     "confidence_basis": "model probability; simulation used only as stability veto"
   },
   "backends": {
@@ -367,5 +383,19 @@
   },
   "generated_at": "2026-08-30T11:30:29.717282Z",
   "hda_aligned": true,
-  "hda_aligned_at": "2026-08-31T04:18:01.381595+00:00"
+  "hda_aligned_at": "2026-08-31T04:18:01.381595+00:00",
+  "metadata": {
+    "security": {
+      "version": "core-lock-v1",
+      "min_model": 0.78,
+      "min_sim": 0.78,
+      "max_model_sim_gap": 0.06,
+      "healthy_simulation_required": true,
+      "any_market_eligible": true,
+      "single_cs": true,
+      "single_ht_cs": true,
+      "cs_independent_model_required": true,
+      "status": "SECURED LOCK"
+    }
+  }
 }

@@ -293,12 +293,16 @@
     },
     "lock_quality": {
       "version": "lock-calibration-v2",
-      "confidence": 73.8,
+      "confidence": 0.0,
       "model_only": true,
       "simulation_agreement_counted_as_independent": false,
       "simulation_used_as_stability_veto": true,
       "secured": false,
       "vetoes": []
+    },
+    "ht_clean_sheet": {
+      "home": 0.5401005246443706,
+      "away": 0.6568278407069974
     }
   },
   "table": [
@@ -483,24 +487,6 @@
       "Edge": 0.0
     },
     {
-      "Section": "CS",
-      "Selection": "Worthing CS",
-      "Model%": 24.6,
-      "Sim%": 24.6,
-      "Agree": "6 eng",
-      "Verdict": "NO",
-      "Edge": 0.0
-    },
-    {
-      "Section": "CS",
-      "Selection": "Boreham Wood CS",
-      "Model%": 35.3,
-      "Sim%": 35.3,
-      "Agree": "6 eng",
-      "Verdict": "NO",
-      "Edge": 0.0
-    },
-    {
       "Section": "WTN",
       "Selection": "Worthing WTN",
       "Model%": 14.7,
@@ -517,19 +503,39 @@
       "Agree": "6 eng",
       "Verdict": "NO",
       "Edge": 0.0
+    },
+    {
+      "Section": "CS",
+      "Selection": "Boreham Wood CS",
+      "Model%": 35.3,
+      "Sim%": 35.3,
+      "Agree": "simulation",
+      "Edge": 0.0,
+      "Verdict": "LEAN",
+      "IndependentModel": false
+    },
+    {
+      "Section": "HT CS",
+      "Selection": "Boreham Wood HT CS",
+      "Model%": 65.7,
+      "Sim%": 65.7,
+      "Agree": "simulation",
+      "Edge": 0.0,
+      "Verdict": "LEAN",
+      "IndependentModel": false
     }
   ],
   "locked_tip": {
     "status": "NO LOCK",
-    "section": "FT DC",
-    "selection": "X2",
-    "model": 73.8,
-    "sim": 74.1,
-    "agree": "6 eng",
+    "section": "\u2014",
+    "selection": "\u2014",
+    "model": null,
+    "sim": null,
     "verdict": "REVIEW",
-    "confidence": 73.8,
-    "raw_model": 73.8,
-    "raw_sim": 74.1,
+    "security": "CORE_BLOCK",
+    "confidence": 0.0,
+    "raw_model": 0.0,
+    "raw_sim": 0.0,
     "confidence_basis": "model probability; simulation used only as stability veto"
   },
   "backends": {
@@ -567,5 +573,19 @@
     ],
     "ht_over15": []
   },
-  "generated_at": "2026-08-31T22:18:24.234722Z"
+  "generated_at": "2026-08-31T22:18:24.234722Z",
+  "metadata": {
+    "security": {
+      "version": "core-lock-v1",
+      "min_model": 0.78,
+      "min_sim": 0.78,
+      "max_model_sim_gap": 0.06,
+      "healthy_simulation_required": true,
+      "any_market_eligible": true,
+      "single_cs": true,
+      "single_ht_cs": true,
+      "cs_independent_model_required": true,
+      "status": "NO LOCK"
+    }
+  }
 }

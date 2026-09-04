@@ -172,6 +172,10 @@
       "simulation_used_as_stability_veto": true,
       "secured": false,
       "vetoes": []
+    },
+    "ht_clean_sheet": {
+      "home": 0.605722491065177,
+      "away": 0.644465921848211
     }
   },
   "table": [
@@ -318,6 +322,16 @@
       "Sim%": 54.6,
       "Agree": "6 eng",
       "Verdict": "YES"
+    },
+    {
+      "Section": "HT CS",
+      "Selection": "Sudtirol HT CS",
+      "Model%": 64.4,
+      "Sim%": 64.4,
+      "Agree": "simulation",
+      "Edge": 0.0,
+      "Verdict": "LEAN",
+      "IndependentModel": false
     }
   ],
   "locked_tip": {
@@ -328,6 +342,8 @@
     "sim": 78.0,
     "agree": "6 eng",
     "verdict": "REVIEW",
+    "security": "CORE_LOCKED",
+    "security_score": 0.8153,
     "confidence": 79.3,
     "raw_model": 79.3,
     "raw_sim": 78.0,
@@ -370,5 +386,19 @@
   },
   "generated_at": "2026-08-30T23:33:07.358486Z",
   "hda_aligned": true,
-  "hda_aligned_at": "2026-08-31T04:17:39.060666+00:00"
+  "hda_aligned_at": "2026-08-31T04:17:39.060666+00:00",
+  "metadata": {
+    "security": {
+      "version": "core-lock-v1",
+      "min_model": 0.78,
+      "min_sim": 0.78,
+      "max_model_sim_gap": 0.06,
+      "healthy_simulation_required": true,
+      "any_market_eligible": true,
+      "single_cs": true,
+      "single_ht_cs": true,
+      "cs_independent_model_required": true,
+      "status": "SECURED LOCK"
+    }
+  }
 }

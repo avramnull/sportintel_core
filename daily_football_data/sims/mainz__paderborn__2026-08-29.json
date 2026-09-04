@@ -172,6 +172,10 @@
       "simulation_used_as_stability_veto": true,
       "secured": true,
       "vetoes": []
+    },
+    "ht_clean_sheet": {
+      "home": 0.6668934439676563,
+      "away": 0.49951132923479574
     }
   },
   "table": [
@@ -318,6 +322,16 @@
       "Sim%": 54.9,
       "Agree": "4 eng",
       "Verdict": "YES"
+    },
+    {
+      "Section": "HT CS",
+      "Selection": "Mainz HT CS",
+      "Model%": 66.7,
+      "Sim%": 66.7,
+      "Agree": "simulation",
+      "Edge": 0.0,
+      "Verdict": "LEAN",
+      "IndependentModel": false
     }
   ],
   "locked_tip": {
@@ -328,6 +342,8 @@
     "sim": 82.2,
     "agree": "4 eng",
     "verdict": "HARD YES",
+    "security": "CORE_LOCKED",
+    "security_score": 0.837,
     "confidence": 80.9,
     "raw_model": 80.9,
     "raw_sim": 82.2,
@@ -367,5 +383,19 @@
   },
   "generated_at": "2026-08-30T11:30:28.447820Z",
   "hda_aligned": true,
-  "hda_aligned_at": "2026-08-31T04:17:55.791803+00:00"
+  "hda_aligned_at": "2026-08-31T04:17:55.791803+00:00",
+  "metadata": {
+    "security": {
+      "version": "core-lock-v1",
+      "min_model": 0.78,
+      "min_sim": 0.78,
+      "max_model_sim_gap": 0.06,
+      "healthy_simulation_required": true,
+      "any_market_eligible": true,
+      "single_cs": true,
+      "single_ht_cs": true,
+      "cs_independent_model_required": true,
+      "status": "SECURED LOCK"
+    }
+  }
 }

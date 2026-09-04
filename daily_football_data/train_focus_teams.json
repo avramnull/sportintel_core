@@ -1,34 +1,34 @@
 {
-  "generated_at": "2026-09-03T16:38:28.452257+00:00",
+  "generated_at": "2026-09-04T00:40:58.850565+00:00",
   "max_train": 10,
   "train_all_fixtures": true,
   "min_matches": 25,
   "retrain_existing": true,
   "today_only": true,
-  "focus_date": "2026-09-03",
+  "focus_date": "2026-09-04",
   "focus_teams": [
-    "Celta Vigo",
     "Real Sociedad",
+    "Celta Vigo",
     "Toulouse",
     "Lille",
     "Anderlecht",
-    "Gent",
-    "Hibernian",
     "Kortrijk",
+    "Gent",
     "Oud-Heverlee Leuven",
+    "Hibernian",
     "Hearts"
   ],
   "scores": {
+    "Real Sociedad": 145.0,
     "Celta Vigo": 145.0,
-    "Real Sociedad": 125.0,
-    "Toulouse": 120.0,
-    "Lille": 120.0,
+    "Toulouse": 140.0,
+    "Lille": 140.0,
     "Anderlecht": 115.0,
+    "Kortrijk": 115.0,
     "Gent": 115.0,
+    "Oud-Heverlee Leuven": 113.65,
     "Hibernian": 100.0,
-    "Kortrijk": 95.0,
-    "Oud-Heverlee Leuven": 93.625,
-    "Hearts": 80.0
+    "Hearts": 100.0
   },
   "note": "Pass to train.py via FOCUS_TEAMS env (comma-separated)"
 }

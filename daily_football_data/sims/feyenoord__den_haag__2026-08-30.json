@@ -166,12 +166,16 @@
     },
     "lock_quality": {
       "version": "lock-calibration-v2",
-      "confidence": 89.5,
+      "confidence": 84.6,
       "model_only": true,
       "simulation_agreement_counted_as_independent": false,
       "simulation_used_as_stability_veto": true,
       "secured": true,
       "vetoes": []
+    },
+    "ht_clean_sheet": {
+      "home": 0.7108219280692247,
+      "away": 0.3614373107503023
     }
   },
   "table": [
@@ -318,18 +322,30 @@
       "Sim%": 49.5,
       "Agree": "6 eng",
       "Verdict": "YES"
+    },
+    {
+      "Section": "HT CS",
+      "Selection": "Feyenoord HT CS",
+      "Model%": 71.1,
+      "Sim%": 71.1,
+      "Agree": "simulation",
+      "Edge": 0.0,
+      "Verdict": "LEAN",
+      "IndependentModel": false
     }
   ],
   "locked_tip": {
     "status": "SECURED LOCK",
     "section": "FT DC",
-    "selection": "1X",
-    "model": 89.5,
+    "selection": "12",
+    "model": 84.6,
     "sim": 86.0,
     "agree": "6 eng",
     "verdict": "HARD YES",
-    "confidence": 89.5,
-    "raw_model": 89.5,
+    "security": "CORE_LOCKED",
+    "security_score": 0.8633,
+    "confidence": 84.6,
+    "raw_model": 84.6,
     "raw_sim": 86.0,
     "confidence_basis": "model probability; simulation used only as stability veto"
   },
@@ -370,5 +386,19 @@
   },
   "generated_at": "2026-08-30T23:33:12.453554Z",
   "hda_aligned": true,
-  "hda_aligned_at": "2026-08-31T04:17:47.494618+00:00"
+  "hda_aligned_at": "2026-08-31T04:17:47.494618+00:00",
+  "metadata": {
+    "security": {
+      "version": "core-lock-v1",
+      "min_model": 0.78,
+      "min_sim": 0.78,
+      "max_model_sim_gap": 0.06,
+      "healthy_simulation_required": true,
+      "any_market_eligible": true,
+      "single_cs": true,
+      "single_ht_cs": true,
+      "cs_independent_model_required": true,
+      "status": "SECURED LOCK"
+    }
+  }
 }

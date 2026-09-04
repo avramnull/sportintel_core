@@ -293,12 +293,16 @@
     },
     "lock_quality": {
       "version": "lock-calibration-v2",
-      "confidence": 80.1,
+      "confidence": 78.9,
       "model_only": true,
       "simulation_agreement_counted_as_independent": false,
       "simulation_used_as_stability_veto": true,
-      "secured": true,
+      "secured": false,
       "vetoes": []
+    },
+    "ht_clean_sheet": {
+      "home": 0.703749131710199,
+      "away": 0.4664209778747735
     }
   },
   "table": [
@@ -483,24 +487,6 @@
       "Edge": 0.0
     },
     {
-      "Section": "CS",
-      "Selection": "Forest Green CS",
-      "Model%": 39.1,
-      "Sim%": 39.1,
-      "Agree": "6 eng",
-      "Verdict": "NO",
-      "Edge": 0.0
-    },
-    {
-      "Section": "CS",
-      "Selection": "Altrincham CS",
-      "Model%": 20.8,
-      "Sim%": 20.8,
-      "Agree": "6 eng",
-      "Verdict": "NO",
-      "Edge": 0.0
-    },
-    {
       "Section": "WTN",
       "Selection": "Forest Green WTN",
       "Model%": 30.7,
@@ -517,19 +503,41 @@
       "Agree": "6 eng",
       "Verdict": "NO",
       "Edge": 0.0
+    },
+    {
+      "Section": "CS",
+      "Selection": "Forest Green CS",
+      "Model%": 39.1,
+      "Sim%": 39.1,
+      "Agree": "simulation",
+      "Edge": 0.0,
+      "Verdict": "LEAN",
+      "IndependentModel": false
+    },
+    {
+      "Section": "HT CS",
+      "Selection": "Forest Green HT CS",
+      "Model%": 70.4,
+      "Sim%": 70.4,
+      "Agree": "simulation",
+      "Edge": 0.0,
+      "Verdict": "LEAN",
+      "IndependentModel": false
     }
   ],
   "locked_tip": {
-    "status": "SECURED LOCK",
-    "section": "HT DC",
+    "status": "NO LOCK",
+    "section": "FT DC",
     "selection": "1X",
-    "model": 80.1,
-    "sim": 85.9,
+    "model": 78.9,
+    "sim": 78.4,
     "agree": "6 eng",
-    "verdict": "HARD YES",
-    "confidence": 80.1,
-    "raw_model": 80.1,
-    "raw_sim": 85.9,
+    "verdict": "REVIEW",
+    "security": "CORE_LOCKED",
+    "security_score": 0.8304,
+    "confidence": 78.9,
+    "raw_model": 78.9,
+    "raw_sim": 78.4,
     "confidence_basis": "model probability; simulation used only as stability veto"
   },
   "backends": {
@@ -567,5 +575,19 @@
     ],
     "ht_over15": []
   },
-  "generated_at": "2026-08-31T22:18:14.778690Z"
+  "generated_at": "2026-08-31T22:18:14.778690Z",
+  "metadata": {
+    "security": {
+      "version": "core-lock-v1",
+      "min_model": 0.78,
+      "min_sim": 0.78,
+      "max_model_sim_gap": 0.06,
+      "healthy_simulation_required": true,
+      "any_market_eligible": true,
+      "single_cs": true,
+      "single_ht_cs": true,
+      "cs_independent_model_required": true,
+      "status": "SECURED LOCK"
+    }
+  }
 }

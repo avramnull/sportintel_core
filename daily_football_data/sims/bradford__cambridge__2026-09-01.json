@@ -306,6 +306,10 @@
       "simulation_used_as_stability_veto": true,
       "secured": false,
       "vetoes": []
+    },
+    "ht_clean_sheet": {
+      "home": 0.6214188175341253,
+      "away": 0.4864481308489938
     }
   },
   "table": [
@@ -490,24 +494,6 @@
       "Edge": 0.0
     },
     {
-      "Section": "CS",
-      "Selection": "Bradford CS",
-      "Model%": 32.4,
-      "Sim%": 32.4,
-      "Agree": "6 eng",
-      "Verdict": "NO",
-      "Edge": 0.0
-    },
-    {
-      "Section": "CS",
-      "Selection": "Cambridge CS",
-      "Model%": 18.5,
-      "Sim%": 18.5,
-      "Agree": "6 eng",
-      "Verdict": "NO",
-      "Edge": 0.0
-    },
-    {
       "Section": "WTN",
       "Selection": "Bradford WTN",
       "Model%": 25.2,
@@ -524,6 +510,26 @@
       "Agree": "6 eng",
       "Verdict": "NO",
       "Edge": 0.0
+    },
+    {
+      "Section": "CS",
+      "Selection": "Bradford CS",
+      "Model%": 32.4,
+      "Sim%": 32.4,
+      "Agree": "simulation",
+      "Edge": 0.0,
+      "Verdict": "LEAN",
+      "IndependentModel": false
+    },
+    {
+      "Section": "HT CS",
+      "Selection": "Bradford HT CS",
+      "Model%": 62.1,
+      "Sim%": 62.1,
+      "Agree": "simulation",
+      "Edge": 0.0,
+      "Verdict": "LEAN",
+      "IndependentModel": false
     }
   ],
   "locked_tip": {
@@ -534,6 +540,8 @@
     "sim": 78.8,
     "agree": "6 eng",
     "verdict": "REVIEW",
+    "security": "CORE_LOCKED",
+    "security_score": 0.841,
     "confidence": 78.8,
     "raw_model": 78.8,
     "raw_sim": 78.8,
@@ -586,6 +594,18 @@
       "lambda_home": 1.5711622783860795,
       "lambda_away": 0.9867548645006001,
       "target_total_lambda": 2.700502154298605
+    },
+    "security": {
+      "version": "core-lock-v1",
+      "min_model": 0.78,
+      "min_sim": 0.78,
+      "max_model_sim_gap": 0.06,
+      "healthy_simulation_required": true,
+      "any_market_eligible": true,
+      "single_cs": true,
+      "single_ht_cs": true,
+      "cs_independent_model_required": true,
+      "status": "SECURED LOCK"
     }
   }
 }

@@ -166,12 +166,16 @@
     },
     "lock_quality": {
       "version": "lock-calibration-v2",
-      "confidence": 88.9,
+      "confidence": 82.6,
       "model_only": true,
       "simulation_agreement_counted_as_independent": false,
       "simulation_used_as_stability_veto": true,
       "secured": true,
       "vetoes": []
+    },
+    "ht_clean_sheet": {
+      "home": 0.7472665476494532,
+      "away": 0.39167089972051433
     }
   },
   "table": [
@@ -318,19 +322,31 @@
       "Sim%": 54.1,
       "Agree": "6 eng",
       "Verdict": "NO"
+    },
+    {
+      "Section": "HT CS",
+      "Selection": "Real Madrid HT CS",
+      "Model%": 74.7,
+      "Sim%": 74.7,
+      "Agree": "simulation",
+      "Edge": 0.0,
+      "Verdict": "LEAN",
+      "IndependentModel": false
     }
   ],
   "locked_tip": {
     "status": "SECURED LOCK",
     "section": "FT DC",
-    "selection": "1X",
-    "model": 88.9,
-    "sim": 84.8,
+    "selection": "12",
+    "model": 82.6,
+    "sim": 82.6,
     "agree": "6 eng",
     "verdict": "HARD YES",
-    "confidence": 88.9,
-    "raw_model": 88.9,
-    "raw_sim": 84.8,
+    "security": "CORE_LOCKED",
+    "security_score": 0.8695,
+    "confidence": 82.6,
+    "raw_model": 82.6,
+    "raw_sim": 82.6,
     "confidence_basis": "model probability; simulation used only as stability veto"
   },
   "backends": {
@@ -370,5 +386,19 @@
   },
   "generated_at": "2026-08-30T23:33:29.374424Z",
   "hda_aligned": true,
-  "hda_aligned_at": "2026-08-31T04:18:01.471755+00:00"
+  "hda_aligned_at": "2026-08-31T04:18:01.471755+00:00",
+  "metadata": {
+    "security": {
+      "version": "core-lock-v1",
+      "min_model": 0.78,
+      "min_sim": 0.78,
+      "max_model_sim_gap": 0.06,
+      "healthy_simulation_required": true,
+      "any_market_eligible": true,
+      "single_cs": true,
+      "single_ht_cs": true,
+      "cs_independent_model_required": true,
+      "status": "SECURED LOCK"
+    }
+  }
 }

@@ -16,15 +16,18 @@
     "models": "ft_result,over25,btts"
   },
   "locked_tip": {
-    "status": "NO LOCK",
-    "section": "O/U",
-    "selection": "Over 1.5",
-    "model": 69.4,
-    "sim": 69.4,
-    "verdict": "REVIEW",
-    "confidence": 69.4,
-    "raw_model": 69.4,
-    "raw_sim": 69.4,
+    "status": "SECURED LOCK",
+    "section": "DC",
+    "selection": "1X",
+    "model": 81.8,
+    "sim": 82.0,
+    "agree": "Y",
+    "verdict": "HARD YES",
+    "security": "CORE_LOCKED",
+    "security_score": 0.8605,
+    "confidence": 81.8,
+    "raw_model": 81.8,
+    "raw_sim": 82.0,
     "confidence_basis": "model probability; simulation used only as stability veto"
   },
   "report": {
@@ -205,11 +208,11 @@
     ],
     "lock_quality": {
       "version": "lock-calibration-v2",
-      "confidence": 69.4,
+      "confidence": 81.8,
       "model_only": true,
       "simulation_agreement_counted_as_independent": false,
       "simulation_used_as_stability_veto": true,
-      "secured": false,
+      "secured": true,
       "vetoes": []
     }
   },
@@ -303,6 +306,30 @@
       "Agree": "Y",
       "Edge": 0.2,
       "Verdict": "YES"
+    },
+    {
+      "Section": "CS",
+      "Selection": "Mamelodi Sundowns FC CS",
+      "Model%": 50.8,
+      "Sim%": 50.8,
+      "Agree": "simulation",
+      "Edge": 0.0,
+      "Verdict": "LEAN",
+      "IndependentModel": false
     }
-  ]
+  ],
+  "metadata": {
+    "security": {
+      "version": "core-lock-v1",
+      "min_model": 0.78,
+      "min_sim": 0.78,
+      "max_model_sim_gap": 0.06,
+      "healthy_simulation_required": true,
+      "any_market_eligible": true,
+      "single_cs": true,
+      "single_ht_cs": true,
+      "cs_independent_model_required": true,
+      "status": "SECURED LOCK"
+    }
+  }
 }

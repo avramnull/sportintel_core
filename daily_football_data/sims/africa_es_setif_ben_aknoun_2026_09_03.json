@@ -16,15 +16,18 @@
     "models": "ft_result,over25,btts"
   },
   "locked_tip": {
-    "status": "NO LOCK",
-    "section": "O/U",
-    "selection": "Over 1.5",
-    "model": 67.4,
-    "sim": 67.4,
-    "verdict": "REVIEW",
-    "confidence": 67.4,
-    "raw_model": 67.4,
-    "raw_sim": 67.4,
+    "status": "SECURED LOCK",
+    "section": "DC",
+    "selection": "1X",
+    "model": 84.5,
+    "sim": 84.4,
+    "agree": "Y",
+    "verdict": "HARD YES",
+    "security": "CORE_LOCKED",
+    "security_score": 0.8815,
+    "confidence": 84.5,
+    "raw_model": 84.5,
+    "raw_sim": 84.4,
     "confidence_basis": "model probability; simulation used only as stability veto"
   },
   "report": {
@@ -205,11 +208,11 @@
     ],
     "lock_quality": {
       "version": "lock-calibration-v2",
-      "confidence": 67.4,
+      "confidence": 84.5,
       "model_only": true,
       "simulation_agreement_counted_as_independent": false,
       "simulation_used_as_stability_veto": true,
-      "secured": false,
+      "secured": true,
       "vetoes": []
     }
   },
@@ -303,6 +306,30 @@
       "Agree": "Y",
       "Edge": 0.1,
       "Verdict": "YES"
+    },
+    {
+      "Section": "CS",
+      "Selection": "ES Setif CS",
+      "Model%": 52.4,
+      "Sim%": 52.4,
+      "Agree": "simulation",
+      "Edge": 0.0,
+      "Verdict": "LEAN",
+      "IndependentModel": false
     }
-  ]
+  ],
+  "metadata": {
+    "security": {
+      "version": "core-lock-v1",
+      "min_model": 0.78,
+      "min_sim": 0.78,
+      "max_model_sim_gap": 0.06,
+      "healthy_simulation_required": true,
+      "any_market_eligible": true,
+      "single_cs": true,
+      "single_ht_cs": true,
+      "cs_independent_model_required": true,
+      "status": "SECURED LOCK"
+    }
+  }
 }

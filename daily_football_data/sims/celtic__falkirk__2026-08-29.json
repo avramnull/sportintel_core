@@ -286,6 +286,8 @@
     "sim": 91.2,
     "agree": "1 eng",
     "verdict": "HARD YES",
+    "security": "CORE_LOCKED",
+    "security_score": 0.8279,
     "confidence": 91.6,
     "raw_model": 91.6,
     "raw_sim": 91.2,
@@ -308,5 +310,19 @@
       "market"
     ]
   },
-  "generated_at": "2026-08-30T11:31:12.452932Z"
+  "generated_at": "2026-08-30T11:31:12.452932Z",
+  "metadata": {
+    "security": {
+      "version": "core-lock-v1",
+      "min_model": 0.78,
+      "min_sim": 0.78,
+      "max_model_sim_gap": 0.06,
+      "healthy_simulation_required": true,
+      "any_market_eligible": true,
+      "single_cs": true,
+      "single_ht_cs": true,
+      "cs_independent_model_required": true,
+      "status": "SECURED LOCK"
+    }
+  }
 }

@@ -17,14 +17,15 @@
   },
   "locked_tip": {
     "status": "NO LOCK",
-    "section": "O/U",
-    "selection": "Over 1.5",
-    "model": 68.2,
-    "sim": 68.2,
+    "section": "\u2014",
+    "selection": "\u2014",
+    "model": null,
+    "sim": null,
     "verdict": "REVIEW",
-    "confidence": 68.2,
-    "raw_model": 68.2,
-    "raw_sim": 68.2,
+    "security": "CORE_BLOCK",
+    "confidence": 0.0,
+    "raw_model": 0.0,
+    "raw_sim": 0.0,
     "confidence_basis": "model probability; simulation used only as stability veto",
     "lock_veto": "score calibration mismatch"
   },
@@ -207,7 +208,7 @@
     ],
     "lock_quality": {
       "version": "lock-calibration-v2",
-      "confidence": 68.2,
+      "confidence": 0.0,
       "model_only": true,
       "simulation_agreement_counted_as_independent": false,
       "simulation_used_as_stability_veto": true,
@@ -307,6 +308,30 @@
       "Agree": "Y",
       "Edge": -1.3,
       "Verdict": "YES"
+    },
+    {
+      "Section": "CS",
+      "Selection": "JS El Biar CS",
+      "Model%": 52.0,
+      "Sim%": 52.0,
+      "Agree": "simulation",
+      "Edge": 0.0,
+      "Verdict": "LEAN",
+      "IndependentModel": false
     }
-  ]
+  ],
+  "metadata": {
+    "security": {
+      "version": "core-lock-v1",
+      "min_model": 0.78,
+      "min_sim": 0.78,
+      "max_model_sim_gap": 0.06,
+      "healthy_simulation_required": true,
+      "any_market_eligible": true,
+      "single_cs": true,
+      "single_ht_cs": true,
+      "cs_independent_model_required": true,
+      "status": "NO LOCK"
+    }
+  }
 }

@@ -166,12 +166,16 @@
     },
     "lock_quality": {
       "version": "lock-calibration-v2",
-      "confidence": 74.5,
+      "confidence": 0.0,
       "model_only": true,
       "simulation_agreement_counted_as_independent": false,
       "simulation_used_as_stability_veto": true,
       "secured": false,
       "vetoes": []
+    },
+    "ht_clean_sheet": {
+      "home": 0.5716376313394214,
+      "away": 0.628527812338585
     }
   },
   "table": [
@@ -318,19 +322,29 @@
       "Sim%": 53.0,
       "Agree": "4 eng",
       "Verdict": "NO"
+    },
+    {
+      "Section": "HT CS",
+      "Selection": "Everton HT CS",
+      "Model%": 62.9,
+      "Sim%": 62.9,
+      "Agree": "simulation",
+      "Edge": 0.0,
+      "Verdict": "LEAN",
+      "IndependentModel": false
     }
   ],
   "locked_tip": {
     "status": "NO LOCK",
-    "section": "HT DC",
-    "selection": "1X",
-    "model": 74.5,
-    "sim": 73.2,
-    "agree": "4 eng",
+    "section": "\u2014",
+    "selection": "\u2014",
+    "model": null,
+    "sim": null,
     "verdict": "REVIEW",
-    "confidence": 74.5,
-    "raw_model": 74.5,
-    "raw_sim": 73.2,
+    "security": "CORE_BLOCK",
+    "confidence": 0.0,
+    "raw_model": 0.0,
+    "raw_sim": 0.0,
     "confidence_basis": "model probability; simulation used only as stability veto"
   },
   "backends": {
@@ -367,5 +381,19 @@
   },
   "generated_at": "2026-08-30T11:30:40.806016Z",
   "hda_aligned": true,
-  "hda_aligned_at": "2026-08-31T04:17:40.500954+00:00"
+  "hda_aligned_at": "2026-08-31T04:17:40.500954+00:00",
+  "metadata": {
+    "security": {
+      "version": "core-lock-v1",
+      "min_model": 0.78,
+      "min_sim": 0.78,
+      "max_model_sim_gap": 0.06,
+      "healthy_simulation_required": true,
+      "any_market_eligible": true,
+      "single_cs": true,
+      "single_ht_cs": true,
+      "cs_independent_model_required": true,
+      "status": "NO LOCK"
+    }
+  }
 }

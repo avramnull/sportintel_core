@@ -172,6 +172,10 @@
       "simulation_used_as_stability_veto": true,
       "secured": false,
       "vetoes": []
+    },
+    "ht_clean_sheet": {
+      "home": 0.5017432889575112,
+      "away": 0.6214706045933507
     }
   },
   "table": [
@@ -318,6 +322,16 @@
       "Sim%": 51.1,
       "Agree": "6 eng",
       "Verdict": "NO"
+    },
+    {
+      "Section": "HT CS",
+      "Selection": "Estrela HT CS",
+      "Model%": 62.1,
+      "Sim%": 62.1,
+      "Agree": "simulation",
+      "Edge": 0.0,
+      "Verdict": "LEAN",
+      "IndependentModel": false
     }
   ],
   "locked_tip": {
@@ -328,6 +342,8 @@
     "sim": 80.0,
     "agree": "6 eng",
     "verdict": "REVIEW",
+    "security": "CORE_LOCKED",
+    "security_score": 0.8092,
     "confidence": 78.2,
     "raw_model": 78.2,
     "raw_sim": 80.0,
@@ -370,5 +386,19 @@
   },
   "generated_at": "2026-08-30T23:33:18.339295Z",
   "hda_aligned": true,
-  "hda_aligned_at": "2026-08-31T04:17:57.730683+00:00"
+  "hda_aligned_at": "2026-08-31T04:17:57.730683+00:00",
+  "metadata": {
+    "security": {
+      "version": "core-lock-v1",
+      "min_model": 0.78,
+      "min_sim": 0.78,
+      "max_model_sim_gap": 0.06,
+      "healthy_simulation_required": true,
+      "any_market_eligible": true,
+      "single_cs": true,
+      "single_ht_cs": true,
+      "cs_independent_model_required": true,
+      "status": "SECURED LOCK"
+    }
+  }
 }

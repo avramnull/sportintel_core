@@ -172,6 +172,10 @@
       "simulation_used_as_stability_veto": true,
       "secured": true,
       "vetoes": []
+    },
+    "ht_clean_sheet": {
+      "home": 0.6584445288470495,
+      "away": 0.24994859556552895
     }
   },
   "table": [
@@ -318,6 +322,16 @@
       "Sim%": 35.1,
       "Agree": "4 eng",
       "Verdict": "NO"
+    },
+    {
+      "Section": "HT CS",
+      "Selection": "Dortmund HT CS",
+      "Model%": 65.8,
+      "Sim%": 65.8,
+      "Agree": "simulation",
+      "Edge": 0.0,
+      "Verdict": "LEAN",
+      "IndependentModel": false
     }
   ],
   "locked_tip": {
@@ -328,6 +342,8 @@
     "sim": 89.0,
     "agree": "4 eng",
     "verdict": "HARD YES",
+    "security": "CORE_LOCKED",
+    "security_score": 0.8722,
     "confidence": 87.0,
     "raw_model": 87.0,
     "raw_sim": 89.0,
@@ -367,5 +383,19 @@
   },
   "generated_at": "2026-08-30T11:30:32.379769Z",
   "hda_aligned": true,
-  "hda_aligned_at": "2026-08-31T04:17:45.631362+00:00"
+  "hda_aligned_at": "2026-08-31T04:17:45.631362+00:00",
+  "metadata": {
+    "security": {
+      "version": "core-lock-v1",
+      "min_model": 0.78,
+      "min_sim": 0.78,
+      "max_model_sim_gap": 0.06,
+      "healthy_simulation_required": true,
+      "any_market_eligible": true,
+      "single_cs": true,
+      "single_ht_cs": true,
+      "cs_independent_model_required": true,
+      "status": "SECURED LOCK"
+    }
+  }
 }

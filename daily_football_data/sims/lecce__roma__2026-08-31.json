@@ -299,6 +299,10 @@
       "simulation_used_as_stability_veto": true,
       "secured": false,
       "vetoes": []
+    },
+    "ht_clean_sheet": {
+      "home": 0.45672826700801056,
+      "away": 0.7283307551257017
     }
   },
   "table": [
@@ -483,24 +487,6 @@
       "Edge": 0.0
     },
     {
-      "Section": "CS",
-      "Selection": "Lecce CS",
-      "Model%": 18.3,
-      "Sim%": 18.3,
-      "Agree": "6 eng",
-      "Verdict": "NO",
-      "Edge": 0.0
-    },
-    {
-      "Section": "CS",
-      "Selection": "Roma CS",
-      "Model%": 40.2,
-      "Sim%": 40.2,
-      "Agree": "6 eng",
-      "Verdict": "YES",
-      "Edge": 0.0
-    },
-    {
       "Section": "WTN",
       "Selection": "Lecce WTN",
       "Model%": 9.4,
@@ -517,6 +503,26 @@
       "Agree": "6 eng",
       "Verdict": "NO",
       "Edge": 0.0
+    },
+    {
+      "Section": "CS",
+      "Selection": "Roma CS",
+      "Model%": 40.2,
+      "Sim%": 40.2,
+      "Agree": "simulation",
+      "Edge": 0.0,
+      "Verdict": "LEAN",
+      "IndependentModel": false
+    },
+    {
+      "Section": "HT CS",
+      "Selection": "Roma HT CS",
+      "Model%": 72.8,
+      "Sim%": 72.8,
+      "Agree": "simulation",
+      "Edge": 0.0,
+      "Verdict": "LEAN",
+      "IndependentModel": false
     }
   ],
   "locked_tip": {
@@ -527,6 +533,8 @@
     "sim": 80.1,
     "agree": "6 eng",
     "verdict": "REVIEW",
+    "security": "CORE_LOCKED",
+    "security_score": 0.8394,
     "confidence": 79.6,
     "raw_model": 79.6,
     "raw_sim": 80.1,
@@ -567,5 +575,19 @@
     ],
     "ht_over15": []
   },
-  "generated_at": "2026-08-31T22:17:56.723253Z"
+  "generated_at": "2026-08-31T22:17:56.723253Z",
+  "metadata": {
+    "security": {
+      "version": "core-lock-v1",
+      "min_model": 0.78,
+      "min_sim": 0.78,
+      "max_model_sim_gap": 0.06,
+      "healthy_simulation_required": true,
+      "any_market_eligible": true,
+      "single_cs": true,
+      "single_ht_cs": true,
+      "cs_independent_model_required": true,
+      "status": "SECURED LOCK"
+    }
+  }
 }

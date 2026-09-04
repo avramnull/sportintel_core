@@ -166,14 +166,16 @@
     },
     "lock_quality": {
       "version": "lock-calibration-v2",
-      "confidence": 71.4,
+      "confidence": 0.0,
       "model_only": true,
       "simulation_agreement_counted_as_independent": false,
       "simulation_used_as_stability_veto": true,
       "secured": false,
-      "vetoes": [
-        "model/sim disagreement"
-      ]
+      "vetoes": []
+    },
+    "ht_clean_sheet": {
+      "home": 0.516162658598332,
+      "away": 0.7025771933772416
     }
   },
   "table": [
@@ -320,21 +322,30 @@
       "Sim%": 58.0,
       "Agree": "6 eng",
       "Verdict": "NO"
+    },
+    {
+      "Section": "HT CS",
+      "Selection": "Palermo HT CS",
+      "Model%": 70.3,
+      "Sim%": 70.3,
+      "Agree": "simulation",
+      "Edge": 0.0,
+      "Verdict": "LEAN",
+      "IndependentModel": false
     }
   ],
   "locked_tip": {
     "status": "NO LOCK",
-    "section": "FT DC",
-    "selection": "X2",
-    "model": 71.4,
-    "sim": 83.1,
-    "agree": "6 eng",
+    "section": "\u2014",
+    "selection": "\u2014",
+    "model": null,
+    "sim": null,
     "verdict": "REVIEW",
-    "confidence": 71.4,
-    "raw_model": 71.4,
-    "raw_sim": 83.1,
-    "confidence_basis": "model probability; simulation used only as stability veto",
-    "lock_veto": "model/sim disagreement"
+    "security": "CORE_BLOCK",
+    "confidence": 0.0,
+    "raw_model": 0.0,
+    "raw_sim": 0.0,
+    "confidence_basis": "model probability; simulation used only as stability veto"
   },
   "backends": {
     "ft_result": [
@@ -373,5 +384,19 @@
   },
   "generated_at": "2026-08-30T23:33:04.555101Z",
   "hda_aligned": true,
-  "hda_aligned_at": "2026-08-31T04:17:36.257695+00:00"
+  "hda_aligned_at": "2026-08-31T04:17:36.257695+00:00",
+  "metadata": {
+    "security": {
+      "version": "core-lock-v1",
+      "min_model": 0.78,
+      "min_sim": 0.78,
+      "max_model_sim_gap": 0.06,
+      "healthy_simulation_required": true,
+      "any_market_eligible": true,
+      "single_cs": true,
+      "single_ht_cs": true,
+      "cs_independent_model_required": true,
+      "status": "NO LOCK"
+    }
+  }
 }

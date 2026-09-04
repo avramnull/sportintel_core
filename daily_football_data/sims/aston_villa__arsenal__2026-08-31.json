@@ -299,6 +299,10 @@
       "simulation_used_as_stability_veto": true,
       "secured": true,
       "vetoes": []
+    },
+    "ht_clean_sheet": {
+      "home": 0.4022559639809,
+      "away": 0.6891244960699173
     }
   },
   "table": [
@@ -483,24 +487,6 @@
       "Edge": 0.0
     },
     {
-      "Section": "CS",
-      "Selection": "Aston Villa CS",
-      "Model%": 15.2,
-      "Sim%": 15.2,
-      "Agree": "6 eng",
-      "Verdict": "NO",
-      "Edge": 0.0
-    },
-    {
-      "Section": "CS",
-      "Selection": "Arsenal CS",
-      "Model%": 37.2,
-      "Sim%": 37.2,
-      "Agree": "6 eng",
-      "Verdict": "NO",
-      "Edge": 0.0
-    },
-    {
       "Section": "WTN",
       "Selection": "Aston Villa WTN",
       "Model%": 9.1,
@@ -517,6 +503,26 @@
       "Agree": "6 eng",
       "Verdict": "NO",
       "Edge": 0.0
+    },
+    {
+      "Section": "CS",
+      "Selection": "Arsenal CS",
+      "Model%": 37.2,
+      "Sim%": 37.2,
+      "Agree": "simulation",
+      "Edge": 0.0,
+      "Verdict": "LEAN",
+      "IndependentModel": false
+    },
+    {
+      "Section": "HT CS",
+      "Selection": "Arsenal HT CS",
+      "Model%": 68.9,
+      "Sim%": 68.9,
+      "Agree": "simulation",
+      "Edge": 0.0,
+      "Verdict": "LEAN",
+      "IndependentModel": false
     }
   ],
   "locked_tip": {
@@ -527,6 +533,8 @@
     "sim": 80.7,
     "agree": "6 eng",
     "verdict": "HARD YES",
+    "security": "CORE_LOCKED",
+    "security_score": 0.8522,
     "confidence": 80.9,
     "raw_model": 80.9,
     "raw_sim": 80.7,
@@ -567,5 +575,19 @@
     ],
     "ht_over15": []
   },
-  "generated_at": "2026-08-31T22:17:51.375419Z"
+  "generated_at": "2026-08-31T22:17:51.375419Z",
+  "metadata": {
+    "security": {
+      "version": "core-lock-v1",
+      "min_model": 0.78,
+      "min_sim": 0.78,
+      "max_model_sim_gap": 0.06,
+      "healthy_simulation_required": true,
+      "any_market_eligible": true,
+      "single_cs": true,
+      "single_ht_cs": true,
+      "cs_independent_model_required": true,
+      "status": "SECURED LOCK"
+    }
+  }
 }

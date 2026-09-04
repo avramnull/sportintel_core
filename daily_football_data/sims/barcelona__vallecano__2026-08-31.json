@@ -299,6 +299,10 @@
       "simulation_used_as_stability_veto": true,
       "secured": true,
       "vetoes": []
+    },
+    "ht_clean_sheet": {
+      "home": 0.7575492958648944,
+      "away": 0.34576359115930777
     }
   },
   "table": [
@@ -483,24 +487,6 @@
       "Edge": 0.0
     },
     {
-      "Section": "CS",
-      "Selection": "Barcelona CS",
-      "Model%": 42.8,
-      "Sim%": 42.8,
-      "Agree": "6 eng",
-      "Verdict": "YES",
-      "Edge": 0.0
-    },
-    {
-      "Section": "CS",
-      "Selection": "Vallecano CS",
-      "Model%": 9.5,
-      "Sim%": 9.5,
-      "Agree": "6 eng",
-      "Verdict": "NO",
-      "Edge": 0.0
-    },
-    {
       "Section": "WTN",
       "Selection": "Barcelona WTN",
       "Model%": 39.2,
@@ -517,6 +503,26 @@
       "Agree": "6 eng",
       "Verdict": "NO",
       "Edge": 0.0
+    },
+    {
+      "Section": "CS",
+      "Selection": "Barcelona CS",
+      "Model%": 42.8,
+      "Sim%": 42.8,
+      "Agree": "simulation",
+      "Edge": 0.0,
+      "Verdict": "LEAN",
+      "IndependentModel": false
+    },
+    {
+      "Section": "HT CS",
+      "Selection": "Barcelona HT CS",
+      "Model%": 75.8,
+      "Sim%": 75.8,
+      "Agree": "simulation",
+      "Edge": 0.0,
+      "Verdict": "LEAN",
+      "IndependentModel": false
     }
   ],
   "locked_tip": {
@@ -527,6 +533,8 @@
     "sim": 87.0,
     "agree": "6 eng",
     "verdict": "HARD YES",
+    "security": "CORE_LOCKED",
+    "security_score": 0.8995,
     "confidence": 87.2,
     "raw_model": 87.2,
     "raw_sim": 87.0,
@@ -567,5 +575,19 @@
     ],
     "ht_over15": []
   },
-  "generated_at": "2026-08-31T22:18:05.660105Z"
+  "generated_at": "2026-08-31T22:18:05.660105Z",
+  "metadata": {
+    "security": {
+      "version": "core-lock-v1",
+      "min_model": 0.78,
+      "min_sim": 0.78,
+      "max_model_sim_gap": 0.06,
+      "healthy_simulation_required": true,
+      "any_market_eligible": true,
+      "single_cs": true,
+      "single_ht_cs": true,
+      "cs_independent_model_required": true,
+      "status": "SECURED LOCK"
+    }
+  }
 }
