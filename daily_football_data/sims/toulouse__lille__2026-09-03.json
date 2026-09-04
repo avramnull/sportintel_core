@@ -25,579 +25,354 @@
       "version": "precision-v5",
       "method": "deterministic-hierarchical-bivariate-poisson+dixon-coles+joint-target-fit+exact-HT-conditional",
       "probability_mode": "exact_distribution_no_monte_carlo_noise",
-      "lambda_home": 1.0265067191569588,
-      "lambda_away": 1.211486191888507,
-      "common_goal_rate": 0.017353159203959554,
-      "rho": -0.0055611083918540374,
-      "target_total_lambda": 2.308675326271498,
+      "lambda_home": 1.0214508030459966,
+      "lambda_away": 1.211909202821993,
+      "common_goal_rate": 0.021703715582358608,
+      "rho": -0.006957340182984265,
+      "target_total_lambda": 2.3266565276844524,
       "ht_home_share": 0.62,
-      "ht_away_share": 0.5738569497069511,
+      "ht_away_share": 0.598645960472365,
       "max_goals": 12
     },
     "ft_model": {
-      "H": 0.29934131006621445,
-      "D": 0.3067076061003795,
-      "A": 0.393951083833406
+      "H": 0.29484274033461727,
+      "D": 0.3122754192723952,
+      "A": 0.39288184039298746
     },
     "ft_sim": {
-      "H": 0.30975161105061877,
-      "D": 0.2881951760194167,
-      "A": 0.40205321292996454
+      "H": 0.30803971984330075,
+      "D": 0.2888115177201513,
+      "A": 0.403148762436548
     },
     "ht_model": {
-      "H": 0.2778107290232812,
-      "D": 0.4278902145973012,
-      "A": 0.29429905637941767
+      "H": 0.26724417411326534,
+      "D": 0.42548061959899475,
+      "A": 0.3072752062877399
     },
     "ht_sim": {
-      "H": 0.28553787859713836,
-      "D": 0.3934960219327371,
-      "A": 0.3209660994701247
+      "H": 0.2780833184995536,
+      "D": 0.38822611943442614,
+      "A": 0.3336905620660204
     },
-    "over25_model": 0.40626042534929274,
-    "over25_sim": 0.3961698563736431,
-    "btts_model": 0.4725976758558368,
-    "btts_sim": 0.46084269986370746,
-    "ht_over15_model": 0.3515651063373232,
-    "ht_over15_sim": 0.15581150057364157,
+    "over25_model": 0.4110174871189596,
+    "over25_sim": 0.39711284865133134,
+    "btts_model": 0.47419457682006405,
+    "btts_sim": 0.462198632938351,
+    "ht_over15_model": 0.3527543717797399,
+    "ht_over15_sim": 0.16380714248701897,
     "dc_ft": {
-      "1X": 0.5979467870700355,
-      "X2": 0.6902483889493812,
-      "12": 0.7118048239805833
+      "1X": 0.596851237563452,
+      "X2": 0.6919602801566993,
+      "12": 0.7111884822798488
     },
     "dc_ht": {
-      "1X": 0.6790339005298754,
-      "X2": 0.7144621214028618,
-      "12": 0.6065039780672631
+      "1X": 0.6663094379339798,
+      "X2": 0.7219166815004465,
+      "12": 0.6117738805655739
     },
     "top_ft": [
       [
         "1-1",
-        19939
+        19951
       ],
       [
         "0-1",
-        18942
+        18928
       ],
       [
         "1-0",
-        16034
+        15932
       ],
       [
         "0-0",
-        15834
+        15865
       ],
       [
         "1-2",
-        12177
+        12213
       ],
       [
         "0-2",
-        11540
+        11551
       ],
       [
         "2-1",
-        10317
+        10294
       ],
       [
         "2-0",
-        8285
+        8206
       ],
       [
         "2-2",
-        6422
+        6452
       ],
       [
         "1-3",
-        4984
+        5017
       ],
       [
         "0-3",
-        4660
+        4666
       ],
       [
         "3-1",
-        3578
+        3564
       ]
     ],
     "top_ht": [
       [
         "0-0",
-        39073
+        37893
       ],
       [
         "0-1",
-        27246
+        27592
       ],
       [
         "1-0",
-        24983
+        24120
       ],
       [
         "1-1",
-        17770
+        18011
       ],
       [
         "0-2",
-        9536
+        10095
       ],
       [
         "2-0",
-        8020
+        7719
       ],
       [
         "1-2",
-        6281
+        6670
       ],
       [
         "2-1",
-        5760
+        5833
       ],
       [
         "0-3",
-        2222
+        2458
       ],
       [
         "2-2",
-        2068
+        2203
       ]
     ],
     "top3_ft": [
       {
         "score": "1-1",
-        "count": 19939,
-        "pct": 13.29
+        "count": 19951,
+        "pct": 13.3
       },
       {
         "score": "0-1",
-        "count": 18942,
-        "pct": 12.63
+        "count": 18928,
+        "pct": 12.62
       },
       {
         "score": "1-0",
-        "count": 16034,
-        "pct": 10.69
+        "count": 15932,
+        "pct": 10.62
       }
     ],
     "top3_ht": [
       {
         "score": "0-0",
-        "count": 39073,
-        "pct": 26.05
+        "count": 37893,
+        "pct": 25.26
       },
       {
         "score": "0-1",
-        "count": 27246,
-        "pct": 18.16
+        "count": 27592,
+        "pct": 18.39
       },
       {
         "score": "1-0",
-        "count": 24983,
-        "pct": 16.66
+        "count": 24120,
+        "pct": 16.08
       }
     ],
     "top8_ft": [
       {
         "score": "1-1",
-        "count": 19939,
-        "pct": 13.29
+        "count": 19951,
+        "pct": 13.3
       },
       {
         "score": "0-1",
-        "count": 18942,
-        "pct": 12.63
+        "count": 18928,
+        "pct": 12.62
       },
       {
         "score": "1-0",
-        "count": 16034,
-        "pct": 10.69
+        "count": 15932,
+        "pct": 10.62
       },
       {
         "score": "0-0",
-        "count": 15834,
-        "pct": 10.56
+        "count": 15865,
+        "pct": 10.58
       },
       {
         "score": "1-2",
-        "count": 12177,
-        "pct": 8.12
+        "count": 12213,
+        "pct": 8.14
       },
       {
         "score": "0-2",
-        "count": 11540,
-        "pct": 7.69
+        "count": 11551,
+        "pct": 7.7
       },
       {
         "score": "2-1",
-        "count": 10317,
-        "pct": 6.88
+        "count": 10294,
+        "pct": 6.86
       },
       {
         "score": "2-0",
-        "count": 8285,
-        "pct": 5.52
+        "count": 8206,
+        "pct": 5.47
       }
     ],
     "score_matrix_top": {
-      "1-1": 0.13292853958080295,
-      "0-1": 0.1262825788610536,
-      "1-0": 0.10689003462862855,
-      "0-0": 0.10556122068222859,
-      "1-2": 0.08117722961031174,
-      "0-2": 0.07693397906664727,
-      "2-1": 0.06878243614781622,
-      "2-0": 0.055233790806995836,
-      "2-2": 0.04281147235734883,
-      "1-3": 0.033226713451864356,
-      "0-3": 0.03106815110876085,
-      "3-1": 0.023854704543676598
+      "1-1": 0.13300817621958835,
+      "0-1": 0.12618394717838086,
+      "1-0": 0.10621148883852242,
+      "0-0": 0.10576835556526193,
+      "1-2": 0.08141918170283242,
+      "0-2": 0.07700901419223369,
+      "2-1": 0.06862369585118298,
+      "2-0": 0.05470616935468151,
+      "2-2": 0.04301625733789417,
+      "1-3": 0.03344801244440154,
+      "0-3": 0.03110931099993914,
+      "3-1": 0.023761018791816465
     },
     "score_matrix_top_ht": {
-      "0-0": 0.2604849857266885,
-      "0-1": 0.18164281066113816,
-      "1-0": 0.16655414023414025,
-      "1-1": 0.11846865370375241,
-      "0-2": 0.06357390199074696,
-      "2-0": 0.053464007109892395,
-      "1-2": 0.041875140936451456,
-      "2-1": 0.038401448005235525,
-      "0-3": 0.01481280177409706,
-      "2-2": 0.013786292339422064
+      "0-0": 0.25261819376773414,
+      "0-1": 0.18394466282244604,
+      "1-0": 0.16080038123780693,
+      "1-1": 0.12007065591642609,
+      "0-2": 0.06730155001186457,
+      "2-0": 0.05145741375670335,
+      "1-2": 0.04446996506134289,
+      "2-1": 0.03888465341751264,
+      "0-3": 0.016386622416327743,
+      "2-2": 0.014683733122684832
     },
     "xg": {
-      "home": 1.0438594332211424,
-      "away": 1.2288370270059696,
-      "total": 2.2726964602271122,
-      "lambda_home": 1.0265067191569588,
-      "lambda_away": 1.211486191888507
+      "home": 1.0431538338534065,
+      "away": 1.2336092098808675,
+      "total": 2.2767630437342743,
+      "lambda_home": 1.0214508030459966,
+      "lambda_away": 1.211909202821993
     },
     "ht_xg": {
-      "home": 0.6471928485971086,
-      "away": 0.7051766680046041,
-      "total": 1.3523695166017127
+      "home": 0.6467553769891123,
+      "away": 0.738495170296687,
+      "total": 1.3852505472857994
     },
     "score_consistency": {
       "ht_leq_ft": 1.0,
-      "ft_vs_model_l1": 0.03702486016192569,
-      "over25_abs_error": 0.010090568975649639,
-      "btts_abs_error": 0.011754975992129324,
-      "ht_vs_model_l1": 0.06878838532912834,
-      "truncation_mass": 8.47338809622691e-09,
-      "entropy": 2.7531212769351345
+      "ft_vs_model_l1": 0.046927803104487964,
+      "over25_abs_error": 0.013904638467628239,
+      "btts_abs_error": 0.011995943881713045,
+      "ht_vs_model_l1": 0.07450900032913732,
+      "truncation_mass": 8.773069893027421e-09,
+      "entropy": 2.7548997587928663
     },
     "clean_sheet": {
-      "home": 0.2926290633635538,
-      "away": 0.3520894574549671
+      "home": 0.2912338423998408,
+      "away": 0.3523358802270702
     },
-    "cs_home": 0.2926290633635538,
-    "cs_away": 0.3520894574549671,
+    "cs_home": 0.2912338423998408,
+    "cs_away": 0.3523358802270702,
     "win_to_nil": {
-      "home": 0.18706784268132517,
-      "away": 0.2465282367727386
+      "home": 0.18546548683457892,
+      "away": 0.24656752466180826
     },
     "goal_lines": {
       "0.5": {
-        "over": 0.8944387793177713,
-        "under": 0.10556122068222859,
+        "over": 0.8942316444347382,
+        "under": 0.10576835556526193,
         "push": 0.0
       },
       "1.5": {
-        "over": 0.6612661658280892,
-        "under": 0.3387338341719107,
+        "over": 0.6618362084178349,
+        "under": 0.3381637915821652,
         "push": 0.0
       },
       "2.5": {
-        "over": 0.3961698563736431,
-        "under": 0.6038301436263568,
+        "over": 0.39711284865133134,
+        "under": 0.6028871513486688,
         "push": 0.0
       },
       "3.5": {
-        "over": 0.19624275371079059,
-        "under": 0.8037572462892092,
+        "over": 0.19733410655774022,
+        "under": 0.8026658934422599,
         "push": 0.0
       },
       "4.5": {
-        "over": 0.08209014337475237,
-        "under": 0.9179098566252475,
+        "over": 0.08292687589229836,
+        "under": 0.9170731241077019,
         "push": 0.0
       }
     },
     "goal_line_sim": {
-      "1.5": 0.6612661658280892,
-      "2.5": 0.3961698563736431,
-      "3.5": 0.19624275371079059
+      "1.5": 0.6618362084178349,
+      "2.5": 0.39711284865133134,
+      "3.5": 0.19733410655774022
     },
     "asian_handicap": {
-      "home_-0.5": 0.30975161105061877,
+      "home_-0.5": 0.30803971984330075,
       "home_-1.0": {
-        "cover": 0.11722222551228695,
-        "push": 0.1925293855383319
+        "cover": 0.11621062696037918,
+        "push": 0.19182909288292158
       },
-      "home_+0.5": 0.5979467870700353,
+      "home_+0.5": 0.5968512375634519,
       "home_+1.0": {
-        "cover": 0.5979467870700353,
-        "push": 0.227354387913222
+        "cover": 0.5968512375634519,
+        "push": 0.2277656992858335
       }
     },
     "score_matrix_margin": {
-      "home_1_goal": 0.1925293855383319,
-      "home_2_plus": 0.11722222551228695,
-      "away_1_goal": 0.227354387913222,
-      "away_2_plus": 0.17469882501674242,
-      "draw": 0.2881951760194167
+      "home_1_goal": 0.19182909288292158,
+      "home_2_plus": 0.11621062696037918,
+      "away_1_goal": 0.2277656992858335,
+      "away_2_plus": 0.17538306315071459,
+      "draw": 0.2888115177201513
     },
     "distribution_diagnostics": {
-      "top1_mass": 0.1329,
-      "top3_mass": 0.3661,
-      "tail_mass_at_12": 8.47338809622691e-09,
+      "top1_mass": 0.133,
+      "top3_mass": 0.3654,
+      "tail_mass_at_12": 8.773069893027421e-09,
       "monte_carlo_noise": 0.0
     },
-    "ht_clean_sheet": {
-      "home": 0.4940212887907716,
-      "away": 0.5235132971078408
+    "fixed_ft_cs": {
+      "score": "1-1",
+      "count": 19951,
+      "pct": 13.3
     },
-    "lock_quality": {
-      "version": "lock-calibration-v2",
-      "confidence": 0.0,
-      "model_only": true,
-      "simulation_agreement_counted_as_independent": false,
-      "simulation_used_as_stability_veto": true,
-      "secured": false,
-      "vetoes": []
+    "fixed_ht_cs": {
+      "score": "0-0",
+      "count": 37893,
+      "pct": 25.26
     }
   },
-  "table": [
-    {
-      "Section": "HT Winner",
-      "Selection": "Toulouse",
-      "Model%": 27.8,
-      "Sim%": 28.6,
-      "Agree": "6 eng",
-      "Verdict": "NO",
-      "Edge": -0.8
-    },
-    {
-      "Section": "HT Winner",
-      "Selection": "Draw",
-      "Model%": 42.8,
-      "Sim%": 39.3,
-      "Agree": "6 eng",
-      "Verdict": "NO",
-      "Edge": 3.4
-    },
-    {
-      "Section": "HT Winner",
-      "Selection": "Lille",
-      "Model%": 29.4,
-      "Sim%": 32.1,
-      "Agree": "6 eng",
-      "Verdict": "NO",
-      "Edge": -2.7
-    },
-    {
-      "Section": "HT DC",
-      "Selection": "1X",
-      "Model%": 67.9,
-      "Sim%": 67.9,
-      "Agree": "6 eng",
-      "Verdict": "YES",
-      "Edge": 0.0
-    },
-    {
-      "Section": "HT DC",
-      "Selection": "X2",
-      "Model%": 71.4,
-      "Sim%": 71.4,
-      "Agree": "6 eng",
-      "Verdict": "YES",
-      "Edge": 0.0
-    },
-    {
-      "Section": "HT DC",
-      "Selection": "12",
-      "Model%": 60.7,
-      "Sim%": 60.7,
-      "Agree": "6 eng",
-      "Verdict": "YES",
-      "Edge": 0.0
-    },
-    {
-      "Section": "HT O/U",
-      "Selection": "Over 1.5",
-      "Model%": 35.2,
-      "Sim%": 15.6,
-      "Agree": "-",
-      "Verdict": "NO",
-      "Edge": 19.6
-    },
-    {
-      "Section": "HT O/U",
-      "Selection": "Under 1.5",
-      "Model%": 64.8,
-      "Sim%": 84.4,
-      "Agree": "-",
-      "Verdict": "YES",
-      "Edge": -19.6
-    },
-    {
-      "Section": "FT Winner",
-      "Selection": "Toulouse",
-      "Model%": 29.9,
-      "Sim%": 31.0,
-      "Agree": "6 eng",
-      "Verdict": "NO",
-      "Edge": -1.0
-    },
-    {
-      "Section": "FT Winner",
-      "Selection": "Draw",
-      "Model%": 30.7,
-      "Sim%": 28.8,
-      "Agree": "6 eng",
-      "Verdict": "NO",
-      "Edge": 1.9
-    },
-    {
-      "Section": "FT Winner",
-      "Selection": "Lille",
-      "Model%": 39.4,
-      "Sim%": 40.2,
-      "Agree": "6 eng",
-      "Verdict": "NO",
-      "Edge": -0.8
-    },
-    {
-      "Section": "FT DC",
-      "Selection": "1X",
-      "Model%": 59.8,
-      "Sim%": 59.8,
-      "Agree": "6 eng",
-      "Verdict": "YES",
-      "Edge": 0.0
-    },
-    {
-      "Section": "FT DC",
-      "Selection": "X2",
-      "Model%": 69.0,
-      "Sim%": 69.0,
-      "Agree": "6 eng",
-      "Verdict": "YES",
-      "Edge": 0.0
-    },
-    {
-      "Section": "FT DC",
-      "Selection": "12",
-      "Model%": 71.2,
-      "Sim%": 71.2,
-      "Agree": "6 eng",
-      "Verdict": "YES",
-      "Edge": 0.0
-    },
-    {
-      "Section": "FT O/U",
-      "Selection": "Over 2.5",
-      "Model%": 40.6,
-      "Sim%": 39.6,
-      "Agree": "6 eng",
-      "Verdict": "NO",
-      "Edge": 1.0
-    },
-    {
-      "Section": "FT O/U",
-      "Selection": "Under 2.5",
-      "Model%": 59.4,
-      "Sim%": 60.4,
-      "Agree": "6 eng",
-      "Verdict": "YES",
-      "Edge": -1.0
-    },
-    {
-      "Section": "BTTS",
-      "Selection": "Yes",
-      "Model%": 47.3,
-      "Sim%": 46.1,
-      "Agree": "6 eng",
-      "Verdict": "NO",
-      "Edge": 1.2
-    },
-    {
-      "Section": "BTTS",
-      "Selection": "No",
-      "Model%": 52.7,
-      "Sim%": 53.9,
-      "Agree": "6 eng",
-      "Verdict": "YES",
-      "Edge": -1.2
-    },
-    {
-      "Section": "FT O/U+",
-      "Selection": "Over 1.5",
-      "Model%": 66.1,
-      "Sim%": 66.1,
-      "Agree": "6 eng",
-      "Verdict": "YES",
-      "Edge": 0.0
-    },
-    {
-      "Section": "FT O/U+",
-      "Selection": "Over 3.5",
-      "Model%": 19.6,
-      "Sim%": 19.6,
-      "Agree": "6 eng",
-      "Verdict": "NO",
-      "Edge": 0.0
-    },
-    {
-      "Section": "WTN",
-      "Selection": "Toulouse WTN",
-      "Model%": 18.7,
-      "Sim%": 18.7,
-      "Agree": "6 eng",
-      "Verdict": "NO",
-      "Edge": 0.0
-    },
-    {
-      "Section": "WTN",
-      "Selection": "Lille WTN",
-      "Model%": 24.7,
-      "Sim%": 24.7,
-      "Agree": "6 eng",
-      "Verdict": "NO",
-      "Edge": 0.0
-    },
-    {
-      "Section": "CS",
-      "Selection": "Lille CS",
-      "Model%": 35.2,
-      "Sim%": 35.2,
-      "Agree": "simulation",
-      "Edge": 0.0,
-      "Verdict": "LEAN",
-      "IndependentModel": false
-    },
-    {
-      "Section": "HT CS",
-      "Selection": "Lille HT CS",
-      "Model%": 52.4,
-      "Sim%": 52.4,
-      "Agree": "simulation",
-      "Edge": 0.0,
-      "Verdict": "LEAN",
-      "IndependentModel": false
-    }
-  ],
+  "table": [],
   "locked_tip": {
-    "status": "NO LOCK",
-    "section": "\u2014",
-    "selection": "\u2014",
+    "status": "FIXED CS",
+    "section": "FT CS",
+    "selection": "1-1",
     "model": null,
-    "sim": null,
-    "verdict": "REVIEW",
-    "security": "CORE_BLOCK",
-    "confidence": 0.0,
-    "raw_model": 0.0,
-    "raw_sim": 0.0,
-    "confidence_basis": "model probability; simulation used only as stability veto"
+    "sim": 13.3,
+    "verdict": "TOP CS",
+    "ht_cs": "0-0",
+    "ht_cs_pct": 25.26
   },
   "backends": {
     "ft_result": [
@@ -634,43 +409,34 @@
     ],
     "ht_over15": []
   },
-  "generated_at": "2026-09-04T00:49:08.067923+00:00",
+  "generated_at": "2026-09-04T08:20:33.307001+00:00",
   "metadata": {
     "simulation_engine": {
       "version": "precision-v5",
       "method": "deterministic-hierarchical-bivariate-poisson+dixon-coles+joint-target-fit+exact-HT-conditional",
       "probability_mode": "exact_distribution_no_monte_carlo_noise",
-      "lambda_home": 1.0265067191569588,
-      "lambda_away": 1.211486191888507,
-      "common_goal_rate": 0.017353159203959554,
-      "rho": -0.0055611083918540374,
-      "target_total_lambda": 2.308675326271498,
+      "lambda_home": 1.0214508030459966,
+      "lambda_away": 1.211909202821993,
+      "common_goal_rate": 0.021703715582358608,
+      "rho": -0.006957340182984265,
+      "target_total_lambda": 2.3266565276844524,
       "ht_home_share": 0.62,
-      "ht_away_share": 0.5738569497069511,
+      "ht_away_share": 0.598645960472365,
       "max_goals": 12
     },
     "validation": {
       "ok": true,
-      "version": "simulation-contract-v1",
+      "version": "simulation-contract-v2-fixed-cs",
       "n": 150000,
       "ft_sum": 1.0,
       "ht_sum": 1.0,
       "ht_subset_ft": 1.0,
-      "ft_l1": 0.03702486016192569,
-      "over25_abs_error": 0.010090568975649639,
-      "btts_abs_error": 0.011754975992129324
+      "ft_l1": 0.046927803104487964,
+      "over25_abs_error": 0.013904638467628239,
+      "btts_abs_error": 0.011995943881713045,
+      "fixed_ft_cs": "1-1",
+      "fixed_ht_cs": "0-0"
     },
-    "security": {
-      "version": "core-lock-v1",
-      "min_model": 0.78,
-      "min_sim": 0.78,
-      "max_model_sim_gap": 0.06,
-      "healthy_simulation_required": true,
-      "any_market_eligible": true,
-      "single_cs": true,
-      "single_ht_cs": true,
-      "cs_independent_model_required": true,
-      "status": "NO LOCK"
-    }
+    "primary": "ht_ft_score_matrix"
   }
 }

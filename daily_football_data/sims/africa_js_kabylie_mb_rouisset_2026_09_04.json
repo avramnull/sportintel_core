@@ -5,333 +5,311 @@
     "home": "JS Kabylie",
     "away": "MB Rouisset",
     "kickoff": "2026-09-04",
-    "league": "Algeria \u2014 Ligue 1",
-    "odds": "1.44/3.7/7",
+    "league": "Ligue 1",
+    "odds": "\u2014",
     "odds_h": 1.44,
     "odds_d": 3.7,
     "odds_a": 7,
     "country": "Algeria"
   },
   "resolved": {
-    "models": "ft_result,over25,btts,odds-blend"
-  },
-  "locked_tip": {
-    "status": "NO LOCK",
-    "section": "\u2014",
-    "selection": "\u2014",
-    "model": null,
-    "sim": null,
-    "verdict": "REVIEW",
-    "security": "CORE_BLOCK",
-    "confidence": 0.0,
-    "raw_model": 0.0,
-    "raw_sim": 0.0,
-    "confidence_basis": "model probability; simulation used only as stability veto",
-    "lock_veto": "score calibration mismatch"
+    "home": "JS Kabylie",
+    "away": "MB Rouisset",
+    "models": "ft_result,ht_result,over25,btts,ht_over15"
   },
   "report": {
     "ft_model": {
-      "H": 0.38199788210377694,
-      "D": 0.3144835863042711,
-      "A": 0.303518531591952
+      "H": 0.41555921371162974,
+      "D": 0.3083257480391207,
+      "A": 0.27611503824924954
     },
     "ft_sim": {
-      "H": 0.4620845594223926,
-      "D": 0.2660379844008293,
-      "A": 0.2718774561767781
+      "H": 0.4326943469184748,
+      "D": 0.26895759944483605,
+      "A": 0.29834805363668915
     },
     "ht_model": {
-      "H": 0.3935893716051661,
-      "D": 0.3563117635126179,
-      "A": 0.2500988648822161
+      "H": 0.3333333333333333,
+      "D": 0.3333333333333333,
+      "A": 0.3333333333333333
     },
     "ht_sim": {
-      "H": 0.3935893716051661,
-      "D": 0.3563117635126179,
-      "A": 0.2500988648822161
+      "H": 0.3453135745014757,
+      "D": 0.36871315665646753,
+      "A": 0.2859732688420567
     },
-    "over25_model": 0.4794754677020826,
-    "over25_sim": 0.4620496350595977,
-    "btts_model": 0.4822710907165549,
-    "btts_sim": 0.5056379640148648,
+    "over25_model": 0.5,
+    "over25_sim": 0.4690645834029731,
+    "btts_model": 0.5,
+    "btts_sim": 0.5180643286270588,
     "xg": {
-      "home": 1.4639623780484725,
-      "away": 1.0629064659821368,
-      "total": 2.5268688440306097
+      "home": 1.4194791014519217,
+      "away": 1.1363692850458098,
+      "total": 2.555848386497732,
+      "lambda_home": 1.394204436697285,
+      "lambda_away": 1.1110887518429755
     },
-    "dc_ft": {
-      "1X": 0.728122543823222,
-      "X2": 0.5379154405776074,
-      "12": 0.7339620155991707
+    "ht_xg": {
+      "home": 0.8055963855775423,
+      "away": 0.7045489567284026,
+      "total": 1.510145342305945
     },
-    "dc_ht": {},
     "top_ft": [
       [
         "1-1",
-        18801
+        18993
       ],
       [
         "1-0",
-        17514
+        16460
       ],
       [
         "2-1",
-        13648
-      ],
-      [
-        "2-0",
-        12752
+        13316
       ],
       [
         "0-1",
-        12613
+        13079
       ],
       [
         "0-0",
-        12360
+        12131
+      ],
+      [
+        "2-0",
+        11606
       ],
       [
         "1-2",
-        9859
+        10612
       ],
       [
         "2-2",
-        7302
-      ],
-      [
-        "3-1",
-        6655
+        7636
       ],
       [
         "0-2",
-        6654
+        7371
+      ],
+      [
+        "3-1",
+        6286
       ],
       [
         "3-0",
-        6141
+        5394
       ],
       [
-        "3-2",
-        3604
+        "1-3",
+        3993
       ]
     ],
     "top_ht": [
       [
         "0-0",
-        31598
+        33494
       ],
       [
         "1-0",
-        28344
+        26565
       ],
       [
         "0-1",
-        20500
+        23188
       ],
       [
         "1-1",
-        18792
+        18891
       ],
       [
         "2-0",
-        12782
-      ],
-      [
-        "2-1",
-        8539
+        10609
       ],
       [
         "0-2",
-        6696
+        8088
+      ],
+      [
+        "2-1",
+        7617
       ],
       [
         "1-2",
-        6181
+        6651
       ],
       [
         "3-0",
-        3836
+        2817
       ],
       [
         "2-2",
-        2852
+        2733
       ]
     ],
     "top3_ft": [
       {
         "score": "1-1",
-        "count": 18801,
-        "pct": 12.5
+        "count": 18993,
+        "pct": 12.66
       },
       {
         "score": "1-0",
-        "count": 17514,
-        "pct": 11.7
+        "count": 16460,
+        "pct": 10.97
       },
       {
         "score": "2-1",
-        "count": 13648,
-        "pct": 9.1
+        "count": 13316,
+        "pct": 8.88
       }
     ],
+    "top3_ht": [
+      {
+        "score": "0-0",
+        "count": 33494,
+        "pct": 22.33
+      },
+      {
+        "score": "1-0",
+        "count": 26565,
+        "pct": 17.71
+      },
+      {
+        "score": "0-1",
+        "count": 23188,
+        "pct": 15.46
+      }
+    ],
+    "score_matrix_top": {
+      "1-1": 0.12661888343903904,
+      "1-0": 0.10973412259893642,
+      "2-1": 0.08877639387824526,
+      "0-1": 0.08719486675918511,
+      "0-0": 0.08087201198932299,
+      "2-0": 0.07737462693779548,
+      "1-2": 0.07074891606353181,
+      "2-2": 0.0509037052354647,
+      "0-2": 0.04914090487274784,
+      "3-1": 0.041909577158048314,
+      "3-0": 0.03595868272149053,
+      "1-3": 0.026616923736982035
+    },
+    "score_matrix_top_ht": {
+      "0-0": 0.22329251534094177,
+      "1-0": 0.1771030658127641,
+      "0-1": 0.15458546215998994,
+      "1-1": 0.12594128436231863,
+      "2-0": 0.07072436009844138,
+      "0-2": 0.05392137817016224,
+      "2-1": 0.05077919220433162,
+      "1-2": 0.044338578590928414,
+      "3-0": 0.01878214812676033,
+      "2-2": 0.018220588823554245
+    },
     "clean_sheet": {
-      "home": 0.3454459260368566,
-      "away": 0.2313138300926804
+      "home": 0.32097479853374755,
+      "away": 0.24183288482851673
     },
-    "win_to_nil": {
-      "home": 0.1596252285370013,
-      "away": 0.0628890157041054
-    },
+    "ht_clean_sheet": {},
     "goal_lines": {
+      "0.5": {
+        "over": 0.919127988010677,
+        "under": 0.08087201198932299,
+        "push": 0.0
+      },
       "1.5": {
-        "over": 0.7167589154630541,
-        "under": 0.28324108453694585
+        "over": 0.7221989986525554,
+        "under": 0.27780100134744456,
+        "push": 0.0
       },
       "2.5": {
-        "over": 0.4620496350595977,
-        "under": 0.5379503649404023
+        "over": 0.4690645834029731,
+        "under": 0.5309354165970269,
+        "push": 0.0
       },
       "3.5": {
-        "over": 0.24896252950193162,
-        "under": 0.7510374704980683
+        "over": 0.25538062185320687,
+        "under": 0.744619378146793,
+        "push": 0.0
+      },
+      "4.5": {
+        "over": 0.1183615317972686,
+        "under": 0.8816384682027315,
+        "push": 0.0
       }
     },
+    "goal_line_sim": {
+      "1.5": 0.7221989986525554,
+      "2.5": 0.4690645834029731,
+      "3.5": 0.25538062185320687
+    },
     "score_consistency": {
-      "ft_vs_model_l1": 0.1602
+      "ht_leq_ft": 1.0,
+      "ft_vs_model_l1": 0.07873629718856934,
+      "over25_abs_error": 0.03093541659702692,
+      "btts_abs_error": 0.018064328627058757,
+      "ht_vs_model_l1": 0.09472012898255322,
+      "truncation_mass": 3.6894955221642035e-08,
+      "entropy": 2.885636032473761
+    },
+    "engine": {
+      "version": "precision-v5",
+      "method": "deterministic-hierarchical-bivariate-poisson+dixon-coles+joint-target-fit+exact-HT-conditional",
+      "probability_mode": "exact_distribution_no_monte_carlo_noise",
+      "lambda_home": 1.394204436697285,
+      "lambda_away": 1.1110887518429755,
+      "common_goal_rate": 0.02528334329395305,
+      "rho": -0.010221308033732154,
+      "target_total_lambda": 2.67406031372356,
+      "ht_home_share": 0.5675295851510134,
+      "ht_away_share": 0.62,
+      "max_goals": 12
     },
     "region": "Africa",
     "engines": [
       "ft_result",
+      "ht_result",
       "over25",
       "btts",
-      "odds-blend"
+      "ht_over15"
     ],
-    "lock_quality": {
-      "version": "lock-calibration-v2",
-      "confidence": 0.0,
-      "model_only": true,
-      "simulation_agreement_counted_as_independent": false,
-      "simulation_used_as_stability_veto": true,
-      "secured": false,
-      "vetoes": [
-        "score calibration mismatch"
-      ]
+    "fixed_ft_cs": {
+      "score": "1-1",
+      "count": 18993,
+      "pct": 12.66
+    },
+    "fixed_ht_cs": {
+      "score": "0-0",
+      "count": 33494,
+      "pct": 22.33
     }
   },
-  "table": [
-    {
-      "Section": "FT",
-      "Selection": "Home",
-      "Model%": 38.2,
-      "Sim%": 46.2,
-      "Agree": "N",
-      "Edge": 8.0,
-      "Verdict": "\u2014"
-    },
-    {
-      "Section": "FT",
-      "Selection": "Draw",
-      "Model%": 31.4,
-      "Sim%": 26.6,
-      "Agree": "Y",
-      "Edge": -4.8,
-      "Verdict": "\u2014"
-    },
-    {
-      "Section": "FT",
-      "Selection": "Away",
-      "Model%": 30.4,
-      "Sim%": 27.2,
-      "Agree": "Y",
-      "Edge": -3.2,
-      "Verdict": "\u2014"
-    },
-    {
-      "Section": "O/U",
-      "Selection": "Over 2.5",
-      "Model%": 47.9,
-      "Sim%": 46.2,
-      "Agree": "Y",
-      "Edge": -1.7,
-      "Verdict": "\u2014"
-    },
-    {
-      "Section": "O/U",
-      "Selection": "Under 2.5",
-      "Model%": 52.1,
-      "Sim%": 53.8,
-      "Agree": "Y",
-      "Edge": 1.7,
-      "Verdict": "LEAN"
-    },
-    {
-      "Section": "BTTS",
-      "Selection": "Yes",
-      "Model%": 48.2,
-      "Sim%": 50.6,
-      "Agree": "Y",
-      "Edge": 2.4,
-      "Verdict": "LEAN"
-    },
-    {
-      "Section": "BTTS",
-      "Selection": "No",
-      "Model%": 51.8,
-      "Sim%": 49.4,
-      "Agree": "Y",
-      "Edge": -2.4,
-      "Verdict": "\u2014"
-    },
-    {
-      "Section": "DC",
-      "Selection": "1X",
-      "Model%": 69.6,
-      "Sim%": 72.8,
-      "Agree": "Y",
-      "Edge": 3.2,
-      "Verdict": "YES"
-    },
-    {
-      "Section": "DC",
-      "Selection": "X2",
-      "Model%": 61.8,
-      "Sim%": 53.8,
-      "Agree": "N",
-      "Edge": -8.0,
-      "Verdict": "LEAN"
-    },
-    {
-      "Section": "DC",
-      "Selection": "12",
-      "Model%": 68.6,
-      "Sim%": 73.4,
-      "Agree": "Y",
-      "Edge": 4.8,
-      "Verdict": "YES"
-    },
-    {
-      "Section": "CS",
-      "Selection": "JS Kabylie CS",
-      "Model%": 34.5,
-      "Sim%": 34.5,
-      "Agree": "simulation",
-      "Edge": 0.0,
-      "Verdict": "LEAN",
-      "IndependentModel": false
-    }
-  ],
+  "locked_tip": {
+    "status": "FIXED CS",
+    "section": "FT CS",
+    "selection": "1-1",
+    "model": null,
+    "sim": 12.66,
+    "verdict": "TOP CS",
+    "ht_cs": "0-0",
+    "ht_cs_pct": 22.33
+  },
+  "table": [],
   "metadata": {
-    "security": {
-      "version": "core-lock-v1",
-      "min_model": 0.78,
-      "min_sim": 0.78,
-      "max_model_sim_gap": 0.06,
-      "healthy_simulation_required": true,
-      "any_market_eligible": true,
-      "single_cs": true,
-      "single_ht_cs": true,
-      "cs_independent_model_required": true,
-      "status": "NO LOCK"
-    }
+    "engine": {
+      "version": "precision-v5",
+      "method": "deterministic-hierarchical-bivariate-poisson+dixon-coles+joint-target-fit+exact-HT-conditional",
+      "probability_mode": "exact_distribution_no_monte_carlo_noise",
+      "lambda_home": 1.394204436697285,
+      "lambda_away": 1.1110887518429755,
+      "common_goal_rate": 0.02528334329395305,
+      "rho": -0.010221308033732154,
+      "target_total_lambda": 2.67406031372356,
+      "ht_home_share": 0.5675295851510134,
+      "ht_away_share": 0.62,
+      "max_goals": 12
+    },
+    "n": 150000,
+    "primary": "ht_ft_score_matrix"
   }
 }

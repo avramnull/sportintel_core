@@ -299,11 +299,10 @@
       "draw": 0.24991666666666668
     },
     "lock_quality": {
-      "version": "lock-calibration-v2",
+      "version": "lock-calibration-v3",
       "confidence": 0.0,
       "model_only": true,
-      "simulation_agreement_counted_as_independent": false,
-      "simulation_used_as_stability_veto": true,
+      "fixed_cs_preserved": false,
       "secured": false,
       "vetoes": []
     },

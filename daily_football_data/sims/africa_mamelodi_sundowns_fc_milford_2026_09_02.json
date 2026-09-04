@@ -16,19 +16,14 @@
     "models": "ft_result,over25,btts"
   },
   "locked_tip": {
-    "status": "SECURED LOCK",
-    "section": "DC",
-    "selection": "1X",
-    "model": 81.8,
-    "sim": 82.0,
-    "agree": "Y",
-    "verdict": "HARD YES",
-    "security": "CORE_LOCKED",
-    "security_score": 0.8605,
-    "confidence": 81.8,
-    "raw_model": 81.8,
-    "raw_sim": 82.0,
-    "confidence_basis": "model probability; simulation used only as stability veto"
+    "status": "FIXED CS",
+    "section": "FT CS",
+    "selection": "1-0",
+    "model": null,
+    "sim": 11.88,
+    "verdict": "TOP CS",
+    "ht_cs": "0-0",
+    "ht_cs_pct": 27.9
   },
   "report": {
     "ft_model": {
@@ -214,6 +209,16 @@
       "simulation_used_as_stability_veto": true,
       "secured": true,
       "vetoes": []
+    },
+    "fixed_ft_cs": {
+      "score": "1-0",
+      "count": 17825,
+      "pct": 11.88
+    },
+    "fixed_ht_cs": {
+      "score": "0-0",
+      "count": 41852,
+      "pct": 27.9
     }
   },
   "table": [
@@ -330,6 +335,7 @@
       "single_ht_cs": true,
       "cs_independent_model_required": true,
       "status": "SECURED LOCK"
-    }
+    },
+    "primary": "ht_ft_score_matrix"
   }
 }

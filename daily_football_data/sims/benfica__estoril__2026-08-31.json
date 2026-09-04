@@ -292,11 +292,10 @@
       "away": 0.691
     },
     "lock_quality": {
-      "version": "lock-calibration-v2",
+      "version": "lock-calibration-v3",
       "confidence": 92.6,
       "model_only": true,
-      "simulation_agreement_counted_as_independent": false,
-      "simulation_used_as_stability_veto": true,
+      "fixed_cs_preserved": false,
       "secured": true,
       "vetoes": []
     },

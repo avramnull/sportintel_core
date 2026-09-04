@@ -16,17 +16,14 @@
     "models": "ft_result,over25,btts,odds-blend"
   },
   "locked_tip": {
-    "status": "NO LOCK",
-    "section": "\u2014",
-    "selection": "\u2014",
+    "status": "FIXED CS",
+    "section": "FT CS",
+    "selection": "0-0",
     "model": null,
-    "sim": null,
-    "verdict": "REVIEW",
-    "security": "CORE_BLOCK",
-    "confidence": 0.0,
-    "raw_model": 0.0,
-    "raw_sim": 0.0,
-    "confidence_basis": "model probability; simulation used only as stability veto"
+    "sim": 10.08,
+    "verdict": "TOP CS",
+    "ht_cs": "0-0",
+    "ht_cs_pct": 27.95
   },
   "report": {
     "ft_model": {
@@ -213,6 +210,16 @@
       "simulation_used_as_stability_veto": true,
       "secured": false,
       "vetoes": []
+    },
+    "fixed_ft_cs": {
+      "score": "0-0",
+      "count": 15122,
+      "pct": 10.08
+    },
+    "fixed_ht_cs": {
+      "score": "0-0",
+      "count": 41929,
+      "pct": 27.95
     }
   },
   "table": [
@@ -329,6 +336,7 @@
       "single_ht_cs": true,
       "cs_independent_model_required": true,
       "status": "NO LOCK"
-    }
+    },
+    "primary": "ht_ft_score_matrix"
   }
 }
