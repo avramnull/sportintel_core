@@ -1,20 +1,20 @@
 #!/usr/bin/env python3
 """
-Africa match simulation — model ensemble + Dixon–Coles-style score grid.
+Africa match simulation — clean precise HT / FT score engine.
 
-No odds required. Uses football_models/africa registries trained by train_africa.
-
-Usage:
-  python -m africa.sim_africa --home "Kano Pillars FC" --away "Enyimba FC" --country Nigeria
-  python -m africa.sim_africa --fixtures fixtures.csv --out africa_sim_results.json
+- Strict team identity only (no fuzzy)
+- Dixon–Coles + IPF score grid
+- Output: pure HT and FT score distributions + marginals
+- No lock stories, no narrative noise
 """
 from __future__ import annotations
 
 import argparse
 import json
-import re
 import os
 import pickle
+from datetime import datetime
+from math import exp, factorial
 from pathlib import Path
 from typing import Dict, List, Optional, Tuple
 
@@ -24,7 +24,7 @@ import pandas as pd
 ROOT = Path(__file__).resolve().parents[1]
 MODELS_ROOT = Path(os.environ.get("AFRICA_MODELS", str(ROOT / "football_models" / "africa")))
 PARQUET = Path(os.environ.get("AFRICA_PARQUET", str(ROOT / "master_africa_football.parquet")))
-N_SIM = int(os.environ.get("N_SIMULATIONS", "6000"))
+N_SIM = int(os.environ.get("N_SIMULATIONS", "8000"))
 
 FEATURE_NUM = [
     "Year", "Month", "DayOfWeek", "IsWeekend",
@@ -36,7 +36,6 @@ FEATURE_ID = ["HomeTeamId", "AwayTeamId"]
 
 
 def _resolve_model_path(path_str: str) -> Path:
-    """Resolve registry paths that may be runner-absolute or relative."""
     p = Path(path_str)
     if p.exists():
         return p
@@ -49,55 +48,11 @@ def _resolve_model_path(path_str: str) -> Path:
     cand = MODELS_ROOT / s
     if cand.exists():
         return cand
-    # country_X/models/file
     name = Path(s).name
     hits = list(MODELS_ROOT.rglob(name))
-    if len(hits) == 1:
-        return hits[0]
     if hits:
-        # prefer matching parent folder fragments
-        for h in hits:
-            if any(part in str(h) for part in Path(s).parts[-3:]):
-                return h
         return hits[0]
     return p
-
-
-def _norm_name(s: str) -> str:
-    s = (s or "").lower().strip()
-    s = re.sub(r"[^a-z0-9]+", " ", s)
-    s = re.sub(r"\b(fc|sc|ac|cf|afc|united|city|town|the)\b", " ", s)
-    return re.sub(r"\s+", " ", s).strip()
-
-
-def _resolve_team_name(name: str, hist) -> str:
-    if hist is None or not len(hist) or not name:
-        return name
-    teams = sorted(set(hist["HomeTeam"].astype(str)) | set(hist["AwayTeam"].astype(str)))
-    if name in teams:
-        return name
-    n = _norm_name(name)
-    norms = {_norm_name(t): t for t in teams}
-    if n in norms:
-        return norms[n]
-    n_toks = set(n.split())
-    best, best_score = name, 0.0
-    for t in teams:
-        tn = _norm_name(t)
-        if not tn:
-            continue
-        if n in tn or tn in n:
-            score = min(len(n), len(tn)) / max(len(n), len(tn), 1)
-            if score > best_score:
-                best, best_score = t, score
-            continue
-        t_toks = set(tn.split())
-        if n_toks and t_toks:
-            score = len(n_toks & t_toks) / max(len(n_toks | t_toks), 1)
-            if score > best_score:
-                best, best_score = t, score
-    return best if best_score >= 0.45 else name
-
 
 
 def _load_hist() -> Optional[pd.DataFrame]:
@@ -112,8 +67,17 @@ def _load_hist() -> Optional[pd.DataFrame]:
     return df.sort_values("Date")
 
 
-def _team_form_elo(hist: pd.DataFrame, team: str, as_of=None) -> dict:
-    """Compute form + Elo snapshot for a team name from history."""
+def _strict_resolve(name: str, hist: Optional[pd.DataFrame]) -> str:
+    """Use only the strict team_mapping layer."""
+    from africa.team_mapping import resolve, ensure_ids
+    if hist is not None and len(hist):
+        teams = set(hist["HomeTeam"].astype(str)) | set(hist["AwayTeam"].astype(str))
+        ensure_ids(teams)
+    canon, _ = resolve(name)
+    return canon
+
+
+def _team_form_elo(hist: pd.DataFrame, team: str) -> dict:
     out = {
         "FormPts_5": np.nan, "FormGD_5": np.nan,
         "FormPts_10": np.nan, "FormGD_10": np.nan,
@@ -125,11 +89,11 @@ def _team_form_elo(hist: pd.DataFrame, team: str, as_of=None) -> dict:
     t2 = {t: i for i, t in enumerate(teams)}
     out["TeamId"] = t2.get(team, -1)
 
-    # Elo walk
-    elo = {}
+    elo: Dict[int, float] = {}
     K, HOME_ADV = 20.0, 55.0
     for _, r in hist.iterrows():
-        hid = t2.get(str(r["HomeTeam"])); aid = t2.get(str(r["AwayTeam"]))
+        hid = t2.get(str(r["HomeTeam"]))
+        aid = t2.get(str(r["AwayTeam"]))
         if hid is None or aid is None:
             continue
         rh, ra = elo.get(hid, 1500.0), elo.get(aid, 1500.0)
@@ -163,7 +127,6 @@ def _team_form_elo(hist: pd.DataFrame, team: str, as_of=None) -> dict:
 
 
 def build_feature_row(home: str, away: str, hist: Optional[pd.DataFrame], now=None) -> Tuple[np.ndarray, List[str]]:
-    from datetime import datetime
     now = now or datetime.utcnow()
     hf = _team_form_elo(hist, home) if hist is not None else {"Elo": 1500.0, "TeamId": -1}
     af = _team_form_elo(hist, away) if hist is not None else {"Elo": 1500.0, "TeamId": -1}
@@ -186,8 +149,7 @@ def build_feature_row(home: str, away: str, hist: Optional[pd.DataFrame], now=No
     }
     feats = FEATURE_NUM + FEATURE_ID
     X = np.array([[float(row.get(c) or 0.0) for c in feats]], dtype=np.float64)
-    X = np.nan_to_num(X, nan=0.0)
-    return X, feats
+    return np.nan_to_num(X, nan=0.0), feats
 
 
 def _scale(X: np.ndarray, stats: dict) -> np.ndarray:
@@ -203,14 +165,15 @@ def _predict_paths(paths: dict, X: np.ndarray, target: str) -> Optional[np.ndarr
     if "xgboost" in paths and _resolve_model_path(paths["xgboost"]).exists():
         try:
             import xgboost as xgb
-            m = xgb.Booster(); m.load_model(str(_resolve_model_path(paths["xgboost"])))
+            m = xgb.Booster()
+            m.load_model(str(_resolve_model_path(paths["xgboost"])))
             p = np.asarray(m.predict(xgb.DMatrix(X)))
             if p.ndim == 1:
                 preds.append(np.array([1 - p[0], p[0]]))
             else:
                 preds.append(p[0])
-        except Exception as e:
-            print(f"  [warn] xgb: {e}")
+        except Exception:
+            pass
     if "lightgbm" in paths and _resolve_model_path(paths["lightgbm"]).exists():
         try:
             import lightgbm as lgb
@@ -222,39 +185,39 @@ def _predict_paths(paths: dict, X: np.ndarray, target: str) -> Optional[np.ndarr
                 preds.append(np.array([1 - float(p[0]), float(p[0])]))
             else:
                 preds.append(p)
-
-        except Exception as e:
-            print(f"  [warn] lgbm: {e}")
+        except Exception:
+            pass
     if "catboost" in paths and _resolve_model_path(paths["catboost"]).exists():
         try:
             from catboost import CatBoostClassifier
-            m = CatBoostClassifier(); m.load_model(str(_resolve_model_path(paths["catboost"])))
+            m = CatBoostClassifier()
+            m.load_model(str(_resolve_model_path(paths["catboost"])))
             preds.append(m.predict_proba(X)[0])
-        except Exception as e:
-            print(f"  [warn] cat: {e}")
+        except Exception:
+            pass
     if "random_forest" in paths and _resolve_model_path(paths["random_forest"]).exists():
         try:
             with open(_resolve_model_path(paths["random_forest"]), "rb") as f:
                 m = pickle.load(f)
             preds.append(m.predict_proba(X)[0])
-        except Exception as e:
-            print(f"  [warn] rf: {e}")
+        except Exception:
+            pass
     if not preds:
         return None
     max_len = max(len(p) for p in preds)
     aligned = [np.pad(np.asarray(p, float).ravel(), (0, max(0, max_len - len(p))))[:max_len] for p in preds]
-    # confidence weight
     weights = []
     for v in aligned:
-        v = np.clip(v, 1e-9, 1.0); v = v / v.sum()
+        v = np.clip(v, 1e-9, 1.0)
+        v = v / v.sum()
         ent = float(-(v * np.log(v)).sum())
         weights.append(1.0 / (0.35 + ent))
-    w = np.asarray(weights); w = w / w.sum()
+    w = np.asarray(weights)
+    w = w / w.sum()
     return (w[:, None] * np.vstack(aligned)).sum(axis=0)
 
 
 def load_scope(country: Optional[str] = None):
-    """Prefer country scope, else GLOBAL."""
     if country:
         cdir = MODELS_ROOT / f"country_{country.replace(' ', '_')}"
         if (cdir / "registry.json").exists():
@@ -279,10 +242,8 @@ def simulate_scores(
     lam_h: float | None = None,
     lam_a: float | None = None,
     rho: float = -0.08,
-    odds_ft: tuple | None = None,
-    odds_blend: float = 0.0,
 ) -> dict:
-    """Industrial score engine: Poisson seeds + Dixon–Coles rho + multi-target IPF."""
+    """Precise Dixon–Coles + IPF score engine. Returns clean HT/FT distributions only."""
     if len(ft) >= 3:
         p_h, p_d, p_a = float(ft[0]), float(ft[1]), float(ft[2])
     else:
@@ -290,30 +251,12 @@ def simulate_scores(
     s = max(p_h + p_d + p_a, 1e-12)
     p_h, p_d, p_a = p_h / s, p_d / s, p_a / s
 
-    # Optional market prior blend on FT
-    if odds_ft and odds_blend > 0:
-        oh, od, oa = odds_ft
-        if oh and od and oa and min(oh, od, oa) > 1.01:
-            ih, id_, ia = 1 / oh, 1 / od, 1 / oa
-            z = ih + id_ + ia
-            mh, md, ma = ih / z, id_ / z, ia / z
-            a = float(np.clip(odds_blend, 0, 0.45))
-            p_h = (1 - a) * p_h + a * mh
-            p_d = (1 - a) * p_d + a * md
-            p_a = (1 - a) * p_a + a * ma
-            s = p_h + p_d + p_a
-            p_h, p_d, p_a = p_h / s, p_d / s, p_a / s
-
-    # Expected goals: Elo/form-informed lambdas if provided, else from FT identity
     if lam_h is None:
         lam_h = 0.85 + 1.55 * p_h + 0.35 * p_d
     if lam_a is None:
         lam_a = 0.85 + 1.55 * p_a + 0.35 * p_d
     lam_h = float(np.clip(lam_h, 0.35, 3.8))
     lam_a = float(np.clip(lam_a, 0.35, 3.8))
-
-    # Build Dixon–Coles-adjusted probability grid
-    from math import exp, factorial
 
     def pois(k, lam):
         return exp(-lam) * (lam ** k) / factorial(k)
@@ -343,7 +286,7 @@ def simulate_scores(
         bttsp = sum(g[i, j] for i in range(1, max_goals + 1) for j in range(1, max_goals + 1))
         return ph, pd_, pa, o25p, bttsp
 
-    # IPF toward FT / O25 / BTTS (24 passes)
+    # IPF alignment (FT + O2.5 + BTTS)
     for _ in range(24):
         ph, pd_, pa, o25p, bttsp = margins(grid)
         for i in range(max_goals + 1):
@@ -380,17 +323,17 @@ def simulate_scores(
     idx = rng.choice(flat.size, size=n, p=flat)
     hs = idx // (max_goals + 1)
     aws = idx % (max_goals + 1)
-    ft_sim = {
-        "H": float(np.mean(hs > aws)),
-        "D": float(np.mean(hs == aws)),
-        "A": float(np.mean(hs < aws)),
-    }
-    top = {f"{i}-{j}": float(grid[i, j]) for i in range(max_goals + 1) for j in range(max_goals + 1)}
-    top_sorted = dict(sorted(top.items(), key=lambda kv: -kv[1])[:12])
-    # goal lines
-    tot = hs + aws
-    # Half-time grid (~45% intensity)
-    ht_lh, ht_la = max(0.15, 0.45 * lam_h), max(0.15, 0.45 * lam_a)
+
+    # FT score counts (exact like the historical table the user showed)
+    ft_counts: Dict[str, int] = {}
+    for i, j in zip(hs, aws):
+        k = f"{i}-{j}"
+        ft_counts[k] = ft_counts.get(k, 0) + 1
+    ft_top = dict(sorted(ft_counts.items(), key=lambda kv: -kv[1])[:15])
+
+    # HT grid (~45 % intensity, consistent with FT)
+    ht_lh = max(0.15, 0.45 * lam_h)
+    ht_la = max(0.15, 0.45 * lam_a)
     ht_grid = np.zeros((5, 5), dtype=float)
     for i in range(5):
         for j in range(5):
@@ -399,50 +342,44 @@ def simulate_scores(
     ht_idx = rng.choice(25, size=n, p=ht_grid.ravel())
     hth = np.minimum(ht_idx // 5, hs)
     hta = np.minimum(ht_idx % 5, aws)
-    ht_top = dict(sorted(
-        {f"{i}-{j}": float(ht_grid[i, j]) for i in range(5) for j in range(5)}.items(),
-        key=lambda kv: -kv[1]
-    )[:10])
+
+    ht_counts: Dict[str, int] = {}
+    for i, j in zip(hth, hta):
+        k = f"{i}-{j}"
+        ht_counts[k] = ht_counts.get(k, 0) + 1
+    ht_top = dict(sorted(ht_counts.items(), key=lambda kv: -kv[1])[:12])
+
+    tot = hs + aws
     return {
-        "ft_sim": ft_sim,
-        "ht_sim": {
+        "ft_score_counts": ft_top,
+        "ht_score_counts": ht_top,
+        "ft_1x2": {
+            "H": float(np.mean(hs > aws)),
+            "D": float(np.mean(hs == aws)),
+            "A": float(np.mean(hs < aws)),
+        },
+        "ht_1x2": {
             "H": float(np.mean(hth > hta)),
             "D": float(np.mean(hth == hta)),
             "A": float(np.mean(hth < hta)),
         },
-        "over25_sim": float(np.mean(tot >= 3)),
-        "btts_sim": float(np.mean((hs > 0) & (aws > 0))),
+        "over25": float(np.mean(tot >= 3)),
+        "btts": float(np.mean((hs > 0) & (aws > 0))),
         "xg": {
-            "home": float(hs.mean()),
-            "away": float(aws.mean()),
-            "total": float(tot.mean()),
-            "lambda_home": lam_h,
-            "lambda_away": lam_a,
+            "home": round(float(hs.mean()), 3),
+            "away": round(float(aws.mean()), 3),
+            "total": round(float(tot.mean()), 3),
+            "lambda_home": round(lam_h, 3),
+            "lambda_away": round(lam_a, 3),
         },
-        "score_matrix_top": top_sorted,
-        "score_matrix_top_ht": ht_top,
-        "cs_home": float(np.mean(aws == 0)),
-        "cs_away": float(np.mean(hs == 0)),
-        "goal_line_sim": {
-            "1.5": float(np.mean(tot >= 2)),
-            "2.5": float(np.mean(tot >= 3)),
-            "3.5": float(np.mean(tot >= 4)),
-        },
-        "rho": rho,
+        "n_sim": n,
     }
-
 
 
 def simulate_match(
     home: str,
     away: str,
     country: Optional[str] = None,
-    *,
-    odds_h: float | None = None,
-    odds_d: float | None = None,
-    odds_a: float | None = None,
-    odds_blend: float | None = None,
-    standings_prior: dict | None = None,
 ) -> dict:
     hist = _load_hist()
     hist_c = hist
@@ -451,7 +388,7 @@ def simulate_match(
         if len(sub) >= 40:
             hist_c = sub
 
-    # League priors from history (industrial base rates)
+    # League priors
     prior_ft = np.array([0.42, 0.28, 0.30])
     prior_o25, prior_btts = 0.45, 0.48
     if hist_c is not None and len(hist_c) >= 30:
@@ -463,141 +400,73 @@ def simulate_match(
         ])
         if prior_ft.sum() > 0:
             prior_ft = prior_ft / prior_ft.sum()
-        if "Over2_5" in hist_c.columns:
-            prior_o25 = float(pd.to_numeric(hist_c["Over2_5"], errors="coerce").mean() or prior_o25)
-        else:
-            prior_o25 = float(((hist_c["FTHG"] + hist_c["FTAG"]) > 2.5).mean())
-        if "BTTS" in hist_c.columns:
-            prior_btts = float(pd.to_numeric(hist_c["BTTS"], errors="coerce").mean() or prior_btts)
-        else:
-            prior_btts = float(((hist_c["FTHG"] > 0) & (hist_c["FTAG"] > 0)).mean())
+        prior_o25 = float(((hist_c["FTHG"] + hist_c["FTAG"]) > 2.5).mean())
+        prior_btts = float(((hist_c["FTHG"] > 0) & (hist_c["FTAG"] > 0)).mean())
 
-    home = _resolve_team_name(home, hist_c)
-    away = _resolve_team_name(away, hist_c)
+    home = _strict_resolve(home, hist_c)
+    away = _strict_resolve(away, hist_c)
     X, feats = build_feature_row(home, away, hist_c)
-    # Elo-based lambdas from feature row
+
+    # Elo → lambda
     try:
         elo_h = float(X[0, feats.index("EloHome")])
         elo_a = float(X[0, feats.index("EloAway")])
+        diff = elo_h - elo_a
+        lam_h = 1.25 + 0.55 * (1 / (1 + 10 ** (-diff / 400)))
+        lam_a = 1.05 + 0.55 * (1 / (1 + 10 ** (diff / 400)))
     except Exception:
-        elo_h, elo_a = 1500.0, 1500.0
-    # convert Elo gap to expected goals (home advantage ~0.25)
-    gap = (elo_h - elo_a) / 400.0
-    base = 1.15
-    lam_h = base * (1.08 ** gap) * 1.12  # home bump
-    lam_a = base * (1.08 ** (-gap)) * 0.95
+        lam_h = lam_a = None
 
-    # Live league table prior (API-Football standings)
-    _sp = standings_prior or {}
-    if _sp.get("matched"):
+    scope_dir, reg, stats = load_scope(country)
+    ft_pred = prior_ft.copy()
+    o25_pred = prior_o25
+    btts_pred = prior_btts
+
+    if reg and stats:
         try:
-            from standings_prior import apply_ft_tilt, apply_scalar_tilt
-            lam_h *= float(_sp.get("lambda_mult_home") or 1.0)
-            lam_a *= float(_sp.get("lambda_mult_away") or 1.0)
+            Xs = _scale(X, stats)
+            if "ft_result" in reg.get("targets", {}):
+                p = _predict_paths(reg["targets"]["ft_result"], Xs, "ft_result")
+                if p is not None and len(p) >= 3:
+                    ft_pred = p[:3] / p[:3].sum()
+            if "over25" in reg.get("targets", {}):
+                p = _predict_paths(reg["targets"]["over25"], Xs, "over25")
+                if p is not None:
+                    o25_pred = float(p[-1] if len(p) > 1 else p[0])
+            if "btts" in reg.get("targets", {}):
+                p = _predict_paths(reg["targets"]["btts"], Xs, "btts")
+                if p is not None:
+                    btts_pred = float(p[-1] if len(p) > 1 else p[0])
         except Exception:
             pass
 
-    scope_dir, reg, stats = load_scope(country)
-    engines = []
-    ft = prior_ft.copy()
-    o25 = prior_o25
-    btts = prior_btts
-    if reg and stats:
-        Xs = _scale(X, stats)
-        targets = reg.get("targets", {})
-        p_ft = _predict_paths(targets.get("ft_result", {}), Xs, "ft_result")
-        p_o = _predict_paths(targets.get("over25", {}), Xs, "over25")
-        p_b = _predict_paths(targets.get("btts", {}), Xs, "btts")
-        # Shrink model toward league prior (stabilizes thin Africa samples)
-        shrink = float(os.environ.get("AFRICA_PRIOR_SHRINK", "0.25"))
-        if p_ft is not None and len(p_ft) >= 3:
-            p_ft = np.asarray(p_ft[:3], float)
-            p_ft = p_ft / p_ft.sum()
-            ft = (1 - shrink) * p_ft + shrink * prior_ft
-            ft = ft / ft.sum()
-            engines.append("ft_result")
-        if p_o is not None:
-            o25 = float(p_o[-1] if len(p_o) > 1 else p_o[0])
-            o25 = (1 - shrink) * o25 + shrink * prior_o25
-            engines.append("over25")
-        if p_b is not None:
-            btts = float(p_b[-1] if len(p_b) > 1 else p_b[0])
-            btts = (1 - shrink) * btts + shrink * prior_btts
-            engines.append("btts")
-    if not engines:
-        engines.append("league-prior+elo")
+    sim = simulate_scores(ft_pred, o25_pred, btts_pred, lam_h=lam_h, lam_a=lam_a)
 
-    if _sp.get("matched"):
-        try:
-            from standings_prior import apply_ft_tilt, apply_scalar_tilt
-            ft = apply_ft_tilt(ft, _sp.get("ft_tilt") or {})
-            if not isinstance(ft, np.ndarray):
-                ft = np.array([ft["H"], ft["D"], ft["A"]], float)
-            o25 = apply_scalar_tilt(o25, float(_sp.get("over25_tilt") or 0.0))
-            btts = apply_scalar_tilt(btts, float(_sp.get("btts_tilt") or 0.0))
-            engines.append("live-standings")
-        except Exception as e:
-            engines.append(f"standings-skip:{e}")
-
-    blend = odds_blend if odds_blend is not None else float(os.environ.get("ODDS_BLEND", "0.20"))
-    odds_tuple = None
-    if odds_h and odds_d and odds_a:
-        odds_tuple = (float(odds_h), float(odds_d), float(odds_a))
-        engines.append("odds-blend")
-
-    sim = simulate_scores(
-        ft, o25, btts, n=N_SIM,
-        lam_h=lam_h, lam_a=lam_a, rho=-0.10,
-        odds_ft=odds_tuple, odds_blend=blend if odds_tuple else 0.0,
-    )
     return {
         "home": home,
         "away": away,
-        "country": country,
-        "engines": engines,
-        "standings_prior": {
-            "matched": bool(_sp.get("matched")),
-            "signal": _sp.get("signal") or {},
-            "home_row": _sp.get("home_row"),
-            "away_row": _sp.get("away_row"),
-        } if _sp else None,
-        "model": {
-            "ft": {"H": float(ft[0]), "D": float(ft[1]), "A": float(ft[2])},
-            "over25": float(o25),
-            "btts": float(btts),
-            "prior_ft": {"H": float(prior_ft[0]), "D": float(prior_ft[1]), "A": float(prior_ft[2])},
-            "lambda_seed": {"home": lam_h, "away": lam_a},
-        },
-        "odds": {"H": odds_h, "D": odds_d, "A": odds_a} if odds_tuple else None,
-        "sim": sim,
-        "scope": str(scope_dir) if scope_dir else None,
+        "country": country or "",
+        "ft_score_counts": sim["ft_score_counts"],
+        "ht_score_counts": sim["ht_score_counts"],
+        "ft_1x2": {k: round(v, 4) for k, v in sim["ft_1x2"].items()},
+        "ht_1x2": {k: round(v, 4) for k, v in sim["ht_1x2"].items()},
+        "over25": round(sim["over25"], 4),
+        "btts": round(sim["btts"], 4),
+        "xg": sim["xg"],
+        "n_sim": sim["n_sim"],
     }
 
 
-
-def main():
+def main() -> None:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--home", type=str)
-    ap.add_argument("--away", type=str)
-    ap.add_argument("--country", type=str, default=None)
-    ap.add_argument("--fixtures", type=Path, default=None, help="CSV with home,away[,country]")
+    ap.add_argument("--home", required=True)
+    ap.add_argument("--away", required=True)
+    ap.add_argument("--country", default=None)
     ap.add_argument("--out", type=Path, default=None)
     args = ap.parse_args()
 
-    results = []
-    if args.fixtures and args.fixtures.exists():
-        fx = pd.read_csv(args.fixtures)
-        for _, r in fx.iterrows():
-            results.append(simulate_match(
-                str(r["home"]), str(r["away"]),
-                str(r["country"]) if "country" in r and pd.notna(r["country"]) else args.country,
-            ))
-    elif args.home and args.away:
-        results.append(simulate_match(args.home, args.away, args.country))
-    else:
-        raise SystemExit("Provide --home/--away or --fixtures")
-
-    text = json.dumps(results if len(results) > 1 else results[0], indent=2)
+    result = simulate_match(args.home, args.away, args.country)
+    text = json.dumps(result, indent=2, ensure_ascii=False)
     print(text)
     if args.out:
         args.out.write_text(text, encoding="utf-8")
@@ -605,165 +474,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
-def to_simlab_document(rep: dict, fx: dict | None = None, n_sim: int = N_SIM) -> dict:
-    """Flatten Africa sim output into EU Sim Lab report schema (admin openSimDetail)."""
-    fx = fx or {}
-    model = rep.get("model") or {}
-    sim = rep.get("sim") or {}
-    ft_m = model.get("ft") or {}
-    ft_s = sim.get("ft_sim") or ft_m
-    o25_m = float(model.get("over25", 0.5))
-    o25_s = float(sim.get("over25_sim", o25_m))
-    btts_m = float(model.get("btts", 0.5))
-    btts_s = float(sim.get("btts_sim", btts_m))
-    xg = sim.get("xg") or {"home": 0.0, "away": 0.0, "total": 0.0}
-    ph, pd_, pa = float(ft_s.get("H", 0)), float(ft_s.get("D", 0)), float(ft_s.get("A", 0))
-    top_map = sim.get("score_matrix_top") or {}
-    top_ft = []
-    for score, pct in top_map.items():
-        # pct is probability 0-1 → approximate count
-        top_ft.append([score, int(round(float(pct) * n_sim))])
-    top_ft = sorted(top_ft, key=lambda x: -x[1])[:12]
-
-    def pct100(x):
-        return round(100.0 * float(x), 1)
-
-    def verdict(model_p, sim_p, thresh=55.0):
-        mp, sp = pct100(model_p), pct100(sim_p)
-        edge = round(sp - mp, 1)
-        yes = sp >= thresh and mp >= (thresh - 5)
-        return mp, sp, edge, "YES" if yes else ("LEAN" if sp >= 50 else "—")
-
-    table = []
-    for section, selection, mp, sp in [
-        ("FT", "Home", ft_m.get("H", ph), ph),
-        ("FT", "Draw", ft_m.get("D", pd_), pd_),
-        ("FT", "Away", ft_m.get("A", pa), pa),
-        ("O/U", "Over 2.5", o25_m, o25_s),
-        ("O/U", "Under 2.5", 1 - o25_m, 1 - o25_s),
-        ("BTTS", "Yes", btts_m, btts_s),
-        ("BTTS", "No", 1 - btts_m, 1 - btts_s),
-        ("DC", "1X", float(ft_m.get("H", 0)) + float(ft_m.get("D", 0)), ph + pd_),
-        ("DC", "X2", float(ft_m.get("A", 0)) + float(ft_m.get("D", 0)), pa + pd_),
-        ("DC", "12", float(ft_m.get("H", 0)) + float(ft_m.get("A", 0)), ph + pa),
-    ]:
-        mp100, sp100, edge, verd = verdict(mp, sp, 55.0 if section != "FT" or selection != "Draw" else 40.0)
-        table.append({
-            "Section": section,
-            "Selection": selection,
-            "Model%": mp100,
-            "Sim%": sp100,
-            "Agree": "Y" if abs(edge) < 5 else "N",
-            "Edge": edge,
-            "Verdict": verd,
-        })
-
-    cs_h = float(sim.get("cs_home") or 0)
-    cs_a = float(sim.get("cs_away") or 0)
-    report = {
-        "ft_model": {"H": float(ft_m.get("H", 0)), "D": float(ft_m.get("D", 0)), "A": float(ft_m.get("A", 0))},
-        "ft_sim": {"H": ph, "D": pd_, "A": pa},
-        "ht_model": sim.get("ht_sim") or {"H": None, "D": None, "A": None},
-        "ht_sim": sim.get("ht_sim") or {"H": None, "D": None, "A": None},
-        "over25_model": o25_m,
-        "over25_sim": o25_s,
-        "btts_model": btts_m,
-        "btts_sim": btts_s,
-        "xg": {"home": float(xg.get("home", 0)), "away": float(xg.get("away", 0)), "total": float(xg.get("total", 0))},
-        "dc_ft": {"1X": ph + pd_, "X2": pa + pd_, "12": ph + pa},
-        "dc_ht": {},
-        "top_ft": top_ft,
-        "top_ht": [
-            [s, int(round(float(p) * n_sim))]
-            for s, p in list((sim.get("score_matrix_top_ht") or {}).items())[:10]
-        ],
-        "top3_ft": [{"score": s, "count": c, "pct": round(100 * c / max(n_sim, 1), 1)} for s, c in top_ft[:3]],
-        "clean_sheet": {"home": cs_h, "away": cs_a},
-        "win_to_nil": {"home": ph * cs_h, "away": pa * cs_a},
-        "goal_lines": {
-            "1.5": {"over": float((sim.get("goal_line_sim") or {}).get("1.5", min(0.95, o25_s + 0.22))),
-                    "under": 1 - float((sim.get("goal_line_sim") or {}).get("1.5", min(0.95, o25_s + 0.22)))},
-            "2.5": {"over": float((sim.get("goal_line_sim") or {}).get("2.5", o25_s)),
-                    "under": 1 - float((sim.get("goal_line_sim") or {}).get("2.5", o25_s))},
-            "3.5": {"over": float((sim.get("goal_line_sim") or {}).get("3.5", max(0.05, o25_s - 0.18))),
-                    "under": 1 - float((sim.get("goal_line_sim") or {}).get("3.5", max(0.05, o25_s - 0.18)))},
-        },
-        "score_consistency": {"ft_vs_model_l1": round(
-            abs(ph - float(ft_m.get("H", ph))) + abs(pd_ - float(ft_m.get("D", pd_))) + abs(pa - float(ft_m.get("A", pa))),
-            4,
-        )},
-        "region": "Africa",
-        "engines": rep.get("engines") or [],
-    }
-
-    home = (fx.get("home") or rep.get("home") or "").strip()
-    away = (fx.get("away") or rep.get("away") or "").strip()
-    kickoff = (fx.get("date") or fx.get("kickoff") or "")[:16].replace("T", " ")
-    league = fx.get("league") or ""
-    country = fx.get("country") or rep.get("country") or ""
-    league_label = f"{country} — {league}" if country and league else (league or country or "Africa")
-
-    # Honest lock: only when a market clears a real threshold (no forced FT Home)
-    candidates = []
-    # FT 1X2 — need clear favorite
-    for label, key, val in [("Home", "H", ph), ("Draw", "D", pd_), ("Away", "A", pa)]:
-        candidates.append(("FT", label, float(ft_m.get(key, val)), float(val), 0.48 if label != "Draw" else 0.36))
-    candidates.append(("O/U", "Over 2.5", o25_m, o25_s, 0.55))
-    candidates.append(("O/U", "Under 2.5", 1 - o25_m, 1 - o25_s, 0.55))
-    candidates.append(("BTTS", "Yes", btts_m, btts_s, 0.55))
-    candidates.append(("BTTS", "No", 1 - btts_m, 1 - btts_s, 0.55))
-    gl = sim.get("goal_line_sim") or {}
-    if gl.get("1.5") is not None:
-        candidates.append(("O/U", "Over 1.5", float(gl["1.5"]), float(gl["1.5"]), 0.62))
-        candidates.append(("O/U", "Under 1.5", 1 - float(gl["1.5"]), 1 - float(gl["1.5"]), 0.55))
-
-    locked = {
-        "status": "NO LOCK",
-        "section": "—",
-        "selection": "—",
-        "model": None,
-        "sim": None,
-        "verdict": "—",
-    }
-    ranked = []
-    for sec, sel, mp, sp, thr in candidates:
-        if sp >= thr and mp >= (thr - 0.08):
-            edge = sp - mp
-            ranked.append((sp, edge, sec, sel, mp))
-    if ranked:
-        ranked.sort(key=lambda x: (x[0], x[1]), reverse=True)
-        sp, edge, sec, sel, mp = ranked[0]
-        verdict = "HARD YES" if sp >= 0.62 else ("YES" if sp >= 0.55 else "LEAN")
-        locked = {
-            "status": "SECURED LOCK" if verdict in ("HARD YES", "YES") else ("STRONG LEAN" if verdict == "LEAN" else "NO LOCK"),
-            "section": sec,
-            "selection": sel,
-            "model": pct100(mp),
-            "sim": pct100(sp),
-            "verdict": verdict,
-        }
-
-    return {
-        "id": None,  # filled by caller
-        "region": "Africa",
-        "match": {
-            "home": home,
-            "away": away,
-            "kickoff": kickoff,
-            "league": league_label,
-            "odds": (
-                f"{rep.get('odds',{}).get('H')}/{rep.get('odds',{}).get('D')}/{rep.get('odds',{}).get('A')}"
-                if rep.get("odds") else "—"
-            ),
-            "odds_h": (rep.get("odds") or {}).get("H"),
-            "odds_d": (rep.get("odds") or {}).get("D"),
-            "odds_a": (rep.get("odds") or {}).get("A"),
-            "country": country,
-        },
-        "resolved": {"models": ",".join(rep.get("engines") or []) or "africa"},
-        "locked_tip": locked,
-        "report": report,
-        "table": table,
-    }
