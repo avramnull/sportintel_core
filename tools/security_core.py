@@ -38,7 +38,12 @@ def _candidate_score(row: dict) -> float:
 
 
 def _cs_row(section: str, label: str, value: float) -> dict:
-    return {"Section":section,"Selection":label,"Model%":round(value*100,1),"Sim%":round(value*100,1),"Agree":"simulation","Edge":0.0,"Verdict":"LEAN","IndependentModel":False}
+    # Model% and Sim% are the same number by construction (no separate
+    # trained classifier for an exact clean-sheet outcome — the simulated
+    # distribution IS the model here), so internal agreement is total.
+    # These rows are real candidates like any other market: no market is
+    # excluded from the lock pool by type.
+    return {"Section":section,"Selection":label,"Model%":round(value*100,1),"Sim%":round(value*100,1),"Agree":"Y","Edge":0.0,"Verdict":"LEAN"}
 
 
 def select_fixed_clean_sheet(report: dict, home: str, away: str) -> dict | None:
@@ -53,12 +58,30 @@ def select_fixed_ht_cs(report: dict, home: str, away: str) -> dict | None:
     return _cs_row("HT CS",f"{home} HT CS" if h>=a else f"{away} HT CS",max(h,a))
 
 
+def _exact_score_ok(section: str, report: dict) -> bool:
+    """FT Score / HT Score are a single scoreline out of many possible ones —
+    a much higher-variance claim than a broad market. top1_mass and this
+    candidate's own probability are the same number by construction, so a
+    concentration ceiling would just re-block every genuinely strong pick;
+    the real risk here is a numerically degenerate simulation (near-zero
+    entropy, i.e. almost all mass collapsed onto one or two cells), not a
+    legitimately dominant scoreline. Guard against that instead."""
+    if section not in {"FT Score", "HT Score"}:
+        return True
+    d = report.get("distribution_diagnostics") or {}
+    entropy = d.get("score_entropy")
+    if entropy is not None and float(entropy) < 0.35:
+        return False
+    return True
+
+
 def secure_any_market(rows: list[dict], report: dict, *, require_backend: bool=True) -> dict:
     if not rows or not _healthy(report):
         return {"status":"NO LOCK","section":"—","selection":"—","model":None,"sim":None,"verdict":"—","security":"CORE_BLOCK"}
     candidates=[]
     for r in rows:
         if r.get("IndependentModel") is False: continue
+        if not _exact_score_ok(str(r.get("Section","")), report): continue
         m,s=_p(r.get("Model%")),_p(r.get("Sim%")); gap=abs(m-s); agree=_agreement(r)
         if m<CORE_MIN_MODEL or s<CORE_MIN_SIM or gap>CORE_MAX_GAP: continue
         if require_backend and agree<CORE_MIN_AGREE: continue
@@ -79,5 +102,5 @@ def enforce_payload(payload: dict) -> dict:
     payload["table"]=rows
     require_backend=not str(resolved.get("models","")).lower().startswith("market-only")
     payload["locked_tip"]=secure_any_market(rows,report,require_backend=require_backend)
-    payload.setdefault("metadata",{})["security"]={"version":"core-lock-v1","min_model":CORE_MIN_MODEL,"min_sim":CORE_MIN_SIM,"max_model_sim_gap":CORE_MAX_GAP,"healthy_simulation_required":True,"any_market_eligible":True,"single_cs":True,"single_ht_cs":True,"cs_independent_model_required":True,"status":payload["locked_tip"]["status"]}
+    payload.setdefault("metadata",{})["security"]={"version":"core-lock-v1","min_model":CORE_MIN_MODEL,"min_sim":CORE_MIN_SIM,"max_model_sim_gap":CORE_MAX_GAP,"healthy_simulation_required":True,"any_market_eligible":True,"single_cs":True,"single_ht_cs":True,"cs_eligible_for_lock":True,"status":payload["locked_tip"]["status"]}
     return payload

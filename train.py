@@ -1110,8 +1110,14 @@ def main():
                 shutil.rmtree(preproc_dir)
             models_dir.mkdir(parents=True, exist_ok=True)
             preproc_dir.mkdir(parents=True, exist_ok=True)
-            split = int(len(run_df) * (1 - CONFIG["val_fraction"]))
-            split = max(30, min(split, len(run_df) - 20))
+            requested_val = int(len(run_df) * CONFIG["val_fraction"])
+            min_val = 25
+            val_size = max(min_val, requested_val)
+            split = len(run_df) - val_size
+            if split < 30:
+                log(f"    SKIP GLOBAL (insufficient rows for train/validation split: {len(run_df)})")
+                registry["runs"]["global"] = {"team": None, "skipped": True, "n": len(run_df), "reason": "insufficient_train_validation_rows"}
+                continue
             train_df, val_df = run_df.iloc[:split], run_df.iloc[split:]
             log(f"--- GLOBAL  matches={len(run_df)} train={len(train_df)} val={len(val_df)}")
             run_targets = {}

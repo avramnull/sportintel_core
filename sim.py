@@ -946,14 +946,29 @@ def build_table_rows(report, backends_map, home, away):
         ov = float(cell.get("over", 0.0))
         add("FT O/U+", line, ov, ov, b_o25, 0.55)
     cs = report.get("clean_sheet") or {}
-    add("CS", f"{home} CS", float(cs.get("home", 0.0)), float(cs.get("home", 0.0)), b_ft, 0.40)
-    add("CS", f"{away} CS", float(cs.get("away", 0.0)), float(cs.get("away", 0.0)), b_ft, 0.40)
+    add("Clean Sheet", f"{home} CS", float(cs.get("home", 0.0)), float(cs.get("home", 0.0)), b_ft, 0.40)
+    add("Clean Sheet", f"{away} CS", float(cs.get("away", 0.0)), float(cs.get("away", 0.0)), b_ft, 0.40)
     wtn = report.get("win_to_nil") or {}
     add("WTN", f"{home} WTN", float(wtn.get("home", 0.0)), float(wtn.get("home", 0.0)), b_ft, 0.35)
     add("WTN", f"{away} WTN", float(wtn.get("away", 0.0)), float(wtn.get("away", 0.0)), b_ft, 0.35)
 
-    # Correct scores are shown in the distribution panel only — do not spam
-    # the markets table with NO verdicts on low-probability scorelines.
+    # Correct score: the single most likely scoreline per half is a real,
+    # independently-evaluated candidate like any other market — no market
+    # is excluded from the lock pool by type. Because there is no separate
+    # trained classifier for an exact scoreline (unlike ft_result/over25/
+    # btts), Model% and Sim% both come from the same simulated distribution;
+    # tools/security_core.py applies an extra low-entropy guard specifically
+    # for these two sections, since a single scoreline is a much higher-
+    # variance claim than a broad market and deserves protection against a
+    # numerically degenerate simulation, not against a genuinely dominant one.
+    t3_ft = report.get("top3_ft") or []
+    if t3_ft:
+        top_ft = t3_ft[0]
+        add("FT Score", top_ft["score"], top_ft["pct"] / 100.0, top_ft["pct"] / 100.0, b_ft, 0.52)
+    t3_ht = report.get("top3_ht") or []
+    if t3_ht:
+        top_ht = t3_ht[0]
+        add("HT Score", top_ht["score"], top_ht["pct"] / 100.0, top_ht["pct"] / 100.0, b_ht, 0.52)
 
     return rows
 
