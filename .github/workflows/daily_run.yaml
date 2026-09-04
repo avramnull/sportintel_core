@@ -172,21 +172,22 @@ jobs:
           if git diff --cached --quiet; then echo "No generated/source changes to commit"; exit 0; fi
           git commit -m "Daily pipeline: fixture-team training and Live-score provider [skip ci]"
 
-          # Git LFS can re-materialize a tracked file after commit. Normalize
-          # the worktree before fetch/rebase so rebase never sees stray
-          # unstaged changes and aborts the publish step.
-          git reset --hard HEAD
+          # IMPORTANT: do not run `git lfs checkout` here. It materializes
+          # every cached LFS object (4+ GB in this repository) and can make
+          # tracked LFS paths appear modified, which blocks rebase.
+          # Reset only the Git index/worktree and leave LFS payloads alone.
+          git -c filter.lfs.smudge= -c filter.lfs.required=false reset --hard HEAD
           git clean -fd || true
-          git lfs checkout || true
+          git status --short
+          test -z "$(git status --porcelain)"
           git fetch --depth=1 origin main
           git rebase origin/main
 
           for attempt in 1 2 3; do
             if git push origin HEAD:main; then echo "Push succeeded on attempt ${attempt}"; exit 0; fi
             git fetch --depth=1 origin main
-            git reset --hard HEAD
+            git -c filter.lfs.smudge= -c filter.lfs.required=false reset --hard HEAD
             git clean -fd || true
-            git lfs checkout || true
             if ! git rebase origin/main; then git rebase --abort || true; fi
             sleep 3
           done
