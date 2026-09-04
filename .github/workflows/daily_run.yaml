@@ -11,6 +11,7 @@ on:
       - ".github/workflows/daily_run.yaml"
       - "requirements.txt"
       - "industrial_sim_engine.py"
+      - "precision_sim_engine.py"
       - "hard_simulation.py"
       - "run_fixture_sims.py"
       - "sim.py"
@@ -96,20 +97,43 @@ jobs:
         run: |
           set -euo pipefail
           python tools/normalize_daily_runtime.py
-          python -m py_compile train.py africa/live_score_api_fixtures.py africa/fetch_today_fixtures.py africa/train_africa_teams.py africa/runtime_hardening.py africa/repair_model_metadata.py
+          python -m py_compile precision_sim_engine.py industrial_sim_engine.py hard_simulation.py run_fixture_sims.py sim.py train.py africa/live_score_api_fixtures.py africa/fetch_today_fixtures.py africa/train_africa_teams.py africa/runtime_hardening.py africa/precision_runtime.py africa/repair_model_metadata.py
 
-      - name: Industrial engine smoke test
+      - name: Precision engine smoke test
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from precision_sim_engine import simulate_precision
+          r1 = simulate_precision([.34,.33,.33],[.30,.40,.30],.50,.50,.30,12000,42)
+          r2 = simulate_precision([.34,.33,.33],[.30,.40,.30],.50,.50,.30,12000,999)
+          assert r1["engine"]["version"] == "precision-v5"
+          assert r1["engine"]["probability_mode"] == "exact_distribution_no_monte_carlo_noise"
+          assert r1["ft_sim"] == r2["ft_sim"]
+          assert r1["ht_sim"] == r2["ht_sim"]
+          assert abs(sum(r1["ft_sim"].values()) - 1.0) < 1e-10
+          assert abs(sum(r1["ht_sim"].values()) - 1.0) < 1e-10
+          assert r1["score_consistency"]["ht_leq_ft"] == 1.0
+          assert r1["score_consistency"]["ft_vs_model_l1"] < 0.12
+          assert r1["score_consistency"]["over25_abs_error"] < 0.08
+          assert r1["score_consistency"]["btts_abs_error"] < 0.08
+          assert r1["score_consistency"]["truncation_mass"] < 0.01
+          assert 0.0 < r1["clean_sheet"]["home"] < 1.0
+          assert 0.0 < r1["clean_sheet"]["away"] < 1.0
+          print("precision-v5 smoke: OK")
+          PY
+
+      - name: Industrial compatibility smoke test
         shell: bash
         run: |
           set -euo pipefail
           python - <<'PY'
           from industrial_sim_engine import simulate_industrial
           r = simulate_industrial([.34,.33,.33],[.30,.40,.30],.50,.50,.30,12000,42)
-          assert r["engine"]["version"] == "industrial-v4"
+          assert r["engine"]["version"] == "precision-v5"
           assert r["score_consistency"]["ht_leq_ft"] == 1.0
-          assert abs(sum(r["ft_sim"].values()) - 1.0) < 1e-6
-          assert 0.0 < r["distribution_diagnostics"]["top1_mass"] < 0.22
-          print("industrial-v4 smoke: OK")
+          assert abs(sum(r["ft_sim"].values()) - 1.0) < 1e-10
+          print("industrial compatibility smoke: OK")
           PY
 
       - name: Health check
@@ -168,14 +192,13 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git lfs install
-          git add -A daily_football_data/ master_football_data.parquet football_models/ .gitattributes industrial_sim_engine.py hard_simulation.py train.py sim.py run_fixture_sims.py africa/ si_config.py local_standings.py standings_prior.py tools/ || true
+          git add -A daily_football_data/ master_football_data.parquet football_models/ .gitattributes industrial_sim_engine.py precision_sim_engine.py hard_simulation.py train.py sim.py run_fixture_sims.py africa/ si_config.py local_standings.py standings_prior.py tools/ || true
           if git diff --cached --quiet; then echo "No generated/source changes to commit"; exit 0; fi
           git commit -m "Daily pipeline: fixture-team training and Live-score provider [skip ci]"
 
-          # IMPORTANT: do not run `git lfs checkout` here. It materializes
-          # every cached LFS object (4+ GB in this repository) and can make
-          # tracked LFS paths appear modified, which blocks rebase.
-          # Reset only the Git index/worktree and leave LFS payloads alone.
+          # Never materialize the repository-wide LFS cache here. This repo has
+          # thousands of LFS objects; broad checkout can dirty tracked paths and
+          # make rebase fail after the commit is already clean.
           git -c filter.lfs.smudge= -c filter.lfs.required=false reset --hard HEAD
           git clean -fd || true
           git status --short
