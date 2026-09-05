@@ -879,8 +879,16 @@ def train_one_target(train_df, val_df, target_key, models_dir, preproc_dir):
     Xtr_s, Xva_s = Xtr.copy(), Xva.copy()
     Xtr_s[:, :-3] = scaler.fit_transform(Xtr[:, :-3])
     Xva_s[:, :-3] = scaler.transform(Xva[:, :-3])
-    Xtr_s = np.nan_to_num(Xtr_s, nan=0.0)
-    Xva_s = np.nan_to_num(Xva_s, nan=0.0)
+        try:
+        stds = np.nanstd(Xtr, axis=0)
+        n_const = int(np.sum(~np.isfinite(stds) | (stds < 1e-12)))
+        n_nan = int(np.isnan(Xtr).sum())
+        if n_const > 0 or n_nan > 0:
+            log(f"    [debug] {target_key} data: constant_cols={n_const} total_nans={n_nan}")
+    except Exception:
+        pass
+    Xtr_s = np.nan_to_num(Xtr_s, nan=0.0, posinf=0.0, neginf=0.0)
+    Xva_s = np.nan_to_num(Xva_s, nan=0.0, posinf=0.0, neginf=0.0)
 
     preproc_dir.mkdir(parents=True, exist_ok=True)
     models_dir.mkdir(parents=True, exist_ok=True)
@@ -907,9 +915,11 @@ def train_one_target(train_df, val_df, target_key, models_dir, preproc_dir):
         if not CONFIG.get(flag):
             continue
         try:
+            log(f"      starting {name} for {target_key} ...")
             p = models_dir / fname
             fn(p)
             saved[name] = str(p)
+            log(f"      finished {name} for {target_key}")
         except Exception as e:
             log(f"      {name.upper()} FAILED: {e}")
             traceback.print_exc()
@@ -1174,7 +1184,7 @@ def main():
     else:
         from concurrent.futures import ProcessPoolExecutor, as_completed
         # Cap workers to avoid RAM blow-up on Actions
-        w = min(workers, len(team_jobs), 4)
+        w = min(workers, len(team_jobs), 2)
         log(f"Training {len(team_jobs)} teams in parallel workers={w}")
         # Limit BLAS/OMP threads inside each worker
         os.environ.setdefault("OMP_NUM_THREADS", "1")
