@@ -159,7 +159,7 @@ def _scale_fit(X):
     return mu, sd
 
 
-def _train_one(Xtr, ytr, Xva, yva, task, classes, out: Path):
+def _train_one(Xtr, ytr, Xva, yva, task, classes, out: Path, target: str):
     saved = {}
     try:
         import xgboost as xgb
@@ -170,8 +170,8 @@ def _train_one(Xtr, ytr, Xva, yva, task, classes, out: Path):
         else: params.update(objective="binary:logistic", eval_metric="logloss")
         m = xgb.train(params, xgb.DMatrix(Xtr, label=ytr), num_boost_round=CONFIG["max_boost_rounds"],
                       evals=[(xgb.DMatrix(Xva, label=yva), "val")], early_stopping_rounds=60, verbose_eval=False)
-        p = out / ("xgb_" + task + ".json"); m.save_model(str(p)); saved["xgboost"] = str(p)
-    except Exception as e: log(f"  xgb {task} FAILED: {e}")
+        p = out / ("xgb_" + target + ".json"); m.save_model(str(p)); saved["xgboost"] = str(p)
+    except Exception as e: log(f"  xgb {target} FAILED: {e}")
     try:
         import lightgbm as lgb
         params = {"learning_rate": .035, "num_leaves": 48, "max_depth": 8, "min_child_samples": 15,
@@ -180,25 +180,25 @@ def _train_one(Xtr, ytr, Xva, yva, task, classes, out: Path):
         else: params.update(objective="binary", metric="binary_logloss")
         m = lgb.train(params, lgb.Dataset(Xtr, label=ytr), num_boost_round=CONFIG["max_boost_rounds"],
                       valid_sets=[lgb.Dataset(Xva, label=yva)], callbacks=[lgb.early_stopping(60, verbose=False), lgb.log_evaluation(0)])
-        p = out / ("lgbm_" + task + ".txt"); m.save_model(str(p)); saved["lightgbm"] = str(p)
-    except Exception as e: log(f"  lgbm {task} FAILED: {e}")
+        p = out / ("lgbm_" + target + ".txt"); m.save_model(str(p)); saved["lightgbm"] = str(p)
+    except Exception as e: log(f"  lgbm {target} FAILED: {e}")
     try:
         from catboost import CatBoostClassifier
         m = CatBoostClassifier(loss_function="MultiClass" if task == "multiclass" else "Logloss",
                                depth=7, learning_rate=.035, iterations=min(CONFIG["max_boost_rounds"], 1400),
                                l2_leaf_reg=5.0, random_seed=CONFIG["seed"], verbose=False, allow_writing_files=False)
         m.fit(Xtr, ytr, eval_set=(Xva, yva), use_best_model=True, verbose=False)
-        p = out / ("cat_" + task + ".cbm"); m.save_model(str(p)); saved["catboost"] = str(p)
-    except Exception as e: log(f"  cat {task} FAILED: {e}")
+        p = out / ("cat_" + target + ".cbm"); m.save_model(str(p)); saved["catboost"] = str(p)
+    except Exception as e: log(f"  cat {target} FAILED: {e}")
     try:
         from sklearn.ensemble import RandomForestClassifier
         m = RandomForestClassifier(n_estimators=500, max_depth=16, min_samples_leaf=4, max_features="sqrt",
                                    class_weight="balanced_subsample", random_state=CONFIG["seed"], n_jobs=-1)
         m.fit(Xtr, ytr)
-        p = out / ("rf_" + task + ".pkl")
+        p = out / ("rf_" + target + ".pkl")
         with open(p, "wb") as f: pickle.dump(m, f)
         saved["random_forest"] = str(p)
-    except Exception as e: log(f"  rf {task} FAILED: {e}")
+    except Exception as e: log(f"  rf {target} FAILED: {e}")
     return saved
 
 
@@ -219,7 +219,7 @@ def train_scope(df: pd.DataFrame, scope: str, out_root: Path):
         mu, sd = _scale_fit(Xtr)
         Xtr_s, Xva_s = (Xtr - mu) / sd, (Xva - mu) / sd
         stats[t] = {"features": feats, "mean": mu.tolist(), "std": sd.tolist(), "classes": classes}
-        saved = _train_one(Xtr_s, ytr, Xva_s, yva, task, classes, models)
+        saved = _train_one(Xtr_s, ytr, Xva_s, yva, task, classes, models, t)
         if not saved: log(f"  WARNING {scope}/{t}: no backend saved")
     (pre / "feature_stats.json").write_text(json.dumps({"targets": stats}, indent=2), encoding="utf-8")
     # Compatibility with the existing Africa simulator: expose the FT feature stats at top level.
