@@ -312,6 +312,24 @@ def simulate_match(
             prior_ft = prior_ft / prior_ft.sum()
         prior_o25 = float(((hist_c["FTHG"] + hist_c["FTAG"]) > 2.5).mean())
         prior_btts = float(((hist_c["FTHG"] > 0) & (hist_c["FTAG"] > 0)).mean())
+    # Most of the Africa corpus has no recorded half-time score at all, so
+    # this prior must be computed only from rows that genuinely have one —
+    # otherwise it is silently diluted by (or entirely built from) fabricated
+    # "0-0 at half-time" rows. Require a real sample, not just a large one.
+    if hist_c is not None and "HTHG" in hist_c.columns and "HTAG" in hist_c.columns:
+        hthg = pd.to_numeric(hist_c["HTHG"], errors="coerce")
+        htag = pd.to_numeric(hist_c["HTAG"], errors="coerce")
+        ht_known = hist_c[hthg.notna() & htag.notna()]
+        hthg_k, htag_k = hthg[hthg.notna() & htag.notna()], htag[hthg.notna() & htag.notna()]
+        if len(ht_known) >= 30:
+            cand = np.array([
+                float((hthg_k > htag_k).mean()),
+                float((hthg_k == htag_k).mean()),
+                float((hthg_k < htag_k).mean()),
+            ])
+            if cand.sum() > 0:
+                prior_ht = cand / cand.sum()
+            prior_ht_o15 = float(((hthg_k + htag_k) > 1.5).mean())
 
     home = _resolve_team_name(home, hist_c)
     away = _resolve_team_name(away, hist_c)

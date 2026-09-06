@@ -72,11 +72,25 @@ def load_africa(path: Path) -> pd.DataFrame:
         raise ValueError("negative Africa scores found")
     df = df[df["HomeTeam"].astype(str) != df["AwayTeam"].astype(str)].copy()
     if "HTHG" not in df.columns or "HTAG" not in df.columns:
-        df["HTHG"], df["HTAG"] = 0.0, 0.0
+        df["HTHG"], df["HTAG"] = np.nan, np.nan
     df["Over2_5"] = ((df["FTHG"] + df["FTAG"]) > 2.5).astype(int)
     df["BTTS"] = ((df["FTHG"] > 0) & (df["FTAG"] > 0)).astype(int)
-    df["HTR"] = np.where(df["HTHG"] > df["HTAG"], "H", np.where(df["HTHG"] < df["HTAG"], "A", "D"))
-    df["HT_Over1_5"] = ((df["HTHG"] + df["HTAG"]) > 1.5).astype(int)
+    # Most of the Africa corpus (openfootball/RSSSF) does not record half-time
+    # scores at all — only ~7% of rows have real HTHG/HTAG. Treating a missing
+    # half-time score as "0-0 at half-time" is a fabrication, not a fact, and
+    # it silently poisoned every HT-based target (ht_result, ht_over15) with a
+    # single false label for the other ~93% of rows — for many teams that
+    # meant literally every training row had the same fabricated HT label,
+    # making the "model" for that target permanently uninformative regardless
+    # of how much data existed. Leave HTR/HT_Over1_5 as null wherever the
+    # underlying half-time score is unknown, so make_xy's existing
+    # dropna(subset=[col]) genuinely excludes fabricated rows instead of
+    # training on them as if they were real observations.
+    has_ht = df["HTHG"].notna() & df["HTAG"].notna()
+    df["HTR"] = pd.Series(np.where(df["HTHG"] > df["HTAG"], "H", np.where(df["HTHG"] < df["HTAG"], "A", "D")), index=df.index)
+    df.loc[~has_ht, "HTR"] = np.nan
+    df["HT_Over1_5"] = ((df["HTHG"] + df["HTAG"]) > 1.5).astype("Int64")
+    df.loc[~has_ht, "HT_Over1_5"] = pd.NA
     df = _canonize(df)
     return df.sort_values(["Date", "HomeTeam", "AwayTeam"]).reset_index(drop=True)
 

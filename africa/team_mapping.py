@@ -63,13 +63,40 @@ def load_aliases() -> Dict[str, str]:
     return out
 
 
+_resolve_index_cache: dict = {"known_id": None, "aliases_id": None}
+
+
+def _resolve_indexes(known: Dict[str, int], aliases: Dict[str, str]):
+    """Precomputed lookup indexes for resolve(), rebuilt only when the
+    known/aliases objects actually change (by identity) rather than on
+    every single call. resolve() used to rebuild a case-insensitive map
+    and scan the full known-team set (with normalized()/token_set()
+    recomputed for every entry) on every call — O(rows * teams) instead
+    of O(rows + teams), which made resolving team names for a full
+    historical dataset (tens of thousands of rows against thousands of
+    known teams) effectively hang."""
+    cache = _resolve_index_cache
+    if cache["known_id"] == id(known) and cache["aliases_id"] == id(aliases) and cache.get("known_len") == len(known):
+        return cache["ci"], cache["norm_index"], cache["token_index"]
+    ci: Dict[str, str] = {}
+    norm_index: Dict[str, list] = {}
+    token_index: Dict[frozenset, list] = {}
+    for k in known:
+        ci[k.lower()] = k
+        norm_index.setdefault(normalized(k), []).append(k)
+        token_index.setdefault(token_set(k), []).append(k)
+    cache.update(known_id=id(known), aliases_id=id(aliases), known_ref=known, aliases_ref=aliases,
+                 known_len=len(known), ci=ci, norm_index=norm_index, token_index=token_index)
+    return ci, norm_index, token_index
+
+
 def resolve(name: str, known=None, aliases=None) -> Tuple[str, str]:
     raw = clean(name)
     if not raw:
         return raw, "empty"
     known = known if known is not None else load_ids()
     aliases = aliases if aliases is not None else load_aliases()
-    ci = {k.lower(): k for k in known}
+    ci, norm_index, token_index = _resolve_indexes(known, aliases)
 
     if raw in known:
         return raw, "exact"
@@ -80,14 +107,14 @@ def resolve(name: str, known=None, aliases=None) -> Tuple[str, str]:
         return ci[raw.lower()], "case"
 
     norm = normalized(raw)
-    matches = [k for k in known if normalized(k) == norm]
+    matches = norm_index.get(norm, [])
     if len(matches) == 1:
         return matches[0], "normalized"
 
     # Unique token-set equality only (strict, not fuzzy distance).
     ts = token_set(raw)
     if ts:
-        token_hits = [k for k in known if token_set(k) == ts]
+        token_hits = token_index.get(ts, [])
         if len(token_hits) == 1:
             return token_hits[0], "token_set"
 

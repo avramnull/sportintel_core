@@ -232,8 +232,15 @@ def engineer(df: pd.DataFrame) -> pd.DataFrame:
     df["DC_1X"] = df["FTR"].isin(["H", "D"]).astype(float)
     df["DC_X2"] = df["FTR"].isin(["D", "A"]).astype(float)
     df["DC_12"] = df["FTR"].isin(["H", "A"]).astype(float)
-    ht_goals = pd.to_numeric(df.get("HTHG"), errors="coerce").fillna(0) + pd.to_numeric(df.get("HTAG"), errors="coerce").fillna(0)
-    df["HT_Over1_5"] = (ht_goals > 1.5).astype(float)
+    # A missing half-time score is not the same as "0-0 at half-time" — treat
+    # it as unknown (NaN) rather than fabricating a goal count, so make_xy's
+    # dropna on the target column genuinely excludes these rows from
+    # ht_over15 training instead of silently teaching it a false "under"
+    # label for every match with no recorded half-time score.
+    hthg_ht = pd.to_numeric(df.get("HTHG"), errors="coerce")
+    htag_ht = pd.to_numeric(df.get("HTAG"), errors="coerce")
+    ht_goals = hthg_ht + htag_ht
+    df["HT_Over1_5"] = np.where(hthg_ht.notna() & htag_ht.notna(), (ht_goals > 1.5).astype(float), np.nan)
     df["HomePoints"] = df["FTR"].map({"H": 3, "D": 1, "A": 0})
     df["AwayPoints"] = df["FTR"].map({"H": 0, "D": 1, "A": 3})
 
