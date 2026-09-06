@@ -879,7 +879,7 @@ def train_one_target(train_df, val_df, target_key, models_dir, preproc_dir):
     Xtr_s, Xva_s = Xtr.copy(), Xva.copy()
     Xtr_s[:, :-3] = scaler.fit_transform(Xtr[:, :-3])
     Xva_s[:, :-3] = scaler.transform(Xva[:, :-3])
-        try:
+    try:
         stds = np.nanstd(Xtr, axis=0)
         n_const = int(np.sum(~np.isfinite(stds) | (stds < 1e-12)))
         n_nan = int(np.isnan(Xtr).sum())
