@@ -30,6 +30,32 @@ def _newest_local() -> Path | None:
     return None
 
 
+def _write_openfootball_fallback() -> Path | None:
+    """football-data.co.uk is down. Build a fixtures_latest.csv-shaped CSV
+    from openfootball's upcoming (unplayed) matches instead. No odds
+    columns — run_fixture_sims.py already treats a fixture with no market
+    data as pure-model (odds_blend=0) rather than dropping it."""
+    try:
+        import pandas as pd
+        from eur_openfootball import fetch_all_upcoming_fixtures
+        rows = fetch_all_upcoming_fixtures()
+        if not rows:
+            log.error("openfootball fixtures fallback produced no rows")
+            return None
+        SAVE_DIR.mkdir(parents=True, exist_ok=True)
+        today = datetime.now().strftime("%Y-%m-%d")
+        out = SAVE_DIR / f"fixtures_{today}.csv"
+        stable = SAVE_DIR / "fixtures_latest.csv"
+        df = pd.DataFrame(rows)
+        df.to_csv(out, index=False)
+        df.to_csv(stable, index=False)
+        log.warning("football-data.co.uk unavailable — using openfootball fixtures fallback (%d rows)", len(df))
+        return stable
+    except Exception as e:
+        log.error("openfootball fixtures fallback failed: %s", e)
+        return None
+
+
 def download_fixtures() -> Path | None:
     SAVE_DIR.mkdir(parents=True, exist_ok=True)
     today = datetime.now().strftime("%Y-%m-%d")
@@ -47,6 +73,10 @@ def download_fixtures() -> Path | None:
     )
     if path is not None:
         return path
+
+    fallback = _write_openfootball_fallback()
+    if fallback is not None:
+        return fallback
 
     local = _newest_local()
     if local is not None:

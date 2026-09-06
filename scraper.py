@@ -35,6 +35,31 @@ def _newest_local() -> Path | None:
     return None
 
 
+def _write_openfootball_fallback() -> Path | None:
+    """football-data.co.uk is down. Build a results_latest.csv-shaped CSV
+    from openfootball instead, so daily_update_parquet.py needs no changes
+    at all — it just reads whatever CSV is sitting at this path."""
+    try:
+        import pandas as pd
+        from eur_openfootball import fetch_all_results
+        rows = fetch_all_results()
+        if not rows:
+            log.error("openfootball fallback produced no rows")
+            return None
+        SAVE_DIR.mkdir(parents=True, exist_ok=True)
+        today = datetime.now().strftime("%Y-%m-%d")
+        out = SAVE_DIR / f"results_{today}.csv"
+        stable = SAVE_DIR / "results_latest.csv"
+        df = pd.DataFrame(rows)
+        df.to_csv(out, index=False)
+        df.to_csv(stable, index=False)
+        log.warning("football-data.co.uk unavailable — using openfootball fallback (%d rows)", len(df))
+        return stable
+    except Exception as e:
+        log.error("openfootball fallback failed: %s", e)
+        return None
+
+
 def download_data() -> Path | None:
     SAVE_DIR.mkdir(parents=True, exist_ok=True)
     today = datetime.now().strftime("%Y-%m-%d")
@@ -52,6 +77,10 @@ def download_data() -> Path | None:
     )
     if path is not None:
         return path
+
+    fallback = _write_openfootball_fallback()
+    if fallback is not None:
+        return fallback
 
     # Soft fallback — do not hard-fail the whole pipeline on a flaky source
     local = _newest_local()

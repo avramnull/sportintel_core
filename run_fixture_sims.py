@@ -49,7 +49,16 @@ def load_fixtures(path: Path) -> pd.DataFrame:
     df["Date"] = pd.to_datetime(df["Date"], dayfirst=True, errors="coerce")
     df["Time"] = df["Time"].astype(str).str.strip() if "Time" in df.columns else ""
     df = df.dropna(subset=["Date", "HomeTeam", "AwayTeam"])
-    df = df[(df["odds_H"] > 1.01) & (df["odds_D"] > 1.01) & (df["odds_A"] > 1.01)]
+    # Odds are a genuine, meaningful signal (blended into the final prediction
+    # in sim.py) but not every fixture source provides them — a source with
+    # no market data at all (e.g. openfootball) shouldn't mean the fixture
+    # gets silently dropped. Track which rows have real odds; fixtures
+    # without them get a safe, neutral 3.0/3.0/3.0 placeholder and their
+    # odds_blend is forced to 0 downstream (pure model, no market weight)
+    # rather than blending in a fabricated market view.
+    df["has_odds"] = (df["odds_H"] > 1.01) & (df["odds_D"] > 1.01) & (df["odds_A"] > 1.01)
+    for c in ("odds_H", "odds_D", "odds_A"):
+        df[c] = df[c].where(df["has_odds"], 3.0)
     return df.reset_index(drop=True)
 
 
@@ -250,7 +259,7 @@ def main():
         kick = f"{date_str} {t}" if t and t not in ("nan","None","") else date_str
         cfg = {"league":str(row["Div"]).strip(),"home_team":home,"away_team":away,"match_date":kick,
                "odds_home":float(row["odds_H"]),"odds_draw":float(row["odds_D"]),"odds_away":float(row["odds_A"]),
-               "n_simulations":N_SIM,"seed":SEED+int(i),"odds_blend":ODDS_BLEND}
+               "n_simulations":N_SIM,"seed":SEED+int(i),"odds_blend":(ODDS_BLEND if bool(row.get("has_odds", True)) else 0.0)}
         print(f"  [{i+1}/{len(df)}] {home} vs {away} …", flush=True)
         original_clock = None
         try:
