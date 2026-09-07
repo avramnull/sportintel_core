@@ -11,13 +11,13 @@ import numpy as np
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from industrial_sim_engine import simulate_industrial  # noqa: E402
+from industrial_sim_engine import ENGINE_VERSION, simulate_industrial  # noqa: E402
 
 
 def check_case(ft, ht, over25, btts, ht_over15, seed):
     n = 5000
     r = simulate_industrial(ft, ht, over25, btts, ht_over15, n, seed)
-    assert r["engine"]["version"] == "industrial-v4"
+    assert r["engine"]["version"] == ENGINE_VERSION
     assert r["n"] == n
 
     for key in ("ft_sim", "ht_sim"):

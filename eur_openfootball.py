@@ -181,7 +181,7 @@ def fetch_results(div: str, season: Optional[str] = None) -> list[dict]:
             continue
         ftr = "H" if m.fthg > m.ftag else ("A" if m.fthg < m.ftag else "D")
         rows.append({
-            "Div": div, "Date": m.date.isoformat(), "HomeTeam": m.home, "AwayTeam": m.away,
+            "Div": div, "Date": m.date.strftime("%d/%m/%Y"), "HomeTeam": m.home, "AwayTeam": m.away,
             "FTHG": m.fthg, "FTAG": m.ftag, "FTR": ftr,
             "HTHG": m.hthg, "HTAG": m.htag,
         })

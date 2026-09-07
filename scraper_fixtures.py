@@ -30,6 +30,35 @@ def _newest_local() -> Path | None:
     return None
 
 
+def _write_livescore_api_fallback() -> Path | None:
+    """Preferred fallback: API-Football covers every configured league and
+    separates finished from not-yet-played matches by real match status.
+    Only used when a key is actually configured."""
+    try:
+        import pandas as pd
+        from api_football_client import ApiFootballClient
+        from eur_livescore import fetch_upcoming_fixtures
+        client = ApiFootballClient(purpose="fixtures")
+        if not client.available:
+            return None
+        rows = fetch_upcoming_fixtures(client)
+        if not rows:
+            log.warning("livescore API returned no upcoming fixtures — falling back further")
+            return None
+        SAVE_DIR.mkdir(parents=True, exist_ok=True)
+        today = datetime.now().strftime("%Y-%m-%d")
+        out = SAVE_DIR / f"fixtures_{today}.csv"
+        stable = SAVE_DIR / "fixtures_latest.csv"
+        df = pd.DataFrame(rows)
+        df.to_csv(out, index=False)
+        df.to_csv(stable, index=False)
+        log.warning("football-data.co.uk unavailable — using livescore API fixtures fallback (%d rows)", len(df))
+        return stable
+    except Exception as e:
+        log.error("livescore API fixtures fallback failed: %s", e)
+        return None
+
+
 def _write_openfootball_fallback() -> Path | None:
     """football-data.co.uk is down. Build a fixtures_latest.csv-shaped CSV
     from openfootball's upcoming (unplayed) matches instead. No odds
@@ -73,6 +102,10 @@ def download_fixtures() -> Path | None:
     )
     if path is not None:
         return path
+
+    fallback = _write_livescore_api_fallback()
+    if fallback is not None:
+        return fallback
 
     fallback = _write_openfootball_fallback()
     if fallback is not None:
