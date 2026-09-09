@@ -1,18 +1,12 @@
 {
-  "generated_at": "2026-09-08T06:09:23.075256+00:00",
+  "generated_at": "2026-09-09T06:52:52.604713+00:00",
   "teams": [
-    "Blackburn Rovers FC",
-    "Bolton Wanderers FC",
-    "Burnley FC",
-    "Cardiff City FC",
-    "Preston North End FC",
-    "Sheffield United FC",
-    "Southampton FC",
-    "Stoke City FC",
-    "Swansea City AFC",
-    "Watford FC",
-    "West Ham United FC",
-    "Wrexham AFC"
+    "Birmingham City FC",
+    "Charlton Athletic FC",
+    "Derby County FC",
+    "Norwich City FC",
+    "Queens Park Rangers FC",
+    "West Bromwich Albion FC"
   ],
-  "n_teams": 12
+  "n_teams": 6
 }

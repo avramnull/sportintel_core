@@ -1,38 +1,26 @@
 {
-  "generated_at": "2026-09-08T06:03:47.325853+00:00",
-  "max_train": 12,
+  "generated_at": "2026-09-09T06:47:17.238225+00:00",
+  "max_train": 6,
   "train_all_fixtures": true,
   "min_matches": 25,
   "retrain_existing": true,
   "today_only": true,
-  "focus_date": "2026-09-08",
+  "focus_date": "2026-09-09",
   "focus_teams": [
-    "Swansea City AFC",
-    "Stoke City FC",
-    "Bolton Wanderers FC",
-    "Watford FC",
-    "West Ham United FC",
-    "Burnley FC",
-    "Wrexham AFC",
-    "Blackburn Rovers FC",
-    "Cardiff City FC",
-    "Southampton FC",
-    "Sheffield United FC",
-    "Preston North End FC"
+    "Queens Park Rangers FC",
+    "Derby County FC",
+    "Norwich City FC",
+    "Birmingham City FC",
+    "West Bromwich Albion FC",
+    "Charlton Athletic FC"
   ],
   "scores": {
-    "Swansea City AFC": 1.0,
-    "Stoke City FC": 1.0,
-    "Bolton Wanderers FC": 1.0,
-    "Watford FC": 1.0,
-    "West Ham United FC": 1.0,
-    "Burnley FC": 1.0,
-    "Wrexham AFC": 1.0,
-    "Blackburn Rovers FC": 1.0,
-    "Cardiff City FC": 1.0,
-    "Southampton FC": 1.0,
-    "Sheffield United FC": 1.0,
-    "Preston North End FC": 1.0
+    "Queens Park Rangers FC": 1.0,
+    "Derby County FC": 1.0,
+    "Norwich City FC": 1.0,
+    "Birmingham City FC": 1.0,
+    "West Bromwich Albion FC": 1.0,
+    "Charlton Athletic FC": 1.0
   },
   "note": "Pass to train.py via FOCUS_TEAMS env (comma-separated)"
 }

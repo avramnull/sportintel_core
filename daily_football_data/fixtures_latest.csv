@@ -12,11 +12,11 @@ E0,14/09/2026,20:00,Leeds United FC,Newcastle United FC
 E0,18/09/2026,20:00,Brentford FC,Chelsea FC
 E0,19/09/2026,12:30,Tottenham Hotspur FC,Aston Villa FC
 E0,19/09/2026,15:00,Everton FC,Ipswich Town FC
-E0,19/09/2026,,Leeds United FC,Crystal Palace FC
 E0,19/09/2026,,Brighton & Hove Albion FC,Arsenal FC
 E0,19/09/2026,,Newcastle United FC,Hull City AFC
 E0,19/09/2026,17:30,Nottingham Forest FC,Coventry City FC
 E0,20/09/2026,14:00,AFC Bournemouth,Liverpool FC
+E0,20/09/2026,,Leeds United FC,Crystal Palace FC
 E0,20/09/2026,,Manchester City FC,Sunderland AFC
 E0,20/09/2026,16:30,Fulham FC,Manchester United FC
 E1,08/09/2026,19:45,Blackburn Rovers FC,Sheffield United FC
@@ -25,7 +25,6 @@ E1,08/09/2026,,Watford FC,Preston North End FC
 E1,08/09/2026,,Cardiff City FC,Stoke City FC
 E1,08/09/2026,,Wrexham AFC,Burnley FC
 E1,08/09/2026,20:00,Bolton Wanderers FC,West Ham United FC
-E1,09/09/2026,,Wolverhampton Wanderers FC,Portsmouth FC [postponed]
 E1,09/09/2026,19:45,Derby County FC,West Bromwich Albion FC
 E1,09/09/2026,,Norwich City FC,Birmingham City FC
 E1,09/09/2026,20:00,Charlton Athletic FC,Queens Park Rangers FC
@@ -55,8 +54,6 @@ E1,19/09/2026,,Birmingham City FC,Middlesbrough FC
 E1,19/09/2026,,Lincoln City FC,Swansea City AFC
 E1,20/09/2026,12:00,Wolverhampton Wanderers FC,West Bromwich Albion FC
 E1,20/09/2026,13:30,Norwich City FC,Bolton Wanderers FC
-SP1,07/09/2026,19:00,Getafe CF,RC Celta de Vigo
-SP1,07/09/2026,21:30,Elche CF,Real Sociedad de Fútbol
 SP1,11/09/2026,21:00,Sevilla FC,Valencia CF
 SP1,12/09/2026,14:00,Real Racing Club de Santander,Deportivo Alavés
 SP1,12/09/2026,16:15,CA Osasuna,RCD Espanyol de Barcelona
@@ -76,18 +73,16 @@ SP1,16/09/2026,21:30,Levante UD,Athletic Club
 SP1,16/09/2026,,FC Barcelona,Real Racing Club de Santander
 SP1,17/09/2026,19:00,Real Betis Balompié,Getafe CF
 SP1,17/09/2026,21:30,Málaga CF,Villarreal CF
+SP1,18/09/2026,21:00,RCD Espanyol de Barcelona,Elche CF
 SP1,19/09/2026,14:00,CA Osasuna,Rayo Vallecano de Madrid
 SP1,19/09/2026,16:15,Athletic Club,Deportivo Alavés
 SP1,19/09/2026,18:30,RC Celta de Vigo,Real Racing Club de Santander
 SP1,19/09/2026,21:00,Sevilla FC,FC Barcelona
-SP1,20/09/2026,,Valencia CF,Real Sociedad de Fútbol
-SP1,20/09/2026,,RCD Espanyol de Barcelona,Elche CF
 SP1,20/09/2026,14:00,Getafe CF,Málaga CF
 SP1,20/09/2026,16:15,Club Atlético de Madrid,Real Madrid CF
 SP1,20/09/2026,18:30,RC Deportivo La Coruña,Real Betis Balompié
 SP1,20/09/2026,,Villarreal CF,Levante UD
-I1,07/09/2026,18:30,Cagliari Calcio,US Lecce
-I1,07/09/2026,20:45,Udinese Calcio,SS Lazio
+SP1,20/09/2026,21:00,Valencia CF,Real Sociedad de Fútbol
 I1,11/09/2026,20:45,Venezia FC,ACF Fiorentina
 I1,12/09/2026,15:00,Genoa CFC,Frosinone Calcio
 I1,12/09/2026,18:00,SS Lazio,AC Milan
