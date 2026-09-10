@@ -1,15 +1,15 @@
 {
-  "started": "2026-09-09T02:32:39.571270+00:00",
-  "finished": "2026-09-09T06:58:07.102993+00:00",
+  "started": "2026-09-10T02:33:03.787965+00:00",
+  "finished": "2026-09-10T06:03:30.237623+00:00",
   "season_code": "2627",
   "season_label": "2026/2027",
   "focus_teams": [
-    "Queens Park Rangers FC",
-    "Derby County FC",
-    "Norwich City FC",
-    "Birmingham City FC",
-    "West Bromwich Albion FC",
-    "Charlton Athletic FC"
+    "Sp Braga",
+    "Panathinaikos",
+    "Estrela",
+    "Stevenage",
+    "Luton",
+    "Kifisia"
   ],
   "sims_index": "/home/runner/work/sportintel_core/sportintel_core/daily_football_data/sims/index.json"
 }

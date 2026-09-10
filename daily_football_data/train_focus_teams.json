@@ -1,26 +1,26 @@
 {
-  "generated_at": "2026-09-09T06:47:17.238225+00:00",
+  "generated_at": "2026-09-10T05:49:42.188227+00:00",
   "max_train": 6,
   "train_all_fixtures": true,
   "min_matches": 25,
   "retrain_existing": true,
   "today_only": true,
-  "focus_date": "2026-09-09",
+  "focus_date": "2026-09-10",
   "focus_teams": [
-    "Queens Park Rangers FC",
-    "Derby County FC",
-    "Norwich City FC",
-    "Birmingham City FC",
-    "West Bromwich Albion FC",
-    "Charlton Athletic FC"
+    "Sp Braga",
+    "Panathinaikos",
+    "Estrela",
+    "Stevenage",
+    "Luton",
+    "Kifisia"
   ],
   "scores": {
-    "Queens Park Rangers FC": 1.0,
-    "Derby County FC": 1.0,
-    "Norwich City FC": 1.0,
-    "Birmingham City FC": 1.0,
-    "West Bromwich Albion FC": 1.0,
-    "Charlton Athletic FC": 1.0
+    "Sp Braga": 120.0,
+    "Panathinaikos": 105.0,
+    "Estrela": 92.625,
+    "Stevenage": 80.0,
+    "Luton": 80.0,
+    "Kifisia": 76.75
   },
   "note": "Pass to train.py via FOCUS_TEAMS env (comma-separated)"
 }

@@ -1,12 +1,6 @@
 fixture_id,date,timestamp,status,elapsed,country,league_id,league,season,round,home,away,home_id,away_id,goals_home,goals_away,ht_home,ht_away,odds_h,odds_d,odds_a,odds_book,source
-1898872,2026-09-09,,NS,,Malawi,94,Super League,,15,Dedza Dynamos,Mitundu Baptist,7390,8576,,,,,,,,live-score-api,live-score-api
-1896945,2026-09-09,,NS,,Uganda,81,Super League,,3,SC Villa,Express,5359,2976,,,,,,,,live-score-api,live-score-api
-1896944,2026-09-09,,NS,,Uganda,81,Super League,,3,Entebbe UPPC,Lugazi,7055,8132,,,,,,,,live-score-api,live-score-api
-1898944,2026-09-09,,NS,,Tanzania,80,Premier League,,6,Mashujaa,Singida Black Stars,7792,8102,,,,,,,,live-score-api,live-score-api
-1895131,2026-09-09,,NS,,Egypt,36,Premier League,,4,Pyramids FC,El Gouna FC,2228,2362,,,,,1.45,3.65,7.8,live-score-api,live-score-api
-1895134,2026-09-09,,NS,,Egypt,36,Premier League,,4,Future FC,Wadi Degla FC,6699,114,,,,,2.98,2.82,2.5,live-score-api,live-score-api
-1896425,2026-09-09,,NS,,Angola,449,Garibola,,4,Sporting de Cabinda,Primeiro de Agosto,7073,2274,,,,,,,,live-score-api,live-score-api
-1886193,2026-09-09,,NS,,Tanzania,80,Premier League,,6,Azam FC,Simba SC,2929,2930,,,,,,,,live-score-api,live-score-api
-1895135,2026-09-09,,NS,,Egypt,36,Premier League,,4,ENPPI,Masr,108,4797,,,,,2.76,2.74,2.76,live-score-api,live-score-api
-1895136,2026-09-09,,NS,,Egypt,36,Premier League,,4,Al Mokawloon Al Arab,Al Ahly,100,102,,,,,8.4,3.95,1.4,live-score-api,live-score-api
-1884597,2026-09-09,,NS,,South Africa,41,Premier League,,Regular Season,Mamelodi Sundowns FC,Siwelele,1034,8349,,,,,1.24,5.2,14.5,live-score-api,live-score-api
+1896936,2026-09-10,,NS,,Uganda,81,Super League,,3,Kitara,Uganda Revenue Authority FC,6580,2973,,,,,,,,live-score-api,live-score-api
+1896937,2026-09-10,,NS,,Uganda,81,Super League,,3,Police FC,UPDF,2980,3380,,,,,1.62,3.4,5,live-score-api,live-score-api
+1896938,2026-09-10,,NS,,Angola,449,Garibola,,4,Interclube,Academica Petroleos do Lobito,3006,3011,,,,,,,,live-score-api,live-score-api
+1885750,2026-09-10,,NS,,Algeria,35,Ligue 1,,2,Ben Aknoun,US Biskra,6819,1358,,,,,1.85,3.4,3.6,live-score-api,live-score-api
+1885745,2026-09-10,,NS,,Algeria,35,Ligue 1,,2,USM Alger,JS El Biar,1377,8146,,,,,1.4,3.8,8,live-score-api,live-score-api
