@@ -30,10 +30,25 @@
     "AwayTeamId"
   ],
   "targets": {
-    "ft_result": {},
+    "ft_result": {
+      "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/team_kenya_police/models/xgb_ft_result.json",
+      "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/team_kenya_police/models/lgbm_ft_result.txt",
+      "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/team_kenya_police/models/cat_ft_result.cbm",
+      "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/team_kenya_police/models/rf_ft_result.pkl"
+    },
     "ht_result": {},
-    "over25": {},
-    "btts": {},
+    "over25": {
+      "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/team_kenya_police/models/xgb_over25.json",
+      "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/team_kenya_police/models/lgbm_over25.txt",
+      "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/team_kenya_police/models/cat_over25.cbm",
+      "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/team_kenya_police/models/rf_over25.pkl"
+    },
+    "btts": {
+      "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/team_kenya_police/models/xgb_btts.json",
+      "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/team_kenya_police/models/lgbm_btts.txt",
+      "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/team_kenya_police/models/cat_btts.cbm",
+      "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/team_kenya_police/models/rf_btts.pkl"
+    },
     "ht_over15": {}
   },
   "countries": [

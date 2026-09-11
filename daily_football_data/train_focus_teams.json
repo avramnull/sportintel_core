@@ -1,26 +1,26 @@
 {
-  "generated_at": "2026-09-10T05:49:42.188227+00:00",
+  "generated_at": "2026-09-11T02:29:09.716686+00:00",
   "max_train": 6,
   "train_all_fixtures": true,
   "min_matches": 25,
   "retrain_existing": true,
   "today_only": true,
-  "focus_date": "2026-09-10",
+  "focus_date": "2026-09-11",
   "focus_teams": [
     "Sp Braga",
-    "Panathinaikos",
     "Estrela",
+    "Panathinaikos",
+    "Kifisia",
     "Stevenage",
-    "Luton",
-    "Kifisia"
+    "Luton"
   ],
   "scores": {
     "Sp Braga": 120.0,
+    "Estrela": 112.65,
     "Panathinaikos": 105.0,
-    "Estrela": 92.625,
+    "Kifisia": 96.775,
     "Stevenage": 80.0,
-    "Luton": 80.0,
-    "Kifisia": 76.75
+    "Luton": 80.0
   },
   "note": "Pass to train.py via FOCUS_TEAMS env (comma-separated)"
 }

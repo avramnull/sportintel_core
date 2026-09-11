@@ -1,0 +1,58 @@
+{
+  "scope": "team_namungo",
+  "n": 311,
+  "n_train": 248,
+  "n_val": 63,
+  "features": [
+    "Year",
+    "Month",
+    "DayOfWeek",
+    "IsWeekend",
+    "HomeFormPts_5",
+    "AwayFormPts_5",
+    "HomeFormGD_5",
+    "AwayFormGD_5",
+    "HomeFormPts_10",
+    "AwayFormPts_10",
+    "HomeFormGD_10",
+    "AwayFormGD_10",
+    "HomeFormPts_20",
+    "AwayFormPts_20",
+    "HomeFormGD_20",
+    "AwayFormGD_20",
+    "EloHome",
+    "EloAway",
+    "EloDiff",
+    "RestHome",
+    "RestAway",
+    "RestDiff",
+    "HomeTeamId",
+    "AwayTeamId"
+  ],
+  "targets": {
+    "ft_result": {
+      "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/team_namungo/models/xgb_ft_result.json",
+      "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/team_namungo/models/lgbm_ft_result.txt",
+      "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/team_namungo/models/cat_ft_result.cbm",
+      "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/team_namungo/models/rf_ft_result.pkl"
+    },
+    "ht_result": {},
+    "over25": {
+      "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/team_namungo/models/xgb_over25.json",
+      "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/team_namungo/models/lgbm_over25.txt",
+      "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/team_namungo/models/cat_over25.cbm",
+      "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/team_namungo/models/rf_over25.pkl"
+    },
+    "btts": {
+      "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/team_namungo/models/xgb_btts.json",
+      "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/team_namungo/models/lgbm_btts.txt",
+      "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/team_namungo/models/cat_btts.cbm",
+      "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/team_namungo/models/rf_btts.pkl"
+    },
+    "ht_over15": {}
+  },
+  "countries": [
+    "South Africa",
+    "Tanzania"
+  ]
+}

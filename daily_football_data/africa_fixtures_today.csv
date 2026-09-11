@@ -1,6 +1,25 @@
 fixture_id,date,timestamp,status,elapsed,country,league_id,league,season,round,home,away,home_id,away_id,goals_home,goals_away,ht_home,ht_away,odds_h,odds_d,odds_a,odds_book,source
-1896936,2026-09-10,,NS,,Uganda,81,Super League,,3,Kitara,Uganda Revenue Authority FC,6580,2973,,,,,,,,live-score-api,live-score-api
-1896937,2026-09-10,,NS,,Uganda,81,Super League,,3,Police FC,UPDF,2980,3380,,,,,1.62,3.4,5,live-score-api,live-score-api
-1896938,2026-09-10,,NS,,Angola,449,Garibola,,4,Interclube,Academica Petroleos do Lobito,3006,3011,,,,,,,,live-score-api,live-score-api
-1885750,2026-09-10,,NS,,Algeria,35,Ligue 1,,2,Ben Aknoun,US Biskra,6819,1358,,,,,1.85,3.4,3.6,live-score-api,live-score-api
-1885745,2026-09-10,,NS,,Algeria,35,Ligue 1,,2,USM Alger,JS El Biar,1377,8146,,,,,1.4,3.8,8,live-score-api,live-score-api
+1897057,2026-09-11,,NS,,Kenya,37,Premier League,,3,3K,Muranga SEAL,8139,7136,,,,,,,,live-score-api,live-score-api
+1897058,2026-09-11,,NS,,Kenya,37,Premier League,,3,Gor Mahia,Bandari,2531,2336,,,,,,,,live-score-api,live-score-api
+1897059,2026-09-11,,NS,,Kenya,37,Premier League,,3,AFC Leopards,Shabana FC,2254,4029,,,,,,,,live-score-api,live-score-api
+1897060,2026-09-11,,NS,,Kenya,37,Premier League,,3,Migori Youth,Mathare United,4012,2526,,,,,,,,live-score-api,live-score-api
+1897061,2026-09-11,,NS,,Kenya,37,Premier League,,3,Modern Coast Rangers FC,Kenya Police FC,4011,4030,,,,,,,,live-score-api,live-score-api
+1897062,2026-09-11,,NS,,Kenya,37,Premier League,,3,Nairobi United,APS Bomet,7821,7126,,,,,,,,live-score-api,live-score-api
+1897063,2026-09-11,,NS,,Kenya,37,Premier League,,3,Posta Rangers,KCB,2359,3925,,,,,,,,live-score-api,live-score-api
+1897064,2026-09-11,,NS,,Kenya,37,Premier League,,3,Tusker FC,Kakamega Homeboyz,2502,2501,,,,,,,,live-score-api,live-score-api
+1897065,2026-09-11,,NS,,Kenya,37,Premier League,,3,Ulinzi Stars,Mara Sugar,2530,7138,,,,,,,,live-score-api,live-score-api
+1896956,2026-09-11,,NS,,Uganda,81,Super League,,3,Mbarara City,NEC FC,2975,7853,,,,,,,,live-score-api,live-score-api
+1897067,2026-09-11,,NS,,Rwanda,89,Championnat National,,2,Musanze FC,Kiyovu Sports,2994,2986,,,,,,,,live-score-api,live-score-api
+1898163,2026-09-11,,NS,,Algeria,229,Ligue 2,,1,CA Batna,JS Azazga,5572,8702,,,,,,,,live-score-api,live-score-api
+1898164,2026-09-11,,NS,,Algeria,229,Ligue 2,,1,JSM Skikda,IRB Nezla,6534,8703,,,,,,,,live-score-api,live-score-api
+1898466,2026-09-11,,NS,,Algeria,229,Ligue 2,,1,MO Bejaia,MO Constantine,2116,6808,,,,,,,,live-score-api,live-score-api
+1898467,2026-09-11,,NS,,Algeria,229,Ligue 2,,1,AS Khroub,Paradou AC,6804,738,,,,,,,,live-score-api,live-score-api
+1898468,2026-09-11,,NS,,Algeria,229,Ligue 2,,1,USM Annaba,NC Magra,6803,4410,,,,,,,,live-score-api,live-score-api
+1898469,2026-09-11,,NS,,Algeria,229,Ligue 2,,1,US Chaouia,NRB Beni Oulbane,6812,8442,,,,,,,,live-score-api,live-score-api
+1898470,2026-09-11,,NS,,Algeria,229,Ligue 2,,1,Nrb Teleghma,MSP Batna,6809,6810,,,,,,,,live-score-api,live-score-api
+1898471,2026-09-11,,NS,,Algeria,229,Ligue 2,,1,JS Jijel,CR Beni Thour,8143,6816,,,,,,,,live-score-api,live-score-api
+1886194,2026-09-11,,NS,,Tanzania,80,Premier League,,6,Dodoma Jiji FC,Namungo,6272,5358,,,,,,,,live-score-api,live-score-api
+1897210,2026-09-11,,NS,,CAF,224,Confederations Cup,,1R,Hafia,AS des Douanes,3016,2901,,,,,,,,live-score-api,live-score-api
+1897211,2026-09-11,,NS,,CAF,224,Confederations Cup,,1R,AS Bamako,Vitesse Delft,3422,8457,,,,,,,,live-score-api,live-score-api
+1897078,2026-09-11,,NS,,Botswana,456,Premier League,,3,Centre Chiefs,Nico United,8127,7958,,,,,,,,live-score-api,live-score-api
+1884598,2026-09-11,,NS,,South Africa,41,Premier League,,Regular Season,Stellenbosch,Sekhukhune United,4415,6598,,,,,,,,live-score-api,live-score-api
