@@ -1,0 +1,67 @@
+{
+  "scope": "team_national_bank",
+  "n": 214,
+  "n_train": 171,
+  "n_val": 43,
+  "features": [
+    "Year",
+    "Month",
+    "DayOfWeek",
+    "IsWeekend",
+    "HomeFormPts_5",
+    "AwayFormPts_5",
+    "HomeFormGD_5",
+    "AwayFormGD_5",
+    "HomeFormPts_10",
+    "AwayFormPts_10",
+    "HomeFormGD_10",
+    "AwayFormGD_10",
+    "HomeFormPts_20",
+    "AwayFormPts_20",
+    "HomeFormGD_20",
+    "AwayFormGD_20",
+    "EloHome",
+    "EloAway",
+    "EloDiff",
+    "RestHome",
+    "RestAway",
+    "RestDiff",
+    "HomeTeamId",
+    "AwayTeamId"
+  ],
+  "targets": {
+    "ft_result": {
+      "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/team_national_bank/models/xgb_ft_result.json",
+      "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/team_national_bank/models/lgbm_ft_result.txt",
+      "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/team_national_bank/models/cat_ft_result.cbm",
+      "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/team_national_bank/models/rf_ft_result.pkl"
+    },
+    "ht_result": {
+      "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/team_national_bank/models/xgb_ht_result.json",
+      "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/team_national_bank/models/lgbm_ht_result.txt",
+      "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/team_national_bank/models/cat_ht_result.cbm",
+      "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/team_national_bank/models/rf_ht_result.pkl"
+    },
+    "over25": {
+      "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/team_national_bank/models/xgb_over25.json",
+      "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/team_national_bank/models/lgbm_over25.txt",
+      "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/team_national_bank/models/cat_over25.cbm",
+      "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/team_national_bank/models/rf_over25.pkl"
+    },
+    "btts": {
+      "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/team_national_bank/models/xgb_btts.json",
+      "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/team_national_bank/models/lgbm_btts.txt",
+      "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/team_national_bank/models/cat_btts.cbm",
+      "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/team_national_bank/models/rf_btts.pkl"
+    },
+    "ht_over15": {
+      "xgboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/team_national_bank/models/xgb_ht_over15.json",
+      "lightgbm": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/team_national_bank/models/lgbm_ht_over15.txt",
+      "catboost": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/team_national_bank/models/cat_ht_over15.cbm",
+      "random_forest": "/home/runner/work/sportintel_core/sportintel_core/football_models/africa/team_national_bank/models/rf_ht_over15.pkl"
+    }
+  },
+  "countries": [
+    "Egypt"
+  ]
+}

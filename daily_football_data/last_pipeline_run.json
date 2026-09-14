@@ -1,15 +1,31 @@
 {
-  "started": "2026-09-11T02:28:17.023292+00:00",
-  "finished": "2026-09-11T02:43:05.244485+00:00",
+  "started": "2026-09-14T02:49:57.831171+00:00",
+  "finished": "2026-09-14T03:11:26.123383+00:00",
   "season_code": "2627",
   "season_label": "2026/2027",
   "focus_teams": [
+    "Leeds",
+    "Newcastle",
+    "Roma",
+    "Inter",
+    "Real Betis",
+    "Como",
+    "Parma",
+    "Torino",
+    "Udinese",
+    "Villarreal",
+    "Moreirense",
     "Sp Braga",
+    "Estoril",
     "Estrela",
-    "Panathinaikos",
-    "Kifisia",
-    "Stevenage",
-    "Luton"
+    "Fenerbahce",
+    "Rio Ave",
+    "Maritimo",
+    "Eibar",
+    "Gaziantep",
+    "Red Star",
+    "Metz",
+    "Celta B"
   ],
   "sims_index": "/home/runner/work/sportintel_core/sportintel_core/daily_football_data/sims/index.json"
 }

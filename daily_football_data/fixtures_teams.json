@@ -1,12 +1,28 @@
 {
-  "generated_at": "2026-09-11T02:36:26.496876+00:00",
+  "generated_at": "2026-09-14T03:08:18.433972+00:00",
   "teams": [
+    "Betis",
+    "Celta B",
+    "Como",
+    "Eibar",
+    "Estoril",
     "Estrela",
-    "Kifisia",
-    "Luton",
-    "Panathinaikos",
+    "Fenerbahce",
+    "Gaziantep",
+    "Inter",
+    "Leeds",
+    "Maritimo",
+    "Metz",
+    "Moreirense",
+    "Newcastle",
+    "Parma",
+    "Red Star",
+    "Rio Ave",
+    "Roma",
     "Sp Braga",
-    "Stevenage"
+    "Torino",
+    "Udinese",
+    "Villarreal"
   ],
-  "n_teams": 6
+  "n_teams": 22
 }
