@@ -1,4 +1,11 @@
 fixture_id,date,timestamp,status,elapsed,country,league_id,league,season,round,home,away,home_id,away_id,goals_home,goals_away,ht_home,ht_away,odds_h,odds_d,odds_a,odds_book,source
-1895137,2026-09-14,,NS,,Egypt,36,Premier League,,5,El Geish,Smouha SC,106,110,,,,,2.8,2.38,2.9,live-score-api,live-score-api
-1895138,2026-09-14,,NS,,Egypt,36,Premier League,,5,Masr,AL Qenah,4797,5611,,,,,,,,live-score-api,live-score-api
-1895139,2026-09-14,,NS,,Egypt,36,Premier League,,5,Ceramica Cleopatra,National Bank,6592,6593,,,,,2.62,2.88,2.8,live-score-api,live-score-api
+1897485,2026-09-15,,NS,,Rwanda,89,Championnat National,,3,Etincelles,Musanze FC,3000,2994,,,,,,,,live-score-api,live-score-api
+1897487,2026-09-15,,NS,,Rwanda,89,Championnat National,,3,Kiyovu Sports,Bugesera,2986,2987,,,,,,,,live-score-api,live-score-api
+1897488,2026-09-15,,NS,,Uganda,81,Super League,,4,Bidco FC,Blacks Power,2972,7569,,,,,,,,live-score-api,live-score-api
+1897489,2026-09-15,,NS,,Uganda,81,Super League,,4,NEC FC,Uganda Revenue Authority FC,7853,2973,,,,,,,,live-score-api,live-score-api
+1897486,2026-09-15,,NS,,Rwanda,89,Championnat National,,3,Etoile de lEst,Gicumbi,7079,2993,,,,,,,,live-score-api,live-score-api
+1895140,2026-09-15,,NS,,Egypt,36,Premier League,,5,Wadi Degla FC,Al Mokawloon Al Arab,114,100,,,,,2.2,2.75,3.6,live-score-api,live-score-api
+1895141,2026-09-15,,NS,,Egypt,36,Premier League,,5,Asyut Petrol,Future FC,8698,6699,,,,,,,,live-score-api,live-score-api
+1898939,2026-09-15,,NS,,Tanzania,80,Premier League,,6,Young Africans,Geita Gold,2931,7031,,,,,,,,live-score-api,live-score-api
+1895142,2026-09-15,,NS,,Egypt,36,Premier League,,5,Al Masry,Al-Ittihad Al-Sakandary,99,115,,,,,1.85,3,4.6,live-score-api,live-score-api
+1895143,2026-09-15,,NS,,Egypt,36,Premier League,,5,Al Ahly,Abo Qir Semad,102,5610,,,,,,,,live-score-api,live-score-api
