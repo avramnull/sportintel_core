@@ -1,23 +1,13 @@
 {
-  "started": "2026-09-16T02:47:38.844205+00:00",
-  "finished": "2026-09-16T03:06:46.728429+00:00",
+  "started": "2026-09-17T02:51:00.139531+00:00",
+  "finished": "2026-09-17T03:08:29.984796+00:00",
   "season_code": "2627",
   "season_label": "2026/2027",
   "focus_teams": [
-    "Osasuna",
-    "La Coruna",
-    "Barcelona",
-    "Athletic Bilbao",
-    "Atletico Madrid",
-    "Sevilla",
-    "Santander",
-    "Levante",
-    "Altrincham",
-    "Hartlepool",
-    "Kidderminster",
-    "Gateshead",
-    "Scunthorpe",
-    "Boreham Wood"
+    "Villarreal",
+    "Real Betis Balompi\u00e9",
+    "Getafe CF",
+    "M\u00e1laga CF"
   ],
   "sims_index": "/home/runner/work/sportintel_core/sportintel_core/daily_football_data/sims/index.json"
 }

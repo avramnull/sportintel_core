@@ -1,20 +1,10 @@
 {
-  "generated_at": "2026-09-16T03:01:42.811188+00:00",
+  "generated_at": "2026-09-17T03:08:23.362111+00:00",
   "teams": [
-    "Altrincham",
-    "Ath Bilbao",
-    "Ath Madrid",
-    "Barcelona",
-    "Boreham Wood",
-    "Gateshead",
-    "Hartlepool",
-    "Kidderminster",
-    "La Coruna",
-    "Levante",
-    "Osasuna",
-    "Santander",
-    "Scunthorpe",
-    "Sevilla"
+    "Getafe CF",
+    "M\u00e1laga CF",
+    "Real Betis Balompi\u00e9",
+    "Villarreal CF"
   ],
-  "n_teams": 14
+  "n_teams": 4
 }

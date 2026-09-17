@@ -1,22 +1,6 @@
 {
-  "ok": true,
-  "status": "complete",
-  "date": "2026-09-03",
-  "n_fixtures": 4,
-  "n_sim_ok": 4,
-  "countries": [
-    "Egypt",
-    "Uganda",
-    "Algeria"
-  ],
-  "teams": [
-    "Al Ahly",
-    "Smouha SC",
-    "Express",
-    "Kampala CCA",
-    "ES Setif",
-    "Ben Aknoun",
-    "JS El Biar",
-    "Olympique Akbou"
-  ]
+  "ok": false,
+  "status": "unavailable",
+  "checked_at": "2026-09-17T03:08:27.679396+00:00",
+  "reason": "Africa fixture fetch produced no valid fixture document"
 }

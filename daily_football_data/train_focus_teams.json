@@ -1,42 +1,22 @@
 {
-  "generated_at": "2026-09-16T02:48:37.001740+00:00",
-  "max_train": 14,
+  "generated_at": "2026-09-17T03:02:03.202611+00:00",
+  "max_train": 4,
   "train_all_fixtures": true,
   "min_matches": 25,
   "retrain_existing": true,
   "today_only": true,
-  "focus_date": "2026-09-16",
+  "focus_date": "2026-09-17",
   "focus_teams": [
-    "Osasuna",
-    "La Coruna",
-    "Barcelona",
-    "Athletic Bilbao",
-    "Atletico Madrid",
-    "Sevilla",
-    "Santander",
-    "Levante",
-    "Altrincham",
-    "Hartlepool",
-    "Kidderminster",
-    "Gateshead",
-    "Scunthorpe",
-    "Boreham Wood"
+    "Villarreal",
+    "Real Betis Balompié",
+    "Getafe CF",
+    "Málaga CF"
   ],
   "scores": {
-    "Osasuna": 145.0,
-    "La Coruna": 145.0,
-    "Barcelona": 145.0,
-    "Athletic Bilbao": 145.0,
-    "Atletico Madrid": 125.0,
-    "Sevilla": 125.0,
-    "Santander": 125.0,
-    "Levante": 125.0,
-    "Altrincham": 65.0,
-    "Hartlepool": 65.0,
-    "Kidderminster": 65.0,
-    "Gateshead": 65.0,
-    "Scunthorpe": 65.0,
-    "Boreham Wood": 65.0
+    "Villarreal": 145.0,
+    "Real Betis Balompié": 1.0,
+    "Getafe CF": 1.0,
+    "Málaga CF": 1.0
   },
   "note": "Pass to train.py via FOCUS_TEAMS env (comma-separated)"
 }
