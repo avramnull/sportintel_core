@@ -1,13 +1,15 @@
 {
-  "started": "2026-09-17T02:51:00.139531+00:00",
-  "finished": "2026-09-17T03:08:29.984796+00:00",
+  "started": "2026-09-18T02:38:13.645910+00:00",
+  "finished": "2026-09-18T02:45:28.409636+00:00",
   "season_code": "2627",
   "season_label": "2026/2027",
   "focus_teams": [
+    "Real Betis",
+    "Getafe",
+    "Malaga",
     "Villarreal",
-    "Real Betis Balompi\u00e9",
-    "Getafe CF",
-    "M\u00e1laga CF"
+    "AFC Wimbledon",
+    "Milton Keynes Dons"
   ],
   "sims_index": "/home/runner/work/sportintel_core/sportintel_core/daily_football_data/sims/index.json"
 }

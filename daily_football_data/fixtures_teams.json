@@ -1,10 +1,12 @@
 {
-  "generated_at": "2026-09-17T03:08:23.362111+00:00",
+  "generated_at": "2026-09-18T02:45:22.729434+00:00",
   "teams": [
-    "Getafe CF",
-    "M\u00e1laga CF",
-    "Real Betis Balompi\u00e9",
-    "Villarreal CF"
+    "AFC Wimbledon",
+    "Betis",
+    "Getafe",
+    "Malaga",
+    "Milton Keynes Dons",
+    "Villarreal"
   ],
-  "n_teams": 4
+  "n_teams": 6
 }

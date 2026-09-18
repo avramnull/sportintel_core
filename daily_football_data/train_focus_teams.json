@@ -1,22 +1,26 @@
 {
-  "generated_at": "2026-09-17T03:02:03.202611+00:00",
-  "max_train": 4,
+  "generated_at": "2026-09-18T02:38:59.422306+00:00",
+  "max_train": 6,
   "train_all_fixtures": true,
   "min_matches": 25,
   "retrain_existing": true,
   "today_only": true,
-  "focus_date": "2026-09-17",
+  "focus_date": "2026-09-18",
   "focus_teams": [
+    "Real Betis",
+    "Getafe",
+    "Malaga",
     "Villarreal",
-    "Real Betis Balompié",
-    "Getafe CF",
-    "Málaga CF"
+    "AFC Wimbledon",
+    "Milton Keynes Dons"
   ],
   "scores": {
+    "Real Betis": 145.0,
+    "Getafe": 145.0,
+    "Malaga": 145.0,
     "Villarreal": 145.0,
-    "Real Betis Balompié": 1.0,
-    "Getafe CF": 1.0,
-    "Málaga CF": 1.0
+    "AFC Wimbledon": 80.0,
+    "Milton Keynes Dons": 80.0
   },
   "note": "Pass to train.py via FOCUS_TEAMS env (comma-separated)"
 }

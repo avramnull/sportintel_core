@@ -1,12 +1,12 @@
 {
-  "fetched_at": "2026-09-17T03:08:27.659053+00:00",
-  "date": "2026-09-17",
+  "fetched_at": "2026-09-18T02:45:25.865428+00:00",
+  "date": "2026-09-18",
   "provider": "live-score-api",
   "total_world": null,
   "total_africa": null,
   "fixtures": [],
   "api_errors": [
-    "Live-score API Africa fixture fetch failed: 401 Client Error: Unauthorized for url: https://livescore-api.com/api-client/fixtures/list.json?date=2026-09-17&key=ICPGFpk1CvEQoRKX&secret=nPnLR8dYKAST90fRC5xhvSj7nXXMPIJd&page=1"
+    "Live-score API Africa fixture fetch failed: 401 Client Error: Unauthorized for url: https://livescore-api.com/api-client/fixtures/list.json?date=2026-09-18&key=ICPGFpk1CvEQoRKX&secret=nPnLR8dYKAST90fRC5xhvSj7nXXMPIJd&page=1"
   ],
   "ok": false,
   "schema_version": "africa-fixture-v2"
